@@ -163,28 +163,22 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
         }, SCRAMBLE_OUT_DURATION_MS);
       };
 
-      // Check if element is currently in the viewport
-      const isInViewport = () => {
-        const rect = container.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom > 0;
-      };
-
-      if (triggerOnMount || isInViewport()) {
+      if (triggerOnMount) {
         scrambleIn();
-      }
-
-      if (!triggerOnMount) {
+      } else {
         // Wire up GSAP ScrollTrigger — fires scrambleIn/Out as element enters/leaves viewport
         ScrollTrigger.create({
           trigger: container,
-          start: "center bottom-=10%",
-          end: "center top+=8%",
-          onEnter: scrambleIn,
-          onLeave: scrambleOut,
-          onEnterBack: scrambleIn,
-          onLeaveBack: scrambleOut,
+          start: "center bottom-=10%", // fires when element center is 10% above viewport bottom
+          end: "center top+=8%", // fires when element center is 10% below viewport top
+          onEnter: scrambleIn, // scrolling down, element enters
+          onLeave: scrambleOut, // scrolling down, element leaves
+          onEnterBack: scrambleIn, // scrolling up, element re-enters
+          onLeaveBack: scrambleOut, // scrolling up, element leaves
+          // markers: true,
         });
 
+        // Recalculate trigger positions after layout settles
         setTimeout(() => ScrollTrigger.refresh(), 100);
       }
 
@@ -197,7 +191,7 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
 
   // Render spans once — all animation updates happen via direct DOM mutation
   return (
-    <span key={text} ref={containerRef} className={cn("wrap-break-words block whitespace-pre-wrap", className)}>
+    <span ref={containerRef} className={cn("wrap-break-words block whitespace-pre-wrap", className)}>
       {text.split("").map((_, i) => (
         <span key={i} className="opacity-70" />
       ))}
