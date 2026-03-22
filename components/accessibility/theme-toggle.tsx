@@ -15,7 +15,7 @@ export function ThemeToggle() {
       type="button"
       onClick={() => setTheme(nextTheme)}
       aria-label={t("toggleTheme")}
-      className="text-lightgray flex items-center justify-center"
+      className="flex items-center justify-center"
     >
       {theme === "dark" ? (
         <svg

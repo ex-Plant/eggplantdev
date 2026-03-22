@@ -7,11 +7,11 @@ import { cn } from "@/helpers/cn";
 
 export function AccessibilityMenu({ className }: { className?: string }) {
   return (
-    <div className={cn("flex items-center gap-3 font-mono uppercase", className)} data-slot="accessibility-menu">
+    <div className={cn("flex items-center gap-3 font-mono uppercase text-black", className)} data-slot="accessibility-menu">
       <FontSizeControl />
-      <span className="text-gray5">|</span>
+      <span>|</span>
       <ThemeToggle />
-      <span className="text-gray5">|</span>
+      <span>|</span>
       <LanguageSwitcher />
     </div>
   );

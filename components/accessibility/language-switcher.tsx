@@ -10,12 +10,7 @@ export function LanguageSwitcher() {
   const toggle = () => setLocale(locale === "pl" ? "en" : "pl");
 
   return (
-    <button
-      type="button"
-      onClick={toggle}
-      aria-label={t("toggleLanguage")}
-      className="text-14 text-lightgray"
-    >
+    <button type="button" onClick={toggle} aria-label={t("toggleLanguage")} className="text-14">
       {locale === "pl" ? "EN" : "PL"}
     </button>
   );

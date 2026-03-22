@@ -14,17 +14,17 @@ export function FontSizeControl() {
         onClick={decrement}
         aria-label={t("decreaseFontSize")}
         disabled={isMinSize}
-        className="text-14 text-lightgray disabled:opacity-30"
+        className="text-14 disabled:opacity-30"
       >
         A-
       </button>
-      <span className="text-gray5">|</span>
+      <span>|</span>
       <button
         type="button"
         onClick={increment}
         aria-label={t("increaseFontSize")}
         disabled={isMaxSize}
-        className="text-14 text-lightgray disabled:opacity-30"
+        className="text-14 disabled:opacity-30"
       >
         A+
       </button>
