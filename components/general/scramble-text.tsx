@@ -163,27 +163,29 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
         }, SCRAMBLE_OUT_DURATION_MS);
       };
 
-      if (triggerOnMount) {
+      // Check if element is currently in the viewport
+      const isInViewport = () => {
+        const rect = container.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+      };
+
+      if (triggerOnMount || isInViewport()) {
         scrambleIn();
-      } else {
+      }
+
+      if (!triggerOnMount) {
         // Wire up GSAP ScrollTrigger — fires scrambleIn/Out as element enters/leaves viewport
-        const st = ScrollTrigger.create({
+        ScrollTrigger.create({
           trigger: container,
-          start: "center bottom-=10%", // fires when element center is 10% above viewport bottom
-          end: "center top+=8%", // fires when element center is 10% below viewport top
-          onEnter: scrambleIn, // scrolling down, element enters
-          onLeave: scrambleOut, // scrolling down, element leaves
-          onEnterBack: scrambleIn, // scrolling up, element re-enters
-          onLeaveBack: scrambleOut, // scrolling up, element leaves
-          // markers: true,
+          start: "center bottom-=10%",
+          end: "center top+=8%",
+          onEnter: scrambleIn,
+          onLeave: scrambleOut,
+          onEnterBack: scrambleIn,
+          onLeaveBack: scrambleOut,
         });
 
-        // Recalculate trigger positions after layout settles
-        setTimeout(() => {
-          ScrollTrigger.refresh();
-          // If element is already in viewport (e.g. after language switch), fire scrambleIn
-          if (st.isActive) scrambleIn();
-        }, 100);
+        setTimeout(() => ScrollTrigger.refresh(), 100);
       }
 
       return () => {
