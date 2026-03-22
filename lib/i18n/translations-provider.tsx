@@ -26,10 +26,10 @@ export function TranslationsProvider({ children }: { children: React.ReactNode }
   const [locale, setLocaleState] = useState<LocaleT>(getInitialLocale);
 
   const setLocale = useCallback((newLocale: LocaleT) => {
-    setLocaleState(newLocale);
     try {
       localStorage.setItem("locale", newLocale);
     } catch {}
+    window.location.reload();
   }, []);
 
   const value = useMemo(
