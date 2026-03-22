@@ -1,0 +1,52 @@
+{
+  "introTxt": "Prawie 5 lat doświadczenia komercyjnego w budowaniu aplikacji frontendowych i full-stack, głównie w React i Next.js, sprawdzonego w różnych dziedzinach — od e-commerce i SaaS po platformy kulturalne. Prowadzi projekty od A do Z jako freelancer, jednocześnie efektywnie współpracując w wielofunkcyjnych zespołach agencyjnych. Wcześnie adoptował technologie AI, obecnie uczy się budować aplikacje ze zintegrowanymi agentami LLM.",
+  "backgroundDesktop": "/images/home/hero-desktop.jpg",
+  "backgroundMobile": "/images/home/hero-mobile.jpg",
+  "sections": [
+    {
+      "type": "projects",
+      "titleLine": ["Projekty"],
+      "text": "Wybór ostatnich realizacji obejmujący e-commerce, fintech i platformy korporacyjne — każda zbudowana z naciskiem na wydajność, użyteczność i długoterminową łatwość utrzymania."
+    },
+    {
+      "type": "fullSection",
+      "titleLine": ["Jak", "Pracujemy"],
+      "cards": [
+        {
+          "title": "Odkrywanie",
+          "content": "Każda współpraca zaczyna się od uważnego słuchania. Mapujemy cele interesariuszy, audytujemy istniejące systemy, rozmawiamy z użytkownikami końcowymi i identyfikujemy kluczowe punkty tarcia. Efektem jest wspólne zrozumienie — nie 60-stronicowy dokument, którego nikt nie czyta, ale zwięzły brief kierujący każdą kolejną decyzją."
+        },
+        {
+          "title": "Projektowanie",
+          "content": "Projektujemy w przeglądarce tak samo często jak w Figmie. Interaktywne prototypy zastępują statyczne makiety na wczesnym etapie, dzięki czemu każdy może poczuć produkt zanim powstanie choćby jedna linia kodu produkcyjnego. Typografia, odstępy, animacje — dbamy o detale, bo użytkownicy je zauważają, nawet jeśli nie potrafią powiedzieć dlaczego."
+        },
+        {
+          "title": "Inżynieria",
+          "content": "Nasz stack jest nowoczesny, ale pragmatyczny: Next.js, TypeScript, Tailwind, PostgreSQL. Wybieramy narzędzia pozwalające działać szybko bez gromadzenia długu technicznego. Każdy komponent jest budowany z myślą o ponownym użyciu, każdy kontrakt API jest typowany end-to-end, a każdy deploy przechodzi automatyczne testy przed wejściem na produkcję."
+        }
+      ],
+      "largePhoto": "/images/home/approach.jpg"
+    },
+    {
+      "type": "quote",
+      "titleLine": ["Zadowoleni", "Klienci"],
+      "quotes": [
+        {
+          "quote": "Nie dostarczyli nam po prostu strony — pomogli nam przemyśleć sposób komunikacji z klientami. Nowa platforma zwiększyła nasz współczynnik konwersji o 34% w pierwszym kwartale po uruchomieniu. Najbardziej zaimponowała mi ich umiejętność konstruktywnego kwestionowania naszych założeń przy jednoczesnym poszanowaniu dziedzictwa naszej marki.",
+          "name": "Katarzyna Wiśniewska",
+          "title": "Szefowa Działu Cyfrowego, Europharma Group"
+        },
+        {
+          "quote": "Współpraca z tym zespołem była jak posiadanie wewnętrznego działu produktowego. Byli zintegrowani z naszym workflow, uczestniczyli w naszych standupach i traktowali nasze terminy jak własne. Wynik mówi sam za siebie — platforma obsługująca 50 000 aktywnych użytkowników dziennie bez żadnych problemów, i system designu, który nasz wewnętrzny zespół jest w stanie utrzymywać.",
+          "name": "Michał Zieliński",
+          "title": "CTO, FinBridge Technologies"
+        }
+      ]
+    },
+    {
+      "type": "simple",
+      "titleLine": ["Kim Jesteśmy"],
+      "text": "Jesteśmy kompaktowym studiem projektantów i inżynierów z siedzibą w Krakowie. Założone w 2018 roku, współpracowaliśmy ze startupami, scale-upami i zespołami korporacyjnymi w całej Europie, dostarczając produkty cyfrowe, które działają. Nasze realizacje obejmują identyfikacje wizualne, platformy marketingowe, dashboardy SaaS i narzędzia wewnętrzne — zawsze z naciskiem na czysty kod, przemyślany design i mierzalne rezultaty. Celowo utrzymujemy mały zespół: każdy projekt od pierwszego dnia ma uwagę seniorów, a każdy klient ma bezpośredni kontakt z osobami wykonującymi pracę."
+    }
+  ]
+}

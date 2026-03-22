@@ -1,0 +1,368 @@
+@import "tailwindcss";
+
+/* === Theme Configuration (replaces tailwind.config.js) === */
+/* Values copied EXACTLY from old tailwind.config.js */
+@theme {
+  /* Breakpoints */
+  --breakpoint-sm: 360px;
+  --breakpoint-450: 450px;
+  --breakpoint-640: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-1280: 1280px;
+  --breakpoint-xl: 1440px;
+  --breakpoint-xxl: 1920px;
+  --breakpoint-uhd: 2120px;
+
+  /* Colors (exact hex from old config) */
+  --color-beige: #ebe7e4;
+  --color-bgc: #010101;
+  --color-blue: #8c99f1;
+  --color-gray2: #222;
+  --color-gray5: #555;
+  --color-gray7: #777;
+  --color-green: #10ffaa;
+  --color-lightgray: #ccc;
+  --color-red: #ff7575;
+  --color-white: #fff;
+  --color-yellow: #f7c744;
+
+  /* Max-width */
+  --max-w-xxl: 1920px;
+}
+
+/* Font families — all resolved at runtime via Next.js CSS variables (injected in layout.tsx) */
+@theme inline {
+  /* Swap mono font here — uncomment one */
+  /* --font-mono: var(--font-poly); */
+  /* --font-mono: var(--font-geist-mono);   */
+  --font-mono: var(--font-jetbrains-mono);
+  /* --font-mono: var(--font-ibm-plex-mono);    */
+  /* --font-mono: var(--font-space-mono);       */
+  /* --font-mono: var(--font-fira-code);        */
+
+  --font-thein13: var(--font-theinhardt);
+}
+
+@theme {
+  /* Font sizes with line-height pairs */
+  --text-12: 0.75rem;
+  --text-12--line-height: 1.063rem;
+  --text-14: 0.875rem;
+  --text-14--line-height: 1.25rem;
+  --text-16: 1rem;
+  --text-16--line-height: 1.438rem;
+  --text-20: 1.25rem;
+  --text-20--line-height: 1.75rem;
+  --text-24: 1.5rem;
+  --text-24--line-height: 1.813rem;
+  --text-28: var(--28);
+  --text-28--line-height: var(--28);
+  --text-34: var(--34);
+  --text-34--line-height: var(--34);
+  --text-38: var(--38);
+  --text-38--line-height: var(--38);
+  --text-40: var(--40);
+  --text-40--line-height: var(--40);
+  --text-48: var(--48);
+  --text-48--line-height: var(--48);
+  --text-56: 3.5rem;
+  --text-56--line-height: 3.5rem;
+  --text-64: var(--64);
+  --text-64--line-height: var(--64);
+  --text-80: var(--80);
+  --text-80--line-height: var(--80);
+  --text-96: 6rem;
+  --text-96--line-height: 6rem;
+
+  /* Grid columns (16-column fest grid) */
+  --grid-cols-16: repeat(16, minmax(0, 1fr));
+}
+
+/* === CSS Variables for fluid typography === */
+:root,
+#root,
+#docs-root {
+  --28: clamp(1.75rem, calc(28 / 320 * 100vw), 2.25rem);
+  --34: clamp(2.125rem, calc(34 / 360 * 100vw), 5rem);
+  --38: clamp(2.25rem, calc(38 / 360 * 100vw), 5rem);
+  --40: clamp(2.5rem, calc(40 / 360 * 100vw), 3.5rem);
+  --48: clamp(3rem, calc(48 / 360 * 100vw), 4rem);
+  --64: clamp(4rem, calc(64 / 768 * 100vw), 5rem);
+  --80: clamp(5rem, calc(80 / 1024 * 100vw), 6rem);
+}
+
+body {
+  font-family: var(--font-theinhardt), sans-serif;
+  color: white;
+  background: #010101;
+}
+
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@utility grit-subtle {
+  background: var(--tw-bg-color, transparent) url("/grit-texture-subtle.svg") repeat;
+  background-size: 180px;
+}
+
+@utility grit {
+  background: var(--tw-bg-color, transparent) url("/grit-texture-medium.svg") repeat;
+  background-size: 180px;
+}
+
+@utility grit-medium-dense {
+  background: var(--tw-bg-color, transparent) url("/grit-texture-medium-dense.svg") repeat;
+  background-size: 180px;
+}
+
+@utility grit-dense {
+  background: var(--tw-bg-color, transparent) url("/grit-texture-dense.svg") repeat;
+  background-size: 180px;
+}
+
+@utility container-paddings {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @media (width >= 640px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media (width >= 1024px) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  @media (width >= 1440px) {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+  @media (width >= 1920px) {
+    padding-left: 6.5rem;
+    padding-right: 6.5rem;
+  }
+}
+/* === Fest Grid System === */
+@utility fest-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: var(--max-w-xxl);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @media (width >= 640px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media (width >= 1024px) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  @media (width >= 1440px) {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+  @media (width >= 1920px) {
+    padding-left: 6.5rem;
+    padding-right: 6.5rem;
+  }
+}
+
+@utility fest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  @media (width >= 640px) {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+  @media (width >= 768px) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  @media (width >= 1440px) {
+    grid-template-columns: repeat(16, minmax(0, 1fr));
+  }
+}
+
+/* Form reset */
+input,
+textarea {
+  outline: none;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  box-shadow: inset 0 0 0 2000px rgb(255, 255, 255);
+}
+
+/* Swiper pagination */
+.swiper-pagination-bullets > .swiper-pagination-bullet-active {
+  background-color: white;
+}
+
+.swiper-pagination-bullets > .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Animated text line */
+.line {
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-clip: text !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.stopScrolling {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* === Syntax.fm-inspired palette (scoped to /test page) === */
+.test-overrides {
+  --test-bg-deep: #191324;
+  --test-bg-card: #2d1130;
+  --test-bg-card-alt: #452650;
+  --test-accent: #ffcb05;
+  --test-accent-soft: #f9dc65;
+  --test-teal: #82d8d8;
+  --test-teal-dark: #399a9e;
+  --test-text: #ebebe3;
+  --test-text-warm: #e5d7ba;
+  --test-text-muted: #cfc096;
+  --test-pink: #d15f7c;
+  --test-pink-muted: #a37592;
+  --test-blue: #69cffa;
+  --test-footer-from: #452650;
+  --test-footer-to: #180d1c;
+  background-color: var(--test-bg-deep) !important;
+  background-image: url("/grit-texture.svg");
+  background-repeat: repeat;
+  background-size: 180px;
+  color: var(--test-text);
+}
+
+.test-overrides * {
+  border-color: var(--test-bg-card-alt);
+}
+
+.test-overrides h1,
+.test-overrides h2,
+.test-overrides h3 {
+  color: var(--test-text-warm);
+}
+
+.test-overrides a {
+  color: var(--test-teal);
+}
+
+.test-overrides a:hover {
+  color: var(--test-blue);
+}
+
+.test-overrides button,
+.test-overrides [role="button"] {
+  background-color: var(--test-accent);
+  color: var(--test-bg-deep);
+}
+
+.test-overrides section > div,
+.test-overrides article {
+  background-color: var(--test-bg-card);
+}
+
+.test-overrides p {
+  color: var(--test-text);
+}
+
+.test-overrides small,
+.test-overrides span.muted {
+  color: var(--test-text-muted);
+}
+
+.test-overrides .line {
+  background-image: linear-gradient(var(--test-text-warm), var(--test-text-warm));
+  -webkit-text-fill-color: rgba(235, 235, 227, 0.2) !important;
+}
+
+/* Dialog backdrop */
+::backdrop {
+  background-color: rgba(0, 0, 0);
+}
+
+/* === Contrast mode === */
+[data-theme="contrast"] {
+  --contrast-fg: #ffec35;
+  --contrast-bg: #000;
+}
+
+[data-theme="contrast"] body {
+  background: var(--contrast-bg);
+  color: var(--contrast-fg);
+}
+
+[data-theme="contrast"] * {
+  border-color: var(--contrast-fg) !important;
+}
+
+[data-theme="contrast"] h1,
+[data-theme="contrast"] h2,
+[data-theme="contrast"] h3,
+[data-theme="contrast"] h4,
+[data-theme="contrast"] p,
+[data-theme="contrast"] span,
+[data-theme="contrast"] a,
+[data-theme="contrast"] button,
+[data-theme="contrast"] label {
+  color: var(--contrast-fg);
+}
+
+[data-theme="contrast"] footer {
+  background: var(--contrast-bg);
+}
+
+[data-theme="contrast"] footer h2,
+[data-theme="contrast"] footer p,
+[data-theme="contrast"] footer span,
+[data-theme="contrast"] footer button,
+[data-theme="contrast"] footer input,
+[data-theme="contrast"] footer textarea {
+  color: var(--contrast-fg);
+}
+
+[data-theme="contrast"] input,
+[data-theme="contrast"] textarea {
+  border-color: var(--contrast-fg) !important;
+  color: var(--contrast-fg);
+}
+
+[data-theme="contrast"] input::placeholder,
+[data-theme="contrast"] textarea::placeholder {
+  color: var(--contrast-fg);
+  opacity: 0.6;
+}
+
+[data-theme="contrast"] input:-webkit-autofill,
+[data-theme="contrast"] textarea:-webkit-autofill {
+  box-shadow: inset 0 0 0 2000px var(--contrast-bg);
+  -webkit-text-fill-color: var(--contrast-fg);
+}
+
+/* Hide grit textures in contrast mode */
+[data-theme="contrast"] .grit,
+[data-theme="contrast"] .grit-subtle,
+[data-theme="contrast"] .grit-medium-dense,
+[data-theme="contrast"] .grit-dense {
+  background-image: none !important;
+}
+
+/* Fix animated text line for contrast */
+[data-theme="contrast"] .line {
+  background-image: linear-gradient(var(--contrast-fg), var(--contrast-fg));
+  -webkit-text-fill-color: rgba(255, 236, 53, 0.2) !important;
+}

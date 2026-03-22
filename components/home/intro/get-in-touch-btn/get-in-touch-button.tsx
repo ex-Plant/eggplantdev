@@ -1,0 +1,83 @@
+"use client";
+import { useCallback, useRef, useState } from "react";
+import { cn } from "@/helpers/cn";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+
+import { ToggleIcon } from "@/components/home/intro/get-in-touch-btn/toggle-icon";
+import { ButtonForm } from "@/components/home/intro/get-in-touch-btn/button-form";
+import { useOnClickOutside } from "@/hooks/use-on-click-outside";
+import { useTranslation } from "@/lib/i18n/hooks/use-translation";
+
+export const GetInTouchButton = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLSpanElement>(null);
+  const [open, setOpen] = useState(false);
+  const toggleModal = () => setOpen((p) => !p);
+  const close = useCallback(() => setOpen(false), []);
+  const { t } = useTranslation("footer");
+
+  useOnClickOutside(containerRef, close);
+
+  useGSAP(
+    () => {
+      if (open) {
+        gsap.set(ref.current, { height: 0, opacity: 0 });
+        gsap.to(ref.current, {
+          height: ref?.current?.scrollHeight,
+          opacity: 1,
+          duration: 1,
+          ease: "elastic.out(0.8, 0.2)",
+        });
+      } else {
+        gsap.to(ref.current, {
+          height: 0,
+          duration: 0.5,
+          opacity: 0,
+          ease: "elastic.in(0.5, 0.3)",
+        });
+      }
+    },
+    { dependencies: [open], revertOnUpdate: true },
+  );
+
+  return (
+    <div
+      ref={containerRef}
+      className={`fest-container pointer-events-none sticky bottom-[120px] mx-auto max-w-[1920px]`}
+    >
+      <div
+        className={`1280:flex 1280:pointer-events-auto z-120 mb-[120px] ml-auto hidden w-fit max-w-[940px] min-w-[270px] cursor-pointer`}
+      >
+        <div className={`w-full rounded-[10px] bg-white px-4 py-1 text-black lg:px-6 lg:py-4`}>
+          <button
+            aria-expanded={open ? "true" : "false"}
+            onClick={toggleModal}
+            className={`flex w-full cursor-pointer items-start justify-between`}
+          >
+            <span
+              ref={textRef}
+              className={cn(
+                `flex text-start font-mono uppercase`,
+                open
+                  ? "text-24 lg:text-40 flex-col space-x-0 pt-2 duration-300"
+                  : "text-16 lg:text-20 h-10 items-center space-x-4 pt-0 duration-100",
+              )}
+            >
+              {t("getInTouch")
+                .split(" ")
+                .map((word) => (
+                  <span key={word}>{word}</span>
+                ))}
+            </span>
+            <ToggleIcon open={open} className={`pt-2`} />
+          </button>
+          <div ref={ref} className={"no-scrollbar h-0 overflow-hidden"}>
+            <ButtonForm closeBtn={toggleModal} open={open} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

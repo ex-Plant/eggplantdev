@@ -1,0 +1,155 @@
+{
+  "slogan": "Selected Work",
+  "introText": "A curated selection of projects that represent the breadth and depth of our work. Each case study reflects a unique set of challenges, constraints, and goals — and the thoughtful solutions we developed alongside our partners.",
+  "backgroundDesktop": "/images/projects/hero-desktop.jpg",
+  "backgroundMobile": "/images/projects/hero-mobile.jpg",
+  "projects": [
+    {
+      "uuid": "1",
+      "slug": "europharma-platform",
+      "name": "Europharma Platform",
+      "description": "A complete digital transformation for one of Central Europe's largest pharmaceutical distributors. We redesigned their customer-facing portal from the ground up — rethinking information architecture, modernizing the visual language, and rebuilding the frontend on a performant Next.js stack. The result: a 34% increase in conversion rate and a 60% reduction in support tickets related to order management.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/europharma-platform",
+      "sections": [
+        {
+          "type": "main",
+          "cats": {
+            "Client": "Europharma Group",
+            "Region": "Central Europe",
+            "Year": "2024",
+            "Industry": "Healthcare & Pharma"
+          },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "simple",
+          "titleLine": ["The Challenge"],
+          "text": "Europharma's existing portal was built on a legacy CMS that couldn't keep up with the demands of modern pharmaceutical distribution. Pharmacists and hospital procurement teams were struggling with a clunky ordering flow, outdated product information, and a search system that returned irrelevant results. The mobile experience was essentially broken — and mobile traffic had grown to 40% of all visits. Our brief was clear: rebuild the platform to be fast, intuitive, and capable of handling a product catalog of over 15,000 SKUs with complex pricing rules and regional availability constraints."
+        },
+        {
+          "type": "screenshots",
+          "gridColumnsNumber": 3,
+          "images": [
+            "/images/projects/alpha/screen-1.jpg",
+            "/images/projects/alpha/screen-2.jpg",
+            "/images/projects/alpha/screen-3.jpg"
+          ]
+        },
+        {
+          "type": "video",
+          "desktopScreenshot": "/images/projects/alpha/full-desktop.jpg",
+          "mobileScreenshot": "/images/projects/alpha/full-mobile.jpg"
+        },
+        {
+          "type": "team",
+          "title": "Project Team",
+          "cards": [
+            {
+              "title": "Lead Developer",
+              "content": "Architected the Next.js frontend, implemented server-side rendering for the product catalog, and built the real-time inventory integration layer."
+            },
+            {
+              "title": "Product Designer",
+              "content": "Led user research across three markets, designed the new ordering flow, and built the component library in Figma that now serves as their internal design system."
+            },
+            {
+              "title": "Project Lead",
+              "content": "Managed stakeholder alignment across four departments, facilitated sprint planning, and ensured delivery milestones aligned with the client's regulatory compliance deadlines."
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "titleLine": ["Client Feedback"],
+          "quotes": [
+            {
+              "quote": "They didn't just deliver a website — they helped us rethink how we communicate with our customers. The new platform increased our conversion rate by 34% in the first quarter after launch.",
+              "name": "Katarzyna Wiśniewska",
+              "title": "Head of Digital, Europharma Group",
+              "avatar": "/images/avatars/avatar-1.jpg"
+            }
+          ]
+        },
+        {
+          "type": "techstack",
+          "title": "Technology Stack",
+          "tags": ["Next.js", "React", "TypeScript", "PostgreSQL", "Redis", "Tailwind CSS", "Figma", "Vercel"]
+        }
+      ]
+    },
+    {
+      "uuid": "2",
+      "slug": "finbridge-dashboard",
+      "name": "FinBridge Dashboard",
+      "description": "A real-time financial analytics dashboard built for FinBridge Technologies. The platform processes and visualizes millions of data points daily, giving portfolio managers instant insight into market movements, risk exposure, and portfolio performance. We designed and built the entire frontend — from the data visualization layer to the notification system.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/finbridge-dashboard",
+      "sections": [
+        {
+          "type": "main",
+          "cats": { "Client": "FinBridge Technologies", "Region": "EU", "Year": "2023", "Industry": "Fintech" },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "simple",
+          "titleLine": ["Overview"],
+          "text": "FinBridge needed a dashboard that could handle high-frequency data updates without sacrificing usability. Their existing solution was a patchwork of spreadsheets and third-party tools that couldn't scale. We built a custom frontend with WebSocket-driven real-time updates, interactive charting with drill-down capabilities, and a flexible layout system that lets each user configure their workspace. The platform now serves 200+ portfolio managers across three time zones."
+        },
+        {
+          "type": "techstack",
+          "title": "Technology Stack",
+          "tags": ["React", "TypeScript", "D3.js", "WebSocket", "Node.js", "AWS", "Tailwind CSS"]
+        }
+      ]
+    },
+    {
+      "uuid": "3",
+      "slug": "verde-ecommerce",
+      "name": "Verde E-Commerce",
+      "description": "A high-performance e-commerce platform for Verde, a sustainable fashion brand expanding across European markets. Built on Next.js with a headless CMS, the site delivers sub-second page loads, handles peak traffic during seasonal campaigns, and supports multi-language, multi-currency checkout flows.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/verde-ecommerce",
+      "sections": [
+        {
+          "type": "main",
+          "cats": {
+            "Client": "Verde Fashion",
+            "Region": "Western Europe",
+            "Year": "2024",
+            "Industry": "E-Commerce & Retail"
+          },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "simple",
+          "titleLine": ["The Story"],
+          "text": "Verde came to us with a Shopify store that was buckling under growth. Their seasonal campaigns regularly drove traffic spikes that crashed the site, their product pages loaded in 4+ seconds on mobile, and their checkout flow had a 72% abandonment rate. We rebuilt everything on a headless architecture: Next.js for the frontend with static generation for product pages, a custom checkout flow optimized for mobile, and an integration layer connecting Stripe, their warehouse management system, and a new CMS for their editorial content. Post-launch metrics: 0.8s average page load, 28% reduction in cart abandonment, and zero downtime during their biggest campaign to date."
+        },
+        {
+          "type": "techstack",
+          "title": "Technology Stack",
+          "tags": ["Next.js", "React", "TypeScript", "Stripe", "Sanity CMS", "Vercel", "Tailwind CSS", "Node.js"]
+        }
+      ]
+    }
+  ]
+}

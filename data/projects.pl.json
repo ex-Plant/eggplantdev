@@ -1,0 +1,155 @@
+{
+  "slogan": "Wybrane Realizacje",
+  "introText": "Starannie dobrany wybór projektów reprezentujących zakres i głębię naszej pracy. Każde studium przypadku odzwierciedla unikalny zestaw wyzwań, ograniczeń i celów — oraz przemyślane rozwiązania, które opracowaliśmy wspólnie z naszymi partnerami.",
+  "backgroundDesktop": "/images/projects/hero-desktop.jpg",
+  "backgroundMobile": "/images/projects/hero-mobile.jpg",
+  "projects": [
+    {
+      "uuid": "1",
+      "slug": "europharma-platform",
+      "name": "Platforma Europharma",
+      "description": "Kompletna transformacja cyfrowa jednego z największych dystrybutorów farmaceutycznych w Europie Środkowej. Przeprojektowaliśmy portal kliencki od podstaw — przemyśleliśmy architekturę informacji, zmodernizowaliśmy język wizualny i przebudowaliśmy frontend na wydajnym stacku Next.js. Efekt: 34% wzrost konwersji i 60% redukcja zgłoszeń do supportu związanych z zarządzaniem zamówieniami.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/europharma-platform",
+      "sections": [
+        {
+          "type": "main",
+          "cats": {
+            "Client": "Europharma Group",
+            "Region": "Europa Środkowa",
+            "Year": "2024",
+            "Industry": "Zdrowie i Farmacja"
+          },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "simple",
+          "titleLine": ["Wyzwanie"],
+          "text": "Istniejący portal Europharma był zbudowany na starszym CMS-ie, który nie nadążał za wymaganiami nowoczesnej dystrybucji farmaceutycznej. Farmaceuci i zespoły zakupowe szpitali borykali się z nieporęcznym procesem zamawiania, nieaktualnym katalogiem produktów i wyszukiwarką zwracającą nieistotne wyniki. Wersja mobilna była praktycznie niesprawna — a ruch mobilny wzrósł do 40% wszystkich wizyt. Nasz brief był jasny: przebudować platformę tak, aby była szybka, intuicyjna i zdolna obsłużyć katalog ponad 15 000 SKU ze złożonymi regułami cenowymi i regionalnymi ograniczeniami dostępności."
+        },
+        {
+          "type": "screenshots",
+          "gridColumnsNumber": 3,
+          "images": [
+            "/images/projects/alpha/screen-1.jpg",
+            "/images/projects/alpha/screen-2.jpg",
+            "/images/projects/alpha/screen-3.jpg"
+          ]
+        },
+        {
+          "type": "video",
+          "desktopScreenshot": "/images/projects/alpha/full-desktop.jpg",
+          "mobileScreenshot": "/images/projects/alpha/full-mobile.jpg"
+        },
+        {
+          "type": "team",
+          "title": "Zespół Projektowy",
+          "cards": [
+            {
+              "title": "Lead Developer",
+              "content": "Zaprojektował architekturę frontendu Next.js, wdrożył renderowanie po stronie serwera dla katalogu produktów i zbudował warstwę integracji z systemem inwentaryzacji w czasie rzeczywistym."
+            },
+            {
+              "title": "Product Designer",
+              "content": "Prowadził badania użytkowników na trzech rynkach, zaprojektował nowy flow zamawiania i stworzył bibliotekę komponentów w Figmie, która teraz służy jako ich wewnętrzny system designu."
+            },
+            {
+              "title": "Project Lead",
+              "content": "Zarządzał spójnością interesariuszy z czterech działów, facylitował planowanie sprintów i zapewniał zgodność kamieni milowych z terminami compliance klienta."
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "titleLine": ["Opinia Klienta"],
+          "quotes": [
+            {
+              "quote": "Nie dostarczyli nam po prostu strony — pomogli nam przemyśleć sposób komunikacji z klientami. Nowa platforma zwiększyła nasz współczynnik konwersji o 34% w pierwszym kwartale po uruchomieniu.",
+              "name": "Katarzyna Wiśniewska",
+              "title": "Szefowa Działu Cyfrowego, Europharma Group",
+              "avatar": "/images/avatars/avatar-1.jpg"
+            }
+          ]
+        },
+        {
+          "type": "techstack",
+          "title": "Stack Technologiczny",
+          "tags": ["Next.js", "React", "TypeScript", "PostgreSQL", "Redis", "Tailwind CSS", "Figma", "Vercel"]
+        }
+      ]
+    },
+    {
+      "uuid": "2",
+      "slug": "finbridge-dashboard",
+      "name": "Dashboard FinBridge",
+      "description": "Dashboard analityczny w czasie rzeczywistym zbudowany dla FinBridge Technologies. Platforma przetwarza i wizualizuje miliony punktów danych dziennie, dając zarządzającym portfelami natychmiastowy wgląd w ruchy rynkowe, ekspozycję na ryzyko i wyniki portfela. Zaprojektowaliśmy i zbudowaliśmy cały frontend — od warstwy wizualizacji danych po system powiadomień.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/finbridge-dashboard",
+      "sections": [
+        {
+          "type": "main",
+          "cats": { "Client": "FinBridge Technologies", "Region": "UE", "Year": "2023", "Industry": "Fintech" },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "simple",
+          "titleLine": ["Przegląd"],
+          "text": "FinBridge potrzebował dashboardu zdolnego obsłużyć aktualizacje danych o wysokiej częstotliwości bez poświęcania użyteczności. Ich dotychczasowe rozwiązanie to mieszanka arkuszy kalkulacyjnych i narzędzi firm trzecich, która nie dawała się skalować. Zbudowaliśmy niestandardowy frontend z aktualizacjami w czasie rzeczywistym przez WebSocket, interaktywnymi wykresami z funkcją drill-down i elastycznym systemem layoutu umożliwiającym każdemu użytkownikowi konfigurację swojego workspace'u. Platforma obsługuje teraz ponad 200 zarządzających portfelami w trzech strefach czasowych."
+        },
+        {
+          "type": "techstack",
+          "title": "Stack Technologiczny",
+          "tags": ["React", "TypeScript", "D3.js", "WebSocket", "Node.js", "AWS", "Tailwind CSS"]
+        }
+      ]
+    },
+    {
+      "uuid": "3",
+      "slug": "verde-ecommerce",
+      "name": "Verde E-Commerce",
+      "description": "Wydajna platforma e-commerce dla Verde, marki zrównoważonej mody ekspandującej na rynki europejskie. Zbudowana na Next.js z headless CMS, strona zapewnia ładowanie stron poniżej sekundy, obsługuje szczyty ruchu podczas kampanii sezonowych i wspiera wielojęzyczne, wielowalutowe procesy checkout.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/verde-ecommerce",
+      "sections": [
+        {
+          "type": "main",
+          "cats": {
+            "Client": "Verde Fashion",
+            "Region": "Europa Zachodnia",
+            "Year": "2024",
+            "Industry": "E-Commerce i Retail"
+          },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "simple",
+          "titleLine": ["Historia"],
+          "text": "Verde przyszło do nas ze sklepem Shopify, który nie wytrzymywał wzrostu. Ich kampanie sezonowe regularnie powodowały skoki ruchu zawieszające stronę, strony produktów ładowały się ponad 4 sekundy na mobile, a process checkout miał 72% wskaźnik porzuceń. Przebudowaliśmy wszystko na architekturze headless: Next.js na frontendzie ze statycznym generowaniem stron produktów, zoptymalizowany pod mobile custom checkout i warstwa integracji łącząca Stripe, system zarządzania magazynem i nowy CMS dla treści redakcyjnych. Metryki po uruchomieniu: 0.8s średni czas ładowania strony, 28% redukcja porzuceń koszyka i zero przestojów podczas ich dotychczas największej kampanii."
+        },
+        {
+          "type": "techstack",
+          "title": "Stack Technologiczny",
+          "tags": ["Next.js", "React", "TypeScript", "Stripe", "Sanity CMS", "Vercel", "Tailwind CSS", "Node.js"]
+        }
+      ]
+    }
+  ]
+}

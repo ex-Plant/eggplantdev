@@ -1,0 +1,36 @@
+{
+  "accessibility": {
+    "skipToContent": "Skip to content",
+    "decreaseFontSize": "Decrease font size",
+    "increaseFontSize": "Increase font size",
+    "toggleLanguage": "Toggle language",
+    "toggleTheme": "Toggle theme"
+  },
+  "common": {
+    "submit": "SUBMIT",
+    "sending": "SENDING..."
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "projectDetails": "Details of your project",
+    "quickContactPrompt": "Leave us your email and we will get back to you shortly",
+    "thankYou": "Thank you for your message! ",
+    "willGetBack": "I will get back to you shortly",
+    "confirmTitle": "Form submission confirmation",
+    "clickToClose": "click anywhere to close"
+  },
+  "nav": {
+    "homeNavigation": "home navigation",
+    "logo": "Logo",
+    "projects": "Projects",
+    "returnHome": "Return Home",
+    "pageNotFound": "Page Not Found"
+  },
+  "footer": {
+    "sloganLine1": "Let's build",
+    "sloganLine2": "something",
+    "sloganLine3": "together",
+    "getInTouch": "get in touch"
+  }
+}
