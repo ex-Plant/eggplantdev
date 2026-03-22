@@ -191,7 +191,7 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
 
   // Render spans once — all animation updates happen via direct DOM mutation
   return (
-    <span ref={containerRef} className={cn("wrap-break-words block whitespace-pre-wrap", className)}>
+    <span key={text} ref={containerRef} className={cn("wrap-break-words block whitespace-pre-wrap", className)}>
       {text.split("").map((_, i) => (
         <span key={i} className="opacity-70" />
       ))}
