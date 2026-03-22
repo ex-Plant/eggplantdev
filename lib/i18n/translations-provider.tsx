@@ -3,7 +3,6 @@
 import { createContext, useCallback, useContext, useMemo, useState } from "react";
 import type { LocaleT, TranslationsT } from "./types";
 import { getTranslations } from "./translations";
-import { i18n } from "./i18n";
 
 type I18nContextT = {
   locale: LocaleT;
@@ -13,22 +12,16 @@ type I18nContextT = {
 
 const I18nContext = createContext<I18nContextT | null>(null);
 
-const DEFAULT_LOCALE = i18n.defaultLocale as LocaleT;
+type TranslationsProviderPropsT = {
+  initialLocale: LocaleT;
+  children: React.ReactNode;
+};
 
-function getLocaleFromDOM(): LocaleT {
-  if (typeof document === "undefined") return DEFAULT_LOCALE;
-  const attr = document.documentElement.getAttribute("data-locale");
-  if (attr === "en" || attr === "pl") return attr;
-  return DEFAULT_LOCALE;
-}
-
-export function TranslationsProvider({ children }: { children: React.ReactNode }) {
-  const [locale] = useState<LocaleT>(getLocaleFromDOM);
+export function TranslationsProvider({ initialLocale, children }: TranslationsProviderPropsT) {
+  const [locale] = useState<LocaleT>(initialLocale);
 
   const setLocale = useCallback((newLocale: LocaleT) => {
-    try {
-      localStorage.setItem("locale", newLocale);
-    } catch {}
+    document.cookie = `locale=${newLocale};path=/;max-age=${60 * 60 * 24 * 365}`;
     window.location.reload();
   }, []);
 
