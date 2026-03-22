@@ -26,11 +26,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var t='dark';try{var s=JSON.parse(localStorage.getItem('theme-storage'));if(s&&s.state&&(s.state.theme==='dark'||s.state.theme==='contrast'))t=s.state.theme}catch(e){}document.documentElement.setAttribute('data-theme',t)})()`,
+            __html: `(function(){var t='dark';try{var s=JSON.parse(localStorage.getItem('theme-storage'));if(s&&s.state&&(s.state.theme==='dark'||s.state.theme==='contrast'))t=s.state.theme}catch(e){}document.documentElement.setAttribute('data-theme',t);var l='pl';try{var v=localStorage.getItem('locale');if(v==='en'||v==='pl')l=v}catch(e){}document.documentElement.setAttribute('data-locale',l)})()`,
           }}
         />
       </head>
-      <body className="overscroll-none scroll-smooth antialiased">
+      <body className="overscroll-none scroll-smooth antialiased" suppressHydrationWarning>
         <TranslationsProvider>
           <DebugWrapper>
             <SkipToContent />

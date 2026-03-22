@@ -13,17 +13,17 @@ type I18nContextT = {
 
 const I18nContext = createContext<I18nContextT | null>(null);
 
-function getInitialLocale(): LocaleT {
-  if (typeof window === "undefined") return i18n.defaultLocale as LocaleT;
-  try {
-    const stored = localStorage.getItem("locale");
-    if (stored === "en" || stored === "pl") return stored;
-  } catch {}
-  return i18n.defaultLocale as LocaleT;
+const DEFAULT_LOCALE = i18n.defaultLocale as LocaleT;
+
+function getLocaleFromDOM(): LocaleT {
+  if (typeof document === "undefined") return DEFAULT_LOCALE;
+  const attr = document.documentElement.getAttribute("data-locale");
+  if (attr === "en" || attr === "pl") return attr;
+  return DEFAULT_LOCALE;
 }
 
 export function TranslationsProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<LocaleT>(getInitialLocale);
+  const [locale] = useState<LocaleT>(getLocaleFromDOM);
 
   const setLocale = useCallback((newLocale: LocaleT) => {
     try {
