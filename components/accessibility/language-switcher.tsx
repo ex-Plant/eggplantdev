@@ -1,21 +1,22 @@
 "use client";
 
-import Link from "next/link";
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
 import { useI18nContext } from "@/lib/i18n/translations-provider";
 
 export function LanguageSwitcher() {
   const { t, locale } = useTranslation("accessibility");
-  const { alternateSlug } = useI18nContext();
+  const { setLocale } = useI18nContext();
 
-  const targetLocale = locale === "pl" ? "en" : "pl";
-  const isHome = alternateSlug === "home" || !alternateSlug;
-  const path = targetLocale === "pl" ? `/${alternateSlug}` : `/en/${alternateSlug}`;
-  const href = alternateSlug ? (isHome ? (targetLocale === "pl" ? "/" : "/en") : path) : "#";
+  const toggle = () => setLocale(locale === "pl" ? "en" : "pl");
 
   return (
-    <Link href={href} aria-label={t("toggleLanguage")} className="text-14 text-lightgray">
+    <button
+      type="button"
+      onClick={toggle}
+      aria-label={t("toggleLanguage")}
+      className="text-14 text-lightgray"
+    >
       {locale === "pl" ? "EN" : "PL"}
-    </Link>
+    </button>
   );
 }
