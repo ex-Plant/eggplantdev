@@ -167,7 +167,7 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
         scrambleIn();
       } else {
         // Wire up GSAP ScrollTrigger — fires scrambleIn/Out as element enters/leaves viewport
-        ScrollTrigger.create({
+        const st = ScrollTrigger.create({
           trigger: container,
           start: "center bottom-=10%", // fires when element center is 10% above viewport bottom
           end: "center top+=8%", // fires when element center is 10% below viewport top
@@ -179,7 +179,11 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
         });
 
         // Recalculate trigger positions after layout settles
-        setTimeout(() => ScrollTrigger.refresh(), 100);
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+          // If element is already in viewport (e.g. after language switch), fire scrambleIn
+          if (st.isActive) scrambleIn();
+        }, 100);
       }
 
       return () => {
