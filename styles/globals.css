@@ -344,7 +344,7 @@ textarea:-webkit-autofill {
 [data-theme="contrast"] input::placeholder,
 [data-theme="contrast"] textarea::placeholder {
   color: var(--contrast-fg);
-  opacity: 0.6;
+  opacity: 1;
 }
 
 [data-theme="contrast"] input:-webkit-autofill,
@@ -366,3 +366,22 @@ textarea:-webkit-autofill {
   background-image: linear-gradient(var(--contrast-fg), var(--contrast-fg));
   -webkit-text-fill-color: rgba(255, 236, 53, 0.2) !important;
 }
+
+/* Get in touch button in contrast mode */
+[data-theme="contrast"] [data-slot="get-in-touch"] {
+  background: var(--contrast-bg) !important;
+  color: var(--contrast-fg) !important;
+  border: 1px solid var(--contrast-fg);
+}
+
+/* Menu dropdown in contrast mode */
+[data-theme="contrast"] [data-slot="nav-dropdown"] {
+  background: var(--contrast-bg) !important;
+  border-color: var(--contrast-fg) !important;
+}
+
+/* Menu button SVG stroke in contrast mode */
+[data-theme="contrast"] [data-slot="nav-dropdown"] button {
+  color: var(--contrast-fg);
+}
+

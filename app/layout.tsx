@@ -4,7 +4,7 @@ import React, { ReactNode } from "react";
 
 import { poly, theinhardt, geistMono, jetbrainsMono, ibmPlexMono, spaceMono, firaCode } from "@/public/fonts/fonts";
 
-import { EggplantLogo } from "@/components/top-navigation/eggplant-logo";
+import { TopNavigation } from "@/components/top-navigation/top-navigation";
 import { DebugWrapper } from "@/components/debug-tools/debug-wrapper";
 import { GradientMask } from "@/components/general/gradient-mask/gradient-mask";
 import { TranslationsProvider } from "@/lib/i18n/translations-provider";
@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="grit pointer-events-none fixed inset-0 z-200" />
             <GradientMask top={true} />
             <GradientMask top={true} />
-            <EggplantLogo />
+            <TopNavigation />
             <main id="main-content">{children}</main>
             <GradientMask />
             <GradientMask />

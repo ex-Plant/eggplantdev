@@ -18,7 +18,6 @@ export function FontSizeControl() {
       >
         A-
       </button>
-      <span>|</span>
       <button
         type="button"
         onClick={increment}

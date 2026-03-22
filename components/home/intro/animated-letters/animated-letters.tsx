@@ -55,7 +55,7 @@ export const AnimatedLetters = ({ text = "" }) => {
     >
       <div
         id="target"
-        className="wrap-break-words text-24 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono uppercase"
+        className="wrap-break-words text-28 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono uppercase"
       >
         {text}
       </div>

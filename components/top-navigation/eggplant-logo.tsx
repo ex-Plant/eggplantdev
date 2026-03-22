@@ -7,8 +7,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { usePrefersReducedMotion } from "@/hooks/use-media-query";
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
-
-const BLEND_MODES = ["mix-blend-normal", "mix-blend-difference"] as const;
+import { cn } from "@/helpers/cn";
 
 const SOURCES = [
   { src: "/logos/eggplant-logo.png", label: "png (rembg)" }, // not transparent
@@ -20,9 +19,8 @@ const SOURCES = [
 
 // Change this index to swap the logo source
 const ACTIVE_SOURCE = 2;
-const ACTIVE_BLEND_MODE = 0;
 
-export function EggplantLogo() {
+export function EggplantLogo({ className }: { className?: string }) {
   const logoRef = useRef<HTMLImageElement>(null);
   const prefersReducedMotion = usePrefersReducedMotion();
   const { t } = useTranslation("nav");
@@ -31,7 +29,7 @@ export function EggplantLogo() {
     if (!logoRef.current || prefersReducedMotion) return;
 
     gsap.to(logoRef.current, {
-      y: -20,
+      y: -16,
       duration: 1.8,
       ease: "sine.inOut",
       yoyo: true,
@@ -40,24 +38,17 @@ export function EggplantLogo() {
   }, [prefersReducedMotion]);
 
   return (
-    <nav
-      aria-label={t("homeNavigation")}
-      className={`pointer-events-none fixed top-0 right-0 left-0 z-99999 ${BLEND_MODES[ACTIVE_BLEND_MODE]}`}
-    >
-      <div className="fest-container pointer-events-auto flex w-full justify-end py-8">
-        <Link href="/" className="flex min-h-11 min-w-11 items-center justify-center">
-          <Image
-            ref={logoRef}
-            src={SOURCES[ACTIVE_SOURCE].src}
-            alt={t("logo")}
-            width={80}
-            height={80}
-            sizes="(min-width: 1024px) 80px, (min-width: 640px) 60px, 40px"
-            className="size-10 sm:size-15 lg:size-20"
-            unoptimized
-          />
-        </Link>
-      </div>
-    </nav>
+    <Link href="/" className={cn("flex min-h-11 min-w-11 items-center justify-center", className)}>
+      <Image
+        ref={logoRef}
+        src={SOURCES[ACTIVE_SOURCE].src}
+        alt={t("logo")}
+        width={80}
+        height={80}
+        sizes="(min-width: 1024px) 80px, (min-width: 640px) 60px, 40px"
+        className="size-10 sm:size-15 lg:size-20"
+        unoptimized
+      />
+    </Link>
   );
 }

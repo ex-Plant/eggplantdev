@@ -50,7 +50,7 @@ export const GetInTouchButton = () => {
       <div
         className={`1280:flex 1280:pointer-events-auto z-120 mb-[120px] ml-auto hidden w-fit max-w-[940px] min-w-[270px] cursor-pointer`}
       >
-        <div className={`w-full rounded-[10px] bg-white px-4 py-1 text-black lg:px-6 lg:py-4`}>
+        <div data-slot="get-in-touch" className={`w-full rounded-[10px] bg-white px-4 py-1 text-black lg:px-6 lg:py-4`}>
           <button
             aria-expanded={open ? "true" : "false"}
             onClick={toggleModal}

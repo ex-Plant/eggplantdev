@@ -32,7 +32,6 @@ export const Intro = ({ backgroundDesktop, backgroundMobile, txt }: IntroPropsT)
           start: "bottom bottom",
           end: "bottom center",
           scrub: 1,
-          // once: true,
         },
       });
     },

@@ -10,11 +10,11 @@ export const Footer = () => {
   const sloganLines = [t("sloganLine1"), t("sloganLine2"), t("sloganLine3")];
 
   return (
-    <footer className="relative z-100 mt-auto flex w-full bg-white pb-20 lg:pb-40">
+    <footer className="relative z-100 mt-auto flex w-full bg-white pb-10 text-black lg:pb-40">
       <div className="fest-container">
         <div className="flex flex-col">
           <header className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-20 xl:gap-40">
-            <h2 className="lg:text-80 text-48 md:text-64 xl:text-96 py-20 font-mono text-black uppercase lg:py-40">
+            <h2 className="lg:text-80 text-48 md:text-64 xl:text-96 py-20 font-mono uppercase lg:py-40">
               {sloganLines.map((line, index) => (
                 <ScrambleText key={index} text={line} />
               ))}
@@ -22,7 +22,6 @@ export const Footer = () => {
             <FooterForm className={`lg:self-center lg:py-40`} />
           </header>
         </div>
-        <AccessibilityMenu className="pt-6" />
       </div>
     </footer>
   );
