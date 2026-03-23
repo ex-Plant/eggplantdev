@@ -35,30 +35,33 @@ export function TopNavigation() {
         <div className="fest-container flex w-full items-start justify-end">
           <div ref={menuRef} className="pointer-events-auto relative flex flex-col items-center">
             <MenuButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  data-slot="nav-dropdown"
-                  className="bg-bgc w-fit rounded-md mix-blend-normal"
-                >
-                  <SnakeBorder
-                    isVisible={isOpen}
-                    borderRadius={6}
-                    strokeWidth={2.5}
-                    duration={1}
-                    className="rounded-md text-white"
-                  >
-                    <div className="p-4">
-                      <AccessibilityMenu className="flex-col items-start" />
-                    </div>
-                  </SnakeBorder>
-                </motion.div>
-              )}
-            </AnimatePresence>
+
+            <SnakeBorder
+              isVisible={isOpen}
+              borderRadius={6}
+              strokeWidth={2.5}
+              duration={1}
+              delay={0.6}
+              eraseColor="var(--color-bgc)"
+              className="rounded-md text-white"
+            >
+              <motion.div
+                initial={false}
+                animate={{
+                  opacity: isOpen ? 1 : 0,
+                  y: isOpen ? 0 : -10,
+                }}
+                transition={{
+                  opacity: isOpen ? { duration: 0.4, ease: "easeOut", delay: 0.7 } : { duration: 0.4, delay: 0.7 },
+                  y: isOpen ? { duration: 0.4, ease: "easeOut", delay: 0.7 } : { duration: 0.4, delay: 0.7 },
+                }}
+                data-slot="nav-dropdown"
+                className="bg-bgc w-fit rounded-md mix-blend-normal"
+                style={{ pointerEvents: isOpen ? "auto" : "none" }}
+              >
+                <AccessibilityMenu className="flex-col items-start p-4" />
+              </motion.div>
+            </SnakeBorder>
           </div>
         </div>
       </div>
