@@ -49,7 +49,7 @@ export const AnimatedLetters = ({ text = "" }) => {
   return (
     <div
       ref={lettersRef}
-      className={`no-scrollbar z-2 flex flex-col overflow-x-hidden overflow-y-scroll pt-20 pr-12 pb-40 sm:w-[calc(340/360*100vw)] md:w-[calc(590/768*100vw)] md:pt-[120px] md:pr-0 lg:w-[calc(740/1024*100vw)] lg:max-w-[940px]`}
+      className={`no-scrollbar z-2 flex flex-col overflow-x-hidden overflow-y-scroll pt-20 pr-12 pb-60 sm:w-[calc(340/360*100vw)] md:w-[calc(590/768*100vw)] md:pt-[120px] md:pr-0 lg:w-[calc(740/1024*100vw)] lg:max-w-[940px]`}
     >
       <div
         id="target"

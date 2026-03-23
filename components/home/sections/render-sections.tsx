@@ -10,7 +10,7 @@ export function RenderSections({ data }: SectionPropsT) {
     switch (data.type) {
       case "simple":
         return (
-          <SimpleSection titleLine={data.titleLine} text={data.text} className={"fest-container py-20 md:py-40"} />
+          <SimpleSection titleLine={data.titleLine} text={data.text} className={"fest-container py-20 md:py-60"} />
         );
       case "projects":
         return <ProjectsSection data={data} className={"fest-container py-20 md:py-40"} />;

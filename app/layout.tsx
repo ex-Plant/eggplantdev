@@ -11,6 +11,7 @@ import { GradientMask } from "@/components/general/gradient-mask/gradient-mask";
 import { TranslationsProvider } from "@/lib/i18n/translations-provider";
 import { SkipToContent } from "@/components/accessibility/skip-to-content";
 import { Footer } from "../components/footer/Footer";
+import { SmoothScroll } from "@/components/general/smooth-scroll";
 import type { LocaleT } from "@/lib/i18n/types";
 
 export const metadata: Metadata = {
@@ -34,15 +35,17 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <body className="overscroll-none scroll-smooth antialiased">
         <TranslationsProvider initialLocale={locale}>
           <DebugWrapper>
-            <SkipToContent />
-            {/* Fixed grit overlay — stays in place while content scrolls */}
-            <div className="grit pointer-events-none fixed inset-0 z-200" />
+            <SmoothScroll>
+              <SkipToContent />
+              {/* Fixed grit overlay — stays in place while content scrolls */}
+              <div className="grit pointer-events-none fixed inset-0 z-200" />
 
-            <TopNavigation />
-            <main id="main-content">{children}</main>
-            <GradientMask />
-            <GradientMask />
-            <Footer />
+              <TopNavigation />
+              <main id="main-content">{children}</main>
+              <GradientMask />
+              <GradientMask />
+              <Footer />
+            </SmoothScroll>
           </DebugWrapper>
         </TranslationsProvider>
       </body>
