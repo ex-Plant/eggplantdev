@@ -22,19 +22,15 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const cookieStore = await cookies();
   const localeCookie = cookieStore.get("locale")?.value;
   const locale: LocaleT = localeCookie === "en" || localeCookie === "pl" ? localeCookie : "pl";
+  const themeCookie = cookieStore.get("theme")?.value;
+  const theme = themeCookie === "dark" || themeCookie === "contrast" ? themeCookie : "dark";
   return (
     <html
       lang={locale}
+      data-theme={theme}
       suppressHydrationWarning
       className={`${poly.variable} ${theinhardt.variable} ${shareTechMono.variable} ${poly.className} ${theinhardt.className}`}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var t='dark';try{var s=JSON.parse(localStorage.getItem('theme-storage'));if(s&&s.state&&(s.state.theme==='dark'||s.state.theme==='contrast'))t=s.state.theme}catch(e){}document.documentElement.setAttribute('data-theme',t)})()`,
-          }}
-        />
-      </head>
       <body className="overscroll-none scroll-smooth antialiased">
         <TranslationsProvider initialLocale={locale}>
           <DebugWrapper>
@@ -44,8 +40,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
 
             <TopNavigation />
             <main id="main-content">{children}</main>
-            <GradientMask className="grit" />
-            <GradientMask className="grit" />
+            <GradientMask />
+            <GradientMask />
             <Footer />
           </DebugWrapper>
         </TranslationsProvider>
