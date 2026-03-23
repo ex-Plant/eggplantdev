@@ -13,6 +13,7 @@ export type ProjectsSectionT = {
   type: "projects";
   titleLine: string[];
   text?: string;
+  filterCategory?: string;
 };
 
 export type FullSectionT = {

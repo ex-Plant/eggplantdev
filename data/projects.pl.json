@@ -1,24 +1,26 @@
 {
   "slogan": "Wybrane Realizacje",
-  "introText": "Starannie dobrany wybór projektów reprezentujących zakres i głębię naszej pracy. Każde studium przypadku odzwierciedla unikalny zestaw wyzwań, ograniczeń i celów — oraz przemyślane rozwiązania, które opracowaliśmy wspólnie z naszymi partnerami.",
+  "introText": "Projekty, w których brałem udział — e-commerce, SaaS, platformy kulturalne i narzędzia biznesowe — zarówno w zespołach agencyjnych, jak i jako freelancer.",
   "backgroundDesktop": "/images/projects/hero-desktop.jpg",
   "backgroundMobile": "/images/projects/hero-mobile.jpg",
   "projects": [
     {
       "uuid": "1",
-      "slug": "europharma-platform",
-      "name": "Platforma Europharma",
-      "description": "Kompletna transformacja cyfrowa jednego z największych dystrybutorów farmaceutycznych w Europie Środkowej. Przeprojektowaliśmy portal kliencki od podstaw — przemyśleliśmy architekturę informacji, zmodernizowaliśmy język wizualny i przebudowaliśmy frontend na wydajnym stacku Next.js. Efekt: 34% wzrost konwersji i 60% redukcja zgłoszeń do supportu związanych z zarządzaniem zamówieniami.",
+      "slug": "fest-forum",
+      "name": "Fest Forum",
+      "category": "commercial",
+      "url": "https://www.festforum.pl",
+      "description": "Cyfrowa platforma współpracy dla polskiej branży festiwalowej, stworzona dla Krakowskiego Biura Festiwalowego i Narodowego Centrum Kultury. Platforma służy jako centrum wiedzy, gdzie organizatorzy festiwali dzielą się najlepszymi praktykami, mają dostęp do raportów o prawach autorskich, zrównoważonym rozwoju i crowdfundingu oraz mogą zdalnie uczestniczyć w wydarzeniach. Wdrażam w pełni zgodne z WCAG widoki, złożony edytor artykułów z bogatą edycją treści i pracuję nad integracją niestandardowego backendu. Projekt jest w toku.",
       "logo": "/images/projects/alpha-logo.png",
-      "tempSlug": "/projects/europharma-platform",
+      "tempSlug": "/projects/fest-forum",
       "sections": [
         {
           "type": "main",
           "cats": {
-            "Client": "Europharma Group",
-            "Region": "Europa Środkowa",
-            "Year": "2024",
-            "Industry": "Zdrowie i Farmacja"
+            "Client": "Krakowskie Biuro Festiwalowe",
+            "Region": "Polska",
+            "Year": "2026–obecnie",
+            "Industry": "Kultura i Eventy"
           },
           "slides": [
             {
@@ -29,107 +31,29 @@
           ]
         },
         {
-          "type": "simple",
-          "titleLine": ["Wyzwanie"],
-          "text": "Istniejący portal Europharma był zbudowany na starszym CMS-ie, który nie nadążał za wymaganiami nowoczesnej dystrybucji farmaceutycznej. Farmaceuci i zespoły zakupowe szpitali borykali się z nieporęcznym procesem zamawiania, nieaktualnym katalogiem produktów i wyszukiwarką zwracającą nieistotne wyniki. Wersja mobilna była praktycznie niesprawna — a ruch mobilny wzrósł do 40% wszystkich wizyt. Nasz brief był jasny: przebudować platformę tak, aby była szybka, intuicyjna i zdolna obsłużyć katalog ponad 15 000 SKU ze złożonymi regułami cenowymi i regionalnymi ograniczeniami dostępności."
-        },
-        {
-          "type": "screenshots",
-          "gridColumnsNumber": 3,
-          "images": [
-            "/images/projects/alpha/screen-1.jpg",
-            "/images/projects/alpha/screen-2.jpg",
-            "/images/projects/alpha/screen-3.jpg"
-          ]
-        },
-        {
-          "type": "video",
-          "desktopScreenshot": "/images/projects/alpha/full-desktop.jpg",
-          "mobileScreenshot": "/images/projects/alpha/full-mobile.jpg"
-        },
-        {
-          "type": "team",
-          "title": "Zespół Projektowy",
-          "cards": [
-            {
-              "title": "Lead Developer",
-              "content": "Zaprojektował architekturę frontendu Next.js, wdrożył renderowanie po stronie serwera dla katalogu produktów i zbudował warstwę integracji z systemem inwentaryzacji w czasie rzeczywistym."
-            },
-            {
-              "title": "Product Designer",
-              "content": "Prowadził badania użytkowników na trzech rynkach, zaprojektował nowy flow zamawiania i stworzył bibliotekę komponentów w Figmie, która teraz służy jako ich wewnętrzny system designu."
-            },
-            {
-              "title": "Project Lead",
-              "content": "Zarządzał spójnością interesariuszy z czterech działów, facylitował planowanie sprintów i zapewniał zgodność kamieni milowych z terminami compliance klienta."
-            }
-          ]
-        },
-        {
-          "type": "quote",
-          "titleLine": ["Opinia Klienta"],
-          "quotes": [
-            {
-              "quote": "Nie dostarczyli nam po prostu strony — pomogli nam przemyśleć sposób komunikacji z klientami. Nowa platforma zwiększyła nasz współczynnik konwersji o 34% w pierwszym kwartale po uruchomieniu.",
-              "name": "Katarzyna Wiśniewska",
-              "title": "Szefowa Działu Cyfrowego, Europharma Group",
-              "avatar": "/images/avatars/avatar-1.jpg"
-            }
-          ]
-        },
-        {
           "type": "techstack",
           "title": "Stack Technologiczny",
-          "tags": ["Next.js", "React", "TypeScript", "PostgreSQL", "Redis", "Tailwind CSS", "Figma", "Vercel"]
+          "tags": ["Next.js", "React", "TypeScript", "Tailwind CSS", "WCAG", "i18n"]
         }
       ]
     },
     {
       "uuid": "2",
-      "slug": "finbridge-dashboard",
-      "name": "Dashboard FinBridge",
-      "description": "Dashboard analityczny w czasie rzeczywistym zbudowany dla FinBridge Technologies. Platforma przetwarza i wizualizuje miliony punktów danych dziennie, dając zarządzającym portfelami natychmiastowy wgląd w ruchy rynkowe, ekspozycję na ryzyko i wyniki portfela. Zaprojektowaliśmy i zbudowaliśmy cały frontend — od warstwy wizualizacji danych po system powiadomień.",
+      "slug": "buildlog",
+      "name": "BUILD/LOG",
+      "category": "commercial",
+      "url": "https://buildlog.app",
+      "description": "SaaS do zarządzania projektami budowlanymi, który śledzi pełny cykl życia inwestycji — od wykopu po odbiór końcowy. Jako część zespołu zintegrowałem niestandardowy backend PHP z frontendem React i React Query, budując złożone przepływy danych dla harmonogramów projektów, formularzy, filtrowalnych tabel i szczegółowych widoków na przestrzeni wielu faz projektu.",
       "logo": "/images/projects/alpha-logo.png",
-      "tempSlug": "/projects/finbridge-dashboard",
-      "sections": [
-        {
-          "type": "main",
-          "cats": { "Client": "FinBridge Technologies", "Region": "UE", "Year": "2023", "Industry": "Fintech" },
-          "slides": [
-            {
-              "mainFoto": "/images/projects/alpha/slide-1.jpg",
-              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
-              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
-            }
-          ]
-        },
-        {
-          "type": "simple",
-          "titleLine": ["Przegląd"],
-          "text": "FinBridge potrzebował dashboardu zdolnego obsłużyć aktualizacje danych o wysokiej częstotliwości bez poświęcania użyteczności. Ich dotychczasowe rozwiązanie to mieszanka arkuszy kalkulacyjnych i narzędzi firm trzecich, która nie dawała się skalować. Zbudowaliśmy niestandardowy frontend z aktualizacjami w czasie rzeczywistym przez WebSocket, interaktywnymi wykresami z funkcją drill-down i elastycznym systemem layoutu umożliwiającym każdemu użytkownikowi konfigurację swojego workspace'u. Platforma obsługuje teraz ponad 200 zarządzających portfelami w trzech strefach czasowych."
-        },
-        {
-          "type": "techstack",
-          "title": "Stack Technologiczny",
-          "tags": ["React", "TypeScript", "D3.js", "WebSocket", "Node.js", "AWS", "Tailwind CSS"]
-        }
-      ]
-    },
-    {
-      "uuid": "3",
-      "slug": "verde-ecommerce",
-      "name": "Verde E-Commerce",
-      "description": "Wydajna platforma e-commerce dla Verde, marki zrównoważonej mody ekspandującej na rynki europejskie. Zbudowana na Next.js z headless CMS, strona zapewnia ładowanie stron poniżej sekundy, obsługuje szczyty ruchu podczas kampanii sezonowych i wspiera wielojęzyczne, wielowalutowe procesy checkout.",
-      "logo": "/images/projects/alpha-logo.png",
-      "tempSlug": "/projects/verde-ecommerce",
+      "tempSlug": "/projects/buildlog",
       "sections": [
         {
           "type": "main",
           "cats": {
-            "Client": "Verde Fashion",
-            "Region": "Europa Zachodnia",
-            "Year": "2024",
-            "Industry": "E-Commerce i Retail"
+            "Client": "BUILD/LOG",
+            "Region": "Polska",
+            "Year": "2025",
+            "Industry": "Budownictwo i SaaS"
           },
           "slides": [
             {
@@ -140,14 +64,273 @@
           ]
         },
         {
-          "type": "simple",
-          "titleLine": ["Historia"],
-          "text": "Verde przyszło do nas ze sklepem Shopify, który nie wytrzymywał wzrostu. Ich kampanie sezonowe regularnie powodowały skoki ruchu zawieszające stronę, strony produktów ładowały się ponad 4 sekundy na mobile, a process checkout miał 72% wskaźnik porzuceń. Przebudowaliśmy wszystko na architekturze headless: Next.js na frontendzie ze statycznym generowaniem stron produktów, zoptymalizowany pod mobile custom checkout i warstwa integracji łącząca Stripe, system zarządzania magazynem i nowy CMS dla treści redakcyjnych. Metryki po uruchomieniu: 0.8s średni czas ładowania strony, 28% redukcja porzuceń koszyka i zero przestojów podczas ich dotychczas największej kampanii."
+          "type": "techstack",
+          "title": "Stack Technologiczny",
+          "tags": ["React", "React Query", "TypeScript", "PHP", "Tailwind CSS"]
+        }
+      ]
+    },
+    {
+      "uuid": "3",
+      "slug": "the-makery",
+      "name": "The Makery",
+      "category": "commercial",
+      "url": "https://themakery.de",
+      "description": "Wielojęzyczny panel administracyjny i marketplace dla platformy warsztatów rzemieślniczych z setkami istniejących użytkowników. Byłem odpowiedzialny za przejście ze starego, wolnego interfejsu administracyjnego na nowoczesny stack technologiczny w Next.js — przebudowując widoki zarządzania danymi, flow użytkowników i podstawową funkcjonalność marketplace'u, jednocześnie utrzymując platformę operacyjną dla istniejących użytkowników przez cały okres migracji.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/the-makery",
+      "sections": [
+        {
+          "type": "main",
+          "cats": {
+            "Client": "The Makery",
+            "Region": "Europa",
+            "Year": "2024–2025",
+            "Industry": "Marketplace"
+          },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
         },
         {
           "type": "techstack",
           "title": "Stack Technologiczny",
-          "tags": ["Next.js", "React", "TypeScript", "Stripe", "Sanity CMS", "Vercel", "Tailwind CSS", "Node.js"]
+          "tags": ["Next.js", "React", "TypeScript", "i18n"]
+        }
+      ]
+    },
+    {
+      "uuid": "4",
+      "slug": "bht-startup-hub",
+      "name": "BHT Startup Hub",
+      "category": "commercial",
+      "url": "https://bht-startup-hub.de",
+      "description": "Strona internetowa inkubatora startupów Berlińskiego Uniwersytetu Technologicznego — lekkiego akceleratora, który wsparł ponad 300 założycieli poprzez coaching, coworking i bezzwrotne stypendia. Zbudowałem niestandardowy frontend zintegrowany z backendem WordPress, dostarczając strony dla programów (Berlin Startup Stipendium, granty EXIST), kalendarze wydarzeń, aktualności i prezentacje partnerów.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/bht-startup-hub",
+      "sections": [
+        {
+          "type": "main",
+          "cats": {
+            "Client": "BHT Berlin",
+            "Region": "Niemcy",
+            "Year": "2023",
+            "Industry": "Edukacja i Startupy"
+          },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "techstack",
+          "title": "Stack Technologiczny",
+          "tags": ["React", "TypeScript", "WordPress", "REST API"]
+        }
+      ]
+    },
+    {
+      "uuid": "10",
+      "slug": "navarra-lab",
+      "name": "Navarra Lab",
+      "category": "commercial",
+      "url": "https://navarra-lab.com/projects",
+      "description": "Strona portfolio firmy Navarra Lab — studia projektowego i software house'u, w którym pracuję. Prezentuje projekty dla klientów takich jak DMEXCO (laureat nagrody Red Dot), Zalando Connected Retail, The Makery i innych. Ta strona jest również fundamentem, na którym zbudowane jest moje osobiste portfolio — ewolucja v2 tego samego codebase'u z niestandardowymi animacjami, płynnym scrollem i dwujęzycznym systemem treści.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/navarra-lab",
+      "sections": [
+        {
+          "type": "main",
+          "cats": {
+            "Client": "Navarra Lab",
+            "Region": "Berlin i Kraków",
+            "Year": "2023",
+            "Industry": "Design i Technologia"
+          },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "techstack",
+          "title": "Stack Technologiczny",
+          "tags": ["Next.js", "React", "TypeScript", "GSAP", "Framer Motion", "Tailwind CSS", "i18n"]
+        }
+      ]
+    },
+    {
+      "uuid": "5",
+      "slug": "ultramaryna",
+      "name": "Ultramaryna",
+      "category": "commercial",
+      "url": "https://ultramaryna.pl",
+      "description": "Platforma odkrywania wydarzeń kulturalnych dla metropolii GZM na Śląsku, działająca od 2001 roku jako bezpłatny przewodnik po życiu kulturalnym regionu. Platforma pozwala użytkownikom przeglądać wydarzenia z zakresu teatru, muzyki, sztuk wizualnych i filmu — z filtrowaniem po typie, lokalizacji i dacie. Zbudowałem frontend platformy cyfrowej, w tym doświadczenie przeglądania wydarzeń, integrację newslettera i sekcję treści magazynowych.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/ultramaryna",
+      "sections": [
+        {
+          "type": "main",
+          "cats": {
+            "Client": "Ultramaryna",
+            "Region": "Śląsk, Polska",
+            "Year": "2022–2023",
+            "Industry": "Kultura i Media"
+          },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "techstack",
+          "title": "Stack Technologiczny",
+          "tags": ["React", "TypeScript", "Tailwind CSS"]
+        }
+      ]
+    },
+    {
+      "uuid": "6",
+      "slug": "murat-yumak",
+      "name": "Murat Yumak",
+      "category": "commercial",
+      "url": "https://www.muratyumak.com",
+      "description": "Dwujęzyczna platforma e-commerce dla berlińskiego kuratora klasycznego vintage streetwearu od lat 80. do dziś. Strona działa jak muzeum spotykające się z butikiem — każdy przedmiot jest opatrzony kontekstem kulturowym i proweniencją, a obiekty pozostają do przeglądania nawet po sprzedaży. Zbudowałem dwujęzyczny (EN/DE) frontend zintegrowany z Shopify z zaawansowanym filtrowaniem po marce, rozmiarze, stanie i roku, wraz z archiwalnm doświadczeniem przeglądania, które wyróżnia sklep na tle typowych platform resale.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/murat-yumak",
+      "sections": [
+        {
+          "type": "main",
+          "cats": {
+            "Client": "Murat Yumak",
+            "Region": "Berlin, Niemcy",
+            "Year": "2022",
+            "Industry": "E-Commerce i Moda"
+          },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "techstack",
+          "title": "Stack Technologiczny",
+          "tags": ["React", "TypeScript", "Shopify", "i18n"]
+        }
+      ]
+    },
+    {
+      "uuid": "7",
+      "slug": "wykonczymy",
+      "name": "Wykonczymy",
+      "category": "freelance",
+      "url": "https://www.wykonczymy.com.pl",
+      "description": "Narzędzie zarządzania dla rodzinnej firmy budowlano-remontowej w Warszawie, która prowadzi również sklep internetowy z płytkami. Zbudowałem system obejmujący raportowanie projektów, śledzenie przepływów finansowych i automatyzację emaili — zastępując rozproszone arkusze kalkulacyjne i ręczne procesy scentralizowanym widokiem operacyjnym dopasowanym do tego, jak firma faktycznie działa.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/wykonczymy",
+      "sections": [
+        {
+          "type": "main",
+          "cats": {
+            "Client": "Wykonczymy",
+            "Region": "Warszawa, Polska",
+            "Year": "2026–obecnie",
+            "Industry": "Budownictwo i Narzędzia Biznesowe"
+          },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "techstack",
+          "title": "Stack Technologiczny",
+          "tags": ["Next.js", "React", "TypeScript", "Tailwind CSS"]
+        }
+      ]
+    },
+    {
+      "uuid": "8",
+      "slug": "moodbox",
+      "name": "Moodbox",
+      "category": "freelance",
+      "url": "https://www.moodbox.pl",
+      "description": "Platforma próbek materiałów dla projektantów wnętrz i profesjonalistów. Projektanci przeglądają kuratorowane kolekcje płytek, tkanin, podłóg drewnianych i mozaik od marek partnerskich takich jak Cersanit, Paradyż i Dunin — wybierają próbki i otrzymują je w zorganizowanych pudełkach. Zbudowałem całą platformę z integracją Shopify do obsługi zamówień, niestandardowym backendem Payload CMS do zarządzania treściami partnerów i kolekcjami, plus narzędzia do kampanii emailowych, ankiet i integracji webhookowych.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/moodbox",
+      "sections": [
+        {
+          "type": "main",
+          "cats": {
+            "Client": "Moodbox",
+            "Region": "Polska",
+            "Year": "2025–obecnie",
+            "Industry": "Projektowanie Wnętrz i E-Commerce"
+          },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "techstack",
+          "title": "Stack Technologiczny",
+          "tags": ["Next.js", "React", "TypeScript", "Payload CMS", "Shopify", "Tailwind CSS"]
+        }
+      ]
+    },
+    {
+      "uuid": "9",
+      "slug": "olej-to",
+      "name": "Olej.to",
+      "category": "freelance",
+      "url": "https://www.olejtopisze.pl",
+      "description": "Platforma blogowa o lifestyle'u — o zmaganiach i radościach prostego życia — łącząca humor, opowieści z podróży od Sri Lanki po Kambodżę i osobiste refleksje. Wdrożyłem backend WordPress do zarządzania treścią w parze z niestandardowym frontendem Svelte, dostarczając czyste, minimalistyczne doświadczenie czytelnicze stawiające na typografię i szybkie skanowanie w kategoriach takich jak humor, poważne eseje i historie osobiste.",
+      "logo": "/images/projects/alpha-logo.png",
+      "tempSlug": "/projects/olej-to",
+      "sections": [
+        {
+          "type": "main",
+          "cats": {
+            "Client": "Olej.to",
+            "Region": "Polska",
+            "Year": "2024",
+            "Industry": "Media i Publikacje"
+          },
+          "slides": [
+            {
+              "mainFoto": "/images/projects/alpha/slide-1.jpg",
+              "desktopView": "/images/projects/alpha/slide-1-desktop.jpg",
+              "mobileView": "/images/projects/alpha/slide-1-mobile.jpg"
+            }
+          ]
+        },
+        {
+          "type": "techstack",
+          "title": "Stack Technologiczny",
+          "tags": ["Svelte", "WordPress", "REST API", "CSS"]
         }
       ]
     }

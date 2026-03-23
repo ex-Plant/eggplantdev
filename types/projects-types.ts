@@ -3,6 +3,8 @@ export type ProjectT = {
   slug: string;
   name: string;
   description: string;
+  category?: string;
+  url?: string;
   logo: string;
   tempSlug: string;
   sections: ProjectSectionT[];

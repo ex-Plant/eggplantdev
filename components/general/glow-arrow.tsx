@@ -2,12 +2,15 @@ import { cn } from "@/helpers/cn";
 
 type GlowArrowPropsT = {
   className?: string;
+  inactive?: boolean;
 };
 
-export function GlowArrow({ className }: GlowArrowPropsT) {
+export function GlowArrow({ className, inactive }: GlowArrowPropsT) {
   return (
-    <div className={cn("relative mt-1 shrink-0", className)}>
-      <div className="absolute -inset-12 rounded-full bg-[radial-gradient(ellipse_at_center,var(--color-glow-purple),var(--color-glow-blue),var(--color-glow-fuchsia),transparent_70%)] blur-2xl" />
+    <div className={cn("relative mt-1 shrink-0", inactive && "text-gray7", className)}>
+      {!inactive && (
+        <div className="absolute -inset-12 rounded-full bg-[radial-gradient(ellipse_at_center,var(--color-glow-purple),var(--color-glow-blue),var(--color-glow-fuchsia),transparent_70%)] blur-2xl" />
+      )}
       <svg
         className="relative"
         width="18"

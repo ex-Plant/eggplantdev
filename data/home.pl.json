@@ -1,52 +1,57 @@
 {
-  "introTxt": "Prawie 5 lat doświadczenia komercyjnego w budowaniu aplikacji frontendowych i full-stack, głównie w React i Next.js, sprawdzonego w różnych dziedzinach — od e-commerce i SaaS po platformy kulturalne. Prowadzi projekty od A do Z jako freelancer, jednocześnie efektywnie współpracując w wielofunkcyjnych zespołach agencyjnych. Wcześnie adoptował technologie AI, obecnie uczy się budować aplikacje ze zintegrowanymi agentami LLM.",
+  "introTxt": "Prawie 5 lat budowania aplikacji frontendowych i full-stack w React i Next.js — od e-commerce i SaaS po platformy kulturalne. Zanim zacząłem programować, przez cztery lata zarządzałem kultowym miejscem kulturalnym w Krakowie, prowadząc zespół ~100 osób w barach, restauracjach, na koncertach i festiwalach. To doświadczenie dało mi coś, czego większość developerów nie ma na starcie: głębokie zrozumienie tego, jak produkty są naprawdę używane przez prawdziwych ludzi pod prawdziwą presją. Dziś pracuję jako freelancer i w zespołach agencyjnych, prowadząc projekty od A do Z — od decyzji architektonicznych po wdrożenie.",
   "backgroundDesktop": "/images/home/hero-desktop.jpg",
   "backgroundMobile": "/images/home/hero-mobile.jpg",
   "sections": [
     {
       "type": "projects",
-      "titleLine": ["Projekty"],
-      "text": "Wybór ostatnich realizacji obejmujący e-commerce, fintech i platformy korporacyjne — każda zbudowana z naciskiem na wydajność, użyteczność i długoterminową łatwość utrzymania."
+      "titleLine": ["Praca", "Komercyjna"],
+      "text": "Projekty zrealizowane jako część zespołu developerskiego w Navarra Lab — studio projektowym i software house'ie działającym między Berlinem a Krakowem.",
+      "filterCategory": "commercial"
+    },
+    {
+      "type": "projects",
+      "titleLine": ["Praca", "Freelance"],
+      "text": "Projekty, które prowadzę od A do Z — od wstępnego zakresu i architektury po wdrożenie i przekazanie.",
+      "filterCategory": "freelance"
     },
     {
       "type": "fullSection",
-      "titleLine": ["Jak", "Pracujemy"],
+      "titleLine": ["O", "Mnie"],
       "cards": [
         {
-          "title": "Odkrywanie",
-          "content": "Każda współpraca zaczyna się od uważnego słuchania. Mapujemy cele interesariuszy, audytujemy istniejące systemy, rozmawiamy z użytkownikami końcowymi i identyfikujemy kluczowe punkty tarcia. Efektem jest wspólne zrozumienie — nie 60-stronicowy dokument, którego nikt nie czyta, ale zwięzły brief kierujący każdą kolejną decyzją."
+          "title": "Tło",
+          "content": "Studiowałem porównawcze studia cywilizacji na Uniwersytecie Jagiellońskim — nie typowy kierunek informatyczny, ale nauczył mnie myślenia w kategoriach systemów i kontekstów. Zanim napisałem pierwszą linijkę produkcyjnego kodu, przez cztery lata byłem kierownikiem obiektu Forum Przestrzenie Kraków — kultowej przestrzeni z barami, restauracjami, salą koncertową i rotacyjnym programem festiwalowym. Zarządzanie ~100 osobami, budżetami, negocjacjami z dostawcami i logistyką eventów wykształciło te same umiejętności, których używam codziennie jako developer: prowadzenie pod presją, komunikacja między dyscyplinami i podejmowanie decyzji przy niepełnych informacjach."
         },
         {
-          "title": "Projektowanie",
-          "content": "Projektujemy w przeglądarce tak samo często jak w Figmie. Interaktywne prototypy zastępują statyczne makiety na wczesnym etapie, dzięki czemu każdy może poczuć produkt zanim powstanie choćby jedna linia kodu produkcyjnego. Typografia, odstępy, animacje — dbamy o detale, bo użytkownicy je zauważają, nawet jeśli nie potrafią powiedzieć dlaczego."
+          "title": "Teraz",
+          "content": "Przeszedłem do frontend developmentu w 2022 roku, pracując w Navarra Lab przy projektach dla instytucji kulturalnych, startupów i marek e-commerce w Berlinie i Krakowie. Od 2024 roku prowadzę również zlecenia freelance, dostarczając aplikacje full-stack od zakresu po produkcję. Ciągnie mnie do złożonych interfejsów, wyzwań związanych z dostępnością i modernizacji starszych systemów. Obecnie zgłębiam technologie AI i buduję aplikacje ze zintegrowanymi agentami LLM."
         },
         {
-          "title": "Inżynieria",
-          "content": "Nasz stack jest nowoczesny, ale pragmatyczny: Next.js, TypeScript, Tailwind, PostgreSQL. Wybieramy narzędzia pozwalające działać szybko bez gromadzenia długu technicznego. Każdy komponent jest budowany z myślą o ponownym użyciu, każdy kontrakt API jest typowany end-to-end, a każdy deploy przechodzi automatyczne testy przed wejściem na produkcję."
+          "title": "Po Godzinach",
+          "content": "Kiedy nie programuję, znajdziesz mnie za konsoletą — DJing to mój sposób na utrzymanie kontaktu ze światem muzyki i eventów, z którego pochodzę. Na reset łapię wiatr i fale: kitesurfing i surfing to mój sposób na całkowite wyłączenie się. Baza między Krakowem a Warszawą, dwujęzyczny po angielsku i polsku."
+        }
+      ],
+      "largePhoto": "/images/home/portrait.jpg"
+    },
+    {
+      "type": "fullSection",
+      "titleLine": ["Co", "Cenię"],
+      "cards": [
+        {
+          "title": "Dostępność",
+          "content": "Budowanie dla wszystkich nie jest opcjonalne — to punkt wyjścia. Wdrażam interfejsy zgodne z WCAG, bo użyteczność i inkluzywność to jedno i to samo. Każdy projekt, którego się dotykam, dostaje poprawny semantyczny HTML, nawigację klawiaturą i wsparcie dla czytników ekranu."
+        },
+        {
+          "title": "Odpowiedzialność",
+          "content": "Nie czekam na tickety. Niezależnie czy jestem częścią zespołu agencyjnego czy prowadzę freelance'owy projekt solo, biorę odpowiedzialność za całą dostawę — od decyzji architektonicznych po ostatni piksel na produkcji."
+        },
+        {
+          "title": "Pragmatyzm",
+          "content": "Wybieram narzędzia, które rozwiązują problem, nie te które wyglądają imponująco na tech radarze. Next.js, TypeScript, Tailwind, Payload, Shopify — cokolwiek pasuje do ograniczeń. Bez religii stackowej, bez przebudowywania."
         }
       ],
       "largePhoto": "/images/home/approach.jpg"
-    },
-    {
-      "type": "quote",
-      "titleLine": ["Zadowoleni", "Klienci"],
-      "quotes": [
-        {
-          "quote": "Nie dostarczyli nam po prostu strony — pomogli nam przemyśleć sposób komunikacji z klientami. Nowa platforma zwiększyła nasz współczynnik konwersji o 34% w pierwszym kwartale po uruchomieniu. Najbardziej zaimponowała mi ich umiejętność konstruktywnego kwestionowania naszych założeń przy jednoczesnym poszanowaniu dziedzictwa naszej marki.",
-          "name": "Katarzyna Wiśniewska",
-          "title": "Szefowa Działu Cyfrowego, Europharma Group"
-        },
-        {
-          "quote": "Współpraca z tym zespołem była jak posiadanie wewnętrznego działu produktowego. Byli zintegrowani z naszym workflow, uczestniczyli w naszych standupach i traktowali nasze terminy jak własne. Wynik mówi sam za siebie — platforma obsługująca 50 000 aktywnych użytkowników dziennie bez żadnych problemów, i system designu, który nasz wewnętrzny zespół jest w stanie utrzymywać.",
-          "name": "Michał Zieliński",
-          "title": "CTO, FinBridge Technologies"
-        }
-      ]
-    },
-    {
-      "type": "simple",
-      "titleLine": ["Kim Jesteśmy"],
-      "text": "Jesteśmy kompaktowym studiem projektantów i inżynierów z siedzibą w Krakowie. Założone w 2018 roku, współpracowaliśmy ze startupami, scale-upami i zespołami korporacyjnymi w całej Europie, dostarczając produkty cyfrowe, które działają. Nasze realizacje obejmują identyfikacje wizualne, platformy marketingowe, dashboardy SaaS i narzędzia wewnętrzne — zawsze z naciskiem na czysty kod, przemyślany design i mierzalne rezultaty. Celowo utrzymujemy mały zespół: każdy projekt od pierwszego dnia ma uwagę seniorów, a każdy klient ma bezpośredni kontakt z osobami wykonującymi pracę."
     }
   ]
 }

@@ -14,12 +14,14 @@ type ProjectsSectionPropsT = {
 export const ProjectsSection = ({ data, className }: ProjectsSectionPropsT) => {
   const { projects } = useLocalizedData("projects");
 
+  const filtered = data.filterCategory ? projects.filter((p) => p.category === data.filterCategory) : projects;
+
   return (
     <section className={cn("fest-grid", className)}>
       <SimpleSection titleLine={data.titleLine} text={data.text} className="col-span-full" />
 
-      <div className="auto 1280:grid-cols-3 640:col-span-8 1280:col-span-9 col-span-full grid grid-cols-1 gap-20 pt-20 md:col-span-11 lg:gap-4 xl:col-span-11">
-        {projects.map((project) => (
+      <div className="640:col-span-7 col-span-full grid grid-cols-1 gap-20 pt-20 md:col-span-8">
+        {filtered.map((project) => (
           <ProjectsCard key={project.uuid} project={project} />
         ))}
       </div>
