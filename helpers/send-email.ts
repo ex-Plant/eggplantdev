@@ -2,11 +2,14 @@
 
 import nodemailer from "nodemailer";
 import { env } from "@/helpers/env";
+import { buildAutoReplyEmail } from "@/helpers/email-templates/templates/auto-reply";
+import type { LocaleT } from "@/lib/i18n/types";
 
 type SendEmailDataT = {
   name?: string;
   email: string;
   message?: string;
+  locale: LocaleT;
 };
 
 const transporter = nodemailer.createTransport({
@@ -14,7 +17,7 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: env.EMAIL_USER,
+    user: env.NEXT_PUBLIC_EMAIL_USER,
     pass: env.EMAIL_PASS,
   },
 });
@@ -26,7 +29,7 @@ export async function sendEmail(data: SendEmailDataT) {
 
   try {
     await transporter.sendMail({
-      from: env.EMAIL_USER,
+      from: env.NEXT_PUBLIC_EMAIL_USER,
       to: env.EMAIL_TO,
       replyTo: data.email,
       subject: `Portfolio contact: ${data.name ?? data.email}`,
@@ -34,12 +37,20 @@ export async function sendEmail(data: SendEmailDataT) {
         `Name: ${data.name ?? "N/A"}`,
         `Email: ${data.email}`,
         "",
-        data.message ?? "(no message)",
+        `message: ${data.message ?? "(no message)"}`,
       ].join("\n"),
     });
+
+    await transporter.sendMail({
+      from: env.NEXT_PUBLIC_EMAIL_USER,
+      to: data.email,
+      subject: data.locale === "pl" ? "Dzięki za wiadomość!" : "Thanks for reaching out!",
+      html: buildAutoReplyEmail(data.locale, data.name),
+    });
+    return { success: true };
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
     console.error("Send email failed:", message);
-    throw new Error("Failed to send email");
+    return { success: false };
   }
 }

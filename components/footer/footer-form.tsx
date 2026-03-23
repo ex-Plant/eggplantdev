@@ -6,7 +6,7 @@ import { sendEmail } from "@/helpers/send-email";
 import { contactFormSchema } from "@/helpers/contact-schema";
 import { useFormStatus } from "@/hooks/use-form-status";
 import { ConfirmOverlay } from "@/components/general/confirm-overlay";
-import { Spinner } from "@/components/general/spinner";
+import { ErrorOverlay } from "@/components/general/error-overlay";
 import { cn } from "@/helpers/cn";
 import { FieldErrors } from "@/components/ui/field-errors";
 import { SubmitButton } from "@/components/ui/submit-button";
@@ -26,8 +26,9 @@ function fieldProps(field: AnyFieldApi) {
 }
 
 export function FooterForm({ className }: { className?: string }) {
-  const [submitMessage, setSubmitMessage] = useState("");
-  const { t } = useTranslation("form");
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const { t, locale } = useTranslation("form");
 
   const form = useForm({
     defaultValues: {
@@ -39,14 +40,10 @@ export function FooterForm({ className }: { className?: string }) {
       onSubmit: contactFormSchema,
     },
     onSubmit: async ({ value }) => {
-      try {
-        await sendEmail(value);
-        setSubmitMessage("Email sent successfully");
-        form.reset();
-      } catch (error) {
-        console.error(error);
-        setSubmitMessage(error instanceof Error ? error.message : "Something went wrong");
-      }
+      const result = await sendEmail({ ...value, locale });
+      setIsError(!result.success);
+      setIsSuccess(result.success);
+      if (result.success) form.reset();
     },
   });
 
@@ -106,7 +103,8 @@ export function FooterForm({ className }: { className?: string }) {
         </form.Field>
         <SubmitButton isSubmitting={isSubmitting} canSubmit={canSubmit} className="pt-3" />
       </form>
-      <ConfirmOverlay submitMessage={submitMessage} setSubmitMessage={setSubmitMessage} />
+      <ConfirmOverlay isOpen={isSuccess} onClose={() => setIsSuccess(false)} />
+      <ErrorOverlay isOpen={isError} onClose={() => setIsError(false)} />
     </>
   );
 }

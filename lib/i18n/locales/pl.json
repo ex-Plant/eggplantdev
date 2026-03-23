@@ -18,6 +18,9 @@
     "thankYou": "Dziękujemy za wiadomość! ",
     "willGetBack": "Odezwiemy się wkrótce",
     "confirmTitle": "Potwierdzenie wysłania formularza",
+    "errorTitle": "Coś poszło nie tak",
+    "errorMessage": "Coś poszło nie tak. Spróbuj ponownie.",
+    "errorEmailFallback": "Lub wyślij mi maila bezpośrednio:",
     "clickToClose": "kliknij aby zamknąć"
   },
   "nav": {

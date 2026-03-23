@@ -6,7 +6,7 @@ const envSchema = z.object({
 
   // SMTP (server-only)
   EMAIL_HOST: z.string().min(1),
-  EMAIL_USER: z.email(),
+  NEXT_PUBLIC_EMAIL_USER: z.email(),
   EMAIL_PASS: z.string().min(1),
   EMAIL_TO: z.email(),
 });
