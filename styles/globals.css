@@ -26,6 +26,9 @@
   --color-red: #ff7575;
   --color-white: #fff;
   --color-yellow: #f7c744;
+  --color-glow-purple: oklch(from #8b5cf6 l c h / 40%);
+  --color-glow-blue: oklch(from #3b82f6 l c h / 15%);
+  --color-glow-fuchsia: oklch(from #d946ef l c h / 25%);
 
   /* Max-width */
   --max-w-xxl: 1920px;
@@ -36,10 +39,11 @@
   /* Swap mono font here — uncomment one */
   /* --font-mono: var(--font-poly); */
   /* --font-mono: var(--font-geist-mono);   */
-  --font-mono: var(--font-jetbrains-mono);
+  /* --font-mono: var(--font-jetbrains-mono); */
   /* --font-mono: var(--font-ibm-plex-mono);    */
   /* --font-mono: var(--font-space-mono);       */
   /* --font-mono: var(--font-fira-code);        */
+  --font-mono: var(--font-share-tech-mono);
 
   --font-thein13: var(--font-theinhardt);
 }
@@ -118,7 +122,13 @@ body {
   position: absolute;
   inset: -6px;
   border-radius: inherit;
-  background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.5), rgba(59, 130, 246, 0.3), rgba(217, 70, 239, 0.2), transparent 70%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(139, 92, 246, 0.5),
+    rgba(59, 130, 246, 0.3),
+    rgba(217, 70, 239, 0.2),
+    transparent 70%
+  );
   filter: blur(14px);
   z-index: 0;
   pointer-events: none;
@@ -416,4 +426,3 @@ textarea:-webkit-autofill {
 [data-theme="contrast"] [data-slot="nav-dropdown"] button {
   color: var(--contrast-fg);
 }
-
