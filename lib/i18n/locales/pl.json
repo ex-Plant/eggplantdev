@@ -30,6 +30,9 @@
     "returnHome": "Wróć na stronę główną",
     "pageNotFound": "Nie znaleziono strony"
   },
+  "projects": {
+    "visitWebsite": "Odwiedź stronę →"
+  },
   "footer": {
     "sloganLine1": "Zbudujmy",
     "sloganLine2": "coś",

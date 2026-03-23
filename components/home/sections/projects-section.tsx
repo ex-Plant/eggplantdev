@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/helpers/cn";
-import { ProjectsCard } from "@/components/projects/project-card/projects-card";
+import { ProjectsAccordion } from "@/components/projects/project-card/projects-accordion";
 import { SimpleSection } from "@/components/home/sections/simple-section";
 import { ProjectsSectionT } from "@/types/home-page-types";
 import { useLocalizedData } from "@/hooks/use-localized-data";
@@ -20,10 +20,8 @@ export const ProjectsSection = ({ data, className }: ProjectsSectionPropsT) => {
     <section className={cn("fest-grid", className)}>
       <SimpleSection titleLine={data.titleLine} text={data.text} className="col-span-full" />
 
-      <div className="640:col-span-7 col-span-full grid grid-cols-1 gap-20 pt-20 md:col-span-8">
-        {filtered.map((project) => (
-          <ProjectsCard key={project.uuid} project={project} />
-        ))}
+      <div className="640:col-span-7 col-span-full pt-20 md:col-span-8">
+        <ProjectsAccordion projects={filtered} />
       </div>
     </section>
   );

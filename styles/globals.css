@@ -74,6 +74,7 @@
 
   /* Grid columns (16-column fest grid) */
   --grid-cols-16: repeat(16, minmax(0, 1fr));
+
 }
 
 /* === CSS Variables for fluid typography === */

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ProjectsCardPropsT } from "@/types/projects-types";
 import { ScrambleText } from "@/components/general/scramble-text";
 import { GlowArrow } from "@/components/general/glow-arrow";
+import { RoundedSeparator } from "@/components/general/rounded-separator";
 
 export function ProjectsCard({ project }: ProjectsCardPropsT) {
   const { name, description, sections, url } = project ?? {};
@@ -13,18 +14,7 @@ export function ProjectsCard({ project }: ProjectsCardPropsT) {
 
   const card = (
     <article className={`group/card relative flex h-full ${url ? "cursor-pointer" : ""} flex-col`}>
-      <svg className="w-full" height="4">
-        <line
-          x1="2"
-          y1="2"
-          x2="99.5%"
-          y2="2"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeLinecap="round"
-          className="text-lightgray"
-        />
-      </svg>
+      <RoundedSeparator />
       <div className={`h-full pt-7 duration-300 group-hover/card:translate-y-[-10px] md:pt-6`}>
         <div className="flex items-start justify-between">
           <ScrambleText className={`text-24 font-mono uppercase`} text={name} />

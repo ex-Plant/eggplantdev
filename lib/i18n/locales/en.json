@@ -30,6 +30,9 @@
     "returnHome": "Return Home",
     "pageNotFound": "Page Not Found"
   },
+  "projects": {
+    "visitWebsite": "Visit website →"
+  },
   "footer": {
     "sloganLine1": "Let's build",
     "sloganLine2": "something",

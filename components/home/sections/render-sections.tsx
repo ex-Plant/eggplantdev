@@ -1,4 +1,3 @@
-import { cn } from "@/helpers/cn";
 import { SimpleSection } from "@/components/home/sections/simple-section";
 import { ProjectsSection } from "@/components/home/sections/projects-section";
 import { FullSection } from "@/components/home/sections/full-section";
