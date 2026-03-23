@@ -41,8 +41,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
             <SkipToContent />
             {/* Fixed grit overlay — stays in place while content scrolls */}
             <div className="grit pointer-events-none fixed inset-0 z-200" />
-            <GradientMask top={true} />
-            <GradientMask top={true} />
+
             <TopNavigation />
             <main id="main-content">{children}</main>
             <GradientMask />

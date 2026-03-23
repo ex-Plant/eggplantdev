@@ -19,7 +19,6 @@ type IntroPropsT = {
 };
 
 export const Intro = ({ backgroundDesktop, backgroundMobile, txt }: IntroPropsT) => {
-  const bg = useMinLG() ? backgroundDesktop : backgroundMobile;
   const bgcRef = useRef(null);
   const bgcContainer = useRef(null);
 

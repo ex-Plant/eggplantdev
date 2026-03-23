@@ -47,31 +47,24 @@ export const GetInTouchButton = () => {
       ref={containerRef}
       className={`fest-container pointer-events-none sticky bottom-[120px] mx-auto max-w-[1920px]`}
     >
-      <div
-        className={`1280:flex 1280:pointer-events-auto z-120 mb-[120px] ml-auto hidden w-fit max-w-[940px] min-w-[270px] cursor-pointer`}
-      >
-        <div data-slot="get-in-touch" className={`w-full rounded-[10px] bg-white px-4 py-1 text-black lg:px-6 lg:py-4`}>
+      <div className="glow glow-strong 1280:flex 1280:pointer-events-auto z-201 mb-[120px] ml-auto hidden w-fit max-w-[940px] min-w-[270px] shrink-0 cursor-pointer rounded-[10px]">
+        <div
+          data-slot="get-in-touch"
+          className={`relative z-10 w-full rounded-[10px] bg-white px-4 py-1 text-black lg:px-6 lg:py-4`}
+        >
           <button
             aria-expanded={open ? "true" : "false"}
             onClick={toggleModal}
-            className={`flex w-full cursor-pointer items-start justify-between`}
+            className={cn(`flex w-full cursor-pointer justify-between`, open ? "items-start" : "items-center")}
           >
-            <span
-              ref={textRef}
-              className={cn(
-                `flex text-start font-mono uppercase`,
-                open
-                  ? "text-24 lg:text-40 flex-col space-x-0 pt-2 duration-300"
-                  : "text-16 lg:text-20 h-10 items-center space-x-4 pt-0 duration-100",
-              )}
-            >
+            <span ref={textRef} className={`flex gap-2 text-start font-mono uppercase`}>
               {t("getInTouch")
                 .split(" ")
                 .map((word) => (
                   <span key={word}>{word}</span>
                 ))}
             </span>
-            <ToggleIcon open={open} className={`pt-2`} />
+            <ToggleIcon open={open} className={`h-full`} />
           </button>
           <div ref={ref} className={"no-scrollbar h-0 overflow-hidden"}>
             <ButtonForm closeBtn={toggleModal} open={open} />

@@ -2,12 +2,10 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { usePrefersReducedMotion } from "@/hooks/use-media-query";
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
-import { cn } from "@/helpers/cn";
 
 const SOURCES = [
   { src: "/logos/eggplant-logo.png", label: "png (rembg)" }, // not transparent
@@ -38,17 +36,15 @@ export function EggplantLogo({ className }: { className?: string }) {
   }, [prefersReducedMotion]);
 
   return (
-    <Link href="/" className={cn("flex min-h-11 min-w-11 items-center justify-center", className)}>
-      <Image
-        ref={logoRef}
-        src={SOURCES[ACTIVE_SOURCE].src}
-        alt={t("logo")}
-        width={80}
-        height={80}
-        sizes="(min-width: 1024px) 80px, (min-width: 640px) 60px, 40px"
-        className="size-10 sm:size-15 lg:size-20"
-        unoptimized
-      />
-    </Link>
+    <Image
+      ref={logoRef}
+      src={SOURCES[ACTIVE_SOURCE].src}
+      alt={t("logo")}
+      width={80}
+      height={80}
+      sizes="(min-width: 1024px) 80px, (min-width: 640px) 60px, 40px"
+      className="size-10 sm:size-15 lg:size-20"
+      unoptimized
+    />
   );
 }

@@ -1,10 +1,10 @@
 "use client";
 
-import { Intro } from "@/components/home/intro/intro";
 import { RenderSections } from "@/components/home/sections/render-sections";
 import { GetInTouchButton } from "@/components/home/intro/get-in-touch-btn/get-in-touch-button";
 import { GradientMask } from "@/components/general/gradient-mask/gradient-mask";
 import { useLocalizedData } from "@/hooks/use-localized-data";
+import { Intro } from "../components/home/intro/Intro";
 
 export default function HomePage() {
   const { introTxt = "", backgroundDesktop, backgroundMobile, sections } = useLocalizedData("home");

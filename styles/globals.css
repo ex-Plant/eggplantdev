@@ -108,6 +108,38 @@ body {
   }
 }
 
+/* === Gradient glow === */
+.glow {
+  position: relative;
+}
+
+.glow::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.5), rgba(59, 130, 246, 0.3), rgba(217, 70, 239, 0.2), transparent 70%);
+  filter: blur(14px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glow-strong::before {
+  inset: -8px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.7), rgba(139, 92, 246, 0.6), rgba(217, 70, 239, 0.7));
+  filter: blur(20px);
+}
+
+.glow-strong::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #d946ef);
+  z-index: 0;
+  pointer-events: none;
+}
+
 @utility grit-subtle {
   background: var(--tw-bg-color, transparent) url("/grit-texture-subtle.svg") repeat;
   background-size: 180px;
