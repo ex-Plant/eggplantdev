@@ -28,7 +28,7 @@ export const AnimatedLetters = ({ text = "" }) => {
             trigger: line,
             start: !md ? "top 50%" : `top 60%`,
             end: !md ? `bottom 50%` : "bottom 60%",
-            scrub: !md ? 0.6 : 1,
+            scrub: !md ? 0.6 : 0.8,
             // markers: true,
           },
         });
@@ -53,7 +53,82 @@ export const AnimatedLetters = ({ text = "" }) => {
     >
       <div
         id="target"
-        className="wrap-break-words text-28 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono uppercase"
+        className="wrap-break-words text-28 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono tracking-tight uppercase"
+      >
+        {text}
+      </div>
+    </div>
+  );
+};
+
+/**
+ * Overlay-mask variant (inspired by aaronmcguire.design).
+ * Instead of animating backgroundSize on the text, this places a solid
+ * overlay div (.line-mask) on each line and shrinks its width from 103% → 0%.
+ * The text is always fully rendered underneath; the mask just covers it.
+ */
+export const AnimatedLettersMask = ({ text = "" }) => {
+  const lettersRef = useRef<HTMLDivElement>(null);
+  const { clientWidth } = useWindowSize();
+  const splitRef = useRef<SplitType | null>(null);
+
+  const md = useMinMD();
+
+  useGSAP(
+    () => {
+      splitRef.current = new SplitType("#target-mask", { types: "lines" });
+
+      gsap.utils.toArray<HTMLElement>("#target-mask .line").forEach((line) => {
+        line.style.position = "relative";
+
+        const mask = document.createElement("div");
+        mask.classList.add("line-mask-overlay");
+        line.appendChild(mask);
+
+        gsap.fromTo(
+          mask,
+          {
+            backgroundColor: "var(--color-bgc)",
+            opacity: 0.9,
+            width: "103%",
+            height: "100%",
+            right: 0,
+            top: 0,
+            position: "absolute",
+          },
+          {
+            width: "0%",
+            scrollTrigger: {
+              trigger: line,
+              start: !md ? "top 50%" : "top 60%",
+              end: !md ? "bottom 50%" : "bottom 60%",
+              scrub: 1,
+            },
+          },
+        );
+      });
+
+      const timeoutId = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 100);
+
+      return () => {
+        clearTimeout(timeoutId);
+        document.querySelectorAll("#target-mask .line-mask-overlay").forEach((el) => el.remove());
+        splitRef.current?.revert();
+      };
+    },
+    { scope: lettersRef, dependencies: [clientWidth, md], revertOnUpdate: true },
+  );
+
+  return (
+    <div
+      ref={lettersRef}
+      className={`no-scrollbar z-2 flex flex-col overflow-x-hidden overflow-y-scroll pt-20 pr-12 pb-60 sm:w-[calc(340/360*100vw)] md:w-[calc(590/768*100vw)] md:pt-[120px] md:pr-0 lg:w-[calc(740/1024*100vw)] lg:max-w-[940px]`}
+    >
+      <div
+        id="target-mask"
+        className="wrap-break-words text-28 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono tracking-tight text-white uppercase"
       >
         {text}
       </div>

@@ -235,94 +235,9 @@ textarea:-webkit-autofill {
   box-shadow: inset 0 0 0 2000px rgb(255, 255, 255);
 }
 
-/* Swiper pagination */
-.swiper-pagination-bullets > .swiper-pagination-bullet-active {
-  background-color: white;
-}
-
-.swiper-pagination-bullets > .swiper-pagination-bullet {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-/* Animated text line */
-.line {
-  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
-  background-size: 0% 100%;
-  background-repeat: no-repeat;
-  background-clip: text !important;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0.2) !important;
-}
-
 .stopScrolling {
   height: 100vh;
   overflow: hidden;
-}
-
-/* === Syntax.fm-inspired palette (scoped to /test page) === */
-.test-overrides {
-  --test-bg-deep: #191324;
-  --test-bg-card: #2d1130;
-  --test-bg-card-alt: #452650;
-  --test-accent: #ffcb05;
-  --test-accent-soft: #f9dc65;
-  --test-teal: #82d8d8;
-  --test-teal-dark: #399a9e;
-  --test-text: #ebebe3;
-  --test-text-warm: #e5d7ba;
-  --test-text-muted: #cfc096;
-  --test-pink: #d15f7c;
-  --test-pink-muted: #a37592;
-  --test-blue: #69cffa;
-  --test-footer-from: #452650;
-  --test-footer-to: #180d1c;
-  background-color: var(--test-bg-deep) !important;
-  background-image: url("/grit-texture.svg");
-  background-repeat: repeat;
-  background-size: 180px;
-  color: var(--test-text);
-}
-
-.test-overrides * {
-  border-color: var(--test-bg-card-alt);
-}
-
-.test-overrides h1,
-.test-overrides h2,
-.test-overrides h3 {
-  color: var(--test-text-warm);
-}
-
-.test-overrides a {
-  color: var(--test-teal);
-}
-
-.test-overrides a:hover {
-  color: var(--test-blue);
-}
-
-.test-overrides button,
-.test-overrides [role="button"] {
-  background-color: var(--test-accent);
-  color: var(--test-bg-deep);
-}
-
-.test-overrides section > div,
-.test-overrides article {
-  background-color: var(--test-bg-card);
-}
-
-.test-overrides p {
-  color: var(--test-text);
-}
-
-.test-overrides small,
-.test-overrides span.muted {
-  color: var(--test-text-muted);
-}
-
-.test-overrides .line {
-  background-image: linear-gradient(var(--test-text-warm), var(--test-text-warm));
-  -webkit-text-fill-color: rgba(235, 235, 227, 0.2) !important;
 }
 
 /* Dialog backdrop */
