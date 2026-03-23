@@ -60,7 +60,3 @@ type TechstackSectionT = {
   title: string;
   tags: string[];
 };
-
-export type ProjectsCardPropsT = {
-  project: ProjectT;
-};
