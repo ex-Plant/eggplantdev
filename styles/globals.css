@@ -36,13 +36,6 @@
 
 /* Font families — all resolved at runtime via Next.js CSS variables (injected in layout.tsx) */
 @theme inline {
-  /* Swap mono font here — uncomment one */
-  /* --font-mono: var(--font-poly); */
-  /* --font-mono: var(--font-geist-mono);   */
-  /* --font-mono: var(--font-jetbrains-mono); */
-  /* --font-mono: var(--font-ibm-plex-mono);    */
-  /* --font-mono: var(--font-space-mono);       */
-  /* --font-mono: var(--font-fira-code);        */
   --font-mono: var(--font-share-tech-mono);
 
   --font-thein13: var(--font-theinhardt);

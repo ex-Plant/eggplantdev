@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import React, { ReactNode } from "react";
 import { cookies } from "next/headers";
 
-import { poly, theinhardt, geistMono, jetbrainsMono, ibmPlexMono, spaceMono, firaCode } from "@/public/fonts/fonts";
+import { poly, theinhardt, shareTechMono } from "@/public/fonts/fonts";
 
 import { TopNavigation } from "@/components/top-navigation/top-navigation";
 import { DebugWrapper } from "@/components/debug-tools/debug-wrapper";
@@ -26,7 +26,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${poly.variable} ${theinhardt.variable} ${geistMono.variable} ${jetbrainsMono.variable} ${ibmPlexMono.variable} ${spaceMono.variable} ${firaCode.variable} ${poly.className} ${theinhardt.className}`}
+      className={`${poly.variable} ${theinhardt.variable} ${shareTechMono.variable} ${poly.className} ${theinhardt.className}`}
     >
       <head>
         <script
@@ -44,8 +44,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
 
             <TopNavigation />
             <main id="main-content">{children}</main>
-            <GradientMask />
-            <GradientMask />
+            <GradientMask className="grit" />
+            <GradientMask className="grit" />
             <Footer />
           </DebugWrapper>
         </TranslationsProvider>

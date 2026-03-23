@@ -60,3 +60,6 @@ tests/
 
 
 .notes
+
+# playwright mcp
+.playwright-mcp/
