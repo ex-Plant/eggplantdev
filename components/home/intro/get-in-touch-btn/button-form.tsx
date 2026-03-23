@@ -48,7 +48,7 @@ export function ButtonForm({ closeBtn, open }: ButtonFormPropsT) {
 
   return (
     <>
-      <p className="text-16 w-[170px] pt-6">{t("quickContactPrompt")}</p>
+      <p className="text-16 w-[170px] pt-6 text-start">{t("quickContactPrompt")}</p>
       <form
         onSubmit={(e) => {
           e.preventDefault();

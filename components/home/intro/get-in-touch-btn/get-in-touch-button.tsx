@@ -47,17 +47,20 @@ export const GetInTouchButton = () => {
       ref={containerRef}
       className={`fest-container pointer-events-none sticky bottom-[120px] mx-auto max-w-[1920px]`}
     >
-      <div className="glow glow-strong 1280:flex 1280:pointer-events-auto z-201 mb-[120px] ml-auto hidden w-fit max-w-[940px] min-w-[270px] shrink-0 cursor-pointer rounded-[10px]">
-        <div
+      <div className="group/btn glow glow-strong 1280:flex 1280:pointer-events-auto z-201 mb-[120px] ml-auto hidden w-fit max-w-[940px] min-w-[270px] shrink-0 cursor-pointer rounded-[10px]">
+        <button
           data-slot="get-in-touch"
-          className={`relative z-10 w-full rounded-[10px] bg-white px-4 py-1 text-black lg:px-6 lg:py-4`}
+          className={`relative z-10 w-full rounded-[10px] bg-white px-4 py-1 text-black transition-transform duration-300 group-hover/btn:-translate-y-[-2px] lg:px-6 lg:py-4`}
         >
           <button
             aria-expanded={open ? "true" : "false"}
             onClick={toggleModal}
             className={cn(`flex w-full cursor-pointer justify-between`, open ? "items-start" : "items-center")}
           >
-            <span ref={textRef} className={`flex gap-2 text-start font-mono uppercase`}>
+            <span
+              ref={textRef}
+              className={cn(`flex gap-2 text-start font-mono uppercase`, open ? "text-28 flex-col" : "")}
+            >
               {t("getInTouch")
                 .split(" ")
                 .map((word) => (
@@ -69,7 +72,7 @@ export const GetInTouchButton = () => {
           <div ref={ref} className={"no-scrollbar h-0 overflow-hidden"}>
             <ButtonForm closeBtn={toggleModal} open={open} />
           </div>
-        </div>
+        </button>
       </div>
     </div>
   );

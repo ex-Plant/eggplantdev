@@ -27,7 +27,7 @@ export function ProjectsAccordion({ projects }: ProjectsAccordionPropsT) {
   );
 }
 
-function ProjectAccordionItem({ project, isOpen }: { project: ProjectT; isOpen: boolean }) {
+function ProjectAccordionItem({ project, isOpen, index }: { project: ProjectT; isOpen: boolean; index: number }) {
   const { name, description, sections, url } = project;
   const { t } = useTranslation("projects");
 
