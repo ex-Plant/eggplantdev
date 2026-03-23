@@ -16,7 +16,7 @@ export function SubmitButton({ isSubmitting, canSubmit, className }: SubmitButto
     <button
       type="submit"
       disabled={!canSubmit}
-      className={cn("text-24 w-full text-start font-mono uppercase disabled:opacity-50", className)}
+      className={cn("text-24 w-full cursor-pointer text-start font-mono uppercase disabled:opacity-50", className)}
     >
       <span className={`text-black`}>{isSubmitting ? t("sending") : t("submit")}</span>
     </button>

@@ -39,7 +39,7 @@ export function ConfirmOverlay({ isOpen, onClose }: ConfirmOverlayPropsT) {
             <ScrambleText text={t("thankYou")} triggerOnMount />
             <ScrambleText text={t("willGetBack")} triggerOnMount />
           </p>
-          <p className={`text-14 text-gray7 transition-opacity duration-500 ${showHint ? "opacity-100" : "opacity-0"}`}>
+          <p className={`text-16 text-gray7 transition-opacity duration-500 ${showHint ? "opacity-100" : "opacity-0"}`}>
             {t("clickToClose")}
           </p>
         </div>
