@@ -25,7 +25,16 @@ export function TopNavigation() {
       {/* Logo — no blend mode, stays normal */}
       <div className="pointer-events-none fixed top-0 right-0 left-0 z-99999">
         <div className="fest-container pointer-events-auto flex w-full items-start">
-          <Link href="/" className={"py-4"}>
+          <Link
+            href="/"
+            className={"py-4"}
+            onClick={(e) => {
+              if (window.location.pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+          >
             <EggplantLogo className="" />
           </Link>
         </div>
@@ -56,7 +65,6 @@ export function TopNavigation() {
                   y: isOpen ? { duration: 0.4, ease: "easeOut", delay: 0.7 } : { duration: 0.4, delay: 0.7 },
                 }}
                 data-slot="nav-dropdown"
-                className="bg-bgc w-fit rounded-md mix-blend-normal"
                 style={{ pointerEvents: isOpen ? "auto" : "none" }}
               >
                 <AccessibilityMenu className="flex-col items-start p-4" />
