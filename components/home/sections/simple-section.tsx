@@ -7,18 +7,14 @@ export type SimpleSectionPropsT = {
   className?: string;
 };
 
-export const SimpleSection = ({
-  titleLine,
-  text,
-  className,
-}: SimpleSectionPropsT) => {
+export const SimpleSection = ({ titleLine, text, className }: SimpleSectionPropsT) => {
   return (
-    <section className={cn("fest-grid ", className)}>
-      <div className="col-span-full 640:col-span-7 md:col-span-8  ">
+    <section className={cn("fest-grid", className)}>
+      <div className="640:col-span-7 col-span-full lg:col-span-6">
         {titleLine && <SimpleHeader title={titleLine} />}
 
         {text && (
-          <div className={`pt-10 text-16 text-lightgray  md:text-20 lg:pt-16 `}>
+          <div className={`text-16 text-lightgray md:text-20 pt-10 lg:pt-16`}>
             <p>{text}</p>
           </div>
         )}

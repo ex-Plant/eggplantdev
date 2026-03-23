@@ -15,7 +15,7 @@ import { SmoothScroll } from "@/components/general/smooth-scroll";
 import type { LocaleT } from "@/lib/i18n/types";
 
 export const metadata: Metadata = {
-  title: "Sometimes dev, sometimes eggplant",
+  title: "Egggplants in space",
   description: "Building apps, shipping eggplants to space",
 };
 

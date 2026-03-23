@@ -27,7 +27,15 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
   // wheelMultiplier controls how much distance each scroll tick covers.
 
   return (
-    <ReactLenis root options={{ autoRaf: false, duration: 1.5, wheelMultiplier: 0.5 }} ref={lenisRef}>
+    <ReactLenis
+      root
+      options={{
+        autoRaf: false,
+        // duration: 2,
+        wheelMultiplier: 0.3,
+      }}
+      ref={lenisRef}
+    >
       {children}
     </ReactLenis>
   );

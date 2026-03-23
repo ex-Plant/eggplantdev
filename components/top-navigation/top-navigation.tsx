@@ -27,7 +27,7 @@ export function TopNavigation() {
         <div className="fest-container pointer-events-auto flex w-full items-start">
           <Link
             href="/"
-            className={"py-4"}
+            className={"-ml-3 py-4"}
             onClick={(e) => {
               if (window.location.pathname === "/") {
                 e.preventDefault();
