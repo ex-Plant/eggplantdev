@@ -1,7 +1,18 @@
-import type { SnakePathsPropsT } from "./snake-border";
+type SnakePathsPropsT = {
+  pathD: string;
+  strokeWidth: number;
+  duration: number;
+  delay: number;
+  drawn: boolean;
+  erasing: boolean;
+  eraseColor?: string;
+  /** Hidden offset for the draw path (1 for Chrome, -1 for Safari) */
+  drawHidden: number;
+  /** Hidden offset for the erase path (-1 for Chrome, 1 for Safari) */
+  eraseHidden: number;
+};
 
-/** Chrome/Firefox — original working animation, do not modify for Safari fixes */
-export function SnakePathsDefault({
+export function SnakePaths({
   pathD,
   strokeWidth,
   duration,
@@ -9,6 +20,8 @@ export function SnakePathsDefault({
   drawn,
   erasing,
   eraseColor,
+  drawHidden,
+  eraseHidden,
 }: SnakePathsPropsT) {
   return (
     <>
@@ -20,7 +33,7 @@ export function SnakePathsDefault({
         strokeWidth={strokeWidth}
         pathLength={1}
         strokeDasharray={1}
-        strokeDashoffset={drawn ? 0 : 1}
+        strokeDashoffset={drawn ? 0 : drawHidden}
         style={{
           transition: `stroke-dashoffset ${duration}s ease ${drawn ? `${delay}s` : "0s"}`,
         }}
@@ -34,7 +47,7 @@ export function SnakePathsDefault({
           strokeWidth={strokeWidth + 1}
           pathLength={1}
           strokeDasharray={1}
-          strokeDashoffset={erasing ? 0 : -1}
+          strokeDashoffset={erasing ? 0 : eraseHidden}
           style={{
             transition: `stroke-dashoffset ${duration}s ease`,
           }}
