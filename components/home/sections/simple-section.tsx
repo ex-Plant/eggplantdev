@@ -14,7 +14,7 @@ export const SimpleSection = ({ titleLine, text, className }: SimpleSectionProps
         {titleLine && <SimpleHeader title={titleLine} />}
 
         {text && (
-          <div className={`text-16 text-lightgray md:text-20 pt-10 lg:pt-16`}>
+          <div className={`text-16 text-lightgray md:text-20 scalable pt-10 lg:pt-16`}>
             <p>{text}</p>
           </div>
         )}

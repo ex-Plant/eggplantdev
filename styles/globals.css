@@ -49,6 +49,13 @@ html[lang="pl"] [class*="font-mono"] {
   font-family: var(--font-jetbrains-mono) !important;
 }
 
+/* Font scale — opt-in via .scalable class on individual elements.
+   Uses zoom because Tailwind sets font-size as absolute rem values.
+   Controlled by --font-scale CSS variable from font-size-store. */
+.scalable {
+  zoom: var(--font-scale, 1);
+}
+
 @theme {
   /* Font sizes with line-height pairs */
   --text-12: 0.75rem;

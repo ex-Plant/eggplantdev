@@ -56,7 +56,7 @@ export function FooterForm({ className }: { className?: string }) {
           e.preventDefault();
           form.handleSubmit();
         }}
-        className={cn(`text-16 text-black`, className)}
+        className={cn(`text-16 scalable text-black`, className)}
       >
         <form.Field name="name">
           {(field) => (

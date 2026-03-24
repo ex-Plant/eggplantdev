@@ -18,7 +18,7 @@ export function AccordionTrigger({ name, year, isOpen, hasUrl }: AccordionTrigge
         <div className="grid grid-cols-[1fr_auto] items-center gap-4 py-12">
           <div className="flex flex-col items-start">
             <ScrambleText className="text-24 font-mono uppercase" text={name} />
-            {year && <p className="text-gray7 text-14 pt-1">{year}</p>}
+            {year && <p className="text-gray7 text-14 scalable pt-1">{year}</p>}
           </div>
           <motion.div
             animate={{ rotate: isOpen ? 90 : 0 }}

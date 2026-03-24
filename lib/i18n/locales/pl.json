@@ -3,12 +3,13 @@
     "skipToContent": "Przejdź do treści",
     "decreaseFontSize": "Zmniejsz czcionkę",
     "increaseFontSize": "Powiększ czcionkę",
+    "fontSize": "Rozmiar czcionki",
     "toggleLanguage": "Polski",
     "toggleTheme": "Kontrast",
     "allAnimations": "Wszystkie animacje",
     "smoothScroll": "Płynne przewijanie",
     "letterAnimations": "Animacje liter",
-    "animationNotice": "Strona korzysta z animacji, które mogą działać wolniej na starszych urządzeniach lub w niektórych przeglądarkach (patrzymy na Ciebie, Safari). Możesz je wyłączyć tutaj.",
+    "animationNotice": "Strona korzysta z animacji, które mogą działać wolniej na starszych urządzeniach lub w niektórych przeglądarkach (Safari). Możesz wyłączyć je tutaj.",
     "drawerDismiss": "Rozumiem"
   },
   "common": {

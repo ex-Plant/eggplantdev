@@ -25,7 +25,7 @@ export function AccordionContentPanel({ isOpen, description, tags, url }: Accord
             transition={{ duration: 0.4, ease: [0.87, 0, 0.13, 1] }}
             className="overflow-hidden"
           >
-            <div className="grid gap-6 pr-10 pb-12">
+            <div className="scalable grid gap-6 pr-10 pb-12">
               <motion.p
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
