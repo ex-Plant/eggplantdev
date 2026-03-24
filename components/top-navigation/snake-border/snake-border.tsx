@@ -15,7 +15,6 @@ type SnakeBorderPropsT = {
   strokeWidth?: number;
   duration?: number;
   delay?: number;
-  eraseColor?: string;
   className?: string;
   children: React.ReactNode;
 };
@@ -62,7 +61,6 @@ export function SnakeBorder({
   strokeWidth = 1,
   duration = 0.6,
   delay = 0,
-  eraseColor,
   className,
   children,
 }: SnakeBorderPropsT) {
@@ -90,25 +88,19 @@ export function SnakeBorder({
     return () => observer.disconnect();
   }, []);
 
-  // Animation state machine:
-  // 1. Open:  erasing → false, then drawn → true  (border draws in)
-  // 2. Close: erasing → true (eraser line covers the drawn border)
-  // Double-rAF ensures the browser commits state between steps.
   const rafRef = useRef<number>(0);
   useEffect(() => {
     if (isVisible && dimensions.width > 0 && dimensions.height > 0) {
       wasVisibleRef.current = true;
       rafRef.current = requestAnimationFrame(() => {
         setErasing(false);
-        rafRef.current = requestAnimationFrame(() => setDrawn(true));
+        setDrawn(true);
       });
       return () => cancelAnimationFrame(rafRef.current);
     }
     if (!isVisible && wasVisibleRef.current) {
       wasVisibleRef.current = false;
-      rafRef.current = requestAnimationFrame(() => {
-        rafRef.current = requestAnimationFrame(() => setErasing(true));
-      });
+      rafRef.current = requestAnimationFrame(() => setErasing(true));
       return () => cancelAnimationFrame(rafRef.current);
     }
   }, [isVisible, dimensions.width, dimensions.height]);
@@ -119,7 +111,8 @@ export function SnakeBorder({
 
   // Safari: counterclockwise path + flipped offsets to counter reversed interpolation
   // Chrome: clockwise path + standard offsets
-  const buildPath = safari ? buildCounterclockwisePath : buildClockwisePath;
+  // Both use clockwise path — Safari offset signs handle the reversal
+  const buildPath = buildClockwisePath;
   const pathD = buildPath(hs, hs, width - strokeWidth, height - strokeWidth, r);
 
   return (
@@ -136,17 +129,33 @@ export function SnakeBorder({
           }}
           viewBox={`0 0 ${width} ${height}`}
         >
-          <SnakePaths
-            pathD={pathD}
-            strokeWidth={strokeWidth}
-            duration={duration}
-            delay={delay}
-            drawn={drawn}
-            erasing={erasing}
-            eraseColor={eraseColor}
-            drawHidden={safari ? -1 : 1}
-            eraseHidden={safari ? 1 : -1}
-          />
+          {safari ? (
+            <path
+              d={pathD}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={strokeWidth}
+              pathLength={1}
+              strokeDasharray={1}
+              strokeDashoffset={isVisible ? 0 : 1}
+              style={{
+                transition: isVisible
+                  ? `stroke-dashoffset ${duration}s ease ${delay}s`
+                  : `stroke-dashoffset 0.4s ease 0.7s`,
+              }}
+            />
+          ) : (
+            <SnakePaths
+              pathD={pathD}
+              strokeWidth={strokeWidth}
+              duration={duration}
+              delay={delay}
+              drawn={drawn}
+              erasing={erasing}
+              drawHidden={1}
+              eraseHidden={1}
+            />
+          )}
         </svg>
       )}
     </div>
