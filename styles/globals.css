@@ -41,6 +41,14 @@
   --font-thein13: var(--font-theinhardt);
 }
 
+/* Share Tech Mono lacks Polish diacritics — use JetBrains Mono for Polish.
+   Scoped to font-family directly since @theme inline vars can't be
+   overridden by a selector on the same element. */
+html[lang="pl"] .font-mono,
+html[lang="pl"] [class*="font-mono"] {
+  font-family: var(--font-jetbrains-mono) !important;
+}
+
 @theme {
   /* Font sizes with line-height pairs */
   --text-12: 0.75rem;

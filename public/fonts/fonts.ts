@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import { Share_Tech_Mono } from "next/font/google";
+import { Share_Tech_Mono, JetBrains_Mono, IBM_Plex_Mono, Fira_Code } from "next/font/google";
 
 export const poly = localFont({
   src: "./PolySans-SlimMono.woff2",
@@ -17,5 +17,24 @@ export const shareTechMono = Share_Tech_Mono({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-share-tech-mono",
+  display: "swap",
+});
+
+export const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
+export const ibmPlexMono = IBM_Plex_Mono({
+  weight: ["400", "500", "700"],
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-ibm-plex-mono",
+  display: "swap",
+});
+
+export const firaCode = Fira_Code({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-fira-code",
   display: "swap",
 });

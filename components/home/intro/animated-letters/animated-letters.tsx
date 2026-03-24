@@ -5,6 +5,7 @@ import SplitType from "split-type";
 import { useRef } from "react";
 import useWindowSize from "@/hooks/use-window-size";
 import { useAnimationStore } from "@/stores/animation-store";
+import { useI18nContext } from "@/lib/i18n/translations-provider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,6 +18,7 @@ gsap.registerPlugin(ScrollTrigger);
 export const AnimatedLettersMask = ({ text = "" }) => {
   const lettersRef = useRef<HTMLDivElement>(null);
   const { clientWidth } = useWindowSize();
+  const { locale } = useI18nContext();
   const splitRef = useRef<SplitType | null>(null);
   const letterAnimations = useAnimationStore((s) => s.letterAnimations);
   const allAnimations = useAnimationStore((s) => s.allAnimations);
@@ -78,7 +80,7 @@ export const AnimatedLettersMask = ({ text = "" }) => {
     >
       <div
         id="target-mask"
-        className="wrap-break-words text-28 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono font-medium tracking-tight text-white uppercase"
+        className={`wrap-break-words text-28 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono font-medium tracking-tight text-white uppercase ${locale === "pl" ? "leading-[1.2]" : ""}`}
       >
         {text}
       </div>

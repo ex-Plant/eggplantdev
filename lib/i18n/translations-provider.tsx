@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import type { LocaleT, TranslationsT } from "./types";
 import { getTranslations } from "./translations";
 
@@ -17,18 +17,27 @@ type TranslationsProviderPropsT = {
   children: React.ReactNode;
 };
 
-function getLocaleFromCookie(): LocaleT {
-  if (typeof document === "undefined") return "en";
-  const match = document.cookie.match(/(?:^|; )locale=([^;]*)/);
-  const val = match?.[1];
+function getLocaleFromStorage(): LocaleT {
+  if (typeof window === "undefined") return "en";
+  const val = localStorage.getItem("locale");
   return val === "en" || val === "pl" ? val : "en";
 }
 
 export function TranslationsProvider({ initialLocale, children }: TranslationsProviderPropsT) {
-  const [locale] = useState<LocaleT>(() => getLocaleFromCookie() ?? initialLocale);
+  const [locale] = useState<LocaleT>(() => getLocaleFromStorage() ?? initialLocale);
+
+  // Set html lang attribute for CSS font switching (html[lang="pl"])
+  // and theme from localStorage — replaces ThemeHydrator script
+  useEffect(() => {
+    document.documentElement.lang = locale;
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark" || theme === "contrast") {
+      document.documentElement.setAttribute("data-theme", theme);
+    }
+  }, [locale]);
 
   const setLocale = useCallback((newLocale: LocaleT) => {
-    document.cookie = `locale=${newLocale};path=/;max-age=${60 * 60 * 24 * 365}`;
+    localStorage.setItem("locale", newLocale);
     window.location.reload();
   }, []);
 

@@ -9,12 +9,12 @@ type ThemeStoreT = {
 };
 
 export const useThemeStore = create<ThemeStoreT>()((set) => ({
-  theme: (typeof document !== "undefined"
-    ? (document.documentElement.getAttribute("data-theme") as ThemeT)
-    : null) ?? "dark",
+  theme:
+    (typeof document !== "undefined" ? (document.documentElement.getAttribute("data-theme") as ThemeT) : null) ??
+    "dark",
 
   setTheme: (theme) => {
-    document.cookie = `theme=${theme};path=/;max-age=${60 * 60 * 24 * 365}`;
+    localStorage.setItem("theme", theme);
     set({ theme });
     document.documentElement.setAttribute("data-theme", theme);
   },
