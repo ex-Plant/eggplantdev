@@ -65,7 +65,7 @@ export default function EmailPreviewsPage() {
 
       <main className="flex flex-1 gap-0 overflow-hidden">
         <div className="flex flex-1 flex-col">
-          <div className="border-gray7 text-12 text-gray7 flex justify-between border-b px-4 py-2">
+          <div className="border-gray7 text-14 text-gray7 flex justify-between border-b px-4 py-2">
             <span>Preview (560px centered)</span>
             <span>{selected.name}</span>
           </div>

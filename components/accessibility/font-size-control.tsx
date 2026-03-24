@@ -10,7 +10,7 @@ export function FontSizeControl() {
 
   return (
     <div className="flex items-center justify-between gap-3">
-      <span className="text-11 shrink-0" id="font-size-label">
+      <span className="text-14 shrink-0" id="font-size-label">
         {t("fontSize")}
       </span>
       <div className="flex items-center gap-2" role="group" aria-labelledby="font-size-label">

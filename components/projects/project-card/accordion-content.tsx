@@ -39,7 +39,7 @@ export function AccordionContentPanel({ isOpen, description, tags, url }: Accord
               {tags.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {tags.map((tag) => (
-                    <span key={tag} className="border-gray5 text-gray7 text-12 rounded-lg border px-3">
+                    <span key={tag} className="border-gray5 text-gray7 text-14 rounded-lg border px-3">
                       {tag}
                     </span>
                   ))}
@@ -47,16 +47,14 @@ export function AccordionContentPanel({ isOpen, description, tags, url }: Accord
               )}
 
               {url && (
-                <GlowWrapper className={`w-fit`}>
-                  <Link
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-14 text-lightgray relative transition-colors duration-300 hover:text-white"
-                  >
-                    {t("visitWebsite")}
-                  </Link>
-                </GlowWrapper>
+                <Link
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-14 text-lightgray relative w-fit transition-colors duration-300 hover:text-white"
+                >
+                  <GlowWrapper>{t("visitWebsite")}</GlowWrapper>
+                </Link>
               )}
             </div>
           </motion.div>

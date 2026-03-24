@@ -14,7 +14,7 @@ export function FieldErrors({ errors, className, id }: FieldErrorsPropsT) {
       key={i}
       id={i === 0 ? id : undefined}
       role="alert"
-      className={`text-12 absolute bottom-0 left-0 text-red-500 ${className}`}
+      className={`text-14 absolute bottom-0 left-0 text-red-500 ${className}`}
     >
       {typeof err === "string" ? err : err?.message}
     </p>
