@@ -38,6 +38,8 @@ export function buildRoundedRectPath(x: number, y: number, w: number, h: number,
 
 export type SnakePathsPropsT = {
   pathD: string;
+  /** Raw geometry for building alternative paths (e.g. reversed for Safari) */
+  geo: { x: number; y: number; w: number; h: number; r: number };
   strokeWidth: number;
   duration: number;
   delay: number;
@@ -118,6 +120,7 @@ export function SnakeBorder({
         >
           <PathsComponent
             pathD={pathD}
+            geo={{ x: hs, y: hs, w: width - strokeWidth, h: height - strokeWidth, r }}
             strokeWidth={strokeWidth}
             duration={duration}
             delay={delay}
