@@ -20,5 +20,5 @@ export function RenderSections({ data }: SectionPropsT) {
     }
   }
 
-  return <div style={{ contentVisibility: "auto", containIntrinsicSize: "0 500px" }}>{renderContent()}</div>;
+  return renderContent();
 }
