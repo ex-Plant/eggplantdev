@@ -61,7 +61,6 @@ export function TopNavigation() {
                 strokeWidth={2.5}
                 duration={1}
                 delay={0.6}
-                eraseColor="var(--color-bgc)"
                 className="rounded-md text-white"
               >
                 <motion.div
