@@ -12,7 +12,7 @@ export function LanguageSwitcher() {
 
   return (
     <div className="flex items-center justify-between gap-2">
-      <span className="text-11 truncate">EN</span>
+      <span className="text-11 truncate">ENGLISH</span>
       <ToggleSwitch checked={isEnglish} onChange={(v) => setLocale(v ? "en" : "pl")} label={t("toggleLanguage")} />
     </div>
   );
