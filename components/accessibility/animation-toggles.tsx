@@ -1,18 +1,17 @@
 "use client";
 
-import { useAnimationStore, ANIMATION_KEYS, type AnimationKeyT } from "@/stores/animation-store";
-import { useThemeStore } from "@/stores/theme-store";
+import { usePreferencesStore, ANIMATION_KEYS, type AnimationKeyT } from "@/stores/preferences-store";
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
 import { ToggleSwitch } from "./toggle-switch";
 import { cn } from "../../helpers/cn";
 
 export function AnimationToggles({ className }: { className?: string }) {
-  const allAnimations = useAnimationStore((s) => s.allAnimations);
-  const smoothScroll = useAnimationStore((s) => s.smoothScroll);
-  const letterAnimations = useAnimationStore((s) => s.letterAnimations);
-  const setAnimation = useAnimationStore((s) => s.setAnimation);
-  const setAllAnimations = useAnimationStore((s) => s.setAllAnimations);
-  const theme = useThemeStore((s) => s.theme);
+  const allAnimations = usePreferencesStore((s) => s.allAnimations);
+  const smoothScroll = usePreferencesStore((s) => s.smoothScroll);
+  const letterAnimations = usePreferencesStore((s) => s.letterAnimations);
+  const setAnimation = usePreferencesStore((s) => s.setAnimation);
+  const setAllAnimations = usePreferencesStore((s) => s.setAllAnimations);
+  const theme = usePreferencesStore((s) => s.theme);
   const { t } = useTranslation("accessibility");
 
   const isContrast = theme === "contrast";

@@ -1,14 +1,13 @@
 "use client";
 
-import { useThemeStore } from "@/stores/theme-store";
-import { useAnimationStore } from "@/stores/animation-store";
+import { usePreferencesStore } from "@/stores/preferences-store";
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
 import { ToggleSwitch } from "./toggle-switch";
 
 export function ThemeToggle() {
-  const theme = useThemeStore((s) => s.theme);
-  const setTheme = useThemeStore((s) => s.setTheme);
-  const setAnimation = useAnimationStore((s) => s.setAnimation);
+  const theme = usePreferencesStore((s) => s.theme);
+  const setTheme = usePreferencesStore((s) => s.setTheme);
+  const setAnimation = usePreferencesStore((s) => s.setAnimation);
   const { t } = useTranslation("accessibility");
 
   const isContrast = theme === "contrast";

@@ -29,7 +29,7 @@ export function MobileMenu({ isOpen, setIsOpen }: MobileMenuPropsT) {
           transition={{ duration: 0.4, ease: [0.87, 0, 0.13, 1] }}
           className="bg-bgc no-scrollbar fixed inset-0 z-9999 flex flex-col font-mono"
         >
-          <div className="fest-container flex flex-col overflow-x-hidden overflow-y-auto pt-40 pb-6">
+          <div className="fest-container mt-auto flex flex-col overflow-x-hidden overflow-y-auto pt-40 pb-6">
             <div className="grid grid-cols-1">
               <RoundedSeparator className="my-6" />
 

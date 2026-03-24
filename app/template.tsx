@@ -1,10 +1,10 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useAnimationStore } from "@/stores/animation-store";
+import { usePreferencesStore } from "@/stores/preferences-store";
 
 export default function Template({ children }: { children: React.ReactNode }) {
-  const allAnimations = useAnimationStore((s) => s.allAnimations);
+  const allAnimations = usePreferencesStore((s) => s.allAnimations);
 
   if (!allAnimations) return <div className="min-h-svh">{children}</div>;
 

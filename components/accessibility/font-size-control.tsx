@@ -1,11 +1,11 @@
 "use client";
 
-import { useFontSizeStore, MIN_SCALE, MAX_SCALE, STEP } from "@/stores/font-size-store";
+import { usePreferencesStore, MIN_SCALE, MAX_SCALE, FONT_STEP } from "@/stores/preferences-store";
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
 
 export function FontSizeControl() {
-  const scale = useFontSizeStore((s) => s.scale);
-  const setScale = useFontSizeStore((s) => s.setScale);
+  const scale = usePreferencesStore((s) => s.scale);
+  const setScale = usePreferencesStore((s) => s.setScale);
   const { t } = useTranslation("accessibility");
 
   return (
@@ -16,7 +16,7 @@ export function FontSizeControl() {
       <div className="flex items-center gap-2" role="group" aria-labelledby="font-size-label">
         <button
           type="button"
-          onClick={() => setScale(scale - STEP)}
+          onClick={() => setScale(scale - FONT_STEP)}
           aria-label={t("decreaseFontSize")}
           disabled={scale <= MIN_SCALE}
           className="text-24 cursor-pointer leading-none text-white focus-visible:outline-white disabled:cursor-default disabled:opacity-30"
@@ -27,7 +27,7 @@ export function FontSizeControl() {
           type="range"
           min={MIN_SCALE}
           max={MAX_SCALE}
-          step={STEP}
+          step={FONT_STEP}
           value={scale}
           onChange={(e) => setScale(Number(e.target.value))}
           aria-label={t("fontSize")}
@@ -39,7 +39,7 @@ export function FontSizeControl() {
         />
         <button
           type="button"
-          onClick={() => setScale(scale + STEP)}
+          onClick={() => setScale(scale + FONT_STEP)}
           aria-label={t("increaseFontSize")}
           disabled={scale >= MAX_SCALE}
           className="text-24 cursor-pointer leading-none text-white focus-visible:outline-white disabled:cursor-default disabled:opacity-30"

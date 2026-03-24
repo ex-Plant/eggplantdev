@@ -3,12 +3,12 @@
 import { ReactLenis } from "lenis/react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useAnimationStore } from "@/stores/animation-store";
+import { usePreferencesStore } from "@/stores/preferences-store";
 
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<React.ComponentRef<typeof ReactLenis>>(null);
-  const smoothScroll = useAnimationStore((s) => s.smoothScroll);
-  const allAnimations = useAnimationStore((s) => s.allAnimations);
+  const smoothScroll = usePreferencesStore((s) => s.smoothScroll);
+  const allAnimations = usePreferencesStore((s) => s.allAnimations);
 
   const isEnabled = allAnimations && smoothScroll;
 

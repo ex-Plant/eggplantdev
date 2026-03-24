@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { cn } from "@/helpers/cn";
-import { useAnimationStore } from "@/stores/animation-store";
+import { usePreferencesStore } from "@/stores/preferences-store";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,8 +33,8 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
   // Separate tracking for timeouts and intervals — avoids double-clear ambiguity
   const timeoutsRef = useRef<Set<ReturnType<typeof setTimeout>>>(new Set());
   const intervalsRef = useRef<Set<ReturnType<typeof setInterval>>>(new Set());
-  const letterAnimations = useAnimationStore((s) => s.letterAnimations);
-  const allAnimations = useAnimationStore((s) => s.allAnimations);
+  const letterAnimations = usePreferencesStore((s) => s.letterAnimations);
+  const allAnimations = usePreferencesStore((s) => s.allAnimations);
   const isEnabled = allAnimations && letterAnimations;
 
   useGSAP(

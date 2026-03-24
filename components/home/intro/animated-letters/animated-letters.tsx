@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import SplitType from "split-type";
 import { useRef } from "react";
 import useWindowSize from "@/hooks/use-window-size";
-import { useAnimationStore } from "@/stores/animation-store";
+import { usePreferencesStore } from "@/stores/preferences-store";
 import { useI18nContext } from "@/lib/i18n/translations-provider";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,8 +20,8 @@ export const AnimatedLettersMask = ({ text = "" }) => {
   const { clientWidth } = useWindowSize();
   const { locale } = useI18nContext();
   const splitRef = useRef<SplitType | null>(null);
-  const letterAnimations = useAnimationStore((s) => s.letterAnimations);
-  const allAnimations = useAnimationStore((s) => s.allAnimations);
+  const letterAnimations = usePreferencesStore((s) => s.letterAnimations);
+  const allAnimations = usePreferencesStore((s) => s.allAnimations);
   const isEnabled = allAnimations && letterAnimations;
 
   useGSAP(

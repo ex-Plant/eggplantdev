@@ -51,7 +51,7 @@ html[lang="pl"] [class*="font-mono"] {
 
 /* Font scale — opt-in via .scalable class on individual elements.
    Uses zoom because Tailwind sets font-size as absolute rem values.
-   Controlled by --font-scale CSS variable from font-size-store. */
+   Controlled by --font-scale CSS variable from preferences-store. */
 .scalable {
   zoom: var(--font-scale, 1);
 }
@@ -349,4 +349,23 @@ textarea:-webkit-autofill {
 }
 [data-theme="contrast"] [role="switch"] div {
   background-color: var(--contrast-bg) !important;
+}
+
+/* SVG separators in contrast mode */
+[data-theme="contrast"] svg line {
+  stroke: var(--contrast-fg) !important;
+}
+
+/* Range input (font size slider) in contrast mode */
+[data-theme="contrast"] input[type="range"] {
+  background-color: var(--contrast-fg) !important;
+}
+[data-theme="contrast"] input[type="range"]::-webkit-slider-thumb {
+  background-color: var(--contrast-bg) !important;
+  border: 2px solid var(--contrast-fg) !important;
+}
+
+/* Menu button lines in contrast mode */
+[data-theme="contrast"] [aria-label="menu"] svg {
+  color: var(--contrast-fg) !important;
 }

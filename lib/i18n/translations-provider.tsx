@@ -1,8 +1,9 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import type { LocaleT, TranslationsT } from "./types";
+import { createContext, useContext, useMemo } from "react";
+import type { TranslationsT } from "./types";
 import { getTranslations } from "./translations";
+import { usePreferencesStore, type LocaleT } from "@/stores/preferences-store";
 
 type I18nContextT = {
   locale: LocaleT;
@@ -12,46 +13,11 @@ type I18nContextT = {
 
 const I18nContext = createContext<I18nContextT | null>(null);
 
-type TranslationsProviderPropsT = {
-  initialLocale: LocaleT;
-  children: React.ReactNode;
-};
+export function TranslationsProvider({ children }: { children: React.ReactNode }) {
+  const locale = usePreferencesStore((s) => s.locale);
+  const setLocale = usePreferencesStore((s) => s.setLocale);
 
-function getLocaleFromStorage(): LocaleT {
-  if (typeof window === "undefined") return "en";
-  const val = localStorage.getItem("locale");
-  return val === "en" || val === "pl" ? val : "en";
-}
-
-export function TranslationsProvider({ initialLocale, children }: TranslationsProviderPropsT) {
-  const [locale] = useState<LocaleT>(() => getLocaleFromStorage() ?? initialLocale);
-
-  // Set html lang attribute for CSS font switching (html[lang="pl"])
-  // and theme from localStorage — replaces ThemeHydrator script
-  useEffect(() => {
-    document.documentElement.lang = locale;
-    const theme = localStorage.getItem("theme");
-    if (theme === "dark" || theme === "contrast") {
-      document.documentElement.setAttribute("data-theme", theme);
-    }
-  }, [locale]);
-
-  // Full reload restarts all page animations (fade-in, letter reveals, etc.)
-  // sessionStorage flag keeps the menu open across the reload
-  const setLocale = useCallback((newLocale: LocaleT) => {
-    localStorage.setItem("locale", newLocale);
-    sessionStorage.setItem("menuOpenAfterReload", "true");
-    window.location.reload();
-  }, []);
-
-  const value = useMemo(
-    () => ({
-      locale,
-      translations: getTranslations(locale),
-      setLocale,
-    }),
-    [locale, setLocale],
-  );
+  const value = useMemo(() => ({ locale, translations: getTranslations(locale), setLocale }), [locale, setLocale]);
 
   return <I18nContext value={value}>{children}</I18nContext>;
 }
