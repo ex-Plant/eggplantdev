@@ -6,8 +6,6 @@ import { useTranslation } from "@/lib/i18n/hooks/use-translation";
 import { AnimationToggles } from "./animation-toggles";
 import { RoundedSeparator } from "../general/rounded-separator";
 
-const COOKIE_NAME = "animDrawerSeen";
-
 type MobileMenuPropsT = {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
@@ -22,7 +20,7 @@ export function MobileMenu({ isOpen, setIsOpen }: MobileMenuPropsT) {
         <motion.div
           role="dialog"
           aria-modal="true"
-          aria-label={t("allAnimations")}
+          aria-label="preferences menu"
           initial={{ y: "100%", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: "100%", opacity: 0 }}

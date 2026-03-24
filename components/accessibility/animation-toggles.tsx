@@ -6,11 +6,9 @@ import { ToggleSwitch } from "./toggle-switch";
 import { cn } from "../../helpers/cn";
 
 export function AnimationToggles({ className }: { className?: string }) {
-  const allAnimations = usePreferencesStore((s) => s.allAnimations);
   const smoothScroll = usePreferencesStore((s) => s.smoothScroll);
   const letterAnimations = usePreferencesStore((s) => s.letterAnimations);
   const setAnimation = usePreferencesStore((s) => s.setAnimation);
-  const setAllAnimations = usePreferencesStore((s) => s.setAllAnimations);
   const theme = usePreferencesStore((s) => s.theme);
   const { t } = useTranslation("accessibility");
 
@@ -23,10 +21,6 @@ export function AnimationToggles({ className }: { className?: string }) {
 
   return (
     <div className={cn("grid grid-cols-1 gap-3", className)}>
-      <div className="flex items-center justify-between">
-        <span className="text-11 truncate">{t("allAnimations")}</span>
-        <ToggleSwitch checked={allAnimations} onChange={setAllAnimations} label={t("allAnimations")} />
-      </div>
       {ANIMATION_KEYS.map((key) => (
         <div key={key} className="flex items-center justify-between">
           <span className="text-11 truncate">{t(key)}</span>

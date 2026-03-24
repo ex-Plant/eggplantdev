@@ -17,7 +17,6 @@ type PersistedT = {
   theme: ThemeT;
   locale: LocaleT;
   scale: number;
-  allAnimations: boolean;
   smoothScroll: boolean;
   letterAnimations: boolean;
 };
@@ -27,7 +26,6 @@ type PreferencesStoreT = PersistedT & {
   setTheme: (theme: ThemeT) => void;
   setScale: (scale: number) => void;
   setAnimation: (key: AnimationKeyT, enabled: boolean) => void;
-  setAllAnimations: (enabled: boolean) => void;
   setLocale: (locale: LocaleT) => void;
 };
 
@@ -73,7 +71,6 @@ function getInitialState(): PersistedT {
     theme: "dark",
     locale: "en",
     scale: MIN_SCALE,
-    allAnimations: !reducedMotion,
     smoothScroll: !isDesktopSafari && !reducedMotion,
     letterAnimations: !reducedMotion,
   };
@@ -95,9 +92,9 @@ function applyLocale(locale: LocaleT) {
   const d = document.documentElement;
   d.lang = locale;
   if (locale === "pl") {
-    d.style.setProperty("--font-mono", "var(--font-jetbrains-mono)");
+    d.style.setProperty("--font-share-tech-mono", "var(--font-jetbrains-mono)");
   } else {
-    d.style.removeProperty("--font-mono");
+    d.style.removeProperty("--font-share-tech-mono");
   }
 }
 
@@ -116,7 +113,6 @@ function getPersistedSlice(state: PreferencesStoreT): PersistedT {
     theme: state.theme,
     locale: state.locale,
     scale: state.scale,
-    allAnimations: state.allAnimations,
     smoothScroll: state.smoothScroll,
     letterAnimations: state.letterAnimations,
   };
@@ -142,16 +138,6 @@ export const usePreferencesStore = create<PreferencesStoreT>()((set, get) => ({
   setAnimation: (key, enabled) => {
     set({ [key]: enabled });
     persist(getPersistedSlice({ ...get(), [key]: enabled }));
-  },
-
-  setAllAnimations: (enabled) => {
-    const update = {
-      allAnimations: enabled,
-      smoothScroll: enabled && !get().isDesktopSafari,
-      letterAnimations: enabled,
-    };
-    set(update);
-    persist(getPersistedSlice({ ...get(), ...update }));
   },
 
   setLocale: (locale) => {

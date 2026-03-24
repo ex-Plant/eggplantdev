@@ -20,9 +20,7 @@ export const AnimatedLettersMask = ({ text = "" }) => {
   const { clientWidth } = useWindowSize();
   const { locale } = useI18nContext();
   const splitRef = useRef<SplitType | null>(null);
-  const letterAnimations = usePreferencesStore((s) => s.letterAnimations);
-  const allAnimations = usePreferencesStore((s) => s.allAnimations);
-  const isEnabled = allAnimations && letterAnimations;
+  const isEnabled = usePreferencesStore((s) => s.letterAnimations);
 
   useGSAP(
     () => {

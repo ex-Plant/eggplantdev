@@ -33,9 +33,7 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
   // Separate tracking for timeouts and intervals — avoids double-clear ambiguity
   const timeoutsRef = useRef<Set<ReturnType<typeof setTimeout>>>(new Set());
   const intervalsRef = useRef<Set<ReturnType<typeof setInterval>>>(new Set());
-  const letterAnimations = usePreferencesStore((s) => s.letterAnimations);
-  const allAnimations = usePreferencesStore((s) => s.allAnimations);
-  const isEnabled = allAnimations && letterAnimations;
+  const isEnabled = usePreferencesStore((s) => s.letterAnimations);
 
   useGSAP(
     () => {

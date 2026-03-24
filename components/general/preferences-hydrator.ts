@@ -25,7 +25,9 @@ export const preferencesHydratorScript = `(function(){
     }
     var d=document.documentElement;
     d.setAttribute('data-theme',p&&(p.theme==='dark'||p.theme==='contrast')?p.theme:'dark');
-    d.lang=p&&(p.locale==='en'||p.locale==='pl')?p.locale:'en';
+    var loc=p&&(p.locale==='en'||p.locale==='pl')?p.locale:'en';
+    d.lang=loc;
+    if(loc==='pl')d.style.setProperty('--font-share-tech-mono','var(--font-jetbrains-mono)');
     if(p&&p.scale&&p.scale>=1&&p.scale<=1.5)d.style.setProperty('--font-scale',String(p.scale));
   }catch(e){}
 })();`;

@@ -7,10 +7,7 @@ import { usePreferencesStore } from "@/stores/preferences-store";
 
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<React.ComponentRef<typeof ReactLenis>>(null);
-  const smoothScroll = usePreferencesStore((s) => s.smoothScroll);
-  const allAnimations = usePreferencesStore((s) => s.allAnimations);
-
-  const isEnabled = allAnimations && smoothScroll;
+  const isEnabled = usePreferencesStore((s) => s.smoothScroll);
 
   // Sync Lenis with GSAP's ticker instead of running its own requestAnimationFrame loop.
   // This avoids two competing animation loops and keeps scroll position
