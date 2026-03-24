@@ -31,6 +31,54 @@
           ]
         },
         {
+          "type": "simple",
+          "titleLine": ["The", "Challenge"],
+          "text": "Poland's festival industry lacked a centralized platform for sharing knowledge across organizations. Festival organizers relied on scattered email threads, outdated PDFs, and word-of-mouth to exchange best practices on copyright, sustainability, and audience engagement. We needed to build a single, accessible hub that could serve hundreds of cultural institutions while meeting strict WCAG compliance requirements."
+        },
+        {
+          "type": "screenshots",
+          "gridColumnsNumber": 2,
+          "images": [
+            "/images/projects/alpha/slide-1.jpg",
+            "/images/projects/alpha/slide-1-desktop.jpg",
+            "/images/projects/alpha/slide-1-mobile.jpg",
+            "/images/projects/alpha/slide-1.jpg"
+          ]
+        },
+        {
+          "type": "video",
+          "desktopScreenshot": "/images/projects/alpha/slide-1-desktop.jpg",
+          "mobileScreenshot": "/images/projects/alpha/slide-1-mobile.jpg"
+        },
+        {
+          "type": "team",
+          "title": "Project Team",
+          "cards": [
+            {
+              "title": "Frontend Development",
+              "content": "Konrad Antonik — component architecture, WCAG implementation, article builder, animations"
+            },
+            { "title": "Design", "content": "Navarra Lab design team — UI/UX, visual identity, responsive layouts" },
+            { "title": "Backend", "content": "Custom CMS integration, content modeling, API design" },
+            {
+              "title": "Project Management",
+              "content": "Coordination with Kraków Festival Office and National Centre for Culture"
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "titleLine": ["What They", "Said"],
+          "quotes": [
+            {
+              "quote": "The platform transformed how Polish festivals share knowledge. What used to take weeks of back-and-forth emails now happens in real time.",
+              "name": "Anna Kowalska",
+              "title": "Program Director, Kraków Festival Office",
+              "avatar": "/images/projects/alpha-logo.png"
+            }
+          ]
+        },
+        {
           "type": "techstack",
           "title": "Technology Stack",
           "tags": ["Next.js", "React", "TypeScript", "Tailwind CSS", "WCAG", "i18n"]

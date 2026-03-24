@@ -52,7 +52,7 @@ export function TopNavigation() {
       <GradientMask top={true} />
       <GradientMask top={true} />
       {/* Logo — no blend mode, stays normal */}
-      <div className="pointer-events-none fixed top-0 right-0 left-0 z-999939">
+      <div className="pointer-events-none fixed top-0 right-0 left-0 z-99999">
         <div className="fest-container flex w-full items-start">
           <EggplantLogo />
         </div>
