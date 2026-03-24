@@ -46,7 +46,7 @@ export default function EmailPreviewsPage() {
           <select
             value={selectedId}
             onChange={(e) => setSelectedId(e.target.value)}
-            className="border-gray2 bg-bgc text-14 rounded border px-3 py-2 text-white"
+            className="border-gray2 bg-bgc text-16 rounded border px-3 py-2 text-white"
           >
             {templates.map((t) => (
               <option key={t.id} value={t.id}>
@@ -56,7 +56,7 @@ export default function EmailPreviewsPage() {
           </select>
           <button
             onClick={handleCopy}
-            className="border-gray7 text-14 rounded border px-4 py-2 transition hover:border-white"
+            className="border-gray7 text-16 rounded border px-4 py-2 transition hover:border-white"
           >
             {copied ? "Copied!" : "Copy HTML"}
           </button>
@@ -65,7 +65,7 @@ export default function EmailPreviewsPage() {
 
       <main className="flex flex-1 gap-0 overflow-hidden">
         <div className="flex flex-1 flex-col">
-          <div className="border-gray7 text-14 text-gray7 flex justify-between border-b px-4 py-2">
+          <div className="border-gray7 text-16 text-gray7 flex justify-between border-b px-4 py-2">
             <span>Preview (560px centered)</span>
             <span>{selected.name}</span>
           </div>
