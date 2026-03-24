@@ -1,5 +1,6 @@
 "use client";
 
+import { forwardRef } from "react";
 import { cn } from "@/helpers/cn";
 
 type MenuButtonPropsT = {
@@ -8,11 +9,15 @@ type MenuButtonPropsT = {
   className?: string;
 };
 
-export function MenuButton({ className, onClick, isOpen }: MenuButtonPropsT) {
+export const MenuButton = forwardRef<HTMLButtonElement, MenuButtonPropsT>(function MenuButton(
+  { className, onClick, isOpen },
+  ref,
+) {
   return (
     <button
+      ref={ref}
       onClick={onClick}
-      className={cn("flex cursor-pointer items-center justify-center pt-4 md:pt-6", className)}
+      className={cn("flex cursor-pointer items-center justify-center pt-2", className)}
       aria-label="menu"
       aria-controls="primary-navigation"
       aria-expanded={isOpen}
@@ -41,4 +46,4 @@ export function MenuButton({ className, onClick, isOpen }: MenuButtonPropsT) {
       </svg>
     </button>
   );
-}
+});
