@@ -4,7 +4,7 @@ export function GradientMask({ top = false }) {
   return (
     <div
       className={cn(
-        "grit pointer-events-none fixed right-0 isolate z-100 h-[8vh] w-full",
+        "grit pointer-events-none fixed right-0 isolate z-100 h-[8vh] w-full will-change-transform",
         top ? "top-0" : "bottom-[-2px]",
       )}
     >

@@ -14,7 +14,7 @@ type AccordionTriggerPropsT = {
 export function AccordionTrigger({ name, year, isOpen, hasUrl }: AccordionTriggerPropsT) {
   return (
     <Accordion.Trigger className="w-full cursor-pointer transition-transform duration-300 group-hover/card:translate-y-[-6px]">
-      <GlowWrapper glowClassName="-inset-x-8 -inset-y-4 rounded-2xl blur-3xl">
+      <GlowWrapper glowClassName="-inset-x-8 -inset-y-4 rounded-2xl">
         <div className="grid grid-cols-[1fr_auto] items-center gap-4 py-12">
           <div className="flex flex-col items-start">
             <ScrambleText className="text-24 font-mono uppercase" text={name} />
