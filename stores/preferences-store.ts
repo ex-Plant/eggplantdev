@@ -89,13 +89,7 @@ function applyScale(scale: number) {
 }
 
 function applyLocale(locale: LocaleT) {
-  const d = document.documentElement;
-  d.lang = locale;
-  if (locale === "pl") {
-    d.style.setProperty("--font-share-tech-mono", "var(--font-jetbrains-mono)");
-  } else {
-    d.style.removeProperty("--font-share-tech-mono");
-  }
+  document.documentElement.lang = locale;
 }
 
 // ── Store ──────────────────────────────────────────────────

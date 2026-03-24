@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import { Share_Tech_Mono, JetBrains_Mono, IBM_Plex_Mono, Fira_Code } from "next/font/google";
+import { JetBrains_Mono, IBM_Plex_Mono, Fira_Code } from "next/font/google";
 
 export const poly = localFont({
   src: "./PolySans-SlimMono.woff2",
@@ -10,13 +10,6 @@ export const poly = localFont({
 export const theinhardt = localFont({
   src: "./Theinhardt-Regular.woff2",
   variable: "--font-theinhardt",
-  display: "swap",
-});
-
-export const shareTechMono = Share_Tech_Mono({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-share-tech-mono",
   display: "swap",
 });
 

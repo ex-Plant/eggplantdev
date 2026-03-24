@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { Metadata } from "next";
 import React, { ReactNode } from "react";
 
-import { poly, theinhardt, shareTechMono, jetbrainsMono, ibmPlexMono, firaCode } from "@/public/fonts/fonts";
+import { poly, theinhardt, jetbrainsMono, ibmPlexMono, firaCode } from "@/public/fonts/fonts";
 
 import { TopNavigation } from "@/components/top-navigation/top-navigation";
 import { DebugWrapper } from "@/components/debug-tools/debug-wrapper";
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       data-theme="dark"
       suppressHydrationWarning
-      className={`${poly.variable} ${theinhardt.variable} ${shareTechMono.variable} ${jetbrainsMono.variable} ${ibmPlexMono.variable} ${firaCode.variable} ${poly.className} ${theinhardt.className}`}
+      className={`${poly.variable} ${theinhardt.variable} ${jetbrainsMono.variable} ${ibmPlexMono.variable} ${firaCode.variable} ${poly.className} ${theinhardt.className}`}
     >
       <body className="overscroll-none scroll-smooth antialiased" suppressHydrationWarning>
         <script dangerouslySetInnerHTML={{ __html: preferencesHydratorScript }} />
