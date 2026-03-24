@@ -12,7 +12,7 @@ export function MenuButton({ className, onClick, isOpen }: MenuButtonPropsT) {
   return (
     <button
       onClick={onClick}
-      className={cn("flex cursor-pointer items-center justify-center pt-6", className)}
+      className={cn("flex cursor-pointer items-center justify-center pt-4 md:pt-6", className)}
       aria-label="menu"
       aria-controls="primary-navigation"
       aria-expanded={isOpen}
@@ -22,9 +22,9 @@ export function MenuButton({ className, onClick, isOpen }: MenuButtonPropsT) {
         fill="none"
         className={cn(
           "contrast:text-[var(--contrast-fg)] text-white transition-[translate,rotate] duration-1000",
-          isOpen && "translate-[2px_-2px] rotate-45",
+          isOpen && "translate-[-3px_-2px] rotate-45",
         )}
-        viewBox="-10 -10 120 120"
+        viewBox="-10 -10 105 120"
         width="44"
       >
         <path
