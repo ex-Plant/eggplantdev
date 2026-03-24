@@ -49,7 +49,7 @@ export const GetInTouchButton = () => {
     >
       <div
         onClick={toggleModal}
-        className="group/btn glow glow-strong 1280:flex 1280:pointer-events-auto z-201 mb-[120px] ml-auto hidden w-fit max-w-[940px] min-w-[270px] shrink-0 cursor-pointer rounded-[10px]"
+        className="group/btn glow 1280:flex 1280:pointer-events-auto z-201 mb-[120px] ml-auto hidden w-fit max-w-[940px] min-w-[270px] shrink-0 cursor-pointer rounded-[10px] bg-white"
       >
         <div
           data-slot="get-in-touch"

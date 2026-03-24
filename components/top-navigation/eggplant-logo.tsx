@@ -59,6 +59,7 @@ export function EggplantLogo({ className }: { className?: string }) {
         sizes="(min-width: 1024px) 80px, (min-width: 640px) 60px, 40px"
         className="size-10 sm:size-15 lg:size-20"
         quality={100}
+        priority
         // unoptimized
       />
     </Link>
