@@ -36,8 +36,11 @@ export function TranslationsProvider({ initialLocale, children }: TranslationsPr
     }
   }, [locale]);
 
+  // Full reload restarts all page animations (fade-in, letter reveals, etc.)
+  // sessionStorage flag keeps the menu open across the reload
   const setLocale = useCallback((newLocale: LocaleT) => {
     localStorage.setItem("locale", newLocale);
+    sessionStorage.setItem("menuOpenAfterReload", "true");
     window.location.reload();
   }, []);
 

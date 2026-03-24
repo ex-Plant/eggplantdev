@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { EggplantLogo } from "@/components/top-navigation/eggplant-logo";
 import { MenuButton } from "@/components/top-navigation/menu-button/menu-button";
@@ -23,6 +23,21 @@ export function TopNavigation() {
   useClickOutside([menuRef, buttonRef], () => {
     if (isDesktop) setIsOpen(false);
   });
+
+  // Reopen menu after language-switch reload — deferred to next frame
+  // so framer-motion sees a false→true transition and plays the open animation
+  useEffect(() => {
+    const shouldReopen = sessionStorage.getItem("menuOpenAfterReload") === "true";
+    if (!shouldReopen) return;
+    sessionStorage.removeItem("menuOpenAfterReload");
+    requestAnimationFrame(() => {
+      setIsOpen(true);
+      if (!isDesktop) {
+        // Prevent scrolling when menu is open on mobile
+        document.documentElement.style.overflow = "hidden";
+      }
+    });
+  }, [isDesktop]);
 
   const handleToggle = () => {
     const willOpen = !isOpen;

@@ -1,5 +1,5 @@
 import { getServerSideSitemap } from "next-sitemap";
-import projectsData from "@/data/projects.json";
+import projectsData from "@/data/projects.en.json";
 import { env } from "@/helpers/env";
 
 export async function GET() {
