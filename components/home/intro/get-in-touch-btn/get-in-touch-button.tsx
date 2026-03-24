@@ -48,7 +48,7 @@ export const GetInTouchButton = () => {
       className={`fest-container pointer-events-none sticky bottom-[120px] mx-auto max-w-[1920px]`}
     >
       <div className="group/btn glow glow-strong 1280:flex 1280:pointer-events-auto z-201 mb-[120px] ml-auto hidden w-fit max-w-[940px] min-w-[270px] shrink-0 cursor-pointer rounded-[10px]">
-        <button
+        <div
           data-slot="get-in-touch"
           className={`relative z-10 w-full rounded-[10px] bg-white px-4 py-1 text-black transition-transform duration-300 group-hover/btn:-translate-y-[-2px] lg:px-6 lg:py-4`}
         >
@@ -69,10 +69,10 @@ export const GetInTouchButton = () => {
             </span>
             <ToggleIcon open={open} className={`h-full`} />
           </button>
-          <div ref={ref} className={"no-scrollbar h-0 overflow-hidden"}>
+          <div ref={ref} className={"no-scrollbar h-0 overflow-hidden"} inert={!open ? true : undefined}>
             <ButtonForm closeBtn={toggleModal} open={open} />
           </div>
-        </button>
+        </div>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@
 import { RenderSections } from "@/components/home/sections/render-sections";
 import { GetInTouchButton } from "@/components/home/intro/get-in-touch-btn/get-in-touch-button";
 import { useLocalizedData } from "@/hooks/use-localized-data";
-import { Intro } from "../components/home/intro/Intro";
+import { Intro } from "../components/home/intro/intro";
 
 export default function HomePage() {
   const { introTxt = "", backgroundDesktop, backgroundMobile, sections } = useLocalizedData("home");

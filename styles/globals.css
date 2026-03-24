@@ -26,7 +26,7 @@
   --color-red: #ff7575;
   --color-white: #fff;
   --color-yellow: #f7c744;
-  --color-glow-purple: oklch(from #8b5cf6 l c h / 40%);
+  --color-glow-purple: oklch(from #8b5cf6 l c h / 60%);
   --color-glow-blue: oklch(from #3b82f6 l c h / 15%);
   --color-glow-fuchsia: oklch(from #d946ef l c h / 25%);
 
