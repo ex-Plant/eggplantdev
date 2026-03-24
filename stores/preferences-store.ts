@@ -47,10 +47,12 @@ function detectReducedMotion(): boolean {
 
 // ── Persistence ────────────────────────────────────────────
 function persist(state: PersistedT) {
+  if (typeof localStorage === "undefined") return;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
 function getPersisted(): PersistedT | undefined {
+  if (typeof localStorage === "undefined") return undefined;
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) return JSON.parse(raw);
@@ -90,7 +92,13 @@ function applyScale(scale: number) {
 }
 
 function applyLocale(locale: LocaleT) {
-  document.documentElement.lang = locale;
+  const d = document.documentElement;
+  d.lang = locale;
+  if (locale === "pl") {
+    d.style.setProperty("--font-mono", "var(--font-jetbrains-mono)");
+  } else {
+    d.style.removeProperty("--font-mono");
+  }
 }
 
 // ── Store ──────────────────────────────────────────────────
