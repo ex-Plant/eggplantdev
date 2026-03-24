@@ -33,6 +33,11 @@ yarn-error.log*
 # test routes (local-only)
 app/api/test-email/
 
+# build artifacts
+tsconfig.tsbuildinfo
+/public/robots.txt
+/public/sitemap*.xml
+
 # vercel
 .vercel
 

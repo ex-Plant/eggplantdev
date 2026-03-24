@@ -10,7 +10,7 @@ import { DebugWrapper } from "@/components/debug-tools/debug-wrapper";
 import { GradientMask } from "@/components/general/gradient-mask/gradient-mask";
 import { TranslationsProvider } from "@/lib/i18n/translations-provider";
 import { SkipToContent } from "@/components/accessibility/skip-to-content";
-import { Footer } from "../components/footer/Footer";
+import { Footer } from "../components/footer/footer";
 import { SmoothScroll } from "@/components/general/smooth-scroll";
 import type { LocaleT } from "@/lib/i18n/types";
 

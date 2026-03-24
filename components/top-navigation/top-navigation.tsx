@@ -25,7 +25,7 @@ export function TopNavigation() {
       {/* Logo — no blend mode, stays normal */}
       <div className="pointer-events-none fixed top-0 right-0 left-0 z-999939">
         <div className="fest-container flex w-full items-start">
-          <EggplantLogo className="" />
+          <EggplantLogo />
         </div>
       </div>
 
