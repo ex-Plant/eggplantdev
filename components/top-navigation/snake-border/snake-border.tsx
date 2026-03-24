@@ -1,13 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
-import { SnakePaths } from "./snake-paths";
-
-// Safari detection via useSyncExternalStore to avoid SSR hydration mismatch.
-// subscribe is a no-op because the user agent never changes mid-session.
-const subscribe = () => () => {};
-const getIsSafari = () => /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
-const getServerSnapshot = () => false;
+import { useEffect, useRef, useState } from "react";
 
 type SnakeBorderPropsT = {
   isVisible: boolean;
@@ -19,8 +12,12 @@ type SnakeBorderPropsT = {
   children: React.ReactNode;
 };
 
-/** Clockwise from top-right (Chrome/Firefox) */
-function buildClockwisePath(x: number, y: number, w: number, h: number, r: number) {
+/**
+ * Builds a clockwise rounded-rect SVG path starting from the top-right corner.
+ * The path starts at (x+w, y+r) and traces: right side ↓ → bottom → left side ↑ → top → back to start.
+ * Inset by half strokeWidth (hs) so the stroke doesn't clip outside the viewBox.
+ */
+function buildPath(x: number, y: number, w: number, h: number, r: number) {
   return [
     `M ${x + w} ${y + r}`,
     `L ${x + w} ${y + h - r}`,
@@ -36,25 +33,21 @@ function buildClockwisePath(x: number, y: number, w: number, h: number, r: numbe
 }
 
 /**
- * Counterclockwise from top-right (Safari).
- * Safari reverses stroke-dashoffset transition direction, so combining
- * a reversed path with flipped offsets produces the correct visual.
+ * Animated SVG border that draws itself in and retraces on close.
+ *
+ * How it works:
+ * - A single `<path>` with `pathLength={1}` and `strokeDasharray={1}` means
+ *   the entire stroke is one "dash" of length 1.
+ * - `strokeDashoffset={1}` hides the stroke (shifted off by its full length).
+ * - `strokeDashoffset={0}` reveals the stroke (no shift).
+ * - CSS `transition` on `stroke-dashoffset` animates between these states.
+ *
+ * Draw in:  offset transitions 1 → 0 (stroke progressively revealed, clockwise from top-right).
+ * Erase:    offset transitions 0 → 1 (stroke retraces the same path in reverse).
+ *
+ * The draw-in uses a configurable `delay` so it can sync with content appearing.
+ * The erase has no delay so it starts immediately on close.
  */
-function buildCounterclockwisePath(x: number, y: number, w: number, h: number, r: number) {
-  return [
-    `M ${x + w} ${y + r}`,
-    `A ${r} ${r} 0 0 0 ${x + w - r} ${y}`,
-    `L ${x + r} ${y}`,
-    `A ${r} ${r} 0 0 0 ${x} ${y + r}`,
-    `L ${x} ${y + h - r}`,
-    `A ${r} ${r} 0 0 0 ${x + r} ${y + h}`,
-    `L ${x + w - r} ${y + h}`,
-    `A ${r} ${r} 0 0 0 ${x + w} ${y + h - r}`,
-    `L ${x + w} ${y + r}`,
-    "Z",
-  ].join(" ");
-}
-
 export function SnakeBorder({
   isVisible,
   borderRadius = 6,
@@ -66,16 +59,8 @@ export function SnakeBorder({
 }: SnakeBorderPropsT) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [drawn, setDrawn] = useState(false);
-  const [erasing, setErasing] = useState(false);
-  const wasVisibleRef = useRef(false);
 
-  // Safari reverses stroke-dashoffset CSS transition direction compared to Chrome.
-  // To fix this, we use a counterclockwise path + flipped offset signs on Safari.
-  // Both inversions combined with Safari's own reversal = correct visual direction.
-  const safari = useSyncExternalStore(subscribe, getIsSafari, getServerSnapshot);
-
-  // Track container size for the SVG viewBox and path calculations
+  // Track container size so the SVG viewBox and path match the actual element
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -88,32 +73,9 @@ export function SnakeBorder({
     return () => observer.disconnect();
   }, []);
 
-  const rafRef = useRef<number>(0);
-  useEffect(() => {
-    if (isVisible && dimensions.width > 0 && dimensions.height > 0) {
-      wasVisibleRef.current = true;
-      rafRef.current = requestAnimationFrame(() => {
-        setErasing(false);
-        setDrawn(true);
-      });
-      return () => cancelAnimationFrame(rafRef.current);
-    }
-    if (!isVisible && wasVisibleRef.current) {
-      wasVisibleRef.current = false;
-      rafRef.current = requestAnimationFrame(() => setErasing(true));
-      return () => cancelAnimationFrame(rafRef.current);
-    }
-  }, [isVisible, dimensions.width, dimensions.height]);
-
   const { width, height } = dimensions;
   const hs = strokeWidth / 2;
-  const r = borderRadius;
-
-  // Safari: counterclockwise path + flipped offsets to counter reversed interpolation
-  // Chrome: clockwise path + standard offsets
-  // Both use clockwise path — Safari offset signs handle the reversal
-  const buildPath = buildClockwisePath;
-  const pathD = buildPath(hs, hs, width - strokeWidth, height - strokeWidth, r);
+  const pathD = buildPath(hs, hs, width - strokeWidth, height - strokeWidth, borderRadius);
 
   return (
     <div ref={containerRef} className={className} style={{ position: "relative" }}>
@@ -129,33 +91,20 @@ export function SnakeBorder({
           }}
           viewBox={`0 0 ${width} ${height}`}
         >
-          {safari ? (
-            <path
-              d={pathD}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={strokeWidth}
-              pathLength={1}
-              strokeDasharray={1}
-              strokeDashoffset={isVisible ? 0 : 1}
-              style={{
-                transition: isVisible
-                  ? `stroke-dashoffset ${duration}s ease ${delay}s`
-                  : `stroke-dashoffset 0.4s ease 0.7s`,
-              }}
-            />
-          ) : (
-            <SnakePaths
-              pathD={pathD}
-              strokeWidth={strokeWidth}
-              duration={duration}
-              delay={delay}
-              drawn={drawn}
-              erasing={erasing}
-              drawHidden={1}
-              eraseHidden={1}
-            />
-          )}
+          <path
+            d={pathD}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={strokeWidth}
+            pathLength={1}
+            strokeDasharray={1}
+            strokeDashoffset={isVisible ? 0 : 1}
+            style={{
+              transition: isVisible
+                ? `stroke-dashoffset ${duration}s ease ${delay}s`
+                : `stroke-dashoffset ${duration}s ease`,
+            }}
+          />
         </svg>
       )}
     </div>
