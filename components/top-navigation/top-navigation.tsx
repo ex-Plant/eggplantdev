@@ -9,7 +9,6 @@ import { AccessibilityMenu } from "@/components/accessibility/accessibility-menu
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
 import { useClickOutside } from "@/hooks/use-click-outside";
 import { GradientMask } from "../general/gradient-mask/gradient-mask";
-import Link from "next/link";
 import { GlowWrapper } from "../general/glow-wrapper";
 
 export function TopNavigation() {
@@ -24,26 +23,13 @@ export function TopNavigation() {
       <GradientMask top={true} />
       <GradientMask top={true} />
       {/* Logo — no blend mode, stays normal */}
-      <div className="pointer-events-none fixed top-0 right-0 left-0 z-99999">
-        <div className="fest-container pointer-events-auto flex w-full items-start">
-          <Link
-            href="/"
-            className={
-              "-ml-3 rounded-md py-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            }
-            onClick={(e) => {
-              if (window.location.pathname === "/") {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }
-            }}
-          >
-            <EggplantLogo className="" />
-          </Link>
+      <div className="pointer-events-none fixed top-0 right-0 left-0 z-999939">
+        <div className="fest-container flex w-full items-start">
+          <EggplantLogo className="" />
         </div>
       </div>
-      {/* Hamburger + dropdown */}
 
+      {/* Hamburger + dropdown */}
       <div className="pointer-events-none fixed top-0 right-0 left-0 z-99999 mix-blend-difference">
         <div className="fest-container flex w-full items-start justify-end">
           <GlowWrapper>

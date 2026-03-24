@@ -6,6 +6,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { usePrefersReducedMotion } from "@/hooks/use-media-query";
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
+import Link from "next/link";
+import { GlowWrapper } from "../general/glow-wrapper";
 
 const SOURCES = [
   { src: "/logos/eggplant-logo.png", label: "png (rembg)" }, // not transparent
@@ -36,15 +38,31 @@ export function EggplantLogo({ className }: { className?: string }) {
   }, [prefersReducedMotion]);
 
   return (
-    <Image
-      ref={logoRef}
-      src={SOURCES[ACTIVE_SOURCE].src}
-      alt={t("logo")}
-      width={80}
-      height={80}
-      sizes="(min-width: 1024px) 80px, (min-width: 640px) 60px, 40px"
-      className="size-10 sm:size-15 lg:size-20"
-      unoptimized
-    />
+    <GlowWrapper className={`pointer-events-auto`}>
+      <Link
+        href="/"
+        className={
+          "-ml-3 rounded-md py-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        }
+        onClick={(e) => {
+          if (window.location.pathname === "/") {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+        }}
+      >
+        <Image
+          ref={logoRef}
+          src={SOURCES[ACTIVE_SOURCE].src}
+          alt={t("logo")}
+          width={80}
+          height={80}
+          sizes="(min-width: 1024px) 80px, (min-width: 640px) 60px, 40px"
+          className="size-10 sm:size-15 lg:size-20"
+          quality={100}
+          // unoptimized
+        />
+      </Link>
+    </GlowWrapper>
   );
 }
