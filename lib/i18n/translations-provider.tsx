@@ -17,8 +17,15 @@ type TranslationsProviderPropsT = {
   children: React.ReactNode;
 };
 
+function getLocaleFromCookie(): LocaleT {
+  if (typeof document === "undefined") return "en";
+  const match = document.cookie.match(/(?:^|; )locale=([^;]*)/);
+  const val = match?.[1];
+  return val === "en" || val === "pl" ? val : "en";
+}
+
 export function TranslationsProvider({ initialLocale, children }: TranslationsProviderPropsT) {
-  const [locale] = useState<LocaleT>(initialLocale);
+  const [locale] = useState<LocaleT>(() => getLocaleFromCookie() ?? initialLocale);
 
   const setLocale = useCallback((newLocale: LocaleT) => {
     document.cookie = `locale=${newLocale};path=/;max-age=${60 * 60 * 24 * 365}`;

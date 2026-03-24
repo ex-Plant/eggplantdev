@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
 import React, { ReactNode } from "react";
-import { cookies } from "next/headers";
 
 import { poly, theinhardt, shareTechMono } from "@/public/fonts/fonts";
 
@@ -12,28 +11,26 @@ import { TranslationsProvider } from "@/lib/i18n/translations-provider";
 import { SkipToContent } from "@/components/accessibility/skip-to-content";
 import { Footer } from "../components/footer/footer";
 import { SmoothScroll } from "@/components/general/smooth-scroll";
-import type { LocaleT } from "@/lib/i18n/types";
+import { ThemeHydrator } from "@/components/general/theme-hydrator";
 
 export const metadata: Metadata = {
   title: "Egggplants in space",
   description: "Building apps, shipping eggplants to space",
 };
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
-  const cookieStore = await cookies();
-  const localeCookie = cookieStore.get("locale")?.value;
-  const locale: LocaleT = localeCookie === "en" || localeCookie === "pl" ? localeCookie : "pl";
-  const themeCookie = cookieStore.get("theme")?.value;
-  const theme = themeCookie === "dark" || themeCookie === "contrast" ? themeCookie : "dark";
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
-      lang={locale}
-      data-theme={theme}
+      lang="en"
+      data-theme="dark"
       suppressHydrationWarning
       className={`${poly.variable} ${theinhardt.variable} ${shareTechMono.variable} ${poly.className} ${theinhardt.className}`}
     >
+      <head>
+        <ThemeHydrator />
+      </head>
       <body className="overscroll-none scroll-smooth antialiased">
-        <TranslationsProvider initialLocale={locale}>
+        <TranslationsProvider initialLocale="en">
           <DebugWrapper>
             <SmoothScroll>
               <SkipToContent />
