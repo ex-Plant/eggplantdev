@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <SmoothScroll>
               <SkipToContent />
               {/* Fixed grit overlay — stays in place while content scrolls */}
-              <div className="grit pointer-events-none fixed inset-0 z-200" />
+              <div className="grit pointer-events-none fixed inset-0 z-200 will-change-transform [contain:strict]" />
 
               <TopNavigation />
               <main id="main-content">{children}</main>
