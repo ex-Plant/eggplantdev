@@ -2,13 +2,18 @@
 
 import { ThemeToggle } from "./theme-toggle";
 import { LanguageSwitcher } from "./language-switcher";
+import { AnimationToggles } from "./animation-toggles";
 import { cn } from "@/helpers/cn";
 
 export function AccessibilityMenu({ className }: { className?: string }) {
   return (
-    <div className={cn("flex items-center gap-3 font-mono uppercase", className)} data-slot="accessibility-menu">
-      <ThemeToggle />
+    <div
+      className={cn("grid grid-cols-1 content-start gap-3 p-4 font-mono uppercase", className)}
+      data-slot="accessibility-menu"
+    >
       <LanguageSwitcher />
+      <ThemeToggle />
+      <AnimationToggles />
     </div>
   );
 }

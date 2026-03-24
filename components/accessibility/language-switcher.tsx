@@ -2,16 +2,18 @@
 
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
 import { useI18nContext } from "@/lib/i18n/translations-provider";
+import { ToggleSwitch } from "./toggle-switch";
 
 export function LanguageSwitcher() {
   const { t, locale } = useTranslation("accessibility");
   const { setLocale } = useI18nContext();
 
-  const toggle = () => setLocale(locale === "pl" ? "en" : "pl");
+  const isEnglish = locale === "en";
 
   return (
-    <button type="button" onClick={toggle} aria-label={t("toggleLanguage")} className="text-14 cursor-pointer">
-      {locale === "pl" ? "EN" : "PL"}
-    </button>
+    <div className="flex items-center justify-between gap-2">
+      <span className="text-11 truncate">EN</span>
+      <ToggleSwitch checked={isEnglish} onChange={(v) => setLocale(v ? "en" : "pl")} label={t("toggleLanguage")} />
+    </div>
   );
 }

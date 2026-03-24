@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { cn } from "@/helpers/cn";
-import { usePrefersReducedMotion } from "@/hooks/use-media-query";
+import { useAnimationStore } from "@/stores/animation-store";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,7 +33,9 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
   // Separate tracking for timeouts and intervals — avoids double-clear ambiguity
   const timeoutsRef = useRef<Set<ReturnType<typeof setTimeout>>>(new Set());
   const intervalsRef = useRef<Set<ReturnType<typeof setInterval>>>(new Set());
-  const prefersReducedMotion = usePrefersReducedMotion();
+  const letterAnimations = useAnimationStore((s) => s.letterAnimations);
+  const allAnimations = useAnimationStore((s) => s.allAnimations);
+  const isEnabled = allAnimations && letterAnimations;
 
   useGSAP(
     () => {
@@ -43,8 +45,8 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
       const chars = text.split("");
       const spans = container.children as HTMLCollectionOf<HTMLSpanElement>;
 
-      // Skip animation entirely for reduced motion — show final text immediately
-      if (prefersReducedMotion) {
+      // Skip animation entirely when disabled — show final text immediately
+      if (!isEnabled) {
         chars.forEach((ch, i) => {
           spans[i].textContent = ch;
           spans[i].className = "opacity-100";
@@ -186,7 +188,7 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
         clearTimers();
       };
     },
-    { scope: containerRef, dependencies: [text, prefersReducedMotion], revertOnUpdate: true },
+    { scope: containerRef, dependencies: [text, isEnabled], revertOnUpdate: true },
   );
 
   // Render spans once — all animation updates happen via direct DOM mutation

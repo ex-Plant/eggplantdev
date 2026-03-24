@@ -3,8 +3,11 @@
     "skipToContent": "Przejdź do treści",
     "decreaseFontSize": "Zmniejsz czcionkę",
     "increaseFontSize": "Powiększ czcionkę",
-    "toggleLanguage": "Przełącz język",
-    "toggleTheme": "Przełącz motyw"
+    "toggleLanguage": "Polski",
+    "toggleTheme": "Kontrast",
+    "allAnimations": "Wszystkie animacje",
+    "smoothScroll": "Płynne przewijanie",
+    "letterAnimations": "Animacje liter"
   },
   "common": {
     "submit": "WYŚLIJ",

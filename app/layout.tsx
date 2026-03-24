@@ -9,6 +9,7 @@ import { DebugWrapper } from "@/components/debug-tools/debug-wrapper";
 import { GradientMask } from "@/components/general/gradient-mask/gradient-mask";
 import { TranslationsProvider } from "@/lib/i18n/translations-provider";
 import { SkipToContent } from "@/components/accessibility/skip-to-content";
+import { SmoothScroll } from "@/components/general/smooth-scroll";
 import { Footer } from "../components/footer/footer";
 import { ThemeHydrator } from "@/components/general/theme-hydrator";
 import { Analytics } from "@vercel/analytics/react";
@@ -38,10 +39,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="grit contain:strict pointer-events-none fixed inset-0 z-200 will-change-transform" />
 
             <TopNavigation />
-            <main id="main-content">{children}</main>
-            <GradientMask />
-            <GradientMask />
-            <Footer />
+            <SmoothScroll>
+              <main id="main-content">{children}</main>
+              <GradientMask />
+              <GradientMask />
+              <Footer />
+            </SmoothScroll>
           </DebugWrapper>
         </TranslationsProvider>
         <Analytics />

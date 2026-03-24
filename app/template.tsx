@@ -1,11 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useAnimationStore } from "@/stores/animation-store";
 
 export default function Template({ children }: { children: React.ReactNode }) {
-  const shouldReduceMotion = useReducedMotion();
+  const allAnimations = useAnimationStore((s) => s.allAnimations);
 
-  if (shouldReduceMotion) return <div className="min-h-svh">{children}</div>;
+  if (!allAnimations) return <div className="min-h-svh">{children}</div>;
 
   return (
     <AnimatePresence mode="wait">

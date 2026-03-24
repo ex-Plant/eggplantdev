@@ -3,14 +3,21 @@
 import { ReactLenis } from "lenis/react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { useAnimationStore } from "@/stores/animation-store";
 
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<React.ComponentRef<typeof ReactLenis>>(null);
+  const smoothScroll = useAnimationStore((s) => s.smoothScroll);
+  const allAnimations = useAnimationStore((s) => s.allAnimations);
+
+  const isEnabled = allAnimations && smoothScroll;
 
   // Sync Lenis with GSAP's ticker instead of running its own requestAnimationFrame loop.
   // This avoids two competing animation loops and keeps scroll position
   // in sync with any GSAP/ScrollTrigger animations.
   useEffect(() => {
+    if (!isEnabled) return;
+
     // GSAP provides time in seconds, Lenis expects milliseconds
     function update(time: number) {
       lenisRef.current?.lenis?.raf(time * 1000);
@@ -21,7 +28,9 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     gsap.ticker.lagSmoothing(0);
 
     return () => gsap.ticker.remove(update);
-  }, []);
+  }, [isEnabled]);
+
+  if (!isEnabled) return <>{children}</>;
 
   // duration controls the easing animation length,
   // wheelMultiplier controls how much distance each scroll tick covers.

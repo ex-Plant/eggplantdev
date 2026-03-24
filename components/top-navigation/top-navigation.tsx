@@ -32,7 +32,7 @@ export function TopNavigation() {
       {/* Hamburger + dropdown */}
       <div className="pointer-events-none fixed top-0 right-0 left-0 z-99999 mix-blend-difference">
         <div className="fest-container flex w-full items-start justify-end">
-          <div ref={menuRef} className="pointer-events-auto relative flex flex-col items-center">
+          <div ref={menuRef} className="pointer-events-auto relative flex flex-col items-end">
             <MenuButton onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
 
             <SnakeBorder
@@ -58,7 +58,7 @@ export function TopNavigation() {
                 inert={!isOpen ? true : undefined}
                 style={{ pointerEvents: isOpen ? "auto" : "none" }}
               >
-                <AccessibilityMenu className="flex-col items-start p-4" />
+                <AccessibilityMenu />
               </motion.div>
             </SnakeBorder>
           </div>

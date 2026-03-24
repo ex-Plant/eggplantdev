@@ -254,6 +254,7 @@ textarea:-webkit-autofill {
 [data-theme="contrast"] h3,
 [data-theme="contrast"] h4,
 [data-theme="contrast"] p,
+[data-theme="contrast"] div,
 [data-theme="contrast"] span,
 [data-theme="contrast"] a,
 [data-theme="contrast"] button,
@@ -322,4 +323,15 @@ textarea:-webkit-autofill {
 /* Menu button SVG stroke in contrast mode */
 [data-theme="contrast"] [data-slot="nav-dropdown"] button {
   color: var(--contrast-fg);
+}
+
+/* Toggle switches in contrast mode */
+[data-theme="contrast"] [role="switch"] {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+[data-theme="contrast"] [role="switch"][data-checked] {
+  background-color: var(--contrast-fg) !important;
+}
+[data-theme="contrast"] [role="switch"] div {
+  background-color: var(--contrast-bg) !important;
 }

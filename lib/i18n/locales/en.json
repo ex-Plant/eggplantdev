@@ -3,8 +3,11 @@
     "skipToContent": "Skip to content",
     "decreaseFontSize": "Decrease font size",
     "increaseFontSize": "Increase font size",
-    "toggleLanguage": "Toggle language",
-    "toggleTheme": "Toggle theme"
+    "toggleLanguage": "Polish",
+    "toggleTheme": "Contrast",
+    "allAnimations": "All animations",
+    "smoothScroll": "Smooth scroll",
+    "letterAnimations": "Letter animations"
   },
   "common": {
     "submit": "SUBMIT",

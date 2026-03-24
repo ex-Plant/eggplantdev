@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import SplitType from "split-type";
 import { useRef } from "react";
 import useWindowSize from "@/hooks/use-window-size";
+import { useAnimationStore } from "@/stores/animation-store";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,9 +18,14 @@ export const AnimatedLettersMask = ({ text = "" }) => {
   const lettersRef = useRef<HTMLDivElement>(null);
   const { clientWidth } = useWindowSize();
   const splitRef = useRef<SplitType | null>(null);
+  const letterAnimations = useAnimationStore((s) => s.letterAnimations);
+  const allAnimations = useAnimationStore((s) => s.allAnimations);
+  const isEnabled = allAnimations && letterAnimations;
 
   useGSAP(
     () => {
+      if (!isEnabled) return;
+
       splitRef.current = new SplitType("#target-mask", { types: "lines" });
 
       gsap.utils.toArray<HTMLElement>("#target-mask .line").forEach((line) => {
@@ -62,7 +68,7 @@ export const AnimatedLettersMask = ({ text = "" }) => {
         splitRef.current?.revert();
       };
     },
-    { scope: lettersRef, dependencies: [clientWidth], revertOnUpdate: true },
+    { scope: lettersRef, dependencies: [clientWidth, isEnabled], revertOnUpdate: true },
   );
 
   return (
