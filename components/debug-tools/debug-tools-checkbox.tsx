@@ -11,7 +11,7 @@ type DebugToolsCheckboxPropsT = {
 export const DebugToolsCheckbox = forwardRef<HTMLInputElement, DebugToolsCheckboxPropsT>((props, ref) => {
   const { toggleFunc, currentVal, label } = props;
   return (
-    <div className={`text-14 mt-4 flex items-center justify-between gap-2 text-black`}>
+    <div className={`text-16 mt-4 flex items-center justify-between gap-2 text-black`}>
       <p>{label}</p>
       <input ref={ref} type="checkbox" onChange={() => toggleFunc()} checked={currentVal} />
     </div>

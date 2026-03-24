@@ -47,7 +47,7 @@ export const SpHeroSection = ({ name, mainSection }: SpHeroSectionPropsT) => {
           <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 md:mt-12 md:gap-x-12 lg:mt-16">
             {Object.entries(cats).map(([label, value]) => (
               <div key={label}>
-                <p className="text-14 text-gray7 uppercase">{label}</p>
+                <p className="text-16 text-gray7 uppercase">{label}</p>
                 <p className="text-16 text-lightgray md:text-20 pt-2">{value}</p>
               </div>
             ))}

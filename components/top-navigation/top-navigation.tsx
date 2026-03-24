@@ -79,10 +79,10 @@ export function TopNavigation() {
                   className="p-[2px]"
                 >
                   <div className={`bg-bgc rounded-md`}>
-                    <div className="grit grid max-w-[400px] grid-cols-1 p-8">
+                    <div className="grit max-w-[400px] grid-cols-1 p-8">
                       <AccessibilityMenu className="uppercase" />
                       <RoundedSeparator className="my-6" />
-                      <p className="text-14 text-lightgray scalable pb-6 text-balance">{t("animationNotice")}</p>
+                      <p className="text-16 text-lightgray scalable pb-6 text-balance">{t("animationNotice")}</p>
                       <AnimationToggles className="uppercase" />
                     </div>
                   </div>

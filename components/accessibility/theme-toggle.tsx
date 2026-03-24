@@ -20,7 +20,7 @@ export function ThemeToggle() {
 
   return (
     <div className="flex items-center justify-between gap-2">
-      <span className="text-14 truncate">{t("toggleTheme")}</span>
+      <span className="text-16 truncate">{t("toggleTheme")}</span>
       <ToggleSwitch checked={isContrast} onChange={handleToggle} label={t("toggleTheme")} />
     </div>
   );

@@ -33,7 +33,7 @@ export function ErrorOverlay({ isOpen, onClose }: ErrorOverlayPropsT) {
           >
             {contactEmail}
           </a>
-          <p className="text-14 text-gray7 mt-4">{t("clickToClose")}</p>
+          <p className="text-16 text-gray7 mt-4">{t("clickToClose")}</p>
         </div>
       </DialogContent>
     </Dialog>
