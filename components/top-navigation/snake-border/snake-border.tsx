@@ -73,21 +73,6 @@ export function SnakeBorder({
     return () => observer.disconnect();
   }, []);
 
-  // After a language-switch reload the menu reopens immediately, so isVisible
-  // is already true when the SVG first mounts. Without this delay the browser
-  // never sees strokeDashoffset=1 and the draw-in transition is skipped.
-  // requestAnimationFrame defers setReady out of the synchronous effect body
-  // (avoids React's cascading render warning) and gives the browser one frame
-  // to register the hidden state before flipping to visible.
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    if (dimensions.width > 0 && dimensions.height > 0) {
-      const id = requestAnimationFrame(() => setReady(true));
-      return () => cancelAnimationFrame(id);
-    }
-    requestAnimationFrame(() => setReady(false));
-  }, [dimensions.width, dimensions.height]);
-
   const { width, height } = dimensions;
   const hs = strokeWidth / 2;
   const pathD = buildPath(hs, hs, width - strokeWidth, height - strokeWidth, borderRadius);
@@ -113,7 +98,7 @@ export function SnakeBorder({
             strokeWidth={strokeWidth}
             pathLength={1}
             strokeDasharray={1}
-            strokeDashoffset={isVisible && ready ? 0 : 1}
+            strokeDashoffset={isVisible ? 0 : 1}
             style={{
               transition: isVisible
                 ? `stroke-dashoffset ${duration}s ease ${delay}s`

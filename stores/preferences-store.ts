@@ -147,10 +147,9 @@ export const usePreferencesStore = create<PreferencesStoreT>()((set, get) => ({
   },
 
   setLocale: (locale) => {
+    applyLocale(locale);
     set({ locale });
     persist(getPersistedSlice({ ...get(), locale }));
-    sessionStorage.setItem("menuOpenAfterReload", "true");
-    window.location.reload();
   },
 }));
 
