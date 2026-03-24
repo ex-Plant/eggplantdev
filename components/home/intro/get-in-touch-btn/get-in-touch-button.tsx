@@ -47,14 +47,16 @@ export const GetInTouchButton = () => {
       ref={containerRef}
       className={`fest-container pointer-events-none sticky bottom-[120px] mx-auto max-w-[1920px]`}
     >
-      <div className="group/btn glow glow-strong 1280:flex 1280:pointer-events-auto z-201 mb-[120px] ml-auto hidden w-fit max-w-[940px] min-w-[270px] shrink-0 cursor-pointer rounded-[10px]">
+      <div
+        onClick={toggleModal}
+        className="group/btn glow glow-strong 1280:flex 1280:pointer-events-auto z-201 mb-[120px] ml-auto hidden w-fit max-w-[940px] min-w-[270px] shrink-0 cursor-pointer rounded-[10px]"
+      >
         <div
           data-slot="get-in-touch"
           className={`relative z-10 w-full rounded-[10px] bg-white px-4 py-1 text-black transition-transform duration-300 group-hover/btn:-translate-y-[-2px] lg:px-6 lg:py-4`}
         >
           <button
             aria-expanded={open ? "true" : "false"}
-            onClick={toggleModal}
             className={cn(`flex w-full cursor-pointer justify-between`, open ? "items-start" : "items-center")}
           >
             <span
