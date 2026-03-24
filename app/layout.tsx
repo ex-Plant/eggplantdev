@@ -11,7 +11,7 @@ import { TranslationsProvider } from "@/lib/i18n/translations-provider";
 import { SkipToContent } from "@/components/accessibility/skip-to-content";
 import { SmoothScroll } from "@/components/general/smooth-scroll";
 import { Footer } from "../components/footer/footer";
-import { AnimationDrawer } from "@/components/accessibility/animation-drawer";
+
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -42,7 +42,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <GradientMask />
               <Footer />
             </SmoothScroll>
-            <AnimationDrawer />
+            {/* TODO: auto-open animation drawer on first visit */}
           </DebugWrapper>
         </TranslationsProvider>
         <Analytics />

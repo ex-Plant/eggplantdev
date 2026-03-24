@@ -41,7 +41,7 @@ export function EggplantLogo({ className }: { className?: string }) {
     <Link
       href="/"
       className={
-        "-ml-3 rounded-md py-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        "-ml-3 rounded-md py-5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       }
       onClick={(e) => {
         if (window.location.pathname === "/") {

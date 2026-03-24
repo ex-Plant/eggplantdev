@@ -1,9 +1,9 @@
 import { create } from "zustand";
-import { createJSONStorage, persist } from "zustand/middleware";
 
 const MIN_SCALE = 1;
 const MAX_SCALE = 1.5;
 const STEP = 0.05;
+const STORAGE_KEY = "font-scale";
 
 type FontSizeStoreT = {
   scale: number;
@@ -15,25 +15,29 @@ const applyScale = (scale: number) => {
   document.documentElement.style.setProperty("--font-scale", String(scale));
 };
 
-export const useFontSizeStore = create<FontSizeStoreT>()(
-  persist(
-    (set) => ({
-      scale: MIN_SCALE,
+// Read persisted scale synchronously to avoid flash/mismatch on reload
+const getInitialScale = (): number => {
+  if (typeof localStorage === "undefined") return MIN_SCALE;
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return MIN_SCALE;
+  const parsed = Number(raw);
+  if (Number.isFinite(parsed) && parsed >= MIN_SCALE && parsed <= MAX_SCALE) return parsed;
+  return MIN_SCALE;
+};
 
-      setScale: (scale: number) => {
-        const clamped = Math.round(Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale)) * 100) / 100;
-        applyScale(clamped);
-        set({ scale: clamped });
-      },
-    }),
-    {
-      name: "font-scale",
-      storage: createJSONStorage(() => localStorage),
-      onRehydrateStorage: () => (state) => {
-        if (state) applyScale(state.scale);
-      },
-    },
-  ),
-);
+const initialScale = getInitialScale();
+// Apply immediately so CSS matches before first React render
+applyScale(initialScale);
+
+export const useFontSizeStore = create<FontSizeStoreT>()((set) => ({
+  scale: initialScale,
+
+  setScale: (scale: number) => {
+    const clamped = Math.round(Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale)) * 100) / 100;
+    applyScale(clamped);
+    localStorage.setItem(STORAGE_KEY, String(clamped));
+    set({ scale: clamped });
+  },
+}));
 
 export { MIN_SCALE, MAX_SCALE, STEP };

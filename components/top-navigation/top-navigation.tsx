@@ -6,7 +6,7 @@ import { EggplantLogo } from "@/components/top-navigation/eggplant-logo";
 import { MenuButton } from "@/components/top-navigation/menu-button/menu-button";
 import { SnakeBorder } from "@/components/top-navigation/snake-border/snake-border";
 import { AccessibilityMenu } from "@/components/accessibility/accessibility-menu";
-import { AnimationDrawer } from "@/components/accessibility/animation-drawer";
+import { MobileMenu } from "@/components/accessibility/mobile-menu";
 import { useClickOutside } from "@/hooks/use-click-outside";
 import { useMinMD } from "@/hooks/use-media-query";
 import { GradientMask } from "../general/gradient-mask/gradient-mask";
@@ -20,7 +20,13 @@ export function TopNavigation() {
     if (isDesktop) setIsOpen(false);
   });
 
-  const handleToggle = () => setIsOpen(!isOpen);
+  const handleToggle = () => {
+    const willOpen = !isOpen;
+    setIsOpen(willOpen);
+    if (!isDesktop) {
+      document.documentElement.style.overflow = willOpen ? "hidden" : "";
+    }
+  };
 
   return (
     <>
@@ -73,7 +79,7 @@ export function TopNavigation() {
       </div>
 
       {/* Mobile: full drawer */}
-      {!isDesktop && <AnimationDrawer externalOpen={isOpen} onExternalOpenChange={setIsOpen} />}
+      {!isDesktop && <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />}
     </>
   );
 }

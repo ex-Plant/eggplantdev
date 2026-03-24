@@ -4,8 +4,9 @@ import { useAnimationStore, ANIMATION_KEYS, type AnimationKeyT } from "@/stores/
 import { useThemeStore } from "@/stores/theme-store";
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
 import { ToggleSwitch } from "./toggle-switch";
+import { cn } from "../../helpers/cn";
 
-export function AnimationToggles() {
+export function AnimationToggles({ className }: { className?: string }) {
   const allAnimations = useAnimationStore((s) => s.allAnimations);
   const smoothScroll = useAnimationStore((s) => s.smoothScroll);
   const letterAnimations = useAnimationStore((s) => s.letterAnimations);
@@ -22,7 +23,7 @@ export function AnimationToggles() {
   };
 
   return (
-    <>
+    <div className={cn("grid grid-cols-1 gap-3", className)}>
       <div className="flex items-center justify-between">
         <span className="text-11 truncate">{t("allAnimations")}</span>
         <ToggleSwitch checked={allAnimations} onChange={setAllAnimations} label={t("allAnimations")} />
@@ -38,6 +39,6 @@ export function AnimationToggles() {
           />
         </div>
       ))}
-    </>
+    </div>
   );
 }

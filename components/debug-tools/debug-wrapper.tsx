@@ -23,7 +23,7 @@ export const DebugWrapper = ({ children }: { children: ReactNode }) => {
         className={cn(
           `relative flex min-h-0 flex-1 flex-col`,
           outlinesVisible && `**:outline **:outline-lime-300`,
-          layersVisible && `**:bg-[hsla(0,11%,2%,0)]`
+          layersVisible && `**:bg-[hsla(0,11%,2%,0)]`,
         )}
       >
         {children}
