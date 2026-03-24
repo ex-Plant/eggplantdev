@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { SnakePathsDefault } from "./snake-paths-default";
+import { SnakePathsSafari } from "./snake-paths-safari";
+
+const subscribe = () => () => {};
+const getIsSafari = () => /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+const getServerSnapshot = () => false;
 
 type SnakeBorderPropsT = {
   isVisible: boolean;
@@ -13,30 +19,32 @@ type SnakeBorderPropsT = {
   children: React.ReactNode;
 };
 
-function buildRoundedRectPath(x: number, y: number, w: number, h: number, r: number) {
+export function buildRoundedRectPath(x: number, y: number, w: number, h: number, r: number) {
   // Draws a rounded rect starting from top-right corner, going clockwise:
   // top-right → right side → bottom-right → bottom → bottom-left → left side → top-left → top → back to start
   return [
     `M ${x + w} ${y + r}`,
-    // Right side down
     `L ${x + w} ${y + h - r}`,
-    // Bottom-right corner
     `A ${r} ${r} 0 0 1 ${x + w - r} ${y + h}`,
-    // Bottom side
     `L ${x + r} ${y + h}`,
-    // Bottom-left corner
     `A ${r} ${r} 0 0 1 ${x} ${y + h - r}`,
-    // Left side up
     `L ${x} ${y + r}`,
-    // Top-left corner
     `A ${r} ${r} 0 0 1 ${x + r} ${y}`,
-    // Top side
     `L ${x + w - r} ${y}`,
-    // Top-right corner
     `A ${r} ${r} 0 0 1 ${x + w} ${y + r}`,
     "Z",
   ].join(" ");
 }
+
+export type SnakePathsPropsT = {
+  pathD: string;
+  strokeWidth: number;
+  duration: number;
+  delay: number;
+  drawn: boolean;
+  erasing: boolean;
+  eraseColor?: string;
+};
 
 export function SnakeBorder({
   isVisible,
@@ -54,6 +62,8 @@ export function SnakeBorder({
   const [erasing, setErasing] = useState(false);
   const wasVisibleRef = useRef(false);
 
+  const safari = useSyncExternalStore(subscribe, getIsSafari, getServerSnapshot);
+
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -66,7 +76,6 @@ export function SnakeBorder({
     return () => observer.disconnect();
   }, []);
 
-  // Draw in on enter, start eraser on exit.
   const rafRef = useRef<number>(0);
   useEffect(() => {
     if (isVisible && dimensions.width > 0 && dimensions.height > 0) {
@@ -79,7 +88,6 @@ export function SnakeBorder({
     }
     if (!isVisible && wasVisibleRef.current) {
       wasVisibleRef.current = false;
-      // Keep the drawn border visible, draw the eraser path on top
       rafRef.current = requestAnimationFrame(() => {
         rafRef.current = requestAnimationFrame(() => setErasing(true));
       });
@@ -89,9 +97,10 @@ export function SnakeBorder({
 
   const { width, height } = dimensions;
   const hs = strokeWidth / 2;
-
   const r = borderRadius;
   const pathD = buildRoundedRectPath(hs, hs, width - strokeWidth, height - strokeWidth, r);
+
+  const PathsComponent = safari ? SnakePathsSafari : SnakePathsDefault;
 
   return (
     <div ref={containerRef} className={className} style={{ position: "relative" }}>
@@ -107,34 +116,15 @@ export function SnakeBorder({
           }}
           viewBox={`0 0 ${width} ${height}`}
         >
-          {/* Visible border — draws in, stays fully drawn during erase */}
-          <path
-            d={pathD}
-            fill="none"
-            stroke="currentColor"
+          <PathsComponent
+            pathD={pathD}
             strokeWidth={strokeWidth}
-            pathLength={1}
-            strokeDasharray={1}
-            strokeDashoffset={drawn ? 0 : 1}
-            style={{
-              transition: `stroke-dashoffset ${duration}s ease ${drawn ? `${delay}s` : "0s"}`,
-            }}
+            duration={duration}
+            delay={delay}
+            drawn={drawn}
+            erasing={erasing}
+            eraseColor={eraseColor}
           />
-          {/* Eraser — draws over with background color, looks like the border is being erased */}
-          {eraseColor && (
-            <path
-              d={pathD}
-              fill="none"
-              stroke={eraseColor}
-              strokeWidth={strokeWidth + 1}
-              pathLength={1}
-              strokeDasharray={1}
-              strokeDashoffset={erasing ? 0 : -1}
-              style={{
-                transition: `stroke-dashoffset ${duration}s ease`,
-              }}
-            />
-          )}
         </svg>
       )}
     </div>
