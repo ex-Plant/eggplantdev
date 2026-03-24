@@ -12,6 +12,8 @@ import { SkipToContent } from "@/components/accessibility/skip-to-content";
 import { Footer } from "../components/footer/footer";
 import { SmoothScroll } from "@/components/general/smooth-scroll";
 import { ThemeHydrator } from "@/components/general/theme-hydrator";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Egggplants in space",
@@ -45,6 +47,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </SmoothScroll>
           </DebugWrapper>
         </TranslationsProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
