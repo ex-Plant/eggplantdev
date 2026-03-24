@@ -11,8 +11,8 @@ export const Button = ({ children, className }: ButtonProps) => {
     <>
       <div
         className={cn(
-          ` flex items-center justify-center h-8 rounded-full border border-gray5 px-4 text-16 text-lightgray`,
-          className
+          `border-gray5 text-16 text-lightgray flex h-8 items-center justify-center rounded-full border px-4`,
+          className,
         )}
       >
         <span>{children}</span>

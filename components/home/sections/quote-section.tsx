@@ -8,11 +8,11 @@ type QuoteSectionPropsT = {
   className?: string;
 };
 
-export const QuoteSection = ({ data, singleProjectPage, className }: QuoteSectionPropsT) => {
+export const QuoteSection = ({ data, className }: QuoteSectionPropsT) => {
   return (
     <div className={className}>
-      <SimpleSection titleLine={data.titleLine}  />
-      <Quotes  data={data.quotes} singleP={singleProjectPage} />
+      <SimpleSection titleLine={data.titleLine} />
+      <Quotes data={data.quotes} />
     </div>
   );
 };
