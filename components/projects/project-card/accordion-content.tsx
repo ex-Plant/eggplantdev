@@ -47,7 +47,7 @@ export function AccordionContentPanel({ isOpen, description, tags, url }: Accord
               )}
 
               {url && (
-                <GlowWrapper>
+                <GlowWrapper className={`w-fit`}>
                   <Link
                     href={url}
                     target="_blank"

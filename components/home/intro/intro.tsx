@@ -45,7 +45,7 @@ export const Intro = ({ backgroundDesktop, backgroundMobile, txt }: IntroPropsT)
           className={`grit-medium-dense pointer-events-none fixed top-0 right-0 left-0 z-2 h-screen`}
         ></div>
 
-        <FadeSlide animationKey={txt}>
+        <FadeSlide>
           <AnimatedLettersMask text={txt} />
         </FadeSlide>
       </div>
