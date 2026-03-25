@@ -5,18 +5,21 @@
   "sections": [
     {
       "type": "projects",
+      "id": "commercial-work",
       "titleLine": ["Praca", "Komercyjna"],
       "text": "Projekty zrealizowane jako część zespołu developerskiego w Navarra Lab — studio projektowym i software house'ie działającym między Berlinem a Krakowem.",
       "filterCategory": "commercial"
     },
     {
       "type": "projects",
+      "id": "freelance-work",
       "titleLine": ["Praca", "Freelance"],
       "text": "Projekty, które prowadzę od A do Z — od wstępnego zakresu i architektury po wdrożenie i przekazanie.",
       "filterCategory": "freelance"
     },
     {
       "type": "fullSection",
+      "id": "about",
       "titleLine": ["O", "Mnie"],
       "cards": [
         {
@@ -36,6 +39,7 @@
     },
     {
       "type": "fullSection",
+      "id": "values",
       "titleLine": ["Co", "Cenię"],
       "cards": [
         {
@@ -52,6 +56,239 @@
         }
       ],
       "largePhoto": "/images/home/approach.jpg"
+    },
+    {
+      "type": "simple",
+      "id": "how-i-work",
+      "titleLine": ["Jak", "Pracuję"],
+      "paragraphs": [
+        "Najlepiej pracuje mi się z founderami, studiami i zespołami produktowymi, które potrzebują kogoś potrafiącego swobodnie poruszać się między myśleniem produktowym a implementacją. Czasem oznacza to poprowadzenie projektu od zakresu do wdrożenia. Czasem wejście do istniejącego codebase'u, znalezienie słabych punktów i uporządkowanie go tak, żeby był spokojniejszy, szybszy i łatwiejszy w utrzymaniu.",
+        "Mój domyślny tryb pracy to klarowność. Lubię wcześnie ustalać zakres, wyciągać kompromisy na stół zanim staną się problemem i dostarczać w małych, sensownych iteracjach. Dbam o estetykę, ale nie kosztem użyteczności. Dbam o tempo, ale nie o ten fałszywy rodzaj szybkości, który trzy tygodnie później zamienia się w sprzątanie.",
+        "Jeśli potrzebujesz partnera od frontendu lub full-stacku, który bierze odpowiedzialność za delivery, komunikuje się konkretnie i od pierwszego dnia trzyma w zakresie dostępność oraz dopracowanie, jestem otwarty na wybrane współprace."
+      ],
+      "buttons": [
+        {
+          "label": "Zobacz Pracę Komercyjną",
+          "href": "#commercial-work"
+        },
+        {
+          "label": "Skontaktuj Się",
+          "href": "#contact"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-grid",
+      "variant": "asymmetricGrid",
+      "titleLine": ["Notatki", "Z Terenu"],
+      "intro": "Propozycja pierwsza. Asymetryczny grid o bardziej edytorialnym rytmie i nierównych wysokościach kart.",
+      "notes": [
+        {
+          "eyebrow": "01",
+          "title": "Szybkość Jest Odczuwana",
+          "text": "Interfejs oceniany jest zanim zostanie zrozumiany. Poczucie responsywności jest częścią projektu, nie technicznym dopiskiem.",
+          "size": "tall"
+        },
+        {
+          "eyebrow": "02",
+          "title": "Klarowność Wygrywa",
+          "text": "Jeśli funkcja potrzebuje długiego tłumaczenia, interfejs prawdopodobnie wciąż wymaga kolejnego przejścia.",
+          "size": "standard"
+        },
+        {
+          "eyebrow": "03",
+          "title": "Prawdziwi Użytkownicy Psują Ładne Systemy",
+          "text": "Struktura sprawdza się dopiero wtedy, gdy content jest nieidealny, priorytety się zmieniają, a ludzie korzystają z produktu inaczej niż zakładano.",
+          "size": "wide"
+        },
+        {
+          "eyebrow": "04",
+          "title": "Zostaw Miejsce",
+          "text": "Dobry system jest na tyle konkretny, żeby prowadzić pracę, i na tyle luźny, żeby przetrwać iterację.",
+          "size": "standard"
+        },
+        {
+          "eyebrow": "05",
+          "title": "Dopieszczone Detale Mają Znaczenie",
+          "text": "Małe decyzje dotyczące odstępów, ruchu i tonu często rozstrzygają, czy produkt wydaje się przemyślany czy generyczny.",
+          "size": "standard"
+        }
+      ],
+      "buttons": [
+        {
+          "label": "O Mnie",
+          "href": "#about"
+        },
+        {
+          "label": "Co Cenię",
+          "href": "#values"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-rows",
+      "variant": "stackedRows",
+      "titleLine": ["Sygnały", "Z Budowy"],
+      "intro": "Propozycja druga. Bardziej sekwencyjny, niemal wystawowy układ statementów z mocniejszym pionowym rytmem.",
+      "notes": [
+        {
+          "eyebrow": "Sygnał",
+          "title": "Zacznij od Tarcia",
+          "text": "Najlepszym miejscem startu rzadko jest wymarzony stan homepage'u. Zwykle jest nim moment, w którym użytkownik zwalnia, waha się albo gubi."
+        },
+        {
+          "eyebrow": "Sygnał",
+          "title": "Struktura Redukuje Szum",
+          "text": "Im czystsza hierarchia, tym mniej tłumaczenia interfejs musi wykonywać później."
+        },
+        {
+          "eyebrow": "Sygnał",
+          "title": "Decyzje Estetyczne Niosą Ciężar Produktowy",
+          "text": "Wybory wizualne nigdy nie są neutralne. Kształtują zaufanie, tempo i ilość uwagi, którą użytkownik chce poświęcić."
+        },
+        {
+          "eyebrow": "Sygnał",
+          "title": "Tempo Wymaga Powściągliwości",
+          "text": "Szybkie dostarczanie ma sens tylko wtedy, gdy system pozostaje na tyle zrozumiały, żeby dalej nim poruszać."
+        },
+        {
+          "eyebrow": "Sygnał",
+          "title": "Dobre Produkty Oddychają",
+          "text": "Negatywna przestrzeń, sensowne domyślne wybory i spokojne przejścia sprawiają, że złożoność wydaje się lżejsza."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Praca Komercyjna",
+          "href": "#commercial-work"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-board",
+      "variant": "signalBoard",
+      "titleLine": ["Tablica", "Sygnałów"],
+      "intro": "Propozycja trzecia. Gęstsza plansza fragmentów, tagów i zdań, bardziej jak ściana roboczych odniesień.",
+      "notes": [
+        {
+          "eyebrow": "Tablica",
+          "title": "Czytelność Najpierw",
+          "text": "Ludzie powinni zrozumieć gdzie są i co jest ważne, zanim zaczną podziwiać layout."
+        },
+        {
+          "eyebrow": "Tablica",
+          "title": "Ruch Potrzebuje Celu",
+          "text": "Animacja zasługuje na miejsce wtedy, gdy prowadzi uwagę, odsłania strukturę albo świadomie zmienia nastrój."
+        },
+        {
+          "eyebrow": "Tablica",
+          "title": "Ograniczenia Są Przydatne",
+          "text": "Ograniczony system często daje silniejszy rezultat niż niekończąca się swoboda."
+        },
+        {
+          "eyebrow": "Tablica",
+          "title": "Interfejsy Pamiętają Ton",
+          "text": "Produkt nie mówi wyłącznie przez copy. Mówi też przez odstępy, timing i wizualną powściągliwość."
+        },
+        {
+          "eyebrow": "Tablica",
+          "title": "Uczyń Ważną Rzecz Oczywistą",
+          "text": "Mocna hierarchia zwykle przekonuje bardziej niż dekoracyjna złożoność."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Praca Freelance",
+          "href": "#freelance-work"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-timeline",
+      "variant": "timeline",
+      "titleLine": ["Ślad", "Procesu"],
+      "intro": "Propozycja czwarta. Układ przypominający oś procesu z naprzemiennymi kartami i mocniejszym poczuciem sekwencji.",
+      "notes": [
+        {
+          "eyebrow": "Ślad",
+          "title": "Obserwuj",
+          "text": "Najpierw szukaj prawdziwych punktów nacisku: zagubienia w nawigacji, słabej hierarchii, niespójnych stanów albo powolnego feedbacku."
+        },
+        {
+          "eyebrow": "Ślad",
+          "title": "Redukuj",
+          "text": "Odetnij zbędną gałąź zanim dodasz kolejny komponent, stan czy interakcję."
+        },
+        {
+          "eyebrow": "Ślad",
+          "title": "Układaj",
+          "text": "Buduj strukturę, która wytrzyma prawdziwy content, a nie tylko idealne warunki z mockupów."
+        },
+        {
+          "eyebrow": "Ślad",
+          "title": "Dopieszczaj",
+          "text": "Zacieśniaj detale dopiero wtedy, gdy hierarchia i zachowanie już wykonują właściwą pracę."
+        },
+        {
+          "eyebrow": "Ślad",
+          "title": "Wypuść",
+          "text": "Gotowe wydanie powinno być spokojne, czytelne i gotowe na kolejną iterację, a nie przegadane."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Kontakt",
+          "href": "#contact"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-mosaic",
+      "variant": "numberedMosaic",
+      "titleLine": ["Wybrane", "Zasady"],
+      "intro": "Propozycja piąta. Numerowana mozaika o większym ciężarze wizualnym i bardziej graficznym kontraście niż pozostałe sekcje tekstowe.",
+      "notes": [
+        {
+          "eyebrow": "Zasada",
+          "title": "Projektuj Tempo",
+          "text": "Rytm strony jest równie ważny jak treść, która się na niej znajduje."
+        },
+        {
+          "eyebrow": "Zasada",
+          "title": "Używaj Kontrastu Oszczędnie",
+          "text": "Jeśli każdy element krzyczy, nic nie prowadzi."
+        },
+        {
+          "eyebrow": "Zasada",
+          "title": "Niech Layout Niesie Znaczenie",
+          "text": "Inna struktura powinna sygnalizować inny rodzaj informacji."
+        },
+        {
+          "eyebrow": "Zasada",
+          "title": "Trzymaj System Elastyczny",
+          "text": "Projekt musi działać także wtedy, gdy brakuje idealnego assetu albo content zmienia kształt."
+        },
+        {
+          "eyebrow": "Zasada",
+          "title": "Zapamiętywalne Wygrywa z Przeładowanym",
+          "text": "Strona potrzebuje jednego lub dwóch mocnych ruchów, a nie dwudziestu dekoracyjnych."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "O Mnie",
+          "href": "#about"
+        },
+        {
+          "label": "Kontakt",
+          "href": "#contact"
+        }
+      ]
     }
   ]
 }

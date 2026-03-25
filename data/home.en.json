@@ -5,55 +5,21 @@
   "sections": [
     {
       "type": "projects",
+      "id": "commercial-work",
       "titleLine": ["Commercial", "Work"],
       "text": "Projects built as part of the development team at Navarra Lab — a design studio and software house operating between Berlin and Kraków.",
       "filterCategory": "commercial"
     },
     {
       "type": "projects",
+      "id": "freelance-work",
       "titleLine": ["Freelance", "Work"],
       "text": "Projects I own end-to-end — from initial scope and architecture through to deployment and handoff.",
       "filterCategory": "freelance"
     },
     {
-      "type": "fieldNotes",
-      "id": "field-notes",
-      "variant": "asymmetricGrid",
-      "titleLine": ["Field", "Notes"],
-      "intro": "A few things I keep coming back to when building products.",
-      "notes": [
-        {
-          "eyebrow": "01 / Speed",
-          "title": "Speed Is a UX Decision",
-          "text": "Performance isn't a tech metric — it's a design choice. A fast interface communicates respect for the user's time. I treat every unnecessary loading state as a design failure.",
-          "size": "standard"
-        },
-        {
-          "eyebrow": "02 / Clarity",
-          "title": "Clarity Over Cleverness",
-          "text": "The best interfaces feel obvious — but only after a lot of hard work. I'd rather ship something readable and maintainable than something impressive that nobody can extend.",
-          "size": "tall"
-        },
-        {
-          "eyebrow": "03 / Resilience",
-          "title": "Survive Contact With Reality",
-          "text": "I like software that holds up against real users, changing priorities, and imperfect content. Fewer assumptions, understandable systems, room for iteration.",
-          "size": "standard"
-        },
-        {
-          "eyebrow": "04 / Restraint",
-          "title": "Know What to Leave Out",
-          "text": "Good work is rarely about stacking features. It's about choosing what matters, shaping the experience carefully, and having the discipline to stop.",
-          "size": "wide"
-        }
-      ],
-      "buttons": [
-        { "label": "About Me", "href": "#about" },
-        { "label": "What I Value", "href": "#values" }
-      ]
-    },
-    {
       "type": "fullSection",
+      "id": "about",
       "titleLine": ["About", "Me"],
       "cards": [
         {
@@ -73,6 +39,7 @@
     },
     {
       "type": "fullSection",
+      "id": "values",
       "titleLine": ["What I", "Value"],
       "cards": [
         {
@@ -89,6 +56,239 @@
         }
       ],
       "largePhoto": "/images/home/approach.jpg"
+    },
+    {
+      "type": "simple",
+      "id": "how-i-work",
+      "titleLine": ["How I", "Work"],
+      "paragraphs": [
+        "I work best with founders, studios, and product teams that need someone who can move between product thinking and implementation without dropping either. Sometimes that means leading a build from scope to launch. Sometimes it means stepping into an existing codebase, finding the weak points, and making it calmer, faster, and easier to maintain.",
+        "My default mode is clarity. I like defining scope early, surfacing tradeoffs before they become problems, and shipping in small, defensible increments. I care about aesthetics, but not at the cost of usability. I care about speed, but not the fake kind that creates cleanup work three weeks later.",
+        "If you need a frontend or full-stack partner who can own delivery, communicate cleanly, and keep accessibility and polish in scope from day one, I'm open to selected collaborations."
+      ],
+      "buttons": [
+        {
+          "label": "See Commercial Work",
+          "href": "#commercial-work"
+        },
+        {
+          "label": "Get In Touch",
+          "href": "#contact"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-grid",
+      "variant": "asymmetricGrid",
+      "titleLine": ["Field", "Notes"],
+      "intro": "Proposition one. An asymmetrical editorial grid with uneven card heights and a looser rhythm than the rest of the page.",
+      "notes": [
+        {
+          "eyebrow": "01",
+          "title": "Speed Is Felt",
+          "text": "Interfaces are judged before they are understood. Perceived responsiveness is part of the design, not a technical afterthought.",
+          "size": "tall"
+        },
+        {
+          "eyebrow": "02",
+          "title": "Clarity Wins",
+          "text": "If a feature needs a paragraph to justify itself, the UI probably still needs another pass.",
+          "size": "standard"
+        },
+        {
+          "eyebrow": "03",
+          "title": "Real Users Break Nice Systems",
+          "text": "The structure only proves itself when content is messy, priorities shift, and people use the product in ways nobody planned.",
+          "size": "wide"
+        },
+        {
+          "eyebrow": "04",
+          "title": "Leave Room",
+          "text": "Good systems are specific enough to guide the work and loose enough to survive iteration.",
+          "size": "standard"
+        },
+        {
+          "eyebrow": "05",
+          "title": "Polish Matters",
+          "text": "Tiny choices around spacing, motion, and copy tone often decide whether a product feels considered or generic.",
+          "size": "standard"
+        }
+      ],
+      "buttons": [
+        {
+          "label": "About Me",
+          "href": "#about"
+        },
+        {
+          "label": "What I Value",
+          "href": "#values"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-rows",
+      "variant": "stackedRows",
+      "titleLine": ["Build", "Signals"],
+      "intro": "Proposition two. A more sequential, almost exhibition-like stack of statements with stronger vertical pacing.",
+      "notes": [
+        {
+          "eyebrow": "Signal",
+          "title": "Start With Friction",
+          "text": "The best place to begin is usually not the homepage dream state. It is the moment where users slow down, hesitate, or get lost."
+        },
+        {
+          "eyebrow": "Signal",
+          "title": "Structure Reduces Noise",
+          "text": "The cleaner the hierarchy, the less explanation the interface has to do later."
+        },
+        {
+          "eyebrow": "Signal",
+          "title": "Aesthetic Decisions Carry Product Weight",
+          "text": "Visual choices are never neutral. They shape trust, pace, and how much attention a user is willing to spend."
+        },
+        {
+          "eyebrow": "Signal",
+          "title": "Momentum Needs Restraint",
+          "text": "Shipping fast matters, but only when the system stays understandable enough to keep moving."
+        },
+        {
+          "eyebrow": "Signal",
+          "title": "Good Products Breathe",
+          "text": "Negative space, sensible defaults, and calm transitions make complexity feel manageable."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Commercial Work",
+          "href": "#commercial-work"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-board",
+      "variant": "signalBoard",
+      "titleLine": ["Signal", "Board"],
+      "intro": "Proposition three. A denser board of fragments, tags, and statements that feels more like a wall of working references.",
+      "notes": [
+        {
+          "eyebrow": "Board",
+          "title": "Readability First",
+          "text": "People should understand where they are and what matters before they admire the layout."
+        },
+        {
+          "eyebrow": "Board",
+          "title": "Motion Needs Purpose",
+          "text": "Animation earns its place when it guides attention, reveals structure, or changes mood deliberately."
+        },
+        {
+          "eyebrow": "Board",
+          "title": "Constraints Are Useful",
+          "text": "A limited system often produces a stronger result than endless freedom."
+        },
+        {
+          "eyebrow": "Board",
+          "title": "Interfaces Remember Tone",
+          "text": "The product does not only say things through copy. It says them through spacing, timing, and visual restraint."
+        },
+        {
+          "eyebrow": "Board",
+          "title": "Make The Important Thing Obvious",
+          "text": "Strong hierarchy is usually more persuasive than decorative complexity."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Freelance Work",
+          "href": "#freelance-work"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-timeline",
+      "variant": "timeline",
+      "titleLine": ["Process", "Trace"],
+      "intro": "Proposition four. A timeline-like reading experience with alternating cards and a stronger sense of sequence.",
+      "notes": [
+        {
+          "eyebrow": "Trace",
+          "title": "Observe",
+          "text": "Look for the actual pressure points first: navigation confusion, weak hierarchy, inconsistent states, or slow feedback."
+        },
+        {
+          "eyebrow": "Trace",
+          "title": "Reduce",
+          "text": "Cut the unnecessary branch before adding another component, state, or interaction."
+        },
+        {
+          "eyebrow": "Trace",
+          "title": "Shape",
+          "text": "Build a structure that can hold real content, not just ideal mockup conditions."
+        },
+        {
+          "eyebrow": "Trace",
+          "title": "Refine",
+          "text": "Tighten the details only after the hierarchy and behavior are already doing the right work."
+        },
+        {
+          "eyebrow": "Trace",
+          "title": "Ship",
+          "text": "A finished release should feel calm, legible, and ready for the next iteration rather than over-explained."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Get In Touch",
+          "href": "#contact"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-mosaic",
+      "variant": "numberedMosaic",
+      "titleLine": ["Selected", "Principles"],
+      "intro": "Proposition five. A numbered mosaic with larger visual weight and more graphic contrast than the other text sections.",
+      "notes": [
+        {
+          "eyebrow": "Principle",
+          "title": "Design The Pace",
+          "text": "The rhythm of the page is as important as the content on it."
+        },
+        {
+          "eyebrow": "Principle",
+          "title": "Use Contrast Sparingly",
+          "text": "If every element shouts, nothing leads."
+        },
+        {
+          "eyebrow": "Principle",
+          "title": "Let Layout Carry Meaning",
+          "text": "A different structure should signal a different kind of information."
+        },
+        {
+          "eyebrow": "Principle",
+          "title": "Keep Systems Flexible",
+          "text": "Design should hold up when the perfect asset is missing or the content changes shape."
+        },
+        {
+          "eyebrow": "Principle",
+          "title": "Memorable Beats Busy",
+          "text": "A page needs one or two strong moves, not twenty decorative ones."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "About Me",
+          "href": "#about"
+        },
+        {
+          "label": "Contact",
+          "href": "#contact"
+        }
+      ]
     }
   ]
 }
