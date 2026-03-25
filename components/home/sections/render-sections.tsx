@@ -2,6 +2,7 @@ import { SimpleSection } from "@/components/home/sections/simple-section";
 import { ProjectsSection } from "@/components/home/sections/projects-section";
 import { FullSection } from "@/components/home/sections/full-section";
 import { QuoteSection } from "@/components/home/sections/quote-section";
+import { FieldNotesSection } from "@/components/home/sections/field-notes-section";
 import { SectionPropsT } from "@/types/home-page-types";
 
 export function RenderSections({ data }: SectionPropsT) {
@@ -17,6 +18,8 @@ export function RenderSections({ data }: SectionPropsT) {
         return <FullSection data={data} className={"fest-container py-20 md:py-40"} />;
       case "quote":
         return <QuoteSection data={data} className={"fest-container py-20 md:py-40"} />;
+      case "fieldNotes":
+        return <FieldNotesSection data={data} className={"fest-container py-20 md:py-40"} />;
     }
   }
 

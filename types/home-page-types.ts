@@ -7,7 +7,7 @@ export type HomePagePropsT = {
   };
 };
 
-export type HomeSectionT = ProjectsSectionT | FullSectionT | QuoteSectionT | SimpleSectionT;
+export type HomeSectionT = ProjectsSectionT | FullSectionT | QuoteSectionT | SimpleSectionT | FieldNotesSectionT;
 
 export type ProjectsSectionT = {
   type: "projects";
@@ -39,6 +39,30 @@ export type SimpleSectionT = {
   type: "simple";
   titleLine: string[];
   text: string;
+};
+
+export type FieldNotesVariantT =
+  | "asymmetricGrid"
+  | "stackedRows"
+  | "signalBoard"
+  | "timeline"
+  | "numberedMosaic";
+
+export type FieldNoteT = {
+  eyebrow: string;
+  title: string;
+  text: string;
+  size: "standard" | "tall" | "wide";
+};
+
+export type FieldNotesSectionT = {
+  type: "fieldNotes";
+  id: string;
+  variant: FieldNotesVariantT;
+  titleLine: string[];
+  intro: string;
+  notes: FieldNoteT[];
+  buttons: { label: string; href: string }[];
 };
 
 export type SectionPropsT = {
