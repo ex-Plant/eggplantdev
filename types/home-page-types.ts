@@ -11,6 +11,7 @@ export type HomeSectionT = ProjectsSectionT | FullSectionT | QuoteSectionT | Sim
 
 export type ProjectsSectionT = {
   type: "projects";
+  id?: string;
   titleLine: string[];
   text?: string;
   filterCategory?: string;
@@ -18,6 +19,7 @@ export type ProjectsSectionT = {
 
 export type FullSectionT = {
   type: "fullSection";
+  id?: string;
   titleLine: string[];
   cards: { title: string; content: string }[];
   largePhoto: string;
@@ -37,8 +39,11 @@ export type QuoteT = {
 
 export type SimpleSectionT = {
   type: "simple";
+  id?: string;
   titleLine: string[];
-  text: string;
+  text?: string;
+  paragraphs?: string[];
+  buttons?: { label: string; href: string }[];
 };
 
 export type FieldNotesVariantT =
@@ -46,13 +51,18 @@ export type FieldNotesVariantT =
   | "stackedRows"
   | "signalBoard"
   | "timeline"
-  | "numberedMosaic";
+  | "numberedMosaic"
+  | "orbitalCluster"
+  | "brutalistPoster"
+  | "constellationMap"
+  | "splitLedger"
+  | "magneticCards";
 
 export type FieldNoteT = {
   eyebrow: string;
   title: string;
   text: string;
-  size: "standard" | "tall" | "wide";
+  size?: "standard" | "tall" | "wide";
 };
 
 export type FieldNotesSectionT = {

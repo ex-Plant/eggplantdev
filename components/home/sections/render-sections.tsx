@@ -10,16 +10,23 @@ export function RenderSections({ data }: SectionPropsT) {
     switch (data.type) {
       case "simple":
         return (
-          <SimpleSection titleLine={data.titleLine} text={data.text} className={"fest-container py-20 md:py-60"} />
+          <SimpleSection
+            id={data.id}
+            titleLine={data.titleLine}
+            text={data.text}
+            paragraphs={data.paragraphs}
+            buttons={data.buttons}
+            className={"fest-container py-20 md:py-60"}
+          />
         );
+      case "fieldNotes":
+        return <FieldNotesSection data={data} className={"fest-container py-20 md:py-40"} />;
       case "projects":
         return <ProjectsSection data={data} className={"fest-container py-20 md:py-40"} />;
       case "fullSection":
         return <FullSection data={data} className={"fest-container py-20 md:py-40"} />;
       case "quote":
         return <QuoteSection data={data} className={"fest-container py-20 md:py-40"} />;
-      case "fieldNotes":
-        return <FieldNotesSection data={data} className={"fest-container py-20 md:py-40"} />;
     }
   }
 

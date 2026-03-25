@@ -289,6 +289,196 @@
           "href": "#contact"
         }
       ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-orbit",
+      "variant": "orbitalCluster",
+      "titleLine": ["Orbitalne", "Notatki"],
+      "intro": "Propozycja szósta. Pływające kapsuły rozłożone jak satelity wokół pustego środka. Bardziej atmosferyczne niż edytorialne.",
+      "notes": [
+        {
+          "eyebrow": "Orbita / 01",
+          "title": "Uwaga Potrzebuje Grawitacji",
+          "text": "Strona staje się zapamiętywalna, gdy jeden lub dwa elementy wciągają całą resztę na własną orbitę."
+        },
+        {
+          "eyebrow": "Orbita / 02",
+          "title": "Pusta Przestrzeń Też Prowadzi",
+          "text": "Nie każdej kompozycji trzeba zapełniać. Czasem to właśnie pustka nadaje obiektowi wagę."
+        },
+        {
+          "eyebrow": "Orbita / 03",
+          "title": "Obiekty Wygrywają z Dekoracją",
+          "text": "Jeden wyrazisty kształt może zdefiniować stronę mocniej niż tuzin małych efektów."
+        },
+        {
+          "eyebrow": "Orbita / 04",
+          "title": "Ruch Powinien Sugerować Fizykę",
+          "text": "Najlepsze animowane interfejsy sprawiają wrażenie, jakby podlegały jakiejś wewnętrznej zasadzie, a nie po prostu się poruszały."
+        },
+        {
+          "eyebrow": "Orbita / 05",
+          "title": "Atmosfera Jest Systemem",
+          "text": "Kolor, odstępy, blur i timing powinny zgadzać się co do tej samej temperatury emocjonalnej."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Jeszcze Raz Hero",
+          "href": "#main-content"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-brutalist",
+      "variant": "brutalistPoster",
+      "titleLine": ["Ściana", "Plakatów"],
+      "intro": "Propozycja siódma. Głośna, plakatowa i celowo konfrontacyjna. Ma mocno wybić stronę z obecnego rytmu.",
+      "notes": [
+        {
+          "eyebrow": "Ściana / 01",
+          "title": "Głośne Wciąż Może Być Precyzyjne",
+          "text": "Mocna kompozycja nie musi być chaotyczna. Kontrast nadal może być kontrolowany."
+        },
+        {
+          "eyebrow": "Ściana / 02",
+          "title": "Napięcie Zostaje w Głowie",
+          "text": "Lekkie rozjazdy, skoki skali i rotacje mogą sprawić, że blok będzie żywy zamiast statyczny."
+        },
+        {
+          "eyebrow": "Ściana / 03",
+          "title": "Strony Potrzebują Chociaż Jednego Ryzyka",
+          "text": "Bez jednego świadomie dziwnego ruchu całość może stać się poprawna, ale zapominana."
+        },
+        {
+          "eyebrow": "Ściana / 04",
+          "title": "Kontrast Buduje Pamięć",
+          "text": "Ludzie zwykle pamiętają sekcję, która na chwilę zmieniła zasady."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Zobacz Zasady",
+          "href": "#field-notes-mosaic"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-constellation",
+      "variant": "constellationMap",
+      "titleLine": ["Mapa", "Konstelacji"],
+      "intro": "Propozycja ósma. Sekcja-diagram: punkty, połączenia i etykiety rozłożone na mapowanej powierzchni.",
+      "notes": [
+        {
+          "eyebrow": "Mapa / A",
+          "title": "Struktura Może Być Przestrzenna",
+          "text": "Informacja nie zawsze potrzebuje pionowego stacka. Sama pozycja może komunikować relacje."
+        },
+        {
+          "eyebrow": "Mapa / B",
+          "title": "Systemy Potrzebują Współrzędnych",
+          "text": "Gdy produkt robi się bardziej złożony, orientacja staje się równie ważna jak stylizacja."
+        },
+        {
+          "eyebrow": "Mapa / C",
+          "title": "Połączenia Są Istotne",
+          "text": "Czasem linia między ideami mówi więcej niż same karty."
+        },
+        {
+          "eyebrow": "Mapa / D",
+          "title": "Logika Wizualna Buduje Zaufanie",
+          "text": "Jeśli layout sugeruje wewnętrzny porządek, użytkownik chętniej go eksploruje."
+        },
+        {
+          "eyebrow": "Mapa / E",
+          "title": "Diagramy Spowalniają Oko",
+          "text": "To bywa przydatne, jeśli chcesz, żeby sekcja była eksplorowana, a nie tylko skanowana."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "O Mnie",
+          "href": "#about"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-ledger",
+      "variant": "splitLedger",
+      "titleLine": ["Podzielony", "Ledger"],
+      "intro": "Propozycja dziewiąta. Twardy podział między jasnym i ciemnym polem. Bardziej graficzna, bardziej architektoniczna, mniej atmosferyczna.",
+      "notes": [
+        {
+          "eyebrow": "Ledger / Lewa",
+          "title": "Kontrast Może Być Konstrukcją",
+          "text": "Sekcja może odróżnić się nie ornamentem, ale zdecydowaną zmianą powierzchni i sposobu czytania."
+        },
+        {
+          "eyebrow": "Ledger / Lewa",
+          "title": "Równowaga Nie Jest Symetrią",
+          "text": "Dwie przeciwstawne połówki nadal mogą być stabilne, nawet jeśli wykonują różne zadania."
+        },
+        {
+          "eyebrow": "Ledger / Prawa",
+          "title": "Design Może Spierać Się Sam ze Sobą",
+          "text": "To napięcie często daje silniejszy rezultat niż całkowicie harmonijny blok."
+        },
+        {
+          "eyebrow": "Ledger / Prawa",
+          "title": "Powierzchnie Niosą Ton",
+          "text": "Białe pole i czarne pole mówią różne rzeczy, zanim przeczytasz choć jedno słowo."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Kontakt",
+          "href": "#contact"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-magnetic",
+      "variant": "magneticCards",
+      "titleLine": ["Magnetyczne", "Karty"],
+      "intro": "Propozycja dziesiąta. Przechylone, pływające karty z większym glowem i bardziej obiektowym charakterem. Bliżej kolekcjonerskich artefaktów niż zwykłych bloków contentu.",
+      "notes": [
+        {
+          "eyebrow": "Karta / 01",
+          "title": "Obiekty Przyciągają Uwagę",
+          "text": "Kiedy sekcja przypomina zestaw fizycznych elementów, strona staje się bardziej namacalna i mniej generyczna."
+        },
+        {
+          "eyebrow": "Karta / 02",
+          "title": "Głębia Zmienia Tempo",
+          "text": "Warstwy, cienie i tilt sprawiają, że oko porusza się inaczej niż po płaskim układzie edytorialnym."
+        },
+        {
+          "eyebrow": "Karta / 03",
+          "title": "Różnorodność Wygrywa z Powtórzeniem",
+          "text": "Kilka kart opartych o siebie potrafi wygenerować więcej energii niż kolejny sztywny grid."
+        },
+        {
+          "eyebrow": "Karta / 04",
+          "title": "Materialność Ma Znaczenie",
+          "text": "Nawet w cyfrowym interfejsie sugestia powierzchni i ciężaru wpływa na to, jak premium odbierana jest całość."
+        },
+        {
+          "eyebrow": "Karta / 05",
+          "title": "Sekcja Może Zachowywać Się Jak Półka",
+          "text": "To zmienia model mentalny z czytania bloku na oglądanie kolekcji."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Na Górę",
+          "href": "#main-content"
+        }
+      ]
     }
   ]
 }

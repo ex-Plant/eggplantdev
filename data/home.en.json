@@ -289,6 +289,196 @@
           "href": "#contact"
         }
       ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-orbit",
+      "variant": "orbitalCluster",
+      "titleLine": ["Orbital", "Notes"],
+      "intro": "Proposition six. Floating capsules distributed like satellites around an empty center. More atmospheric than editorial.",
+      "notes": [
+        {
+          "eyebrow": "Orbit / 01",
+          "title": "Attention Needs Gravity",
+          "text": "A page becomes memorable when one or two elements pull everything else into a clear orbit."
+        },
+        {
+          "eyebrow": "Orbit / 02",
+          "title": "Empty Space Can Lead",
+          "text": "Not every composition needs to be filled. Sometimes the void is what gives the object weight."
+        },
+        {
+          "eyebrow": "Orbit / 03",
+          "title": "Objects Beat Decorations",
+          "text": "A singular form can define a page more strongly than a dozen small visual effects."
+        },
+        {
+          "eyebrow": "Orbit / 04",
+          "title": "Motion Should Suggest Physics",
+          "text": "The best animated interfaces feel like they obey some internal rule rather than just moving because they can."
+        },
+        {
+          "eyebrow": "Orbit / 05",
+          "title": "Atmosphere Is A System",
+          "text": "Color, spacing, blur, and timing should all agree on the same emotional temperature."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Hero Again",
+          "href": "#main-content"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-brutalist",
+      "variant": "brutalistPoster",
+      "titleLine": ["Poster", "Wall"],
+      "intro": "Proposition seven. Loud, poster-like, and intentionally confrontational. This one is meant to break the page rhythm hard.",
+      "notes": [
+        {
+          "eyebrow": "Wall / 01",
+          "title": "Loud Can Still Be Precise",
+          "text": "A forceful composition does not need to be messy. Contrast can still be controlled."
+        },
+        {
+          "eyebrow": "Wall / 02",
+          "title": "Tension Makes Things Stick",
+          "text": "Slight misalignment, scale jumps, and rotation can make a block feel alive instead of static."
+        },
+        {
+          "eyebrow": "Wall / 03",
+          "title": "Pages Need At Least One Risk",
+          "text": "Without one deliberately strange move, the whole site can become competent but forgettable."
+        },
+        {
+          "eyebrow": "Wall / 04",
+          "title": "Contrast Creates Memory",
+          "text": "People tend to remember the section that changed the rules for a moment."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "See Principles",
+          "href": "#field-notes-mosaic"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-constellation",
+      "variant": "constellationMap",
+      "titleLine": ["Constellation", "Map"],
+      "intro": "Proposition eight. A diagrammatic section: points, connections, and labels spread across a mapped surface.",
+      "notes": [
+        {
+          "eyebrow": "Map / A",
+          "title": "Structure Can Be Spatial",
+          "text": "Information does not always need a vertical stack. Position itself can communicate relationships."
+        },
+        {
+          "eyebrow": "Map / B",
+          "title": "Systems Need Coordinates",
+          "text": "When a product gets more complex, orientation becomes as important as styling."
+        },
+        {
+          "eyebrow": "Map / C",
+          "title": "Connections Matter",
+          "text": "Sometimes the line between ideas is more informative than the cards themselves."
+        },
+        {
+          "eyebrow": "Map / D",
+          "title": "Visual Logic Builds Trust",
+          "text": "If a layout suggests an internal order, users are more willing to explore it."
+        },
+        {
+          "eyebrow": "Map / E",
+          "title": "Diagrams Slow The Eye Down",
+          "text": "That can be useful when you want the section to be explored, not skimmed."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "About",
+          "href": "#about"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-ledger",
+      "variant": "splitLedger",
+      "titleLine": ["Split", "Ledger"],
+      "intro": "Proposition nine. A hard split between light and dark. More graphic, more architectural, less atmospheric.",
+      "notes": [
+        {
+          "eyebrow": "Ledger / Left",
+          "title": "Contrast Can Be Structural",
+          "text": "A section can differentiate itself not through ornament, but through a decisive change in surface and reading mode."
+        },
+        {
+          "eyebrow": "Ledger / Left",
+          "title": "Balance Is Not Symmetry",
+          "text": "Two opposing halves can still feel stable even when they are doing different jobs."
+        },
+        {
+          "eyebrow": "Ledger / Right",
+          "title": "Design Can Argue With Itself",
+          "text": "That friction often produces stronger tension than a perfectly harmonious block."
+        },
+        {
+          "eyebrow": "Ledger / Right",
+          "title": "Surfaces Carry Tone",
+          "text": "A white field and a black field say different things before a single word is read."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Contact",
+          "href": "#contact"
+        }
+      ]
+    },
+    {
+      "type": "fieldNotes",
+      "id": "field-notes-magnetic",
+      "variant": "magneticCards",
+      "titleLine": ["Magnetic", "Cards"],
+      "intro": "Proposition ten. Tilted, floating cards with more glow and object-like presence. Closer to collectible artifacts than content blocks.",
+      "notes": [
+        {
+          "eyebrow": "Card / 01",
+          "title": "Objects Invite Attention",
+          "text": "When a section feels like a set of physical pieces, the page becomes more tactile and less generic."
+        },
+        {
+          "eyebrow": "Card / 02",
+          "title": "Depth Changes Pace",
+          "text": "Layers, shadows, and tilt make the eye move differently than on a flat editorial layout."
+        },
+        {
+          "eyebrow": "Card / 03",
+          "title": "Variation Beats Repetition",
+          "text": "A few cards leaning against each other can create more energy than another strict grid."
+        },
+        {
+          "eyebrow": "Card / 04",
+          "title": "Materiality Matters",
+          "text": "Even in a digital interface, suggestions of surface and weight affect how premium the work feels."
+        },
+        {
+          "eyebrow": "Card / 05",
+          "title": "A Section Can Behave Like A Shelf",
+          "text": "That changes the mental model from reading a block to inspecting a collection."
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Back To Top",
+          "href": "#main-content"
+        }
+      ]
     }
   ]
 }
