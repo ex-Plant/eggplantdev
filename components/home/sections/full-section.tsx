@@ -10,7 +10,7 @@ type FullSectionPropsT = {
 
 export const FullSection = ({ data, className }: FullSectionPropsT) => {
   return (
-    <div className={cn("", className)}>
+    <div id={data.id} className={cn("scroll-mt-32", className)}>
       <SimpleSection titleLine={data.titleLine} />
       <Approach approachArray={data.cards} foto={data.largePhoto} />
     </div>

@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { usePrefersReducedMotion } from "@/hooks/use-media-query";
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
 import Link from "next/link";
-import { GlowWrapper } from "../general/glow-wrapper";
+import { truncate } from "fs";
 
 const SOURCES = [
   { src: "/logos/eggplant-logo.png", label: "png (rembg)" }, // not transparent
@@ -20,13 +20,22 @@ const SOURCES = [
 // Change this index to swap the logo source
 const ACTIVE_SOURCE = 2;
 
-export function EggplantLogo({ className }: { className?: string }) {
+export function EggplantLogo({ className, link = true }: { className?: string; link?: boolean }) {
   const logoRef = useRef<HTMLImageElement>(null);
   const prefersReducedMotion = usePrefersReducedMotion();
   const { t } = useTranslation("nav");
 
   useGSAP(() => {
-    if (!logoRef.current || prefersReducedMotion) return;
+    if (!logoRef.current) return;
+
+    // Always fade in, even with reduced motion
+    gsap.to(logoRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+    });
+
+    if (prefersReducedMotion) return;
 
     gsap.to(logoRef.current, {
       y: -16,
@@ -37,7 +46,22 @@ export function EggplantLogo({ className }: { className?: string }) {
     });
   }, [prefersReducedMotion]);
 
-  return (
+  const eggplantLogo = (
+    <Image
+      ref={logoRef}
+      src={SOURCES[ACTIVE_SOURCE].src}
+      alt={t("logo")}
+      width={160}
+      height={160}
+      sizes="(min-width: 1024px) 126px, (min-width: 640px) 120px, 60px"
+      className="size-10 opacity-0 sm:size-20 lg:size-32"
+      quality={100}
+      priority
+      // unoptimized
+    />
+  );
+
+  const linkComponent = (
     <Link
       href="/"
       className={
@@ -50,18 +74,11 @@ export function EggplantLogo({ className }: { className?: string }) {
         }
       }}
     >
-      <Image
-        ref={logoRef}
-        src={SOURCES[ACTIVE_SOURCE].src}
-        alt={t("logo")}
-        width={80}
-        height={80}
-        sizes="(min-width: 1024px) 80px, (min-width: 640px) 60px, 40px"
-        className="size-10 sm:size-15 lg:size-20"
-        quality={100}
-        priority
-        // unoptimized
-      />
+      {eggplantLogo}
     </Link>
   );
+
+  if (link) return linkComponent;
+
+  return eggplantLogo;
 }

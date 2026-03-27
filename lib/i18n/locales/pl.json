@@ -15,7 +15,8 @@
   },
   "common": {
     "submit": "WYŚLIJ",
-    "sending": "WYSYŁANIE..."
+    "sending": "WYSYŁANIE...",
+    "scrollDown": "Przewijaj w dół"
   },
   "form": {
     "name": "Imię",
