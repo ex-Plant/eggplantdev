@@ -68,3 +68,6 @@ tests/
 
 # playwright mcp
 .playwright-mcp/
+
+# design screenshots
+/screenshots/
