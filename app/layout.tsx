@@ -14,6 +14,9 @@ import { Footer } from "../components/footer/footer";
 import { preferencesHydratorScript } from "@/components/general/preferences-hydrator";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { DevTestNav } from "@/components/test/dev-test-nav";
+import { EggplantLogo } from "../components/top-navigation/eggplant-logo";
+import { cn } from "../helpers/cn";
 
 export const metadata: Metadata = {
   title: "Egggplants in space",
@@ -29,7 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${poly.variable} ${theinhardt.variable} ${jetbrainsMono.variable} ${ibmPlexMono.variable} ${firaCode.variable} ${poly.className} ${theinhardt.className}`}
     >
       <body className="overscroll-none scroll-smooth antialiased" suppressHydrationWarning>
-        <script dangerouslySetInnerHTML={{ __html: preferencesHydratorScript }} />
+        {/* <script dangerouslySetInnerHTML={{ __html: preferencesHydratorScript }} /> */}
         <TranslationsProvider>
           <DebugWrapper>
             <SkipToContent />
@@ -38,11 +41,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
             {/* TopNavigation must stay outside SmoothScroll — toggling smooth scroll
                 remounts the tree, which would reset the menu open/close state */}
+            <DevTestNav />
             <TopNavigation />
             <SmoothScroll>
-              <main id="main-content">{children}</main>
+              <main id="main-content z-201">{children}</main>
               <GradientMask />
               <GradientMask />
+              {/* <div className={cn(`flex w-full justify-center pb-20`)}> */}
+              {/* <EggplantLogo /> */}
+              {/* </div> */}
               <Footer />
             </SmoothScroll>
             {/* TODO: auto-open animation drawer on first visit */}

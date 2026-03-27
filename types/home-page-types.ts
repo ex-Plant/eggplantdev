@@ -56,7 +56,18 @@ export type FieldNotesVariantT =
   | "brutalistPoster"
   | "constellationMap"
   | "splitLedger"
-  | "magneticCards";
+  | "magneticCards"
+  | "glitchFeed"
+  | "neonLounge"
+  | "topoContour"
+  | "polaroidScatter"
+  | "hologramStack"
+  | "sacredNeon"
+  | "cosmicNebula"
+  | "hexGrid"
+  | "circuitTrace"
+  | "astralRings"
+  | "voidPortal";
 
 export type FieldNoteT = {
   eyebrow: string;

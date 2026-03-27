@@ -6,21 +6,30 @@
     {
       "type": "projects",
       "id": "commercial-work",
-      "titleLine": ["Commercial", "Work"],
+      "titleLine": [
+        "Commercial",
+        "Work"
+      ],
       "text": "Projects built as part of the development team at Navarra Lab — a design studio and software house operating between Berlin and Kraków.",
       "filterCategory": "commercial"
     },
     {
       "type": "projects",
       "id": "freelance-work",
-      "titleLine": ["Freelance", "Work"],
+      "titleLine": [
+        "Freelance",
+        "Work"
+      ],
       "text": "Projects I own end-to-end — from initial scope and architecture through to deployment and handoff.",
       "filterCategory": "freelance"
     },
     {
       "type": "fullSection",
       "id": "about",
-      "titleLine": ["About", "Me"],
+      "titleLine": [
+        "About",
+        "Me"
+      ],
       "cards": [
         {
           "title": "Background",
@@ -40,7 +49,10 @@
     {
       "type": "fullSection",
       "id": "values",
-      "titleLine": ["What I", "Value"],
+      "titleLine": [
+        "What I",
+        "Value"
+      ],
       "cards": [
         {
           "title": "Accessibility",
@@ -60,7 +72,10 @@
     {
       "type": "simple",
       "id": "how-i-work",
-      "titleLine": ["How I", "Work"],
+      "titleLine": [
+        "How I",
+        "Work"
+      ],
       "paragraphs": [
         "I work best with founders, studios, and product teams that need someone who can move between product thinking and implementation without dropping either. Sometimes that means leading a build from scope to launch. Sometimes it means stepping into an existing codebase, finding the weak points, and making it calmer, faster, and easier to maintain.",
         "My default mode is clarity. I like defining scope early, surfacing tradeoffs before they become problems, and shipping in small, defensible increments. I care about aesthetics, but not at the cost of usability. I care about speed, but not the fake kind that creates cleanup work three weeks later.",
@@ -74,409 +89,6 @@
         {
           "label": "Get In Touch",
           "href": "#contact"
-        }
-      ]
-    },
-    {
-      "type": "fieldNotes",
-      "id": "field-notes-grid",
-      "variant": "asymmetricGrid",
-      "titleLine": ["Field", "Notes"],
-      "intro": "Proposition one. An asymmetrical editorial grid with uneven card heights and a looser rhythm than the rest of the page.",
-      "notes": [
-        {
-          "eyebrow": "01",
-          "title": "Speed Is Felt",
-          "text": "Interfaces are judged before they are understood. Perceived responsiveness is part of the design, not a technical afterthought.",
-          "size": "tall"
-        },
-        {
-          "eyebrow": "02",
-          "title": "Clarity Wins",
-          "text": "If a feature needs a paragraph to justify itself, the UI probably still needs another pass.",
-          "size": "standard"
-        },
-        {
-          "eyebrow": "03",
-          "title": "Real Users Break Nice Systems",
-          "text": "The structure only proves itself when content is messy, priorities shift, and people use the product in ways nobody planned.",
-          "size": "wide"
-        },
-        {
-          "eyebrow": "04",
-          "title": "Leave Room",
-          "text": "Good systems are specific enough to guide the work and loose enough to survive iteration.",
-          "size": "standard"
-        },
-        {
-          "eyebrow": "05",
-          "title": "Polish Matters",
-          "text": "Tiny choices around spacing, motion, and copy tone often decide whether a product feels considered or generic.",
-          "size": "standard"
-        }
-      ],
-      "buttons": [
-        {
-          "label": "About Me",
-          "href": "#about"
-        },
-        {
-          "label": "What I Value",
-          "href": "#values"
-        }
-      ]
-    },
-    {
-      "type": "fieldNotes",
-      "id": "field-notes-rows",
-      "variant": "stackedRows",
-      "titleLine": ["Build", "Signals"],
-      "intro": "Proposition two. A more sequential, almost exhibition-like stack of statements with stronger vertical pacing.",
-      "notes": [
-        {
-          "eyebrow": "Signal",
-          "title": "Start With Friction",
-          "text": "The best place to begin is usually not the homepage dream state. It is the moment where users slow down, hesitate, or get lost."
-        },
-        {
-          "eyebrow": "Signal",
-          "title": "Structure Reduces Noise",
-          "text": "The cleaner the hierarchy, the less explanation the interface has to do later."
-        },
-        {
-          "eyebrow": "Signal",
-          "title": "Aesthetic Decisions Carry Product Weight",
-          "text": "Visual choices are never neutral. They shape trust, pace, and how much attention a user is willing to spend."
-        },
-        {
-          "eyebrow": "Signal",
-          "title": "Momentum Needs Restraint",
-          "text": "Shipping fast matters, but only when the system stays understandable enough to keep moving."
-        },
-        {
-          "eyebrow": "Signal",
-          "title": "Good Products Breathe",
-          "text": "Negative space, sensible defaults, and calm transitions make complexity feel manageable."
-        }
-      ],
-      "buttons": [
-        {
-          "label": "Commercial Work",
-          "href": "#commercial-work"
-        }
-      ]
-    },
-    {
-      "type": "fieldNotes",
-      "id": "field-notes-board",
-      "variant": "signalBoard",
-      "titleLine": ["Signal", "Board"],
-      "intro": "Proposition three. A denser board of fragments, tags, and statements that feels more like a wall of working references.",
-      "notes": [
-        {
-          "eyebrow": "Board",
-          "title": "Readability First",
-          "text": "People should understand where they are and what matters before they admire the layout."
-        },
-        {
-          "eyebrow": "Board",
-          "title": "Motion Needs Purpose",
-          "text": "Animation earns its place when it guides attention, reveals structure, or changes mood deliberately."
-        },
-        {
-          "eyebrow": "Board",
-          "title": "Constraints Are Useful",
-          "text": "A limited system often produces a stronger result than endless freedom."
-        },
-        {
-          "eyebrow": "Board",
-          "title": "Interfaces Remember Tone",
-          "text": "The product does not only say things through copy. It says them through spacing, timing, and visual restraint."
-        },
-        {
-          "eyebrow": "Board",
-          "title": "Make The Important Thing Obvious",
-          "text": "Strong hierarchy is usually more persuasive than decorative complexity."
-        }
-      ],
-      "buttons": [
-        {
-          "label": "Freelance Work",
-          "href": "#freelance-work"
-        }
-      ]
-    },
-    {
-      "type": "fieldNotes",
-      "id": "field-notes-timeline",
-      "variant": "timeline",
-      "titleLine": ["Process", "Trace"],
-      "intro": "Proposition four. A timeline-like reading experience with alternating cards and a stronger sense of sequence.",
-      "notes": [
-        {
-          "eyebrow": "Trace",
-          "title": "Observe",
-          "text": "Look for the actual pressure points first: navigation confusion, weak hierarchy, inconsistent states, or slow feedback."
-        },
-        {
-          "eyebrow": "Trace",
-          "title": "Reduce",
-          "text": "Cut the unnecessary branch before adding another component, state, or interaction."
-        },
-        {
-          "eyebrow": "Trace",
-          "title": "Shape",
-          "text": "Build a structure that can hold real content, not just ideal mockup conditions."
-        },
-        {
-          "eyebrow": "Trace",
-          "title": "Refine",
-          "text": "Tighten the details only after the hierarchy and behavior are already doing the right work."
-        },
-        {
-          "eyebrow": "Trace",
-          "title": "Ship",
-          "text": "A finished release should feel calm, legible, and ready for the next iteration rather than over-explained."
-        }
-      ],
-      "buttons": [
-        {
-          "label": "Get In Touch",
-          "href": "#contact"
-        }
-      ]
-    },
-    {
-      "type": "fieldNotes",
-      "id": "field-notes-mosaic",
-      "variant": "numberedMosaic",
-      "titleLine": ["Selected", "Principles"],
-      "intro": "Proposition five. A numbered mosaic with larger visual weight and more graphic contrast than the other text sections.",
-      "notes": [
-        {
-          "eyebrow": "Principle",
-          "title": "Design The Pace",
-          "text": "The rhythm of the page is as important as the content on it."
-        },
-        {
-          "eyebrow": "Principle",
-          "title": "Use Contrast Sparingly",
-          "text": "If every element shouts, nothing leads."
-        },
-        {
-          "eyebrow": "Principle",
-          "title": "Let Layout Carry Meaning",
-          "text": "A different structure should signal a different kind of information."
-        },
-        {
-          "eyebrow": "Principle",
-          "title": "Keep Systems Flexible",
-          "text": "Design should hold up when the perfect asset is missing or the content changes shape."
-        },
-        {
-          "eyebrow": "Principle",
-          "title": "Memorable Beats Busy",
-          "text": "A page needs one or two strong moves, not twenty decorative ones."
-        }
-      ],
-      "buttons": [
-        {
-          "label": "About Me",
-          "href": "#about"
-        },
-        {
-          "label": "Contact",
-          "href": "#contact"
-        }
-      ]
-    },
-    {
-      "type": "fieldNotes",
-      "id": "field-notes-orbit",
-      "variant": "orbitalCluster",
-      "titleLine": ["Orbital", "Notes"],
-      "intro": "Proposition six. Floating capsules distributed like satellites around an empty center. More atmospheric than editorial.",
-      "notes": [
-        {
-          "eyebrow": "Orbit / 01",
-          "title": "Attention Needs Gravity",
-          "text": "A page becomes memorable when one or two elements pull everything else into a clear orbit."
-        },
-        {
-          "eyebrow": "Orbit / 02",
-          "title": "Empty Space Can Lead",
-          "text": "Not every composition needs to be filled. Sometimes the void is what gives the object weight."
-        },
-        {
-          "eyebrow": "Orbit / 03",
-          "title": "Objects Beat Decorations",
-          "text": "A singular form can define a page more strongly than a dozen small visual effects."
-        },
-        {
-          "eyebrow": "Orbit / 04",
-          "title": "Motion Should Suggest Physics",
-          "text": "The best animated interfaces feel like they obey some internal rule rather than just moving because they can."
-        },
-        {
-          "eyebrow": "Orbit / 05",
-          "title": "Atmosphere Is A System",
-          "text": "Color, spacing, blur, and timing should all agree on the same emotional temperature."
-        }
-      ],
-      "buttons": [
-        {
-          "label": "Hero Again",
-          "href": "#main-content"
-        }
-      ]
-    },
-    {
-      "type": "fieldNotes",
-      "id": "field-notes-brutalist",
-      "variant": "brutalistPoster",
-      "titleLine": ["Poster", "Wall"],
-      "intro": "Proposition seven. Loud, poster-like, and intentionally confrontational. This one is meant to break the page rhythm hard.",
-      "notes": [
-        {
-          "eyebrow": "Wall / 01",
-          "title": "Loud Can Still Be Precise",
-          "text": "A forceful composition does not need to be messy. Contrast can still be controlled."
-        },
-        {
-          "eyebrow": "Wall / 02",
-          "title": "Tension Makes Things Stick",
-          "text": "Slight misalignment, scale jumps, and rotation can make a block feel alive instead of static."
-        },
-        {
-          "eyebrow": "Wall / 03",
-          "title": "Pages Need At Least One Risk",
-          "text": "Without one deliberately strange move, the whole site can become competent but forgettable."
-        },
-        {
-          "eyebrow": "Wall / 04",
-          "title": "Contrast Creates Memory",
-          "text": "People tend to remember the section that changed the rules for a moment."
-        }
-      ],
-      "buttons": [
-        {
-          "label": "See Principles",
-          "href": "#field-notes-mosaic"
-        }
-      ]
-    },
-    {
-      "type": "fieldNotes",
-      "id": "field-notes-constellation",
-      "variant": "constellationMap",
-      "titleLine": ["Constellation", "Map"],
-      "intro": "Proposition eight. A diagrammatic section: points, connections, and labels spread across a mapped surface.",
-      "notes": [
-        {
-          "eyebrow": "Map / A",
-          "title": "Structure Can Be Spatial",
-          "text": "Information does not always need a vertical stack. Position itself can communicate relationships."
-        },
-        {
-          "eyebrow": "Map / B",
-          "title": "Systems Need Coordinates",
-          "text": "When a product gets more complex, orientation becomes as important as styling."
-        },
-        {
-          "eyebrow": "Map / C",
-          "title": "Connections Matter",
-          "text": "Sometimes the line between ideas is more informative than the cards themselves."
-        },
-        {
-          "eyebrow": "Map / D",
-          "title": "Visual Logic Builds Trust",
-          "text": "If a layout suggests an internal order, users are more willing to explore it."
-        },
-        {
-          "eyebrow": "Map / E",
-          "title": "Diagrams Slow The Eye Down",
-          "text": "That can be useful when you want the section to be explored, not skimmed."
-        }
-      ],
-      "buttons": [
-        {
-          "label": "About",
-          "href": "#about"
-        }
-      ]
-    },
-    {
-      "type": "fieldNotes",
-      "id": "field-notes-ledger",
-      "variant": "splitLedger",
-      "titleLine": ["Split", "Ledger"],
-      "intro": "Proposition nine. A hard split between light and dark. More graphic, more architectural, less atmospheric.",
-      "notes": [
-        {
-          "eyebrow": "Ledger / Left",
-          "title": "Contrast Can Be Structural",
-          "text": "A section can differentiate itself not through ornament, but through a decisive change in surface and reading mode."
-        },
-        {
-          "eyebrow": "Ledger / Left",
-          "title": "Balance Is Not Symmetry",
-          "text": "Two opposing halves can still feel stable even when they are doing different jobs."
-        },
-        {
-          "eyebrow": "Ledger / Right",
-          "title": "Design Can Argue With Itself",
-          "text": "That friction often produces stronger tension than a perfectly harmonious block."
-        },
-        {
-          "eyebrow": "Ledger / Right",
-          "title": "Surfaces Carry Tone",
-          "text": "A white field and a black field say different things before a single word is read."
-        }
-      ],
-      "buttons": [
-        {
-          "label": "Contact",
-          "href": "#contact"
-        }
-      ]
-    },
-    {
-      "type": "fieldNotes",
-      "id": "field-notes-magnetic",
-      "variant": "magneticCards",
-      "titleLine": ["Magnetic", "Cards"],
-      "intro": "Proposition ten. Tilted, floating cards with more glow and object-like presence. Closer to collectible artifacts than content blocks.",
-      "notes": [
-        {
-          "eyebrow": "Card / 01",
-          "title": "Objects Invite Attention",
-          "text": "When a section feels like a set of physical pieces, the page becomes more tactile and less generic."
-        },
-        {
-          "eyebrow": "Card / 02",
-          "title": "Depth Changes Pace",
-          "text": "Layers, shadows, and tilt make the eye move differently than on a flat editorial layout."
-        },
-        {
-          "eyebrow": "Card / 03",
-          "title": "Variation Beats Repetition",
-          "text": "A few cards leaning against each other can create more energy than another strict grid."
-        },
-        {
-          "eyebrow": "Card / 04",
-          "title": "Materiality Matters",
-          "text": "Even in a digital interface, suggestions of surface and weight affect how premium the work feels."
-        },
-        {
-          "eyebrow": "Card / 05",
-          "title": "A Section Can Behave Like A Shelf",
-          "text": "That changes the mental model from reading a block to inspecting a collection."
-        }
-      ],
-      "buttons": [
-        {
-          "label": "Back To Top",
-          "href": "#main-content"
         }
       ]
     }
