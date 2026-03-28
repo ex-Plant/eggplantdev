@@ -31,7 +31,7 @@ export const OrbitalClusterNotes = ({ data, className }: Props) => {
             <article
               key={note.title}
               className={cn(
-                "relative z-10 mb-4 rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(27,16,34,0.82),rgba(5,5,7,0.72))] p-5 backdrop-blur-sm xl:absolute xl:mb-0 xl:w-[17rem]",
+                "relative z-10 mb-4 rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(27,16,34,0.9),rgba(5,5,7,0.85))] p-5 xl:absolute xl:mb-0 xl:w-[17rem]",
                 POSITIONS[index % POSITIONS.length],
               )}
             >

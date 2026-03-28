@@ -29,7 +29,7 @@ export function CodexCandySupernova() {
               "left-[18%] bottom-[18%]",
               "right-[14%] bottom-[16%]",
             ].map((pos, index) => (
-              <div key={pos} className={cn("absolute rounded-full border border-white/10 bg-white/4 backdrop-blur-[2px]", pos, index % 2 === 0 ? "h-20 w-20" : "h-16 w-16")} />
+              <div key={pos} className={cn("absolute rounded-full border border-white/10 bg-white/6", pos, index % 2 === 0 ? "h-20 w-20" : "h-16 w-16")} />
             ))}
             <div className="absolute bottom-8 left-1/2 w-[min(92%,34rem)] -translate-x-1/2 rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(29,12,23,0.88),rgba(10,8,12,0.94))] p-6 text-center">
               <p className="font-mono text-sm uppercase tracking-[0.18em] text-lightgray/62">Event / glamorous detonation</p>

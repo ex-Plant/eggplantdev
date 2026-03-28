@@ -35,7 +35,7 @@ export const NeonLoungeNotes = ({ data, className }: Props) => {
                 <article
                   key={note.title}
                   className={cn(
-                    "relative rounded-xl border-2 bg-black/60 p-5 md:p-6 backdrop-blur-sm",
+                    "relative rounded-xl border-2 bg-black/75 p-5 md:p-6",
                     neon.border,
                     neon.glow,
                     index === 0 ? "xl:col-span-2 xl:row-span-2" : "",

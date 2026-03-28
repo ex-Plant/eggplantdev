@@ -70,8 +70,8 @@ export function HeroZodiacAstrolabe() {
       {/* Central content */}
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Radial glow behind eggplant */}
-        <div className="absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#daa520]/5 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f0c040]/8 blur-2xl" />
+        <div className="absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(218,165,32,0.05),transparent_70%)]" />
+        <div className="absolute top-1/2 left-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(240,192,64,0.08),transparent_70%)]" />
 
         <img src={EGGPLANT.src} alt="" className="relative h-48 w-48 object-contain" style={{ filter: EGGPLANT.filter }} />
 

@@ -20,8 +20,8 @@ export function HeroConcept({ eyebrow, title, text, className, children }: HeroC
         <div className="hero-retro-scan absolute inset-0" />
         <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/14 to-transparent" />
         <div className="absolute inset-y-0 left-0 w-px bg-linear-to-b from-transparent via-white/10 to-transparent" />
-        <div className="absolute right-[6%] top-[10%] h-24 w-24 rounded-full bg-[radial-gradient(circle,rgba(250,204,21,0.12),transparent_70%)] blur-xl" />
-        <div className="absolute bottom-[10%] left-[8%] h-28 w-28 rounded-full bg-[radial-gradient(circle,rgba(251,113,133,0.12),transparent_72%)] blur-xl" />
+        <div className="absolute right-[6%] top-[10%] h-36 w-36 rounded-full bg-[radial-gradient(circle,rgba(250,204,21,0.12),transparent_80%)]" />
+        <div className="absolute bottom-[10%] left-[8%] h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(251,113,133,0.12),transparent_82%)]" />
       </div>
       <div className="640:col-span-7 1280:col-span-5 col-span-full relative z-10">
         <p className="font-mono text-sm uppercase tracking-[0.18em] text-lightgray/65">{eyebrow}</p>

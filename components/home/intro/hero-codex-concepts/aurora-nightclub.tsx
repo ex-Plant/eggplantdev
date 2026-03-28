@@ -11,7 +11,7 @@ export function CodexAuroraNightclub() {
     >
         <div className="640:col-span-8 1280:col-span-10 col-span-full 1280:col-start-7 mt-12 min-h-[32rem] overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(6,10,11,0.9),rgba(8,6,12,0.94))] xl:mt-0">
           <div className="relative min-h-[32rem] overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(34,197,94,0.16),transparent_18%),radial-gradient(circle_at_52%_14%,rgba(56,189,248,0.12),transparent_16%),radial-gradient(circle_at_82%_24%,rgba(251,113,133,0.14),transparent_18%),radial-gradient(circle_at_58%_78%,rgba(217,70,239,0.16),transparent_24%)] blur-2xl" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(34,197,94,0.16),transparent_28%),radial-gradient(circle_at_52%_14%,rgba(56,189,248,0.12),transparent_26%),radial-gradient(circle_at_82%_24%,rgba(251,113,133,0.14),transparent_28%),radial-gradient(circle_at_58%_78%,rgba(217,70,239,0.16),transparent_34%)]" />
             <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 1100 560" preserveAspectRatio="none">
               <path d="M60 420 Q240 80 420 420 T780 420 T1140 420" fill="none" stroke="rgba(34,197,94,0.18)" strokeWidth="1.6" />
               <path d="M40 356 Q260 126 480 356 T920 356 T1360 356" fill="none" stroke="rgba(56,189,248,0.14)" strokeWidth="1.4" />

@@ -78,7 +78,7 @@ export const AstralRingsNotes = ({ data, className }: Props) => {
                 <article
                   key={note.title}
                   className={cn(
-                    "relative rounded-xl border bg-black/50 p-5 backdrop-blur-sm",
+                    "relative rounded-xl border bg-black/70 p-5",
                     index === 0 ? "xl:col-span-2" : "",
                     index === data.notes.length - 1 ? "xl:col-span-2" : "",
                   )}

@@ -21,7 +21,7 @@ export function CodexPrismTransmission() {
               <circle cx="566" cy="276" r="142" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1.4" />
               <circle cx="566" cy="276" r="92" fill="none" stroke="rgba(250,204,21,0.12)" strokeWidth="1.2" strokeDasharray="10 14" />
             </svg>
-            <div className="absolute left-[28%] top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.16),rgba(167,139,250,0.1)_34%,transparent_64%)] blur-sm" />
+            <div className="absolute left-[28%] top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.16),rgba(167,139,250,0.1)_34%,transparent_72%)]" />
             <img
               src="/logos/eggplant-logo-smooth.apng"
               alt="Prism transmission eggplant"

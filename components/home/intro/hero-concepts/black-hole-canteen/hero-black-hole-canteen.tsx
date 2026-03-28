@@ -20,7 +20,7 @@ export function HeroBlackHoleCanteen() {
           <circle key={i} cx={SVG_CENTER.x} cy={SVG_CENTER.y} r={c.r} fill={c.fill} stroke={c.stroke} strokeWidth={c.strokeWidth} opacity={c.opacity} />
         ))}
       </svg>
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(16,255,170,0.06)_0%,rgba(217,70,239,0.04)_40%,transparent_70%)] blur-xl" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(16,255,170,0.06)_0%,rgba(217,70,239,0.04)_50%,transparent_80%)]" />
 
       <div className="relative z-10 flex flex-col items-center text-center">
         <img src={EGGPLANT.src} alt="" className="h-36 w-36 object-contain" />

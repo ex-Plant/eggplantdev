@@ -91,7 +91,7 @@ export const VoidPortalNotes = ({ data, className }: Props) => {
                 return (
                   <article
                     key={note.title}
-                    className="relative overflow-hidden rounded-lg border border-white/6 bg-black/40 p-5 md:p-6 backdrop-blur-sm"
+                    className="relative overflow-hidden rounded-lg border border-white/6 bg-black/65 p-5 md:p-6"
                     style={{ marginLeft: `${indent}%`, marginRight: `${12 - indent}%` }}
                   >
                     {/* Energy line from left edge */}

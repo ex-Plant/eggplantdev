@@ -38,7 +38,7 @@ export function CodexEclipseChoir() {
               );
             })}
           </svg>
-          <div className="absolute h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(247,199,68,0.12),rgba(217,70,239,0.08)_34%,transparent_66%)] blur-sm" />
+          <div className="absolute h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(247,199,68,0.12),rgba(217,70,239,0.08)_34%,transparent_74%)]" />
           <div className="absolute h-44 w-44 rounded-full border border-[#f7c744]/16 bg-black/80 shadow-[0_0_60px_rgba(0,0,0,0.75)]" />
           <img
             src="/logos/eggplant-logo-smooth.apng"

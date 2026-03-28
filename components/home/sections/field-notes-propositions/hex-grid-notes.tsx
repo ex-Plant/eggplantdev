@@ -62,7 +62,7 @@ export const HexGridNotes = ({ data, className }: Props) => {
                 <article
                   key={note.title}
                   className={cn(
-                    "relative overflow-hidden rounded-lg border p-5 md:p-7 backdrop-blur-sm",
+                    "relative overflow-hidden rounded-lg border p-5 md:p-7",
                     isEven ? "md:mr-24" : "md:ml-24",
                   )}
                   style={{

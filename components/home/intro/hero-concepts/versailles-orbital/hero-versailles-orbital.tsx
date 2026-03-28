@@ -67,8 +67,8 @@ export function HeroVersaillesOrbital() {
       {/* Central content */}
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Golden radial glow */}
-        <div className="absolute top-1/2 left-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#daa520]/5 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ffd700]/8 blur-2xl" />
+        <div className="absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(218,165,32,0.05),transparent_70%)]" />
+        <div className="absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,215,0,0.08),transparent_70%)]" />
 
         {/* Central eggplant */}
         <img src={EGGPLANT.src} alt="" className="relative h-48 w-48 object-contain" style={{ filter: EGGPLANT.filter }} />

@@ -65,7 +65,7 @@ export const SacredNeonNotes = ({ data, className }: Props) => {
                 <article
                   key={note.title}
                   className={cn(
-                    "relative rounded-xl border-2 p-5 md:p-6 backdrop-blur-sm",
+                    "relative rounded-xl border-2 p-5 md:p-6",
                     green.border,
                     green.glow,
                     index === 0 ? "xl:col-span-2 xl:row-span-2" : "",

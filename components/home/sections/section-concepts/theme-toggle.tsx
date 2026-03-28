@@ -11,7 +11,7 @@ export function ThemeToggle({ label, index, children }: ThemeTogglePropsT) {
   const [colorful, setColorful] = useState(false);
   return (
     <div>
-      <div className="fest-container sticky top-0 z-[130] bg-bgc/90 backdrop-blur-sm pt-2">
+      <div className="fest-container sticky top-0 z-[130] bg-bgc/95 pt-2">
         <div className="mb-4 flex items-center gap-3 border-b border-white/10 pb-3">
           <span className="font-mono text-14 uppercase tracking-widest text-orange-500">
             {String(index + 1).padStart(2, "0")}

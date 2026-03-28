@@ -12,7 +12,7 @@ export function CodexBlisterConstellation() {
           <div className="relative grid min-h-[32rem] gap-4 p-6 md:grid-cols-[1.08fr_0.92fr] md:p-8">
             <div className="relative overflow-hidden rounded-[1.9rem] border border-white/10 bg-[linear-gradient(180deg,rgba(32,12,24,0.7),rgba(11,8,13,0.95))]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(255,255,255,0.08),transparent_58%)]" />
-              <div className="absolute left-[8%] top-[12%] h-20 w-20 rounded-[1.5rem] border border-white/10 bg-white/6 backdrop-blur-[2px]" />
+              <div className="absolute left-[8%] top-[12%] h-20 w-20 rounded-[1.5rem] border border-white/10 bg-white/8" />
               <div className="absolute right-[8%] top-[16%] h-16 w-16 rounded-full border border-[#facc15]/16 bg-[#facc15]/8" />
               <div className="absolute left-[12%] bottom-[14%] h-18 w-18 rounded-full border border-[#fb7185]/16 bg-[#fb7185]/8" />
               <div className="absolute right-[16%] bottom-[12%] h-24 w-24 rounded-[1.8rem] border border-[#c084fc]/16 bg-[#c084fc]/8" />

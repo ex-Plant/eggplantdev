@@ -10,7 +10,7 @@ export function CodexNeonRiftGarden() {
     >
         <div className="640:col-span-8 1280:col-span-10 col-span-full 1280:col-start-7 mt-12 min-h-[33rem] overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(4,10,10,0.9),rgba(5,5,9,0.96))] xl:mt-0">
           <div className="relative min-h-[33rem] overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_24%,rgba(16,255,170,0.12),transparent_16%),radial-gradient(circle_at_72%_24%,rgba(217,70,239,0.14),transparent_18%),radial-gradient(circle_at_56%_70%,rgba(59,130,246,0.1),transparent_20%)] blur-2xl" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_24%,rgba(16,255,170,0.12),transparent_26%),radial-gradient(circle_at_72%_24%,rgba(217,70,239,0.14),transparent_28%),radial-gradient(circle_at_56%_70%,rgba(59,130,246,0.1),transparent_30%)]" />
             <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 1100 560" preserveAspectRatio="none">
               <path d="M120 420 Q340 120 550 320 T980 150" fill="none" stroke="rgba(16,255,170,0.16)" strokeWidth="1.6" />
               <path d="M120 440 Q320 200 550 360 T1000 240" fill="none" stroke="rgba(59,130,246,0.12)" strokeWidth="1.4" />

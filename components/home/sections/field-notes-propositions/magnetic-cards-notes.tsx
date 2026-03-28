@@ -27,7 +27,7 @@ export const MagneticCardsNotes = ({ data, className }: Props) => {
             <article
               key={note.title}
               className={cn(
-                "relative rounded-[1.5rem] border border-white/12 bg-[linear-gradient(180deg,rgba(217,70,239,0.18),rgba(59,130,246,0.07)_18%,rgba(255,255,255,0.04))] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35),0_0_40px_rgba(217,70,239,0.08)] backdrop-blur-sm",
+                "relative rounded-[1.5rem] border border-white/12 bg-[linear-gradient(180deg,rgba(217,70,239,0.18),rgba(59,130,246,0.07)_18%,rgba(255,255,255,0.04))] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35),0_0_40px_rgba(217,70,239,0.08)]",
                 TRANSFORMS[index % TRANSFORMS.length],
                 index === 0 ? "xl:col-span-2" : "",
               )}

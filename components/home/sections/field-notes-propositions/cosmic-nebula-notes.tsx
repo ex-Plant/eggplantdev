@@ -47,7 +47,7 @@ export const CosmicNebulaNotes = ({ data, className }: Props) => {
                 <article
                   key={note.title}
                   className={cn(
-                    "relative overflow-hidden rounded-xl border p-5 md:p-6 backdrop-blur-md",
+                    "relative overflow-hidden rounded-xl border p-5 md:p-6",
                     card.pos,
                   )}
                   style={{
