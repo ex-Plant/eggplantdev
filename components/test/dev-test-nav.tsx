@@ -1,8 +1,6 @@
 const TEST_PAGES = [
   { href: "/heros-test", label: "Heroes" },
   { href: "/sections-concepts-test", label: "Sections" },
-  { href: "/selected-heroes", label: "Selected Heroes" },
-  { href: "/selected-animations", label: "Selected Animations" },
   { href: "/rejected-heroes-claude", label: "Rejected Claude" },
   { href: "/rejected-heroes-codex", label: "Rejected Codex" },
   { href: "/animations-test", label: "Animations" },
