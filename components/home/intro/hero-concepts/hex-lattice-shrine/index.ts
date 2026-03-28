@@ -1,1 +1,1 @@
-export { HeroHexLatticeShrine } from "./hero-hex-lattice-shrine";
+export { HeroHexLatticeShrine, HexLatticeShrineContent } from "./hero-hex-lattice-shrine";

@@ -1,1 +1,1 @@
-export { HeroGlamCosmicBillboard } from "./hero-glam-cosmic-billboard";
+export { HeroGlamCosmicBillboard, GlamCosmicBillboardContent } from "./hero-glam-cosmic-billboard";

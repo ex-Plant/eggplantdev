@@ -16,8 +16,8 @@ import { PALETTE as SOLEIL_PALETTE } from "@/components/home/intro/hero-concepts
 import { FadeSlide } from "@/components/general/animations-wrappers/fade-slide";
 import { AnimatedLettersMask } from "@/components/home/intro/animated-letters/animated-letters";
 import { MetatronsCubeCore } from "@/components/home/intro/hero-concepts/metatrons-cube/hero-metatrons-cube";
-import { HeroSacredAscensionGold } from "@/components/home/intro/hero-concepts/sacred-ascension/hero-sacred-ascension-gold";
-import { HeroGlamCosmicBillboard } from "@/components/home/intro/hero-concepts/glam-cosmic-billboard/hero-glam-cosmic-billboard";
+import { SacredAscensionGoldContent } from "@/components/home/intro/hero-concepts/sacred-ascension/hero-sacred-ascension-gold";
+import { GlamCosmicBillboardContent } from "@/components/home/intro/hero-concepts/glam-cosmic-billboard";
 import { ReliquaryDorContent } from "@/components/home/intro/hero-concepts/reliquary-dor";
 import { CathedraleCosmiquContent } from "@/components/home/intro/hero-concepts/cathedrale-cosmique";
 import { CosmicAubergineContent } from "@/components/home/sections/section-concepts/cosmic-aubergine";
@@ -71,7 +71,7 @@ export default function BackdropTestPage() {
 
       {/* ── Scene 7: Sacred Ascension Gold interstitial ── */}
       <ScrollScene>
-        <HeroSacredAscensionGold />
+        <SacredAscensionGoldContent />
       </ScrollScene>
 
       {/* ── Scene 8: About ── */}
@@ -81,7 +81,7 @@ export default function BackdropTestPage() {
 
       {/* ── Scene 9: Glam Cosmic Billboard interstitial ── */}
       <ScrollScene>
-        <HeroGlamCosmicBillboard />
+        <GlamCosmicBillboardContent />
       </ScrollScene>
 
       {/* ── Scene 10: Values ── */}

@@ -1,5 +1,9 @@
+"use client";
+
 /* Agent: Claude — Hex Lattice Shrine */
 
+import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
   HEX_R,
@@ -16,7 +20,15 @@ import {
 
 export function HeroHexLatticeShrine() {
   return (
-    <div id="hero-hex-lattice-shrine" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#080610]">
+    <AnimatedBgWrapper maskStyle={{ backgroundColor: PALETTE.bgColor }}>
+      <HexLatticeShrineContent />
+    </AnimatedBgWrapper>
+  );
+}
+
+export function HexLatticeShrineContent() {
+  return (
+    <div id="hero-hex-lattice-shrine" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Star field */}
       {STARS.map(([x, y], i) => (
         <div
@@ -57,7 +69,12 @@ export function HeroHexLatticeShrine() {
 
       {/* Central content */}
       <div className="relative z-10 flex flex-col items-center text-center">
-        <img src={EGGPLANT.src} alt="" className="h-44 w-44 object-contain saturate-[0.7] sepia-[0.2] drop-shadow-[0_0_30px_rgba(0,229,255,0.25)]" />
+        <EggplantImage
+          src={EGGPLANT.src}
+          sizeClass="h-44 w-44"
+          className="saturate-[0.7] sepia-[0.2] drop-shadow-[0_0_30px_rgba(0,229,255,0.25)]"
+          float
+        />
         <p className="mt-10 font-mono text-12 uppercase tracking-widest text-[#00e5ff]/30">
           {COPY.eyebrow}
         </p>

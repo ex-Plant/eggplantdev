@@ -1,5 +1,9 @@
+"use client";
+
 /* Agent: Claude — Sacred Mandala */
 
+import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   STROKES,
   CX,
@@ -15,7 +19,15 @@ import {
 
 export function HeroSacredMandala() {
   return (
-    <div id="hero-sacred-mandala" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0c0a08]">
+    <AnimatedBgWrapper maskStyle={{ backgroundColor: "#0c0a08" }}>
+      <SacredMandalaContent />
+    </AnimatedBgWrapper>
+  );
+}
+
+export function SacredMandalaContent() {
+  return (
+    <div id="hero-sacred-mandala" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Star field */}
       {STARS.map((s, i) => (
         <div key={`s-${i}`} className="pointer-events-none absolute rounded-full" style={{ left: s.x, top: s.y, width: s.size, height: s.size, backgroundColor: s.color, opacity: s.opacity }} />
@@ -60,10 +72,12 @@ export function HeroSacredMandala() {
           {COPY.eyebrow}
         </p>
 
-        <img
+        <EggplantImage
           src={EGGPLANT_SRC}
           alt="Eggplant logo"
-          className="mb-8 h-48 w-48 drop-shadow-[0_0_40px_rgba(218,165,32,0.3)] saturate-50 sepia"
+          sizeClass="h-48 w-48"
+          className="mb-8 drop-shadow-[0_0_40px_rgba(218,165,32,0.3)] saturate-50 sepia"
+          float
         />
 
         <h1 className="font-mono text-48 uppercase leading-none tracking-tight md:text-72">

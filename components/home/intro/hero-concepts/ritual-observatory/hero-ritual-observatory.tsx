@@ -1,3 +1,7 @@
+"use client";
+
+import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
   SVG_CENTER,
@@ -11,11 +15,19 @@ import {
 } from "./config";
 
 export function HeroRitualObservatory() {
+  return (
+    <AnimatedBgWrapper maskStyle={{ backgroundColor: PALETTE.bgColor }}>
+      <RitualObservatoryContent />
+    </AnimatedBgWrapper>
+  );
+}
+
+export function RitualObservatoryContent() {
   /* Observatory / signal map — technical devotional diagram with
      concentric measurement rings, annotated celestial positions,
      and eggplant at the center of the observation field. */
   return (
-    <div id="hero-ritual-observatory" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0a0908]">
+    <div id="hero-ritual-observatory" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
         {/* Measurement rings with degree marks */}
         {MEASUREMENT_RINGS.map((ring, i) => (
@@ -60,7 +72,7 @@ export function HeroRitualObservatory() {
       </svg>
 
       <div className="relative z-10 flex flex-col items-center text-center">
-        <img src={EGGPLANT.src} alt="" className="h-36 w-36 object-contain" style={{ filter: EGGPLANT.filter }} />
+        <EggplantImage sizeClass="h-36 w-36" filter={EGGPLANT.filter} float />
         <div className="mt-6 flex items-center gap-3">
           <div className="h-px w-12 bg-[#daa520]/15" />
           <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-[#daa520]/30">{COPY.signalLabel}</span>

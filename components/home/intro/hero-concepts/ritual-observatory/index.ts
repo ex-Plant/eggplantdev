@@ -1,1 +1,1 @@
-export { HeroRitualObservatory } from "./hero-ritual-observatory";
+export { HeroRitualObservatory, RitualObservatoryContent } from "./hero-ritual-observatory";

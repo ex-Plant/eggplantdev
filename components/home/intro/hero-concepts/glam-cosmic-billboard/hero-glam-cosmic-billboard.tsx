@@ -1,3 +1,7 @@
+"use client";
+
+import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
   GLAM_STRIPES,
@@ -7,11 +11,19 @@ import {
   COPY,
 } from "./config";
 
+/** Wrapped version with per-section bg animation */
 export function HeroGlamCosmicBillboard() {
-  /* Candy supernova / glam cosmic billboard — hot pink + gold collision,
-     theatrical, like a perfume ad for a vegetable from space. */
   return (
-    <div id="hero-glam-cosmic-billboard" className="relative flex min-h-screen items-center overflow-hidden bg-[#0a0408]">
+    <AnimatedBgWrapper maskStyle={{ backgroundColor: PALETTE.bgColor }}>
+      <GlamCosmicBillboardContent />
+    </AnimatedBgWrapper>
+  );
+}
+
+/** Raw content — no bg wrapper, usable inside ScrollBackdropProvider */
+export function GlamCosmicBillboardContent() {
+  return (
+    <div id="hero-glam-cosmic-billboard" className="relative flex min-h-screen items-center overflow-hidden">
       {/* Dual-tone nebula wash */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-0 top-0 h-[70%] w-[50%] bg-[radial-gradient(ellipse_at_top_left,rgba(218,165,32,0.08),transparent_60%)]" />
@@ -55,8 +67,15 @@ export function HeroGlamCosmicBillboard() {
         </div>
 
         <div className="relative flex items-center justify-center">
-          <div className="absolute h-[350px] w-[350px] rounded-full bg-[radial-gradient(circle,rgba(218,165,32,0.1)_0%,rgba(255,20,147,0.04)_50%,transparent_70%)]" />
-          <img src={EGGPLANT.src} alt="" className="relative h-56 w-56 object-contain" style={{ filter: EGGPLANT.filter }} />
+          <EggplantImage
+            sizeClass="h-56 w-56"
+            filter={EGGPLANT.filter}
+            float
+            glow={{
+              size: "350px",
+              gradient: "radial-gradient(circle, rgba(218,165,32,0.1) 0%, rgba(255,20,147,0.04) 50%, transparent 70%)",
+            }}
+          />
         </div>
       </div>
     </div>

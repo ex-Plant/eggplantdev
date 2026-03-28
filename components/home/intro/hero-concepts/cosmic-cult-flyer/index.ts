@@ -1,1 +1,1 @@
-export { HeroCosmicCultFlyer } from "./hero-cosmic-cult-flyer";
+export { HeroCosmicCultFlyer, CosmicCultFlyerContent } from "./hero-cosmic-cult-flyer";

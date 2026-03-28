@@ -1,3 +1,7 @@
+"use client";
+
+import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
   ALTAR,
@@ -16,10 +20,18 @@ import {
 } from "./config";
 
 export function HeroCelestialAltar() {
+  return (
+    <AnimatedBgWrapper maskStyle={{ backgroundColor: PALETTE.bgColor }}>
+      <CelestialAltarContent />
+    </AnimatedBgWrapper>
+  );
+}
+
+export function CelestialAltarContent() {
   /* Central shrine/altar composition. Eggplant on a golden pedestal
      with planets arranged symmetrically like religious iconography. */
   return (
-    <div id="hero-celestial-altar" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#08070a]">
+    <div id="hero-celestial-altar" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
         {/* Altar pedestal / pyramid base */}
         <polygon points={ALTAR.outerPoints} fill="none" stroke={PALETTE.gold} strokeWidth="1.5" opacity="0.15" />
@@ -76,10 +88,16 @@ export function HeroCelestialAltar() {
         ))}
       </svg>
 
-      <div className="pointer-events-none absolute left-1/2 top-[45%] h-[400px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(240,192,64,0.06)_0%,transparent_70%)]" />
-
       <div className="relative z-10 flex flex-col items-center text-center">
-        <img src={EGGPLANT.src} alt="" className="h-48 w-48 object-contain" style={{ filter: EGGPLANT.filter }} />
+        <EggplantImage
+          sizeClass="h-48 w-48"
+          filter={EGGPLANT.filter}
+          float
+          glow={{
+            size: "300px",
+            gradient: "radial-gradient(ellipse, rgba(240,192,64,0.06) 0%, transparent 70%)",
+          }}
+        />
         <h1 className="mt-8 font-mono text-48 uppercase text-[#f5e6c0] md:text-64">
           {COPY.titleLine1}<br /><span className="text-[#daa520]">{COPY.titleLine2}</span>
         </h1>

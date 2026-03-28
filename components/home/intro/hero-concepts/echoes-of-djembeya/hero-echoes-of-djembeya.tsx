@@ -1,3 +1,7 @@
+"use client";
+
+import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
   STARS,
@@ -10,10 +14,18 @@ import {
 } from "./config";
 
 export function HeroEchoesOfDjembeya() {
+  return (
+    <AnimatedBgWrapper maskStyle={{ backgroundColor: PALETTE.bgColor }}>
+      <EchoesOfDjembeyaContent />
+    </AnimatedBgWrapper>
+  );
+}
+
+export function EchoesOfDjembeyaContent() {
   /* Interlocking figure-8 sacred circles with celestial bodies orbiting.
      Warm amber/gold palette. Central eggplant as luminous deity figure. */
   return (
-    <div id="hero-echoes-djembeya" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0c0a08]">
+    <div id="hero-echoes-djembeya" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Star field — warm tone */}
       {STARS.map((s, i) => (
         <div key={`star-${i}`} className="pointer-events-none absolute rounded-full" style={{ left: s.x, top: s.y, width: s.size, height: s.size, backgroundColor: s.backgroundColor, opacity: s.opacity }} />
@@ -84,9 +96,16 @@ export function HeroEchoesOfDjembeya() {
       <div className="relative z-10 flex flex-col items-center text-center">
         <p className="font-mono text-sm uppercase tracking-[0.5em] text-[#daa520]/40">{COPY.subtitle}</p>
         <div className="relative my-8">
-          <img src={EGGPLANT.src} alt="" className="h-52 w-52 object-contain" style={{ filter: EGGPLANT.filter }} />
-          {/* Radiating sunburst lines behind */}
-          <div className="absolute -inset-16 rounded-full bg-[radial-gradient(circle,rgba(240,192,64,0.08)_0%,transparent_60%)]" />
+          <EggplantImage
+            src={EGGPLANT.src}
+            sizeClass="h-52 w-52"
+            filter={EGGPLANT.filter}
+            float
+            glow={{
+              gradient: "radial-gradient(circle, rgba(240,192,64,0.08) 0%, transparent 60%)",
+              size: "calc(100% + 8rem)",
+            }}
+          />
         </div>
         <h1 className="font-mono text-48 uppercase text-[#f5e6c0] md:text-72">
           {COPY.titleLine1}<br /><span className="text-[#daa520]">{COPY.titleLine2}</span>

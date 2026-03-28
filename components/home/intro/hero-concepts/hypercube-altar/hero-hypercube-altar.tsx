@@ -1,5 +1,9 @@
+"use client";
+
 /* Agent: Claude — Hypercube Altar */
 
+import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
   STARS,
@@ -17,7 +21,15 @@ import {
 
 export function HeroHypercubeAltar() {
   return (
-    <div id="hero-hypercube-altar" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#080610]">
+    <AnimatedBgWrapper maskStyle={{ backgroundColor: PALETTE.bgColor }}>
+      <HypercubeAltarContent />
+    </AnimatedBgWrapper>
+  );
+}
+
+export function HypercubeAltarContent() {
+  return (
+    <div id="hero-hypercube-altar" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Star field */}
       {STARS.map((s, i) => (
         <div key={`s-${i}`} className="pointer-events-none absolute rounded-full" style={{ left: s.x, top: s.y, width: s.size, height: s.size, backgroundColor: s.color, opacity: s.opacity }} />
@@ -65,10 +77,12 @@ export function HeroHypercubeAltar() {
           {COPY.eyebrow}
         </p>
 
-        <img
+        <EggplantImage
           src={EGGPLANT_SRC}
           alt="Eggplant logo"
-          className="mb-8 h-48 w-48 sepia saturate-50 hue-rotate-15 drop-shadow-[0_0_50px_rgba(218,165,32,0.35)]"
+          sizeClass="h-48 w-48"
+          className="mb-8 sepia saturate-50 hue-rotate-15 drop-shadow-[0_0_50px_rgba(218,165,32,0.35)]"
+          float
         />
 
         <h1 className="font-mono text-48 uppercase leading-none tracking-tight md:text-72">

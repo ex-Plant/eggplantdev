@@ -1,3 +1,7 @@
+"use client";
+
+import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
   SVG_CENTER,
@@ -12,10 +16,18 @@ import {
 } from "./config";
 
 export function HeroCosmicCultFlyer() {
+  return (
+    <AnimatedBgWrapper maskStyle={{ backgroundColor: PALETTE.bgColor }}>
+      <CosmicCultFlyerContent />
+    </AnimatedBgWrapper>
+  );
+}
+
+export function CosmicCultFlyerContent() {
   /* Retro cosmic cult flyer energy — art deco borders, sunburst pattern,
      eggplant as the central deity in a ritual diagram. */
   return (
-    <div id="hero-cosmic-cult-flyer" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0a0806]">
+    <div id="hero-cosmic-cult-flyer" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
         {/* Sunburst rays from center */}
         {RAYS.map((ray, i) => (
@@ -50,7 +62,7 @@ export function HeroCosmicCultFlyer() {
       <div className="relative z-10 flex flex-col items-center text-center">
         <p className="text-sm uppercase tracking-[0.6em] text-[#daa520]/30" style={{ fontFamily: "monospace" }}>{COPY.subtitle}</p>
         <div className="relative my-6">
-          <img src={EGGPLANT.src} alt="" className="h-44 w-44 object-contain" style={{ filter: EGGPLANT.filter }} />
+          <EggplantImage sizeClass="h-44 w-44" filter={EGGPLANT.filter} float />
         </div>
         <h1 className="font-mono text-56 uppercase leading-none text-[#f5e6c0] md:text-[5rem]">
           {COPY.titleLine1}<br />{COPY.titleLine2}<br /><span className="text-[#daa520]">{COPY.titleLine3}</span>

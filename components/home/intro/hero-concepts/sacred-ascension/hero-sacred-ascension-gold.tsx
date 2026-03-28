@@ -1,5 +1,9 @@
+"use client";
+
 /* Agent: Claude — Sacred Ascension Gold */
 
+import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE_GOLD,
   SVG_CENTER,
@@ -13,7 +17,15 @@ import {
 
 export function HeroSacredAscensionGold() {
   return (
-    <div id="hero-sacred-ascension-gold" className="relative flex min-h-screen items-center justify-center overflow-hidden" style={{ backgroundColor: PALETTE_GOLD.bgColor }}>
+    <AnimatedBgWrapper maskStyle={{ backgroundColor: PALETTE_GOLD.bgColor }}>
+      <SacredAscensionGoldContent />
+    </AnimatedBgWrapper>
+  );
+}
+
+export function SacredAscensionGoldContent() {
+  return (
+    <div id="hero-sacred-ascension-gold" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Sacred geometry background */}
       <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
         {/* Metatron's cube */}
@@ -30,13 +42,18 @@ export function HeroSacredAscensionGold() {
         ))}
       </svg>
 
-      {/* Radial glow behind eggplant — warm amber */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ background: `radial-gradient(circle, rgba(218,165,32,0.12) 0%, rgba(240,192,64,0.05) 40%, transparent 70%)` }} />
-
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Eggplant */}
         <div className="relative">
-          <img src={EGGPLANT.src} alt="" className="h-48 w-48 object-contain" style={{ filter: EGGPLANT.filter }} />
+          <EggplantImage
+            sizeClass="h-48 w-48"
+            filter={EGGPLANT.filter}
+            float
+            glow={{
+              size: "500px",
+              gradient: "radial-gradient(circle, rgba(218,165,32,0.12) 0%, rgba(240,192,64,0.05) 40%, transparent 70%)",
+            }}
+          />
           {/* Halo rings — gold */}
           <div className="absolute -inset-8 rounded-full" style={{ border: `1px solid rgba(218,165,32,0.15)` }} />
           <div className="absolute -inset-16 rounded-full" style={{ border: `1px solid rgba(218,165,32,0.08)` }} />
