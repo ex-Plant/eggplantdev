@@ -8,7 +8,7 @@ import { cn } from "@/helpers/cn";
 export function AccessibilityMenu({ className }: { className?: string }) {
   return (
     <div
-      className={cn("grid grid-cols-1 content-start gap-3 font-mono uppercase", className)}
+      className={cn("grid grid-cols-1 content-start gap-3 md:gap-2 font-mono uppercase", className)}
       data-slot="accessibility-menu"
     >
       <LanguageSwitcher />

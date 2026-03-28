@@ -10,7 +10,7 @@ export function FontSizeControl() {
 
   return (
     <div className="flex items-center justify-between gap-3">
-      <span className="text-16 shrink-0" id="font-size-label">
+      <span className="text-16 md:text-14 shrink-0" id="font-size-label">
         {t("fontSize")}
       </span>
       <div className="flex items-center gap-2" role="group" aria-labelledby="font-size-label">
@@ -19,7 +19,7 @@ export function FontSizeControl() {
           onClick={() => setScale(scale - FONT_STEP)}
           aria-label={t("decreaseFontSize")}
           disabled={scale <= MIN_SCALE}
-          className="text-28 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full leading-none text-white focus-visible:outline-white disabled:cursor-default disabled:opacity-30"
+          className="text-28 md:text-20 flex h-11 w-11 md:h-8 md:w-8 cursor-pointer items-center justify-center rounded-full leading-none text-white focus-visible:outline-white disabled:cursor-default disabled:opacity-30"
         >
           −
         </button>
@@ -35,14 +35,14 @@ export function FontSizeControl() {
           aria-valuemax={MAX_SCALE}
           aria-valuenow={scale}
           aria-valuetext={`${Math.round(scale * 100)}%`}
-          className="bg-gray5 h-2 w-24 cursor-pointer appearance-none rounded outline-none [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:transition-shadow focus-visible:[&::-webkit-slider-thumb]:shadow-[0_0_0_4px_rgba(255,255,255,0.3)]"
+          className="bg-gray5 h-2 w-24 md:w-20 cursor-pointer appearance-none rounded outline-none [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 md:[&::-webkit-slider-thumb]:h-4 md:[&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:transition-shadow focus-visible:[&::-webkit-slider-thumb]:shadow-[0_0_0_4px_rgba(255,255,255,0.3)]"
         />
         <button
           type="button"
           onClick={() => setScale(scale + FONT_STEP)}
           aria-label={t("increaseFontSize")}
           disabled={scale >= MAX_SCALE}
-          className="text-28 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full leading-none text-white focus-visible:outline-white disabled:cursor-default disabled:opacity-30"
+          className="text-28 md:text-20 flex h-11 w-11 md:h-8 md:w-8 cursor-pointer items-center justify-center rounded-full leading-none text-white focus-visible:outline-white disabled:cursor-default disabled:opacity-30"
         >
           +
         </button>

@@ -20,10 +20,10 @@ export function AnimationToggles({ className }: { className?: string }) {
   };
 
   return (
-    <div className={cn("grid grid-cols-1 gap-3", className)}>
+    <div className={cn("grid grid-cols-1 gap-3 md:gap-2", className)}>
       {ANIMATION_KEYS.map((key) => (
         <div key={key} className="flex items-center justify-between">
-          <span className="text-16 truncate">{t(key)}</span>
+          <span className="text-16 md:text-14 truncate">{t(key)}</span>
           <ToggleSwitch
             checked={values[key]}
             onChange={(v) => setAnimation(key, v)}

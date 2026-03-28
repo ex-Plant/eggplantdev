@@ -60,7 +60,6 @@ export function TopNavigation() {
                 borderRadius={6}
                 strokeWidth={2.5}
                 duration={1}
-                delay={0.6}
                 className="rounded-md text-white"
               >
                 <motion.div
@@ -70,8 +69,8 @@ export function TopNavigation() {
                     y: isOpen ? 0 : -10,
                   }}
                   transition={{
-                    opacity: isOpen ? { duration: 0.4, ease: "easeOut", delay: 0.7 } : { duration: 0.4, delay: 0.7 },
-                    y: isOpen ? { duration: 0.4, ease: "easeOut", delay: 0.7 } : { duration: 0.4, delay: 0.7 },
+                    opacity: isOpen ? { duration: 0.4, ease: "easeOut", delay: 0.5 } : { duration: 0.4, delay: 0 },
+                    y: isOpen ? { duration: 0.4, ease: "easeOut", delay: 0.5 } : { duration: 0.4, delay: 0 },
                   }}
                   data-slot="nav-dropdown"
                   inert={!isOpen ? true : undefined}
@@ -79,10 +78,10 @@ export function TopNavigation() {
                   className="p-[2px]"
                 >
                   <div className={`bg-bgc rounded-md`}>
-                    <div className="grit max-w-[400px] grid-cols-1 p-8">
+                    <div className="grit max-w-[300px] grid-cols-1 p-5">
                       <AccessibilityMenu className="uppercase" />
-                      <RoundedSeparator className="my-6" />
-                      <p className="text-16 text-lightgray scalable pb-6 text-balance">{t("animationNotice")}</p>
+                      <RoundedSeparator className="my-4" />
+                      <p className="text-lightgray scalable pb-4 text-[0.75rem] text-balance">{t("animationNotice")}</p>
                       <AnimationToggles className="uppercase" />
                     </div>
                   </div>
