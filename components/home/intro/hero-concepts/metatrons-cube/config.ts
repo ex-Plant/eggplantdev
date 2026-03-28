@@ -16,7 +16,7 @@ const ringPoints = (r: number, count: number): [number, number][] =>
 export const ALL_POINTS: [number, number][] = [CENTER, ...ringPoints(INNER_R, 6), ...ringPoints(OUTER_R, 6)];
 
 /* ── Theme system ── */
-export type ThemeT = "gold" | "raw" | "silver" | "natural" | "mono";
+export type ThemeT = "gold" | "raw" | "silver" | "mono";
 
 export type PaletteT = {
   strokes: readonly [string, string, string];
@@ -74,17 +74,6 @@ export const PALETTES: Record<ThemeT, PaletteT> = {
     titleSecondary: "#cccccc",
     subtitle: "rgba(204,204,204,0.35)",
     caption: "rgba(119,119,119,0.5)",
-  },
-  natural: {
-    strokes: ["#9333ea", "#7c3aed", "#c084fc"],
-    starAccent: "#a855f7",
-    starBase: "#e9d5ff",
-    glow: "radial-gradient(circle,rgba(147,51,234,0.10) 0%,rgba(124,58,237,0.04) 40%,transparent 70%)",
-    eggplantFilter: "drop-shadow(0 0 40px rgba(147,51,234,0.25))",
-    titlePrimary: "#c084fc",
-    titleSecondary: "#e9d5ff",
-    subtitle: "rgba(168,85,247,0.4)",
-    caption: "rgba(192,132,252,0.5)",
   },
 };
 

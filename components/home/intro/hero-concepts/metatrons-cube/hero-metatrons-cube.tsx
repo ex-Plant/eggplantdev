@@ -158,10 +158,6 @@ export function HeroMetatronsCubeSilver() {
   return <MetatronsCubeCore theme="silver" />;
 }
 
-export function HeroMetatronsCubeNatural() {
-  return <MetatronsCubeCore theme="natural" />;
-}
-
 export function HeroMetatronsCubeMono() {
   return <MetatronsCubeCore theme="mono" />;
 }

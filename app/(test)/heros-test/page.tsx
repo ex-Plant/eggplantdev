@@ -37,7 +37,6 @@ const HERO_REGISTRY: HeroEntryT[] = [
   { id: "metatrons-cube", label: "Metatron's Cube", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCube") },
   { id: "metatrons-cube-raw", label: "Metatron's Cube Raw", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeRaw") },
   { id: "metatrons-cube-silver", label: "Metatron's Cube Silver", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeSilver") },
-  { id: "metatrons-cube-natural", label: "Metatron's Cube Natural", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeNatural") },
   { id: "metatrons-cube-mono", label: "Metatron's Cube Mono", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeMono") },
 
   /* ── Batch 5 — Geometry Overload ── */
