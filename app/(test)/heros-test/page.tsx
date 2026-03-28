@@ -3,7 +3,7 @@
 /* Uses dynamic imports + TanStack Virtual so only visible heroes load */
 
 import { useRef, lazy, Suspense } from "react";
-import { useVirtualizer } from "@tanstack/react-virtual";
+import { useWindowVirtualizer } from "@tanstack/react-virtual";
 import { useLocalizedData } from "@/hooks/use-localized-data";
 
 /* ═══════════════════════════════════════
@@ -33,33 +33,23 @@ function lazyCodex(path: string, exportName: string) {
 }
 
 const HERO_REGISTRY: HeroEntryT[] = [
-  /* ── Batch 6 — Djembeya descendants ── */
-  { id: "meridian-procession", label: "Meridian Procession", load: lazyHero("meridian-procession/hero-meridian-procession", "HeroMeridianProcession") },
-  { id: "compass-sanctum", label: "Compass Sanctum", load: lazyHero("compass-sanctum/hero-compass-sanctum", "HeroCompassSanctum") },
+  /* ── Metatron's Cube (home hero) ── */
+  { id: "metatrons-cube", label: "Metatron's Cube", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCube") },
+  { id: "metatrons-cube-raw", label: "Metatron's Cube Raw", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeRaw") },
+  { id: "metatrons-cube-silver", label: "Metatron's Cube Silver", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeSilver") },
+  { id: "metatrons-cube-natural", label: "Metatron's Cube Natural", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeNatural") },
+  { id: "metatrons-cube-mono", label: "Metatron's Cube Mono", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeMono") },
 
   /* ── Batch 5 — Geometry Overload ── */
   { id: "hypercube-altar", label: "Hypercube Altar", load: lazyHero("hypercube-altar/hero-hypercube-altar", "HeroHypercubeAltar") },
-  { id: "pentagram-rave", label: "Pentagram Rave", load: lazyHero("pentagram-rave/hero-pentagram-rave", "HeroPentagramRave") },
   { id: "hex-lattice-shrine", label: "Hex Lattice Shrine", load: lazyHero("hex-lattice-shrine/hero-hex-lattice-shrine", "HeroHexLatticeShrine") },
-  { id: "vesica-piscis-neon", label: "Vesica Piscis Neon", load: lazyHero("vesica-piscis-neon/hero-vesica-piscis-neon", "HeroVesicaPiscisNeon") },
-  { id: "sri-yantra-supernova", label: "Sri Yantra Supernova", load: lazyHero("sri-yantra-supernova/hero-sri-yantra-supernova", "HeroSriYantraSupernova") },
 
   /* ── Batch 4 — Aubergine d'Or ── */
   { id: "reliquary-dor", label: "Reliquary d'Or", load: lazyHero("reliquary-dor/hero-reliquary-dor", "HeroReliquaryDor") },
   { id: "cathedrale-cosmique", label: "Cathédrale Cosmique", load: lazyHero("cathedrale-cosmique/hero-cathedrale-cosmique", "HeroCathedralCosmique") },
-  { id: "soleil-aubergine", label: "Soleil Aubergine", load: lazyHero("soleil-aubergine/hero-soleil-aubergine", "HeroSoleilAubergine") },
-  { id: "versailles-orbital", label: "Versailles Orbital", load: lazyHero("versailles-orbital/hero-versailles-orbital", "HeroVersaillesOrbital") },
-  { id: "tabernacle-dore", label: "Tabernacle Doré", load: lazyHero("tabernacle-dore/hero-tabernacle-dore", "HeroTabernacleDore") },
+  { id: "soleil-aubergine", label: "Soleil Aubergine", load: lazyHero("soleil-aubergine/hero-soleil-aubergine", "HeroSoleilAubergineMuted") },
 
   /* ── Batch 3 — Sacred geometry deep cuts ── */
-  { id: "metatrons-cube", label: "Metatron's Cube (Gold)", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCube") },
-  { id: "metatrons-cube-raw", label: "Metatron's Cube (Raw)", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeRaw") },
-  { id: "metatrons-cube-silver", label: "Metatron's Cube (Silver)", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeSilver") },
-  { id: "metatrons-cube-natural", label: "Metatron's Cube (Natural)", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeNatural") },
-  { id: "metatrons-cube-mono", label: "Metatron's Cube (Mono)", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeMono") },
-  { id: "golden-spiral", label: "Golden Spiral", load: lazyHero("golden-spiral/hero-golden-spiral", "HeroGoldenSpiral") },
-  { id: "flower-of-life", label: "Flower of Life", load: lazyHero("flower-of-life/hero-flower-of-life", "HeroFlowerOfLife") },
-  { id: "zodiac-astrolabe", label: "Zodiac Astrolabe", load: lazyHero("zodiac-astrolabe/hero-zodiac-astrolabe", "HeroZodiacAstrolabe") },
   { id: "sacred-mandala", label: "Sacred Mandala", load: lazyHero("sacred-mandala/hero-sacred-mandala", "HeroSacredMandala") },
 
   /* ── Batch 2 — Djembéya / warm gold ── */
@@ -70,34 +60,15 @@ const HERO_REGISTRY: HeroEntryT[] = [
   { id: "ritual-observatory", label: "Ritual Observatory", load: lazyHero("ritual-observatory/hero-ritual-observatory", "HeroRitualObservatory") },
 
   /* ── Batch 1 — neon / cyan / magenta ── */
-  { id: "sacred-ascension", label: "Sacred Ascension", load: lazyHero("sacred-ascension/hero-sacred-ascension", "HeroSacredAscension") },
-  { id: "cosmic-aubergine", label: "Cosmic Aubergine", load: lazyHero("cosmic-aubergine/hero-cosmic-aubergine", "HeroCosmicAubergine") },
-  { id: "orbital-launch", label: "Orbital Launch / Solar Aubergine", load: lazyHero("orbital-launch/hero-orbital-launch", "HeroOrbitalLaunch") },
-  { id: "wormhole", label: "Warp Aubergine", load: lazyHero("wormhole/hero-wormhole", "HeroWormhole") },
-  { id: "mission-briefing", label: "Mission Briefing / Eggplant Zero", load: lazyHero("mission-briefing/hero-mission-briefing", "HeroMissionBriefing") },
+  { id: "sacred-ascension-gold", label: "Sacred Ascension Gold", load: lazyHero("sacred-ascension/hero-sacred-ascension-gold", "HeroSacredAscensionGold") },
 ];
 
 function buildCodexRegistry(): HeroEntryT[] {
   return [
 
-    { id: "codex-close-encounter", label: "Codex / 03: Close Encounter", load: lazyCodex("close-encounter", "CodexCloseEncounter"), needsTxt: true },
-    { id: "codex-aurora-nightclub", label: "Codex / 17: Aurora Nightclub", load: lazyCodex("aurora-nightclub", "CodexAuroraNightclub") },
 
-    { id: "codex-neon-rift-garden", label: "Codex / 20: Neon Rift Garden", load: lazyCodex("neon-rift-garden", "CodexNeonRiftGarden") },
-    { id: "codex-candy-halo-collapse", label: "Codex / 22: Candy Halo Collapse", load: lazyCodex("candy-halo-collapse", "CodexCandyHaloCollapse") },
-    { id: "codex-sugar-comet-parade", label: "Codex / 23: Sugar Comet Parade", load: lazyCodex("sugar-comet-parade", "CodexSugarCometParade") },
-    { id: "codex-bubblegum-oracle", label: "Codex / 24: Bubblegum Oracle", load: lazyCodex("bubblegum-oracle", "CodexBubblegumOracle") },
-    { id: "codex-velvet-detonation", label: "Codex / 29: Velvet Detonation", load: lazyCodex("velvet-detonation", "CodexVelvetDetonation") },
 
-    { id: "codex-processional-gate", label: "Codex / 35: Processional Gate", load: lazyCodex("processional-gate", "CodexProcessionalGate") },
-    { id: "codex-compass-altar", label: "Codex / 36: Compass Altar", load: lazyCodex("compass-altar", "CodexCompassAltar") },
-    { id: "codex-halo-procession-billboard", label: "Codex / 37: Halo Procession Billboard", load: lazyCodex("halo-procession-billboard", "CodexHaloProcessionBillboard") },
     /* ── v2 redesigns ── */
-    { id: "codex-aurora-nightclub-v2", label: "Codex / 17b: Aurora Nightclub v2", load: lazyCodex("aurora-nightclub-v2", "CodexAuroraNightclubV2"), group: "v2" },
-    { id: "codex-neon-rift-garden-v2", label: "Codex / 20b: Neon Rift Garden v2", load: lazyCodex("neon-rift-garden-v2", "CodexNeonRiftGardenV2"), group: "v2" },
-    { id: "codex-prism-transmission-v2", label: "Codex / 19b: Prism Transmission v2", load: lazyCodex("prism-transmission-v2", "CodexPrismTransmissionV2"), group: "v2" },
-    { id: "codex-chrome-bubble-shrine-v2", label: "Codex / 16b: Chrome Bubble Shrine v2", load: lazyCodex("chrome-bubble-shrine-v2", "CodexChromeBubbleShrineV2"), group: "v2" },
-    { id: "codex-candy-halo-collapse-v2", label: "Codex / 15b: Candy Halo Collapse v2", load: lazyCodex("candy-halo-collapse-v2", "CodexCandyHaloCollapseV2"), group: "v2" },
   ];
 }
 
@@ -119,21 +90,21 @@ function LazyHero({ entry, txt }: { entry: HeroEntryT; txt: string }) {
 /* ── Page ── */
 export default function HerosTestPage() {
   const { introTxt = "" } = useLocalizedData("home");
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
 
   const CODEX_REGISTRY = buildCodexRegistry();
   const ALL_HEROES = [...HERO_REGISTRY, ...CODEX_REGISTRY];
   const codexStart = HERO_REGISTRY.length;
 
-  const virtualizer = useVirtualizer({
+  const virtualizer = useWindowVirtualizer({
     count: ALL_HEROES.length,
-    getScrollElement: () => scrollRef.current,
     estimateSize: () => 900,
     overscan: 1,
+    scrollMargin: listRef.current?.offsetTop ?? 0,
   });
 
   return (
-    <div ref={scrollRef} className="bg-bgc h-screen overflow-auto text-white">
+    <div className="bg-bgc text-white">
       <div className="fest-container py-16">
         <h1 className="text-40 md:text-64 mb-4 font-mono text-white uppercase">Hero Concepts</h1>
         <p className="text-20 text-lightgray mb-8">
@@ -141,7 +112,7 @@ export default function HerosTestPage() {
         </p>
       </div>
 
-      <div className="relative" style={{ height: virtualizer.getTotalSize() }}>
+      <div ref={listRef} className="relative" style={{ height: virtualizer.getTotalSize() }}>
         {virtualizer.getVirtualItems().map((virtualRow) => {
           const hero = ALL_HEROES[virtualRow.index];
           const isCodexHeader = virtualRow.index === codexStart;
@@ -153,7 +124,7 @@ export default function HerosTestPage() {
               data-index={virtualRow.index}
               ref={virtualizer.measureElement}
               className="absolute left-0 w-full"
-              style={{ top: virtualRow.start }}
+              style={{ top: virtualRow.start - (listRef.current?.offsetTop ?? 0) }}
             >
               {isCodexHeader && (
                 <div className="fest-container border-t border-[#f97316]/20 pt-12 mb-8">

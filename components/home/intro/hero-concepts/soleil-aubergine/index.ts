@@ -1,1 +1,1 @@
-export { HeroSoleilAubergine } from "./hero-soleil-aubergine";
+export { HeroSoleilAubergine, HeroSoleilAubergineMuted } from "./hero-soleil-aubergine";

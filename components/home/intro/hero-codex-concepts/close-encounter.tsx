@@ -11,7 +11,7 @@ export function CodexCloseEncounter({ txt }: PropsT) {
       text={blurb}
       className="bg-[radial-gradient(circle_at_20%_20%,rgba(217,70,239,0.18),transparent_18%),radial-gradient(circle_at_0%_80%,rgba(59,130,246,0.08),transparent_24%),#050507]"
     >
-      <div className="640:col-span-8 1280:col-span-10 1280:col-start-7 col-span-full mt-12 min-h-[28rem] overflow-hidden rounded-[2rem] border border-white/10 bg-black/20 xl:mt-0">
+      <div className="640:col-span-8 1280:col-span-10 1280:col-start-7 col-span-full mt-12 min-h-[28rem] xl:mt-0">
         <div className="relative h-full min-h-[28rem]">
           <div className="absolute top-1/2 -left-[8%] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(217,70,239,0.14)_0%,rgba(59,130,246,0.05)_28%,transparent_58%)]" />
           <img

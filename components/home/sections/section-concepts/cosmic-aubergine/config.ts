@@ -3,20 +3,46 @@
    ═══════════════════════════════════════════════ */
 
 /* ── Palette ── */
-export const PALETTE = {
-  neonGreen: "#10ffaa",
-  purple: "#d946ef",
-  deepPurple: "rgba(89,20,162,0.15)",
-  softPurple: "rgba(217,70,239,0.08)",
+export type CosmicPaletteT = {
+  accent1: string;
+  accent2: string;
+  nebulaA: string;
+  nebulaB: string;
+  nebulaC: string;
+  bgColor: string;
+  eggplantFilter: string;
+};
+
+export const PALETTE: CosmicPaletteT = {
+  accent1: "#10ffaa",
+  accent2: "#d946ef",
+  nebulaA: "rgba(89,20,162,0.15)",
+  nebulaB: "rgba(16,255,170,0.06)",
+  nebulaC: "rgba(217,70,239,0.08)",
   bgColor: "#030108",
+  eggplantFilter: "none",
+} as const;
+
+export const PALETTE_GOLD: CosmicPaletteT = {
+  accent1: "#daa520",
+  accent2: "#f0c040",
+  nebulaA: "rgba(218,165,32,0.12)",
+  nebulaB: "rgba(200,134,14,0.06)",
+  nebulaC: "rgba(240,192,64,0.06)",
+  bgColor: "#0c0a08",
+  eggplantFilter: "saturate(0.15) brightness(1.4) contrast(0.9)",
 } as const;
 
 /* ── Nebula clouds ── */
-export const NEBULA_CLOUDS = [
-  { position: "left-[10%] top-[20%]", size: "h-[60%] w-[40%]", gradient: `radial-gradient(ellipse,${PALETTE.deepPurple},transparent_60%)` },
-  { position: "right-[5%] top-[10%]", size: "h-[50%] w-[35%]", gradient: "radial-gradient(ellipse,rgba(16,255,170,0.06),transparent_60%)" },
-  { position: "bottom-[10%] left-[30%]", size: "h-[40%] w-[45%]", gradient: `radial-gradient(ellipse,${PALETTE.softPurple},transparent_60%)` },
-] as const;
+export function buildNebulaClouds(p: CosmicPaletteT) {
+  return [
+    { position: "left-[10%] top-[20%]", size: "h-[70%] w-[50%]", gradient: `radial-gradient(ellipse,${p.nebulaA},transparent_75%)` },
+    { position: "right-[5%] top-[10%]", size: "h-[60%] w-[45%]", gradient: `radial-gradient(ellipse,${p.nebulaB},transparent_75%)` },
+    { position: "bottom-[10%] left-[30%]", size: "h-[50%] w-[55%]", gradient: `radial-gradient(ellipse,${p.nebulaC},transparent_75%)` },
+  ];
+}
+
+export const NEBULA_CLOUDS = buildNebulaClouds(PALETTE);
 
 /* ── Flower of life circles (right side geometry) ── */
 export const FLOWER_CIRCLES: readonly (readonly [number, number])[] = [

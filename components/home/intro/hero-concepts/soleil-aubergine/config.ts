@@ -6,7 +6,9 @@ const SVG_CENTER = { x: 600, y: 400 } as const;
 const SVG_VIEWBOX = "0 0 1200 800" as const;
 
 /* ── Palette ── */
-export const PALETTE = {
+export type PaletteT = { gold: string; darkGold: string; softGold: string; warmCaption: string; bgColor: string };
+
+export const PALETTE: PaletteT = {
   gold: "#ffd700",
   darkGold: "#daa520",
   softGold: "#f0c040",
@@ -14,15 +16,27 @@ export const PALETTE = {
   bgColor: "#0a0806",
 } as const;
 
+export const PALETTE_MUTED: PaletteT = {
+  gold: "#daa520",
+  darkGold: "#c8860e",
+  softGold: "#f0c040",
+  warmCaption: "#c8b080",
+  bgColor: "#0c0a08",
+} as const;
+
 /* ── Stars ── */
 export const STAR_COUNT = 50;
-export const STARS = Array.from({ length: STAR_COUNT }, (_, i) => ({
-  x: `${(i * 37 + 13) % 100}%`,
-  y: `${(i * 53 + 7) % 100}%`,
-  size: i % 3 === 0 ? 3 : i % 2 === 0 ? 2 : 1.5,
-  opacity: 0.08 + (i % 5) * 0.04,
-  color: i % 3 === 0 ? PALETTE.gold : i % 3 === 1 ? PALETTE.darkGold : PALETTE.softGold,
-}));
+export const STARS = buildStars(PALETTE);
+
+export function buildStars(p: PaletteT) {
+  return Array.from({ length: STAR_COUNT }, (_, i) => ({
+    x: `${(i * 37 + 13) % 100}%`,
+    y: `${(i * 53 + 7) % 100}%`,
+    size: i % 3 === 0 ? 3 : i % 2 === 0 ? 2 : 1.5,
+    opacity: 0.08 + (i % 5) * 0.04,
+    color: i % 3 === 0 ? p.gold : i % 3 === 1 ? p.darkGold : p.softGold,
+  }));
+}
 
 /* ── Rays ── */
 export const RAY_COUNT = 24;
@@ -45,11 +59,15 @@ export const RAYS = Array.from({ length: RAY_COUNT }, (_, i) => {
 });
 
 /* ── Corona rings ── */
-export const CORONA_RINGS = [
-  { r: 150, stroke: PALETTE.gold, strokeWidth: 1.5, opacity: 0.18 },
-  { r: 120, stroke: PALETTE.darkGold, strokeWidth: 1, opacity: 0.14 },
-  { r: 90, stroke: PALETTE.softGold, strokeWidth: 0.8, opacity: 0.1 },
-] as const;
+export const CORONA_RINGS = buildCoronaRings(PALETTE);
+
+export function buildCoronaRings(p: PaletteT) {
+  return [
+    { r: 150, stroke: p.gold, strokeWidth: 1.5, opacity: 0.18 },
+    { r: 120, stroke: p.darkGold, strokeWidth: 1, opacity: 0.14 },
+    { r: 90, stroke: p.softGold, strokeWidth: 0.8, opacity: 0.1 },
+  ];
+}
 
 /* ── Zigzag band ── */
 export const ZIGZAG_SEGMENTS = 48;
