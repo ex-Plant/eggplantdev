@@ -3,8 +3,6 @@
 /* To add an animation: add its entry to ANIMATION_REGISTRY below */
 
 import { SoleilOrbit } from "@/components/test/soleil-orbit";
-import { SoleilYoyo } from "@/components/test/soleil-yoyo";
-import { SoleilScaleGrow } from "@/components/test/soleil-scale-grow";
 
 /* ═══════════════════════════════════════
    ANIMATION REGISTRY — edit this list to add/remove experiments
@@ -12,8 +10,6 @@ import { SoleilScaleGrow } from "@/components/test/soleil-scale-grow";
 
 const ANIMATION_REGISTRY: { id: string; label: string; component: React.ReactNode }[] = [
   { id: "soleil-orbit", label: "Soleil Aubergine — Orbit", component: <SoleilOrbit /> },
-  { id: "soleil-yoyo", label: "Soleil Aubergine — Yo-Yo Float", component: <SoleilYoyo /> },
-  { id: "soleil-scale", label: "Soleil Aubergine — Scale Grow", component: <SoleilScaleGrow /> },
 ];
 
 export default function AnimationsTestPage() {
