@@ -5,7 +5,6 @@ const TEST_PAGES = [
   { href: "/rejected-heroes-codex", label: "Rejected Codex" },
   { href: "/animations-test", label: "Animations" },
   { href: "/eggplant-palette", label: "Eggplant Palette" },
-  { href: "/solar-system-test", label: "Solar System" },
   { href: "/backdrop-test", label: "Backdrop" },
 ];
 
