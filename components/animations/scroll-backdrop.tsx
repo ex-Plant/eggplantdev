@@ -1,17 +1,31 @@
 "use client";
 
 /**
- * ScrollBackdrop — a single fixed background that reacts to scroll.
+ * ScrollBackdrop — scroll-driven background system.
+ *
+ * Architecture:
+ * ┌─────────────────────────────────────────────────────────────┐
+ * │ z-201  Additive texture A/B buffer (extra grit, optional)  │
+ * │ z-200  Layout's base `grit` (always on, from layout.tsx)   │
+ * │ z-100  Edge gradient masks (top/bottom fade)               │
+ * │ z-10   ScrollScene content                                 │
+ * │ z-1    Color + gradient backdrop                           │
+ * └─────────────────────────────────────────────────────────────┘
+ *
+ * Grit strategy:
+ * - The layout renders a fixed `grit` (medium) overlay at z-200 on ALL pages.
+ *   This provider does NOT touch it — it's always visible.
+ * - When a scene needs extra density (e.g. intro text like the home page),
+ *   it sets `textureClass: "grit-medium-dense"`. The A/B double-buffer at
+ *   z-201 smoothly crossfades that extra layer in on top of the base.
+ * - When scrolling to a scene without `textureClass`, the extra layer fades
+ *   out and only the layout's base grit remains.
  *
  * Usage:
- * 1. Wrap your page with <ScrollBackdropProvider>
- * 2. Wrap sections with <ScrollScene config={...}> to declare what bg they want
- *
- * Each ScrollScene registers a ScrollTrigger with onToggle. When a scene becomes
- * active, it tweens the shared backdrop layers to the declared config.
- *
- * The provider also renders the grit overlay and top/bottom gradient masks so they
- * can track the active scene color (fading to the right background).
+ *   <ScrollBackdropProvider>
+ *     <ScrollScene config={{ color: "#0a0806" }}>         // base grit only
+ *     <ScrollScene config={{ textureClass: "grit-medium-dense" }}>  // extra density
+ *   </ScrollBackdropProvider>
  */
 
 import { createContext, useContext, useEffect, useRef } from "react";
@@ -31,24 +45,36 @@ type BackdropLayersT = {
   textureBRef: React.RefObject<HTMLDivElement | null>;
   gradientRef: React.RefObject<HTMLDivElement | null>;
   logoRef: React.RefObject<HTMLDivElement | null>;
-  gritRef: React.RefObject<HTMLDivElement | null>;
   edgeTopRef: React.RefObject<HTMLDivElement | null>;
   edgeBottomRef: React.RefObject<HTMLDivElement | null>;
   providerRef: React.RefObject<HTMLDivElement | null>;
+  textureSlotRef: React.RefObject<"A" | "B">;
+  textureClassRef: React.RefObject<ExtraGritT | undefined>;
 };
 
-type GritTextureT = "grit-subtle" | "grit" | "grit-medium-dense" | "grit-dense";
+/** Extra grit to layer ON TOP of the layout's base `grit` (z-200).
+ *  Omit = no extra layer, only the layout's base grit shows through. */
+type ExtraGritT = "grit-subtle" | "grit" | "grit-medium-dense" | "grit-dense";
 
 export type SceneConfigT = {
+  /** Background color for this scene. Omit to fade out the color layer. */
   color?: string;
-  textureClass?: GritTextureT;
+  /** Additional grit texture on top of the layout's always-on base.
+   *  Crossfaded smoothly via A/B double-buffer. Omit = base grit only. */
+  textureClass?: ExtraGritT;
+  /** CSS gradient string for the gradient layer. */
   gradient?: string;
+  /** Show/hide the fixed eggplant logo. */
   showLogo?: boolean;
-  /** CSS filter string applied to the logo (e.g. from Eggplant Palette presets) */
+  /** CSS filter applied to the logo (e.g. silver or gold treatment). */
   logoFilter?: string;
+  /** Override text color for all children via CSS variable. */
   textColor?: string;
+  /** ScrollTrigger start position (default: "top center"). */
   start?: string;
+  /** ScrollTrigger end position (default: "bottom center"). */
   end?: string;
+  /** Duration for all crossfade tweens in seconds (default: 0.6). */
   crossfadeDuration?: number;
 };
 
@@ -56,11 +82,7 @@ export type SceneConfigT = {
 
 const BackdropContext = createContext<BackdropLayersT | null>(null);
 
-/* ── Double-buffer state for texture crossfade ── */
-let activeTextureSlot: "A" | "B" = "A";
-let activeTextureClass: GritTextureT | undefined;
-
-/* ── Provider (wrap entire page) ── */
+/* ── Provider ── */
 
 export function ScrollBackdropProvider({ children }: { children: React.ReactNode }) {
   const colorRef = useRef<HTMLDivElement>(null);
@@ -68,10 +90,13 @@ export function ScrollBackdropProvider({ children }: { children: React.ReactNode
   const textureBRef = useRef<HTMLDivElement>(null);
   const gradientRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
-  const gritRef = useRef<HTMLDivElement>(null);
   const edgeTopRef = useRef<HTMLDivElement>(null);
   const edgeBottomRef = useRef<HTMLDivElement>(null);
   const providerRef = useRef<HTMLDivElement>(null);
+  /* Double-buffer state — kept in refs so it resets with the component
+   * (fixes HMR desync and multiple-provider conflicts). */
+  const textureSlotRef = useRef<"A" | "B">("A");
+  const textureClassRef = useRef<ExtraGritT | undefined>(undefined);
 
   useEffect(() => {
     const id = requestAnimationFrame(() => ScrollTrigger.refresh());
@@ -80,52 +105,31 @@ export function ScrollBackdropProvider({ children }: { children: React.ReactNode
 
   return (
     <BackdropContext.Provider
-      value={{
-        colorRef,
-        textureARef,
-        textureBRef,
-        gradientRef,
-        logoRef,
-        gritRef,
-        edgeTopRef,
-        edgeBottomRef,
-        providerRef,
-      }}
+      value={{ colorRef, textureARef, textureBRef, gradientRef, logoRef, edgeTopRef, edgeBottomRef, providerRef, textureSlotRef, textureClassRef }}
     >
       <div ref={providerRef}>
-        {/* Fixed backdrop layers */}
+        {/* Background color + gradient — behind everything at z-1 */}
         <div className="pointer-events-none fixed inset-0 z-1">
           <div ref={colorRef} className="absolute inset-0 opacity-0" />
           <div ref={gradientRef} className="absolute inset-0 opacity-0" />
         </div>
 
-        {/* Grit overlay — full-page texture at z-200 (above both background AND mask
-            so the texture renders uniformly, matching home page behavior) */}
-        <div ref={gritRef} className="grit pointer-events-none fixed inset-0 z-200 will-change-transform" />
-        {/* Texture A/B double-buffer at z-200 for smooth crossfade between grit variants */}
-        <div ref={textureARef} className="pointer-events-none fixed inset-0 z-200 opacity-0 will-change-transform" />
-        <div ref={textureBRef} className="pointer-events-none fixed inset-0 z-200 opacity-0 will-change-transform" />
+        {/* Additive texture double-buffer at z-201 (above layout's base grit at z-200).
+            Both start invisible. When a scene declares textureClass, one buffer fades
+            in with that class while the other fades out — smooth density transitions. */}
+        <div ref={textureARef} className="pointer-events-none fixed inset-0 z-201 opacity-0 will-change-[opacity]" />
+        <div ref={textureBRef} className="pointer-events-none fixed inset-0 z-201 opacity-0 will-change-[opacity]" />
 
-        {/* Viewport-edge gradient masks — fade content to the active scene color */}
-        <div
-          ref={edgeTopRef}
-          className="grit pointer-events-none fixed top-0 right-0 isolate z-100 h-[8vh] w-full will-change-transform"
-        >
+        {/* Top/bottom edge masks — gradient fade to the active scene color */}
+        <div ref={edgeTopRef} className="pointer-events-none fixed top-0 right-0 isolate z-100 h-[8vh] w-full will-change-transform">
           <div className="absolute inset-0 bg-linear-to-t from-transparent to-(--backdrop-color,var(--color-bgc))" />
         </div>
-        <div
-          ref={edgeBottomRef}
-          className="grit pointer-events-none fixed right-0 bottom-[-2px] isolate z-100 h-[8vh] w-full will-change-transform"
-        >
+        <div ref={edgeBottomRef} className="pointer-events-none fixed right-0 bottom-[-2px] isolate z-100 h-[8vh] w-full will-change-transform">
           <div className="absolute inset-0 bg-linear-to-b from-transparent to-(--backdrop-color,var(--color-bgc))" />
         </div>
 
-        {/* Fixed logo layer — replaces the layout's EggplantLogo */}
-        <div
-          ref={logoRef}
-          data-testid="backdrop-logo"
-          className="pointer-events-none fixed top-4 left-4 z-201 opacity-0"
-        >
+        {/* Fixed logo — controlled per-scene via showLogo/logoFilter */}
+        <div ref={logoRef} data-testid="backdrop-logo" className="pointer-events-none fixed top-4 left-4 z-201 opacity-0">
           <EggplantLogo link={false} />
         </div>
 
@@ -135,48 +139,46 @@ export function ScrollBackdropProvider({ children }: { children: React.ReactNode
   );
 }
 
-/* ── Helper: crossfade backdrop to new values ── */
+/* ── Scene transition ── */
 
 function applyScene(layers: BackdropLayersT, config: SceneConfigT, instant = false) {
   const dur = instant ? 0 : (config.crossfadeDuration ?? 0.6);
 
+  // Background color
   if (layers.colorRef.current) {
-    if (config.color) {
-      gsap.to(layers.colorRef.current, { backgroundColor: config.color, opacity: 1, duration: dur, overwrite: true });
-    } else {
-      gsap.to(layers.colorRef.current, { opacity: 0, duration: dur, overwrite: true });
-    }
+    gsap.to(layers.colorRef.current, config.color
+      ? { backgroundColor: config.color, opacity: 1, duration: dur, overwrite: true }
+      : { opacity: 0, duration: dur, overwrite: true },
+    );
   }
 
-  // Texture crossfade: fade out the current slot, fade in the other with the new class
-  const outSlot = activeTextureSlot === "A" ? layers.textureARef : layers.textureBRef;
-  const inSlot = activeTextureSlot === "A" ? layers.textureBRef : layers.textureARef;
+  // Additive texture — crossfade the A/B buffer
+  const slot = layers.textureSlotRef.current;
+  const prevClass = layers.textureClassRef.current;
+  const outSlot = slot === "A" ? layers.textureARef : layers.textureBRef;
+  const inSlot = slot === "A" ? layers.textureBRef : layers.textureARef;
 
-  if (config.textureClass && config.textureClass !== activeTextureClass) {
+  if (config.textureClass && config.textureClass !== prevClass) {
+    // Eagerly clean up the incoming slot before applying the new class
+    // (prevents stale classes if a prior onComplete was killed by overwrite)
     if (inSlot.current) {
-      if (activeTextureClass) inSlot.current.classList.remove(activeTextureClass);
+      if (prevClass) inSlot.current.classList.remove(prevClass);
       inSlot.current.classList.add(config.textureClass);
       gsap.to(inSlot.current, { opacity: 1, duration: dur, overwrite: true });
     }
     if (outSlot.current) {
-      gsap.to(outSlot.current, {
-        opacity: 0,
-        duration: dur,
-        overwrite: true,
-        onComplete: () => {
-          if (activeTextureClass && outSlot.current) outSlot.current.classList.remove(activeTextureClass);
-        },
-      });
+      gsap.to(outSlot.current, { opacity: 0, duration: dur, overwrite: true });
     }
-    activeTextureClass = config.textureClass;
-    activeTextureSlot = activeTextureSlot === "A" ? "B" : "A";
-  } else if (!config.textureClass && activeTextureClass) {
-    // Fade out whichever slot is active
+    layers.textureClassRef.current = config.textureClass;
+    layers.textureSlotRef.current = slot === "A" ? "B" : "A";
+  } else if (!config.textureClass && prevClass) {
+    // No extra texture — fade out both buffers, only layout's base grit remains
     if (outSlot.current) gsap.to(outSlot.current, { opacity: 0, duration: dur, overwrite: true });
     if (inSlot.current) gsap.to(inSlot.current, { opacity: 0, duration: dur, overwrite: true });
-    activeTextureClass = undefined;
+    layers.textureClassRef.current = undefined;
   }
 
+  // Gradient
   if (layers.gradientRef.current) {
     const el = layers.gradientRef.current;
     if (config.gradient) {
@@ -187,21 +189,21 @@ function applyScene(layers: BackdropLayersT, config: SceneConfigT, instant = fal
     }
   }
 
-  if (layers.logoRef.current && config.showLogo !== undefined) {
-    gsap.to(layers.logoRef.current, { opacity: config.showLogo ? 1 : 0, duration: dur, overwrite: true });
+  // Logo visibility + filter (merged into one tween to avoid overwrite conflicts)
+  if (layers.logoRef.current && (config.showLogo !== undefined || config.logoFilter !== undefined)) {
+    const logoProps: gsap.TweenVars = { duration: dur, overwrite: true };
+    if (config.showLogo !== undefined) logoProps.opacity = config.showLogo ? 1 : 0;
+    if (config.logoFilter !== undefined) logoProps.filter = config.logoFilter || "none";
+    gsap.to(layers.logoRef.current, logoProps);
   }
 
-  if (layers.logoRef.current && config.logoFilter !== undefined) {
-    gsap.to(layers.logoRef.current, { filter: config.logoFilter || "none", duration: dur, overwrite: "auto" });
-  }
-
-  // Set --backdrop-color CSS variable so gradient masks and AnimatedLettersMask track the scene
+  // Propagate scene color to CSS variable for edge masks and AnimatedLettersMask
   if (config.color && layers.providerRef.current) {
     layers.providerRef.current.style.setProperty("--backdrop-color", config.color);
   }
 }
 
-/* ── ScrollScene (wrap each section) ── */
+/* ── ScrollScene ── */
 
 export function ScrollScene({
   config = {},
@@ -214,30 +216,25 @@ export function ScrollScene({
 }) {
   const layers = useContext(BackdropContext);
   const triggerRef = useRef<HTMLDivElement>(null);
-  // Store config in a ref so GSAP closures always see the latest values
   const configRef = useRef(config);
   configRef.current = config;
 
   useGSAP(
     () => {
       if (!triggerRef.current || !layers) return;
-
       ScrollTrigger.create({
         trigger: triggerRef.current,
         start: config.start ?? "top center",
         end: config.end ?? "bottom center",
-        onToggle: (self) => {
-          if (self.isActive) applyScene(layers, configRef.current);
-        },
+        onToggle: (self) => { if (self.isActive) applyScene(layers, configRef.current); },
       });
     },
     { scope: triggerRef, dependencies: [layers, config.start, config.end] },
   );
 
-  // Apply first visible scene instantly on mount
+  // Seed the first visible scene instantly on mount
   useEffect(() => {
     if (!triggerRef.current || !layers) return;
-
     const rect = triggerRef.current.getBoundingClientRect();
     const viewportCenter = window.innerHeight / 2;
     if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {

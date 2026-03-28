@@ -16,6 +16,7 @@ import { TomeColophon } from "@/components/home/sections/section-concepts/tome-c
 import { DriftingMonument } from "@/components/home/sections/section-concepts/drifting-monument";
 import { HeroCosmicAubergineGold } from "@/components/home/sections/section-concepts/cosmic-aubergine";
 import { CodexCloseEncounter } from "@/components/home/intro/hero-codex-concepts/close-encounter";
+import { MetallicTextTest } from "@/components/home/sections/section-concepts/metallic-text-test";
 
 /* ═══════════════════════════════════════
    SECTION CONCEPT REGISTRY
@@ -29,6 +30,7 @@ const SECTION_REGISTRY: { id: string; label: string; component: (colorful: boole
   { id: "void-process", label: "Void Process", component: (c) => <VoidProcess colorful={c} /> },
   { id: "aubergine-codex", label: "Aubergine Codex", component: (c) => <AubergineCodex colorful={c} /> },
   { id: "tome-colophon", label: "Tome Colophon", component: (c) => <TomeColophon colorful={c} /> },
+  { id: "metallic-text-test", label: "Metallic Text Test", component: (c) => <MetallicTextTest colorful={c} /> },
 ];
 
 /* ═══════════════════════════════════════

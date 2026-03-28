@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <TranslationsProvider>
           <DebugWrapper>
             <SkipToContent />
-            {/* Fixed grit overlay — stays in place while content scrolls */}
+            {/* Fixed grit overlay — always on, base texture for all pages */}
             <div className="grit pointer-events-none fixed inset-0 z-200 will-change-transform" />
 
             {/* TopNavigation must stay outside SmoothScroll — toggling smooth scroll

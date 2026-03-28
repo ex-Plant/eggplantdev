@@ -1,9 +1,6 @@
 "use client";
 
-/**
- * Test page: shared ScrollBackdrop prototype
- * Uses SoleilAubergineContent (no wrapper) + plain content sections.
- */
+/* Backdrop test — scroll-driven background + grit transitions prototype */
 
 import { SimpleSection } from "@/components/home/sections/simple-section";
 import { ProjectsSection } from "@/components/home/sections/projects-section";
@@ -22,6 +19,7 @@ import { ReliquaryDorContent } from "@/components/home/intro/hero-concepts/reliq
 import { CathedraleCosmiquContent } from "@/components/home/intro/hero-concepts/cathedrale-cosmique";
 import { CosmicAubergineContent } from "@/components/home/sections/section-concepts/cosmic-aubergine";
 import { PALETTE_GOLD } from "@/components/home/sections/section-concepts/cosmic-aubergine/config";
+import { PALETTES as METATRON_PALETTES } from "@/components/home/intro/hero-concepts/metatrons-cube/config";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
 
 export default function BackdropTestPage() {
@@ -35,12 +33,12 @@ export default function BackdropTestPage() {
 
   return (
     <ScrollBackdropProvider>
-      {/* ── Scene 1: Soleil Aubergine hero — golden dark ── */}
+      {/* ── Scene 1: Soleil Aubergine hero ── */}
       <ScrollScene config={{ color: SOLEIL_PALETTE.bgColor, showLogo: false }} className="mb-20 min-h-screen">
         <SoleilAubergineContent />
       </ScrollScene>
 
-      {/* ── Scene 2: Intro text with animated letters ── */}
+      {/* ── Scene 2: Intro text with animated letters — extra dense grit like home ── */}
       <ScrollScene config={{ textureClass: "grit-medium-dense", showLogo: true }}>
         <div className="fest-container relative flex flex-col">
           <FadeSlide>
@@ -54,12 +52,12 @@ export default function BackdropTestPage() {
         <MetatronsCubeCore theme="silver" />
       </ScrollScene>
 
-      {/* ── Scene 4: Commercial Work — silver metallic logo ── */}
-      <ScrollScene config={{ logoFilter: "saturate(0) brightness(1.4) contrast(1.2) drop-shadow(0 0 40px rgba(192,192,192,0.25))" }}>
+      {/* ── Scene 4: Commercial Work ── */}
+      <ScrollScene config={{ logoFilter: METATRON_PALETTES.silver.eggplantFilter }}>
         <ProjectsSection data={commercialWork} className="fest-container py-20 md:py-40" />
       </ScrollScene>
 
-      {/* ── Scene 5: Metatron's Cube — gold (default) ── */}
+      {/* ── Scene 5: Metatron's Cube — gold ── */}
       <ScrollScene>
         <MetatronsCubeCore theme="gold" />
       </ScrollScene>
@@ -79,8 +77,8 @@ export default function BackdropTestPage() {
         <FullSection data={about} className="fest-container py-20 md:py-40" />
       </ScrollScene>
 
-      {/* ── Scene 9: Glam Cosmic Billboard interstitial ── */}
-      <ScrollScene>
+      {/* ── Scene 9: Glam Cosmic Billboard ── */}
+      <ScrollScene config={{ showLogo: true }}>
         <GlamCosmicBillboardContent />
       </ScrollScene>
 

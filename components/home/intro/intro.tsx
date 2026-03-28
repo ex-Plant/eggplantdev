@@ -48,7 +48,7 @@ export const Intro = ({ backgroundDesktop, backgroundMobile, txt }: IntroPropsT)
 
         {/* <AnimatedEggplant /> */}
 
-        {/* <div className="h-[80vh]" /> */}
+        <div className="h-[80vh]" />
 
         <FadeSlide>
           <AnimatedLettersMask text={txt} />

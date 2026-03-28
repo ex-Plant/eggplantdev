@@ -142,6 +142,28 @@ body {
     0 0 100px 30px rgba(160, 80, 220, 0.06);
 }
 
+/* === Metallic text effects === */
+@utility text-metallic {
+  background: linear-gradient(180deg, #ffffff 0%, #d4d4d4 25%, #999999 50%, #cccccc 75%, #888888 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility text-metallic-gold {
+  background: linear-gradient(180deg, #ffd700 0%, #daa520 25%, #c8860e 50%, #f0c040 75%, #b8860b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility text-metallic-silver {
+  background: linear-gradient(180deg, #e8e8e8 0%, #c0c0c0 25%, #808080 50%, #b0b0b0 75%, #707070 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @utility grit-subtle {
   background: var(--tw-bg-color, transparent) url("/grit-texture-subtle.svg") repeat;
   background-size: 180px;
