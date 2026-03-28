@@ -33,7 +33,7 @@ export default function AnimatedBgWrapper({
   //         scrollTrigger: {
   //           trigger: bgcContainer.current,
   //           start: "top bottom", // top of the element at the bottom of the screen
-  //           end: "center center", // fully visible when center of the element is in the center
+  //           end: "top center", // fully visible when top of the element is in the center
   //           scrub: 1,
   //           // markers: true,
   //         },
@@ -55,29 +55,29 @@ export default function AnimatedBgWrapper({
   //   { scope: bgcContainer },
   // );
 
-  useGSAP(
-    () => {
-      if (!bgcRef.current || !bgcContainer.current) return;
+  // useGSAP(
+  //   () => {
+  //     if (!bgcRef.current || !bgcContainer.current) return;
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: bgcContainer.current,
-          start: "center bottom", // start when top of the element enters the viewport
-          end: "bottom top", // end when bottom of the element exits the viewport
-          scrub: 1,
-        },
-      });
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: bgcContainer.current,
+  //         start: "top 20%", // start when top of the element enters the viewport
+  //         end: "bottom 80%", // end when bottom of the element exits the viewport
+  //         scrub: 1,
+  //       },
+  //     });
 
-      // First half of scroll: fade in 0 → 1
-      tl.fromTo(bgcRef.current, { opacity: 0 }, { opacity: 1, duration: 0.5 });
-      // Second half of scroll: fade out 1 → 0
-      tl.to(bgcRef.current, { opacity: 0, duration: 0.5 });
-    },
-    { scope: bgcContainer },
-  );
+  //     // First half of scroll: fade in 0 → 1
+  //     tl.fromTo(bgcRef.current, { opacity: 0 }, { opacity: 1, duration: 0.5 });
+  //     // Second half of scroll: fade out 1 → 0
+  //     tl.to(bgcRef.current, { opacity: 0, duration: 0.5 });
+  //   },
+  //   { scope: bgcContainer },
+  // );
 
   return (
-    <div ref={bgcContainer} className={cn("relative", wrapperClass)}>
+    <div ref={bgcContainer} className={cn("relative outline", wrapperClass)}>
       <div
         id="container-gradient-top"
         className={"to-bgc absolute top-0 right-0 left-0 h-[15vh] bg-linear-to-t from-transparent"}

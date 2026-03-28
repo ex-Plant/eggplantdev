@@ -7,7 +7,7 @@ import { useTranslation } from "@/lib/i18n/hooks/use-translation";
 import Link from "next/link";
 import { EggplantImage } from "@/components/general/eggplant-image";
 
-export function EggplantLogo({ className, link = true }: { className?: string; link?: boolean }) {
+export function EggplantLogo({ className, link = true, filter }: { className?: string; link?: boolean; filter?: string }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   // Fade-in is logo-specific, not part of EggplantImage
@@ -27,6 +27,7 @@ export function EggplantLogo({ className, link = true }: { className?: string; l
         sizeClass="size-10 sm:size-20 lg:size-32"
         sizes="(min-width: 1024px) 126px, (min-width: 640px) 120px, 60px"
         className={className}
+        filter={filter}
         float
         priority
       />

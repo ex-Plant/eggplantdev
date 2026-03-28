@@ -6,7 +6,6 @@ import { poly, theinhardt, jetbrainsMono, ibmPlexMono, firaCode } from "@/public
 
 import { TopNavigation } from "@/components/top-navigation/top-navigation";
 import { DebugWrapper } from "@/components/debug-tools/debug-wrapper";
-import { GradientMask } from "@/components/general/gradient-mask/gradient-mask";
 import { TranslationsProvider } from "@/lib/i18n/translations-provider";
 import { SkipToContent } from "@/components/accessibility/skip-to-content";
 import { SmoothScroll } from "@/components/general/smooth-scroll";
@@ -45,8 +44,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <TopNavigation />
             <SmoothScroll>
               <main id="main-content z-201">{children}</main>
-              <GradientMask />
-              <GradientMask />
               {/* <div className={cn(`flex w-full justify-center pb-20`)}> */}
               {/* <EggplantLogo /> */}
               {/* </div> */}

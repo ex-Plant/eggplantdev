@@ -9,7 +9,6 @@ import { AccessibilityMenu } from "@/components/accessibility/accessibility-menu
 import { MobileMenu } from "@/components/accessibility/mobile-menu";
 import { useClickOutside } from "@/hooks/use-click-outside";
 import { useMinMD } from "@/hooks/use-media-query";
-import { GradientMask } from "@/components/general/gradient-mask/gradient-mask";
 import { RoundedSeparator } from "@/components/general/rounded-separator";
 import { AnimationToggles } from "@/components/accessibility/animation-toggles";
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
@@ -34,14 +33,12 @@ export function TopNavigation() {
 
   return (
     <>
-      <GradientMask top={true} />
-      <GradientMask top={true} />
-      {/* Logo — no blend mode, stays normal */}
-      {/* <div className="pointer-events-none fixed top-0 right-0 left-0 z-99999">
+      {/* Logo — metallic silver, always visible */}
+      <div className="pointer-events-none fixed top-0 right-0 left-0 z-99999">
         <div className="fest-container flex w-full items-start">
-          <EggplantLogo />
+          <EggplantLogo filter="saturate(0) brightness(1.4) contrast(1.2) drop-shadow(0 0 40px rgba(192,192,192,0.25))" />
         </div>
-      </div> */}
+      </div>
 
       {/* Hamburger — own layer with mix-blend-difference so it auto-inverts on any background */}
       <div className="pointer-events-none fixed top-0 right-0 left-0 z-99999 mix-blend-difference">
