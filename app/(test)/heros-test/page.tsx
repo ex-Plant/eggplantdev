@@ -46,7 +46,7 @@ const HERO_REGISTRY: HeroEntryT[] = [
   /* ── Batch 4 — Aubergine d'Or ── */
   { id: "reliquary-dor", label: "Reliquary d'Or", load: lazyHero("reliquary-dor/hero-reliquary-dor", "HeroReliquaryDor") },
   { id: "cathedrale-cosmique", label: "Cathédrale Cosmique", load: lazyHero("cathedrale-cosmique/hero-cathedrale-cosmique", "HeroCathedralCosmique") },
-  { id: "soleil-aubergine", label: "Soleil Aubergine", load: lazyHero("soleil-aubergine/hero-soleil-aubergine", "HeroSoleilAubergineMuted") },
+  { id: "soleil-aubergine", label: "Soleil Aubergine", load: lazyHero("soleil-aubergine/hero-soleil-aubergine", "HeroSoleilAubergine") },
 
   /* ── Batch 3 — Sacred geometry deep cuts ── */
   { id: "sacred-mandala", label: "Sacred Mandala", load: lazyHero("sacred-mandala/hero-sacred-mandala", "HeroSacredMandala") },

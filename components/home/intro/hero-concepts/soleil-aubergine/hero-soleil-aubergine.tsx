@@ -7,9 +7,7 @@ import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
   PALETTE_MUTED,
-  STARS,
   RAYS,
-  CORONA_RINGS,
   ZIGZAG_POINTS,
   CORNERS,
   EGGPLANT,
@@ -21,32 +19,25 @@ import {
 } from "./config";
 import type { PaletteT } from "./config";
 
-type SoleilPropsT = { palette?: PaletteT };
+const PALETTES = { default: PALETTE, muted: PALETTE_MUTED } as const;
+type VariantT = keyof typeof PALETTES;
+type SoleilPropsT = { variant?: VariantT };
 
-/** Wrapped version with per-section bg animation (used on home page) */
-export function HeroSoleilAubergine({ palette }: SoleilPropsT = {}) {
-  const p = palette ?? PALETTE;
+export function HeroSoleilAubergine({ variant = "default" }: SoleilPropsT = {}) {
+  const p = PALETTES[variant];
   return (
-    <AnimatedBgWrapper
-      maskStyle={{ backgroundColor: p.bgColor }}
-    >
-      <SoleilAubergineContent palette={palette} />
+    <AnimatedBgWrapper maskStyle={{ backgroundColor: p.bgColor }}>
+      <SoleilAubergineContent palette={p} />
     </AnimatedBgWrapper>
   );
 }
 
-/** Muted variant with Golden Spiral palette */
-export function HeroSoleilAubergineMuted() {
-  return <HeroSoleilAubergine palette={PALETTE_MUTED} />;
-}
-
-/** Raw content — no bg wrapper, usable inside ScrollBackdropProvider */
-export function SoleilAubergineContent({ palette }: SoleilPropsT = {}) {
-  const p = palette ?? PALETTE;
-  const stars = palette ? buildStars(p) : STARS;
-  const coronaRings = palette ? buildCoronaRings(p) : CORONA_RINGS;
+export function SoleilAubergineContent({ palette = PALETTE }: { palette?: PaletteT }) {
+  const stars = buildStars(palette);
+  const coronaRings = buildCoronaRings(palette);
 
   return (
+    <div className={`py-20`}>
       <div className="relative flex min-h-screen items-center justify-center">
         {/* Star field */}
         {stars.map((s, i) => (
@@ -78,7 +69,7 @@ export function SoleilAubergineContent({ palette }: SoleilPropsT = {}) {
           ))}
 
           {/* Zigzag decorative band */}
-          <polyline points={ZIGZAG_POINTS} fill="none" stroke={p.darkGold} strokeWidth="0.6" opacity="0.12" />
+          <polyline points={ZIGZAG_POINTS} fill="none" stroke={palette.darkGold} strokeWidth="0.6" opacity="0.12" />
 
           {/* Radiating sun rays */}
           {RAYS.map((r, i) => (
@@ -88,7 +79,7 @@ export function SoleilAubergineContent({ palette }: SoleilPropsT = {}) {
                 y1={SVG_CENTER.y}
                 x2={r.x2}
                 y2={r.y2}
-                stroke={p.gold}
+                stroke={palette.gold}
                 strokeWidth={r.width}
                 opacity={r.opacity}
               />
@@ -98,7 +89,7 @@ export function SoleilAubergineContent({ palette }: SoleilPropsT = {}) {
                   cy={r.dotY}
                   r="3"
                   fill="none"
-                  stroke={p.softGold}
+                  stroke={palette.softGold}
                   strokeWidth="0.8"
                   opacity="0.2"
                 />
@@ -109,8 +100,8 @@ export function SoleilAubergineContent({ palette }: SoleilPropsT = {}) {
           {/* Art deco corner brackets */}
           {CORNERS.map((corner, i) => (
             <g key={i}>
-              <path d={corner.primary} fill="none" stroke={p.darkGold} strokeWidth="1.2" opacity="0.15" />
-              <path d={corner.secondary} fill="none" stroke={p.gold} strokeWidth="0.5" opacity="0.1" />
+              <path d={corner.primary} fill="none" stroke={palette.darkGold} strokeWidth="1.2" opacity="0.15" />
+              <path d={corner.secondary} fill="none" stroke={palette.gold} strokeWidth="0.5" opacity="0.1" />
             </g>
           ))}
         </svg>
@@ -120,28 +111,29 @@ export function SoleilAubergineContent({ palette }: SoleilPropsT = {}) {
           {/* Eggplant with golden sun glow */}
           <EggplantImage
             float
-            filter={`${EGGPLANT.filter} drop-shadow(0 0 40px ${p.gold}66)`}
+            filter={`${EGGPLANT.filter} drop-shadow(0 0 40px ${palette.gold}66)`}
             glow={{
-              gradient: `radial-gradient(circle, ${p.gold}26 0%, ${p.darkGold}14 40%, transparent 70%)`,
+              gradient: `radial-gradient(circle, ${palette.gold}26 0%, ${palette.darkGold}14 40%, transparent 70%)`,
             }}
           />
 
           {/* Typography */}
-          <p className="font-mono text-xs tracking-[0.5em] uppercase" style={{ color: `${p.gold}59` }}>
+          <p className="font-mono text-xs tracking-[0.5em] uppercase" style={{ color: `${palette.gold}59` }}>
             {COPY.subtitle}
           </p>
           <h1
             className="text-48 md:text-72 font-mono leading-none tracking-wider uppercase"
-            style={{ color: p.gold }}
+            style={{ color: palette.gold }}
           >
             {COPY.titleLine1}
             <br />
             {COPY.titleLine2}
           </h1>
-          <p className="max-w-md font-mono text-sm leading-relaxed" style={{ color: `${p.warmCaption}73` }}>
+          <p className="max-w-md font-mono text-sm leading-relaxed" style={{ color: `${palette.warmCaption}73` }}>
             {COPY.description}
           </p>
         </div>
       </div>
+    </div>
   );
 }

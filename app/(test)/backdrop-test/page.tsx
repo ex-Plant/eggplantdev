@@ -7,13 +7,12 @@ import { ProjectsSection } from "@/components/home/sections/projects-section";
 import { FullSection } from "@/components/home/sections/full-section";
 import { GetInTouchButton } from "@/components/home/intro/get-in-touch-btn/get-in-touch-button";
 import { useLocalizedData } from "@/hooks/use-localized-data";
-import { HeroSoleilAubergineMuted } from "@/components/home/intro/hero-concepts/soleil-aubergine";
+import { HeroSoleilAubergine } from "@/components/home/intro/hero-concepts/soleil-aubergine";
 import { Intro } from "@/components/home/intro/intro";
 import { MetatronsCubeCore } from "@/components/home/intro/hero-concepts/metatrons-cube/hero-metatrons-cube";
 import { SacredAscensionGoldContent } from "@/components/home/intro/hero-concepts/sacred-ascension/hero-sacred-ascension-gold";
 import { GlamCosmicBillboardContent } from "@/components/home/intro/hero-concepts/glam-cosmic-billboard";
 import { ReliquaryDorContent } from "@/components/home/intro/hero-concepts/reliquary-dor";
-import { CathedraleCosmiquContent } from "@/components/home/intro/hero-concepts/cathedrale-cosmique";
 import { CosmicAubergineContent } from "@/components/home/sections/section-concepts/cosmic-aubergine";
 import { PALETTE_GOLD } from "@/components/home/sections/section-concepts/cosmic-aubergine/config";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
@@ -33,41 +32,27 @@ export default function BackdropTestPage() {
       <div className="to-bgc pointer-events-none fixed top-0 right-0 left-0 z-100 h-[15vh] bg-linear-to-t from-transparent" />
       <div className="to-bgc pointer-events-none fixed right-0 bottom-0 left-0 z-100 h-[15vh] bg-linear-to-b from-transparent" />
 
-      {/* ── Soleil Aubergine hero (wrapped — owns its own bg + fade) ── */}
-      <HeroSoleilAubergineMuted />
+      <HeroSoleilAubergine variant="muted" />
 
-      {/* ── Intro text (home Intro component — has its own fixed grit + fade) ── */}
       <Intro backgroundDesktop="" backgroundMobile="" txt={introTxt} />
 
-      {/* ── Metatron's Cube — silver ── */}
       <MetatronsCubeCore theme="silver" />
 
-      {/* ── Commercial Work ── */}
       <ProjectsSection data={commercialWork} className="fest-container py-20 md:py-40" />
 
-      {/* ── Metatron's Cube — gold ── */}
       <MetatronsCubeCore theme="gold" />
 
-      {/* ── Freelance Work ── */}
       <ProjectsSection data={freelanceWork} className="fest-container py-20 md:py-40" />
 
-      {/* ── Sacred Ascension Gold ── */}
       <SacredAscensionGoldContent />
 
-      {/* ── About ── */}
       <FullSection data={about} className="fest-container py-20 md:py-40" />
 
-      {/* ── Glam Cosmic Billboard ── */}
       <GlamCosmicBillboardContent />
 
-      {/* ── Values ── */}
       <FullSection data={values} className="fest-container py-20 md:py-40" />
 
-      {/* ── Reliquary d'Or ── */}
       <ReliquaryDorContent />
-
-      {/* ── Cathédrale Cosmique ── */}
-      <CathedraleCosmiquContent />
 
       {/* ── Eggplant in Space (gold) ── */}
       <CosmicAubergineContent palette={PALETTE_GOLD} />

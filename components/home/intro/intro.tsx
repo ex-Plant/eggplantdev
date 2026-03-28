@@ -27,7 +27,7 @@ export const Intro = ({ backgroundDesktop, backgroundMobile, txt }: IntroPropsT)
     () => {
       if (!bgcRef.current || !bgcContainer.current) return;
 
-      // Fade in: as the section enters the viewport
+      // Fade out as the section exits the viewport
       gsap.fromTo(
         bgcRef.current,
         { opacity: 0 },
@@ -35,20 +35,19 @@ export const Intro = ({ backgroundDesktop, backgroundMobile, txt }: IntroPropsT)
           opacity: 1,
           scrollTrigger: {
             trigger: bgcContainer.current,
-            start: "top bottom",
-            end: "top center",
+            start: "top center",
+            end: "top top",
             scrub: 1,
           },
         },
       );
 
-      // Fade out: as the section exits the viewport
       gsap.to(bgcRef.current, {
         opacity: 0,
         scrollTrigger: {
           trigger: bgcContainer.current,
-          start: "bottom bottom",
-          end: "bottom center",
+          start: "bottom center",
+          end: "bottom top",
           scrub: 1,
         },
       });
@@ -65,10 +64,7 @@ export const Intro = ({ backgroundDesktop, backgroundMobile, txt }: IntroPropsT)
         ></div>
 
         {/* <AnimatedEggplant /> */}
-
-        <FadeSlide>
-          <AnimatedLettersMask text={txt} />
-        </FadeSlide>
+        <AnimatedLettersMask text={txt} />
       </div>
     </>
   );

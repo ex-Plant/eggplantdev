@@ -38,7 +38,7 @@ export const AnimatedLettersMask = ({ text = "" }) => {
         gsap.fromTo(
           mask,
           {
-            backgroundColor: "var(--backdrop-color, var(--color-bgc))",
+            backgroundColor: "var(--color-bgc)",
             opacity: 0.9,
             width: "103%",
             height: "100%",
@@ -72,15 +72,17 @@ export const AnimatedLettersMask = ({ text = "" }) => {
   );
 
   return (
-    <div
-      ref={lettersRef}
-      className={`no-scrollbar z-2 flex flex-col overflow-x-hidden overflow-y-scroll pt-20 pr-12 pb-60 sm:w-[calc(340/360*100vw)] md:w-[calc(590/768*100vw)] md:pt-[120px] md:pr-0 lg:w-[calc(740/1024*100vw)] lg:max-w-[940px]`}
-    >
+    <div>
       <div
-        id="target-mask"
-        className={`wrap-break-words text-28 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono font-medium tracking-tight text-white uppercase ${locale === "pl" ? "leading-[1.2]" : ""}`}
+        ref={lettersRef}
+        className={`no-scrollbar flex flex-col overflow-x-hidden overflow-y-scroll pt-20 pr-12 pb-60 sm:w-[calc(340/360*100vw)] md:w-[calc(590/768*100vw)] md:pt-[120px] md:pr-0 lg:w-[calc(740/1024*100vw)] lg:max-w-[940px]`}
       >
-        {text}
+        <div
+          id="target-mask"
+          className={`wrap-break-words text-28 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono font-medium tracking-tight text-white uppercase ${locale === "pl" ? "leading-[1.2]" : ""}`}
+        >
+          {text}
+        </div>
       </div>
     </div>
   );
