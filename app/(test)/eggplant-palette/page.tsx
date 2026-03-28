@@ -7,6 +7,7 @@
 
 import { useState } from "react";
 import { cn } from "@/helpers/cn";
+import { EGGPLANT_PRESETS } from "@/components/general/eggplant-image";
 
 const SRC = "/logos/eggplant-logo-smooth.apng";
 
@@ -18,89 +19,17 @@ type VariantT = {
   origin?: string;
 };
 
-/* ── Existing treatments found across heroes ── */
-const EXISTING: VariantT[] = [
-  {
-    id: "raw",
-    label: "Raw / Untreated",
-    filter: "none",
-    bg: "#0c0a08",
-    origin: "Sacred Ascension, Mission Briefing, Orbital Launch",
-  },
-  {
-    id: "warm-gold-sepia",
-    label: "Warm Gold Sepia",
-    filter: "sepia(0.3) saturate(1.5) brightness(0.9)",
-    bg: "#0c0a08",
-    origin: "Echoes of Djembeya, Meridian Procession",
-  },
-  {
-    id: "light-sepia",
-    label: "Light Sepia",
-    filter: "sepia(0.2) saturate(1.3)",
-    bg: "#0a0808",
-    origin: "Cosmic Cult Flyer",
-  },
-  {
-    id: "rich-gold",
-    label: "Rich Gold",
-    filter: "sepia(0.4) saturate(1.8) brightness(0.85)",
-    bg: "#080604",
-    origin: "Reliquary d'Or",
-  },
-  {
-    id: "bright-gold",
-    label: "Bright Gold",
-    filter: "sepia(0.3) saturate(1.6) brightness(1.1)",
-    bg: "#0c0a08",
-    origin: "Versailles Orbital, Glam Cosmic Billboard",
-  },
-  {
-    id: "amber-sepia",
-    label: "Amber Sepia",
-    filter: "sepia(0.35) saturate(1.5)",
-    bg: "#0a0806",
-    origin: "Zodiac Astrolabe, Ritual Observatory",
-  },
-  {
-    id: "chrome-silver",
-    label: "Chrome Silver",
-    filter:
-      "sepia(1) saturate(0.5) drop-shadow(0 0 40px rgba(218,165,32,0.3))",
-    bg: "#0c0a08",
-    origin: "Metatron's Cube",
-  },
-  {
-    id: "neon-green-glow",
-    label: "Neon Green Glow",
-    filter: "drop-shadow(0 0 8px rgba(16,255,170,0.3))",
-    bg: "#020204",
-    origin: "Akashic Terminal",
-  },
-  {
-    id: "neon-double-glow",
-    label: "Neon Double Glow",
-    filter:
-      "drop-shadow(0 0 30px rgba(16,255,170,0.3)) drop-shadow(0 0 60px rgba(217,70,239,0.15))",
-    bg: "#020204",
-    origin: "Void Liturgy",
-  },
-  {
-    id: "gold-desat-glow",
-    label: "Gold Desaturated + Glow",
-    filter:
-      "saturate(0.7) sepia(0.25) drop-shadow(0 0 32px rgba(218,165,32,0.3)) drop-shadow(0 0 64px rgba(217,70,239,0.1))",
-    bg: "#08060a",
-    origin: "Vesica Piscis Neon",
-  },
-  {
-    id: "hue-magenta",
-    label: "Hue-Rotated Magenta",
-    filter: "hue-rotate(320deg) brightness(1.5)",
-    bg: "#0a0410",
-    origin: "Fractal Sermon (orbiting)",
-  },
-];
+/* Derive label from preset key: "warm-gold-sepia" → "Warm Gold Sepia" */
+const toLabel = (key: string) =>
+  key.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+
+/* ── Presets (single source of truth from EggplantImage) ── */
+const PRESETS: VariantT[] = Object.entries(EGGPLANT_PRESETS).map(([id, filter]) => ({
+  id,
+  label: toLabel(id),
+  filter: filter ?? "none",
+  bg: "#0c0a08",
+}));
 
 /* ── 20 new treatments matching the design spec palette ── */
 const NEW: VariantT[] = [
@@ -237,8 +166,8 @@ const NEW: VariantT[] = [
 ];
 
 const ALL_VARIANTS = [
-  { group: "Existing (from heroes)", variants: EXISTING },
-  { group: "New treatments", variants: NEW },
+  { group: "Presets (from EggplantImage)", variants: PRESETS },
+  { group: "Experimental treatments", variants: NEW },
 ];
 
 /* ═══════════════════════════════════════════════
@@ -594,7 +523,7 @@ function EggplantCard({ variant }: { variant: VariantT }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(variant.filter);
+    navigator.clipboard.writeText(`preset="${variant.id}"`);
     setCopied(true);
     setTimeout(() => setCopied(false), 1200);
   };
@@ -617,7 +546,10 @@ function EggplantCard({ variant }: { variant: VariantT }) {
         <p className="text-sm font-mono leading-tight text-white/90">
           {variant.label}
         </p>
-        <p className="line-clamp-2 text-xs font-mono leading-snug text-white/40 break-all">
+        <p className="text-xs font-mono leading-snug text-white/40">
+          preset=&quot;{variant.id}&quot;
+        </p>
+        <p className="line-clamp-1 text-xs font-mono leading-snug text-white/25 break-all">
           {variant.filter === "none" ? "no filter" : variant.filter}
         </p>
         {variant.origin && (
@@ -638,7 +570,7 @@ export default function EggplantPalettePage() {
         Eggplant Palette
       </h1>
       <p className="mb-10 font-mono text-sm text-white/40">
-        {EXISTING.length + NEW.length} CSS filter treatments — click to copy
+        {PRESETS.length + NEW.length} CSS filter treatments — click to copy
         filter value
       </p>
 

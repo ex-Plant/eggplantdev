@@ -1,1 +1,1 @@
-export { HeroHypercubeAltar, HypercubeAltarContent } from "./hero-hypercube-altar";
+export { HeroHypercubeAltar } from "./hero-hypercube-altar";

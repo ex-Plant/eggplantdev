@@ -36,7 +36,7 @@ export function TopNavigation() {
       {/* Logo — metallic silver, always visible */}
       <div className="pointer-events-none fixed top-0 right-0 left-0 z-99999">
         <div className="fest-container flex w-full items-start">
-          <EggplantLogo filter="saturate(0) brightness(1.4) contrast(1.2) drop-shadow(0 0 40px rgba(192,192,192,0.25))" />
+          <EggplantLogo />
         </div>
       </div>
 

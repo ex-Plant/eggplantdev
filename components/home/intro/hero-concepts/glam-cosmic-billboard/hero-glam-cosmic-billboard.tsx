@@ -3,11 +3,9 @@
 import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
 import {
-  PALETTE,
   GLAM_STRIPES,
   ORBITAL_ARCS,
   SPARKLES,
-  EGGPLANT,
   COPY,
 } from "./config";
 
@@ -15,14 +13,6 @@ import {
 export function HeroGlamCosmicBillboard() {
   return (
     <EggplantRadialWrapper>
-      <GlamCosmicBillboardContent />
-    </EggplantRadialWrapper>
-  );
-}
-
-/** Raw content — no bg wrapper, usable inside ScrollBackdropProvider */
-export function GlamCosmicBillboardContent() {
-  return (
     <div id="hero-glam-cosmic-billboard" className="relative flex min-h-screen items-center overflow-hidden">
       {/* Dual-tone nebula wash */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -69,7 +59,7 @@ export function GlamCosmicBillboardContent() {
         <div className="relative flex items-center justify-center">
           <EggplantImage
             sizeClass="h-56 w-56"
-            filter={EGGPLANT.filter}
+            preset="glam-gold"
             float
             glow={{
               size: "350px",
@@ -79,5 +69,6 @@ export function GlamCosmicBillboardContent() {
         </div>
       </div>
     </div>
+    </EggplantRadialWrapper>
   );
 }

@@ -1,1 +1,1 @@
-export { HeroSacredMandala, SacredMandalaContent } from "./hero-sacred-mandala";
+export { HeroSacredMandala } from "./hero-sacred-mandala";

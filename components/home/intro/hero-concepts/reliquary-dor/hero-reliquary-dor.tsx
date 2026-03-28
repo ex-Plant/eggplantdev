@@ -18,24 +18,15 @@ import {
   RAY_LENGTH,
   TREFOIL_POSITIONS,
   RULES,
-  EGGPLANT,
   COPY,
 } from "./config";
 
 /** Wrapped version with per-section bg animation (used on home page) */
 export function HeroReliquaryDor() {
-  return (
-    <EggplantRadialWrapper>
-      <ReliquaryDorContent />
-    </EggplantRadialWrapper>
-  );
-}
-
-/** Standalone content without background wrapper */
-export function ReliquaryDorContent() {
   const stars = buildStars();
 
   return (
+    <EggplantRadialWrapper>
     <div id="hero-reliquary-dor" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Star field */}
       {stars.map((s, i) => (
@@ -89,7 +80,7 @@ export function ReliquaryDorContent() {
         <EggplantImage
           sizeClass="h-52 w-52"
           className="mt-6"
-          filter={EGGPLANT.filter}
+          preset="rich-gold"
           float
           glow={{
             size: "420px",
@@ -107,5 +98,6 @@ export function ReliquaryDorContent() {
         </p>
       </div>
     </div>
+    </EggplantRadialWrapper>
   );
 }

@@ -1,1 +1,1 @@
-export { HeroReliquaryDor, ReliquaryDorContent } from "./hero-reliquary-dor";
+export { HeroReliquaryDor } from "./hero-reliquary-dor";

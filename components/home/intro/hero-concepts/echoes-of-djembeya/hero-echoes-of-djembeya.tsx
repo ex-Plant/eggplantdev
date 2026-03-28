@@ -14,17 +14,10 @@ import {
 } from "./config";
 
 export function HeroEchoesOfDjembeya() {
-  return (
-    <EggplantRadialWrapper>
-      <EchoesOfDjembeyaContent />
-    </EggplantRadialWrapper>
-  );
-}
-
-export function EchoesOfDjembeyaContent() {
   /* Interlocking figure-8 sacred circles with celestial bodies orbiting.
      Warm amber/gold palette. Central eggplant as luminous deity figure. */
   return (
+    <EggplantRadialWrapper>
     <div id="hero-echoes-djembeya" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Star field — warm tone */}
       {STARS.map((s, i) => (
@@ -99,7 +92,7 @@ export function EchoesOfDjembeyaContent() {
           <EggplantImage
             src={EGGPLANT.src}
             sizeClass="h-52 w-52"
-            filter={EGGPLANT.filter}
+            preset="warm-gold-sepia"
             float
             glow={{
               gradient: "radial-gradient(circle, rgba(240,192,64,0.08) 0%, transparent 60%)",
@@ -115,5 +108,6 @@ export function EchoesOfDjembeyaContent() {
         </p>
       </div>
     </div>
+    </EggplantRadialWrapper>
   );
 }

@@ -15,22 +15,14 @@ import {
   CROWN_ORIGIN,
   CROWN_RADIUS,
   FOUR_POINT_STARS,
-  EGGPLANT,
   COPY,
 } from "./config";
 
 export function HeroCelestialAltar() {
-  return (
-    <EggplantRadialWrapper>
-      <CelestialAltarContent />
-    </EggplantRadialWrapper>
-  );
-}
-
-export function CelestialAltarContent() {
   /* Central shrine/altar composition. Eggplant on a golden pedestal
      with planets arranged symmetrically like religious iconography. */
   return (
+    <EggplantRadialWrapper>
     <div id="hero-celestial-altar" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
         {/* Altar pedestal / pyramid base */}
@@ -91,7 +83,7 @@ export function CelestialAltarContent() {
       <div className="relative z-10 flex flex-col items-center text-center">
         <EggplantImage
           sizeClass="h-48 w-48"
-          filter={EGGPLANT.filter}
+          preset="soft-gold"
           float
           glow={{
             size: "300px",
@@ -106,5 +98,6 @@ export function CelestialAltarContent() {
         </p>
       </div>
     </div>
+    </EggplantRadialWrapper>
   );
 }

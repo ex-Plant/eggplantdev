@@ -10,23 +10,15 @@ import {
   CELESTIAL_OBJECTS,
   SCAN_LINE,
   BG_STARS,
-  EGGPLANT,
   COPY,
 } from "./config";
 
 export function HeroRitualObservatory() {
-  return (
-    <EggplantRadialWrapper>
-      <RitualObservatoryContent />
-    </EggplantRadialWrapper>
-  );
-}
-
-export function RitualObservatoryContent() {
   /* Observatory / signal map — technical devotional diagram with
      concentric measurement rings, annotated celestial positions,
      and eggplant at the center of the observation field. */
   return (
+    <EggplantRadialWrapper>
     <div id="hero-ritual-observatory" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
         {/* Measurement rings with degree marks */}
@@ -72,7 +64,7 @@ export function RitualObservatoryContent() {
       </svg>
 
       <div className="relative z-10 flex flex-col items-center text-center">
-        <EggplantImage sizeClass="h-36 w-36" filter={EGGPLANT.filter} float />
+        <EggplantImage sizeClass="h-36 w-36" preset="amber-sepia" float />
         <div className="mt-6 flex items-center gap-3">
           <div className="h-px w-12 bg-[#daa520]/15" />
           <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-[#daa520]/30">{COPY.signalLabel}</span>
@@ -94,5 +86,6 @@ export function RitualObservatoryContent() {
         </div>
       </div>
     </div>
+    </EggplantRadialWrapper>
   );
 }

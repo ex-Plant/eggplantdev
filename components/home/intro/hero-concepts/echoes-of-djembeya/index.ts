@@ -1,1 +1,1 @@
-export { HeroEchoesOfDjembeya, EchoesOfDjembeyaContent } from "./hero-echoes-of-djembeya";
+export { HeroEchoesOfDjembeya } from "./hero-echoes-of-djembeya";

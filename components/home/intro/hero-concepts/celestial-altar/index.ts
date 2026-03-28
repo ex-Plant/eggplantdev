@@ -1,1 +1,1 @@
-export { HeroCelestialAltar, CelestialAltarContent } from "./hero-celestial-altar";
+export { HeroCelestialAltar } from "./hero-celestial-altar";

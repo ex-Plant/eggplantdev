@@ -10,9 +10,8 @@ import { useLocalizedData } from "@/hooks/use-localized-data";
 import { HeroSoleilAubergine } from "@/components/home/intro/hero-concepts/soleil-aubergine";
 import { Intro } from "@/components/home/intro/intro";
 import { MetatronsCubeCore } from "@/components/home/intro/hero-concepts/metatrons-cube/hero-metatrons-cube";
-import { SacredAscensionGoldContent } from "@/components/home/intro/hero-concepts/sacred-ascension/hero-sacred-ascension-gold";
-import { GlamCosmicBillboardContent } from "@/components/home/intro/hero-concepts/glam-cosmic-billboard";
-import { ReliquaryDorContent } from "@/components/home/intro/hero-concepts/reliquary-dor";
+import { HeroSacredAscensionGold } from "@/components/home/intro/hero-concepts/sacred-ascension";
+import { HeroGlamCosmicBillboard } from "@/components/home/intro/hero-concepts/glam-cosmic-billboard";
 import { CosmicAubergineContent } from "@/components/home/sections/section-concepts/cosmic-aubergine";
 import { PALETTE_GOLD } from "@/components/home/sections/section-concepts/cosmic-aubergine/config";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
@@ -44,15 +43,13 @@ export default function BackdropTestPage() {
 
       <ProjectsSection data={freelanceWork} className="fest-container py-20 md:py-40" />
 
-      <SacredAscensionGoldContent />
+      <HeroSacredAscensionGold />
 
       <FullSection data={about} className="fest-container py-20 md:py-40" />
 
-      <GlamCosmicBillboardContent />
+      <HeroGlamCosmicBillboard />
 
       <FullSection data={values} className="fest-container py-20 md:py-40" />
-
-      <ReliquaryDorContent />
 
       {/* ── Eggplant in Space (gold) ── */}
       <CosmicAubergineContent palette={PALETTE_GOLD} />
@@ -66,8 +63,6 @@ export default function BackdropTestPage() {
         buttons={howIWork.buttons}
         className="fest-container py-20 md:py-60"
       />
-
-      <GetInTouchButton />
     </div>
   );
 }
