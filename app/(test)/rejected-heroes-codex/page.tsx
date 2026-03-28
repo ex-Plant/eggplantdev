@@ -77,7 +77,7 @@ export default function RejectedHeroesCodexPage() {
   return (
     <div className="bg-bgc min-h-screen text-white">
       <div className="fest-container py-16">
-        <h1 className="text-40 md:text-64 mb-4 font-mono text-red-500/80 uppercase">Rejected Heroes — Codex</h1>
+        <h1 className="text-40 md:text-64 mb-4 font-mono text-[#daa520]/80 uppercase">Rejected Heroes — Codex</h1>
         <p className="text-20 mb-8 text-lightgray">
           {REGISTRY.length} rejected Codex hero concept{REGISTRY.length !== 1 ? "s" : ""}.
         </p>
@@ -93,13 +93,13 @@ export default function RejectedHeroesCodexPage() {
         {REGISTRY.map((hero, i) => (
           <section key={hero.id} id={hero.id}>
             {i === v2Start && (
-              <div className="fest-container mb-8 border-t border-red-500/20 pt-12">
-                <h2 className="text-24 md:text-40 mb-2 font-mono uppercase text-red-500/40">V2 Redesigns</h2>
+              <div className="fest-container mb-8 border-t border-[#daa520]/20 pt-12">
+                <h2 className="text-24 md:text-40 mb-2 font-mono uppercase text-[#daa520]/40">V2 Redesigns</h2>
               </div>
             )}
             <div className="fest-container">
-              <div className="mb-4 flex items-center gap-3 border-b border-red-500/10 pb-3">
-                <span className="text-14 font-mono uppercase tracking-widest text-red-500/50">
+              <div className="mb-4 flex items-center gap-3 border-b border-[#daa520]/10 pb-3">
+                <span className="text-14 font-mono uppercase tracking-widest text-[#daa520]/50">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="text-16 font-mono uppercase text-white/80">{hero.label}</span>
