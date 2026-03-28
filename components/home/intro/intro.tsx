@@ -46,9 +46,9 @@ export const Intro = ({ backgroundDesktop, backgroundMobile, txt }: IntroPropsT)
           className={`grit-medium-dense pointer-events-none fixed top-0 right-0 left-0 z-2 h-screen`}
         ></div>
 
-        <AnimatedEggplant />
+        {/* <AnimatedEggplant /> */}
 
-        <div className="h-[80vh]" />
+        {/* <div className="h-[80vh]" /> */}
 
         <FadeSlide>
           <AnimatedLettersMask text={txt} />

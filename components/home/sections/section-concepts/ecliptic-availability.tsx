@@ -47,13 +47,13 @@ export function EclipticAvailability({ className, colorful = false }: PropsT) {
             <span
               className={cn(
                 "relative block h-4 w-4 rounded-full",
-                colorful ? "bg-[#10ffaa]" : "bg-green-400",
+                colorful ? "bg-[#ffd700]" : "bg-green-400",
               )}
             >
               <span
                 className={cn(
                   "absolute inset-0 rounded-full",
-                  colorful ? "bg-[#10ffaa]/30" : "bg-green-400/30",
+                  colorful ? "bg-[#ffd700]/30" : "bg-green-400/30",
                 )}
                 style={{
                   animation: "pulse 2s ease-in-out infinite",
@@ -64,7 +64,7 @@ export function EclipticAvailability({ className, colorful = false }: PropsT) {
             <span
               className={cn(
                 "font-mono text-sm uppercase tracking-[0.3em]",
-                colorful ? "text-[#10ffaa]/70" : "text-green-400/70",
+                colorful ? "text-[#ffd700]/70" : "text-green-400/70",
               )}
             >
               Available

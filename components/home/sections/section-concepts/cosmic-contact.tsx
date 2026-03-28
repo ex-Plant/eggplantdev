@@ -5,8 +5,8 @@ type PropsT = { className?: string; colorful?: boolean };
 
 const CONTACT_LINKS_COLORFUL = [
   { label: "Email", href: "mailto:hello@example.com", color: "border-[#daa520]/20 text-[#daa520]/50" },
-  { label: "LinkedIn", href: "#", color: "border-[#10ffaa]/20 text-[#10ffaa]/40" },
-  { label: "GitHub", href: "#", color: "border-[#d946ef]/20 text-[#d946ef]/40" },
+  { label: "LinkedIn", href: "#", color: "border-[#ffd700]/20 text-[#ffd700]/40" },
+  { label: "GitHub", href: "#", color: "border-[#f0c040]/20 text-[#f0c040]/40" },
 ] as const;
 
 const CONTACT_LINKS_STANDARD = [
@@ -19,7 +19,7 @@ function SignalRings() {
   return (
     <svg className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
       {[180, 300, 440].map((r) => (
-        <circle key={r} cx="50%" cy="50%" r={r} fill="none" stroke="#10ffaa" strokeWidth="1" opacity="0.06" />
+        <circle key={r} cx="50%" cy="50%" r={r} fill="none" stroke="#daa520" strokeWidth="1" opacity="0.06" />
       ))}
     </svg>
   );
@@ -42,7 +42,7 @@ export function CosmicContact({ className, colorful = false }: PropsT) {
         <p
           className={cn(
             "font-mono text-sm uppercase tracking-[0.4em]",
-            colorful ? "text-[#10ffaa]/30" : "text-lightgray",
+            colorful ? "text-[#daa520]/30" : "text-lightgray",
           )}
         >
           Open transmission
@@ -51,7 +51,7 @@ export function CosmicContact({ className, colorful = false }: PropsT) {
         <h2
           className={cn(
             "mt-6 font-mono text-48 uppercase leading-none md:text-72",
-            colorful ? "text-[#f5f0e6]" : "text-white",
+            colorful ? "text-[#f5e6c0]" : "text-white",
           )}
         >
           Get In

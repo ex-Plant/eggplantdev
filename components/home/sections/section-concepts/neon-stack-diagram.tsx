@@ -2,24 +2,24 @@
 import { cn } from "@/helpers/cn";
 
 const CATEGORIES = [
-  { dot: "#10ffaa", label: "Frontend", skills: "React · Next.js · TypeScript · Tailwind CSS" },
-  { dot: "#d946ef", label: "Backend", skills: "Node.js · Python · REST · GraphQL" },
-  { dot: "#ffd700", label: "Tools", skills: "Git · Figma · Payload CMS · Shopify" },
-  { dot: "#00e5ff", label: "Practices", skills: "Accessibility · TDD · CI/CD · Agile" },
+  { dot: "#ffd700", label: "Frontend", skills: "React · Next.js · TypeScript · Tailwind CSS" },
+  { dot: "#daa520", label: "Backend", skills: "Node.js · Python · REST · GraphQL" },
+  { dot: "#f0c040", label: "Tools", skills: "Git · Figma · Payload CMS · Shopify" },
+  { dot: "#c8860e", label: "Practices", skills: "Accessibility · TDD · CI/CD · Agile" },
 ] as const;
 
 const DOT_BORDER_MAP_COLORFUL: Record<string, string> = {
-  "#10ffaa": "border-[#10ffaa]/20",
-  "#d946ef": "border-[#d946ef]/20",
   "#ffd700": "border-[#ffd700]/20",
-  "#00e5ff": "border-[#00e5ff]/20",
+  "#daa520": "border-[#daa520]/20",
+  "#f0c040": "border-[#f0c040]/20",
+  "#c8860e": "border-[#c8860e]/20",
 };
 
 const DOT_BORDER_MAP_DEFAULT: Record<string, string> = {
-  "#10ffaa": "border-white/10",
-  "#d946ef": "border-white/10",
   "#ffd700": "border-white/10",
-  "#00e5ff": "border-white/10",
+  "#daa520": "border-white/10",
+  "#f0c040": "border-white/10",
+  "#c8860e": "border-white/10",
 };
 
 type PropsT = { className?: string; colorful?: boolean };

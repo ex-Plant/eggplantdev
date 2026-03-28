@@ -19,12 +19,12 @@ function SacredGeometrySvg() {
       fill="none"
       aria-hidden="true"
     >
-      <circle cx="200" cy="200" r="140" stroke="#c8a24e" strokeOpacity="0.08" />
-      <circle cx="200" cy="200" r="180" stroke="#c8a24e" strokeOpacity="0.05" />
-      <line x1="200" y1="10" x2="200" y2="50" stroke="#c8a24e" strokeOpacity="0.1" />
-      <line x1="200" y1="350" x2="200" y2="390" stroke="#c8a24e" strokeOpacity="0.1" />
-      <line x1="10" y1="200" x2="50" y2="200" stroke="#c8a24e" strokeOpacity="0.1" />
-      <line x1="350" y1="200" x2="390" y2="200" stroke="#c8a24e" strokeOpacity="0.1" />
+      <circle cx="200" cy="200" r="140" stroke="#daa520" strokeOpacity="0.08" />
+      <circle cx="200" cy="200" r="180" stroke="#daa520" strokeOpacity="0.05" />
+      <line x1="200" y1="10" x2="200" y2="50" stroke="#daa520" strokeOpacity="0.1" />
+      <line x1="200" y1="350" x2="200" y2="390" stroke="#daa520" strokeOpacity="0.1" />
+      <line x1="10" y1="200" x2="50" y2="200" stroke="#daa520" strokeOpacity="0.1" />
+      <line x1="350" y1="200" x2="390" y2="200" stroke="#daa520" strokeOpacity="0.1" />
     </svg>
   );
 }
@@ -40,7 +40,7 @@ export function SacredManifesto({ className, colorful = false }: PropsT) {
       <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
         <p className={cn(
           'font-mono text-sm uppercase tracking-[0.4em]',
-          colorful ? 'text-[#10ffaa]/30' : 'text-lightgray',
+          colorful ? 'text-[#daa520]/30' : 'text-lightgray',
         )}>
           {EYEBROW}
         </p>
@@ -63,13 +63,13 @@ export function SacredManifesto({ className, colorful = false }: PropsT) {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
           <button className={cn(
             'rounded-full border px-5 py-2 font-mono text-sm uppercase',
-            colorful ? 'border-[#10ffaa]/20 text-[#10ffaa]/40' : 'border-white/10 text-white',
+            colorful ? 'border-[#daa520]/20 text-[#daa520]/40' : 'border-white/10 text-white',
           )}>
             See Commercial Work
           </button>
           <button className={cn(
             'rounded-full border px-5 py-2 font-mono text-sm uppercase',
-            colorful ? 'border-[#d946ef]/20 text-[#d946ef]/40' : 'border-white/10 text-white',
+            colorful ? 'border-[#ffd700]/20 text-[#ffd700]/40' : 'border-white/10 text-white',
           )}>
             Get In Touch
           </button>

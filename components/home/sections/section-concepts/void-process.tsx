@@ -31,7 +31,7 @@ export function VoidProcess({ className, colorful = false }: PropsT) {
         <h2 className="font-mono text-40 md:text-64 uppercase leading-none">
           <span className={cn(colorful ? 'text-[#daa520]' : 'text-white')}>How I</span>
           <br />
-          <span className={cn(colorful ? 'text-[#10ffaa]' : 'text-white')}>Work</span>
+          <span className={cn(colorful ? 'text-[#ffd700]' : 'text-white')}>Work</span>
         </h2>
 
         {/* Connecting dashed line — desktop only */}
@@ -58,7 +58,7 @@ export function VoidProcess({ className, colorful = false }: PropsT) {
               <span
                 className={cn(
                   'font-mono text-sm',
-                  colorful ? 'text-[#10ffaa]/40' : 'text-lightgray',
+                  colorful ? 'text-[#ffd700]/40' : 'text-lightgray',
                 )}
               >
                 {step.num}

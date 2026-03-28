@@ -107,7 +107,7 @@ export function AubergineCodex({ className, colorful = false }: PropsT) {
             className={cn(
               'rounded-full border px-5 py-2 font-mono text-sm uppercase',
               colorful
-                ? 'border-[#10ffaa]/20 text-[#10ffaa]/50'
+                ? 'border-[#ffd700]/20 text-[#ffd700]/50'
                 : 'border-white/10 text-lightgray',
             )}
           >
