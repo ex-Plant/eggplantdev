@@ -20,7 +20,7 @@ import {
 const PALETTES = { default: PALETTE, muted: PALETTE_MUTED } as const;
 type VariantT = keyof typeof PALETTES;
 
-export function HeroSoleilAubergine({ variant = "default" }: { variant?: VariantT } = {}) {
+export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT } = {}) {
   const palette = PALETTES[variant];
   const stars = buildStars(palette);
   const coronaRings = buildCoronaRings(palette);

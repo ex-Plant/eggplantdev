@@ -34,9 +34,9 @@ export const PALETTES: Record<ThemeT, PaletteT> = {
   gold: {
     strokes: ["#daa520", "#c8860e", "#f0c040"],
     starAccent: "#daa520",
-    starBase: "#f5f0e0",
+    starBase: "#f5e6c0",
     glow: "radial-gradient(circle,rgba(218,165,32,0.12) 0%,rgba(200,134,14,0.05) 40%,transparent 70%)",
-    eggplantFilter: "sepia(1) saturate(0.5) drop-shadow(0 0 40px rgba(218,165,32,0.3))",
+    eggplantFilter: "sepia(0.3) saturate(1.5) brightness(0.9) drop-shadow(0 0 40px rgba(218,165,32,0.3))",
     titlePrimary: "#daa520",
     titleSecondary: "#f5e6c0",
     subtitle: "rgba(218,165,32,0.4)",

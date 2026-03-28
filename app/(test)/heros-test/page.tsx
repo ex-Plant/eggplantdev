@@ -42,6 +42,7 @@ const HERO_REGISTRY: HeroEntryT[] = [
   /* ── Batch 5 — Geometry Overload ── */
   { id: "hypercube-altar", label: "Hypercube Altar", load: lazyHero("hypercube-altar/hero-hypercube-altar", "HeroHypercubeAltar") },
   { id: "hex-lattice-shrine", label: "Hex Lattice Shrine", load: lazyHero("hex-lattice-shrine/hero-hex-lattice-shrine", "HeroHexLatticeShrine") },
+  { id: "hex-lattice-shrine-gold", label: "Hex Lattice Shrine Gold", load: lazyHero("hex-lattice-shrine/hero-hex-lattice-shrine-gold", "HeroHexLatticeShrineGold") },
 
   /* ── Batch 4 — Aubergine d'Or ── */
   { id: "reliquary-dor", label: "Reliquary d'Or", load: lazyHero("reliquary-dor/hero-reliquary-dor", "HeroReliquaryDor") },
@@ -54,12 +55,11 @@ const HERO_REGISTRY: HeroEntryT[] = [
   /* ── Batch 2 — Djembéya / warm gold ── */
   { id: "echoes-djembeya", label: "Echoes of Djembéya", load: lazyHero("echoes-of-djembeya/hero-echoes-of-djembeya", "HeroEchoesOfDjembeya") },
   { id: "cosmic-cult-flyer", label: "Cosmic Cult Flyer", load: lazyHero("cosmic-cult-flyer/hero-cosmic-cult-flyer", "HeroCosmicCultFlyer") },
-  { id: "celestial-altar", label: "Celestial Altar", load: lazyHero("celestial-altar/hero-celestial-altar", "HeroCelestialAltar") },
   { id: "glam-cosmic-billboard", label: "Glam Cosmic Billboard", load: lazyHero("glam-cosmic-billboard/hero-glam-cosmic-billboard", "HeroGlamCosmicBillboard") },
   { id: "ritual-observatory", label: "Ritual Observatory", load: lazyHero("ritual-observatory/hero-ritual-observatory", "HeroRitualObservatory") },
 
   /* ── Batch 1 — neon / cyan / magenta ── */
-  { id: "sacred-ascension-gold", label: "Sacred Ascension Gold", load: lazyHero("sacred-ascension/hero-sacred-ascension-gold", "HeroSacredAscensionGold") },
+  { id: "sacred-ascension-gold", label: "EggplantsInSpace", load: lazyHero("sacred-ascension/hero-sacred-ascension-gold", "HeroEggplantsInSpace") },
 ];
 
 function buildCodexRegistry(): HeroEntryT[] {

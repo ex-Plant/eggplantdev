@@ -10,11 +10,12 @@ import { useLocalizedData } from "@/hooks/use-localized-data";
 import { HeroSoleilAubergine } from "@/components/home/intro/hero-concepts/soleil-aubergine";
 import { Intro } from "@/components/home/intro/intro";
 import { MetatronsCubeCore } from "@/components/home/intro/hero-concepts/metatrons-cube/hero-metatrons-cube";
-import { HeroSacredAscensionGold } from "@/components/home/intro/hero-concepts/sacred-ascension";
+import { HeroEggplantsInSpace } from "@/components/home/intro/hero-concepts/sacred-ascension";
 import { HeroGlamCosmicBillboard } from "@/components/home/intro/hero-concepts/glam-cosmic-billboard";
 import { CosmicAubergineContent } from "@/components/home/sections/section-concepts/cosmic-aubergine";
 import { PALETTE_GOLD } from "@/components/home/sections/section-concepts/cosmic-aubergine/config";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
+import { AnimatedLettersMask } from "../../../components/home/intro/animated-letters/animated-letters";
 
 export default function BackdropTestPage() {
   const { introTxt = "", sections } = useLocalizedData("home");
@@ -33,7 +34,8 @@ export default function BackdropTestPage() {
 
       <HeroSoleilAubergine variant="muted" />
 
-      <Intro backgroundDesktop="" backgroundMobile="" txt={introTxt} />
+      {/* <Intro backgroundDesktop="" backgroundMobile="" txt={introTxt} /> */}
+      <AnimatedLettersMask text={introTxt} />
 
       <MetatronsCubeCore theme="silver" />
 
@@ -43,7 +45,7 @@ export default function BackdropTestPage() {
 
       <ProjectsSection data={freelanceWork} className="fest-container py-20 md:py-40" />
 
-      <HeroSacredAscensionGold />
+      <HeroEggplantsInSpace />
 
       <FullSection data={about} className="fest-container py-20 md:py-40" />
 

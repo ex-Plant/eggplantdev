@@ -5,12 +5,11 @@
 /* ── Palette ── */
 export const PALETTE_GOLD = {
   gold: "#daa520",
-  brightGold: "#ffd700",
   warmGold: "#f0c040",
   darkGold: "#c8860e",
   cream: "#f5e6c0",
   mutedGold: "#c8b080",
-  bgColor: "#0a0806",
+  bgColor: "#0c0a08",
 } as const;
 
 /* ── SVG shared ── */
@@ -50,6 +49,6 @@ export const EGGPLANT = {
 
 /* ── Typography / Copy ── */
 export const COPY = {
-  title: "Eggplants in Space",
+  title: "EggPlantis in Space",
   description: "Shipping produce to the void since the last deployment.",
 } as const;

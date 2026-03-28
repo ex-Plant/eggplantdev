@@ -32,6 +32,7 @@ const REGISTRY: HeroEntryT[] = [
   { id: "tabernacle-dore", label: "Tabernacle Doré", load: lazyHero("tabernacle-dore/hero-tabernacle-dore", "HeroTabernacleDore") },
   { id: "mission-briefing", label: "Mission Briefing / Eggplant Zero", load: lazyHero("mission-briefing/hero-mission-briefing", "HeroMissionBriefing") },
   { id: "sacred-ascension", label: "Sacred Ascension (Green)", load: lazyHero("sacred-ascension/hero-sacred-ascension", "HeroSacredAscension") },
+  { id: "celestial-altar", label: "Celestial Altar", load: lazyHero("celestial-altar/hero-celestial-altar", "HeroCelestialAltar") },
 ];
 
 const heroCache = new Map<string, React.LazyExoticComponent<React.ComponentType<{ txt?: string }>>>();
