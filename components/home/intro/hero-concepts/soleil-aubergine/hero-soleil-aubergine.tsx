@@ -17,12 +17,21 @@ import {
   SVG_VIEWBOX,
 } from "./config";
 
+/** Wrapped version with per-section bg animation (used on home page) */
 export function HeroSoleilAubergine() {
   return (
     <AnimatedBgWrapper
       maskStyle={{ backgroundColor: PALETTE.bgColor }}
       // maskClass={"bg-red-900"}
     >
+      <SoleilAubergineContent />
+    </AnimatedBgWrapper>
+  );
+}
+
+/** Raw content — no bg wrapper, usable inside ScrollBackdropProvider */
+export function SoleilAubergineContent() {
+  return (
       <div className="relative flex min-h-screen items-center justify-center">
         {/* Star field */}
         {STARS.map((s, i) => (
@@ -119,6 +128,5 @@ export function HeroSoleilAubergine() {
           </p>
         </div>
       </div>
-    </AnimatedBgWrapper>
   );
 }
