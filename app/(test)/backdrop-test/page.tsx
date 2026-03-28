@@ -16,6 +16,12 @@ import { PALETTE as SOLEIL_PALETTE } from "@/components/home/intro/hero-concepts
 import { FadeSlide } from "@/components/general/animations-wrappers/fade-slide";
 import { AnimatedLettersMask } from "@/components/home/intro/animated-letters/animated-letters";
 import { MetatronsCubeCore } from "@/components/home/intro/hero-concepts/metatrons-cube/hero-metatrons-cube";
+import { HeroSacredAscensionGold } from "@/components/home/intro/hero-concepts/sacred-ascension/hero-sacred-ascension-gold";
+import { HeroGlamCosmicBillboard } from "@/components/home/intro/hero-concepts/glam-cosmic-billboard/hero-glam-cosmic-billboard";
+import { ReliquaryDorContent } from "@/components/home/intro/hero-concepts/reliquary-dor";
+import { CathedraleCosmiquContent } from "@/components/home/intro/hero-concepts/cathedrale-cosmique";
+import { CosmicAubergineContent } from "@/components/home/sections/section-concepts/cosmic-aubergine";
+import { PALETTE_GOLD } from "@/components/home/sections/section-concepts/cosmic-aubergine/config";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
 
 export default function BackdropTestPage() {
@@ -63,17 +69,42 @@ export default function BackdropTestPage() {
         <ProjectsSection data={freelanceWork} className="fest-container py-20 md:py-40" />
       </ScrollScene>
 
-      {/* ── Scene 5: About ── */}
+      {/* ── Scene 7: Sacred Ascension Gold interstitial ── */}
+      <ScrollScene>
+        <HeroSacredAscensionGold />
+      </ScrollScene>
+
+      {/* ── Scene 8: About ── */}
       <ScrollScene>
         <FullSection data={about} className="fest-container py-20 md:py-40" />
       </ScrollScene>
 
-      {/* ── Scene 6: Values ── */}
+      {/* ── Scene 9: Glam Cosmic Billboard interstitial ── */}
+      <ScrollScene>
+        <HeroGlamCosmicBillboard />
+      </ScrollScene>
+
+      {/* ── Scene 10: Values ── */}
       <ScrollScene>
         <FullSection data={values} className="fest-container py-20 md:py-40" />
       </ScrollScene>
 
-      {/* ── Scene 7: How I Work ── */}
+      {/* ── Scene 11: Reliquary d'Or interstitial ── */}
+      <ScrollScene>
+        <ReliquaryDorContent />
+      </ScrollScene>
+
+      {/* ── Scene 12: Cathédrale Cosmique interstitial ── */}
+      <ScrollScene>
+        <CathedraleCosmiquContent />
+      </ScrollScene>
+
+      {/* ── Scene 13: Eggplant in Space (gold) interstitial ── */}
+      <ScrollScene>
+        <CosmicAubergineContent palette={PALETTE_GOLD} />
+      </ScrollScene>
+
+      {/* ── Scene 14: How I Work ── */}
       <ScrollScene>
         <SimpleSection
           id={howIWork.id}

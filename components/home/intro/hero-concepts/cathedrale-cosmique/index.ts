@@ -1,1 +1,1 @@
-export { HeroCathedralCosmique } from "./hero-cathedrale-cosmique";
+export { HeroCathedralCosmique, CathedraleCosmiquContent } from "./hero-cathedrale-cosmique";

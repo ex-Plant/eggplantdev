@@ -1,5 +1,9 @@
 /* Agent: Claude — Cathedrale Cosmique */
 
+"use client";
+
+import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
   buildStars,
@@ -12,12 +16,22 @@ import {
   COPY,
 } from "./config";
 
+/** Wrapped version with per-section bg animation (used on home page) */
 export function HeroCathedralCosmique() {
+  return (
+    <AnimatedBgWrapper maskStyle={{ backgroundColor: "#0a0806" }}>
+      <CathedraleCosmiquContent />
+    </AnimatedBgWrapper>
+  );
+}
+
+/** Raw content — no bg wrapper, usable inside ScrollBackdropProvider */
+export function CathedraleCosmiquContent() {
   const petals = PETAL_ANGLES;
   const stars = buildStars();
 
   return (
-    <div id="hero-cathedrale-cosmique" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0a0806]">
+    <div id="hero-cathedrale-cosmique" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Star field */}
       {stars.map((s, i) => (
         <div key={`s-${i}`} className="absolute rounded-full" style={{ left: s.x, top: s.y, width: s.size, height: s.size, backgroundColor: s.color, opacity: s.opacity }} />
@@ -61,12 +75,18 @@ export function HeroCathedralCosmique() {
         })}
       </svg>
 
-      {/* Golden radial glow */}
-      <div className="pointer-events-none absolute left-1/2 top-[47%] h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(218,165,32,0.07)_0%,transparent_65%)]" />
-
       <div className="relative z-10 flex flex-col items-center text-center">
         <p className="font-mono text-12 uppercase tracking-[0.5em] text-[#ffd700]/35">{COPY.eyebrow}</p>
-        <img src={EGGPLANT.src} alt="" className="mt-6 h-48 w-48 object-contain" style={{ filter: EGGPLANT.filter }} />
+        <EggplantImage
+          float
+          sizeClass="h-48 w-48"
+          className="mt-6"
+          filter={EGGPLANT.filter}
+          glow={{
+            size: "500px",
+            gradient: "radial-gradient(ellipse, rgba(218,165,32,0.07) 0%, transparent 65%)",
+          }}
+        />
         <h1 className="mt-8 font-mono text-48 uppercase leading-tight text-[#f5e6c0] md:text-72">
           {COPY.titleLine1}<br /><span className="text-[#ffd700]">{COPY.titleLine2}</span>
         </h1>

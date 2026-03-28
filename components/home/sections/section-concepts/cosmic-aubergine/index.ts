@@ -1,1 +1,1 @@
-export { HeroCosmicAubergine, HeroCosmicAubergineGold } from "./hero-cosmic-aubergine";
+export { HeroCosmicAubergine, HeroCosmicAubergineGold, CosmicAubergineContent } from "./hero-cosmic-aubergine";

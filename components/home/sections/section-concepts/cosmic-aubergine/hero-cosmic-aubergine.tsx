@@ -1,9 +1,12 @@
+"use client";
+
+import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
   PALETTE_GOLD,
   FLOWER_CIRCLES,
   GEOMETRY,
-  EGGPLANT,
   COPY,
   buildNebulaClouds,
 } from "./config";
@@ -11,12 +14,30 @@ import type { CosmicPaletteT } from "./config";
 
 type CosmicPropsT = { palette?: CosmicPaletteT };
 
+/** Wrapped version with per-section bg animation (used on home page) */
 export function HeroCosmicAubergine({ palette }: CosmicPropsT = {}) {
+  const p = palette ?? PALETTE;
+  return (
+    <AnimatedBgWrapper
+      maskStyle={{ backgroundColor: p.bgColor }}
+    >
+      <CosmicAubergineContent palette={palette} />
+    </AnimatedBgWrapper>
+  );
+}
+
+/** Golden palette variant with silver/desaturated eggplant */
+export function HeroCosmicAubergineGold() {
+  return <HeroCosmicAubergine palette={PALETTE_GOLD} />;
+}
+
+/** Raw content — no bg wrapper, usable inside ScrollBackdropProvider */
+export function CosmicAubergineContent({ palette }: CosmicPropsT = {}) {
   const p = palette ?? PALETTE;
   const clouds = buildNebulaClouds(p);
 
   return (
-    <div id="hero-cosmic-aubergine" className="relative flex min-h-screen items-center overflow-hidden" style={{ backgroundColor: p.bgColor }}>
+    <div id="hero-cosmic-aubergine" className="relative flex min-h-screen items-center overflow-hidden">
       {/* Deep space nebula */}
       <div className="pointer-events-none absolute inset-0">
         {clouds.map((cloud, i) => (
@@ -56,14 +77,9 @@ export function HeroCosmicAubergine({ palette }: CosmicPropsT = {}) {
             <polygon points={GEOMETRY.triangleDown} fill="none" stroke={p.accent2} strokeWidth="0.4" opacity="0.05" />
           </svg>
 
-          <img src={EGGPLANT.src} alt="" className="relative z-10 h-56 w-56 object-contain" style={{ filter: p.eggplantFilter }} />
+          <EggplantImage sizeClass="h-56 w-56" filter={p.eggplantFilter} float />
         </div>
       </div>
     </div>
   );
-}
-
-/** Golden palette variant with silver/desaturated eggplant */
-export function HeroCosmicAubergineGold() {
-  return <HeroCosmicAubergine palette={PALETTE_GOLD} />;
 }

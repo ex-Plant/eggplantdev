@@ -1,5 +1,9 @@
 /* Agent: Claude — Reliquary d'Or */
 
+"use client";
+
+import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
   buildStars,
@@ -18,11 +22,21 @@ import {
   COPY,
 } from "./config";
 
+/** Wrapped version with per-section bg animation (used on home page) */
 export function HeroReliquaryDor() {
+  return (
+    <AnimatedBgWrapper maskStyle={{ backgroundColor: "#0a0806" }}>
+      <ReliquaryDorContent />
+    </AnimatedBgWrapper>
+  );
+}
+
+/** Standalone content without background wrapper */
+export function ReliquaryDorContent() {
   const stars = buildStars();
 
   return (
-    <div id="hero-reliquary-dor" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0a0806]">
+    <div id="hero-reliquary-dor" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Star field */}
       {stars.map((s, i) => (
         <div key={i} className="absolute rounded-full" style={{ left: s.x, top: s.y, width: s.size, height: s.size, backgroundColor: s.color, opacity: s.opacity }} />
@@ -69,13 +83,19 @@ export function HeroReliquaryDor() {
         ))}
       </svg>
 
-      {/* Golden radial glow behind eggplant */}
-      <div className="pointer-events-none absolute left-1/2 top-[42%] h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(218,165,32,0.1)_0%,rgba(255,215,0,0.03)_40%,transparent_70%)]" />
-
       <div className="relative z-10 flex flex-col items-center text-center">
         <p className="font-mono text-12 uppercase tracking-[0.5em] text-[#ffd700]/35">{COPY.eyebrow}</p>
 
-        <img src={EGGPLANT.src} alt="" className="mt-6 h-52 w-52 object-contain" style={{ filter: EGGPLANT.filter }} />
+        <EggplantImage
+          sizeClass="h-52 w-52"
+          className="mt-6"
+          filter={EGGPLANT.filter}
+          float
+          glow={{
+            size: "420px",
+            gradient: "radial-gradient(ellipse, rgba(218,165,32,0.1) 0%, rgba(255,215,0,0.03) 40%, transparent 70%)",
+          }}
+        />
 
         <h1 className="mt-8 font-mono text-48 uppercase leading-tight text-[#ffd700] md:text-72">
           {COPY.titleLine1}<br />
