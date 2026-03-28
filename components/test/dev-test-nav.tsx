@@ -1,10 +1,14 @@
 const TEST_PAGES = [
-  { href: "/heros-test", label: "heroes" },
-  { href: "/sections-concepts-test", label: "sections" },
-  { href: "/animations-test", label: "animations" },
-  { href: "/selected-animations", label: "selected" },
-  { href: "/eggplant-palette", label: "palette" },
-  { href: "/solar-system-test", label: "solar" },
+  { href: "/heros-test", label: "Heroes" },
+  { href: "/sections-concepts-test", label: "Sections" },
+  { href: "/selected-heroes", label: "Selected Heroes" },
+  { href: "/selected-animations", label: "Selected Animations" },
+  { href: "/rejected-heroes-claude", label: "Rejected Claude" },
+  { href: "/rejected-heroes-codex", label: "Rejected Codex" },
+  { href: "/animations-test", label: "Animations" },
+  { href: "/eggplant-palette", label: "Eggplant Palette" },
+  { href: "/solar-system-test", label: "Solar System" },
+  { href: "/backdrop-test", label: "Backdrop" },
 ];
 
 export function DevTestNav() {
