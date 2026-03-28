@@ -13,7 +13,7 @@ import {
   type ThemeT,
 } from "./config";
 
-function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
+export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
   const p = PALETTES[theme];
   const stars = buildStars(p);
 

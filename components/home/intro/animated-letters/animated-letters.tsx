@@ -38,7 +38,7 @@ export const AnimatedLettersMask = ({ text = "" }) => {
         gsap.fromTo(
           mask,
           {
-            backgroundColor: "var(--color-bgc)",
+            backgroundColor: "var(--backdrop-color, var(--color-bgc))",
             opacity: 0.9,
             width: "103%",
             height: "100%",
