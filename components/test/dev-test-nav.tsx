@@ -4,6 +4,7 @@ const TEST_PAGES = [
   { href: "/animations-test", label: "animations" },
   { href: "/selected-animations", label: "selected" },
   { href: "/eggplant-palette", label: "palette" },
+  { href: "/solar-system-test", label: "solar" },
 ];
 
 export function DevTestNav() {

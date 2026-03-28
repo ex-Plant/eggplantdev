@@ -34,44 +34,48 @@ function lazyCodex(path: string, exportName: string) {
 
 const HERO_REGISTRY: HeroEntryT[] = [
   /* ── Batch 6 — Djembeya descendants ── */
-  { id: "rose-window-reliquary", label: "Rose Window Reliquary", load: lazyHero("hero-rose-window-reliquary", "HeroRoseWindowReliquary") },
-  { id: "meridian-procession", label: "Meridian Procession", load: lazyHero("hero-meridian-procession", "HeroMeridianProcession") },
-  { id: "compass-sanctum", label: "Compass Sanctum", load: lazyHero("hero-compass-sanctum", "HeroCompassSanctum") },
+  { id: "rose-window-reliquary", label: "Rose Window Reliquary", load: lazyHero("rose-window-reliquary/hero-rose-window-reliquary", "HeroRoseWindowReliquary") },
+  { id: "meridian-procession", label: "Meridian Procession", load: lazyHero("meridian-procession/hero-meridian-procession", "HeroMeridianProcession") },
+  { id: "compass-sanctum", label: "Compass Sanctum", load: lazyHero("compass-sanctum/hero-compass-sanctum", "HeroCompassSanctum") },
 
   /* ── Batch 5 — Geometry Overload ── */
-  { id: "hypercube-altar", label: "Hypercube Altar", load: lazyHero("hero-hypercube-altar", "HeroHypercubeAltar") },
-  { id: "pentagram-rave", label: "Pentagram Rave", load: lazyHero("hero-pentagram-rave", "HeroPentagramRave") },
-  { id: "hex-lattice-shrine", label: "Hex Lattice Shrine", load: lazyHero("hero-hex-lattice-shrine", "HeroHexLatticeShrine") },
-  { id: "vesica-piscis-neon", label: "Vesica Piscis Neon", load: lazyHero("hero-vesica-piscis-neon", "HeroVesicaPiscisNeon") },
-  { id: "sri-yantra-supernova", label: "Sri Yantra Supernova", load: lazyHero("hero-sri-yantra-supernova", "HeroSriYantraSupernova") },
+  { id: "hypercube-altar", label: "Hypercube Altar", load: lazyHero("hypercube-altar/hero-hypercube-altar", "HeroHypercubeAltar") },
+  { id: "pentagram-rave", label: "Pentagram Rave", load: lazyHero("pentagram-rave/hero-pentagram-rave", "HeroPentagramRave") },
+  { id: "hex-lattice-shrine", label: "Hex Lattice Shrine", load: lazyHero("hex-lattice-shrine/hero-hex-lattice-shrine", "HeroHexLatticeShrine") },
+  { id: "vesica-piscis-neon", label: "Vesica Piscis Neon", load: lazyHero("vesica-piscis-neon/hero-vesica-piscis-neon", "HeroVesicaPiscisNeon") },
+  { id: "sri-yantra-supernova", label: "Sri Yantra Supernova", load: lazyHero("sri-yantra-supernova/hero-sri-yantra-supernova", "HeroSriYantraSupernova") },
 
   /* ── Batch 4 — Aubergine d'Or ── */
-  { id: "reliquary-dor", label: "Reliquary d'Or", load: lazyHero("hero-reliquary-dor", "HeroReliquaryDor") },
-  { id: "cathedrale-cosmique", label: "Cathédrale Cosmique", load: lazyHero("hero-cathedrale-cosmique", "HeroCathedralCosmique") },
-  { id: "soleil-aubergine", label: "Soleil Aubergine", load: lazyHero("hero-soleil-aubergine", "HeroSoleilAubergine") },
-  { id: "versailles-orbital", label: "Versailles Orbital", load: lazyHero("hero-versailles-orbital", "HeroVersaillesOrbital") },
-  { id: "tabernacle-dore", label: "Tabernacle Doré", load: lazyHero("hero-tabernacle-dore", "HeroTabernacleDore") },
+  { id: "reliquary-dor", label: "Reliquary d'Or", load: lazyHero("reliquary-dor/hero-reliquary-dor", "HeroReliquaryDor") },
+  { id: "cathedrale-cosmique", label: "Cathédrale Cosmique", load: lazyHero("cathedrale-cosmique/hero-cathedrale-cosmique", "HeroCathedralCosmique") },
+  { id: "soleil-aubergine", label: "Soleil Aubergine", load: lazyHero("soleil-aubergine/hero-soleil-aubergine", "HeroSoleilAubergine") },
+  { id: "versailles-orbital", label: "Versailles Orbital", load: lazyHero("versailles-orbital/hero-versailles-orbital", "HeroVersaillesOrbital") },
+  { id: "tabernacle-dore", label: "Tabernacle Doré", load: lazyHero("tabernacle-dore/hero-tabernacle-dore", "HeroTabernacleDore") },
 
   /* ── Batch 3 — Sacred geometry deep cuts ── */
-  { id: "metatrons-cube", label: "Metatron's Cube", load: lazyHero("hero-metatrons-cube", "HeroMetatronsCube") },
-  { id: "golden-spiral", label: "Golden Spiral", load: lazyHero("hero-golden-spiral", "HeroGoldenSpiral") },
-  { id: "flower-of-life", label: "Flower of Life", load: lazyHero("hero-flower-of-life", "HeroFlowerOfLife") },
-  { id: "zodiac-astrolabe", label: "Zodiac Astrolabe", load: lazyHero("hero-zodiac-astrolabe", "HeroZodiacAstrolabe") },
-  { id: "sacred-mandala", label: "Sacred Mandala", load: lazyHero("hero-sacred-mandala", "HeroSacredMandala") },
+  { id: "metatrons-cube", label: "Metatron's Cube (Gold)", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCube") },
+  { id: "metatrons-cube-raw", label: "Metatron's Cube (Raw)", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeRaw") },
+  { id: "metatrons-cube-silver", label: "Metatron's Cube (Silver)", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeSilver") },
+  { id: "metatrons-cube-natural", label: "Metatron's Cube (Natural)", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeNatural") },
+  { id: "metatrons-cube-mono", label: "Metatron's Cube (Mono)", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeMono") },
+  { id: "golden-spiral", label: "Golden Spiral", load: lazyHero("golden-spiral/hero-golden-spiral", "HeroGoldenSpiral") },
+  { id: "flower-of-life", label: "Flower of Life", load: lazyHero("flower-of-life/hero-flower-of-life", "HeroFlowerOfLife") },
+  { id: "zodiac-astrolabe", label: "Zodiac Astrolabe", load: lazyHero("zodiac-astrolabe/hero-zodiac-astrolabe", "HeroZodiacAstrolabe") },
+  { id: "sacred-mandala", label: "Sacred Mandala", load: lazyHero("sacred-mandala/hero-sacred-mandala", "HeroSacredMandala") },
 
   /* ── Batch 2 — Djembéya / warm gold ── */
-  { id: "echoes-djembeya", label: "Echoes of Djembéya", load: lazyHero("hero-echoes-of-djembeya", "HeroEchoesOfDjembeya") },
-  { id: "cosmic-cult-flyer", label: "Cosmic Cult Flyer", load: lazyHero("hero-cosmic-cult-flyer", "HeroCosmicCultFlyer") },
-  { id: "celestial-altar", label: "Celestial Altar", load: lazyHero("hero-celestial-altar", "HeroCelestialAltar") },
-  { id: "glam-cosmic-billboard", label: "Glam Cosmic Billboard", load: lazyHero("hero-glam-cosmic-billboard", "HeroGlamCosmicBillboard") },
-  { id: "ritual-observatory", label: "Ritual Observatory", load: lazyHero("hero-ritual-observatory", "HeroRitualObservatory") },
+  { id: "echoes-djembeya", label: "Echoes of Djembéya", load: lazyHero("echoes-of-djembeya/hero-echoes-of-djembeya", "HeroEchoesOfDjembeya") },
+  { id: "cosmic-cult-flyer", label: "Cosmic Cult Flyer", load: lazyHero("cosmic-cult-flyer/hero-cosmic-cult-flyer", "HeroCosmicCultFlyer") },
+  { id: "celestial-altar", label: "Celestial Altar", load: lazyHero("celestial-altar/hero-celestial-altar", "HeroCelestialAltar") },
+  { id: "glam-cosmic-billboard", label: "Glam Cosmic Billboard", load: lazyHero("glam-cosmic-billboard/hero-glam-cosmic-billboard", "HeroGlamCosmicBillboard") },
+  { id: "ritual-observatory", label: "Ritual Observatory", load: lazyHero("ritual-observatory/hero-ritual-observatory", "HeroRitualObservatory") },
 
   /* ── Batch 1 — neon / cyan / magenta ── */
-  { id: "sacred-ascension", label: "Sacred Ascension", load: lazyHero("hero-sacred-ascension", "HeroSacredAscension") },
-  { id: "cosmic-aubergine", label: "Cosmic Aubergine", load: lazyHero("hero-cosmic-aubergine", "HeroCosmicAubergine") },
-  { id: "orbital-launch", label: "Orbital Launch / Solar Aubergine", load: lazyHero("hero-orbital-launch", "HeroOrbitalLaunch") },
-  { id: "wormhole", label: "Warp Aubergine", load: lazyHero("hero-wormhole", "HeroWormhole") },
-  { id: "mission-briefing", label: "Mission Briefing / Eggplant Zero", load: lazyHero("hero-mission-briefing", "HeroMissionBriefing") },
+  { id: "sacred-ascension", label: "Sacred Ascension", load: lazyHero("sacred-ascension/hero-sacred-ascension", "HeroSacredAscension") },
+  { id: "cosmic-aubergine", label: "Cosmic Aubergine", load: lazyHero("cosmic-aubergine/hero-cosmic-aubergine", "HeroCosmicAubergine") },
+  { id: "orbital-launch", label: "Orbital Launch / Solar Aubergine", load: lazyHero("orbital-launch/hero-orbital-launch", "HeroOrbitalLaunch") },
+  { id: "wormhole", label: "Warp Aubergine", load: lazyHero("wormhole/hero-wormhole", "HeroWormhole") },
+  { id: "mission-briefing", label: "Mission Briefing / Eggplant Zero", load: lazyHero("mission-briefing/hero-mission-briefing", "HeroMissionBriefing") },
 ];
 
 function buildCodexRegistry(): HeroEntryT[] {

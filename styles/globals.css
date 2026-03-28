@@ -101,6 +101,11 @@ body {
 }
 
 @layer utilities {
+  /* Hide root-layout footer on test pages */
+  body:has(.test-layout) footer#contact {
+    display: none;
+  }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;

@@ -62,6 +62,14 @@ const EXISTING: VariantT[] = [
     origin: "Zodiac Astrolabe, Ritual Observatory",
   },
   {
+    id: "chrome-silver",
+    label: "Chrome Silver",
+    filter:
+      "sepia(1) saturate(0.5) drop-shadow(0 0 40px rgba(218,165,32,0.3))",
+    bg: "#0c0a08",
+    origin: "Metatron's Cube",
+  },
+  {
     id: "neon-green-glow",
     label: "Neon Green Glow",
     filter: "drop-shadow(0 0 8px rgba(16,255,170,0.3))",
@@ -169,12 +177,6 @@ const NEW: VariantT[] = [
     label: "Chrome Relic",
     filter: "saturate(0.3) brightness(1.4) contrast(1.3)",
     bg: "#0a0a0a",
-  },
-  {
-    id: "inverted-shrine",
-    label: "Inverted Shrine",
-    filter: "invert(1) sepia(0.3) saturate(1.5) hue-rotate(180deg) brightness(0.85)",
-    bg: "#f5e6c0",
   },
   {
     id: "holographic",
