@@ -2,7 +2,7 @@
 
 /* Agent: Claude — Hex Lattice Shrine */
 
-import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
@@ -20,9 +20,9 @@ import {
 
 export function HeroHexLatticeShrine() {
   return (
-    <AnimatedBgWrapper maskStyle={{ backgroundColor: PALETTE.bgColor }}>
+    <EggplantRadialWrapper>
       <HexLatticeShrineContent />
-    </AnimatedBgWrapper>
+    </EggplantRadialWrapper>
   );
 }
 

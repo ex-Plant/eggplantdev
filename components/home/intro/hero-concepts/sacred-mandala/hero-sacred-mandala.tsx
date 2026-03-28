@@ -2,7 +2,7 @@
 
 /* Agent: Claude — Sacred Mandala */
 
-import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   STROKES,
@@ -19,9 +19,9 @@ import {
 
 export function HeroSacredMandala() {
   return (
-    <AnimatedBgWrapper maskStyle={{ backgroundColor: "#0c0a08" }}>
+    <EggplantRadialWrapper>
       <SacredMandalaContent />
-    </AnimatedBgWrapper>
+    </EggplantRadialWrapper>
   );
 }
 

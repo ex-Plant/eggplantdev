@@ -2,7 +2,7 @@
 
 "use client";
 
-import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
@@ -19,9 +19,9 @@ import {
 /** Wrapped version with per-section bg animation (used on home page) */
 export function HeroCathedralCosmique() {
   return (
-    <AnimatedBgWrapper maskStyle={{ backgroundColor: "#0a0806" }}>
+    <EggplantRadialWrapper>
       <CathedraleCosmiquContent />
-    </AnimatedBgWrapper>
+    </EggplantRadialWrapper>
   );
 }
 

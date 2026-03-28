@@ -1,24 +1,28 @@
-import { CSSProperties } from "react";
 import { cn } from "@/helpers/cn";
 
-export default function AnimatedBgWrapper({
+export default function EggplantRadialWrapper({
   wrapperClass,
-  maskStyle,
+  backgroundColor,
   maskClass,
   children,
 }: {
   wrapperClass?: string;
-  maskStyle?: CSSProperties;
+  backgroundColor?: string;
   children: React.ReactNode;
   maskClass?: string;
 }) {
   return (
     <div className={cn("relative outline", wrapperClass)}>
-      <div className={"to-bgc absolute top-0 right-0 left-0 z-10 h-[15vh] bg-linear-to-t from-transparent"} />
-
-      <div style={maskStyle} className={cn(`pointer-events-none absolute inset-0`, maskClass)} />
+      {backgroundColor && (
+        <div
+          style={{
+            background: `radial-gradient(ellipse at center, ${backgroundColor} 0%, transparent 90%)`,
+            // background: `radial-gradient(ellipse at center, red 0%, transparent 90%)`,
+          }}
+          className={cn(`pointer-events-none absolute inset-0`, maskClass)}
+        />
+      )}
       {children}
-      <div className={"to-bgc absolute right-0 bottom-0 left-0 z-10 h-[15vh] bg-linear-to-b from-transparent"} />
     </div>
   );
 }

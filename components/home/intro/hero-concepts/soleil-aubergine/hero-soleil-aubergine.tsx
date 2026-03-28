@@ -2,7 +2,7 @@
 
 "use client";
 
-import AnimatedBgWrapper from "../../../../animations/animated-bg-wrapper";
+import EggplantRadialWrapper from "../../../../animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
@@ -26,9 +26,9 @@ type SoleilPropsT = { variant?: VariantT };
 export function HeroSoleilAubergine({ variant = "default" }: SoleilPropsT = {}) {
   const p = PALETTES[variant];
   return (
-    <AnimatedBgWrapper maskStyle={{ backgroundColor: p.bgColor }}>
+    <EggplantRadialWrapper>
       <SoleilAubergineContent palette={p} />
-    </AnimatedBgWrapper>
+    </EggplantRadialWrapper>
   );
 }
 

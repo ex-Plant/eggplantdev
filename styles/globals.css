@@ -30,6 +30,17 @@
   --color-glow-blue: oklch(from #3b82f6 l c h / 15%);
   --color-glow-fuchsia: oklch(from #d946ef l c h / 25%);
 
+  /* Hero palettes */
+  --color-hero-gold: #ffd700;
+  --color-hero-dark-gold: #daa520;
+  --color-hero-soft-gold: #f0c040;
+  --color-hero-warm-caption: #c8b080;
+  --color-hero-bg-warm: #1a1510;
+
+  --color-hero-muted-gold: #daa520;
+  --color-hero-muted-dark-gold: #c8860e;
+  --color-hero-muted-bg-warm: #1c1812;
+
   /* Max-width */
   --max-w-xxl: 1920px;
 }

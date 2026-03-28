@@ -2,7 +2,7 @@
 
 /* Agent: Claude — Sacred Ascension Gold */
 
-import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE_GOLD,
@@ -17,9 +17,9 @@ import {
 
 export function HeroSacredAscensionGold() {
   return (
-    <AnimatedBgWrapper maskStyle={{ backgroundColor: PALETTE_GOLD.bgColor }}>
+    <EggplantRadialWrapper>
       <SacredAscensionGoldContent />
-    </AnimatedBgWrapper>
+    </EggplantRadialWrapper>
   );
 }
 

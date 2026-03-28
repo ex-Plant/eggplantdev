@@ -1,6 +1,6 @@
 "use client";
 
-import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
@@ -15,9 +15,9 @@ import {
 
 export function HeroEchoesOfDjembeya() {
   return (
-    <AnimatedBgWrapper maskStyle={{ backgroundColor: PALETTE.bgColor }}>
+    <EggplantRadialWrapper>
       <EchoesOfDjembeyaContent />
-    </AnimatedBgWrapper>
+    </EggplantRadialWrapper>
   );
 }
 

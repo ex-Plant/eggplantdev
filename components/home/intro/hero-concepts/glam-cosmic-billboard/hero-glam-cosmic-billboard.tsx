@@ -1,6 +1,6 @@
 "use client";
 
-import AnimatedBgWrapper from "@/components/animations/animated-bg-wrapper";
+import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   PALETTE,
@@ -14,9 +14,9 @@ import {
 /** Wrapped version with per-section bg animation */
 export function HeroGlamCosmicBillboard() {
   return (
-    <AnimatedBgWrapper maskStyle={{ backgroundColor: PALETTE.bgColor }}>
+    <EggplantRadialWrapper>
       <GlamCosmicBillboardContent />
-    </AnimatedBgWrapper>
+    </EggplantRadialWrapper>
   );
 }
 
