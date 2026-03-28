@@ -2,29 +2,18 @@
 /* Animation experiments — GSAP + existing component ideas */
 /* To add an animation: add its entry to ANIMATION_REGISTRY below */
 
-import { SoleilYoyo } from "@/components/test/soleil-yoyo";
 import { SoleilOrbit } from "@/components/test/soleil-orbit";
+import { SoleilYoyo } from "@/components/test/soleil-yoyo";
 import { SoleilScaleGrow } from "@/components/test/soleil-scale-grow";
-import { SolarSystemConcentric } from "@/components/test/solar-system-concentric";
-import { SolarSystemSpiral } from "@/components/test/solar-system-spiral";
-import { SolarSystemHexagonal } from "@/components/test/solar-system-hexagonal";
-import { SolarSystemRadiant } from "@/components/test/solar-system-radiant";
-import { SolarSystemZodiac } from "@/components/test/solar-system-zodiac";
 
 /* ═══════════════════════════════════════
    ANIMATION REGISTRY — edit this list to add/remove experiments
    ═══════════════════════════════════════ */
 
 const ANIMATION_REGISTRY: { id: string; label: string; component: React.ReactNode }[] = [
-  { id: "soleil-yoyo", label: "Soleil Aubergine — Yo-Yo Float", component: <SoleilYoyo /> },
   { id: "soleil-orbit", label: "Soleil Aubergine — Orbit", component: <SoleilOrbit /> },
-
-  /* ── Solar System variants ── */
-  { id: "solar-concentric", label: "Solar System — Concentric Orbits", component: <SolarSystemConcentric /> },
-  { id: "solar-spiral", label: "Solar System — Spiral Dance", component: <SolarSystemSpiral /> },
-  { id: "solar-hexagonal", label: "Solar System — Honeycomb Drift", component: <SolarSystemHexagonal /> },
-  { id: "solar-radiant", label: "Solar System — Radiant Crown", component: <SolarSystemRadiant /> },
-  { id: "solar-zodiac", label: "Solar System — Zodiac Wheel", component: <SolarSystemZodiac /> },
+  { id: "soleil-yoyo", label: "Soleil Aubergine — Yo-Yo Float", component: <SoleilYoyo /> },
+  { id: "soleil-scale", label: "Soleil Aubergine — Scale Grow", component: <SoleilScaleGrow /> },
 ];
 
 export default function AnimationsTestPage() {
