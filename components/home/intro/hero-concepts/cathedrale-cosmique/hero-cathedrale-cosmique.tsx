@@ -72,10 +72,7 @@ export function HeroCathedralCosmique() {
             sizeClass="h-48 w-48"
             className="mt-6"
             preset="cathedrale-gold"
-            glow={{
-              size: "500px",
-              gradient: "radial-gradient(ellipse, rgba(218,165,32,0.07) 0%, transparent 65%)",
-            }}
+            glowPreset="gold-cathedral"
           />
           <h1 className="mt-8 font-mono text-48 uppercase leading-tight text-[#f5e6c0] md:text-72">
             {COPY.titleLine1}<br /><span className="text-[#ffd700]">{COPY.titleLine2}</span>

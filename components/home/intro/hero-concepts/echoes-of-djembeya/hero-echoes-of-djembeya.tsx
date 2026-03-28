@@ -94,10 +94,7 @@ export function HeroEchoesOfDjembeya() {
             sizeClass="h-52 w-52"
             preset="warm-gold-sepia"
             float
-            glow={{
-              gradient: "radial-gradient(circle, rgba(240,192,64,0.08) 0%, transparent 60%)",
-              size: "calc(100% + 8rem)",
-            }}
+            glowPreset="gold-soft"
           />
         </div>
         <h1 className="font-mono text-48 uppercase text-[#f5e6c0] md:text-72">

@@ -41,10 +41,7 @@ export function HeroSacredAscensionGold() {
               sizeClass="h-48 w-48"
               preset="warm-gold-sepia"
               float
-              glow={{
-                size: "500px",
-                gradient: "radial-gradient(circle, rgba(218,165,32,0.12) 0%, rgba(240,192,64,0.05) 40%, transparent 70%)",
-              }}
+              glowPreset="gold-wide"
             />
             {/* Halo rings — gold */}
             <div className="absolute -inset-8 rounded-full" style={{ border: `1px solid rgba(218,165,32,0.15)` }} />

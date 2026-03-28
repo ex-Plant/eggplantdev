@@ -18,7 +18,7 @@ export const EGGPLANT_PRESETS = {
   "amber-sepia": "sepia(0.3) saturate(1.4)",
   "glam-gold": "sepia(0.15) saturate(1.6) brightness(1.05)",
   "cathedrale-gold": "sepia(0.3) saturate(1.6) brightness(0.9) hue-rotate(-10deg)",
-  "soleil-gold": "sepia(0.3) saturate(1.6) hue-rotate(-10deg) brightness(1.15)",
+  "soleil-gold": "sepia(0.3) saturate(1.6) hue-rotate(-10deg) brightness(1.15) drop-shadow(0 0 40px rgba(255,215,0,0.4))",
   "chrome-silver": "sepia(1) saturate(0.5) drop-shadow(0 0 40px rgba(218,165,32,0.3))",
   "ritual-gold": "sepia(0.45) saturate(2.2) brightness(0.95) drop-shadow(0 0 20px rgba(218,165,32,0.25))",
   "eclipse-gold": "sepia(0.5) saturate(2.5) brightness(0.7) drop-shadow(0 0 40px rgba(218,165,32,0.4)) drop-shadow(0 0 80px rgba(200,134,14,0.2))",
@@ -26,9 +26,22 @@ export const EGGPLANT_PRESETS = {
   "gold-desat-glow": "saturate(0.5) sepia(1) drop-shadow(0 0 40px rgba(218,165,32,0.3))",
   "cyan-glow": "saturate(0.7) sepia(0.2) drop-shadow(0 0 30px rgba(0,229,255,0.25))",
   "sepia-hue15": "sepia(1) saturate(0.5) hue-rotate(15deg) drop-shadow(0 0 50px rgba(218,165,32,0.35))",
+  "cosmic-gold": "saturate(0.15) brightness(1.4) contrast(0.9)",
 } as const;
 
 export type EggplantPresetT = keyof typeof EGGPLANT_PRESETS;
+
+export const GLOW_PRESETS = {
+  "gold": { gradient: "radial-gradient(circle, rgba(255,215,0,0.15) 0%, rgba(218,165,32,0.08) 40%, transparent 70%)" },
+  "gold-soft": { gradient: "radial-gradient(circle, rgba(240,192,64,0.08) 0%, transparent 60%)", size: "calc(100% + 8rem)" },
+  "gold-wide": { gradient: "radial-gradient(circle, rgba(218,165,32,0.12) 0%, rgba(240,192,64,0.05) 40%, transparent 70%)", size: "500px" },
+  "gold-ellipse": { gradient: "radial-gradient(ellipse, rgba(218,165,32,0.1) 0%, rgba(255,215,0,0.03) 40%, transparent 70%)", size: "420px" },
+  "gold-subtle": { gradient: "radial-gradient(ellipse, rgba(240,192,64,0.06) 0%, transparent 70%)", size: "300px" },
+  "gold-cathedral": { gradient: "radial-gradient(ellipse, rgba(218,165,32,0.07) 0%, transparent 65%)", size: "500px" },
+  "gold-pink": { gradient: "radial-gradient(circle, rgba(218,165,32,0.1) 0%, rgba(255,20,147,0.04) 50%, transparent 70%)", size: "350px" },
+} as const;
+
+export type GlowPresetT = keyof typeof GLOW_PRESETS;
 
 type GlowT = {
   /** Size of the glow div (default: "400px") */
@@ -58,7 +71,9 @@ type EggplantImagePropsT = {
   floatY?: number;
   /** Yoyo duration in seconds */
   floatDuration?: number;
-  /** Radial gradient glow behind the eggplant */
+  /** Named glow preset — overridden by explicit `glow` prop */
+  glowPreset?: GlowPresetT;
+  /** Radial gradient glow behind the eggplant — overrides glowPreset */
   glow?: GlowT;
   /** next/image priority flag */
   priority?: boolean;
@@ -79,6 +94,7 @@ export function EggplantImage({
   float = false,
   floatY,
   floatDuration,
+  glowPreset,
   glow,
   priority,
   quality = 100,
@@ -89,6 +105,7 @@ export function EggplantImage({
   useYoyo({ y: floatY, duration: floatDuration, disabled: !float, ref: imgRef });
 
   const resolvedFilter = filter ?? (preset ? EGGPLANT_PRESETS[preset] : undefined);
+  const resolvedGlow = glow ?? (glowPreset ? GLOW_PRESETS[glowPreset] : undefined);
   const imgStyle: CSSProperties = {
     ...style,
     ...(resolvedFilter ? { filter: resolvedFilter } : {}),
@@ -96,13 +113,13 @@ export function EggplantImage({
 
   return (
     <div className="relative">
-      {glow && (
+      {resolvedGlow && (
         <div
           className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
-            width: glow.size ?? "400px",
-            height: glow.size ?? "400px",
-            background: glow.gradient,
+            width: resolvedGlow.size ?? "400px",
+            height: resolvedGlow.size ?? "400px",
+            background: resolvedGlow.gradient,
           }}
         />
       )}

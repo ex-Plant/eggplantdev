@@ -85,10 +85,7 @@ export function HeroCelestialAltar() {
           sizeClass="h-48 w-48"
           preset="soft-gold"
           float
-          glow={{
-            size: "300px",
-            gradient: "radial-gradient(ellipse, rgba(240,192,64,0.06) 0%, transparent 70%)",
-          }}
+          glowPreset="gold-subtle"
         />
         <h1 className="mt-8 font-mono text-48 uppercase text-[#f5e6c0] md:text-64">
           {COPY.titleLine1}<br /><span className="text-[#daa520]">{COPY.titleLine2}</span>

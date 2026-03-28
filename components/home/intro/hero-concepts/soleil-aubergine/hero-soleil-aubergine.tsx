@@ -10,7 +10,6 @@ import {
   RAYS,
   ZIGZAG_POINTS,
   CORNERS,
-  EGGPLANT,
   COPY,
   SVG_CENTER,
   SVG_VIEWBOX,
@@ -105,13 +104,7 @@ export function HeroSoleilAubergine({ variant = "default" }: { variant?: Variant
           {/* Central content */}
           <div className="relative z-10 flex flex-col items-center gap-6 text-center">
             {/* Eggplant with golden sun glow */}
-            <EggplantImage
-              float
-              filter={`${EGGPLANT.filter} drop-shadow(0 0 40px ${palette.gold}66)`}
-              glow={{
-                gradient: `radial-gradient(circle, ${palette.gold}26 0%, ${palette.darkGold}14 40%, transparent 70%)`,
-              }}
-            />
+            <EggplantImage float preset="soleil-gold" glowPreset="gold" />
 
             {/* Typography */}
             <p className="font-mono text-xs tracking-[0.5em] uppercase" style={{ color: `${palette.gold}59` }}>

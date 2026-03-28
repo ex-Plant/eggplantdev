@@ -82,10 +82,7 @@ export function HeroReliquaryDor() {
           className="mt-6"
           preset="rich-gold"
           float
-          glow={{
-            size: "420px",
-            gradient: "radial-gradient(ellipse, rgba(218,165,32,0.1) 0%, rgba(255,215,0,0.03) 40%, transparent 70%)",
-          }}
+          glowPreset="gold-ellipse"
         />
 
         <h1 className="mt-8 font-mono text-48 uppercase leading-tight text-[#ffd700] md:text-72">

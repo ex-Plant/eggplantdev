@@ -10,7 +10,7 @@ export type CosmicPaletteT = {
   nebulaB: string;
   nebulaC: string;
   bgColor: string;
-  eggplantFilter: string;
+  eggplantPreset: "natural" | "cosmic-gold";
 };
 
 export const PALETTE: CosmicPaletteT = {
@@ -20,7 +20,7 @@ export const PALETTE: CosmicPaletteT = {
   nebulaB: "rgba(16,255,170,0.06)",
   nebulaC: "rgba(217,70,239,0.08)",
   bgColor: "#030108",
-  eggplantFilter: "none",
+  eggplantPreset: "natural",
 } as const;
 
 export const PALETTE_GOLD: CosmicPaletteT = {
@@ -30,7 +30,7 @@ export const PALETTE_GOLD: CosmicPaletteT = {
   nebulaB: "rgba(200,134,14,0.06)",
   nebulaC: "rgba(240,192,64,0.06)",
   bgColor: "#0c0a08",
-  eggplantFilter: "saturate(0.15) brightness(1.4) contrast(0.9)",
+  eggplantPreset: "cosmic-gold",
 } as const;
 
 /* ── Nebula clouds ── */

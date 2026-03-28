@@ -61,10 +61,7 @@ export function HeroGlamCosmicBillboard() {
             sizeClass="h-56 w-56"
             preset="glam-gold"
             float
-            glow={{
-              size: "350px",
-              gradient: "radial-gradient(circle, rgba(218,165,32,0.1) 0%, rgba(255,20,147,0.04) 50%, transparent 70%)",
-            }}
+            glowPreset="gold-pink"
           />
         </div>
       </div>
