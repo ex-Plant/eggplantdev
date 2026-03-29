@@ -1,5 +1,5 @@
 /* Agent: Codex — Drifting Monument (moved from hero-codex-concepts) */
-import { HeroConcept, teaserText } from "@/components/home/intro/hero-codex-concepts/shared";
+import { HeroConcept, teaserText } from "@/components/test/hero-codex-concepts/shared";
 
 type PropsT = { txt: string };
 

@@ -3,8 +3,8 @@
 "use client";
 
 import { EggplantImage } from "@/components/general/eggplant-image";
-import { HeroDescription } from "@/components/home/intro/hero-concepts/hero-description";
-import { HeroTitle } from "@/components/home/intro/hero-concepts/hero-title";
+import { HeroDescription } from "@/components/home/hero-description";
+import { HeroTitle } from "@/components/home/hero-title";
 import {
   ALL_POINTS,
   INNER_R,

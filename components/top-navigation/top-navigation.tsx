@@ -51,7 +51,7 @@ export function TopNavigation() {
       {isDesktop && (
         <div className="pointer-events-none fixed top-0 right-0 left-0 z-99998">
           <div className="fest-container flex w-full items-start justify-end">
-            <div ref={menuRef} className="pointer-events-auto relative mt-[60px] flex flex-col items-end">
+            <div ref={menuRef} className="pointer-events-auto relative mt-[60px] flex w-[300px] flex-col items-end">
               <SnakeBorder
                 isVisible={isOpen}
                 borderRadius={6}
@@ -75,7 +75,7 @@ export function TopNavigation() {
                   className="p-[2px]"
                 >
                   <div className={`bg-bgc rounded-md`}>
-                    <div className="grit max-w-[300px] grid-cols-1 p-5">
+                    <div className="grit grid-cols-1 p-5">
                       <AccessibilityMenu className="uppercase" />
                       <RoundedSeparator className="my-4" />
                       <p className="text-lightgray scalable pb-4 text-[0.75rem] text-balance">{t("animationNotice")}</p>

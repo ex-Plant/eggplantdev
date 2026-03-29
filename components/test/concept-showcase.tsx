@@ -6,10 +6,12 @@ import { Suspense, type ReactNode } from "react";
 
 const ACCENTS = {
   fuchsia: {
+    title: "text-white",
     index: "text-fuchsia-500",
     border: "border-white/10",
   },
   gold: {
+    title: "text-gold/80",
     index: "text-gold/50",
     border: "border-gold/10",
   },
@@ -34,17 +36,13 @@ export function ConceptShowcase({
   accent = "fuchsia",
   children,
 }: ConceptShowcasePropsT) {
-  const noun = count === 1 ? "concept" : "concepts";
-  const sub = subtitle ?? `${count} ${noun}.`;
+  const colors = ACCENTS[accent];
+  const sub = subtitle ?? `${count} ${count === 1 ? "concept" : "concepts"}.`;
 
   return (
     <div className="bg-bgc min-h-screen text-white">
       <div className="fest-container py-16">
-        <h1
-          className={`text-40 md:text-64 mb-4 font-mono uppercase ${
-            accent === "gold" ? "text-gold/80" : "text-white"
-          }`}
-        >
+        <h1 className={`text-40 md:text-64 mb-4 font-mono uppercase ${colors.title}`}>
           {title}
         </h1>
         <p className="text-20 mb-8 text-lightgray">{sub}</p>

@@ -7,7 +7,7 @@ const TEST_PAGES = [
 ];
 
 export function DevTestNav() {
-  // if (process.env.NODE_ENV !== "development") return null;
+  if (process.env.NODE_ENV !== "development") return null;
 
   return (
     <div className="rigth-0 fixed top-0 right-0 left-0 z-999 mx-auto flex w-fit justify-center gap-3 bg-yellow-500/90 px-3 py-1 text-xs font-bold text-black">

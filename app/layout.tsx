@@ -44,12 +44,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <TopNavigation />
             <SmoothScroll>
               <main id="main-content z-201">{children}</main>
-              {/* <div className={cn(`flex w-full justify-center pb-20`)}> */}
-              {/* <EggplantLogo /> */}
-              {/* </div> */}
               <Footer />
             </SmoothScroll>
-            {/* TODO: auto-open animation drawer on first visit */}
           </DebugWrapper>
         </TranslationsProvider>
         <Analytics />

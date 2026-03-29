@@ -4,8 +4,8 @@
 
 import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
-import { HeroDescription } from "@/components/home/intro/hero-concepts/hero-description";
-import { HeroTitle } from "@/components/home/intro/hero-concepts/hero-title";
+import { HeroDescription } from "@/components/home/hero-description";
+import { HeroTitle } from "@/components/home/hero-title";
 import styles from "./soleil-aubergine.module.css";
 import {
   STARS,
@@ -141,7 +141,6 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
               floatMode="tumble"
               // floatMode="orbital"
               // floatMode="jelly"
-              float
               preset="warm-gold-glow"
               glowPreset="gold"
             />

@@ -27,7 +27,7 @@ export function HeroCosmicAubergine({ palette }: CosmicPropsT = {}) {
 }
 
 /** Golden palette variant with silver/desaturated eggplant */
-export function HeroCosmicAubergineGold() {
+export function SectionCosmicAubergineGold() {
   return <HeroCosmicAubergine palette={PALETTE_GOLD} />;
 }
 

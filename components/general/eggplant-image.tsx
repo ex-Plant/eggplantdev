@@ -43,6 +43,7 @@ export const GLOW_PRESETS = {
   "gold-subtle": { gradient: "radial-gradient(ellipse, rgba(240,192,64,0.06) 0%, transparent 70%)", size: "300px" },
   "gold-cathedral": { gradient: "radial-gradient(ellipse, rgba(218,165,32,0.07) 0%, transparent 65%)", size: "500px" },
   "gold-pink": { gradient: "radial-gradient(circle, rgba(218,165,32,0.1) 0%, rgba(255,20,147,0.04) 50%, transparent 70%)", size: "350px" },
+  "fuchsia": { gradient: "radial-gradient(circle, oklch(from var(--color-glow-fuchsia) l c h / 18%) 0%, oklch(from var(--color-glow-fuchsia) l c h / 8%) 30%, transparent 60%)", size: "100%" },
 } as const;
 
 export type GlowPresetT = keyof typeof GLOW_PRESETS;
@@ -99,7 +100,7 @@ export function EggplantImage({
   preset,
   filter,
   style,
-  float = false,
+  float = true,
   floatY,
   floatDuration,
   floatMode,

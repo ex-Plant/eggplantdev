@@ -4,8 +4,8 @@
 
 import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
-import { HeroTitle } from "@/components/home/intro/hero-concepts/hero-title";
-import { HeroDescription } from "@/components/home/intro/hero-concepts/hero-description";
+import { HeroTitle } from "@/components/home/hero-title";
+import { HeroDescription } from "@/components/home/hero-description";
 import {
   SVG_CENTER,
   METATRON_CIRCLES,
@@ -37,7 +37,6 @@ export function HeroEggplantsInSpace() {
             <EggplantImage
               sizeClass="h-48 w-48"
               preset="golden-metallic"
-              float
               /* Zero-gravity modes: "tumble" | "jelly" | "orbital" */
               floatMode="tumble"
               glowPreset="gold"

@@ -13,7 +13,7 @@ type HeroEntryT = {
 
 function lazyHero(path: string, exportName: string) {
   return lazy(() =>
-    import(/* webpackMode: "lazy" */ `@/components/home/intro/hero-concepts/${path}`).then((m) => ({
+    import(/* webpackMode: "lazy" */ `@/components/test/hero-concepts/${path}`).then((m) => ({
       default: m[exportName],
     })),
   );

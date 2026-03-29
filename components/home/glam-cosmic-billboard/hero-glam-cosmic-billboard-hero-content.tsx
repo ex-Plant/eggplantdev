@@ -1,5 +1,5 @@
 import { EggplantImage } from "@/components/general/eggplant-image";
-import { HeroDescription } from "@/components/home/intro/hero-concepts/hero-description";
+import { HeroDescription } from "@/components/home/hero-description";
 import { COPY } from "./config";
 
 export function GlamTextAndImage() {

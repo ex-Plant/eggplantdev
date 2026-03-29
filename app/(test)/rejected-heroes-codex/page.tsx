@@ -1,21 +1,19 @@
 "use client";
 /* Rejected Codex hero concepts — archived for reference */
 
-import { lazy, type ReactNode } from "react";
+import { lazy, Fragment } from "react";
 import { ConceptShowcase, ShowcaseItem } from "@/components/test/concept-showcase";
-import { useLocalizedData } from "@/hooks/use-localized-data";
 
 type HeroEntryT = {
   id: string;
   label: string;
-  Component: React.LazyExoticComponent<React.ComponentType<{ txt?: string }>>;
-  needsTxt?: boolean;
+  Component: React.LazyExoticComponent<React.ComponentType>;
   group?: string;
 };
 
 function lazyCodex(path: string, exportName: string) {
   return lazy(() =>
-    import(/* webpackMode: "lazy" */ `@/components/home/intro/hero-codex-concepts/${path}`).then((m) => ({
+    import(/* webpackMode: "lazy" */ `@/components/test/hero-codex-concepts/${path}`).then((m) => ({
       default: m[exportName],
     })),
   );
@@ -61,23 +59,21 @@ function V2Divider() {
 const V2_START = REGISTRY.findIndex((h) => h.group === "v2");
 
 export default function RejectedHeroesCodexPage() {
-  const { introTxt = "" } = useLocalizedData("home");
-
   return (
     <ConceptShowcase title="Rejected Heroes — Codex" count={REGISTRY.length} accent="gold">
-      {REGISTRY.map(({ id, label, Component, needsTxt }, i) => {
+      {REGISTRY.map(({ id, label, Component }, i) => {
         const item = (
           <ShowcaseItem key={id} index={i} label={label} accent="gold" lazy className="min-h-screen">
-            <Component {...(needsTxt ? { txt: introTxt } : {})} />
+            <Component />
           </ShowcaseItem>
         );
 
         if (i === V2_START) {
           return (
-            <div key={id}>
+            <Fragment key={id}>
               <V2Divider />
               {item}
-            </div>
+            </Fragment>
           );
         }
 
