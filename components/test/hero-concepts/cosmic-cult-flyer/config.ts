@@ -2,13 +2,13 @@
    Cosmic Cult Flyer — Hero Configuration
    ═══════════════════════════════════════════════ */
 
-/* ── Palette ── */
+/* ── Palette (CSS custom properties for SVG attributes) ── */
 export const PALETTE = {
-  gold: "#daa520",
-  softGold: "#f0c040",
-  darkGold: "#c8860e",
-  cream: "#f5e6c0",
-  warmCaption: "#c8b080",
+  gold: "var(--color-gold)",
+  softGold: "var(--color-gold-warm)",
+  darkGold: "var(--color-gold-dark)",
+  cream: "var(--color-gold-cream)",
+  warmCaption: "var(--color-gold-caption)",
   bgColor: "#0a0806",
 } as const;
 
@@ -68,11 +68,21 @@ export const BORDERS = {
 /* ── Grain overlay SVG data URI ── */
 export const GRAIN_BG_IMAGE = "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")";
 
-/* ── Eggplant treatment ── */
-export const EGGPLANT = {
-  src: "/logos/eggplant-logo-smooth.apng",
-  filter: "sepia(0.2) saturate(1.3)",
-} as const;
+/* ── Burst dot positions — inner ring × major ray intersections ── */
+const INNER_RING_RADII = [80, 120] as const;
+const MAJOR_RAY_ANGLES = [0, 6, 12, 18, 24, 30].map((i) => (Math.PI * 2 * i) / RAY_COUNT);
+const BURST_DELAYS = [0, 21, 7, 28, 14, 35, 3.5, 24.5, 10.5, 31.5, 17.5, 38.5];
+const round = (v: number) => Math.round(v * 100) / 100;
+
+export const BURST_POINTS = INNER_RING_RADII.flatMap((r, ri) =>
+  MAJOR_RAY_ANGLES.map((a, ai) => ({
+    pos: [
+      round(SVG_CENTER.x + r * Math.cos(a)),
+      round(SVG_CENTER.y + r * Math.sin(a)),
+    ] as const,
+    delay: BURST_DELAYS[ri * 6 + ai],
+  })),
+);
 
 /* ── Typography / Copy ── */
 export const COPY = {
@@ -82,8 +92,6 @@ export const COPY = {
   titleLine3: "Flyer",
   description:
     "You have been chosen. The eggplant sees all. Bring your offerings of TypeScript and deploy with devotion. Meetings are held at every sprint retrospective.",
-  buttons: [
-    { label: "Join the Order", borderColor: `${PALETTE.gold}/25`, textColor: `${PALETTE.gold}/50` },
-    { label: "Read the Scrolls", borderColor: `${PALETTE.darkGold}/20`, textColor: `${PALETTE.darkGold}/40` },
-  ],
+  buttonPrimary: "Join the Order",
+  buttonSecondary: "Read the Scrolls",
 } as const;

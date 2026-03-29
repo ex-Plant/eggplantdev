@@ -5,17 +5,13 @@
 const SVG_CENTER = { x: 600, y: 400 } as const;
 const SVG_VIEWBOX = "0 0 1200 800" as const;
 
-/* ── Palette ── */
+/* ── Palette (CSS vars from globals.css) ── */
 export const PALETTE = {
-  gold: "#ffd700",
-  darkGold: "#daa520",
-  darkBrown: "#c8860e",
-  cyan: "#00e5ff",
-  mint: "#10ffaa",
-  magenta: "#d946ef",
-  cream: "#f5e6c0",
-  caption: "#c8b080",
-  bgColor: "#080610",
+  gold: "var(--color-gold)",
+  darkGold: "var(--color-gold)",
+  darkBrown: "var(--color-gold-dark)",
+  cream: "var(--color-gold-cream)",
+  caption: "var(--color-gold-caption)",
 } as const;
 
 /* ── Hex geometry ── */
@@ -54,22 +50,23 @@ HEX_CENTERS.forEach(([cx, cy]) => {
 });
 export const VERTEX_LIST = [...VERTICES.values()];
 
-/* ── Stars ── */
-export const STARS: readonly [number, number][] = Array.from({ length: 55 }, (_, i) => [
-  (7 + i * 17.3) % 100,
-  (3 + i * 13.7) % 100,
-]);
+/* ── Stars (pre-computed for shared StarField component) ── */
+const STAR_COUNT = 55;
+const STAR_COLORS = [PALETTE.gold, PALETTE.darkGold, PALETTE.cream] as const;
+
+export const STARS = Array.from({ length: STAR_COUNT }, (_, i) => ({
+  x: `${(7 + i * 17.3) % 100}%`,
+  y: `${(3 + i * 13.7) % 100}%`,
+  size: i % 7 === 0 ? 2.5 : 1.5,
+  opacity: 0.1 + (i % 6) * 0.04,
+  color: i % 3 === 0 ? STAR_COLORS[0] : i % 5 === 0 ? STAR_COLORS[1] : STAR_COLORS[2],
+}));
 
 /* ── Radial lines ── */
 export const RADIAL_LINES = Array.from({ length: 6 }, (_, i) => {
   const a = (Math.PI / 3) * i;
   return `M${SVG_CENTER.x},${SVG_CENTER.y} L${SVG_CENTER.x + 380 * Math.cos(a)},${SVG_CENTER.y + 380 * Math.sin(a)}`;
 });
-
-/* ── Eggplant treatment ── */
-export const EGGPLANT = {
-  src: "/logos/eggplant-logo-smooth.apng",
-} as const;
 
 /* ── Typography ── */
 export const COPY = {
@@ -79,6 +76,20 @@ export const COPY = {
   description:
     "An eggplant rests at the nucleus of an infinite crystal lattice, resonating through every vertex of the cosmic honeycomb.",
 } as const;
+
+/* ── Burst dots — intersection points near center with shuffled delays ── */
+export const BURST_POINTS = [
+  { pos: HEX_CENTERS[0], delay: 2 },
+  { pos: HEX_CENTERS[1], delay: 8 },
+  { pos: HEX_CENTERS[2], delay: 18 },
+  { pos: HEX_CENTERS[3], delay: 28 },
+  { pos: HEX_CENTERS[4], delay: 12 },
+  { pos: HEX_CENTERS[5], delay: 34 },
+  { pos: HEX_CENTERS[6], delay: 22 },
+  { pos: VERTEX_LIST[0], delay: 5 },
+  { pos: VERTEX_LIST[3], delay: 15 },
+  { pos: VERTEX_LIST[6], delay: 26 },
+] as const;
 
 /* ── SVG shared ── */
 export { SVG_CENTER, SVG_VIEWBOX };
