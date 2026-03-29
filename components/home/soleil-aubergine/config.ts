@@ -29,7 +29,7 @@ export const RAY_PULSE_TRAVEL = "18vw"; // dies before ray tips
 export const RAYS = Array.from({ length: RAY_COUNT }, (_, i) => {
   const angle = (i * RAY_ANGLE_STEP * Math.PI) / 180;
   const isLong = i % 2 === 0;
-  const len = isLong ? 340 : 220;
+  const len = isLong ? 480 : 320;
   const round = (v: number) => Math.round(v * 100) / 100;
   return {
     angleDeg: i * RAY_ANGLE_STEP,
@@ -46,6 +46,9 @@ export const RAYS = Array.from({ length: RAY_COUNT }, (_, i) => {
 
 /* ── Corona rings ── */
 export const CORONA_RINGS = [
+  { r: 350, stroke: "var(--color-gold)", strokeWidth: 1, opacity: 0.05 },
+  { r: 260, stroke: "var(--color-gold-dark)", strokeWidth: 1.1, opacity: 0.06 },
+  { r: 200, stroke: "var(--color-gold-warm)", strokeWidth: 1.2, opacity: 0.08 },
   { r: 150, stroke: "var(--color-gold)", strokeWidth: 1.5, opacity: 0.18 },
   { r: 120, stroke: "var(--color-gold-dark)", strokeWidth: 1, opacity: 0.14 },
   { r: 90, stroke: "var(--color-gold-warm)", strokeWidth: 0.8, opacity: 0.1 },
@@ -62,10 +65,10 @@ export const ZIGZAG_POINTS = Array.from({ length: ZIGZAG_SEGMENTS }, (_, i) => {
 }).join(" ");
 
 /* ── Art deco corner brackets ── */
-const INSET = 40;
+const INSET = 30;
 const INNER_INSET = 50;
-const ARM_LEN = 80;
-const INNER_ARM_LEN = 50;
+const ARM_LEN = 140;
+const INNER_ARM_LEN = 90;
 
 type CornerT = {
   primary: string;

@@ -35,9 +35,9 @@ export const SimpleSection = ({ id, titleLine, text, paragraphs, buttons, classN
         {buttons?.length ? (
           <div className="flex flex-wrap gap-3 pt-10 lg:pt-14">
             {buttons.map((button) => (
-              <Link key={button.href + button.label} href={button.href}>
-                <Button className="font-mono uppercase">{button.label}</Button>
-              </Link>
+              <Button key={button.href + button.label} asChild className="font-mono uppercase">
+                <Link href={button.href}>{button.label}</Link>
+              </Button>
             ))}
           </div>
         ) : null}

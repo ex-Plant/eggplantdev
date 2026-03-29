@@ -13,7 +13,7 @@ export function HeroCosmicCultFlyer() {
     <EggplantRadialWrapper>
       <div
         id="hero-cosmic-cult-flyer"
-        className="relative flex min-h-screen items-center justify-center overflow-hidden"
+        className="relative flex min-h-screen items-center justify-center overflow-x-hidden py-16 md:py-20"
       >
         <CosmicCultFlyerSacredGeometry />
         <RadialGlow />

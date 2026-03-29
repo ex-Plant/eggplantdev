@@ -13,7 +13,7 @@ export function HeroEggplantsInSpace() {
     <EggplantRadialWrapper>
       <div
         id="hero-eggplants-in-space"
-        className="relative flex min-h-screen items-center justify-center overflow-hidden"
+        className="relative flex min-h-screen items-center justify-center overflow-x-hidden py-16 md:py-20"
       >
         <EggplantsInSpaceSacredGeometry />
         <RadialGlow />

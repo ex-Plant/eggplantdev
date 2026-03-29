@@ -13,7 +13,7 @@ import { RadialGlow } from "@/components/animations/radial-glow";
 export function HeroSoleilAubergine() {
   return (
     <EggplantRadialWrapper>
-      <div className="relative flex min-h-screen items-center justify-center py-20">
+      <div id="hero-soleil-aubergine" className="relative flex min-h-screen items-center justify-center py-20">
         <StarField stars={STARS} />
         <SoleilSacredGeometry />
         <SoleilGlowAnimations />

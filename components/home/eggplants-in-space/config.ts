@@ -26,7 +26,16 @@ export const OUTER_CIRCLES_GOLD = [
   { r: 200, stroke: "var(--color-gold-warm)", strokeWidth: 0.3, opacity: 0.1, dasharray: "8 12" as string | undefined },
   { r: 300, stroke: "var(--color-gold-dark)", strokeWidth: 0.3, opacity: 0.06, dasharray: "4 16" as string | undefined },
   { r: 380, stroke: "var(--color-gold)", strokeWidth: 0.2, opacity: 0.04, dasharray: undefined },
+  { r: 450, stroke: "var(--color-gold-dark)", strokeWidth: 0.28, opacity: 0.05, dasharray: "8 18" as string | undefined },
+  { r: 520, stroke: "var(--color-gold-warm)", strokeWidth: 0.24, opacity: 0.04, dasharray: "5 20" as string | undefined },
 ] as const;
+export const RADIAL_GUIDES = Array.from({ length: 6 }, (_, i) => {
+  const angle = (Math.PI / 3) * i - Math.PI / 2;
+  return {
+    x2: SVG_CENTER.x + Math.cos(angle) * 500,
+    y2: SVG_CENTER.y + Math.sin(angle) * 500,
+  };
+});
 
 /* ── Burst dot positions at circle intersections — shuffled delays ── */
 export const BURST_POINTS = [

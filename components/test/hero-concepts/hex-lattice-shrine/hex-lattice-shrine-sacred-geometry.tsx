@@ -6,6 +6,7 @@ import {
   HEX_CENTERS,
   VERTEX_LIST,
   RADIAL_LINES,
+  OUTER_DASHED_CIRCLE,
   SVG_CENTER,
   SVG_VIEWBOX,
   BURST_POINTS,
@@ -59,6 +60,16 @@ export function HexLatticeSacredGeometry() {
         stroke={"var(--color-gold-dark)"}
         strokeWidth="0.3"
         opacity="0.06"
+      />
+      <circle
+        cx={SVG_CENTER.x}
+        cy={SVG_CENTER.y}
+        r={OUTER_DASHED_CIRCLE.r}
+        fill="none"
+        stroke={"var(--color-gold)"}
+        strokeWidth="0.35"
+        opacity="0.05"
+        strokeDasharray={OUTER_DASHED_CIRCLE.dasharray}
       />
 
       <CentralStar cx={600} cy={400} />

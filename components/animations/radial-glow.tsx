@@ -8,7 +8,7 @@ export function RadialGlow() {
     <>
       {/* Large ambient radial glow */}
       <div
-        className="pointer-events-none absolute top-1/2 left-1/2 size-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full"
+        className="pointer-events-none absolute top-1/2 left-1/2 size-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full lg:size-[40rem] xl:size-[50rem]"
         style={{
           backgroundImage:
             "radial-gradient(circle, color-mix(in srgb, var(--color-gold) 12%, transparent) 0%, color-mix(in srgb, var(--color-gold-dark) 5%, transparent) 40%, transparent 70%)",

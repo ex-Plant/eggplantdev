@@ -1,4 +1,4 @@
-import { ALL_POINTS, INNER_R, CONTAINMENT, SACRED_SYMBOLS } from "./config";
+import { ALL_POINTS, INNER_R, CONTAINMENT, SACRED_SYMBOLS, CENTER, OUTER_DASHED_CIRCLES, RADIAL_GUIDES, CORNER_BRACKETS } from "./config";
 
 const STROKES = ["var(--color-gold)", "var(--color-gold-dark)", "var(--color-gold-warm)"] as const;
 
@@ -52,6 +52,37 @@ export function MetatronsSacredGeometry() {
         opacity="0.06"
         strokeDasharray={CONTAINMENT.dasharray}
       />
+      {OUTER_DASHED_CIRCLES.map((circle) => (
+        <circle
+          key={circle.r}
+          cx={CENTER[0]}
+          cy={CENTER[1]}
+          r={circle.r}
+          fill="none"
+          stroke={circle.stroke}
+          strokeWidth="0.35"
+          opacity={circle.opacity}
+          strokeDasharray={circle.dasharray}
+        />
+      ))}
+      {RADIAL_GUIDES.map(({ x2, y2 }, i) => (
+        <line
+          key={`guide-${i}`}
+          x1={CENTER[0]}
+          y1={CENTER[1]}
+          x2={x2}
+          y2={y2}
+          stroke={STROKES[i % STROKES.length]}
+          strokeWidth="0.45"
+          opacity="0.08"
+        />
+      ))}
+      {CORNER_BRACKETS.map(({ x, y, dx, dy }, i) => (
+        <g key={`corner-${i}`} opacity="0.08" stroke={STROKES[i % STROKES.length]} fill="none">
+          <path d={`M${x},${y} L${x + dx * 120},${y} M${x},${y} L${x},${y + dy * 120}`} strokeWidth="0.7" />
+          <path d={`M${x + dx * 12},${y + dy * 12} L${x + dx * 72},${y + dy * 12} M${x + dx * 12},${y + dy * 12} L${x + dx * 12},${y + dy * 72}`} strokeWidth="0.45" />
+        </g>
+      ))}
       {/* Scattered sacred symbols */}
       <polygon
         points={SACRED_SYMBOLS.triangleTop.points}

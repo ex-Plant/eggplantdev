@@ -56,8 +56,9 @@ export const STARS = Array.from({ length: STAR_COUNT }, (_, i) => ({
 /* ── Radial lines ── */
 export const RADIAL_LINES = Array.from({ length: 6 }, (_, i) => {
   const a = (Math.PI / 3) * i;
-  return `M${SVG_CENTER.x},${SVG_CENTER.y} L${SVG_CENTER.x + 380 * Math.cos(a)},${SVG_CENTER.y + 380 * Math.sin(a)}`;
+  return `M${SVG_CENTER.x},${SVG_CENTER.y} L${SVG_CENTER.x + 500 * Math.cos(a)},${SVG_CENTER.y + 500 * Math.sin(a)}`;
 });
+export const OUTER_DASHED_CIRCLE = { r: 450, dasharray: "8 18" } as const;
 
 /* ── Typography ── */
 export const COPY = {

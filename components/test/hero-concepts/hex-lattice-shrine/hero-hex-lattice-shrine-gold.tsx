@@ -14,7 +14,7 @@ export function HeroHexLatticeShrineGold() {
     <EggplantRadialWrapper>
       <div
         id="hero-hex-lattice-shrine-gold"
-        className="relative flex min-h-screen items-center justify-center overflow-hidden"
+        className="relative flex min-h-screen items-center justify-center overflow-x-hidden py-16 md:py-20"
       >
         <StarField stars={STARS} />
         <HexLatticeSacredGeometry />

@@ -1,6 +1,6 @@
 /* Agent: Claude — Eggplants in Space / Sacred Geometry SVG */
 
-import { SVG_CENTER, METATRON_CIRCLES, METATRON_CIRCLE_R, METATRON_LINES, OUTER_CIRCLES_GOLD, BURST_POINTS } from "./config";
+import { SVG_CENTER, METATRON_CIRCLES, METATRON_CIRCLE_R, METATRON_LINES, OUTER_CIRCLES_GOLD, BURST_POINTS, RADIAL_GUIDES } from "./config";
 import { BurstDots } from "@/components/animations/burst-dots";
 import { CentralStar } from "@/components/animations/central-star";
 
@@ -24,7 +24,7 @@ export function EggplantsInSpaceSacredGeometry() {
         />
       ))}
       {METATRON_LINES.map((d, i) => (
-        <path key={`line-${i}`} d={d} fill="none" stroke="var(--color-gold-warm)" strokeWidth="0.5" opacity="0.1" />
+        <path key={`line-${i}`} d={d} fill="none" stroke="var(--color-gold-warm)" strokeWidth="0.7" opacity="0.12" />
       ))}
       {OUTER_CIRCLES_GOLD.map((circle) => (
         <circle
@@ -37,6 +37,18 @@ export function EggplantsInSpaceSacredGeometry() {
           strokeWidth={circle.strokeWidth}
           opacity={circle.opacity}
           strokeDasharray={circle.dasharray}
+        />
+      ))}
+      {RADIAL_GUIDES.map(({ x2, y2 }, i) => (
+        <line
+          key={`guide-${i}`}
+          x1={SVG_CENTER.x}
+          y1={SVG_CENTER.y}
+          x2={x2}
+          y2={y2}
+          stroke={i % 2 === 0 ? "var(--color-gold)" : "var(--color-gold-dark)"}
+          strokeWidth="0.35"
+          opacity="0.07"
         />
       ))}
 

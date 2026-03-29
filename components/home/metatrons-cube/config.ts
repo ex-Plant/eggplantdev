@@ -72,7 +72,24 @@ export const SACRED_SYMBOLS = {
 } as const;
 
 /* ── Containment circle ── */
-export const CONTAINMENT = { cx: 600, cy: 400, r: 280, dasharray: "6 10" } as const;
+export const CONTAINMENT = { cx: 600, cy: 400, r: 350, dasharray: "6 10" } as const;
+export const OUTER_DASHED_CIRCLES = [
+  { r: 420, dasharray: "10 16", stroke: "var(--color-gold-dark)", opacity: 0.05 },
+  { r: 500, dasharray: "6 18", stroke: "var(--color-gold-warm)", opacity: 0.04 },
+] as const;
+export const RADIAL_GUIDES = Array.from({ length: 6 }, (_, i) => {
+  const angle = (Math.PI / 3) * i - Math.PI / 2;
+  return {
+    x2: CENTER[0] + Math.cos(angle) * 480,
+    y2: CENTER[1] + Math.sin(angle) * 480,
+  };
+});
+export const CORNER_BRACKETS = [
+  { x: 36, y: 36, dx: 1, dy: 1 },
+  { x: 1164, y: 36, dx: -1, dy: 1 },
+  { x: 36, y: 764, dx: 1, dy: -1 },
+  { x: 1164, y: 764, dx: -1, dy: -1 },
+] as const;
 
 /* ── Typography ── */
 export const COPY = {

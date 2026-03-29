@@ -2,11 +2,12 @@ import { HeroDescription } from "@/components/home/hero-description";
 import { HeroEggplant } from "@/components/home/hero-eggplant";
 import { HeroSubtitle } from "@/components/home/hero-subtitle";
 import { HeroTitle } from "@/components/home/hero-title";
+import { Button } from "@/components/ui/button";
 import { COPY } from "./config";
 
 export function CosmicCultFlyerHeroContent() {
   return (
-    <div className="relative z-10 flex flex-col items-center text-center">
+    <div className="relative z-10 mx-auto flex w-full max-w-[26rem] flex-col items-center px-6 text-center md:max-w-none md:px-0">
       <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
 
       <HeroEggplant preset="warm-gold-glow" floatMode="tumble" />
@@ -22,13 +23,13 @@ export function CosmicCultFlyerHeroContent() {
 
       <HeroDescription>{COPY.description}</HeroDescription>
 
-      <div className="mt-8 flex gap-3">
-        <span className="rounded-full border border-gold/25 px-5 py-2 font-mono text-sm uppercase text-gold/50">
+      <div className="mt-8 flex flex-wrap justify-center gap-3">
+        <Button variant="heroGlamPrimary" size="hero" className="py-2">
           {COPY.buttonPrimary}
-        </span>
-        <span className="rounded-full border border-gold-dark/20 px-5 py-2 font-mono text-sm uppercase text-gold-dark/40">
+        </Button>
+        <Button variant="heroGlamSecondary" size="hero" className="border-gold-dark/20 py-2 text-gold-dark/40">
           {COPY.buttonSecondary}
-        </span>
+        </Button>
       </div>
     </div>
   );

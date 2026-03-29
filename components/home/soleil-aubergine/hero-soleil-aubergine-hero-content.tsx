@@ -8,7 +8,7 @@ import { COPY } from "./config";
 
 export function SoleilHeroContent() {
   return (
-    <div className="relative z-10 flex flex-col items-center text-center">
+    <div className="relative z-10 mx-auto flex w-full max-w-[26rem] flex-col items-center px-6 text-center md:max-w-none md:px-0">
       <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
 
       <HeroEggplant preset="warm-gold-glow" floatMode="orbital" />
