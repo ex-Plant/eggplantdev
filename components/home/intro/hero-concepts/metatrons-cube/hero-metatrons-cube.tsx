@@ -3,6 +3,7 @@
 "use client";
 
 import { EggplantImage } from "@/components/general/eggplant-image";
+import { HeroDescription } from "@/components/home/intro/hero-concepts/hero-description";
 import {
   ALL_POINTS,
   INNER_R,
@@ -198,9 +199,7 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
           </span>
         </h1>
 
-        <p className="mt-6 max-w-md font-mono text-sm" style={{ color: p.caption }}>
-          {COPY.description}
-        </p>
+        <HeroDescription className="mt-6">{COPY.description}</HeroDescription>
       </div>
     </div>
   );

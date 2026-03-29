@@ -8,15 +8,32 @@ import {
   EGGPLANT,
   COPY,
 } from "./config";
+import { HeroDescription } from "@/components/home/intro/hero-concepts/hero-description";
 
 export function HeroSacredAscension() {
   return (
-    <div id="hero-sacred-ascension" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#020204]">
+    <div
+      id="hero-sacred-ascension"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#020204]"
+    >
       {/* Sacred geometry background */}
-      <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden"
+        viewBox="0 0 1200 800"
+        preserveAspectRatio="xMidYMid slice"
+      >
         {/* Metatron's cube */}
         {METATRON_CIRCLES.map(([cx, cy], i) => (
-          <circle key={`mc-${i}`} cx={cx} cy={cy} r={100} fill="none" stroke={PALETTE.neonGreen} strokeWidth="0.4" opacity="0.12" />
+          <circle
+            key={`mc-${i}`}
+            cx={cx}
+            cy={cy}
+            r={100}
+            fill="none"
+            stroke={PALETTE.neonGreen}
+            strokeWidth="0.4"
+            opacity="0.12"
+          />
         ))}
         {/* Connecting lines */}
         {METATRON_LINES.map((d, i) => (
@@ -24,12 +41,22 @@ export function HeroSacredAscension() {
         ))}
         {/* Outer containing circles */}
         {OUTER_CIRCLES.map((circle) => (
-          <circle key={circle.r} cx={SVG_CENTER.x} cy={SVG_CENTER.y} r={circle.r} fill="none" stroke={circle.stroke} strokeWidth={circle.strokeWidth} opacity={circle.opacity} strokeDasharray={circle.dasharray} />
+          <circle
+            key={circle.r}
+            cx={SVG_CENTER.x}
+            cy={SVG_CENTER.y}
+            r={circle.r}
+            fill="none"
+            stroke={circle.stroke}
+            strokeWidth={circle.strokeWidth}
+            opacity={circle.opacity}
+            strokeDasharray={circle.dasharray}
+          />
         ))}
       </svg>
 
       {/* Radial glow behind eggplant */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(16,255,170,0.1)_0%,rgba(57,255,20,0.04)_40%,transparent_70%)]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(16,255,170,0.1)_0%,rgba(57,255,20,0.04)_40%,transparent_70%)]" />
 
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Eggplant */}
@@ -38,15 +65,11 @@ export function HeroSacredAscension() {
           {/* Halo ring */}
           <div className="absolute -inset-8 rounded-full border border-[#10ffaa]/15" />
           <div className="absolute -inset-16 rounded-full border border-[#10ffaa]/8" />
-          <div className="absolute -inset-24 rounded-full border border-[#10ffaa]/4 border-dashed" />
+          <div className="absolute -inset-24 rounded-full border border-dashed border-[#10ffaa]/4" />
         </div>
 
-        <h1 className="mt-12 font-mono text-20 uppercase tracking-[0.4em] text-[#10ffaa]/60">
-          {COPY.title}
-        </h1>
-        <p className="mt-4 max-w-md text-16 text-white/30">
-          {COPY.description}
-        </p>
+        <h1 className="text-20 mt-12 font-mono tracking-[0.4em] text-[#10ffaa]/60 uppercase">{COPY.title}</h1>
+        <HeroDescription className="mt-4">{COPY.description}</HeroDescription>
       </div>
 
       {/* Star particles */}

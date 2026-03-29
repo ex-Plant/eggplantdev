@@ -4,6 +4,7 @@
 
 import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
+import { HeroDescription } from "@/components/home/intro/hero-concepts/hero-description";
 import styles from "./soleil-aubergine.module.css";
 import {
   PALETTE,
@@ -160,9 +161,7 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
               <br />
               {COPY.titleLine2}
             </h1>
-            <p className="max-w-md font-mono text-sm leading-relaxed" style={{ color: `${palette.warmCaption}73` }}>
-              {COPY.description}
-            </p>
+            <HeroDescription>{COPY.description}</HeroDescription>
           </div>
         </div>
       </div>
