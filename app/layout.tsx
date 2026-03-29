@@ -16,7 +16,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { DevTestNav } from "@/components/test/dev-test-nav";
 import { EggplantLogo } from "../components/top-navigation/eggplant-logo";
 import { cn } from "../helpers/cn";
-import { PagePreloader } from "@/components/general/page-preloader";
 import { FixedCosmicLines } from "@/components/animations/fixed-cosmic-lines";
 
 export const metadata: Metadata = {
@@ -34,7 +33,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <body className="overflow-x-hidden overscroll-none scroll-smooth antialiased" suppressHydrationWarning>
         {/* <script dangerouslySetInnerHTML={{ __html: preferencesHydratorScript }} /> */}
-        <PagePreloader />
         <TranslationsProvider>
           <DebugWrapper>
             <SkipToContent />
