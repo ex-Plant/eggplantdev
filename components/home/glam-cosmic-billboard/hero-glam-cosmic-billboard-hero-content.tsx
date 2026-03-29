@@ -16,7 +16,7 @@ export function GlamTextAndImage() {
           <br />
           <span className="text-gold">{COPY.titleLine2}</span>
         </h1>
-        <HeroDescription className="mt-6">{COPY.description}</HeroDescription>
+        <HeroDescription>{COPY.description}</HeroDescription>
         <div className="mt-8 flex gap-4">
           <span className="bg-gold/10 border-gold/25 text-gold/70 rounded-full border px-6 py-2.5 font-mono text-sm tracking-wider uppercase">
             {COPY.buttons[0]}

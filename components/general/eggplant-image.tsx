@@ -16,7 +16,6 @@ export const EGGPLANT_PRESETS = {
   "warm-gold-glow": "sepia(0.3) saturate(1.5) brightness(0.9) drop-shadow(0 0 40px rgba(218,165,32,0.3))",
   "rich-gold": "sepia(0.4) saturate(1.8) brightness(0.85)",
   "bright-gold": "sepia(0.3) saturate(1.6) brightness(1.1)",
-  "light-sepia": "sepia(0.2) saturate(1.3)",
   "soft-gold": "sepia(0.25) saturate(1.4) brightness(0.95)",
   "amber-sepia": "sepia(0.3) saturate(1.4)",
   "glam-gold": "sepia(0.15) saturate(1.6) brightness(1.05)",

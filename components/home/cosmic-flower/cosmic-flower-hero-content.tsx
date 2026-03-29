@@ -1,7 +1,7 @@
-import { EggplantImage } from "@/components/general/eggplant-image";
+import { HeroDescription } from "@/components/home/hero-description";
+import { HeroEggplant } from "@/components/home/hero-eggplant";
 import { HeroSubtitle } from "@/components/home/hero-subtitle";
 import { HeroTitle } from "@/components/home/hero-title";
-import { HeroDescription } from "@/components/home/hero-description";
 import { COPY } from "./config";
 
 export function CosmicFlowerHeroContent() {
@@ -9,16 +9,15 @@ export function CosmicFlowerHeroContent() {
     <div className="relative z-10 flex flex-col items-center text-center">
       <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
 
-      <EggplantImage preset="warm-gold-glow" sizeClass="h-48 w-48 mb-8" glowPreset="gold" />
+      <HeroEggplant preset="warm-gold-glow" floatMode="orbital" />
 
       <HeroTitle
         line1={COPY.titleLine1}
         line2={COPY.titleLine2}
         line3={COPY.titleLine3}
-        className="pt-1 tracking-tight"
       />
 
-      <HeroDescription className="mt-6">{COPY.description}</HeroDescription>
+      <HeroDescription>{COPY.description}</HeroDescription>
 
       <div className="mt-10 flex gap-4">
         <span className="rounded-full border border-gold/30 px-5 py-2.5 font-mono text-sm tracking-wider text-gold/60 uppercase">

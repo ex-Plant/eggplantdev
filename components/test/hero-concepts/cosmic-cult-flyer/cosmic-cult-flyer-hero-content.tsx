@@ -1,7 +1,7 @@
-import { EggplantImage } from "@/components/general/eggplant-image";
+import { HeroDescription } from "@/components/home/hero-description";
+import { HeroEggplant } from "@/components/home/hero-eggplant";
 import { HeroSubtitle } from "@/components/home/hero-subtitle";
 import { HeroTitle } from "@/components/home/hero-title";
-import { HeroDescription } from "@/components/home/hero-description";
 import { COPY } from "./config";
 
 export function CosmicCultFlyerHeroContent() {
@@ -9,11 +9,7 @@ export function CosmicCultFlyerHeroContent() {
     <div className="relative z-10 flex flex-col items-center text-center">
       <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
 
-      <EggplantImage
-        sizeClass="h-44 w-44 my-6"
-        preset="light-sepia"
-        glowPreset="gold"
-      />
+      <HeroEggplant preset="warm-gold-glow" floatMode="tumble" />
 
       <HeroTitle
         line1={COPY.titleLine1}
