@@ -163,7 +163,10 @@ After all heroes pass on the test page, verify on the **homepage** where they ar
 ### Phase 3: Final verification
 11. Screenshot ALL 6 heroes at ALL 5 breakpoints on the test page (`/heros-test`)
 12. Screenshot the homepage — verify heroes in context with surrounding sections
-13. Commit
+
+### Phase 4: Cleanup
+13. Run `/simplify` on all changed files — review for reuse, quality, and efficiency; fix any issues found
+14. Commit
 
 ## Geometry reach targets
 

@@ -1,0 +1,614 @@
+{
+  "activeHeroes": [
+    {
+      "id": "glam-cosmic-billboard",
+      "subtitle": {
+        "en": "Limited Edition",
+        "pl": "Limitowana edycja"
+      },
+      "title": {
+        "en": "Aubergine d'Or",
+        "fr": "Aubergine d'Or",
+        "pl": "Złoty Bakłażan"
+      },
+      "description": {
+        "en": "A fragrance for the cosmos. Notes of sacred geometry, TypeScript, and freshly deployed produce. Bottled at the event horizon.",
+        "pl": "Perfumy dla kosmosu. Nuty świętej geometrii, TypeScripta i świeżo wdrożonych warzyw. Rozlane na horyzoncie zdarzeń."
+      },
+      "buttons": {
+        "primary": { "en": "Pre-Order", "pl": "Zamów w przedsprzedaży" },
+        "secondary": { "en": "Watch Film", "pl": "Obejrzyj film" }
+      }
+    },
+    {
+      "id": "soleil-aubergine",
+      "subtitle": {
+        "fr": "Astre sacré du potager",
+        "en": "Sacred star of the garden",
+        "pl": "Święta gwiazda ogrodu"
+      },
+      "title": {
+        "fr": "Soleil Aubergine",
+        "en": "Aubergine Sun",
+        "pl": "Bakłażanowe Słońce"
+      },
+      "description": {
+        "en": "A golden ember suspended in the void — the aubergine radiates its divine light across the cosmos, an eternal beacon for those who dare to look upward.",
+        "pl": "Złoty żar zawieszony w pustce — bakłażan promieniuje boskim światłem przez kosmos, wieczna latarnia dla tych, którzy odważą się spojrzeć w górę."
+      }
+    },
+    {
+      "id": "cosmic-flower",
+      "subtitle": {
+        "en": "Mission Control",
+        "pl": "Centrum dowodzenia"
+      },
+      "title": {
+        "en": "Eggplant in Space",
+        "pl": "Bakłażan w kosmosie"
+      },
+      "description": {
+        "en": "One aubergine's journey through the cosmos of frontend development, sacred geometry, and questionable deployment decisions.",
+        "pl": "Podróż jednego bakłażana przez kosmos frontendu, świętą geometrię i wątpliwe decyzje wdrożeniowe."
+      },
+      "buttons": {
+        "primary": { "en": "Launch Sequence", "pl": "Sekwencja startowa" },
+        "secondary": { "en": "Abort Mission", "pl": "Przerwij misję" }
+      }
+    },
+    {
+      "id": "eggplants-in-space",
+      "subtitle": {
+        "fr": "Cosmique potager stellaire",
+        "en": "Cosmic stellar garden",
+        "pl": "Kosmiczny ogród gwiezdny"
+      },
+      "title": {
+        "en": "EggPlantis in Space",
+        "pl": "EggPlantis w kosmosie"
+      },
+      "description": {
+        "en": "Shipping produce to the void since the last deployment.",
+        "pl": "Dostarczamy warzywa w pustkę od ostatniego wdrożenia."
+      }
+    },
+    {
+      "id": "metatrons-cube",
+      "subtitle": {
+        "en": "The blueprint of all creation",
+        "pl": "Plan wszystkiego, co stworzone"
+      },
+      "title": {
+        "en": "Metatron's Cube",
+        "pl": "Sześcian Metatrona"
+      },
+      "description": {
+        "en": "The eggplant exists within the geometric template of the universe — encoded in every vertex, every edge, every platonic form",
+        "pl": "Bakłażan istnieje wewnątrz geometrycznego szablonu wszechświata — zakodowany w każdym wierzchołku, każdej krawędzi, każdej formie platońskiej"
+      }
+    }
+  ],
+  "testHeroConcepts": [
+    {
+      "id": "reliquary-dor",
+      "eyebrow": {
+        "fr": "Reliquaire sacré",
+        "en": "Sacred reliquary",
+        "pl": "Święty relikwiarz"
+      },
+      "title": {
+        "fr": "Reliquary d'Or",
+        "en": "Golden Reliquary",
+        "pl": "Złoty Relikwiarz"
+      },
+      "description": {
+        "en": "The most precious vegetable, preserved in gilded geometry for eternity — enshrined behind ornate frames as a holy relic of impeccable taste.",
+        "pl": "Najcenniejsze warzywo, zakonserwowane w złoconej geometrii na wieczność — zamknięte za ozdobnymi ramami jako święta relikwia nienagannego smaku."
+      }
+    },
+    {
+      "id": "tabernacle-dore",
+      "eyebrow": {
+        "fr": "L'arbre de la connaissance",
+        "en": "The tree of knowledge",
+        "pl": "Drzewo poznania"
+      },
+      "title": {
+        "fr": "Tabernacle Doré",
+        "en": "Golden Tabernacle",
+        "pl": "Złote Tabernakulum"
+      },
+      "description": {
+        "en": "The eggplant crowned at the summit of the Tree of Life — the golden tabernacle of all cosmic knowledge, radiating through ten sephirot of eternal wisdom.",
+        "pl": "Bakłażan ukoronowany na szczycie Drzewa Życia — złote tabernakulum wszelkiej kosmicznej wiedzy, promieniujące przez dziesięć sefirot wiecznej mądrości."
+      }
+    },
+    {
+      "id": "akashic-terminal",
+      "title": {
+        "en": "Akashic Terminal",
+        "pl": "Terminal Akaszowy"
+      },
+      "description": {
+        "en": "Intercepted from an alien broadcast. A civilization that worshipped a single vegetable. They had excellent uptime and no runtime errors.",
+        "pl": "Przechwycone z obcej transmisji. Cywilizacja, która czciła jedno warzywo. Mieli doskonały uptime i zero błędów runtime."
+      }
+    },
+    {
+      "id": "sri-yantra-supernova",
+      "eyebrow": {
+        "en": "Nine triangles, forty-three fragments, one truth",
+        "pl": "Dziewięć trójkątów, czterdzieści trzy fragmenty, jedna prawda"
+      },
+      "title": {
+        "en": "Sri Yantra Supernova",
+        "pl": "Supernowa Sri Yantra"
+      },
+      "description": {
+        "en": "An eggplant rests at the bindu point — the silent center of the universe's most complex sacred diagram.",
+        "pl": "Bakłażan spoczywa w punkcie bindu — cichym centrum najbardziej złożonego świętego diagramu wszechświata."
+      }
+    },
+    {
+      "id": "celestial-altar",
+      "title": {
+        "en": "Celestial Altar",
+        "pl": "Niebiański Ołtarz"
+      },
+      "description": {
+        "en": "The eggplant sits enthroned above a golden pedestal. Planets hang in symmetrical reverence on either side. This is religious iconography for a produce-worshipping civilization with impeccable design taste.",
+        "pl": "Bakłażan zasiada na tronie ponad złotym piedestałem. Planety wiszą w symetrycznej czci po obu stronach. To ikonografia religijna cywilizacji czczącej warzywa z nienagannym gustem designerskim."
+      }
+    },
+    {
+      "id": "void-liturgy",
+      "authorName": "Konrad Antonik",
+      "title": {
+        "en": "Void Liturgy",
+        "pl": "Liturgia Pustki"
+      },
+      "description": {
+        "en": "Pure black. A single neon circle appears. Then another. Then another. Concentric rings building a mandala. At the center, the eggplant materializes, casting light through the geometry like stained glass. A summoning ritual that actually worked.",
+        "pl": "Czysta czerń. Pojawia się pojedynczy neonowy okrąg. Potem kolejny. I kolejny. Koncentryczne pierścienie budują mandalę. W centrum materializuje się bakłażan, rzucając światło przez geometrię jak witraż. Rytuał przywołania, który naprawdę zadziałał."
+      }
+    },
+    {
+      "id": "synaptic-cathedral",
+      "title": {
+        "en": "Synaptic Cathedral",
+        "pl": "Katedra Synaptyczna"
+      },
+      "description": {
+        "en": "Every node is a tiny glowing eggplant. Every connection is a Metatron's cube segment. Your brain is a temple and it runs on eggplants.",
+        "pl": "Każdy węzeł to maleńki świecący bakłażan. Każde połączenie to segment sześcianu Metatrona. Twój mózg to świątynia i działa na bakłażanach."
+      },
+      "tagline": {
+        "en": "Neural architecture: gothic // Runtime: eternal",
+        "pl": "Architektura neuronowa: gotycka // Runtime: wieczny"
+      }
+    },
+    {
+      "id": "pentagram-rave",
+      "eyebrow": {
+        "en": "Ritual frequency: 432 Hz",
+        "pl": "Częstotliwość rytuału: 432 Hz"
+      },
+      "title": {
+        "en": "Pentagram Rave",
+        "pl": "Rave Pentagramu"
+      },
+      "description": {
+        "en": "The eggplant was summoned at the intersection of five cosmic lines, pulsing where sacred geometry meets the dance floor.",
+        "pl": "Bakłażan został przywołany na przecięciu pięciu kosmicznych linii, pulsujący tam, gdzie święta geometria spotyka parkiet."
+      }
+    },
+    {
+      "id": "temple-of-the-eggplant",
+      "subtitle": {
+        "en": "Est. 2022 CE",
+        "pl": "Zał. 2022 n.e."
+      },
+      "title": {
+        "en": "Temple of the Holy Aubergine",
+        "pl": "Świątynia Świętego Bakłażana"
+      },
+      "description": {
+        "en": "In the beginning there was a div. And the div was without class, and void. And the Spirit of the Eggplant moved upon the face of the viewport. And it was deployed. And it was good.",
+        "pl": "Na początku był div. A div był bez klasy i pusty. A Duch Bakłażana unosił się nad viewport'em. I został wdrożony. I było to dobre."
+      },
+      "buttons": {
+        "primary": { "en": "Enter the Temple", "pl": "Wejdź do Świątyni" },
+        "secondary": { "en": "Read the Scriptures", "pl": "Czytaj Pisma" }
+      }
+    },
+    {
+      "id": "aubergine-architect",
+      "eyebrow": {
+        "en": "Blueprint Revision ∞.0",
+        "pl": "Rewizja planu ∞.0"
+      },
+      "title": {
+        "en": "The Aubergine Architect",
+        "pl": "Architekt Bakłażan"
+      },
+      "description": {
+        "en": "Every great structure starts with a questionable vegetable and a grid nobody asked for. The golden ratio was discovered by an eggplant. This is not historically accurate but it feels right.",
+        "pl": "Każda wielka budowla zaczyna się od wątpliwego warzywa i siatki, o którą nikt nie prosił. Złoty podział został odkryty przez bakłażana. To nie jest historycznie poprawne, ale tak to czuć."
+      }
+    },
+    {
+      "id": "ancient-transmission",
+      "eyebrow": {
+        "en": "Recovered Transmission // Epoch Unknown",
+        "pl": "Odzyskana transmisja // Epoka nieznana"
+      },
+      "title": {
+        "en": "Ancient Transmission",
+        "pl": "Starożytna Transmisja"
+      },
+      "description": {
+        "en": "Archaeologists found this in a lost Kubernetes cluster. The inscriptions suggest a civilization that worshipped a single vegetable. They had excellent uptime.",
+        "pl": "Archeolodzy znaleźli to w zagubionym klastrze Kubernetes. Inskrypcje sugerują cywilizację, która czciła jedno warzywo. Mieli doskonały uptime."
+      }
+    },
+    {
+      "id": "quantum-garden",
+      "subtitle": {
+        "en": "Superposition: planted & deployed",
+        "pl": "Superpozycja: posadzone i wdrożone"
+      },
+      "title": {
+        "en": "Quantum Garden",
+        "pl": "Kwantowy Ogród"
+      },
+      "description": {
+        "en": "The eggplant exists in superposition: simultaneously a vegetable and a design system mascot. Observation collapses the state. Scrolling counts as observation.",
+        "pl": "Bakłażan istnieje w superpozycji: jednocześnie warzywo i maskotka design systemu. Obserwacja kolapsuje stan. Scrollowanie liczy się jako obserwacja."
+      },
+      "tagline": {
+        "en": "Schrödinger's deploy: it both works and doesn't until QA opens the box",
+        "pl": "Deploy Schrödingera: działa i nie działa, dopóki QA nie otworzy pudełka"
+      }
+    },
+    {
+      "id": "echoes-of-djembeya",
+      "subtitle": {
+        "en": "Echoes from the cosmic market",
+        "pl": "Echa z kosmicznego targu"
+      },
+      "title": {
+        "en": "Echoes of Djembeya",
+        "pl": "Echa Djembeyi"
+      },
+      "description": {
+        "en": "Where the eggplant becomes a celestial artifact, orbiting through warm amber space between interlocking sacred circles. A devotional poster from a universe that worships produce.",
+        "pl": "Gdzie bakłażan staje się niebiańskim artefaktem, orbitującym przez ciepłą bursztynową przestrzeń między splecionymi świętymi okręgami. Dewocyjny plakat z uniwersum, które czci warzywa."
+      }
+    },
+    {
+      "id": "golden-spiral",
+      "eyebrow": {
+        "en": "φ = 1.618033...",
+        "pl": "φ = 1,618033..."
+      },
+      "title": {
+        "en": "Golden Spiral",
+        "pl": "Złota Spirala"
+      },
+      "description": {
+        "en": "The eggplant follows the universe's most perfect curve",
+        "pl": "Bakłażan podąża za najdoskonalszą krzywą wszechświata"
+      }
+    },
+    {
+      "id": "hypercube-altar",
+      "eyebrow": {
+        "en": "Fourth-dimensional produce",
+        "pl": "Czterowymiarowe warzywo"
+      },
+      "title": {
+        "en": "Hypercube Altar",
+        "pl": "Ołtarz Hipersześcianu"
+      },
+      "description": {
+        "en": "The eggplant exists in four dimensions simultaneously — projected through impossible vertices onto the altar of your screen",
+        "pl": "Bakłażan istnieje jednocześnie w czterech wymiarach — rzutowany przez niemożliwe wierzchołki na ołtarz twojego ekranu"
+      }
+    },
+    {
+      "id": "wormhole",
+      "subtitle": {
+        "en": "Entering Hyperspace",
+        "pl": "Wejście w hiperprzestrzeń"
+      },
+      "title": {
+        "en": "Warp Aubergine",
+        "pl": "Bakłażan Nadprzestrzenny"
+      },
+      "description": {
+        "en": "When you npm deploy so hard the eggplant breaks through spacetime. Estimated arrival: after the next sprint.",
+        "pl": "Kiedy robisz npm deploy tak mocno, że bakłażan przebija czasoprzestrzeń. Szacowany czas przybycia: po następnym sprincie."
+      }
+    },
+    {
+      "id": "orbital-launch",
+      "title": {
+        "en": "The Solar Aubergine",
+        "pl": "Słoneczny Bakłażan"
+      },
+      "description": {
+        "en": "At the center of every good deployment is a vegetable nobody asked for but everyone needed. Five orbiting principles. One cosmic produce.",
+        "pl": "W centrum każdego dobrego wdrożenia jest warzywo, o które nikt nie prosił, ale którego wszyscy potrzebowali. Pięć orbitujących zasad. Jedno kosmiczne warzywo."
+      }
+    },
+    {
+      "id": "meridian-procession",
+      "eyebrow": {
+        "en": "Axis / ceremonial transit",
+        "pl": "Oś / tranzyt ceremonialny"
+      },
+      "title": {
+        "en": "Meridian Procession",
+        "pl": "Procesja Południka"
+      },
+      "description": {
+        "en": "A vertical sacred march instead of a centered halo. The whole composition behaves like a processional banner, with the eggplant passing through successive stations of worship.",
+        "pl": "Pionowy święty marsz zamiast wycentrowanej aureoli. Cała kompozycja zachowuje się jak procesyjny sztandar, z bakłażanem przechodzącym przez kolejne stacje kultu."
+      }
+    },
+    {
+      "id": "cosmic-cult-flyer",
+      "subtitle": {
+        "en": "⟿ The Sacred Order of the Aubergine ⟿",
+        "pl": "⟿ Święty Zakon Bakłażana ⟿"
+      },
+      "title": {
+        "en": "Cosmic Cult Flyer",
+        "pl": "Kosmiczna Ulotka Kultu"
+      },
+      "description": {
+        "en": "You have been chosen. The eggplant sees all. Bring your offerings of TypeScript and deploy with devotion. Meetings are held at every sprint retrospective.",
+        "pl": "Zostałeś wybrany. Bakłażan widzi wszystko. Przynieś swoje ofiary z TypeScripta i wdrażaj z oddaniem. Spotkania odbywają się na każdej retrospektywie sprintu."
+      },
+      "buttons": {
+        "primary": { "en": "Join the Order", "pl": "Dołącz do Zakonu" },
+        "secondary": { "en": "Read the Scrolls", "pl": "Czytaj Zwoje" }
+      }
+    },
+    {
+      "id": "cathedrale-cosmique",
+      "eyebrow": {
+        "fr": "Vitrail de l'univers",
+        "en": "Stained glass of the universe",
+        "pl": "Witraż wszechświata"
+      },
+      "title": {
+        "fr": "Cathédrale Cosmique",
+        "en": "Cosmic Cathedral",
+        "pl": "Kosmiczna Katedra"
+      },
+      "description": {
+        "en": "The eggplant sits enthroned within a rose window of cosmic light — gilded tracery radiating outward like a cathedral built by stars.",
+        "pl": "Bakłażan zasiada na tronie w rozecie kosmicznego światła — złocone maswerki promieniujące na zewnątrz jak katedra zbudowana przez gwiazdy."
+      }
+    },
+    {
+      "id": "hex-lattice-shrine",
+      "eyebrow": {
+        "en": "Crystalline lattice formation",
+        "pl": "Formacja sieci krystalicznej"
+      },
+      "title": {
+        "en": "Hex Lattice Shrine",
+        "pl": "Sanktuarium Heksagonalnej Sieci"
+      },
+      "description": {
+        "en": "An eggplant rests at the nucleus of an infinite crystal lattice, resonating through every vertex of the cosmic honeycomb.",
+        "pl": "Bakłażan spoczywa w jądrze nieskończonej sieci krystalicznej, rezonując przez każdy wierzchołek kosmicznego plastra miodu."
+      }
+    },
+    {
+      "id": "versailles-orbital",
+      "eyebrow": {
+        "fr": "Mécanique céleste",
+        "en": "Celestial mechanics",
+        "pl": "Mechanika niebieska"
+      },
+      "title": {
+        "en": "Versailles Orbital",
+        "pl": "Wersal Orbitalny"
+      },
+      "description": {
+        "en": "The eggplant holds court at the center of a gilded orrery — all cosmic bodies in faithful orbit around its aubergine mass, tracing gold ellipses through the hall of mirrors.",
+        "pl": "Bakłażan sprawuje rządy w centrum złoconego planetarium — wszystkie ciała kosmiczne na wiernej orbicie wokół jego bakłażanowej masy, kreśląc złote elipsy przez salę luster."
+      }
+    },
+    {
+      "id": "black-hole-canteen",
+      "title": {
+        "en": "Black Hole Canteen",
+        "pl": "Kantyna Czarnej Dziury"
+      },
+      "description": {
+        "en": "Where vegetables go after git push --force. The eggplant has been spaghettified but the code still compiles. Menu: event horizon soup, singularity risotto, and dark matter on tap.",
+        "pl": "Gdzie trafiają warzywa po git push --force. Bakłażan został spaghettyfikowany, ale kod wciąż się kompiluje. Menu: zupa z horyzontu zdarzeń, risotto osobliwości i ciemna materia z kranu."
+      },
+      "tagline": {
+        "en": "— No refunds past the event horizon —",
+        "pl": "— Brak zwrotów za horyzontem zdarzeń —"
+      }
+    },
+    {
+      "id": "rose-window-reliquary",
+      "eyebrow": {
+        "en": "Cathedral optics / devotional glazing",
+        "pl": "Optyka katedralna / witraże dewocyjne"
+      },
+      "title": {
+        "en": "Rose Window Reliquary",
+        "pl": "Relikwiarz Rozety"
+      },
+      "description": {
+        "en": "The eggplant set into a cosmic stained-glass rose: less diagram, more relic. Sacred geometry turns ornamental here, like a poster for a fake cathedral opening in deep space.",
+        "pl": "Bakłażan osadzony w kosmicznej witrażowej rozecie: mniej diagramu, więcej relikwii. Święta geometria staje się tu ornamentalna, jak plakat fikcyjnego otwarcia katedry w głębokim kosmosie."
+      }
+    },
+    {
+      "id": "cosmic-stand-up",
+      "title": {
+        "en": "Cosmic Stand-Up",
+        "pl": "Kosmiczny Stand-Up"
+      },
+      "tagline": {
+        "en": "* No vegetables were harmed during this deployment *",
+        "pl": "* Żadne warzywa nie ucierpiały podczas tego wdrożenia *"
+      }
+    },
+    {
+      "id": "zodiac-astrolabe",
+      "eyebrow": {
+        "en": "Celestial navigation since the first harvest",
+        "pl": "Nawigacja niebieska od pierwszych żniw"
+      },
+      "title": {
+        "en": "Zodiac Astrolabe",
+        "pl": "Astrolabium Zodiaku"
+      },
+      "description": {
+        "en": "The eggplant charts its course through all twelve houses of the cosmos, reading the angles of forgotten stars and calibrating its passage by golden light alone.",
+        "pl": "Bakłażan wyznacza kurs przez wszystkie dwanaście domów kosmosu, odczytując kąty zapomnianych gwiazd i kalibrując swój przejazd jedynie złotym światłem."
+      }
+    },
+    {
+      "id": "vesica-piscis-neon",
+      "eyebrow": {
+        "en": "Where all circles converge",
+        "pl": "Gdzie zbiegają się wszystkie okręgi"
+      },
+      "title": {
+        "en": "Vesica Piscis",
+        "pl": "Vesica Piscis"
+      },
+      "description": {
+        "en": "An eggplant born at the intersection of all sacred circles, where three vesicae align and geometry collapses into origin.",
+        "pl": "Bakłażan zrodzony na przecięciu wszystkich świętych okręgów, gdzie trzy vesicae ustawiają się w linii i geometria zapada się w punkt początkowy."
+      }
+    },
+    {
+      "id": "sacred-mandala",
+      "eyebrow": {
+        "en": "Meditate upon the cosmic vegetable",
+        "pl": "Medytuj nad kosmicznym warzywem"
+      },
+      "title": {
+        "en": "Sacred Mandala",
+        "pl": "Święta Mandala"
+      },
+      "description": {
+        "en": "The eggplant radiates outward through infinite rings of devotion — each petal a prayer, each circle a cosmos unto itself",
+        "pl": "Bakłażan promieniuje na zewnątrz przez nieskończone pierścienie oddania — każdy płatek to modlitwa, każdy okrąg to kosmos sam w sobie"
+      }
+    },
+    {
+      "id": "flower-of-life",
+      "eyebrow": {
+        "en": "The seed of all sacred forms",
+        "pl": "Ziarno wszystkich świętych form"
+      },
+      "title": {
+        "en": "Flower of Life",
+        "pl": "Kwiat Życia"
+      },
+      "description": {
+        "en": "An eggplant blooms at the origin point where every circle begins and all geometry unfolds.",
+        "pl": "Bakłażan rozkwita w punkcie początkowym, gdzie każdy okrąg się zaczyna i cała geometria się rozwija."
+      }
+    },
+    {
+      "id": "supernova-farmers-market",
+      "titleName": {
+        "en": "Konrad",
+        "pl": "Konrad"
+      },
+      "subtitleName": {
+        "en": "Antonik",
+        "pl": "Antonik"
+      },
+      "description": {
+        "en": "A massive eggplant detonated like a dying star. In the calm eye of the explosion: a frontend developer, perfectly still. The shockwave carries sacred geometry into the void.",
+        "pl": "Ogromny bakłażan zdetonował jak umierająca gwiazda. W spokojnym oku eksplozji: frontend developer, idealnie nieruchomy. Fala uderzeniowa niesie świętą geometrię w pustkę."
+      }
+    },
+    {
+      "id": "ritual-observatory",
+      "signalLabel": {
+        "en": "Signal Acquired",
+        "pl": "Sygnał przechwycony"
+      },
+      "title": {
+        "en": "Ritual Observatory",
+        "pl": "Obserwatorium Rytualne"
+      },
+      "description": {
+        "en": "The eggplant has been located at bearing 0°, distance: infinite. Three satellite objects confirmed in orbit. Classification: sacred. Recommendation: deploy immediately.",
+        "pl": "Bakłażan zlokalizowany na namiarze 0°, odległość: nieskończona. Trzy obiekty satelitarne potwierdzone na orbicie. Klasyfikacja: święty. Rekomendacja: wdrożyć natychmiast."
+      },
+      "statusCards": [
+        { "label": "Status", "value": { "en": "Tracking", "pl": "Śledzenie" } },
+        { "label": "Signal", "value": "∞ Hz" },
+        { "label": "Deploy", "value": { "en": "Pending", "pl": "Oczekuje" } }
+      ]
+    },
+    {
+      "id": "compass-sanctum",
+      "eyebrow": {
+        "en": "Navigation / liturgical bearings",
+        "pl": "Nawigacja / namiary liturgiczne"
+      },
+      "title": {
+        "en": "Compass Sanctum",
+        "pl": "Sanktuarium Kompasu"
+      },
+      "description": {
+        "en": "A sacred compass rose that treats the eggplant like the fixed point of orientation. Less mystical fog, more ceremonial wayfinding poster for a cult that takes direction systems personally.",
+        "pl": "Święta róża wiatrów, która traktuje bakłażana jak stały punkt orientacyjny. Mniej mistycznej mgły, więcej ceremonialnego plakatu nawigacyjnego dla kultu, który bierze systemy kierunkowe osobiście."
+      }
+    },
+    {
+      "id": "fractal-sermon",
+      "terminal": {
+        "en": "$ transmitting on all frequencies...",
+        "pl": "$ transmisja na wszystkich częstotliwościach..."
+      },
+      "title": {
+        "en": "Fractal Sermon",
+        "pl": "Fraktalne Kazanie"
+      },
+      "description": {
+        "en": "Each generation smaller, more translucent, more devoted. The Sierpinski eggplant recurses toward enlightenment. Base case: never.",
+        "pl": "Każda generacja mniejsza, bardziej przezroczysta, bardziej oddana. Bakłażan Sierpińskiego rekurencyjnie dąży do oświecenia. Przypadek bazowy: nigdy."
+      }
+    },
+    {
+      "id": "mission-briefing",
+      "header": {
+        "en": "Mission Briefing",
+        "pl": "Odprawa przed misją"
+      },
+      "title": {
+        "en": "Eggplant Zero",
+        "pl": "Bakłażan Zero"
+      },
+      "description": {
+        "en": "Codename: AUBERGINE. Classification: Absurd. Status: Perpetually deploying.",
+        "pl": "Kryptonim: BAKŁAŻAN. Klasyfikacja: Absurdalna. Status: Wiecznie wdrażany."
+      },
+      "missionData": [
+        { "en": "Coordinates: 52.23°N, 19.91°E", "pl": "Współrzędne: 52.23°N, 19.91°E" },
+        { "en": "Altitude: ∞ (in orbit)", "pl": "Wysokość: ∞ (na orbicie)" },
+        { "en": "Fuel: Coffee & TypeScript", "pl": "Paliwo: Kawa i TypeScript" },
+        { "en": "ETA: After the next refactor", "pl": "Czas przybycia: Po następnym refaktorze" }
+      ]
+    }
+  ]
+}
