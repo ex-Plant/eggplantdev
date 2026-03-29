@@ -20,10 +20,10 @@ export function HeroEggplant({
   className,
 }: HeroEggplantPropsT) {
   return (
-    <div className={cn("relative z-10 mt-6 mb-8", className)}>
+    <div className={cn("relative z-10 mt-6 mb-8 lg:mt-8 lg:mb-12", className)}>
       <EggplantImage
         preset={preset}
-        sizeClass="size-48"
+        sizeClass="size-48 lg:size-56 xl:size-64"
         floatMode={floatMode}
         glowPreset={glowPreset}
       />

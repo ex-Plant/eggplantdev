@@ -30,7 +30,7 @@ export function HeroTitle({
   className,
 }: HeroTitlePropsT) {
   return (
-    <h1 className={cn("text-48 md:text-72 font-mono leading-none uppercase pt-1 tracking-tight", className)}>
+    <h1 className={cn("text-48 md:text-72 lg:text-80 xl:text-96 font-mono leading-none uppercase pt-1 tracking-tight", className)}>
       <span className={cn("block", classLine1)} style={styleLine1}>
         {line1}
       </span>

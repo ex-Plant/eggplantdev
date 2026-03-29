@@ -7,7 +7,7 @@ type HeroDescriptionPropsT = {
 
 export function HeroDescription({ children, className }: HeroDescriptionPropsT) {
   return (
-    <p className={cn("mt-6 max-w-md font-mono text-sm leading-relaxed text-gold-caption/40", className)}>
+    <p className={cn("mt-6 max-w-md lg:max-w-lg font-mono text-sm lg:text-base leading-relaxed text-gold-caption/40", className)}>
       {children}
     </p>
   );
