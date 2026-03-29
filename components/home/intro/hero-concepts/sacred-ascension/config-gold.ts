@@ -1,15 +1,16 @@
 /* ═══════════════════════════════════════════════
-   Sacred Ascension v2 — Gold Palette Configuration
+   EggplantsInSpace — Hero Configuration
+   Canonical values live in CSS (--color-gold-*).
+   SVG attributes need literal hex, so we mirror them here.
    ═══════════════════════════════════════════════ */
 
-/* ── Palette ── */
 export const PALETTE_GOLD = {
   gold: "#daa520",
   warmGold: "#f0c040",
   darkGold: "#c8860e",
   cream: "#f5e6c0",
-  mutedGold: "#c8b080",
-  bgColor: "#0c0a08",
+  caption: "#c8b080",
+  bg: "#0c0a08",
 } as const;
 
 /* ── SVG shared ── */

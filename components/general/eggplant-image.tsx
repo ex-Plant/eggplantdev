@@ -27,6 +27,7 @@ export const EGGPLANT_PRESETS = {
   "cyan-glow": "saturate(0.7) sepia(0.2) drop-shadow(0 0 30px rgba(0,229,255,0.25))",
   "sepia-hue15": "sepia(1) saturate(0.5) hue-rotate(15deg) drop-shadow(0 0 50px rgba(218,165,32,0.35))",
   "cosmic-gold": "saturate(0.15) brightness(1.4) contrast(0.9)",
+  "golden-metallic": "sepia(1) saturate(3) hue-rotate(5deg) brightness(1.15) contrast(1.1) drop-shadow(0 0 40px rgba(218,165,32,0.3))",
 } as const;
 
 export type EggplantPresetT = keyof typeof EGGPLANT_PRESETS;

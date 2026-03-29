@@ -30,16 +30,22 @@
   --color-glow-blue: oklch(from #3b82f6 l c h / 15%);
   --color-glow-fuchsia: oklch(from #d946ef l c h / 25%);
 
-  /* Hero palettes */
-  --color-hero-gold: #ffd700;
-  --color-hero-dark-gold: #daa520;
-  --color-hero-soft-gold: #f0c040;
-  --color-hero-warm-caption: #c8b080;
-  --color-hero-bg-warm: #1a1510;
+  /* Gold palette — single source of truth for all gold heroes */
+  --color-gold: #daa520;
+  --color-gold-bright: #ffd700;
+  --color-gold-warm: #f0c040;
+  --color-gold-dark: #c8860e;
+  --color-gold-cream: #f5e6c0;
+  --color-gold-caption: #c8b080;
+  --color-gold-bg: #0c0a08;
 
-  --color-hero-muted-gold: #daa520;
-  --color-hero-muted-dark-gold: #c8860e;
-  --color-hero-muted-bg-warm: #1c1812;
+  /* Silver palette — monochrome / desaturated heroes */
+  --color-silver: #c0c0c0;
+  --color-silver-light: #e0e0e0;
+  --color-silver-mid: #8a8a8a;
+  --color-silver-dark: #555555;
+  --color-silver-caption: #a0a0a0;
+  --color-silver-bg: #080610;
 
   /* Max-width */
   --max-w-xxl: 1920px;
