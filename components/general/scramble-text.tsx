@@ -175,6 +175,7 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
           onLeave: scrambleOut, // scrolling down, element leaves
           onEnterBack: scrambleIn, // scrolling up, element re-enters
           onLeaveBack: scrambleOut, // scrolling up, element leaves
+          onRefresh: (self) => { if (self.isActive) scrambleIn(); }, // already in viewport on load
           // markers: true,
         });
 

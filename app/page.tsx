@@ -19,6 +19,7 @@ import { HeroHexLatticeShrineGold } from "@/components/test/hero-concepts/hex-la
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
 import { GritPulseOverlay } from "@/components/animations/grit-pulse-overlay";
 import { HomeStatement } from "@/components/home/intro/home-statement";
+import { AnimatedLettersMask } from "../components/home/intro/animated-letters/animated-letters";
 
 export default function HomePage() {
   const { introTxt = "", backgroundDesktop = "", backgroundMobile = "", sections } = useLocalizedData("home");
@@ -38,7 +39,8 @@ export default function HomePage() {
 
       <HeroSoleilAubergine />
 
-      <HomeStatement txt={introTxt} backgroundDesktop={backgroundDesktop} backgroundMobile={backgroundMobile} />
+      <AnimatedLettersMask text={introTxt} />
+
       <HeroCosmicCultFlyer />
 
       <ProjectsSection data={commercialWork} className="fest-container py-20 md:py-40" />

@@ -17,13 +17,13 @@ export const Approach = ({ approachArray, foto, className }: ApproachPropsT) => 
             return <ApproachSingle title={item.title} text={item.content} key={index + "approach"} />;
           })}
         </div>
-        {foto && (
+        {/* {foto && (
           <CustomImgServer
             src={foto}
             alt=""
             className={`mt-9 h-[480px] w-full rounded-3xl object-cover object-center`}
           />
-        )}
+        )} */}
       </div>
     </section>
   );

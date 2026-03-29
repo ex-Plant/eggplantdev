@@ -1,4 +1,5 @@
 import { cn } from "@/helpers/cn";
+import { ScrambleText } from "@/components/general/scramble-text";
 
 type HeroTitlePropsT = {
   line1: string;
@@ -14,6 +15,8 @@ type HeroTitlePropsT = {
   styleLine1?: React.CSSProperties;
   styleLine2?: React.CSSProperties;
   styleLine3?: React.CSSProperties;
+  /** Enable scramble text animation on each line */
+  scramble?: boolean;
   className?: string;
 };
 
@@ -27,21 +30,25 @@ export function HeroTitle({
   styleLine1,
   styleLine2,
   styleLine3,
+  scramble = true,
   className,
 }: HeroTitlePropsT) {
+  const renderLine = (text: string) =>
+    scramble ? <ScrambleText text={text} /> : text;
+
   return (
     <h1 className={cn("mx-auto w-full text-center font-mono text-34 leading-none uppercase pt-1 tracking-tight sm:text-48 md:text-72 lg:text-80 xl:text-96", className)}>
       <span className={cn("block", classLine1)} style={styleLine1}>
-        {line1}
+        {renderLine(line1)}
       </span>
       {line2 && (
         <span className={cn("block", classLine2)} style={styleLine2}>
-          {line2}
+          {renderLine(line2)}
         </span>
       )}
       {line3 && (
         <span className={cn("block", classLine3 ?? classLine1)} style={styleLine3}>
-          {line3}
+          {renderLine(line3)}
         </span>
       )}
     </h1>
