@@ -1,7 +1,6 @@
 import { CentralStar } from "@/components/animations/central-star";
 import { BurstDots } from "@/components/animations/burst-dots";
 import {
-  PALETTE,
   SVG_CENTER,
   RAYS,
   RITUAL_RINGS,
@@ -52,7 +51,7 @@ export function CosmicCultFlyerSacredGeometry() {
             y1={mark.y1}
             x2={mark.x2}
             y2={mark.y2}
-            stroke={PALETTE.gold}
+            stroke={"var(--color-gold)"}
             strokeWidth="1"
             opacity="0.2"
           />
@@ -61,7 +60,7 @@ export function CosmicCultFlyerSacredGeometry() {
               cx={mark.dotCx}
               cy={mark.dotCy}
               r="3"
-              fill={PALETTE.gold}
+              fill={"var(--color-gold)"}
               opacity="0.12"
             />
           )}
@@ -71,14 +70,14 @@ export function CosmicCultFlyerSacredGeometry() {
       <polygon
         points={HEXAGRAMS.outer}
         fill="none"
-        stroke={PALETTE.softGold}
+        stroke={"var(--color-gold-warm)"}
         strokeWidth="1"
         opacity="0.1"
       />
       <polygon
         points={HEXAGRAMS.inner}
         fill="none"
-        stroke={PALETTE.gold}
+        stroke={"var(--color-gold)"}
         strokeWidth="0.5"
         opacity="0.06"
       />
@@ -89,7 +88,7 @@ export function CosmicCultFlyerSacredGeometry() {
         width={BORDERS.outer.width}
         height={BORDERS.outer.height}
         fill="none"
-        stroke={PALETTE.gold}
+        stroke={"var(--color-gold)"}
         strokeWidth="1"
         opacity={BORDERS.outer.opacity}
       />
@@ -99,7 +98,7 @@ export function CosmicCultFlyerSacredGeometry() {
         width={BORDERS.inner.width}
         height={BORDERS.inner.height}
         fill="none"
-        stroke={PALETTE.gold}
+        stroke={"var(--color-gold)"}
         strokeWidth="0.5"
         opacity={BORDERS.inner.opacity}
       />

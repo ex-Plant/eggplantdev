@@ -2,16 +2,6 @@
    Cosmic Cult Flyer — Hero Configuration
    ═══════════════════════════════════════════════ */
 
-/* ── Palette (CSS custom properties for SVG attributes) ── */
-export const PALETTE = {
-  gold: "var(--color-gold)",
-  softGold: "var(--color-gold-warm)",
-  darkGold: "var(--color-gold-dark)",
-  cream: "var(--color-gold-cream)",
-  warmCaption: "var(--color-gold-caption)",
-  bgColor: "#0a0806",
-} as const;
-
 /* ── SVG shared ── */
 export const SVG_CENTER = { x: 600, y: 400 } as const;
 
@@ -22,7 +12,7 @@ export const RAYS = Array.from({ length: RAY_COUNT }, (_, i) => {
   return {
     x2: SVG_CENTER.x + 500 * Math.cos(a),
     y2: SVG_CENTER.y + 500 * Math.sin(a),
-    stroke: i % 2 === 0 ? PALETTE.gold : PALETTE.darkGold,
+    stroke: i % 2 === 0 ? "var(--color-gold)" : "var(--color-gold-dark)",
     strokeWidth: i % 6 === 0 ? 1.5 : 0.5,
     opacity: i % 6 === 0 ? 0.08 : 0.03,
   };
@@ -30,11 +20,11 @@ export const RAYS = Array.from({ length: RAY_COUNT }, (_, i) => {
 
 /* ── Ritual diagram rings ── */
 export const RITUAL_RINGS = [
-  { r: 80, strokeWidth: 2.5, opacity: 0.2, color: PALETTE.gold, dasharray: undefined },
-  { r: 120, strokeWidth: 1, opacity: 0.1, color: PALETTE.softGold, dasharray: "6 4" },
-  { r: 180, strokeWidth: 1.5, opacity: 0.12, color: PALETTE.gold, dasharray: undefined },
-  { r: 250, strokeWidth: 0.8, opacity: 0.06, color: PALETTE.darkGold, dasharray: "3 8" },
-  { r: 320, strokeWidth: 0.5, opacity: 0.04, color: PALETTE.gold, dasharray: undefined },
+  { r: 80, strokeWidth: 2.5, opacity: 0.2, color: "var(--color-gold)", dasharray: undefined },
+  { r: 120, strokeWidth: 1, opacity: 0.1, color: "var(--color-gold-warm)", dasharray: "6 4" },
+  { r: 180, strokeWidth: 1.5, opacity: 0.12, color: "var(--color-gold)", dasharray: undefined },
+  { r: 250, strokeWidth: 0.8, opacity: 0.06, color: "var(--color-gold-dark)", dasharray: "3 8" },
+  { r: 320, strokeWidth: 0.5, opacity: 0.04, color: "var(--color-gold)", dasharray: undefined },
 ] as const;
 
 /* ── Inscription marks on middle ring ── */

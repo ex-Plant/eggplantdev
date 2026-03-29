@@ -5,15 +5,6 @@
 const SVG_CENTER = { x: 600, y: 400 } as const;
 const SVG_VIEWBOX = "0 0 1200 800" as const;
 
-/* ── Palette (CSS vars from globals.css) ── */
-export const PALETTE = {
-  gold: "var(--color-gold)",
-  darkGold: "var(--color-gold)",
-  darkBrown: "var(--color-gold-dark)",
-  cream: "var(--color-gold-cream)",
-  caption: "var(--color-gold-caption)",
-} as const;
-
 /* ── Hex geometry ── */
 export const HEX_R = 52;
 const SQRT3 = Math.sqrt(3);
@@ -52,7 +43,7 @@ export const VERTEX_LIST = [...VERTICES.values()];
 
 /* ── Stars (pre-computed for shared StarField component) ── */
 const STAR_COUNT = 55;
-const STAR_COLORS = [PALETTE.gold, PALETTE.darkGold, PALETTE.cream] as const;
+const STAR_COLORS = ["var(--color-gold)", "var(--color-gold)", "var(--color-gold-cream)"] as const;
 
 export const STARS = Array.from({ length: STAR_COUNT }, (_, i) => ({
   x: `${(7 + i * 17.3) % 100}%`,
