@@ -19,7 +19,7 @@ export const SignalBoardNotes = ({ data, className }: Props) => {
             <div
               key={note.title + "-chip"}
               className={cn(
-                "rounded-full border border-white/14 bg-[#150d18]/70 px-4 py-2 font-mono text-sm uppercase text-lightgray/90 shadow-[0_0_18px_rgba(217,70,239,0.08)]",
+                "rounded-full border border-white/14 bg-[#150d18]/70 px-4 py-2 font-mono text-sm uppercase text-copy-body shadow-[0_0_18px_rgba(217,70,239,0.08)]",
                 index % 3 === 0 ? "translate-y-0" : index % 3 === 1 ? "md:translate-y-3" : "md:-translate-y-2",
               )}
             >
@@ -44,10 +44,10 @@ export const SignalBoardNotes = ({ data, className }: Props) => {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(217,70,239,0.18),transparent_42%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.12),transparent_38%)]" />
               <div className="relative z-10 max-w-[28rem]">
                 {note.eyebrow ? (
-                  <p className="text-16 text-lightgray/80 font-mono uppercase tracking-[0.12em]">{note.eyebrow}</p>
+                  <p className="text-16 text-copy-body font-mono uppercase tracking-[0.12em]">{note.eyebrow}</p>
                 ) : null}
                 <h3 className="text-28 md:text-34 font-mono uppercase pt-5">{note.title}</h3>
-                <p className="text-16 text-lightgray scalable pt-6">{note.text}</p>
+                <p className="text-16 text-copy-body scalable pt-6">{note.text}</p>
               </div>
             </article>
           ))}

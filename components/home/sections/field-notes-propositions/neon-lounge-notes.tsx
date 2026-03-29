@@ -44,10 +44,10 @@ export const NeonLoungeNotes = ({ data, className }: Props) => {
                   <p className={cn("font-mono text-sm uppercase tracking-[0.2em]", neon.text)}>
                     {note.eyebrow}
                   </p>
-                  <h3 className="pt-4 font-mono text-24 md:text-28 uppercase text-white">
+                  <h3 className="pt-4 font-mono text-24 md:text-28 uppercase text-primary">
                     {note.title}
                   </h3>
-                  <p className="pt-4 text-16 text-white/60">{note.text}</p>
+                  <p className="pt-4 text-16 text-copy-body">{note.text}</p>
 
                   {/* Neon flicker line */}
                   <div className={cn("absolute bottom-0 left-4 right-4 h-px", neon.border.replace("border-", "bg-"))} />

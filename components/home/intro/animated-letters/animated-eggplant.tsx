@@ -122,8 +122,8 @@ export const AnimatedEggplant = () => {
         className="h-40 w-40 object-contain"
       />
       <div ref={arrowRef} className="fixed inset-x-0 bottom-24 z-101 flex flex-col items-center gap-2">
-        <span className="text-16 font-mono tracking-wider text-white/60 uppercase">{t("scrollDown")}</span>
-        <GlowArrow className="rotate-90 text-white/60" />
+        <span className="text-16 font-mono tracking-wider text-primary/60 uppercase">{t("scrollDown")}</span>
+        <GlowArrow className="rotate-90 text-primary/60" />
       </div>
     </div>
   );

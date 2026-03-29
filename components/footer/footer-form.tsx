@@ -62,7 +62,7 @@ export function FooterForm({ className }: { className?: string }) {
           {(field) => (
             <div className="relative">
               <input
-                className={`border-gray7 placeholder:text-16 placeholder:text-gray7 h-12 w-full border-b lg:h-14`}
+                className={`border-copy-muted placeholder:text-16 placeholder:text-copy-muted h-12 w-full border-b lg:h-14`}
                 type="text"
                 placeholder={t("name")}
                 aria-label={t("name")}
@@ -77,7 +77,7 @@ export function FooterForm({ className }: { className?: string }) {
           {(field) => (
             <div className="relative">
               <input
-                className={`border-gray7 placeholder:text-16 placeholder:text-gray7 h-12 w-full border-b lg:h-14`}
+                className={`border-copy-muted placeholder:text-16 placeholder:text-copy-muted h-12 w-full border-b lg:h-14`}
                 type="email"
                 placeholder={t("email")}
                 aria-label={t("email")}
@@ -92,7 +92,7 @@ export function FooterForm({ className }: { className?: string }) {
           {(field) => (
             <div className="relative">
               <textarea
-                className={`border-gray7 placeholder:text-gray7 field-sizing-content min-h-32 w-full border-b py-3`}
+                className={`border-copy-muted placeholder:text-copy-muted field-sizing-content min-h-32 w-full border-b py-3`}
                 placeholder={t("projectDetails")}
                 aria-label={t("projectDetails")}
                 {...fieldProps(field)}

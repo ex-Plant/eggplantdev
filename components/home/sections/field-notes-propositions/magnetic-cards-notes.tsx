@@ -33,9 +33,9 @@ export const MagneticCardsNotes = ({ data, className }: Props) => {
               )}
             >
               <div className="absolute right-5 top-5 h-4 w-4 rounded-full bg-red/70 shadow-[0_0_20px_rgba(255,117,117,0.55)]" />
-              <p className="font-mono text-sm uppercase tracking-[0.18em] text-lightgray/65">{note.eyebrow}</p>
+              <p className="font-mono text-sm uppercase tracking-[0.18em] text-copy-body">{note.eyebrow}</p>
               <h3 className="pt-8 font-mono text-28 uppercase">{note.title}</h3>
-              <p className="pt-5 text-16 text-lightgray">{note.text}</p>
+              <p className="pt-5 text-16 text-copy-body">{note.text}</p>
             </article>
           ))}
         </div>

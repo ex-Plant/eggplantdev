@@ -57,7 +57,7 @@ export function TopNavigation() {
                 borderRadius={6}
                 strokeWidth={2.5}
                 duration={1}
-                className="rounded-md text-white"
+                className="rounded-md text-primary"
               >
                 <motion.div
                   initial={false}
@@ -78,7 +78,7 @@ export function TopNavigation() {
                     <div className="grit grid-cols-1 p-5">
                       <AccessibilityMenu className="uppercase" />
                       <RoundedSeparator className="my-4" />
-                      <p className="text-lightgray scalable pb-4 text-[0.75rem] text-balance">{t("animationNotice")}</p>
+                      <p className="text-copy-body scalable pb-4 text-[0.75rem] text-balance">{t("animationNotice")}</p>
                       <AnimationToggles className="uppercase" />
                     </div>
                   </div>

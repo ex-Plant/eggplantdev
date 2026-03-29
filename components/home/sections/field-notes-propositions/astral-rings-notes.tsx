@@ -97,8 +97,8 @@ export const AstralRingsNotes = ({ data, className }: Props) => {
                       {note.eyebrow}
                     </p>
                   </div>
-                  <h3 className="font-mono text-20 md:text-28 uppercase text-white">{note.title}</h3>
-                  <p className="pt-3 text-16 text-white/45">{note.text}</p>
+                  <h3 className="font-mono text-20 md:text-28 uppercase text-primary">{note.title}</h3>
+                  <p className="pt-3 text-16 text-copy-muted">{note.text}</p>
                 </article>
               );
             })}

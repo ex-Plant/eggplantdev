@@ -25,13 +25,13 @@ export const StackedRowsNotes = ({ data, className }: Props) => {
           >
             <div className="absolute inset-y-0 left-0 w-px bg-linear-to-b from-transparent via-[#d946ef]/55 to-transparent" />
             <div className="grid gap-8 md:grid-cols-[80px_minmax(0,1fr)]">
-              <p className="text-48 md:text-64 text-lightgray/40 font-mono leading-none">{String(index + 1).padStart(2, "0")}</p>
+              <p className="text-48 md:text-64 text-copy-muted font-mono leading-none">{String(index + 1).padStart(2, "0")}</p>
               <div className="max-w-[42rem]">
                 {note.eyebrow ? (
-                  <p className="text-16 text-lightgray/80 font-mono uppercase tracking-[0.12em]">{note.eyebrow}</p>
+                  <p className="text-16 text-copy-body font-mono uppercase tracking-[0.12em]">{note.eyebrow}</p>
                 ) : null}
                 <h3 className="text-28 md:text-40 font-mono uppercase pt-3">{note.title}</h3>
-                <p className="text-16 text-lightgray scalable pt-6">{note.text}</p>
+                <p className="text-16 text-copy-body scalable pt-6">{note.text}</p>
               </div>
             </div>
           </article>

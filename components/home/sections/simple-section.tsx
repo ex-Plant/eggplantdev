@@ -44,7 +44,7 @@ export const SimpleSection = ({ id, titleLine, text, paragraphs, buttons, classN
       </div>
 
       {aside && (
-        <div className="col-span-full mt-12 flex items-center justify-center overflow-hidden 640:col-span-5 1280:col-span-8 1280:col-start-9 1280:mt-0 1280:justify-end">
+        <div className="640:col-span-5 1280:col-span-8 1280:col-start-9 1280:mt-0 1280:justify-end col-span-full mt-12 flex items-center justify-center overflow-hidden">
           {aside}
         </div>
       )}

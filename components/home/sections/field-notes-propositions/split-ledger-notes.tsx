@@ -17,11 +17,11 @@ export const SplitLedgerNotes = ({ data, className }: Props) => {
     <div className={cn("p-6 md:p-8", tone === "light" ? "bg-white text-black" : "bg-black text-white")}>
       {notes.map((note, index) => (
         <article key={note.title} className={cn(index > 0 ? "mt-10 border-t pt-10" : "", tone === "light" ? "border-black/10" : "border-white/10")}>
-          <p className={cn("font-mono text-sm uppercase tracking-[0.18em]", tone === "light" ? "text-black/45" : "text-lightgray/65")}>
+          <p className={cn("font-mono text-sm uppercase tracking-[0.18em]", tone === "light" ? "text-black/45" : "text-copy-body")}>
             {note.eyebrow}
           </p>
           <h3 className="pt-4 font-mono text-28 uppercase">{note.title}</h3>
-          <p className={cn("pt-5 text-16", tone === "light" ? "text-black/75" : "text-lightgray")}>{note.text}</p>
+          <p className={cn("pt-5 text-16", tone === "light" ? "text-black/75" : "text-copy-body")}>{note.text}</p>
         </article>
       ))}
     </div>

@@ -37,12 +37,12 @@ export const AsymmetricGridNotes = ({ data, className }: Props) => {
 
               <div className="relative z-10">
                 {note.eyebrow ? (
-                  <p className="text-16 text-lightgray/80 font-mono uppercase tracking-[0.12em]">{note.eyebrow}</p>
+                  <p className="text-16 text-copy-body font-mono uppercase tracking-[0.12em]">{note.eyebrow}</p>
                 ) : null}
                 <h3 className="text-28 md:text-34 font-mono uppercase pt-6">{note.title}</h3>
               </div>
 
-              <p className="text-16 text-lightgray scalable relative z-10 max-w-[28rem] pt-8">{note.text}</p>
+              <p className="text-16 text-copy-body scalable relative z-10 max-w-[28rem] pt-8">{note.text}</p>
             </article>
           );
         })}

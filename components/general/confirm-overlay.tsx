@@ -35,11 +35,11 @@ export function ConfirmOverlay({ isOpen, onClose }: ConfirmOverlayPropsT) {
         <div className="grit-dense pointer-events-none absolute inset-0" />
         <DialogTitle className="sr-only">{t("confirmTitle")}</DialogTitle>
         <div className="relative flex flex-col items-center gap-8">
-          <p className="text-20 md:text-28 max-w-2xl text-center font-mono text-white uppercase">
+          <p className="text-20 md:text-28 max-w-2xl text-center font-mono text-primary uppercase">
             <ScrambleText text={t("thankYou")} triggerOnMount />
             <ScrambleText text={t("willGetBack")} triggerOnMount />
           </p>
-          <p className={`text-16 text-gray7 transition-opacity duration-500 ${showHint ? "opacity-100" : "opacity-0"}`}>
+          <p className={`text-16 text-copy-muted transition-opacity duration-500 ${showHint ? "opacity-100" : "opacity-0"}`}>
             {t("clickToClose")}
           </p>
         </div>

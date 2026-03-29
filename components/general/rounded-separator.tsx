@@ -19,7 +19,7 @@ export function RoundedSeparator({ className, strokeWidth = 1.5 }: RoundedSepara
         stroke="currentColor"
         strokeWidth={strokeWidth}
         strokeLinecap="round"
-        className="text-lightgray"
+        className="text-primary"
       />
     </svg>
   );

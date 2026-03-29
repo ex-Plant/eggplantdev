@@ -44,10 +44,16 @@
   /* Hot pink accent — glam cosmic billboard */
   --color-hot-pink: #ff1493;
 
-  /* Shared non-hero content tokens */
-  --color-copy-strong: #ffffff; /* strongest copy = white */
-  --color-copy-body: #cccccc; /* body copy = light gray */
-  --color-copy-muted: #777777; /* muted/meta copy = gray7 */
+  /* Shared non-hero content tokens
+     Migration map (old → new):
+       text-white     → text-primary   (gold-cream #f5e6c0) or text-copy-strong (#fff) for max contrast
+       text-lightgray → text-copy-body (#ccc)
+       text-gray7     → text-copy-muted (#777)
+       hover:text-white → hover:text-copy-strong
+  */
+  --color-copy-strong: #ffffff;
+  --color-copy-body: #cccccc;
+  --color-copy-muted: #777777;
 
   /* Silver palette — monochrome / desaturated heroes */
   --color-silver: #c0c0c0;

@@ -29,10 +29,10 @@ export const NumberedMosaicNotes = ({ data, className }: Props) => {
             <p className="font-mono text-[5rem] leading-none text-[#d946ef]/14 md:text-[7rem]">{String(index + 1).padStart(2, "0")}</p>
             <div className="relative -mt-4 max-w-[30rem]">
               {note.eyebrow ? (
-                <p className="text-16 text-lightgray/80 font-mono uppercase tracking-[0.12em]">{note.eyebrow}</p>
+                <p className="text-16 text-copy-body font-mono uppercase tracking-[0.12em]">{note.eyebrow}</p>
               ) : null}
               <h3 className="text-28 md:text-38 font-mono uppercase pt-4">{note.title}</h3>
-              <p className="text-16 text-lightgray scalable pt-6">{note.text}</p>
+              <p className="text-16 text-copy-body scalable pt-6">{note.text}</p>
             </div>
           </article>
         ))}

@@ -24,7 +24,7 @@ export const SpHeroSection = ({ name, mainSection }: SpHeroSectionPropsT) => {
       <div className="">
         <div className="group text-16 mb-1 flex items-center space-x-4">
           <Link href="/">
-            <span className="text-lightgray duration-500 group-hover:text-white">{t("projects")}</span>
+            <span className="text-copy-body duration-500 group-hover:text-copy-strong">{t("projects")}</span>
           </Link>
         </div>
         <SpTitle name={name} />
@@ -47,8 +47,8 @@ export const SpHeroSection = ({ name, mainSection }: SpHeroSectionPropsT) => {
           <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 md:mt-12 md:gap-x-12 lg:mt-16">
             {Object.entries(cats).map(([label, value]) => (
               <div key={label}>
-                <p className="text-16 text-gray7 uppercase">{label}</p>
-                <p className="text-16 text-lightgray md:text-20 pt-2">{value}</p>
+                <p className="text-16 text-copy-muted uppercase">{label}</p>
+                <p className="text-16 text-copy-body md:text-20 pt-2">{value}</p>
               </div>
             ))}
           </div>

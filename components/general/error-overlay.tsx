@@ -25,15 +25,15 @@ export function ErrorOverlay({ isOpen, onClose }: ErrorOverlayPropsT) {
           <p className="text-24 md:text-28 max-w-2xl text-center font-mono text-balance text-red-500 uppercase">
             {t("errorMessage")}
           </p>
-          <p className="text-16 text-gray7 text-center">{t("errorEmailFallback")}</p>
+          <p className="text-16 text-copy-muted text-center">{t("errorEmailFallback")}</p>
           <a
             href={`mailto:${contactEmail}`}
             onClick={(e) => e.stopPropagation()}
-            className="text-16 md:text-20 hover:text-gray7 font-mono text-white underline underline-offset-4 transition-colors"
+            className="text-16 md:text-20 hover:text-copy-muted font-mono text-primary underline underline-offset-4 transition-colors"
           >
             {contactEmail}
           </a>
-          <p className="text-16 text-gray7 mt-4">{t("clickToClose")}</p>
+          <p className="text-16 text-copy-muted mt-4">{t("clickToClose")}</p>
         </div>
       </DialogContent>
     </Dialog>

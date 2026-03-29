@@ -83,10 +83,10 @@ export const SacredNeonNotes = ({ data, className }: Props) => {
                   <p className={cn("font-mono text-sm uppercase tracking-[0.2em]", green.text)}>
                     {note.eyebrow}
                   </p>
-                  <h3 className="pt-4 font-mono text-24 md:text-28 uppercase text-white">
+                  <h3 className="pt-4 font-mono text-24 md:text-28 uppercase text-primary">
                     {note.title}
                   </h3>
-                  <p className="pt-4 text-16 text-white/55">{note.text}</p>
+                  <p className="pt-4 text-16 text-copy-body">{note.text}</p>
                 </article>
               );
             })}

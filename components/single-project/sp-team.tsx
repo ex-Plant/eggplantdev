@@ -18,7 +18,7 @@ export const SpTeam = ({ data }: SpTeamPropsT) => {
         {cards.map((card, index) => (
           <div key={index} className="rounded-3xl border border-gray5 p-6">
             <p className="font-mono text-20 uppercase">{card.title}</p>
-            <p className="pt-4 text-16 text-lightgray">{card.content}</p>
+            <p className="pt-4 text-16 text-copy-body">{card.content}</p>
           </div>
         ))}
       </div>

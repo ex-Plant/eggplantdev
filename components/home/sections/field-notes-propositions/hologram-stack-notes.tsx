@@ -53,16 +53,16 @@ export const HologramStackNotes = ({ data, className }: Props) => {
 
                   <div className="relative z-10">
                     <div className="flex items-center gap-3">
-                      <span className="font-mono text-sm uppercase tracking-[0.2em] text-white/50">
+                      <span className="font-mono text-sm uppercase tracking-[0.2em] text-copy-body">
                         {note.eyebrow}
                       </span>
                       {/* Prismatic dot */}
                       <div className={cn("h-2 w-2 rounded-full bg-gradient-to-r", border)} />
                     </div>
-                    <h3 className="pt-4 font-mono text-24 md:text-34 uppercase text-white">
+                    <h3 className="pt-4 font-mono text-24 md:text-34 uppercase text-primary">
                       {note.title}
                     </h3>
-                    <p className="pt-4 text-16 text-white/60 max-w-prose">{note.text}</p>
+                    <p className="pt-4 text-16 text-copy-body max-w-prose">{note.text}</p>
                   </div>
                 </article>
               </div>

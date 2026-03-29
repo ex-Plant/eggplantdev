@@ -106,10 +106,10 @@ export const HexGridNotes = ({ data, className }: Props) => {
                       <p className={cn("font-mono text-sm uppercase tracking-[0.2em] md:hidden", hex.text)}>
                         {note.eyebrow}
                       </p>
-                      <h3 className="font-mono text-24 md:text-28 uppercase text-white pt-1">
+                      <h3 className="font-mono text-24 md:text-28 uppercase text-primary pt-1">
                         {note.title}
                       </h3>
-                      <p className="pt-3 text-16 text-white/50 max-w-prose">{note.text}</p>
+                      <p className="pt-3 text-16 text-copy-muted max-w-prose">{note.text}</p>
                     </div>
                   </div>
                 </article>

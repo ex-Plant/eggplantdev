@@ -27,11 +27,11 @@ export const BrutalistPosterNotes = ({ data, className }: Props) => {
                 index === 3 ? "md:rotate-[1deg]" : "",
               )}
             >
-              <p className={cn("font-mono text-sm uppercase tracking-[0.18em]", index % 2 === 0 ? "text-black/55" : "text-lightgray/70")}>
+              <p className={cn("font-mono text-sm uppercase tracking-[0.18em]", index % 2 === 0 ? "text-black/55" : "text-copy-body")}>
                 {note.eyebrow}
               </p>
               <h3 className="pt-6 font-mono text-40 md:text-56 uppercase leading-none">{note.title}</h3>
-              <p className={cn("pt-10 text-16 max-w-[26rem]", index % 2 === 0 ? "text-black/75" : "text-lightgray")}>{note.text}</p>
+              <p className={cn("pt-10 text-16 max-w-[26rem]", index % 2 === 0 ? "text-black/75" : "text-copy-body")}>{note.text}</p>
             </article>
           ))}
         </div>

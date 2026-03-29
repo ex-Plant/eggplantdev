@@ -59,7 +59,7 @@ export function ButtonForm({ closeBtn, open }: ButtonFormPropsT) {
           {(field) => (
             <div className="relative">
               <input
-                className="border-gray7 text-16 placeholder:text-gray7 mt-6 h-12 w-full border-b outline-none"
+                className="border-copy-muted text-16 placeholder:text-copy-muted mt-6 h-12 w-full border-b outline-none"
                 type="email"
                 placeholder={t("email")}
                 aria-label={t("email")}

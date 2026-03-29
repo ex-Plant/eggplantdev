@@ -65,10 +65,10 @@ export const CosmicNebulaNotes = ({ data, className }: Props) => {
                   <p className="relative font-mono text-sm uppercase tracking-[0.2em]" style={{ color: card.accent }}>
                     {note.eyebrow}
                   </p>
-                  <h3 className="relative pt-4 font-mono text-20 md:text-28 uppercase text-white">
+                  <h3 className="relative pt-4 font-mono text-20 md:text-28 uppercase text-primary">
                     {note.title}
                   </h3>
-                  <p className="relative pt-4 text-16 text-white/50">{note.text}</p>
+                  <p className="relative pt-4 text-16 text-copy-muted">{note.text}</p>
                 </article>
               );
             })}
