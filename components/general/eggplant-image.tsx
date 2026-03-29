@@ -3,6 +3,7 @@
 import { CSSProperties, useRef } from "react";
 import Image from "next/image";
 import { useYoyo } from "@/hooks/use-yoyo";
+import { useZeroGravity, type ZeroGravityModeT } from "@/hooks/use-zero-gravity";
 import { cn } from "@/helpers/cn";
 
 const DEFAULT_SRC = "/logos/eggplant-logo-smooth.apng";
@@ -33,7 +34,7 @@ export const EGGPLANT_PRESETS = {
 export type EggplantPresetT = keyof typeof EGGPLANT_PRESETS;
 
 export const GLOW_PRESETS = {
-  "gold": { gradient: "radial-gradient(circle, rgba(255,215,0,0.15) 0%, rgba(218,165,32,0.08) 40%, transparent 70%)" },
+  "gold": { gradient: "radial-gradient(circle, rgba(255,215,0,0.15) 0%, rgba(218,165,32,0.08) 40%, transparent 70%)", size: "400px" },
   "gold-soft": { gradient: "radial-gradient(circle, rgba(240,192,64,0.08) 0%, transparent 60%)", size: "calc(100% + 8rem)" },
   "gold-wide": { gradient: "radial-gradient(circle, rgba(218,165,32,0.12) 0%, rgba(240,192,64,0.05) 40%, transparent 70%)", size: "500px" },
   "gold-ellipse": { gradient: "radial-gradient(ellipse, rgba(218,165,32,0.1) 0%, rgba(255,215,0,0.03) 40%, transparent 70%)", size: "420px" },
@@ -72,6 +73,10 @@ type EggplantImagePropsT = {
   floatY?: number;
   /** Yoyo duration in seconds */
   floatDuration?: number;
+  /** Zero-gravity animation mode — replaces yoyo when set */
+  floatMode?: ZeroGravityModeT;
+  /** Intensity multiplier for zero-gravity mode (default: 1) */
+  floatIntensity?: number;
   /** Named glow preset — overridden by explicit `glow` prop */
   glowPreset?: GlowPresetT;
   /** Radial gradient glow behind the eggplant — overrides glowPreset */
@@ -95,6 +100,8 @@ export function EggplantImage({
   float = false,
   floatY,
   floatDuration,
+  floatMode,
+  floatIntensity,
   glowPreset,
   glow,
   priority,
@@ -103,7 +110,10 @@ export function EggplantImage({
 }: EggplantImagePropsT) {
   const imgRef = useRef<HTMLImageElement>(null);
 
-  useYoyo({ y: floatY, duration: floatDuration, disabled: !float, ref: imgRef });
+  const useBasicFloat = float && !floatMode;
+  const useZeroG = float && !!floatMode;
+  useYoyo({ y: floatY, duration: floatDuration, disabled: !useBasicFloat, ref: imgRef });
+  useZeroGravity({ mode: floatMode, intensity: floatIntensity, disabled: !useZeroG, ref: imgRef });
 
   const resolvedFilter = filter ?? (preset ? EGGPLANT_PRESETS[preset] : undefined);
   const resolvedGlow = glow ?? (glowPreset ? GLOW_PRESETS[glowPreset] : undefined);

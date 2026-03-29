@@ -37,6 +37,8 @@ export function HeroEggplantsInSpace() {
               sizeClass="h-48 w-48"
               preset="golden-metallic"
               float
+              /* Zero-gravity modes: "tumble" | "jelly" | "orbital" */
+              floatMode="tumble"
               glowPreset="gold"
             />
             {/* Halo rings — gold */}
