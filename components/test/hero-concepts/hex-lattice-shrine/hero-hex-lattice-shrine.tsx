@@ -66,7 +66,6 @@ export function HeroHexLatticeShrine() {
             src={EGGPLANT.src}
             sizeClass="h-44 w-44"
             preset="cyan-glow"
-            float
           />
           <p className="mt-10 font-mono text-12 uppercase tracking-widest text-[#00e5ff]/30">
             {COPY.eyebrow}

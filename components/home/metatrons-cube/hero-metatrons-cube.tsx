@@ -200,7 +200,7 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
           {COPY.subtitle}
         </p>
 
-        <EggplantImage preset={EGGPLANT_PRESETS[theme]} sizeClass="h-48 w-48 mb-8" float glowPreset="gold" />
+        <EggplantImage preset={EGGPLANT_PRESETS[theme]} sizeClass="h-48 w-48 mb-8" glowPreset="gold" />
 
         <HeroTitle
           line1={COPY.titleLine1}

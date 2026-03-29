@@ -84,7 +84,6 @@ export function HeroCelestialAltar() {
         <EggplantImage
           sizeClass="h-48 w-48"
           preset="soft-gold"
-          float
           glowPreset="gold-subtle"
         />
         <h1 className="mt-8 font-mono text-48 uppercase text-[#f5e6c0] md:text-64">

@@ -54,7 +54,7 @@ export function HeroCosmicCultFlyer() {
       <div className="relative z-10 flex flex-col items-center text-center">
         <p className="text-sm uppercase tracking-[0.6em] text-[#daa520]/30" style={{ fontFamily: "monospace" }}>{COPY.subtitle}</p>
         <div className="relative my-6">
-          <EggplantImage sizeClass="h-44 w-44" preset="light-sepia" float />
+          <EggplantImage sizeClass="h-44 w-44" preset="light-sepia"/>
         </div>
         <h1 className="font-mono text-56 uppercase leading-none text-[#f5e6c0] md:text-[5rem]">
           {COPY.titleLine1}<br />{COPY.titleLine2}<br /><span className="text-[#daa520]">{COPY.titleLine3}</span>

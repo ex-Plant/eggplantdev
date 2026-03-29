@@ -27,7 +27,7 @@ export function GlamTextAndImage() {
       </div>
 
       <div className="relative flex items-center justify-center">
-        <EggplantImage sizeClass="h-56 w-56" preset="glam-gold" float glowPreset="gold-pink" />
+        <EggplantImage sizeClass="h-56 w-56" preset="glam-gold" glowPreset="gold-pink" />
       </div>
     </div>
   );

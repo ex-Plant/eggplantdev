@@ -70,7 +70,7 @@ type EggplantImagePropsT = {
   filter?: string;
   /** Inline style overrides on the img element */
   style?: CSSProperties;
-  /** Enable yoyo float animation (default: false) */
+  /** Enable yoyo float animation (default: true) */
   float?: boolean;
   /** Yoyo vertical offset in px */
   floatY?: number;

@@ -67,7 +67,6 @@ export function HeroHexLatticeShrineGold() {
             src={EGGPLANT.src}
             sizeClass="h-44 w-44"
             filter="sepia(0.3) saturate(1.5) brightness(0.9)"
-            float
             glow={{
               size: "400px",
               gradient: "radial-gradient(circle, rgba(218,165,32,0.15) 0%, rgba(200,134,14,0.06) 40%, transparent 70%)",

@@ -64,7 +64,7 @@ export function HeroRitualObservatory() {
       </svg>
 
       <div className="relative z-10 flex flex-col items-center text-center">
-        <EggplantImage sizeClass="h-36 w-36" preset="amber-sepia" float />
+        <EggplantImage sizeClass="h-36 w-36" preset="amber-sepia"/>
         <div className="mt-6 flex items-center gap-3">
           <div className="h-px w-12 bg-[#daa520]/15" />
           <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-[#daa520]/30">{COPY.signalLabel}</span>

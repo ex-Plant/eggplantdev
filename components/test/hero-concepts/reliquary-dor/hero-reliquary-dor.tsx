@@ -81,7 +81,6 @@ export function HeroReliquaryDor() {
           sizeClass="h-52 w-52"
           className="mt-6"
           preset="rich-gold"
-          float
           glowPreset="gold-ellipse"
         />
 

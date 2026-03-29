@@ -93,7 +93,6 @@ export function HeroEchoesOfDjembeya() {
             src={EGGPLANT.src}
             sizeClass="h-52 w-52"
             preset="warm-gold-sepia"
-            float
             glowPreset="gold-soft"
           />
         </div>

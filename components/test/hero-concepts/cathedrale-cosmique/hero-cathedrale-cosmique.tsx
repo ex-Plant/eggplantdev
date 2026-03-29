@@ -68,7 +68,6 @@ export function HeroCathedralCosmique() {
         <div className="relative z-10 flex flex-col items-center text-center">
           <p className="font-mono text-12 uppercase tracking-[0.5em] text-[#ffd700]/35">{COPY.eyebrow}</p>
           <EggplantImage
-            float
             sizeClass="h-48 w-48"
             className="mt-6"
             preset="cathedrale-gold"

@@ -34,7 +34,6 @@ export function EggplantLogo({
         sizes="(min-width: 1024px) 126px, (min-width: 640px) 120px, 60px"
         className={className}
         preset={"silver"}
-        float
         priority
       />
     </div>

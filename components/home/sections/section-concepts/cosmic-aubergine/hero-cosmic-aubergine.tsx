@@ -77,7 +77,7 @@ export function CosmicAubergineContent({ palette }: CosmicPropsT = {}) {
             <polygon points={GEOMETRY.triangleDown} fill="none" stroke={p.accent2} strokeWidth="0.4" opacity="0.05" />
           </svg>
 
-          <EggplantImage sizeClass="h-56 w-56" preset={p.eggplantPreset} float />
+          <EggplantImage sizeClass="h-56 w-56" preset={p.eggplantPreset}/>
         </div>
       </div>
     </div>

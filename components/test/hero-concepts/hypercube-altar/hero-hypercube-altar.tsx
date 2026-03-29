@@ -76,7 +76,6 @@ export function HeroHypercubeAltar() {
             sizeClass="h-48 w-48"
             className="mb-8"
             preset="sepia-hue15"
-            float
           />
 
           <h1 className="font-mono text-48 uppercase leading-none tracking-tight md:text-72">
