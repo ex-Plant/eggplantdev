@@ -35,13 +35,10 @@ function lazyCodex(path: string, exportName: string) {
 const HERO_REGISTRY: HeroEntryT[] = [
   /* ── Metatron's Cube (home hero) ── */
   { id: "metatrons-cube", label: "Metatron's Cube", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCube") },
-  { id: "metatrons-cube-raw", label: "Metatron's Cube Raw", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeRaw") },
   { id: "metatrons-cube-silver", label: "Metatron's Cube Silver", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeSilver") },
-  { id: "metatrons-cube-mono", label: "Metatron's Cube Mono", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeMono") },
 
   /* ── Batch 5 — Geometry Overload ── */
   { id: "hypercube-altar", label: "Hypercube Altar", load: lazyHero("hypercube-altar/hero-hypercube-altar", "HeroHypercubeAltar") },
-  { id: "hex-lattice-shrine", label: "Hex Lattice Shrine", load: lazyHero("hex-lattice-shrine/hero-hex-lattice-shrine", "HeroHexLatticeShrine") },
   { id: "hex-lattice-shrine-gold", label: "Hex Lattice Shrine Gold", load: lazyHero("hex-lattice-shrine/hero-hex-lattice-shrine-gold", "HeroHexLatticeShrineGold") },
 
   /* ── Batch 4 — Aubergine d'Or ── */
@@ -60,6 +57,11 @@ const HERO_REGISTRY: HeroEntryT[] = [
 
   /* ── Batch 1 — neon / cyan / magenta ── */
   { id: "sacred-ascension-gold", label: "EggplantsInSpace", load: lazyHero("sacred-ascension/hero-sacred-ascension-gold", "HeroEggplantsInSpace") },
+
+  /* ── Rejected ── */
+  // { id: "metatrons-cube-raw", label: "Metatron's Cube Raw", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeRaw") },
+  // { id: "metatrons-cube-mono", label: "Metatron's Cube Mono", load: lazyHero("metatrons-cube/hero-metatrons-cube", "HeroMetatronsCubeMono") },
+  // { id: "hex-lattice-shrine", label: "Hex Lattice Shrine", load: lazyHero("hex-lattice-shrine/hero-hex-lattice-shrine", "HeroHexLatticeShrine") },
 ];
 
 function buildCodexRegistry(): HeroEntryT[] {
