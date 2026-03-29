@@ -22,14 +22,11 @@ export function HeroGlamCosmicBillboard() {
         viewBox="0 0 1200 800"
         preserveAspectRatio="xMidYMid meet"
       >
-        {/* SVG glow filter + radial gradient fills used by animated dots below */}
-        <GlamSvgFiltersAndGradients />
-        {/* Diagonal lines, elliptical arcs, and small cross-shaped sparkles */}
-        <GlamStripesArcsSparkles />
-        {/* Single glowing dot that orbits around the gold ellipse — 44s loop */}
-        <GlamOrbitingDot path={ORBIT_PATH} />
-        {/* One dot per diagonal line, traveling left→right with fade — different speeds */}
-        <GlamTravelingDots stripes={GLAM_STRIPES} />
+        {/* SVG geometry now handled by FixedCosmicLines in layout */}
+        {/* <GlamSvgFiltersAndGradients /> */}
+        {/* <GlamStripesArcsSparkles /> */}
+        {/* <GlamOrbitingDot path={ORBIT_PATH} /> */}
+        {/* <GlamTravelingDots stripes={GLAM_STRIPES} /> */}
       </svg>
 
       {/* Title, subtitle, description, CTA buttons, and floating eggplant image */}

@@ -63,6 +63,9 @@ export default function HomePage() {
       <HeroCosmicFlower />
 
       {/* <GetInTouchButton /> */}
+
+      {/* Spacing before footer */}
+      <div className="pb-20 md:pb-40" />
     </div>
   );
 }
