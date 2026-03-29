@@ -29,13 +29,7 @@ export function EggplantLogo({
 
   const eggplantLogo = (
     <div ref={wrapperRef} className="opacity-0">
-      <EggplantImage
-        sizeClass="size-10 sm:size-20 lg:size-32"
-        sizes="(min-width: 1024px) 126px, (min-width: 640px) 120px, 60px"
-        className={className}
-        preset={"silver"}
-        priority
-      />
+      <EggplantImage sizeClass="size-10 sm:size-20 lg:size-32" className={className} preset={"silver"} priority />
     </div>
   );
 

@@ -20,29 +20,51 @@ export const EGGPLANT_PRESETS = {
   "amber-sepia": "sepia(0.3) saturate(1.4)",
   "glam-gold": "sepia(0.15) saturate(1.6) brightness(1.05)",
   "cathedrale-gold": "sepia(0.3) saturate(1.6) brightness(0.9) hue-rotate(-10deg)",
-  "soleil-gold": "sepia(0.3) saturate(1.6) hue-rotate(-10deg) brightness(1.15) drop-shadow(0 0 40px rgba(255,215,0,0.4))",
+  "soleil-gold":
+    "sepia(0.3) saturate(1.6) hue-rotate(-10deg) brightness(1.15) drop-shadow(0 0 40px rgba(255,215,0,0.4))",
   "chrome-silver": "sepia(1) saturate(0.5) drop-shadow(0 0 40px rgba(218,165,32,0.3))",
   "ritual-gold": "sepia(0.45) saturate(2.2) brightness(0.95) drop-shadow(0 0 20px rgba(218,165,32,0.25))",
-  "eclipse-gold": "sepia(0.5) saturate(2.5) brightness(0.7) drop-shadow(0 0 40px rgba(218,165,32,0.4)) drop-shadow(0 0 80px rgba(200,134,14,0.2))",
+  "eclipse-gold":
+    "sepia(0.5) saturate(2.5) brightness(0.7) drop-shadow(0 0 40px rgba(218,165,32,0.4)) drop-shadow(0 0 80px rgba(200,134,14,0.2))",
   "chrome-relic": "saturate(0.3) brightness(1.4) contrast(1.3)",
   "gold-desat-glow": "saturate(0.5) sepia(1) drop-shadow(0 0 40px rgba(218,165,32,0.3))",
   "cyan-glow": "saturate(0.7) sepia(0.2) drop-shadow(0 0 30px rgba(0,229,255,0.25))",
   "sepia-hue15": "sepia(1) saturate(0.5) hue-rotate(15deg) drop-shadow(0 0 50px rgba(218,165,32,0.35))",
   "cosmic-gold": "saturate(0.15) brightness(1.4) contrast(0.9)",
-  "golden-metallic": "sepia(1) saturate(3) hue-rotate(5deg) brightness(1.15) contrast(1.1) drop-shadow(0 0 40px rgba(218,165,32,0.3))",
+  "golden-metallic":
+    "sepia(1) saturate(3) hue-rotate(5deg) brightness(1.15) contrast(1.1) drop-shadow(0 0 40px rgba(218,165,32,0.3))",
 } as const;
 
 export type EggplantPresetT = keyof typeof EGGPLANT_PRESETS;
 
 export const GLOW_PRESETS = {
-  "gold": { gradient: "radial-gradient(circle, rgba(255,215,0,0.15) 0%, rgba(218,165,32,0.08) 40%, transparent 70%)", size: "400px" },
-  "gold-soft": { gradient: "radial-gradient(circle, rgba(240,192,64,0.08) 0%, transparent 60%)", size: "calc(100% + 8rem)" },
-  "gold-wide": { gradient: "radial-gradient(circle, rgba(218,165,32,0.12) 0%, rgba(240,192,64,0.05) 40%, transparent 70%)", size: "500px" },
-  "gold-ellipse": { gradient: "radial-gradient(ellipse, rgba(218,165,32,0.1) 0%, rgba(255,215,0,0.03) 40%, transparent 70%)", size: "420px" },
+  gold: {
+    gradient: "radial-gradient(circle, rgba(255,215,0,0.15) 0%, rgba(218,165,32,0.08) 40%, transparent 70%)",
+    size: "400px",
+  },
+  "gold-soft": {
+    gradient: "radial-gradient(circle, rgba(240,192,64,0.08) 0%, transparent 60%)",
+    size: "calc(100% + 8rem)",
+  },
+  "gold-wide": {
+    gradient: "radial-gradient(circle, rgba(218,165,32,0.12) 0%, rgba(240,192,64,0.05) 40%, transparent 70%)",
+    size: "500px",
+  },
+  "gold-ellipse": {
+    gradient: "radial-gradient(ellipse, rgba(218,165,32,0.1) 0%, rgba(255,215,0,0.03) 40%, transparent 70%)",
+    size: "420px",
+  },
   "gold-subtle": { gradient: "radial-gradient(ellipse, rgba(240,192,64,0.06) 0%, transparent 70%)", size: "300px" },
   "gold-cathedral": { gradient: "radial-gradient(ellipse, rgba(218,165,32,0.07) 0%, transparent 65%)", size: "500px" },
-  "gold-pink": { gradient: "radial-gradient(circle, rgba(218,165,32,0.1) 0%, rgba(255,20,147,0.04) 50%, transparent 70%)", size: "350px" },
-  "fuchsia": { gradient: "radial-gradient(circle, oklch(from var(--color-glow-fuchsia) l c h / 18%) 0%, oklch(from var(--color-glow-fuchsia) l c h / 8%) 30%, transparent 60%)", size: "100%" },
+  "gold-pink": {
+    gradient: "radial-gradient(circle, rgba(218,165,32,0.1) 0%, rgba(255,20,147,0.04) 50%, transparent 70%)",
+    size: "350px",
+  },
+  fuchsia: {
+    gradient:
+      "radial-gradient(circle, oklch(from var(--color-glow-fuchsia) l c h / 18%) 0%, oklch(from var(--color-glow-fuchsia) l c h / 8%) 30%, transparent 60%)",
+    size: "100%",
+  },
 } as const;
 
 export type GlowPresetT = keyof typeof GLOW_PRESETS;
@@ -85,10 +107,6 @@ type EggplantImagePropsT = {
   glow?: GlowT;
   /** next/image priority flag */
   priority?: boolean;
-  /** next/image quality (default: 100) */
-  quality?: number;
-  /** next/image sizes attribute */
-  sizes?: string;
 };
 
 export function EggplantImage({
@@ -107,8 +125,6 @@ export function EggplantImage({
   glowPreset,
   glow,
   priority,
-  quality = 100,
-  sizes,
 }: EggplantImagePropsT) {
   const imgRef = useRef<HTMLImageElement>(null);
 
@@ -139,12 +155,11 @@ export function EggplantImage({
       <Image
         ref={imgRef}
         src={src}
-        alt={"Eggplan image"}
+        alt={"Eggplant image"}
         width={160}
         height={160}
-        quality={quality}
+        unoptimized
         priority={priority}
-        sizes={sizes}
         className={cn("relative object-contain", sizeClass, className)}
         style={Object.keys(imgStyle).length > 0 ? imgStyle : undefined}
       />

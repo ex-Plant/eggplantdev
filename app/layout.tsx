@@ -17,6 +17,7 @@ import { DevTestNav } from "@/components/test/dev-test-nav";
 import { EggplantLogo } from "../components/top-navigation/eggplant-logo";
 import { cn } from "../helpers/cn";
 import { PagePreloader } from "@/components/general/page-preloader";
+import { FixedCosmicLines } from "@/components/animations/fixed-cosmic-lines";
 
 export const metadata: Metadata = {
   title: "Egggplants in space",
@@ -37,6 +38,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <TranslationsProvider>
           <DebugWrapper>
             <SkipToContent />
+            {/* Fixed ambient diagonal lines + traveling dots — behind grit */}
+            <FixedCosmicLines />
             {/* Fixed grit overlay — always on, base texture for all pages */}
             <div className="grit pointer-events-none fixed inset-0 z-200 will-change-transform" />
 
