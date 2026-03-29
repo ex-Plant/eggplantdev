@@ -1,5 +1,5 @@
 import { ALL_POINTS, CENTER } from "./config";
-import styles from "./metatrons-cube.module.css";
+import styles from "@/components/animations/burst-dot.module.css";
 
 const STAR_RAY_COUNT = 16;
 const STAR_INNER_R = 2;

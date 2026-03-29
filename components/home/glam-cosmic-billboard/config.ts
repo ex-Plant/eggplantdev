@@ -25,8 +25,8 @@ export const SPARKLES = Array.from({ length: SPARKLE_COUNT }, (_, i) => ({
 
 /* ── Animation timing ── */
 export const ORBIT_DURATION_S = 44;
-export const STRIPE_PULSE_COUNT = 1;
-export const STRIPE_DURATIONS = [52, 60] as const;
+export const STRIPE_PULSE_COUNT = 3;
+export const STRIPE_DURATIONS = [36, 30, 40, 42, 34, 38] as const;
 
 /* ── SVG IDs (namespaced to avoid collisions with other heroes) ── */
 export const ID = {

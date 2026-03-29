@@ -53,7 +53,7 @@ const PAGES = [
       "glam-cosmic-billboard",
       "ritual-observatory",
       "eggplants-in-space",
-      "cosmic-aubergine",
+      "cosmic-flower",
       "orbital-launch",
       "wormhole",
       "temple",

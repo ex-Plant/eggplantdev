@@ -4,7 +4,7 @@ import { HeroTitle } from "@/components/home/hero-title";
 import { HeroDescription } from "@/components/home/hero-description";
 import { COPY } from "./config";
 
-export function CosmicAubergineHeroContent() {
+export function CosmicFlowerHeroContent() {
   return (
     <div className="relative z-10 flex flex-col items-center text-center">
       <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
