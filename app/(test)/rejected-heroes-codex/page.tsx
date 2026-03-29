@@ -1,7 +1,8 @@
 "use client";
 /* Rejected Codex hero concepts — archived for reference */
 
-import { lazy, Suspense } from "react";
+import { lazy, type ReactNode } from "react";
+import { ConceptShowcase, ShowcaseItem } from "@/components/test/concept-showcase";
 import { useLocalizedData } from "@/hooks/use-localized-data";
 
 type HeroEntryT = {
@@ -49,49 +50,39 @@ const REGISTRY: HeroEntryT[] = [
   { id: "codex-processional-gate", label: "Codex / 35: Processional Gate", Component: lazyCodex("processional-gate", "CodexProcessionalGate") },
 ];
 
+function V2Divider() {
+  return (
+    <div className="fest-container mb-8 border-t border-gold/20 pt-12">
+      <h2 className="text-24 md:text-40 mb-2 font-mono uppercase text-gold/40">V2 Redesigns</h2>
+    </div>
+  );
+}
+
+const V2_START = REGISTRY.findIndex((h) => h.group === "v2");
+
 export default function RejectedHeroesCodexPage() {
   const { introTxt = "" } = useLocalizedData("home");
-  const v2Start = REGISTRY.findIndex((h) => h.group === "v2");
 
   return (
-    <div className="bg-bgc min-h-screen text-white">
-      <div className="fest-container py-16">
-        <h1 className="text-40 md:text-64 mb-4 font-mono text-gold/80 uppercase">Rejected Heroes — Codex</h1>
-        <p className="text-20 mb-8 text-lightgray">
-          {REGISTRY.length} rejected Codex hero concept{REGISTRY.length !== 1 ? "s" : ""}.
-        </p>
-      </div>
+    <ConceptShowcase title="Rejected Heroes — Codex" count={REGISTRY.length} accent="gold">
+      {REGISTRY.map(({ id, label, Component, needsTxt }, i) => {
+        const item = (
+          <ShowcaseItem key={id} index={i} label={label} accent="gold" lazy className="min-h-screen">
+            <Component {...(needsTxt ? { txt: introTxt } : {})} />
+          </ShowcaseItem>
+        );
 
-      <div className="flex flex-col gap-12">
-        {REGISTRY.map(({ id, label, Component, needsTxt }, i) => (
-          <section key={id} id={id} className="min-h-screen">
-            {i === v2Start && (
-              <div className="fest-container mb-8 border-t border-gold/20 pt-12">
-                <h2 className="text-24 md:text-40 mb-2 font-mono uppercase text-gold/40">V2 Redesigns</h2>
-              </div>
-            )}
-            <div className="fest-container">
-              <div className="mb-4 flex items-center gap-3 border-b border-gold/10 pb-3">
-                <span className="text-14 font-mono uppercase tracking-widest text-gold/50">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="text-16 font-mono uppercase text-white/80">{label}</span>
-              </div>
+        if (i === V2_START) {
+          return (
+            <div key={id}>
+              <V2Divider />
+              {item}
             </div>
-            <Suspense
-              fallback={
-                <div className="flex h-[33rem] items-center justify-center">
-                  <span className="text-14 animate-pulse font-mono uppercase tracking-widest text-lightgray/30">
-                    Loading {label}…
-                  </span>
-                </div>
-              }
-            >
-              <Component {...(needsTxt ? { txt: introTxt } : {})} />
-            </Suspense>
-          </section>
-        ))}
-      </div>
-    </div>
+          );
+        }
+
+        return item;
+      })}
+    </ConceptShowcase>
   );
 }

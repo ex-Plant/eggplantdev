@@ -21,15 +21,19 @@ import styles from "./metatrons-cube.module.css";
 
 const STROKES = ["var(--color-gold)", "var(--color-gold-dark)", "var(--color-gold-warm)"] as const;
 
-export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
-  const stars = buildStars();
+const STARS = buildStars();
 
-  const lines: [number, number, number, number][] = [];
+const LINES: readonly [number, number, number, number][] = (() => {
+  const result: [number, number, number, number][] = [];
   for (let i = 0; i < ALL_POINTS.length; i++) {
     for (let j = i + 1; j < ALL_POINTS.length; j++) {
-      lines.push([ALL_POINTS[i][0], ALL_POINTS[i][1], ALL_POINTS[j][0], ALL_POINTS[j][1]]);
+      result.push([ALL_POINTS[i][0], ALL_POINTS[i][1], ALL_POINTS[j][0], ALL_POINTS[j][1]]);
     }
   }
+  return result;
+})();
+
+export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
 
   return (
     <div
@@ -38,7 +42,7 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
       style={THEME_OVERRIDES[theme]}
     >
       {/* Star field */}
-      {/* {stars.map((s, i) => (
+      {/* {STARS.map((s, i) => (
         <div
           key={`s-${i}`}
           className="pointer-events-none absolute rounded-full"
@@ -53,7 +57,7 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
         preserveAspectRatio="xMidYMid slice"
       >
         {/* Connecting lines between all 13 centers */}
-        {lines.map(([x1, y1, x2, y2], i) => (
+        {LINES.map(([x1, y1, x2, y2], i) => (
           <line
             key={`l-${i}`}
             x1={x1}

@@ -1,0 +1,16 @@
+/* Grit Pulse — keyframe + animation class (scoped by CSS modules) */
+
+@keyframes grit-pulse {
+  0% { opacity: 0; }
+  4% { opacity: 1; }
+  12% { opacity: 0.8; }
+  20% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.pulse {
+  animation-name: grit-pulse;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+}

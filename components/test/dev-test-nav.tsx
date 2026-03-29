@@ -4,7 +4,6 @@ const TEST_PAGES = [
   { href: "/rejected-heroes-claude", label: "Rejected Claude" },
   { href: "/rejected-heroes-codex", label: "Rejected Codex" },
   { href: "/eggplant-palette", label: "Eggplant Palette" },
-  { href: "/backdrop-test", label: "Backdrop" },
 ];
 
 export function DevTestNav() {
