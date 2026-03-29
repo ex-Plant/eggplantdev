@@ -12,7 +12,7 @@ export function MetatronsCube({ theme = "gold" }: { theme?: ThemeT }) {
   return (
     <div
       id={`hero-metatrons-cube-${theme}`}
-      className="relative flex min-h-screen items-center justify-center overflow-x-hidden py-16 md:py-20"
+      className="relative flex min-h-screen items-center justify-center py-16 md:py-20"
       style={THEME_OVERRIDES[theme]}
     >
       <svg

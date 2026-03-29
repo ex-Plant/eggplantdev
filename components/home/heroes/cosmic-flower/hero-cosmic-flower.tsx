@@ -18,7 +18,7 @@ export function HeroCosmicFlower() {
 /** Raw content — no bg wrapper, usable inside ScrollBackdropProvider */
 export function CosmicFlowerContent() {
   return (
-    <div id="hero-cosmic-flower" className="relative flex min-h-screen items-center justify-center overflow-x-hidden py-16 md:py-20">
+    <div id="hero-cosmic-flower" className="relative flex min-h-screen items-center justify-center py-16 md:py-20">
       {/* Deep space nebula */}
       <div className="pointer-events-none absolute inset-0">
         {NEBULA_CLOUDS.map((cloud, i) => (

@@ -12,7 +12,7 @@ export function HeroGlamCosmicBillboard() {
   return (
     <div
       id="hero-glam-cosmic-billboard"
-      className="min-h-100svh relative flex items-start overflow-x-hidden py-20 md:min-h-screen md:items-center md:py-[18vh]"
+      className="min-h-100svh relative flex items-start py-20 md:min-h-screen md:items-center md:py-[18vh]"
     >
       {/* Gold/pink radial gradient background — fades to transparent at top & bottom edges */}
       <GlamBackground />
