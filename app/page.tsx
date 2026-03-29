@@ -1,9 +1,5 @@
 "use client";
 
-// TODO: Add a loading state that hides the entire page until all components
-// and animations are ready. Show a blank/loading screen, then reveal everything
-// at once so the user never sees partially loaded content or janky animation starts.
-
 import { SimpleSection } from "@/components/home/sections/simple-section";
 import { ProjectsSection } from "@/components/home/sections/projects-section";
 import { FullSection } from "@/components/home/sections/full-section";
