@@ -60,17 +60,6 @@ export const EGGPLANT_PRESETS: Record<ThemeT, EggplantPresetT> = {
   mono: "silver-subtle",
 };
 
-/* ── Stars builder ── */
-export function buildStars() {
-  return Array.from({ length: 55 }, (_, i) => ({
-    x: `${(i * 17 + 7) % 100}%`,
-    y: `${(i * 23 + 13) % 100}%`,
-    size: i % 3 === 0 ? 3 : i % 2 === 0 ? 2 : 1,
-    opacity: 0.15 + (i % 5) * 0.12,
-    color: i % 4 === 0 ? "var(--color-gold)" : "var(--color-gold-cream)",
-  }));
-}
-
 /* ── SVG shared ── */
 export const SVG_VIEWBOX = "0 0 1200 800" as const;
 
@@ -85,9 +74,6 @@ export const SACRED_SYMBOLS = {
 /* ── Containment circle ── */
 export const CONTAINMENT = { cx: 600, cy: 400, r: 280, dasharray: "6 10" } as const;
 
-/* ── Eggplant ── */
-export const EGGPLANT_SRC = "/logos/eggplant-logo-smooth.apng" as const;
-
 /* ── Typography ── */
 export const COPY = {
   subtitle: "The blueprint of all creation",
@@ -97,4 +83,4 @@ export const COPY = {
     "The eggplant exists within the geometric template of the universe \u2014 encoded in every vertex, every edge, every platonic form",
 } as const;
 
-export { INNER_R };
+export { CENTER, INNER_R };

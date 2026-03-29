@@ -1,0 +1,36 @@
+/* Shared center-pulse animation — used by Soleil Aubergine and Metatron's Cube */
+
+@keyframes center-pulse {
+  0% {
+    opacity: 0.4;
+    scale: 1;
+  }
+  3% {
+    opacity: 1;
+    scale: 1.4;
+  }
+  15% {
+    opacity: 0.25;
+    scale: 0.85;
+  }
+  35% {
+    opacity: 0.45;
+    scale: 1.05;
+  }
+  55% {
+    opacity: 0.2;
+    scale: 0.9;
+  }
+  75% {
+    opacity: 0.35;
+    scale: 1;
+  }
+  100% {
+    opacity: 0.4;
+    scale: 1;
+  }
+}
+
+.centerPulse {
+  animation: center-pulse 13s ease-in-out 3s infinite backwards;
+}

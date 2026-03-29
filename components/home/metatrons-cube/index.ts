@@ -1,6 +1,1 @@
-export {
-  HeroMetatronsCube,
-  HeroMetatronsCubeRaw,
-  HeroMetatronsCubeSilver,
-  HeroMetatronsCubeMono,
-} from "./hero-metatrons-cube";
+export { MetatronsCube } from "./metatrons-cube";

@@ -1,12 +1,13 @@
 import { EggplantImage } from "@/components/general/eggplant-image";
 import { HeroDescription } from "@/components/home/hero-description";
+import { HeroSubtitle } from "@/components/home/hero-subtitle";
 import { COPY } from "./config";
 
 export function GlamTextAndImage() {
   return (
     <div className="fest-container relative z-10 grid gap-12 md:grid-cols-[1fr_auto] md:items-center">
       <div>
-        <p className="text-hot-pink/40 font-mono text-sm tracking-[0.4em] uppercase">{COPY.subtitle}</p>
+        <HeroSubtitle className="text-hot-pink/40">{COPY.subtitle}</HeroSubtitle>
         <h1
           className="text-gold-cream mt-4 text-[4rem] leading-[0.9] font-bold uppercase md:text-[6rem]"
           style={{ fontFamily: "monospace" }}

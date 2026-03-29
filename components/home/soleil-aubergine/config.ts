@@ -6,7 +6,7 @@ const SVG_CENTER = { x: 600, y: 400 } as const;
 const SVG_VIEWBOX = "0 0 1200 800" as const;
 
 /* ── Stars ── */
-export const STAR_COUNT = 50;
+const STAR_COUNT = 50;
 
 export const STARS = buildStars();
 
@@ -22,8 +22,8 @@ export function buildStars() {
 }
 
 /* ── Rays ── */
-export const RAY_COUNT = 24;
-export const RAY_ANGLE_STEP = 15; // degrees
+const RAY_COUNT = 24;
+const RAY_ANGLE_STEP = 15; // degrees
 export const RAY_PULSE_TRAVEL = "18vw"; // dies before ray tips
 
 export const RAYS = Array.from({ length: RAY_COUNT }, (_, i) => {
@@ -52,7 +52,7 @@ export const CORONA_RINGS = [
 ];
 
 /* ── Zigzag band ── */
-export const ZIGZAG_SEGMENTS = 48;
+const ZIGZAG_SEGMENTS = 48;
 export const ZIGZAG_POINTS = Array.from({ length: ZIGZAG_SEGMENTS }, (_, i) => {
   const angle = (i * 7.5 * Math.PI) / 180;
   const r = 105 + (i % 2 === 0 ? 6 : -6);
@@ -94,6 +94,13 @@ export const COPY = {
   description:
     "A golden ember suspended in the void — the aubergine radiates its divine light across the cosmos, an eternal beacon for those who dare to look upward.",
 } as const;
+
+/* ── Derived subsets ── */
+export const DOT_RAYS = RAYS.filter((r) => r.hasDot);
+
+/* ── CSS custom property names — contract between TSX and CSS module ── */
+export const CSS_VAR_RAY_ANGLE = "--ray-angle";
+export const CSS_VAR_RAY_TRAVEL = "--ray-travel";
 
 /* ── SVG shared ── */
 export { SVG_CENTER, SVG_VIEWBOX };

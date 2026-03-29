@@ -10,14 +10,10 @@ import { FullSection } from "@/components/home/sections/full-section";
 import { GetInTouchButton } from "@/components/home/intro/get-in-touch-btn/get-in-touch-button";
 import { useLocalizedData } from "@/hooks/use-localized-data";
 import { HeroSoleilAubergine } from "@/components/home/soleil-aubergine";
-import { MetatronsCubeCore } from "@/components/home/metatrons-cube/hero-metatrons-cube";
+import { MetatronsCube } from "@/components/home/metatrons-cube";
 import { HeroGlamCosmicBillboard } from "@/components/home/glam-cosmic-billboard";
 import { EggplantImage } from "@/components/general/eggplant-image";
-import {
-  CosmicAubergineContent,
-  SectionCosmicAubergineGold,
-} from "@/components/home/sections/section-concepts/cosmic-aubergine";
-import { PALETTE_GOLD } from "@/components/home/sections/section-concepts/cosmic-aubergine/config";
+import { SectionCosmicAubergineGold } from "@/components/home/sections/section-concepts/cosmic-aubergine";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
 import { AnimatedLettersMask } from "@/components/home/intro/animated-letters/animated-letters";
 import { GritPulseOverlay } from "@/components/animations/grit-pulse-overlay";
@@ -38,13 +34,13 @@ export default function HomePage() {
       <div className="to-bgc pointer-events-none fixed top-0 right-0 left-0 z-100 h-[15vh] bg-linear-to-t from-transparent" />
       <div className="to-bgc pointer-events-none fixed right-0 bottom-0 left-0 z-100 h-[15vh] bg-linear-to-b from-transparent" />
 
-      <HeroSoleilAubergine variant="muted" />
+      <HeroSoleilAubergine />
 
       <AnimatedLettersMask text={introTxt} />
 
       <ProjectsSection data={commercialWork} className="fest-container py-20 md:py-40" />
 
-      <MetatronsCubeCore theme="gold" />
+      <MetatronsCube theme="gold" />
 
       <ProjectsSection data={freelanceWork} className="fest-container py-20 md:py-40" />
 
@@ -54,8 +50,6 @@ export default function HomePage() {
 
       <FullSection data={values} className="fest-container py-20 md:py-40" />
 
-      <CosmicAubergineContent palette={PALETTE_GOLD} />
-
       <SimpleSection
         id={howIWork.id}
         titleLine={howIWork.titleLine}
@@ -63,12 +57,7 @@ export default function HomePage() {
         paragraphs={howIWork.paragraphs}
         buttons={howIWork.buttons}
         className="fest-container py-20 md:py-60"
-        aside={
-          <EggplantImage
-            sizeClass="size-[24rem] md:size-[30rem] xl:size-[36rem]"
-            glowPreset="fuchsia"
-          />
-        }
+        aside={<EggplantImage sizeClass="size-[24rem] md:size-[30rem] xl:size-[36rem]" glowPreset="fuchsia" />}
       />
 
       <SectionCosmicAubergineGold />

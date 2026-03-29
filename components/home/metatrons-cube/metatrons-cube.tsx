@@ -1,0 +1,33 @@
+/* Agent: Claude — Metatron's Cube */
+
+"use client";
+
+import { SVG_VIEWBOX, THEME_OVERRIDES, type ThemeT } from "./config";
+import { MetatronsSacredGeometry } from "./metatrons-cube-sacred-geometry";
+import { MetatronsSvgDefs } from "./metatrons-cube-svg-defs";
+import { MetatronsVertexAnimations } from "./metatrons-cube-vertex-animations";
+import { RadialGlow } from "@/components/animations/radial-glow";
+import { MetatronsHeroContent } from "./metatrons-cube-hero-content";
+
+export function MetatronsCube({ theme = "gold" }: { theme?: ThemeT }) {
+  return (
+    <div
+      id={`hero-metatrons-cube-${theme}`}
+      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      style={THEME_OVERRIDES[theme]}
+    >
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        viewBox={SVG_VIEWBOX}
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <MetatronsSvgDefs />
+        <MetatronsSacredGeometry />
+        <MetatronsVertexAnimations />
+      </svg>
+
+      <RadialGlow />
+      <MetatronsHeroContent theme={theme} />
+    </div>
+  );
+}
