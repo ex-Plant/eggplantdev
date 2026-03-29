@@ -169,13 +169,15 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
         // Wire up GSAP ScrollTrigger — fires scrambleIn/Out as element enters/leaves viewport
         ScrollTrigger.create({
           trigger: container,
-          start: "center bottom-=15%", // fires when element center is 10% above viewport bottom
-          end: "center top+=10%", // fires when element center is 10% below viewport top
+          start: "bottom bottom-=15%", // fires when element center is 10% above viewport bottom
+          end: "top top+=10%", // fires when element center is 10% below viewport top
           onEnter: scrambleIn, // scrolling down, element enters
           onLeave: scrambleOut, // scrolling down, element leaves
           onEnterBack: scrambleIn, // scrolling up, element re-enters
           onLeaveBack: scrambleOut, // scrolling up, element leaves
-          onRefresh: (self) => { if (self.isActive) scrambleIn(); }, // already in viewport on load
+          onRefresh: (self) => {
+            if (self.isActive) scrambleIn();
+          }, // already in viewport on load
           // markers: true,
         });
 
