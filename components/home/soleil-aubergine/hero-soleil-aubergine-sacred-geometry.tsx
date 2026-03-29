@@ -5,9 +5,11 @@ import {
   ZIGZAG_POINTS,
   RAYS,
   CORNERS,
+  BURST_POINTS,
   SVG_CENTER,
   SVG_VIEWBOX,
 } from "./config";
+import { BurstDots } from "@/components/animations/burst-dots";
 
 export function SoleilSacredGeometry() {
   return (
@@ -80,6 +82,8 @@ export function SoleilSacredGeometry() {
           />
         </g>
       ))}
+
+      <BurstDots points={BURST_POINTS} idPrefix="soleilBurst" />
     </svg>
   );
 }

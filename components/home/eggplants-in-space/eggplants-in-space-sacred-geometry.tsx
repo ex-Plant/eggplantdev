@@ -1,6 +1,7 @@
 /* Agent: Claude — Eggplants in Space / Sacred Geometry SVG */
 
-import { SVG_CENTER, METATRON_CIRCLES, METATRON_LINES, OUTER_CIRCLES_GOLD, CENTRAL_STAR_RAYS } from "./config";
+import { SVG_CENTER, METATRON_CIRCLES, METATRON_CIRCLE_R, METATRON_LINES, OUTER_CIRCLES_GOLD, CENTRAL_STAR_RAYS, BURST_POINTS } from "./config";
+import { BurstDots } from "@/components/animations/burst-dots";
 
 export function EggplantsInSpaceSacredGeometry() {
   return (
@@ -14,7 +15,7 @@ export function EggplantsInSpaceSacredGeometry() {
           key={`mc-${i}`}
           cx={cx}
           cy={cy}
-          r={100}
+          r={METATRON_CIRCLE_R}
           fill="none"
           stroke="var(--color-gold)"
           strokeWidth="0.4"
@@ -34,14 +35,14 @@ export function EggplantsInSpaceSacredGeometry() {
           stroke={circle.stroke}
           strokeWidth={circle.strokeWidth}
           opacity={circle.opacity}
-          strokeDasharray={"dasharray" in circle ? circle.dasharray : undefined}
+          strokeDasharray={circle.dasharray}
         />
       ))}
 
-      {/* Central star — matching Metatron's Cube pattern */}
-      <g>
-        <circle cx={SVG_CENTER.x} cy={SVG_CENTER.y} r={1.5} fill="var(--color-gold-warm)" opacity="0.9" />
-        {CENTRAL_STAR_RAYS.map((ray, i) => (
+      <BurstDots points={BURST_POINTS} idPrefix="eggplantBurst" />
+
+      <circle cx={SVG_CENTER.x} cy={SVG_CENTER.y} r={1.5} fill="var(--color-gold-warm)" opacity="0.9" />
+      {CENTRAL_STAR_RAYS.map((ray, i) => (
           <line
             key={`star-${i}`}
             x1={ray.x1}
@@ -53,7 +54,6 @@ export function EggplantsInSpaceSacredGeometry() {
             opacity={0.35}
           />
         ))}
-      </g>
     </svg>
   );
 }

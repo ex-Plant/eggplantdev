@@ -83,4 +83,11 @@ export const COPY = {
     "The eggplant exists within the geometric template of the universe \u2014 encoded in every vertex, every edge, every platonic form",
 } as const;
 
+/* ── Burst dot positions at vertices — shuffled delays for random appearance ── */
+const BURST_DELAYS = [0, 21, 7, 28, 14, 35, 3.5, 24.5, 10.5, 31.5, 17.5, 38.5];
+export const BURST_POINTS = ALL_POINTS.slice(1).map(([x, y], i) => ({
+  pos: [x, y] as const,
+  delay: BURST_DELAYS[i],
+}));
+
 export { CENTER, INNER_R };

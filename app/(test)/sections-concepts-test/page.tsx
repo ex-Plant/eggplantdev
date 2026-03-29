@@ -1,7 +1,7 @@
 "use client";
 
 import { ConceptShowcase, ShowcaseItem } from "@/components/test/concept-showcase";
-import { MetallicTextTest } from "@/components/home/sections/section-concepts/metallic-text-test";
+import { MetallicTextTest } from "@/components/test/section-concepts/metallic-text-test";
 
 const SECTIONS = [
   { id: "metallic-text-test", label: "Metallic Text Test", component: <MetallicTextTest colorful /> },

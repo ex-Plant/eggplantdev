@@ -13,7 +13,7 @@ import { HeroSoleilAubergine } from "@/components/home/soleil-aubergine";
 import { MetatronsCube } from "@/components/home/metatrons-cube";
 import { HeroGlamCosmicBillboard } from "@/components/home/glam-cosmic-billboard";
 import { EggplantImage } from "@/components/general/eggplant-image";
-import { HeroCosmicFlower } from "@/components/home/sections/section-concepts/cosmic-flower";
+import { HeroCosmicFlower } from "@/components/home/cosmic-flower";
 import { HeroEggplantsInSpace } from "@/components/home/eggplants-in-space";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
 import { AnimatedLettersMask } from "@/components/home/intro/animated-letters/animated-letters";

@@ -13,9 +13,9 @@ This skill handles the section-specific patterns. For palette, typography, geome
 
 | What | Where |
 |------|-------|
-| Section components | `components/home/sections/section-concepts/` |
+| Section components | `components/test/section-concepts/` |
 | Test page | `app/(test)/sections-concepts-test/page.tsx` |
-| Theme toggle | `components/home/sections/section-concepts/theme-toggle.tsx` |
+| Theme toggle | `components/test/section-concepts/theme-toggle.tsx` |
 | Content source | `data/home.en.json` |
 
 ## Dual-Theme Toggle
@@ -92,7 +92,7 @@ export function [Name]({ colorful = false, className }: [Name]PropsT) {
 
 ## Checklist — Creating a New Section
 
-1. Create component in `components/home/sections/section-concepts/` with `colorful` prop
+1. Create component in `components/test/section-concepts/` with `colorful` prop
 2. Use `cn()` to switch all visual classes between standard and colorful
 3. Gate SVG geometry behind `{colorful && ...}`
 4. Use real content from `data/home.en.json`

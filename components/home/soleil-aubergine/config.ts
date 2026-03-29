@@ -98,6 +98,12 @@ export const COPY = {
 /* ── Derived subsets ── */
 export const DOT_RAYS = RAYS.filter((r) => r.hasDot);
 
+/* ── Burst dot positions at ray tips — shuffled delays for random appearance ── */
+export const BURST_POINTS = DOT_RAYS.map((r, i) => ({
+  pos: [r.dotX, r.dotY] as const,
+  delay: [0, 21, 7, 28, 14, 35, 3.5, 24.5, 10.5, 31.5, 17.5, 38.5][i],
+}));
+
 /* ── CSS custom property names — contract between TSX and CSS module ── */
 export const CSS_VAR_RAY_ANGLE = "--ray-angle";
 export const CSS_VAR_RAY_TRAVEL = "--ray-travel";

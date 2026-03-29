@@ -1,5 +1,5 @@
-import { ALL_POINTS, CENTER } from "./config";
-import styles from "@/components/animations/burst-dot.module.css";
+import { CENTER, BURST_POINTS } from "./config";
+import { BurstDots } from "@/components/animations/burst-dots";
 
 const STAR_RAY_COUNT = 16;
 const STAR_INNER_R = 2;
@@ -18,34 +18,22 @@ const STAR_RAYS = Array.from({ length: STAR_RAY_COUNT }, (_, i) => {
 export function MetatronsVertexAnimations() {
   return (
     <>
-      {/* Central star — tiny core with many even hair-thin rays */}
-      <g>
-        <circle cx={CENTER[0]} cy={CENTER[1]} r={1.5} fill="var(--color-gold-warm)" opacity="0.9" />
-        {STAR_RAYS.map((ray, i) => (
-          <line
-            key={`star-${i}`}
-            x1={ray.x1}
-            y1={ray.y1}
-            x2={ray.x2}
-            y2={ray.y2}
-            stroke="var(--color-gold-warm)"
-            strokeWidth={0.15}
-            opacity={0.35}
-          />
-        ))}
-      </g>
-      {/* Burst dots at each vertex */}
-      {ALL_POINTS.slice(1).map(([cx, cy], i) => (
-        <circle
-          key={`burst-${i}`}
-          cx={cx}
-          cy={cy}
-          r={40}
-          fill={`url(#burstGlow-${i})`}
-          className={styles.burstDot}
-          style={{ animationDelay: `${i * 3.5}s` }}
+      {/* Central star — tiny core with hair-thin rays */}
+      <circle cx={CENTER[0]} cy={CENTER[1]} r={1.5} fill="var(--color-gold-warm)" opacity="0.9" />
+      {STAR_RAYS.map((ray, i) => (
+        <line
+          key={`star-${i}`}
+          x1={ray.x1}
+          y1={ray.y1}
+          x2={ray.x2}
+          y2={ray.y2}
+          stroke="var(--color-gold-warm)"
+          strokeWidth={0.15}
+          opacity={0.35}
         />
       ))}
+
+      <BurstDots points={BURST_POINTS} idPrefix="burstGlow" />
     </>
   );
 }

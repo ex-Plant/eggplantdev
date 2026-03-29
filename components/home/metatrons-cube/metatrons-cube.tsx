@@ -4,7 +4,6 @@
 
 import { SVG_VIEWBOX, THEME_OVERRIDES, type ThemeT } from "./config";
 import { MetatronsSacredGeometry } from "./metatrons-cube-sacred-geometry";
-import { MetatronsSvgDefs } from "./metatrons-cube-svg-defs";
 import { MetatronsVertexAnimations } from "./metatrons-cube-vertex-animations";
 import { RadialGlow } from "@/components/animations/radial-glow";
 import { MetatronsHeroContent } from "./metatrons-cube-hero-content";
@@ -21,7 +20,6 @@ export function MetatronsCube({ theme = "gold" }: { theme?: ThemeT }) {
         viewBox={SVG_VIEWBOX}
         preserveAspectRatio="xMidYMid slice"
       >
-        <MetatronsSvgDefs />
         <MetatronsSacredGeometry />
         <MetatronsVertexAnimations />
       </svg>
