@@ -107,6 +107,21 @@ export const BURST_POINTS = DOT_RAYS.map((r, i) => ({
   delay: [0, 21, 7, 28, 14, 35, 3.5, 24.5, 10.5, 31.5, 17.5, 38.5][i],
 }));
 
+const INNER_BURST_RADIUS = 150;
+
+export const INNER_BURST_POINTS = DOT_RAYS.map((r, i) => {
+  const angle = (r.angleDeg * Math.PI) / 180;
+  const round = (v: number) => Math.round(v * 100) / 100;
+
+  return {
+    pos: [
+      round(SVG_CENTER.x + Math.cos(angle) * INNER_BURST_RADIUS),
+      round(SVG_CENTER.y + Math.sin(angle) * INNER_BURST_RADIUS),
+    ] as const,
+    delay: [10.5, 31.5, 17.5, 38.5, 0, 21, 7, 28, 14, 35, 3.5, 24.5][i],
+  };
+});
+
 /* ── CSS custom property names — contract between TSX and CSS module ── */
 export const CSS_VAR_RAY_ANGLE = "--ray-angle";
 export const CSS_VAR_RAY_TRAVEL = "--ray-travel";

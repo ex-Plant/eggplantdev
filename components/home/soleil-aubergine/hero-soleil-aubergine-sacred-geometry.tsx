@@ -6,6 +6,7 @@ import {
   RAYS,
   CORNERS,
   BURST_POINTS,
+  INNER_BURST_POINTS,
   SVG_CENTER,
   SVG_VIEWBOX,
 } from "./config";
@@ -84,6 +85,7 @@ export function SoleilSacredGeometry() {
       ))}
 
       <BurstDots points={BURST_POINTS} idPrefix="soleilBurst" />
+      <BurstDots points={INNER_BURST_POINTS} radius={28} idPrefix="soleilInnerBurst" />
     </svg>
   );
 }
