@@ -4,10 +4,12 @@
 
 import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
+import styles from "./soleil-aubergine.module.css";
 import {
   PALETTE,
   PALETTE_MUTED,
   RAYS,
+  RAY_PULSE_TRAVEL,
   ZIGZAG_POINTS,
   CORNERS,
   COPY,
@@ -101,6 +103,40 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
               </g>
             ))}
           </svg>
+          {/* Pulsating glow dots — HTML radial gradients traveling along long rays */}
+          {RAYS.filter((r) => r.hasDot).map((r, i) => (
+            <div
+              key={`pulse-${i}`}
+              className={`pointer-events-none absolute ${styles.glowDot}`}
+              style={{
+                /* Position at center of the container */
+                left: "50%",
+                top: "50%",
+                /* Glow orb size — controls the visible radial gradient radius */
+                width: "6rem",
+                height: "6rem",
+                marginLeft: "-3rem",
+                marginTop: "-3rem",
+                borderRadius: "50%",
+                background: `radial-gradient(circle, rgba(255,215,0,0.25) 0%, rgba(218,165,32,0.1) 30%, transparent 70%)`,
+                ["--ray-angle" as string]: `${r.angleDeg}deg`,
+                /* Travel distance in viewport-relative units (long ray = 340 SVG units ≈ 28vw) */
+                ["--ray-travel" as string]: RAY_PULSE_TRAVEL,
+              }}
+            />
+          ))}
+
+          {/* Central pulsing glow — breathes when dots depart */}
+          <div
+            className={`pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ${styles.centerPulse}`}
+            style={{
+              width: "5rem",
+              height: "5rem",
+              background: `radial-gradient(circle, rgba(255,215,0,0.2) 0%, rgba(218,165,32,0.08) 40%, transparent 70%)`,
+            }}
+          />
+
+
           {/* Central content */}
           <div className="relative z-10 flex flex-col items-center gap-6 text-center">
             {/* Eggplant with golden sun glow */}

@@ -1,0 +1,71 @@
+/* Metatron's Cube — burst dots at vertices + central pulse */
+
+/* Burst dot — quick pulse, long idle between fires */
+@keyframes burst-dot {
+  /* Invisible */
+  0% {
+    opacity: 0;
+  }
+  /* Fade in (0→2.4% = 1s at 42s cycle) */
+  2.4% {
+    opacity: 1;
+  }
+  /* Hold bright (2.4→5% = 1.1s) */
+  5% {
+    opacity: 0.7;
+  }
+  /* Fade out (5→8.5% = 1.5s) */
+  8.5% {
+    opacity: 0;
+  }
+  /* Long idle (8.5→100% = 38.4s) */
+  100% {
+    opacity: 0;
+  }
+}
+
+.burstDot {
+  animation: burst-dot 42s ease-in-out infinite backwards;
+}
+
+/* Central pulse — same breathing pattern as Soleil Aubergine */
+@keyframes center-pulse {
+  /* Big flash (0→3% = 0.39s) */
+  0% {
+    opacity: 0.4;
+    scale: 1;
+  }
+  3% {
+    opacity: 1;
+    scale: 1.4;
+  }
+  /* Settle after flash (3→15% = 1.56s) */
+  15% {
+    opacity: 0.25;
+    scale: 0.85;
+  }
+  /* Gentle swell — keeps it alive (15→35% = 2.6s) */
+  35% {
+    opacity: 0.45;
+    scale: 1.05;
+  }
+  /* Soft dip (35→55% = 2.6s) */
+  55% {
+    opacity: 0.2;
+    scale: 0.9;
+  }
+  /* Minor breath (55→75% = 2.6s) */
+  75% {
+    opacity: 0.35;
+    scale: 1.0;
+  }
+  /* Fade back to start (75→100% = 3.25s) */
+  100% {
+    opacity: 0.4;
+    scale: 1;
+  }
+}
+
+.centerPulse {
+  animation: center-pulse 13s ease-in-out infinite;
+}

@@ -1,5 +1,8 @@
 /* Agent: Claude — Metatron's Cube */
 
+"use client";
+
+import { EggplantImage } from "@/components/general/eggplant-image";
 import {
   ALL_POINTS,
   INNER_R,
@@ -7,11 +10,11 @@ import {
   SVG_VIEWBOX,
   SACRED_SYMBOLS,
   CONTAINMENT,
-  EGGPLANT_SRC,
   COPY,
   buildStars,
   type ThemeT,
 } from "./config";
+import styles from "./metatrons-cube.module.css";
 
 export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
   const p = PALETTES[theme];
@@ -82,8 +85,20 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
           strokeDasharray={CONTAINMENT.dasharray}
         />
         {/* Scattered sacred symbols */}
-        <polygon points={SACRED_SYMBOLS.triangleTop.points} fill="none" stroke={p.strokes[2]} strokeWidth="0.4" opacity="0.1" />
-        <polygon points={SACRED_SYMBOLS.triangleBottom.points} fill="none" stroke={p.strokes[1]} strokeWidth="0.4" opacity="0.08" />
+        <polygon
+          points={SACRED_SYMBOLS.triangleTop.points}
+          fill="none"
+          stroke={p.strokes[2]}
+          strokeWidth="0.4"
+          opacity="0.1"
+        />
+        <polygon
+          points={SACRED_SYMBOLS.triangleBottom.points}
+          fill="none"
+          stroke={p.strokes[1]}
+          strokeWidth="0.4"
+          opacity="0.08"
+        />
         <rect
           x={SACRED_SYMBOLS.diamondLeft.x}
           y={SACRED_SYMBOLS.diamondLeft.y}
@@ -106,6 +121,48 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
           opacity="0.08"
           transform={SACRED_SYMBOLS.diamondRight.transform}
         />
+
+        {/* Defs — vertex radial gradients */}
+        <defs>
+          {ALL_POINTS.slice(1).map(([cx, cy], i) => (
+            <radialGradient key={`bg-${i}`} id={`burstGlow-${i}`} cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#f0c040" stopOpacity="0.35" />
+              <stop offset="25%" stopColor="#daa520" stopOpacity="0.15" />
+              <stop offset="70%" stopColor="#daa520" stopOpacity="0" />
+            </radialGradient>
+          ))}
+        </defs>
+
+        {/* Central star — tiny core with many even hair-thin rays */}
+        <g>
+          <circle cx={600} cy={400} r={1.5} fill={p.strokes[2]} opacity="0.9" />
+          {Array.from({ length: 16 }, (_, i) => {
+            const angle = (i * 22.5 * Math.PI) / 180;
+            return (
+              <line
+                key={`star-${i}`}
+                x1={600 + Math.cos(angle) * 2}
+                y1={400 + Math.sin(angle) * 2}
+                x2={600 + Math.cos(angle) * 5}
+                y2={400 + Math.sin(angle) * 5}
+                stroke={p.strokes[2]}
+                strokeWidth={0.15}
+                opacity={0.35}
+              />
+            );
+          })}
+        </g>
+        {ALL_POINTS.slice(1).map(([cx, cy], i) => (
+          <circle
+            key={`burst-${i}`}
+            cx={cx}
+            cy={cy}
+            r={40}
+            fill={`url(#burstGlow-${i})`}
+            className={styles.burstDot}
+            style={{ animationDelay: `${i * 3.5}s` }}
+          />
+        ))}
       </svg>
 
       {/* Radial glow */}
@@ -114,20 +171,25 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
         style={{ backgroundImage: p.glow }}
       />
 
+      {/* Central pulsing glow */}
+      <div
+        className={`pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ${styles.centerPulse}`}
+        style={{
+          width: "6rem",
+          height: "6rem",
+          background: `radial-gradient(circle, ${p.strokes[0]}40 0%, ${p.strokes[1]}15 35%, transparent 70%)`,
+        }}
+      />
+
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center">
-        <p className="mb-6 font-mono text-xs tracking-widest uppercase" style={{ color: p.subtitle }}>
+        <p className="mb-3 font-mono text-xs tracking-widest uppercase" style={{ color: p.subtitle }}>
           {COPY.subtitle}
         </p>
 
-        <img
-          src={EGGPLANT_SRC}
-          alt="Eggplant logo"
-          className="mb-8 h-48 w-48"
-          style={{ filter: p.eggplantFilter }}
-        />
+        <EggplantImage filter={p.eggplantFilter} sizeClass="h-48 w-48 mb-8" float glowPreset="gold" />
 
-        <h1 className="text-48 md:text-72 font-mono leading-none tracking-tight uppercase">
+        <h1 className="text-48 md:text-72 pt-1 font-mono leading-none tracking-tight uppercase">
           <span className="block" style={{ color: p.titlePrimary }}>
             Metatron&apos;s
           </span>
