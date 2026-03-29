@@ -41,7 +41,7 @@ export function buildStars(p: PaletteT) {
 /* ── Rays ── */
 export const RAY_COUNT = 24;
 export const RAY_ANGLE_STEP = 15; // degrees
-export const RAY_PULSE_TRAVEL = "28vw"; // matches ray length (340/1200 SVG units)
+export const RAY_PULSE_TRAVEL = "18vw"; // dies before ray tips
 
 export const RAYS = Array.from({ length: RAY_COUNT }, (_, i) => {
   const angle = (i * RAY_ANGLE_STEP * Math.PI) / 180;

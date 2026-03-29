@@ -128,7 +128,7 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
 
           {/* Central pulsing glow — breathes when dots depart */}
           <div
-            className={`pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ${styles.centerPulse}`}
+            className={`pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ${styles.centerPulse}`}
             style={{
               width: "5rem",
               height: "5rem",
@@ -136,11 +136,17 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
             }}
           />
 
-
           {/* Central content */}
           <div className="relative z-10 flex flex-col items-center gap-6 text-center">
             {/* Eggplant with golden sun glow */}
-            <EggplantImage float preset="soleil-gold" glowPreset="gold" />
+            <EggplantImage
+              floatMode="tumble"
+              // floatMode="orbital"
+              // floatMode="jelly"
+              float
+              preset="soleil-gold"
+              glowPreset="gold"
+            />
 
             {/* Typography */}
             <p className="font-mono text-xs tracking-[0.5em] uppercase" style={{ color: `${palette.gold}59` }}>
