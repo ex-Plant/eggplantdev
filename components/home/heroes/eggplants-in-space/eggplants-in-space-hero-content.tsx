@@ -1,9 +1,9 @@
 /* Agent: Claude — Eggplants in Space / Central Text + Eggplant Image */
 
-import { HeroDescription } from "@/components/home/hero-description";
-import { HeroEggplant } from "@/components/home/hero-eggplant";
-import { HeroSubtitle } from "@/components/home/hero-subtitle";
-import { HeroTitle } from "@/components/home/hero-title";
+import { HeroDescription } from "@/components/home/heroes/hero-description";
+import { HeroEggplant } from "@/components/home/heroes/hero-eggplant";
+import { HeroSubtitle } from "@/components/home/heroes/hero-subtitle";
+import { HeroTitle } from "@/components/home/heroes/hero-title";
 import { COPY } from "./config";
 
 export function EggplantsInSpaceHeroContent() {

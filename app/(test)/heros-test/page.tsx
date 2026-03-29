@@ -1,12 +1,12 @@
 "use client";
 
 import { ConceptShowcase, ShowcaseItem } from "@/components/test/concept-showcase";
-import { MetatronsCube } from "@/components/home/metatrons-cube";
-import { HeroGlamCosmicBillboard } from "@/components/home/glam-cosmic-billboard";
-import { HeroEggplantsInSpace } from "@/components/home/eggplants-in-space";
+import { MetatronsCube } from "@/components/home/heroes/metatrons-cube";
+import { HeroGlamCosmicBillboard } from "@/components/home/heroes/glam-cosmic-billboard";
+import { HeroEggplantsInSpace } from "@/components/home/heroes/eggplants-in-space";
 import { HeroHexLatticeShrineGold } from "@/components/test/hero-concepts/hex-lattice-shrine/hero-hex-lattice-shrine-gold";
 import { HeroCosmicCultFlyer } from "@/components/test/hero-concepts/cosmic-cult-flyer";
-import { HeroSoleilAubergine } from "@/components/home/soleil-aubergine";
+import { HeroSoleilAubergine } from "@/components/home/heroes/soleil-aubergine";
 
 const HEROES = [
   { id: "soleil-aubergine", label: "Soleil Aubergine", component: <HeroSoleilAubergine /> },

@@ -7,19 +7,15 @@
 import { SimpleSection } from "@/components/home/sections/simple-section";
 import { ProjectsSection } from "@/components/home/sections/projects-section";
 import { FullSection } from "@/components/home/sections/full-section";
-import { GetInTouchButton } from "@/components/home/intro/get-in-touch-btn/get-in-touch-button";
 import { useLocalizedData } from "@/hooks/use-localized-data";
-import { HeroSoleilAubergine } from "@/components/home/soleil-aubergine";
-import { MetatronsCube } from "@/components/home/metatrons-cube";
-import { HeroGlamCosmicBillboard } from "@/components/home/glam-cosmic-billboard";
-import { EggplantImage } from "@/components/general/eggplant-image";
-import { HeroCosmicFlower } from "@/components/home/cosmic-flower";
+import { HeroSoleilAubergine } from "@/components/home/heroes/soleil-aubergine";
+import { MetatronsCube } from "@/components/home/heroes/metatrons-cube";
+import { HeroGlamCosmicBillboard } from "@/components/home/heroes/glam-cosmic-billboard";
+import { HeroCosmicFlower } from "@/components/home/heroes/cosmic-flower";
 import { HeroCosmicCultFlyer } from "@/components/test/hero-concepts/cosmic-cult-flyer";
 import { HeroHexLatticeShrineGold } from "@/components/test/hero-concepts/hex-lattice-shrine/hero-hex-lattice-shrine-gold";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
 import { GritPulseOverlay } from "@/components/animations/grit-pulse-overlay";
-import { HomeStatement } from "@/components/home/intro/home-statement";
-import { AnimatedLettersMask } from "../components/home/intro/animated-letters/animated-letters";
 
 export default function HomePage() {
   const { introTxt = "", backgroundDesktop = "", backgroundMobile = "", sections } = useLocalizedData("home");
@@ -38,8 +34,6 @@ export default function HomePage() {
       <div className="to-bgc pointer-events-none fixed right-0 bottom-0 left-0 z-100 h-[15vh] bg-linear-to-b from-transparent" />
 
       <HeroSoleilAubergine />
-
-      <AnimatedLettersMask text={introTxt} />
 
       <HeroCosmicCultFlyer />
 

@@ -4,8 +4,8 @@ import { cn } from "@/helpers/cn";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
-import { ToggleIcon } from "@/components/home/intro/get-in-touch-btn/toggle-icon";
-import { ButtonForm } from "@/components/home/intro/get-in-touch-btn/button-form";
+import { ToggleIcon } from "@/components/home/get-in-touch-btn/toggle-icon";
+import { ButtonForm } from "@/components/home/get-in-touch-btn/button-form";
 import { useOnClickOutside } from "@/hooks/use-on-click-outside";
 import { useTranslation } from "@/lib/i18n/hooks/use-translation";
 

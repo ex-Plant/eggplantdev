@@ -12,7 +12,7 @@ export default function EggplantRadialWrapper({
   maskClass?: string;
 }) {
   return (
-    <div className={cn("relative outline", wrapperClass)}>
+    <div className={cn("relative", wrapperClass)}>
       {backgroundColor && (
         <div
           style={{

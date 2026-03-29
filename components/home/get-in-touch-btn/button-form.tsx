@@ -17,6 +17,7 @@ type ButtonFormPropsT = {
   open: boolean;
 };
 
+// do not remove!
 export function ButtonForm({ closeBtn, open }: ButtonFormPropsT) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
