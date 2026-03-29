@@ -28,21 +28,6 @@ export const OUTER_CIRCLES_GOLD = [
   { r: 380, stroke: "var(--color-gold)", strokeWidth: 0.2, opacity: 0.04, dasharray: undefined },
 ] as const;
 
-/* ── Central star rays (same pattern as Metatron's Cube) ── */
-const STAR_RAY_COUNT = 16;
-const STAR_INNER_R = 2;
-const STAR_OUTER_R = 5;
-
-export const CENTRAL_STAR_RAYS = Array.from({ length: STAR_RAY_COUNT }, (_, i) => {
-  const angle = (i * (360 / STAR_RAY_COUNT) * Math.PI) / 180;
-  return {
-    x1: SVG_CENTER.x + Math.cos(angle) * STAR_INNER_R,
-    y1: SVG_CENTER.y + Math.sin(angle) * STAR_INNER_R,
-    x2: SVG_CENTER.x + Math.cos(angle) * STAR_OUTER_R,
-    y2: SVG_CENTER.y + Math.sin(angle) * STAR_OUTER_R,
-  };
-});
-
 /* ── Burst dot positions at circle intersections — shuffled delays ── */
 export const BURST_POINTS = [
   { pos: [600, 300] as const, delay: 0 },     // top

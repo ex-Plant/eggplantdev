@@ -22,29 +22,6 @@ export const GEOMETRY = {
   triangleDown: "210,370 370,90 50,90",
 } as const;
 
-/* ── Central star (where geometry lines converge) ── */
-/* Scaled down from Metatron's (1200×800 viewBox) to match 420×420 viewBox */
-const STAR_RAY_COUNT = 16;
-const STAR_INNER_R = 0.7;
-const STAR_OUTER_R = 1.75;
-const STAR_CX = 210;
-const STAR_CY = 210;
-
-export const CENTER_STAR = {
-  cx: STAR_CX,
-  cy: STAR_CY,
-  coreR: 0.5,
-  rays: Array.from({ length: STAR_RAY_COUNT }, (_, i) => {
-    const angle = (i * (360 / STAR_RAY_COUNT) * Math.PI) / 180;
-    return {
-      x1: STAR_CX + Math.cos(angle) * STAR_INNER_R,
-      y1: STAR_CY + Math.sin(angle) * STAR_INNER_R,
-      x2: STAR_CX + Math.cos(angle) * STAR_OUTER_R,
-      y2: STAR_CY + Math.sin(angle) * STAR_OUTER_R,
-    };
-  }),
-} as const;
-
 /* ── Intersection points (where circle arcs cross each other) ── */
 /* Delay order is shuffled so bursts appear random, not sequential around the ring */
 export const INTERSECTION_POINTS: readonly { pos: readonly [number, number]; delay: number }[] = [

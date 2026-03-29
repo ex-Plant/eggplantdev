@@ -1,5 +1,6 @@
-import { FLOWER_CIRCLES, GEOMETRY, CENTER_STAR, INTERSECTION_POINTS } from "./config";
+import { FLOWER_CIRCLES, GEOMETRY, INTERSECTION_POINTS } from "./config";
 import { BurstDots } from "@/components/animations/burst-dots";
+import { CentralStar } from "@/components/animations/central-star";
 
 export function CosmicFlowerSacredGeometry() {
   return (
@@ -29,20 +30,7 @@ export function CosmicFlowerSacredGeometry() {
 
       <BurstDots points={INTERSECTION_POINTS} radius={14} idPrefix="cosmicBurst" />
 
-      {/* Central star — tiny core with hair-thin rays */}
-      <circle cx={CENTER_STAR.cx} cy={CENTER_STAR.cy} r={CENTER_STAR.coreR} fill="var(--color-gold-warm)" opacity="0.9" />
-      {CENTER_STAR.rays.map((ray, i) => (
-        <line
-          key={`star-${i}`}
-          x1={ray.x1}
-          y1={ray.y1}
-          x2={ray.x2}
-          y2={ray.y2}
-          stroke="var(--color-gold-warm)"
-          strokeWidth={0.15}
-          opacity={0.35}
-        />
-      ))}
+      <CentralStar cx={210} cy={210} coreR={0.5} innerR={0.7} outerR={1.75} />
     </svg>
   );
 }

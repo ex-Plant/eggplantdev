@@ -1,7 +1,8 @@
 /* Agent: Claude — Eggplants in Space / Sacred Geometry SVG */
 
-import { SVG_CENTER, METATRON_CIRCLES, METATRON_CIRCLE_R, METATRON_LINES, OUTER_CIRCLES_GOLD, CENTRAL_STAR_RAYS, BURST_POINTS } from "./config";
+import { SVG_CENTER, METATRON_CIRCLES, METATRON_CIRCLE_R, METATRON_LINES, OUTER_CIRCLES_GOLD, BURST_POINTS } from "./config";
 import { BurstDots } from "@/components/animations/burst-dots";
+import { CentralStar } from "@/components/animations/central-star";
 
 export function EggplantsInSpaceSacredGeometry() {
   return (
@@ -41,19 +42,7 @@ export function EggplantsInSpaceSacredGeometry() {
 
       <BurstDots points={BURST_POINTS} idPrefix="eggplantBurst" />
 
-      <circle cx={SVG_CENTER.x} cy={SVG_CENTER.y} r={1.5} fill="var(--color-gold-warm)" opacity="0.9" />
-      {CENTRAL_STAR_RAYS.map((ray, i) => (
-          <line
-            key={`star-${i}`}
-            x1={ray.x1}
-            y1={ray.y1}
-            x2={ray.x2}
-            y2={ray.y2}
-            stroke="var(--color-gold-warm)"
-            strokeWidth={0.15}
-            opacity={0.35}
-          />
-        ))}
+      <CentralStar cx={SVG_CENTER.x} cy={SVG_CENTER.y} />
     </svg>
   );
 }
