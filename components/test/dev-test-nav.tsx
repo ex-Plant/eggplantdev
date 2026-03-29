@@ -3,7 +3,6 @@ const TEST_PAGES = [
   { href: "/sections-concepts-test", label: "Sections" },
   { href: "/rejected-heroes-claude", label: "Rejected Claude" },
   { href: "/rejected-heroes-codex", label: "Rejected Codex" },
-  { href: "/animations-test", label: "Animations" },
   { href: "/eggplant-palette", label: "Eggplant Palette" },
   { href: "/backdrop-test", label: "Backdrop" },
 ];
