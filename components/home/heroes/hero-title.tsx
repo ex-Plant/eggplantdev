@@ -33,11 +33,15 @@ export function HeroTitle({
   scramble = true,
   className,
 }: HeroTitlePropsT) {
-  const renderLine = (text: string) =>
-    scramble ? <ScrambleText text={text} /> : text;
+  const renderLine = (text: string) => (scramble ? <ScrambleText text={text} /> : text);
 
   return (
-    <h1 className={cn("mx-auto w-full text-center font-mono text-34 leading-none uppercase pt-1 tracking-tight sm:text-48 md:text-72 lg:text-80 xl:text-96", className)}>
+    <h1
+      className={cn(
+        "text-34 sm:text-48 md:text-72 lg:text-80 xl:text-96 mx-auto mt-8 w-full pt-1 text-center font-mono leading-none tracking-tight uppercase",
+        className,
+      )}
+    >
       <span className={cn("block", classLine1)} style={styleLine1}>
         {renderLine(line1)}
       </span>

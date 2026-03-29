@@ -1,11 +1,9 @@
 "use client";
 
-import { ORBIT_PATH, GLAM_STRIPES } from "./config";
+import { ORBIT_PATH, ORBITAL_ARCS } from "./config";
 import { GlamBackground } from "./hero-glam-cosmic-billboard-nebula-wash";
 import { GlamSvgFiltersAndGradients } from "./hero-glam-cosmic-billboard-svg-defs";
-import { GlamStripesArcsSparkles } from "./hero-glam-cosmic-billboard-static-geometry";
 import { GlamOrbitingDot } from "./hero-glam-cosmic-billboard-orbit-dot-animation";
-import { GlamTravelingDots } from "./hero-glam-cosmic-billboard-stripe-pulse-animations";
 import { GlamTextAndImage } from "./hero-glam-cosmic-billboard-hero-content";
 
 export function HeroGlamCosmicBillboard() {
@@ -22,11 +20,27 @@ export function HeroGlamCosmicBillboard() {
         viewBox="0 0 1200 800"
         preserveAspectRatio="xMidYMid meet"
       >
-        {/* SVG geometry now handled by FixedCosmicLines in layout */}
-        {/* <GlamSvgFiltersAndGradients /> */}
-        {/* <GlamStripesArcsSparkles /> */}
-        {/* <GlamOrbitingDot path={ORBIT_PATH} /> */}
-        {/* <GlamTravelingDots stripes={GLAM_STRIPES} /> */}
+        {/* Stripes, sparkles, and traveling dots handled by FixedCosmicLines in layout */}
+        <GlamSvgFiltersAndGradients />
+
+        {/* Orbital arcs — billboard-specific */}
+        {ORBITAL_ARCS.map((arc, i) => (
+          <ellipse
+            key={`arc-${i}`}
+            cx={arc.cx}
+            cy={arc.cy}
+            rx={arc.rx}
+            ry={arc.ry}
+            fill="none"
+            stroke={arc.stroke}
+            strokeWidth={arc.strokeWidth}
+            opacity={arc.opacity}
+            transform={`rotate(${arc.rotate} ${arc.cx} ${arc.cy})`}
+          />
+        ))}
+
+        {/* Orbiting dot traveling along the gold arc */}
+        <GlamOrbitingDot path={ORBIT_PATH} />
       </svg>
 
       {/* Title, subtitle, description, CTA buttons, and floating eggplant image */}
