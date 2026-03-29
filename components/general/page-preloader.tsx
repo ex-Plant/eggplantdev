@@ -63,7 +63,7 @@ export function PagePreloader() {
     <div
       aria-hidden="true"
       className={cn(
-        "bg-bgc fixed inset-0 z-[9999] flex items-center justify-center transition-opacity",
+        "bg-bgc grit fixed inset-0 z-9999 flex items-center justify-center transition-opacity",
         isLoaded ? "pointer-events-none opacity-0" : "opacity-100",
       )}
       style={{ transitionDuration: `${FADE_DURATION_MS}ms` }}
