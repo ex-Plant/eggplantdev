@@ -31,5 +31,5 @@
 }
 
 .glowDot {
-  animation: glow-dot 26s ease-in-out infinite;
+  animation: glow-dot 26s ease-in-out 3s infinite backwards;
 }

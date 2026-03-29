@@ -3,7 +3,7 @@
 import { ConceptShowcase, ShowcaseItem } from "@/components/test/concept-showcase";
 import { MetatronsCube } from "@/components/home/metatrons-cube";
 import { HeroGlamCosmicBillboard } from "@/components/home/glam-cosmic-billboard";
-import { HeroEggplantsInSpace } from "@/components/test/hero-concepts/eggplants-in-space";
+import { HeroEggplantsInSpace } from "@/components/home/eggplants-in-space";
 import { HeroHexLatticeShrineGold } from "@/components/test/hero-concepts/hex-lattice-shrine/hero-hex-lattice-shrine-gold";
 import { HeroCosmicCultFlyer } from "@/components/test/hero-concepts/cosmic-cult-flyer";
 import { HeroSoleilAubergine } from "@/components/home/soleil-aubergine";

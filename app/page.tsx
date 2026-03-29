@@ -13,7 +13,8 @@ import { HeroSoleilAubergine } from "@/components/home/soleil-aubergine";
 import { MetatronsCube } from "@/components/home/metatrons-cube";
 import { HeroGlamCosmicBillboard } from "@/components/home/glam-cosmic-billboard";
 import { EggplantImage } from "@/components/general/eggplant-image";
-import { SectionCosmicAubergineGold } from "@/components/home/sections/section-concepts/cosmic-aubergine";
+import { HeroCosmicAubergine } from "@/components/home/sections/section-concepts/cosmic-aubergine";
+import { HeroEggplantsInSpace } from "@/components/home/eggplants-in-space";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
 import { AnimatedLettersMask } from "@/components/home/intro/animated-letters/animated-letters";
 import { GritPulseOverlay } from "@/components/animations/grit-pulse-overlay";
@@ -37,6 +38,7 @@ export default function HomePage() {
       <HeroSoleilAubergine />
 
       <AnimatedLettersMask text={introTxt} />
+      <HeroEggplantsInSpace />
 
       <ProjectsSection data={commercialWork} className="fest-container py-20 md:py-40" />
 
@@ -60,7 +62,7 @@ export default function HomePage() {
         aside={<EggplantImage sizeClass="size-[24rem] md:size-[30rem] xl:size-[36rem]" glowPreset="fuchsia" />}
       />
 
-      <SectionCosmicAubergineGold />
+      <HeroCosmicAubergine />
 
       <GetInTouchButton />
     </div>
