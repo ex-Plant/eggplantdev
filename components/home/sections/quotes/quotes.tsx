@@ -51,10 +51,10 @@ export const Quotes = ({ data }: QuotesPropsT) => {
 
 const QuoteContent = ({ q }: { q: QuoteT }) => (
   <>
-    <p className="text-16 text-lightgray md:text-20 shrink-0 pt-20 lg:pt-25 xl:pt-30">{q.quote}</p>
+    <p className="text-16 text-copy-body md:text-20 shrink-0 pt-20 lg:pt-25 xl:pt-30">{q.quote}</p>
     <div className="xxl:pt-17 flex w-full flex-col pt-8 md:pt-10">
-      <p className="text-16 md:text-20">{q.name}</p>
-      <p className="text-16 text-lightgray">{q.title}</p>
+      <p className="text-16 text-copy-strong md:text-20">{q.name}</p>
+      <p className="text-16 text-copy-body">{q.title}</p>
     </div>
   </>
 );

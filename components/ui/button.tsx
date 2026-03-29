@@ -3,15 +3,15 @@ import { cn } from "@/helpers/cn";
 
 const BUTTON_VARIANTS = {
   default:
-    "border-gray5 text-16 text-lightgray border",
+    "border-gray5 text-16 text-copy-body border hover:bg-white/5 hover:text-copy-strong hover:shadow-[0_0_18px_rgba(255,255,255,0.08),0_0_42px_rgba(255,255,255,0.04)]",
   heroGlamPrimary:
-    "border-gold/25 bg-gold/10 text-gold/70 border",
+    "border-gold/25 bg-gold/10 text-gold/70 border hover:bg-gold/16 hover:text-gold hover:shadow-[0_0_20px_rgba(218,165,32,0.22),0_0_52px_rgba(218,165,32,0.12)]",
   heroGlamSecondary:
-    "border-hot-pink/20 text-hot-pink/50 border",
+    "border-hot-pink/20 text-hot-pink/50 border hover:bg-hot-pink/8 hover:text-hot-pink/80 hover:shadow-[0_0_20px_rgba(217,70,239,0.22),0_0_52px_rgba(217,70,239,0.12)]",
   heroCosmicPrimary:
-    "border-gold/30 text-gold/60 border",
+    "border-gold/30 text-gold/60 border hover:bg-gold/10 hover:text-gold/85 hover:shadow-[0_0_16px_rgba(218,165,32,0.16),0_0_40px_rgba(218,165,32,0.08)]",
   heroCosmicSecondary:
-    "border-gold-cream/30 text-gold-cream/60 border",
+    "border-gold-cream/30 text-gold-cream/60 border hover:bg-gold-cream/8 hover:text-gold-cream/85 hover:shadow-[0_0_16px_rgba(245,230,192,0.14),0_0_40px_rgba(245,230,192,0.07)]",
 } as const;
 
 const BUTTON_SIZES = {
@@ -33,7 +33,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonPropsT>(function
   ref,
 ) {
   const buttonClassName = cn(
-    "inline-flex items-center justify-center rounded-full font-mono transition-colors outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bgc disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex cursor-pointer items-center justify-center rounded-full font-mono transition-[background-color,color,box-shadow] duration-300 ease-out outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bgc disabled:pointer-events-none disabled:opacity-50",
     BUTTON_VARIANTS[variant],
     BUTTON_SIZES[size],
     className,
@@ -48,15 +48,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonPropsT>(function
   }
 
   return (
-    <button
-      ref={ref}
-      type={type}
-      className={buttonClassName}
-      {...props}
-    >
+    <button ref={ref} type={type} className={buttonClassName} {...props}>
       {children}
     </button>
   );
 });
-
-Button.displayName = "Button";

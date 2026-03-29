@@ -4,9 +4,9 @@ type HeroTitlePropsT = {
   line1: string;
   line2?: string;
   line3?: string;
-  /** Tailwind class for line1 color (default: text-gold) */
+  /** Tailwind class for line1 color (default: hero title primary) */
   classLine1?: string;
-  /** Tailwind class for line2 color (default: text-gold-cream) */
+  /** Tailwind class for line2 color (default: hero title secondary) */
   classLine2?: string;
   /** Tailwind class for line3 color (default: same as line1) */
   classLine3?: string;
@@ -21,8 +21,8 @@ export function HeroTitle({
   line1,
   line2,
   line3,
-  classLine1 = "text-gold",
-  classLine2 = "text-gold-cream",
+  classLine1 = "text-hero-title-primary",
+  classLine2 = "text-hero-title-secondary",
   classLine3,
   styleLine1,
   styleLine2,

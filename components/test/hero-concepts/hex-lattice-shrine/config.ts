@@ -22,7 +22,7 @@ const RING_OFFSETS: readonly [number, number][] = [
     return [SQRT3 * HEX_R * Math.cos(a), SQRT3 * HEX_R * Math.sin(a)] as [number, number];
   }),
   ...Array.from({ length: 12 }, (_, i) => {
-    const d = i % 2 === 0 ? 2 * SQRT3 * HEX_R : SQRT3 * HEX_R * 2;
+    const d = i % 2 === 0 ? 2 * SQRT3 * HEX_R : 3 * HEX_R;
     const angle = i % 2 === 0 ? (Math.PI / 3) * (i / 2) : (Math.PI / 3) * ((i - 1) / 2) + Math.PI / 6;
     return [d * Math.cos(angle), d * Math.sin(angle)] as [number, number];
   }),

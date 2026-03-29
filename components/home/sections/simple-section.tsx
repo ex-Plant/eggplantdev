@@ -25,7 +25,7 @@ export const SimpleSection = ({ id, titleLine, text, paragraphs, buttons, classN
         {titleLine && <SimpleHeader title={titleLine} />}
 
         {resolvedParagraphs.length > 0 && (
-          <div className={`text-16 text-lightgray md:text-20 scalable space-y-5 pt-10 lg:pt-16`}>
+          <div className={`text-16 text-copy-body md:text-20 scalable space-y-5 pt-10 lg:pt-16`}>
             {resolvedParagraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}

@@ -11,7 +11,7 @@ export function EggplantsInSpaceHeroContent() {
     <div className="relative z-10 mx-auto flex w-full max-w-[26rem] flex-col items-center px-6 text-center md:max-w-none md:px-0">
       <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
 
-      <HeroEggplant preset="golden-metallic" floatMode="tumble">
+      <HeroEggplant preset="warm-gold-glow" floatMode="tumble">
         {/* Halo rings — gold */}
         <div className="border-gold/15 absolute -inset-8 rounded-full border" />
         <div className="border-gold/8 absolute -inset-16 rounded-full border" />

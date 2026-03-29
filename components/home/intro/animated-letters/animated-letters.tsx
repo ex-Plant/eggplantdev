@@ -45,6 +45,8 @@ export const AnimatedLettersMask = ({ text = "" }) => {
             right: 0,
             top: 0,
             position: "absolute",
+            zIndex: 20,
+            pointerEvents: "none",
           },
           {
             width: "0%",
@@ -79,7 +81,7 @@ export const AnimatedLettersMask = ({ text = "" }) => {
       >
         <div
           id="target-mask"
-          className={`wrap-break-words text-28 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono font-medium tracking-tight text-white uppercase ${locale === "pl" ? "leading-[1.2]" : ""}`}
+          className={`text-hero-title-secondary wrap-break-words text-28 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono font-medium tracking-tight uppercase ${locale === "pl" ? "leading-[1.2]" : ""}`}
         >
           {text}
         </div>

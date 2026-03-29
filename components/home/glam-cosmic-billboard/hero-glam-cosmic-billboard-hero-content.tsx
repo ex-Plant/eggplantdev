@@ -8,13 +8,13 @@ export function GlamTextAndImage() {
   return (
     <div className="fest-container relative z-10 grid justify-items-center gap-12 md:grid-cols-[1fr_auto] md:items-center md:justify-items-stretch">
       <div className="mx-auto w-full max-w-104 text-center md:max-w-none md:text-left">
-        <HeroSubtitle className="text-hot-pink/40">{COPY.subtitle}</HeroSubtitle>
-        <h1 className="text-gold-cream mt-4 text-center font-mono text-[3.25rem] leading-[0.9] font-bold uppercase sm:text-[4rem] md:text-left md:text-[6rem]">
-          {COPY.titleLine1}
+        <HeroSubtitle className="text-hot-pink/40 text-left">{COPY.subtitle}</HeroSubtitle>
+        <h1 className="mt-4 text-center font-mono text-[3.25rem] leading-[0.9] font-bold uppercase sm:text-[4rem] md:text-left md:text-[6rem]">
+          <span className="text-hero-title-primary">{COPY.titleLine1}</span>
           <br />
-          <span className="text-gold">{COPY.titleLine2}</span>
+          <span className="text-hero-title-secondary">{COPY.titleLine2}</span>
         </h1>
-        <HeroDescription className="mt-10 px-0 text-left md:mt-8 md:mr-auto md:ml-0">
+        <HeroDescription className="mt-12 px-0 text-left md:mt-12 md:mr-auto md:ml-0">
           {COPY.description}
         </HeroDescription>
         <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">

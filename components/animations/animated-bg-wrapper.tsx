@@ -17,9 +17,8 @@ export default function EggplantRadialWrapper({
         <div
           style={{
             background: `radial-gradient(ellipse at center, ${backgroundColor} 0%, transparent 90%)`,
-            // background: `radial-gradient(ellipse at center, red 0%, transparent 90%)`,
           }}
-          className={cn(`pointer-events-none absolute inset-0`, maskClass)}
+          className={cn("pointer-events-none absolute inset-0", maskClass)}
         />
       )}
       {children}

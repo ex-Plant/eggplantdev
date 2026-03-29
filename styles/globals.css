@@ -33,6 +33,7 @@
 
   /* Gold palette — single source of truth for all gold heroes */
   --color-gold: #daa520;
+  --color-primary: #f5e6c0; /* shared primary text/accent = gold-cream */
   --color-gold-bright: #ffd700;
   --color-gold-warm: #f0c040;
   --color-gold-dark: #c8860e;
@@ -42,6 +43,11 @@
 
   /* Hot pink accent — glam cosmic billboard */
   --color-hot-pink: #ff1493;
+
+  /* Shared non-hero content tokens */
+  --color-copy-strong: #ffffff; /* strongest copy = white */
+  --color-copy-body: #cccccc; /* body copy = light gray */
+  --color-copy-muted: #777777; /* muted/meta copy = gray7 */
 
   /* Silver palette — monochrome / desaturated heroes */
   --color-silver: #c0c0c0;
@@ -183,6 +189,14 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@utility text-hero-title-primary {
+  color: var(--color-gold);
+}
+
+@utility text-hero-title-secondary {
+  color: var(--color-gold-cream);
 }
 
 @utility grit-subtle {
@@ -407,4 +421,3 @@ textarea:-webkit-autofill {
 [data-theme="contrast"] [aria-label="menu"] svg {
   color: var(--contrast-fg) !important;
 }
-

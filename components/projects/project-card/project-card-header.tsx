@@ -16,7 +16,7 @@ export const ProjectCardHeader = ({
           className={`no-scrollbar max-h-[204px] overflow-y-scroll px-4 md:px-6   `}
         >
           <p className={`font-mono text-24 uppercase `}>{name}</p>
-          <p className={`max-w-[60%] pt-6 text-16 text-gray7 `}>
+          <p className={`max-w-[60%] pt-6 text-16 text-copy-muted `}>
             {description}
           </p>
         </div>
