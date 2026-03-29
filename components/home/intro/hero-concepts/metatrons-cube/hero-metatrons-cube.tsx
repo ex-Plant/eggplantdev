@@ -4,10 +4,12 @@
 
 import { EggplantImage } from "@/components/general/eggplant-image";
 import { HeroDescription } from "@/components/home/intro/hero-concepts/hero-description";
+import { HeroTitle } from "@/components/home/intro/hero-concepts/hero-title";
 import {
   ALL_POINTS,
   INNER_R,
-  PALETTES,
+  THEME_OVERRIDES,
+  EGGPLANT_PRESETS,
   SVG_VIEWBOX,
   SACRED_SYMBOLS,
   CONTAINMENT,
@@ -17,9 +19,10 @@ import {
 } from "./config";
 import styles from "./metatrons-cube.module.css";
 
+const STROKES = ["var(--color-gold)", "var(--color-gold-dark)", "var(--color-gold-warm)"] as const;
+
 export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
-  const p = PALETTES[theme];
-  const stars = buildStars(p);
+  const stars = buildStars();
 
   const lines: [number, number, number, number][] = [];
   for (let i = 0; i < ALL_POINTS.length; i++) {
@@ -32,6 +35,7 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
     <div
       id={`hero-metatrons-cube-${theme}`}
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      style={THEME_OVERRIDES[theme]}
     >
       {/* Star field */}
       {/* {stars.map((s, i) => (
@@ -56,7 +60,7 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
             y1={y1}
             x2={x2}
             y2={y2}
-            stroke={p.strokes[i % 3]}
+            stroke={STROKES[i % 3]}
             strokeWidth="0.5"
             opacity={0.08 + (i % 3) * 0.04}
           />
@@ -69,7 +73,7 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
             cy={cy}
             r={i === 0 ? INNER_R : INNER_R * 0.65}
             fill="none"
-            stroke={p.strokes[i % 3]}
+            stroke={STROKES[i % 3]}
             strokeWidth={i === 0 ? 0.8 : 0.5}
             opacity={i === 0 ? 0.2 : 0.12}
           />
@@ -80,7 +84,7 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
           cy={CONTAINMENT.cy}
           r={CONTAINMENT.r}
           fill="none"
-          stroke={p.strokes[0]}
+          stroke="var(--color-gold)"
           strokeWidth="0.3"
           opacity="0.06"
           strokeDasharray={CONTAINMENT.dasharray}
@@ -89,14 +93,14 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
         <polygon
           points={SACRED_SYMBOLS.triangleTop.points}
           fill="none"
-          stroke={p.strokes[2]}
+          stroke="var(--color-gold-warm)"
           strokeWidth="0.4"
           opacity="0.1"
         />
         <polygon
           points={SACRED_SYMBOLS.triangleBottom.points}
           fill="none"
-          stroke={p.strokes[1]}
+          stroke="var(--color-gold-dark)"
           strokeWidth="0.4"
           opacity="0.08"
         />
@@ -106,7 +110,7 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
           width={SACRED_SYMBOLS.diamondLeft.width}
           height={SACRED_SYMBOLS.diamondLeft.height}
           fill="none"
-          stroke={p.strokes[0]}
+          stroke="var(--color-gold)"
           strokeWidth="0.4"
           opacity="0.08"
           transform={SACRED_SYMBOLS.diamondLeft.transform}
@@ -117,7 +121,7 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
           width={SACRED_SYMBOLS.diamondRight.width}
           height={SACRED_SYMBOLS.diamondRight.height}
           fill="none"
-          stroke={p.strokes[2]}
+          stroke="var(--color-gold-warm)"
           strokeWidth="0.4"
           opacity="0.08"
           transform={SACRED_SYMBOLS.diamondRight.transform}
@@ -127,16 +131,16 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
         <defs>
           {ALL_POINTS.slice(1).map(([cx, cy], i) => (
             <radialGradient key={`bg-${i}`} id={`burstGlow-${i}`} cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#f0c040" stopOpacity="0.35" />
-              <stop offset="25%" stopColor="#daa520" stopOpacity="0.15" />
-              <stop offset="70%" stopColor="#daa520" stopOpacity="0" />
+              <stop offset="0%" stopColor="var(--color-gold-warm)" stopOpacity="0.35" />
+              <stop offset="25%" stopColor="var(--color-gold)" stopOpacity="0.15" />
+              <stop offset="70%" stopColor="var(--color-gold)" stopOpacity="0" />
             </radialGradient>
           ))}
         </defs>
 
         {/* Central star — tiny core with many even hair-thin rays */}
         <g>
-          <circle cx={600} cy={400} r={1.5} fill={p.strokes[2]} opacity="0.9" />
+          <circle cx={600} cy={400} r={1.5} fill="var(--color-gold-warm)" opacity="0.9" />
           {Array.from({ length: 16 }, (_, i) => {
             const angle = (i * 22.5 * Math.PI) / 180;
             return (
@@ -146,7 +150,7 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
                 y1={400 + Math.sin(angle) * 2}
                 x2={600 + Math.cos(angle) * 5}
                 y2={400 + Math.sin(angle) * 5}
-                stroke={p.strokes[2]}
+                stroke="var(--color-gold-warm)"
                 strokeWidth={0.15}
                 opacity={0.35}
               />
@@ -169,7 +173,10 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
       {/* Radial glow */}
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-        style={{ backgroundImage: p.glow }}
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, color-mix(in srgb, var(--color-gold) 12%, transparent) 0%, color-mix(in srgb, var(--color-gold-dark) 5%, transparent) 40%, transparent 70%)",
+        }}
       />
 
       {/* Central pulsing glow */}
@@ -178,26 +185,24 @@ export function MetatronsCubeCore({ theme = "gold" }: { theme?: ThemeT }) {
         style={{
           width: "6rem",
           height: "6rem",
-          background: `radial-gradient(circle, ${p.strokes[0]}40 0%, ${p.strokes[1]}15 35%, transparent 70%)`,
+          background:
+            "radial-gradient(circle, color-mix(in srgb, var(--color-gold) 25%, transparent) 0%, color-mix(in srgb, var(--color-gold-dark) 8%, transparent) 35%, transparent 70%)",
         }}
       />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center">
-        <p className="mb-3 font-mono text-xs tracking-widest uppercase" style={{ color: p.subtitle }}>
+        <p className="mb-3 font-mono text-xs tracking-widest uppercase text-gold/40">
           {COPY.subtitle}
         </p>
 
-        <EggplantImage filter={p.eggplantFilter} sizeClass="h-48 w-48 mb-8" float glowPreset="gold" />
+        <EggplantImage preset={EGGPLANT_PRESETS[theme]} sizeClass="h-48 w-48 mb-8" float glowPreset="gold" />
 
-        <h1 className="text-48 md:text-72 pt-1 font-mono leading-none tracking-tight uppercase">
-          <span className="block" style={{ color: p.titlePrimary }}>
-            Metatron&apos;s
-          </span>
-          <span className="block" style={{ color: p.titleSecondary }}>
-            Cube
-          </span>
-        </h1>
+        <HeroTitle
+          line1={COPY.titleLine1}
+          line2={COPY.titleLine2}
+          className="pt-1 tracking-tight"
+        />
 
         <HeroDescription className="mt-6">{COPY.description}</HeroDescription>
       </div>

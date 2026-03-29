@@ -52,7 +52,7 @@ const PAGES = [
       "celestial-altar",
       "glam-cosmic-billboard",
       "ritual-observatory",
-      "sacred-ascension",
+      "eggplants-in-space",
       "cosmic-aubergine",
       "orbital-launch",
       "wormhole",

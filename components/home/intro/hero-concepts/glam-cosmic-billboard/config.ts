@@ -2,22 +2,16 @@
    Glam Cosmic Billboard — Hero Configuration
    ═══════════════════════════════════════════════ */
 
-/* ── Hex values for SVG attributes (can't use CSS var()) ── */
-export const HEX = {
-  gold: "#daa520",
-  hotPink: "#ff1493",
-} as const;
-
 /* ── Diagonal glam stripes ── */
 export const GLAM_STRIPES = [
-  { y1: 620, y2: 220, stroke: HEX.hotPink, strokeWidth: 1, opacity: 0.08 },
-  { y1: 580, y2: 180, stroke: HEX.gold, strokeWidth: 1, opacity: 0.08 },
+  { y1: 620, y2: 220, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.08, tone: "pink" as const },
+  { y1: 580, y2: 180, stroke: "var(--color-gold)", strokeWidth: 1, opacity: 0.08, tone: "gold" as const },
 ] as const;
 
 /* ── Orbital arcs ── */
 export const ORBITAL_ARCS = [
-  { cx: 400, cy: 400, rx: 300, ry: 350, stroke: HEX.gold, strokeWidth: 1.5, opacity: 0.08, rotate: -15 },
-  { cx: 800, cy: 400, rx: 280, ry: 320, stroke: HEX.hotPink, strokeWidth: 1, opacity: 0.06, rotate: 10 },
+  { cx: 400, cy: 400, rx: 300, ry: 350, stroke: "var(--color-gold)", strokeWidth: 1.5, opacity: 0.08, rotate: -15 },
+  { cx: 800, cy: 400, rx: 280, ry: 320, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.06, rotate: 10 },
 ] as const;
 
 /* ── Sparkle cluster ── */
@@ -26,14 +20,8 @@ export const SPARKLES = Array.from({ length: SPARKLE_COUNT }, (_, i) => ({
   x: 200 + (i * 47) % 800,
   y: 100 + (i * 61) % 600,
   opacity: 0.15 - (i % 4) * 0.03,
-  color: i % 2 === 0 ? HEX.gold : HEX.hotPink,
+  color: i % 2 === 0 ? "var(--color-gold)" : "var(--color-hot-pink)",
 }));
-
-/* ── Eggplant treatment ── */
-export const EGGPLANT = {
-  src: "/logos/eggplant-logo-smooth.apng",
-  filter: "sepia(0.15) saturate(1.6) brightness(1.05)",
-} as const;
 
 /* ── Animation timing ── */
 export const ORBIT_DURATION_S = 44;

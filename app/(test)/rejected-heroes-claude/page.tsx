@@ -2,6 +2,7 @@
 /* Rejected Claude hero concepts — archived for reference */
 
 import { lazy, Suspense } from "react";
+import { SoleilOrbit } from "@/components/test/soleil-orbit";
 
 type HeroEntryT = {
   id: string;
@@ -31,8 +32,8 @@ const REGISTRY: HeroEntryT[] = [
   { id: "wormhole", label: "Warp Aubergine", load: lazyHero("wormhole/hero-wormhole", "HeroWormhole") },
   { id: "tabernacle-dore", label: "Tabernacle Doré", load: lazyHero("tabernacle-dore/hero-tabernacle-dore", "HeroTabernacleDore") },
   { id: "mission-briefing", label: "Mission Briefing / Eggplant Zero", load: lazyHero("mission-briefing/hero-mission-briefing", "HeroMissionBriefing") },
-  { id: "sacred-ascension", label: "Sacred Ascension (Green)", load: lazyHero("sacred-ascension/hero-sacred-ascension", "HeroSacredAscension") },
   { id: "celestial-altar", label: "Celestial Altar", load: lazyHero("celestial-altar/hero-celestial-altar", "HeroCelestialAltar") },
+  { id: "soleil-orbit", label: "Soleil Aubergine — Orbit", load: () => Promise.resolve({ default: SoleilOrbit as React.ComponentType<{ txt?: string }> }) },
 ];
 
 const heroCache = new Map<string, React.LazyExoticComponent<React.ComponentType<{ txt?: string }>>>();

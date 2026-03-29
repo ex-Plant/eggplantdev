@@ -10,12 +10,13 @@ import { useLocalizedData } from "@/hooks/use-localized-data";
 import { HeroSoleilAubergine } from "@/components/home/intro/hero-concepts/soleil-aubergine";
 import { Intro } from "@/components/home/intro/intro";
 import { MetatronsCubeCore } from "@/components/home/intro/hero-concepts/metatrons-cube/hero-metatrons-cube";
-import { HeroEggplantsInSpace } from "@/components/home/intro/hero-concepts/sacred-ascension";
+import { HeroEggplantsInSpace } from "@/components/home/intro/hero-concepts/eggplants-in-space";
 import { HeroGlamCosmicBillboard } from "@/components/home/intro/hero-concepts/glam-cosmic-billboard";
 import { CosmicAubergineContent } from "@/components/home/sections/section-concepts/cosmic-aubergine";
 import { PALETTE_GOLD } from "@/components/home/sections/section-concepts/cosmic-aubergine/config";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
 import { AnimatedLettersMask } from "../../../components/home/intro/animated-letters/animated-letters";
+import { GritPulseOverlay } from "@/components/animations/grit-pulse-overlay";
 
 export default function BackdropTestPage() {
   const { introTxt = "", sections } = useLocalizedData("home");
@@ -28,6 +29,7 @@ export default function BackdropTestPage() {
 
   return (
     <div className="bg-bgc text-white">
+      <GritPulseOverlay />
       {/* Fixed edge gradient masks — fade top/bottom to page bg */}
       <div className="to-bgc pointer-events-none fixed top-0 right-0 left-0 z-100 h-[15vh] bg-linear-to-t from-transparent" />
       <div className="to-bgc pointer-events-none fixed right-0 bottom-0 left-0 z-100 h-[15vh] bg-linear-to-b from-transparent" />
@@ -37,15 +39,13 @@ export default function BackdropTestPage() {
       {/* <Intro backgroundDesktop="" backgroundMobile="" txt={introTxt} /> */}
       <AnimatedLettersMask text={introTxt} />
 
-      <MetatronsCubeCore theme="silver" />
-
       <ProjectsSection data={commercialWork} className="fest-container py-20 md:py-40" />
 
       <MetatronsCubeCore theme="gold" />
 
       <ProjectsSection data={freelanceWork} className="fest-container py-20 md:py-40" />
 
-      <HeroEggplantsInSpace />
+      {/* <HeroEggplantsInSpace /> */}
 
       <FullSection data={about} className="fest-container py-20 md:py-40" />
 
@@ -64,6 +64,7 @@ export default function BackdropTestPage() {
         paragraphs={howIWork.paragraphs}
         buttons={howIWork.buttons}
         className="fest-container py-20 md:py-60"
+        driftingMonument
       />
     </div>
   );

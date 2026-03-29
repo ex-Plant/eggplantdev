@@ -1,10 +1,10 @@
-import { GLAM_STRIPES, HEX, STRIPE_PULSE_COUNT, STRIPE_DURATIONS, ID } from "./config";
+import { GLAM_STRIPES, STRIPE_PULSE_COUNT, STRIPE_DURATIONS, ID } from "./config";
 
 export function GlamTravelingDots({ stripes }: { stripes: readonly (typeof GLAM_STRIPES)[number][] }) {
   return (
     <>
       {stripes.map((stripe, si) => {
-        const gradientId = stripe.stroke === HEX.gold ? ID.stripeGold : ID.stripePink;
+        const gradientId = stripe.tone === "gold" ? ID.stripeGold : ID.stripePink;
         const linePath = `M 0 ${stripe.y1} L 1200 ${stripe.y2}`;
 
         return Array.from({ length: STRIPE_PULSE_COUNT }, (_, di) => {

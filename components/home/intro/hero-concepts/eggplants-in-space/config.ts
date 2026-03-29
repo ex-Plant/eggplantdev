@@ -1,14 +1,8 @@
 /* ═══════════════════════════════════════════════
-   Sacred Ascension — Hero Configuration
+   EggplantsInSpace — Hero Configuration
+   Canonical values live in CSS (--color-gold-*).
+   SVG attributes need literal hex, so we mirror them here.
    ═══════════════════════════════════════════════ */
-
-/* ── Palette ── */
-export const PALETTE = {
-  neonGreen: "#10ffaa",
-  limeGreen: "#39ff14",
-  greenAccent: "#00e676",
-  bgColor: "#020204",
-} as const;
 
 /* ── SVG shared ── */
 export const SVG_CENTER = { x: 600, y: 400 } as const;
@@ -27,10 +21,10 @@ export const METATRON_LINES = [
 ] as const;
 
 /* ── Outer containing circles ── */
-export const OUTER_CIRCLES = [
-  { r: 200, stroke: PALETTE.limeGreen, strokeWidth: 0.3, opacity: 0.06, dasharray: "8 12" },
-  { r: 300, stroke: PALETTE.greenAccent, strokeWidth: 0.3, opacity: 0.04, dasharray: "4 16" },
-  { r: 380, stroke: PALETTE.neonGreen, strokeWidth: 0.2, opacity: 0.03, dasharray: undefined },
+export const OUTER_CIRCLES_GOLD = [
+  { r: 200, stroke: "var(--color-gold-warm)", strokeWidth: 0.3, opacity: 0.1, dasharray: "8 12" },
+  { r: 300, stroke: "var(--color-gold-dark)", strokeWidth: 0.3, opacity: 0.06, dasharray: "4 16" },
+  { r: 380, stroke: "var(--color-gold)", strokeWidth: 0.2, opacity: 0.04, dasharray: undefined },
 ] as const;
 
 /* ── Star particles ── */
@@ -42,10 +36,13 @@ export const STAR_PARTICLES = [
 /* ── Eggplant treatment ── */
 export const EGGPLANT = {
   src: "/logos/eggplant-logo-smooth.apng",
+  filter: "sepia(0.3) saturate(1.5) brightness(0.9)",
 } as const;
 
 /* ── Typography / Copy ── */
 export const COPY = {
-  title: "Eggplants in Space",
+  title: "EggPlantis in Space",
+  titleLine1: "EggPlantis",
+  titleLine2: "in Space",
   description: "Shipping produce to the void since the last deployment.",
 } as const;

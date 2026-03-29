@@ -5,10 +5,10 @@
 import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
 import { HeroDescription } from "@/components/home/intro/hero-concepts/hero-description";
+import { HeroTitle } from "@/components/home/intro/hero-concepts/hero-title";
 import styles from "./soleil-aubergine.module.css";
 import {
-  PALETTE,
-  PALETTE_MUTED,
+  STARS,
   RAYS,
   RAY_PULSE_TRAVEL,
   ZIGZAG_POINTS,
@@ -16,24 +16,21 @@ import {
   COPY,
   SVG_CENTER,
   SVG_VIEWBOX,
-  buildStars,
-  buildCoronaRings,
+  CORONA_RINGS,
 } from "./config";
 
-const PALETTES = { default: PALETTE, muted: PALETTE_MUTED } as const;
-type VariantT = keyof typeof PALETTES;
+type VariantT = "default" | "muted";
 
 export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT } = {}) {
-  const palette = PALETTES[variant];
-  const stars = buildStars(palette);
-  const coronaRings = buildCoronaRings(palette);
+  /* For "default" variant, override --color-gold to the bright value */
+  const variantStyle = variant === "default" ? { "--color-gold": "var(--color-gold-bright)" } as React.CSSProperties : undefined;
 
   return (
     <EggplantRadialWrapper>
-      <div className="py-20">
+      <div className="py-20" style={variantStyle}>
         <div className="relative flex min-h-screen items-center justify-center">
           {/* Star field */}
-          {stars.map((s, i) => (
+          {STARS.map((s, i) => (
             <div
               key={i}
               className="absolute rounded-full"
@@ -54,7 +51,7 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
             preserveAspectRatio="xMidYMid slice"
           >
             {/* Concentric solar corona rings */}
-            {coronaRings.map((ring) => (
+            {CORONA_RINGS.map((ring) => (
               <circle
                 key={ring.r}
                 cx={SVG_CENTER.x}
@@ -68,7 +65,7 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
             ))}
 
             {/* Zigzag decorative band */}
-            <polyline points={ZIGZAG_POINTS} fill="none" stroke={palette.darkGold} strokeWidth="0.6" opacity="0.12" />
+            <polyline points={ZIGZAG_POINTS} fill="none" stroke="var(--color-gold-dark)" strokeWidth="0.6" opacity="0.12" />
 
             {/* Radiating sun rays */}
             {RAYS.map((r, i) => (
@@ -78,7 +75,7 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
                   y1={SVG_CENTER.y}
                   x2={r.x2}
                   y2={r.y2}
-                  stroke={palette.gold}
+                  stroke="var(--color-gold)"
                   strokeWidth={r.width}
                   opacity={r.opacity}
                 />
@@ -88,7 +85,7 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
                     cy={r.dotY}
                     r="3"
                     fill="none"
-                    stroke={palette.softGold}
+                    stroke="var(--color-gold-warm)"
                     strokeWidth="0.8"
                     opacity="0.2"
                   />
@@ -99,8 +96,8 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
             {/* Art deco corner brackets */}
             {CORNERS.map((corner, i) => (
               <g key={i}>
-                <path d={corner.primary} fill="none" stroke={palette.darkGold} strokeWidth="1.2" opacity="0.15" />
-                <path d={corner.secondary} fill="none" stroke={palette.gold} strokeWidth="0.5" opacity="0.1" />
+                <path d={corner.primary} fill="none" stroke="var(--color-gold-dark)" strokeWidth="1.2" opacity="0.15" />
+                <path d={corner.secondary} fill="none" stroke="var(--color-gold)" strokeWidth="0.5" opacity="0.1" />
               </g>
             ))}
           </svg>
@@ -119,7 +116,7 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
                 marginLeft: "-3rem",
                 marginTop: "-3rem",
                 borderRadius: "50%",
-                background: `radial-gradient(circle, rgba(255,215,0,0.25) 0%, rgba(218,165,32,0.1) 30%, transparent 70%)`,
+                background: `radial-gradient(circle, color-mix(in srgb, var(--color-gold) 25%, transparent) 0%, color-mix(in srgb, var(--color-gold-dark) 10%, transparent) 30%, transparent 70%)`,
                 ["--ray-angle" as string]: `${r.angleDeg}deg`,
                 /* Travel distance in viewport-relative units (long ray = 340 SVG units ≈ 28vw) */
                 ["--ray-travel" as string]: RAY_PULSE_TRAVEL,
@@ -133,7 +130,7 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
             style={{
               width: "5rem",
               height: "5rem",
-              background: `radial-gradient(circle, rgba(255,215,0,0.2) 0%, rgba(218,165,32,0.08) 40%, transparent 70%)`,
+              background: `radial-gradient(circle, color-mix(in srgb, var(--color-gold) 20%, transparent) 0%, color-mix(in srgb, var(--color-gold-dark) 8%, transparent) 40%, transparent 70%)`,
             }}
           />
 
@@ -145,22 +142,19 @@ export function HeroSoleilAubergine({ variant = "muted" }: { variant?: VariantT 
               // floatMode="orbital"
               // floatMode="jelly"
               float
-              preset="soleil-gold"
+              preset="warm-gold-glow"
               glowPreset="gold"
             />
 
             {/* Typography */}
-            <p className="font-mono text-xs tracking-[0.5em] uppercase" style={{ color: `${palette.gold}59` }}>
+            <p className="font-mono text-xs tracking-[0.5em] uppercase text-gold/35">
               {COPY.subtitle}
             </p>
-            <h1
-              className="text-48 md:text-72 font-mono leading-none tracking-wider uppercase"
-              style={{ color: palette.gold }}
-            >
-              {COPY.titleLine1}
-              <br />
-              {COPY.titleLine2}
-            </h1>
+            <HeroTitle
+              line1={COPY.titleLine1}
+              line2={COPY.titleLine2}
+              className="pt-1 tracking-tight"
+            />
             <HeroDescription>{COPY.description}</HeroDescription>
           </div>
         </div>

@@ -4,15 +4,16 @@
 
 import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
+import { HeroTitle } from "@/components/home/intro/hero-concepts/hero-title";
+import { HeroDescription } from "@/components/home/intro/hero-concepts/hero-description";
 import {
-  PALETTE_GOLD,
   SVG_CENTER,
   METATRON_CIRCLES,
   METATRON_LINES,
   OUTER_CIRCLES_GOLD,
   STAR_PARTICLES,
   COPY,
-} from "./config-gold";
+} from "./config";
 
 export function HeroEggplantsInSpace() {
   return (
@@ -21,10 +22,10 @@ export function HeroEggplantsInSpace() {
         {/* Sacred geometry background */}
         <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
           {METATRON_CIRCLES.map(([cx, cy], i) => (
-            <circle key={`mc-${i}`} cx={cx} cy={cy} r={100} fill="none" stroke={PALETTE_GOLD.gold} strokeWidth="0.4" opacity="0.15" />
+            <circle key={`mc-${i}`} cx={cx} cy={cy} r={100} fill="none" stroke="var(--color-gold)" strokeWidth="0.4" opacity="0.15" />
           ))}
           {METATRON_LINES.map((d, i) => (
-            <path key={`line-${i}`} d={d} fill="none" stroke={PALETTE_GOLD.warmGold} strokeWidth="0.5" opacity="0.1" />
+            <path key={`line-${i}`} d={d} fill="none" stroke="var(--color-gold-warm)" strokeWidth="0.5" opacity="0.1" />
           ))}
           {OUTER_CIRCLES_GOLD.map((circle) => (
             <circle key={circle.r} cx={SVG_CENTER.x} cy={SVG_CENTER.y} r={circle.r} fill="none" stroke={circle.stroke} strokeWidth={circle.strokeWidth} opacity={circle.opacity} strokeDasharray={circle.dasharray} />
@@ -47,12 +48,12 @@ export function HeroEggplantsInSpace() {
             <div className="absolute -inset-24 rounded-full border border-dashed border-gold-dark/[0.06]" />
           </div>
 
-          <h1 className="mt-12 font-mono text-20 uppercase tracking-[0.4em] text-gold">
-            {COPY.title}
-          </h1>
-          <p className="mt-4 max-w-md text-16 text-gold-caption/40">
-            {COPY.description}
-          </p>
+          <HeroTitle
+            line1={COPY.titleLine1}
+            line2={COPY.titleLine2}
+            className="mt-12 pt-1 tracking-tight"
+          />
+          <HeroDescription className="mt-4">{COPY.description}</HeroDescription>
         </div>
 
         {/* Star particles */}
@@ -66,7 +67,7 @@ export function HeroEggplantsInSpace() {
               width: i % 3 === 0 ? 3 : 1.5,
               height: i % 3 === 0 ? 3 : 1.5,
               opacity: 0.12 + (i % 4) * 0.08,
-              backgroundColor: i % 2 === 0 ? PALETTE_GOLD.cream : PALETTE_GOLD.warmGold,
+              backgroundColor: i % 2 === 0 ? "var(--color-gold-cream)" : "var(--color-gold-warm)",
             }}
           />
         ))}

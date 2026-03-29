@@ -5,36 +5,19 @@
 const SVG_CENTER = { x: 600, y: 400 } as const;
 const SVG_VIEWBOX = "0 0 1200 800" as const;
 
-/* ── Palette ── */
-export type PaletteT = { gold: string; darkGold: string; softGold: string; warmCaption: string; bgColor: string };
-
-export const PALETTE: PaletteT = {
-  gold: "#ffd700",
-  darkGold: "#daa520",
-  softGold: "#f0c040",
-  warmCaption: "#c8b080",
-  bgColor: "#0a0806",
-} as const;
-
-export const PALETTE_MUTED: PaletteT = {
-  gold: "#daa520",
-  darkGold: "#c8860e",
-  softGold: "#f0c040",
-  warmCaption: "#c8b080",
-  bgColor: "#0c0a08",
-} as const;
-
 /* ── Stars ── */
 export const STAR_COUNT = 50;
-export const STARS = buildStars(PALETTE);
 
-export function buildStars(p: PaletteT) {
+export const STARS = buildStars();
+
+export function buildStars() {
+  const colors = ["var(--color-gold)", "var(--color-gold-dark)", "var(--color-gold-warm)"] as const;
   return Array.from({ length: STAR_COUNT }, (_, i) => ({
     x: `${(i * 37 + 13) % 100}%`,
     y: `${(i * 53 + 7) % 100}%`,
     size: i % 3 === 0 ? 3 : i % 2 === 0 ? 2 : 1.5,
     opacity: 0.08 + (i % 5) * 0.04,
-    color: i % 3 === 0 ? p.gold : i % 3 === 1 ? p.darkGold : p.softGold,
+    color: colors[i % 3],
   }));
 }
 
@@ -62,15 +45,11 @@ export const RAYS = Array.from({ length: RAY_COUNT }, (_, i) => {
 });
 
 /* ── Corona rings ── */
-export const CORONA_RINGS = buildCoronaRings(PALETTE);
-
-export function buildCoronaRings(p: PaletteT) {
-  return [
-    { r: 150, stroke: p.gold, strokeWidth: 1.5, opacity: 0.18 },
-    { r: 120, stroke: p.darkGold, strokeWidth: 1, opacity: 0.14 },
-    { r: 90, stroke: p.softGold, strokeWidth: 0.8, opacity: 0.1 },
-  ];
-}
+export const CORONA_RINGS = [
+  { r: 150, stroke: "var(--color-gold)", strokeWidth: 1.5, opacity: 0.18 },
+  { r: 120, stroke: "var(--color-gold-dark)", strokeWidth: 1, opacity: 0.14 },
+  { r: 90, stroke: "var(--color-gold-warm)", strokeWidth: 0.8, opacity: 0.1 },
+];
 
 /* ── Zigzag band ── */
 export const ZIGZAG_SEGMENTS = 48;
@@ -106,15 +85,6 @@ export const CORNERS = [
   makeCorner(INSET, 800 - INSET, 1, -1),   // bottom-left
   makeCorner(1200 - INSET, 800 - INSET, -1, -1), // bottom-right
 ] as const;
-
-/* ── Eggplant treatment ── */
-export const EGGPLANT = {
-  src: "/logos/eggplant-logo-smooth.apng",
-  filter: "sepia(0.3) saturate(1.6) hue-rotate(-10deg) brightness(1.15)",
-  shadowClass: "drop-shadow-[0_0_40px_rgba(255,215,0,0.4)]",
-  glowOuter: "bg-[#ffd700]/15",
-  glowInner: "bg-[#daa520]/20",
-} as const;
 
 /* ── Typography ── */
 export const COPY = {
