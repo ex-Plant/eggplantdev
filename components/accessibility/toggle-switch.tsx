@@ -20,14 +20,14 @@ export function ToggleSwitch({ checked, onChange, label, disabled }: ToggleSwitc
       onClick={() => onChange(!checked)}
       data-checked={checked || undefined}
       className={cn(
-        "ml-8 flex h-8 w-14 shrink-0 cursor-pointer items-center rounded-full transition-[background-color] duration-300 ease-in-out disabled:cursor-not-allowed disabled:opacity-40 md:h-6 md:w-10 md:ml-4",
-        checked ? "bg-white" : "bg-white/15",
+        "ml-8 flex h-8 w-14 shrink-0 cursor-pointer items-center rounded-full px-0.5 transition-[background-color] duration-200 ease-in-out disabled:cursor-not-allowed disabled:opacity-40 md:ml-4 md:h-6 md:w-10",
+        checked ? "bg-green-toggle" : "bg-white/25",
       )}
     >
       <div
         className={cn(
-          "h-6 w-6 rounded-full transition-all duration-300 ease-in-out md:h-4 md:w-4",
-          checked ? "translate-x-7 bg-black md:translate-x-5" : "translate-x-1 bg-white",
+          "h-7 w-7 rounded-full bg-white shadow-sm transition-transform duration-200 ease-in-out md:h-5 md:w-5",
+          checked ? "translate-x-6 md:translate-x-4" : "translate-x-0",
         )}
       />
     </button>
