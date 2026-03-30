@@ -20,7 +20,7 @@ export function FixedCosmicLines() {
         preserveAspectRatio="xMidYMid slice"
         className="absolute inset-0 h-full w-full"
         style={{
-          maskImage: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0,0,0,0.1) 0%, black 70%)",
+          maskImage: "radial-gradient(ellipse 90% 85% at 50% 50%, rgba(0,0,0,0.03) 0%, black 85%)",
         }}
       >
         <SvgFiltersAndGradients />

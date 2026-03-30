@@ -1,6 +1,6 @@
 "use client";
 
-import { ORBIT_PATH, ORBITAL_ARCS } from "./config";
+import { ORBIT_PATH, ORBIT_PATH_PINK, ORBITAL_ARCS, GLAM_STRIPES, SPARKLES, ID } from "./config";
 import { GlamBackground } from "./hero-glam-cosmic-billboard-nebula-wash";
 import { SvgFiltersAndGradients } from "@/components/animations/fixed-cosmic-lines/svg-filters-and-gradients";
 import { GlamOrbitingDot } from "./hero-glam-cosmic-billboard-orbit-dot-animation";
@@ -17,8 +17,29 @@ export function HeroGlamCosmicBillboard() {
         viewBox="0 0 1200 800"
         preserveAspectRatio="xMidYMid meet"
       >
-        {/* Stripes, sparkles, and traveling dots handled by FixedCosmicLines in layout */}
         <SvgFiltersAndGradients />
+
+        {/* Diagonal glam stripes */}
+        {GLAM_STRIPES.map((stripe, i) => (
+          <line
+            key={`stripe-${i}`}
+            x1="0"
+            y1={stripe.y1}
+            x2="1200"
+            y2={stripe.y2}
+            stroke={stripe.stroke}
+            strokeWidth={stripe.strokeWidth}
+            opacity={stripe.opacity}
+          />
+        ))}
+
+        {/* Sparkle crosses */}
+        {SPARKLES.map((s, i) => (
+          <g key={`sparkle-${i}`} opacity={s.opacity}>
+            <line x1={s.x - 3} y1={s.y} x2={s.x + 3} y2={s.y} stroke={s.color} strokeWidth="0.8" />
+            <line x1={s.x} y1={s.y - 3} x2={s.x} y2={s.y + 3} stroke={s.color} strokeWidth="0.8" />
+          </g>
+        ))}
 
         {/* Orbital arcs — billboard-specific */}
         {ORBITAL_ARCS.map((arc, i) => (
@@ -36,8 +57,10 @@ export function HeroGlamCosmicBillboard() {
           />
         ))}
 
-        {/* Orbiting dot traveling along the gold arc */}
+        {/* Orbiting dot — gold arc */}
         <GlamOrbitingDot path={ORBIT_PATH} />
+        {/* Orbiting dot — pink arc */}
+        <GlamOrbitingDot path={ORBIT_PATH_PINK} gradientId={ID.orbitDotPink} durationS={38} delay={12} />
       </svg>
 
       {/* Title, subtitle, description, CTA buttons, and floating eggplant image */}

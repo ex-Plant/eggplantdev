@@ -2,13 +2,19 @@
    Glam Cosmic Billboard — Hero Configuration
    ═══════════════════════════════════════════════ */
 
-/* ── Shared stripe/sparkle config (lives in the global cosmic-lines animation) ── */
-export {
-  GLAM_STRIPES,
-  SPARKLES,
-  STRIPE_PULSE_COUNT,
-  STRIPE_DURATIONS,
-} from "@/components/animations/fixed-cosmic-lines/config";
+/* ── Billboard-specific stripe/sparkle config (independent from global overlay) ── */
+export const GLAM_STRIPES = [
+  { y1: 620, y2: 220, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.1, tone: "pink" as const },
+  { y1: 580, y2: 180, stroke: "var(--color-gold)", strokeWidth: 1, opacity: 0.1, tone: "gold" as const },
+] as const;
+
+const SPARKLE_COUNT = 20;
+export const SPARKLES = Array.from({ length: SPARKLE_COUNT }, (_, i) => ({
+  x: 200 + ((i * 47) % 800),
+  y: 100 + ((i * 61) % 600),
+  opacity: 0.15 - (i % 4) * 0.03,
+  color: i % 2 === 0 ? "var(--color-gold)" : "var(--color-hot-pink)",
+}));
 
 /* ── Orbital arcs ── */
 export const ORBITAL_ARCS = [
@@ -22,12 +28,13 @@ export const ORBIT_DURATION_S = 44;
 /* ── SVG IDs (namespaced to avoid collisions with other heroes) ── */
 export const ID = {
   orbitDot: "gcb-orbit-dot",
+  orbitDotPink: "gcb-orbit-dot-pink",
   stripeGold: "gcb-stripe-gold",
   stripePink: "gcb-stripe-pink",
 } as const;
 
 /* ── Derived constants ── */
-function buildEllipseMotionPath(arc: (typeof ORBITAL_ARCS)[0]) {
+function buildEllipseMotionPath(arc: (typeof ORBITAL_ARCS)[number]) {
   const rad = (arc.rotate * Math.PI) / 180;
   const cos = Math.cos(rad);
   const sin = Math.sin(rad);
@@ -38,6 +45,7 @@ function buildEllipseMotionPath(arc: (typeof ORBITAL_ARCS)[0]) {
 }
 
 export const ORBIT_PATH = buildEllipseMotionPath(ORBITAL_ARCS[0]);
+export const ORBIT_PATH_PINK = buildEllipseMotionPath(ORBITAL_ARCS[1]);
 
 /* ── Typography / Copy ── */
 export const COPY = {

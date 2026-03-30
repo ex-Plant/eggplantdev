@@ -6,8 +6,8 @@
 
 /* ── Diagonal glam stripes ── */
 export const GLAM_STRIPES = [
-  { y1: 620, y2: 220, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.12, tone: "pink" as const },
-  { y1: 580, y2: 180, stroke: "var(--color-gold)", strokeWidth: 1, opacity: 0.12, tone: "gold" as const },
+  { y1: 420, y2: 420, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.12, tone: "pink" as const },
+  { y1: 380, y2: 380, stroke: "var(--color-gold)", strokeWidth: 1, opacity: 0.12, tone: "gold" as const },
 ] as const;
 
 /* ── Sparkle cluster ── */
@@ -20,8 +20,8 @@ export const SPARKLES = Array.from({ length: SPARKLE_COUNT }, (_, i) => ({
 }));
 
 /* ── Animation timing ── */
-export const STRIPE_PULSE_COUNT = 3;
-export const STRIPE_DURATIONS = [36, 30, 40, 42, 34, 38] as const;
+export const STRIPE_PULSE_COUNT = 2;
+export const STRIPE_DURATIONS = [42, 38, 48, 44] as const;
 
 /* ── SVG gradient IDs ── */
 export const STRIPE_ID = {
