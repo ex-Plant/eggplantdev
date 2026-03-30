@@ -10,7 +10,7 @@ import { TravelingDots } from "./traveling-dots";
 export function FixedCosmicLines() {
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-150 h-lvh mix-blend-screen" aria-hidden="true">
-      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet" className="h-full w-full">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" className="h-full w-full">
         <SvgFiltersAndGradients />
 
         {/* Diagonal stripes */}
