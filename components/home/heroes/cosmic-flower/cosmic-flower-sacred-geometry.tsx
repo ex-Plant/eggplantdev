@@ -7,7 +7,7 @@ export function CosmicFlowerSacredGeometry() {
     <svg
       className="pointer-events-none absolute inset-0 h-full w-full"
       viewBox="0 0 420 420"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
     >
       {/* Flower of life fragment */}
       {FLOWER_CIRCLES.map(([cx, cy], i) => (
