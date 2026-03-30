@@ -43,7 +43,7 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
       },
       hexLatticeShrine: {
         eyebrow: "Crystalline lattice formation",
-        titleLine1: "Hex Lattice",
+        titleLine1: "Celestial",
         titleLine2: "Shrine",
         description:
           "An eggplant rests at the nucleus of an infinite crystal lattice, resonating through every vertex of the cosmic honeycomb.",
@@ -185,58 +185,58 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
   },
   v2: {
     en: {
-      glamCosmicBillboard: {
-        subtitle: "Celestial Luxury / Small Batch",
-        titleLine1: "Golden",
-        titleLine2: "Eggplant",
-        description:
-          "A premium object of uncertain purpose and undeniable presence. Distilled from lacquer, star dust, and the kind of frontend confidence that somehow makes the strange idea ship beautifully.",
-        buttons: ["View Specimen", "Screen Test"],
-      },
       soleilAubergine: {
-        subtitle: "Solar Produce Entity",
-        titleLine1: "Eggplant",
-        titleLine2: "Sun",
+        subtitle: "Object #000 Classification: pending",
+        titleLine1: "Space",
+        titleLine2: "Oddity",
         description:
           "Less vegetable, more minor celestial authority. Warm, theatrical, impossible to ignore, and somehow still tasteful.",
       },
+
       metatronsCube: {
-        subtitle: "Universal Wiring Diagram",
-        titleLine1: "Metatron's",
-        titleLine2: "Cube",
+        subtitle: "Object #001",
+        titleLine1: "The",
+        titleLine2: "Blueprint",
         description:
-          "Every serious system starts with structure. For reasons nobody has fully explained, this one also starts with an eggplant.",
+          "Every serious system starts with structure. For reasons nobody can fully explain, this one also started with an eggplant.",
       },
+
       hexLatticeShrine: {
-        eyebrow: "Structural Pattern / Core Grid",
-        titleLine1: "Hex Lattice",
+        eyebrow: "Object #002",
+        titleLine1: "Peculiar",
         titleLine2: "Shrine",
         description:
-          "At some point the layout stopped being a layout and became a shrine. The aubergine remains at the center, quietly approving every line, gap, and alignment decision.",
-      },
-      cosmicCultFlyer: {
-        subtitle: "Open Enrollment / Limited Dogma",
-        titleLine1: "Cosmic Cult",
-        titleLine2: "Flyer",
-        description:
-          "No robes required. Just strong visual instincts, clean implementation, and a suspicious level of emotional investment in the sacred aubergine.",
-        buttonPrimary: "Enter the Order",
-        buttonSecondary: "Read the Fine Print",
+          "At some point the layout stopped being a layout and became a shrine. The eggplant remained at the center, supervising alignment and other minor miracles.",
       },
       cosmicFlower: {
-        subtitle: "Signal Still Active",
-        titleLine1: "Eggplant",
-        titleLine2: "in Space",
-        description:
-          "The transmission continues: one glossy object drifting through sacred geometry, release cycles, and the occasional perfectly avoidable complication.",
-        buttons: ["Track Signal", "Remain Calm"],
+        subtitle: "Object #003",
+        titleLine1: "Ritual",
+        titleLine2: "Operator",
+        description: "The singularity emerged, word had to spread. Management wasn't prepared for the eggplant.",
       },
+
+      cosmicCultFlyer: {
+        subtitle: "Object #004",
+        titleLine1: "The",
+        titleLine2: "Code",
+        description: "Do not question the eggplant. \nThe eggplant is the question. \nIt works on my machine.",
+      },
+
+      glamCosmicBillboard: {
+        subtitle: "Object #005: AGI ACHIEVED",
+        titleLine1: "Final",
+        titleLine2: "Echo",
+        description: "Still out there, still orbiting. \n Transmission remains possible",
+        buttons: ["Signal to noise", "Scroll to top"],
+      },
+
       eggplantsInSpace: {
-        subtitle: "Cosmic Produce Network",
+        subtitle: "",
         titleLine1: "EggPlants",
         titleLine2: "in Space",
         description: "Still out there. Still orbiting. Still somehow passing all the checks.",
       },
+
       notFound: {
         subtitle: "Cosmic Produce Network",
         titleLine1: "Not",

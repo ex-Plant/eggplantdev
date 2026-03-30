@@ -25,29 +25,30 @@ export default function HomePage() {
   const howIWork = sections[4] as SimpleSectionT;
 
   return (
-    <div className="bg-bgc text-primary pb-40">
-      <GritPulseOverlay />
+    <div className="bg-bgc text-primary">
+      {/* <GritPulseOverlay /> */}
       <GradientMask />
       <div className={`grid grid-cols-1 gap-y-20 md:gap-40`}>
-        <GlamCosmicBillboard />
+        <EggplantSun />
 
         <AnimatedLettersMask text={introTxt} />
 
-        <EggplantSun />
+        <MetatronsCube theme="gold" />
 
         <ProjectsSection data={commercialWork} className="fest-container" />
 
-        <MetatronsCube theme="gold" />
+        <HexLatticeShrineGold />
 
         <ProjectsSection data={freelanceWork} className="fest-container" />
 
-        <HexLatticeShrineGold />
+        <CosmicFlower />
 
         <FullSection data={about} className="fest-container" />
 
         <CosmicCultFlyer />
 
         <FullSection data={values} className="fest-container" />
+        <GlamCosmicBillboard />
 
         {/* <SimpleSection
         id={howIWork.id}
@@ -58,8 +59,6 @@ export default function HomePage() {
         className="fest-container py-20 md:py-60"
         aside={<EggplantImage sizeClass="size-[24rem] md:size-[30rem] xl:size-[36rem]" glowPreset="fuchsia" />}
         /> */}
-
-        <CosmicFlower />
 
         {/* <GetInTouchButton /> */}
 

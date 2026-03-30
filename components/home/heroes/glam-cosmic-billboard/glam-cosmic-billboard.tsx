@@ -9,7 +9,7 @@ import { GlamCosmicBillboardHeroContent } from "./glam-cosmic-billboard-hero-con
 
 export function GlamCosmicBillboard() {
   return (
-    <div id="hero-glam-cosmic-billboard" className="relative flex min-h-svh items-start py-20">
+    <div id="hero-glam-cosmic-billboard" className="relative flex min-h-svh items-start pt-20">
       {/* Gold/pink radial gradient background — fades to transparent at top & bottom edges */}
       <GlamCosmicBillboardNebulaWash />
 

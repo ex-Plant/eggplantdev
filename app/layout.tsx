@@ -14,6 +14,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { DevTestNav } from "@/components/test/dev-test-nav";
 import { FixedTravelingDots } from "@/components/animations/fixed-traveling-dots/fixed-traveling-dots";
+import { GritPulseOverlay } from "../components/animations/grit-pulse-overlay/grit-pulse-overlay";
 
 export const metadata: Metadata = {
   title: "Egggplants in space",
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <FixedTravelingDots />
             {/* Fixed grit overlay — always on, base texture for all pages */}
             <div className="grit pointer-events-none fixed inset-x-0 top-0 z-200 h-lvh will-change-transform" />
+            <GritPulseOverlay />
 
             {/* TopNavigation must stay outside SmoothScroll — toggling smooth scroll
                 remounts the tree, which would reset the menu open/close state */}

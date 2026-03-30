@@ -25,8 +25,8 @@ export const BILLBOARD_DOT_PATHS: DotPathT[] = [
 
 /* ── Orbital arcs ── */
 export const ORBITAL_ARCS = [
-  { cx: 400, cy: 400, rx: 300, ry: 350, stroke: "var(--color-gold)", strokeWidth: 1.5, opacity: 0.1, rotate: -15 },
-  { cx: 800, cy: 400, rx: 280, ry: 320, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.12, rotate: 10 },
+  { cx: 400, cy: 400, rx: 300, ry: 350, stroke: "var(--color-gold)", strokeWidth: 1.5, opacity: 0.13, rotate: -15 },
+  { cx: 800, cy: 400, rx: 280, ry: 320, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.14, rotate: 10 },
 ] as const;
 
 /* ── Animation timing ── */
