@@ -4,8 +4,9 @@
 
 import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
+import { useLocalizedHeroCopy } from "@/hooks/use-localized-hero-copy";
 import { HeroSectionWrapper } from "@/components/home/heroes/hero-section-wrapper";
-import { HEX_R, hexCorners, HEX_CENTERS, VERTEX_LIST, RADIAL_LINES, COPY, SVG_CENTER, SVG_VIEWBOX } from "./config";
+import { HEX_R, hexCorners, HEX_CENTERS, VERTEX_LIST, RADIAL_LINES, SVG_CENTER, SVG_VIEWBOX } from "./config";
 
 /* Stars as simple tuples — original cyan/neon palette */
 const STARS: readonly [number, number][] = Array.from({ length: 55 }, (_, i) => [
@@ -14,6 +15,8 @@ const STARS: readonly [number, number][] = Array.from({ length: 55 }, (_, i) => 
 ]);
 
 export function HeroHexLatticeShrine() {
+  const copy = useLocalizedHeroCopy("hexLatticeShrine");
+
   return (
     <EggplantRadialWrapper>
       <HeroSectionWrapper id="hero-hex-lattice-shrine">
@@ -94,13 +97,13 @@ export function HeroHexLatticeShrine() {
         {/* Central content */}
         <div className="relative z-10 flex flex-col items-center text-center">
           <EggplantImage sizeClass="h-44 w-44" preset="cyan-glow" />
-          <p className="text-12 mt-10 font-mono tracking-widest text-[#00e5ff]/30 uppercase">{COPY.eyebrow}</p>
+          <p className="text-12 mt-10 font-mono tracking-widest text-[#00e5ff]/30 uppercase">{copy.eyebrow}</p>
           <h1 className="text-48 md:text-72 mt-4 font-mono leading-none uppercase">
-            <span className="text-[#ffd700]">{COPY.titleLine1}</span>
+            <span className="text-[#ffd700]">{copy.titleLine1}</span>
             <br />
-            <span className="text-[#f5e6c0]">{COPY.titleLine2}</span>
+            <span className="text-[#f5e6c0]">{copy.titleLine2}</span>
           </h1>
-          <p className="text-14 mt-6 max-w-sm font-mono text-[#c8b080]/45">{COPY.description}</p>
+          <p className="text-14 mt-6 max-w-sm font-mono text-[#c8b080]/45">{copy.description}</p>
         </div>
       </HeroSectionWrapper>
     </EggplantRadialWrapper>

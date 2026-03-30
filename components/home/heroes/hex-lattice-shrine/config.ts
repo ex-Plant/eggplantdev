@@ -60,15 +60,6 @@ export const RADIAL_LINES = Array.from({ length: 6 }, (_, i) => {
 });
 export const OUTER_DASHED_CIRCLE = { r: 450, dasharray: "8 18" } as const;
 
-/* ── Typography ── */
-export const COPY = {
-  eyebrow: "Crystalline lattice formation",
-  titleLine1: "Hex Lattice",
-  titleLine2: "Shrine",
-  description:
-    "An eggplant rests at the nucleus of an infinite crystal lattice, resonating through every vertex of the cosmic honeycomb.",
-} as const;
-
 /* ── Burst dots — intersection points near center with shuffled delays ── */
 export const BURST_POINTS = [
   { pos: HEX_CENTERS[0], delay: 2 },

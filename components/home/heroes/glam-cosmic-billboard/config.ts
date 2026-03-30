@@ -50,13 +50,3 @@ function buildEllipseMotionPath(arc: (typeof ORBITAL_ARCS)[number]) {
 
 export const ORBIT_PATH = buildEllipseMotionPath(ORBITAL_ARCS[0]);
 export const ORBIT_PATH_PINK = buildEllipseMotionPath(ORBITAL_ARCS[1]);
-
-/* ── Typography / Copy ── */
-export const COPY = {
-  subtitle: "Limited Edition",
-  titleLine1: "Aubergine",
-  titleLine2: "d'Or",
-  description:
-    "A fragrance for the cosmos. Notes of sacred geometry, TypeScript, and freshly deployed produce. Bottled at the event horizon.",
-  buttons: ["Pre-Order", "Watch Film"],
-} as const;

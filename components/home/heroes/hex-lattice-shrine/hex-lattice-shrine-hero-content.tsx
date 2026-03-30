@@ -3,20 +3,21 @@ import { HeroDescription } from "@/components/home/heroes/hero-description";
 import { HeroEggplant } from "@/components/home/heroes/hero-eggplant";
 import { HeroSubtitle } from "@/components/home/heroes/hero-subtitle";
 import { HeroTitle } from "@/components/home/heroes/hero-title";
-import { COPY } from "./config";
+import { useLocalizedHeroCopy } from "@/hooks/use-localized-hero-copy";
 
 export function HexLatticeHeroContent() {
+  const { eyebrow, titleLine1, titleLine2, description } = useLocalizedHeroCopy("hexLatticeShrine");
   return (
     <HeroContentWrapper
       above={
         <>
-          <HeroSubtitle>{COPY.eyebrow}</HeroSubtitle>
+          <HeroSubtitle>{eyebrow}</HeroSubtitle>
           <HeroEggplant preset="warm-gold-sepia" floatMode="jelly" />
         </>
       }
     >
-      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} />
-      <HeroDescription>{COPY.description}</HeroDescription>
+      <HeroTitle line1={titleLine1} line2={titleLine2} />
+      <HeroDescription>{description}</HeroDescription>
     </HeroContentWrapper>
   );
 }

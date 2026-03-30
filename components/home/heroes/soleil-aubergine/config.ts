@@ -83,20 +83,11 @@ function makeCorner(ox: number, oy: number, dx: number, dy: number): CornerT {
 }
 
 export const CORNERS = [
-  makeCorner(INSET, INSET, 1, 1),          // top-left
-  makeCorner(1200 - INSET, INSET, -1, 1),  // top-right
-  makeCorner(INSET, 800 - INSET, 1, -1),   // bottom-left
+  makeCorner(INSET, INSET, 1, 1), // top-left
+  makeCorner(1200 - INSET, INSET, -1, 1), // top-right
+  makeCorner(INSET, 800 - INSET, 1, -1), // bottom-left
   makeCorner(1200 - INSET, 800 - INSET, -1, -1), // bottom-right
 ] as const;
-
-/* ── Typography ── */
-export const COPY = {
-  subtitle: "Astre sacré du potager",
-  titleLine1: "Soleil",
-  titleLine2: "Aubergine",
-  description:
-    "A golden ember suspended in the void — the aubergine radiates its divine light across the cosmos, an eternal beacon for those who dare to look upward.",
-} as const;
 
 /* ── Derived subsets ── */
 export const DOT_RAYS = RAYS.filter((r) => r.hasDot);

@@ -91,15 +91,6 @@ export const CORNER_BRACKETS = [
   { x: 1164, y: 764, dx: -1, dy: -1 },
 ] as const;
 
-/* ── Typography ── */
-export const COPY = {
-  subtitle: "The blueprint of all creation",
-  titleLine1: "Metatron\u2019s",
-  titleLine2: "Cube",
-  description:
-    "The eggplant exists within the geometric template of the universe \u2014 encoded in every vertex, every edge, every platonic form",
-} as const;
-
 /* ── Burst dot positions at vertices — shuffled delays for random appearance ── */
 const BURST_DELAYS = [0, 21, 7, 28, 14, 35, 3.5, 24.5, 10.5, 31.5, 17.5, 38.5];
 export const BURST_POINTS = ALL_POINTS.slice(1).map(([x, y], i) => ({
