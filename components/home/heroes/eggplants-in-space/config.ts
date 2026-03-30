@@ -101,11 +101,3 @@ export const STAR_PARTICLES = RAW_STAR_POSITIONS.map(([x, y], i) => ({
   opacity: 0.12 + (i % 4) * 0.08,
   backgroundColor: i % 2 === 0 ? "var(--color-gold-cream)" : "var(--color-gold-warm)",
 }));
-
-/* ── Typography / Copy ── */
-export const COPY = {
-  subtitle: "Cosmique potager stellaire",
-  titleLine1: "EggPlants",
-  titleLine2: "in Space",
-  description: "Shipping produce to the void since the last deployment.",
-} as const;

@@ -7,7 +7,8 @@ export type HeroCopyKeyT =
   | "metatronsCube"
   | "hexLatticeShrine"
   | "cosmicCultFlyer"
-  | "cosmicFlower";
+  | "cosmicFlower"
+  | "eggplantsInSpace";
 
 export type HeroCopyMapT = Record<HeroCopyKeyT, HeroCopyT>;
 
@@ -60,6 +61,12 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
           "One aubergine's journey through the cosmos of frontend development, sacred geometry, and questionable deployment decisions.",
         buttons: ["Launch Sequence", "Abort Mission"],
       },
+      eggplantsInSpace: {
+        subtitle: "Cosmic stellar garden",
+        titleLine1: "EggPlants",
+        titleLine2: "in Space",
+        description: "Shipping produce to the void since the last deployment.",
+      },
     },
     pl: {
       glamCosmicBillboard: {
@@ -107,6 +114,12 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         description:
           "Podroz jednego baklazana przez kosmos frontendu, swieta geometrie i watpliwe decyzje wdrozeniowe.",
         buttons: ["Sekwencja startowa", "Przerwij misje"],
+      },
+      eggplantsInSpace: {
+        subtitle: "Kosmiczny ogrod gwiezdny",
+        titleLine1: "Baklazany",
+        titleLine2: "w Kosmosie",
+        description: "Dostarczamy warzywa w pustke od ostatniego wdrozenia.",
       },
     },
   },
@@ -158,6 +171,12 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
           "The transmission continues: one glossy object drifting through sacred geometry, release cycles, and the occasional perfectly avoidable complication.",
         buttons: ["Track Signal", "Remain Calm"],
       },
+      eggplantsInSpace: {
+        subtitle: "Cosmic Produce Network",
+        titleLine1: "EggPlants",
+        titleLine2: "in Space",
+        description: "Still out there. Still orbiting. Still somehow passing all the checks.",
+      },
     },
     pl: {
       glamCosmicBillboard: {
@@ -205,6 +224,12 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         description:
           "Transmisja trwa: jeden blyszczacy obiekt dryfuje przez swieta geometrie, cykle release'ow i okazjonalne, calkowicie mozliwe do unikniecia komplikacje.",
         buttons: ["Namierz sygnal", "Zachowaj spokoj"],
+      },
+      eggplantsInSpace: {
+        subtitle: "Kosmiczna siec warzywna",
+        titleLine1: "Baklazany",
+        titleLine2: "w Kosmosie",
+        description: "Nadal tam sa. Nadal orbituja. Nadal jakims cudem przechodza wszystkie testy.",
       },
     },
   },

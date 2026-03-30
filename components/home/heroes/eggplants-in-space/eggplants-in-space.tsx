@@ -1,5 +1,3 @@
-/* Agent: Claude — EggplantsInSpace */
-
 "use client";
 
 import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
@@ -9,7 +7,7 @@ import { EggplantsInSpaceSacredGeometry } from "./eggplants-in-space-sacred-geom
 import { EggplantsInSpaceHeroContent } from "./eggplants-in-space-hero-content";
 import { EggplantsInSpaceStarParticles } from "./eggplants-in-space-star-particles";
 
-export function HeroEggplantsInSpace() {
+export function EggplantsInSpace() {
   return (
     <EggplantRadialWrapper>
       <HeroSectionWrapper id="hero-eggplants-in-space">
