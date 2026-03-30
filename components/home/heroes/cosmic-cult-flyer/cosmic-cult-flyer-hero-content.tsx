@@ -19,6 +19,7 @@ export function CosmicCultFlyerHeroContent() {
         classLine1="text-gold-cream"
         classLine2="text-gold-cream"
         classLine3="text-gold"
+        className={`mb-12`}
       />
 
       <HeroDescription>{COPY.description}</HeroDescription>

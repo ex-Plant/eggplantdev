@@ -152,7 +152,6 @@ function useAnimatedSrc() {
 
 export function EggplantImage({
   src,
-  alt = "Eggplant",
   sizeClass = "h-52 w-52",
   className,
   preset,
@@ -187,16 +186,16 @@ export function EggplantImage({
 
   return (
     <div className="relative">
-      {/* {resolvedGlow && (
+      {resolvedGlow && (
         <div
-          className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className={`pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full`}
           style={{
             width: resolvedGlow.size ?? "400px",
             height: resolvedGlow.size ?? "400px",
             background: resolvedGlow.gradient,
           }}
         />
-      )} */}
+      )}
       {/* Plain <img> instead of next/image — the s3ource is an animated WebP/APNG.
          next/image adds a wrapper that creates a visible rectangle with drop-shadow filters,
          and `unoptimized` was required anyway since optimization strips animation.

@@ -1,35 +1,26 @@
 {
-  "introTxt": "Prawie 5 lat budowania aplikacji frontendowych i full-stack w React i Next.js — od e-commerce i SaaS po platformy kulturalne. Zanim zacząłem programować, przez cztery lata zarządzałem kultowym miejscem kulturalnym w Krakowie, prowadząc zespół ok stu osób w barach, restauracjach, na koncertach i festiwalach. To doświadczenie dało mi coś, czego większość developerów nie ma na starcie: głębokie zrozumienie tego, jak produkty są naprawdę używane przez prawdziwych ludzi pod prawdziwą presją. Dziś pracuję jako freelancer i w zespołach agencyjnych, prowadząc projekty od A do Z — od decyzji architektonicznych po wdrożenie.",
+  "introTxt": "Jeszcze nie wiem co tutaj napisać ale to musi być jednocześnie zabawnę, żeby pokazać że nie jestem sztywny, smart żeby pokazać, że jestem smart, profesjonalne bo - yes you got it, a przy okazji tekst musi być na tyle długi, żeby dał fajny efekt przy animowaniu",
   "backgroundDesktop": "/images/home/hero-desktop.jpg",
   "backgroundMobile": "/images/home/hero-mobile.jpg",
   "sections": [
     {
       "type": "projects",
       "id": "commercial-work",
-      "titleLine": [
-        "Praca",
-        "Komercyjna"
-      ],
+      "titleLine": ["Praca", "Komercyjna"],
       "text": "Projekty zrealizowane jako część zespołu developerskiego w Navarra Lab — studio projektowym i software house'ie działającym między Berlinem a Krakowem.",
       "filterCategory": "commercial"
     },
     {
       "type": "projects",
       "id": "freelance-work",
-      "titleLine": [
-        "Praca",
-        "Freelance"
-      ],
+      "titleLine": ["Praca", "Freelance"],
       "text": "Projekty, które prowadzę od A do Z — od wstępnego zakresu i architektury po wdrożenie i przekazanie.",
       "filterCategory": "freelance"
     },
     {
       "type": "fullSection",
       "id": "about",
-      "titleLine": [
-        "O",
-        "Mnie"
-      ],
+      "titleLine": ["O", "Mnie"],
       "cards": [
         {
           "title": "Tło",
@@ -49,10 +40,7 @@
     {
       "type": "fullSection",
       "id": "values",
-      "titleLine": [
-        "Co",
-        "Cenię"
-      ],
+      "titleLine": ["Co", "Cenię"],
       "cards": [
         {
           "title": "Dostępność",
@@ -72,10 +60,7 @@
     {
       "type": "simple",
       "id": "how-i-work",
-      "titleLine": [
-        "Jak",
-        "Pracuję"
-      ],
+      "titleLine": ["Jak", "Pracuję"],
       "paragraphs": [
         "Najlepiej pracuje mi się z founderami, studiami i zespołami produktowymi, które potrzebują kogoś potrafiącego swobodnie poruszać się między myśleniem produktowym a implementacją. Czasem oznacza to poprowadzenie projektu od zakresu do wdrożenia. Czasem wejście do istniejącego codebase'u, znalezienie słabych punktów i uporządkowanie go tak, żeby był spokojniejszy, szybszy i łatwiejszy w utrzymaniu.",
         "Mój domyślny tryb pracy to klarowność. Lubię wcześnie ustalać zakres, wyciągać kompromisy na stół zanim staną się problemem i dostarczać w małych, sensownych iteracjach. Dbam o estetykę, ale nie kosztem użyteczności. Dbam o tempo, ale nie o ten fałszywy rodzaj szybkości, który trzy tygodnie później zamienia się w sprzątanie.",
