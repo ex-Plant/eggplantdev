@@ -22,6 +22,10 @@ export const ORBITAL_ARCS = [
   { cx: 800, cy: 400, rx: 280, ry: 320, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.12, rotate: 10 },
 ] as const;
 
+/* ── Stripe dot timing (billboard-specific) ── */
+export const STRIPE_PULSE_COUNT = 3;
+export const STRIPE_DURATIONS = [36, 30, 40, 42, 34, 38] as const;
+
 /* ── Animation timing ── */
 export const ORBIT_DURATION_S = 44;
 

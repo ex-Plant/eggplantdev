@@ -1,15 +1,28 @@
-import { GLAM_STRIPES, STRIPE_PULSE_COUNT, STRIPE_DURATIONS, STRIPE_ID } from "./config";
+import { STRIPE_PULSE_COUNT as DEFAULT_PULSE_COUNT, STRIPE_DURATIONS as DEFAULT_DURATIONS, STRIPE_ID } from "./config";
 
-export function TravelingDots({ stripes }: { stripes: readonly (typeof GLAM_STRIPES)[number][] }) {
+type StripeLike = { y1: number; y2: number; tone: "pink" | "gold" };
+
+export function TravelingDots({
+  stripes,
+  pulseCount = DEFAULT_PULSE_COUNT,
+  durations = DEFAULT_DURATIONS as unknown as readonly number[],
+}: {
+  stripes: readonly StripeLike[];
+  pulseCount?: number;
+  durations?: readonly number[];
+}) {
   return (
     <>
       {stripes.map((stripe, si) => {
         const gradientId = stripe.tone === "gold" ? STRIPE_ID.stripeGold : STRIPE_ID.stripePink;
         const linePath = `M 0 ${stripe.y1} L 1200 ${stripe.y2}`;
 
-        return Array.from({ length: STRIPE_PULSE_COUNT }, (_, di) => {
-          const dur = STRIPE_DURATIONS[si * STRIPE_PULSE_COUNT + di];
-          const delay = di * 8 + si * 5;
+        return Array.from({ length: pulseCount }, (_, di) => {
+          const dur = durations[si * pulseCount + di];
+          /* Spread delays evenly across the cycle so dots don't cluster */
+          const totalDots = stripes.length * pulseCount;
+          const globalIndex = si * pulseCount + di;
+          const delay = (globalIndex / totalDots) * dur;
           return (
             <circle key={`stripe-dot-${si}-${di}`} r="20" fill={`url(#${gradientId})`}>
               <animateMotion

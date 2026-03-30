@@ -1,6 +1,16 @@
 "use client";
 
-import { ORBIT_PATH, ORBIT_PATH_PINK, ORBITAL_ARCS, GLAM_STRIPES, SPARKLES, ID } from "./config";
+import {
+  ORBIT_PATH,
+  ORBIT_PATH_PINK,
+  ORBITAL_ARCS,
+  GLAM_STRIPES,
+  SPARKLES,
+  STRIPE_PULSE_COUNT,
+  STRIPE_DURATIONS,
+  ID,
+} from "./config";
+import { TravelingDots } from "@/components/animations/fixed-cosmic-lines/traveling-dots";
 import { GlamBackground } from "./hero-glam-cosmic-billboard-nebula-wash";
 import { SvgFiltersAndGradients } from "@/components/animations/fixed-cosmic-lines/svg-filters-and-gradients";
 import { GlamOrbitingDot } from "./hero-glam-cosmic-billboard-orbit-dot-animation";
@@ -56,6 +66,9 @@ export function HeroGlamCosmicBillboard() {
             transform={`rotate(${arc.rotate} ${arc.cx} ${arc.cy})`}
           />
         ))}
+
+        {/* Traveling dots along diagonal stripes */}
+        <TravelingDots stripes={GLAM_STRIPES} pulseCount={STRIPE_PULSE_COUNT} durations={STRIPE_DURATIONS} />
 
         {/* Orbiting dot — gold arc */}
         <GlamOrbitingDot path={ORBIT_PATH} />
