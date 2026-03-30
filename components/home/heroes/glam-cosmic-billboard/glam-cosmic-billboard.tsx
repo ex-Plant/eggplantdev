@@ -2,23 +2,23 @@
 
 import { ORBIT_PATH, ORBIT_PATH_PINK, ORBITAL_ARCS, GLAM_STRIPES, BILLBOARD_DOT_PATHS, ID } from "./config";
 import { TravelingDots } from "@/components/animations/fixed-traveling-dots/traveling-dots";
-import { GlamBackground } from "./hero-glam-cosmic-billboard-nebula-wash";
-import { SvgFiltersAndGradients } from "./svg-filters-and-gradients";
-import { GlamOrbitingDot } from "./hero-glam-cosmic-billboard-orbit-dot-animation";
-import { GlamTextAndImage } from "./hero-glam-cosmic-billboard-hero-content";
+import { GlamCosmicBillboardNebulaWash } from "./glam-cosmic-billboard-nebula-wash";
+import { GlamCosmicBillboardSvgDefs } from "./glam-cosmic-billboard-svg-defs";
+import { GlamCosmicBillboardOrbitDot } from "./glam-cosmic-billboard-orbit-dot";
+import { GlamCosmicBillboardHeroContent } from "./glam-cosmic-billboard-hero-content";
 
-export function HeroGlamCosmicBillboard() {
+export function GlamCosmicBillboard() {
   return (
     <div id="hero-glam-cosmic-billboard" className="relative flex min-h-svh items-start py-20">
       {/* Gold/pink radial gradient background — fades to transparent at top & bottom edges */}
-      <GlamBackground />
+      <GlamCosmicBillboardNebulaWash />
 
       <svg
         className="pointer-events-none absolute inset-0 h-full w-full overflow-hidden"
         viewBox="0 0 1200 800"
         preserveAspectRatio="xMidYMid meet"
       >
-        <SvgFiltersAndGradients />
+        <GlamCosmicBillboardSvgDefs />
 
         {/* Diagonal glam stripes */}
         {GLAM_STRIPES.map((stripe, i) => (
@@ -54,13 +54,13 @@ export function HeroGlamCosmicBillboard() {
         <TravelingDots gradients={[]} paths={BILLBOARD_DOT_PATHS} />
 
         {/* Orbiting dot — gold arc */}
-        <GlamOrbitingDot path={ORBIT_PATH} />
+        <GlamCosmicBillboardOrbitDot path={ORBIT_PATH} />
         {/* Orbiting dot — pink arc */}
-        <GlamOrbitingDot path={ORBIT_PATH_PINK} gradientId={ID.orbitDotPink} durationS={38} delay={12} />
+        <GlamCosmicBillboardOrbitDot path={ORBIT_PATH_PINK} gradientId={ID.orbitDotPink} durationS={38} delay={12} />
       </svg>
 
       {/* Title, subtitle, description, CTA buttons, and floating eggplant image */}
-      <GlamTextAndImage />
+      <GlamCosmicBillboardHeroContent />
     </div>
   );
 }

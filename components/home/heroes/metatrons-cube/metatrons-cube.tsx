@@ -3,10 +3,10 @@
 "use client";
 
 import { SVG_VIEWBOX, THEME_OVERRIDES, type ThemeT } from "./config";
-import { MetatronsSacredGeometry } from "./metatrons-cube-sacred-geometry";
-import { MetatronsVertexAnimations } from "./metatrons-cube-vertex-animations";
+import { MetatronsCubeSacredGeometry } from "./metatrons-cube-sacred-geometry";
+import { MetatronsCubeVertexAnimations } from "./metatrons-cube-vertex-animations";
 import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
-import { MetatronsHeroContent } from "./metatrons-cube-hero-content";
+import { MetatronsCubeHeroContent } from "./metatrons-cube-hero-content";
 
 export function MetatronsCube({ theme = "gold" }: { theme?: ThemeT }) {
   return (
@@ -20,12 +20,12 @@ export function MetatronsCube({ theme = "gold" }: { theme?: ThemeT }) {
         viewBox={SVG_VIEWBOX}
         preserveAspectRatio="xMidYMid slice"
       >
-        <MetatronsSacredGeometry />
-        <MetatronsVertexAnimations />
+        <MetatronsCubeSacredGeometry />
+        <MetatronsCubeVertexAnimations />
       </svg>
 
       <RadialGlow />
-      <MetatronsHeroContent theme={theme} />
+      <MetatronsCubeHeroContent theme={theme} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { HeroSubtitle } from "@/components/home/heroes/hero-subtitle";
 import { HeroTitle } from "@/components/home/heroes/hero-title";
 import { useLocalizedHeroCopy } from "@/hooks/use-localized-hero-copy";
 
-export function HexLatticeHeroContent() {
+export function HexLatticeShrineHeroContent() {
   const { eyebrow, titleLine1, titleLine2, description } = useLocalizedHeroCopy("hexLatticeShrine");
   return (
     <HeroContentWrapper

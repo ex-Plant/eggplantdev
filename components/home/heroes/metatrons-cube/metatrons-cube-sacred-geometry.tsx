@@ -1,4 +1,13 @@
-import { ALL_POINTS, INNER_R, CONTAINMENT, SACRED_SYMBOLS, CENTER, OUTER_DASHED_CIRCLES, RADIAL_GUIDES, CORNER_BRACKETS } from "./config";
+import {
+  ALL_POINTS,
+  INNER_R,
+  CONTAINMENT,
+  SACRED_SYMBOLS,
+  CENTER,
+  OUTER_DASHED_CIRCLES,
+  RADIAL_GUIDES,
+  CORNER_BRACKETS,
+} from "./config";
 
 const STROKES = ["var(--color-gold)", "var(--color-gold-dark)", "var(--color-gold-warm)"] as const;
 
@@ -12,7 +21,7 @@ const LINES: readonly [number, number, number, number][] = (() => {
   return result;
 })();
 
-export function MetatronsSacredGeometry() {
+export function MetatronsCubeSacredGeometry() {
   return (
     <>
       {/* Connecting lines between all 13 centers */}
@@ -80,7 +89,10 @@ export function MetatronsSacredGeometry() {
       {CORNER_BRACKETS.map(({ x, y, dx, dy }, i) => (
         <g key={`corner-${i}`} opacity="0.08" stroke={STROKES[i % STROKES.length]} fill="none">
           <path d={`M${x},${y} L${x + dx * 120},${y} M${x},${y} L${x},${y + dy * 120}`} strokeWidth="0.7" />
-          <path d={`M${x + dx * 12},${y + dy * 12} L${x + dx * 72},${y + dy * 12} M${x + dx * 12},${y + dy * 12} L${x + dx * 12},${y + dy * 72}`} strokeWidth="0.45" />
+          <path
+            d={`M${x + dx * 12},${y + dy * 12} L${x + dx * 72},${y + dy * 12} M${x + dx * 12},${y + dy * 12} L${x + dx * 12},${y + dy * 72}`}
+            strokeWidth="0.45"
+          />
         </g>
       ))}
       {/* Scattered sacred symbols */}

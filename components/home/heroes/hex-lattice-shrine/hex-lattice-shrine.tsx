@@ -14,7 +14,7 @@ const STARS: readonly [number, number][] = Array.from({ length: 55 }, (_, i) => 
   (3 + i * 13.7) % 100,
 ]);
 
-export function HeroHexLatticeShrine() {
+export function HexLatticeShrine() {
   const copy = useLocalizedHeroCopy("hexLatticeShrine");
 
   return (

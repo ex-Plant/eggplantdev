@@ -4,12 +4,12 @@ import { SimpleSection } from "@/components/home/sections/simple-section";
 import { ProjectsSection } from "@/components/home/sections/projects-section";
 import { FullSection } from "@/components/home/sections/full-section";
 import { useLocalizedData } from "@/hooks/use-localized-data";
-import { HeroSoleilAubergine } from "@/components/home/heroes/soleil-aubergine";
-import { MetatronsCube } from "@/components/home/heroes/metatrons-cube";
-import { HeroGlamCosmicBillboard } from "@/components/home/heroes/glam-cosmic-billboard";
-import { HeroCosmicFlower } from "@/components/home/heroes/cosmic-flower";
-import { HeroCosmicCultFlyer } from "@/components/home/heroes/cosmic-cult-flyer";
-import { HeroHexLatticeShrineGold } from "@/components/home/heroes/hex-lattice-shrine/hero-hex-lattice-shrine-gold";
+import { EggplantSun } from "@/components/home/heroes/eggplant-sun/eggplant-sun";
+import { MetatronsCube } from "@/components/home/heroes/metatrons-cube/metatrons-cube";
+import { GlamCosmicBillboard } from "@/components/home/heroes/glam-cosmic-billboard/glam-cosmic-billboard";
+import { CosmicFlower } from "@/components/home/heroes/cosmic-flower/cosmic-flower";
+import { CosmicCultFlyer } from "@/components/home/heroes/cosmic-cult-flyer/cosmic-cult-flyer";
+import { HexLatticeShrineGold } from "@/components/home/heroes/hex-lattice-shrine/hex-lattice-shrine-gold";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
 import { GritPulseOverlay } from "@/components/animations/grit-pulse-overlay/grit-pulse-overlay";
 import { GradientMask } from "@/components/general/gradient-mask/gradient-mask";
@@ -29,11 +29,11 @@ export default function HomePage() {
       <GritPulseOverlay />
       <GradientMask />
       <div className={`grid grid-cols-1 gap-y-20 md:gap-40`}>
-        <HeroGlamCosmicBillboard />
+        <GlamCosmicBillboard />
 
         <AnimatedLettersMask text={introTxt} />
 
-        <HeroSoleilAubergine />
+        <EggplantSun />
 
         <ProjectsSection data={commercialWork} className="fest-container" />
 
@@ -41,11 +41,11 @@ export default function HomePage() {
 
         <ProjectsSection data={freelanceWork} className="fest-container" />
 
-        <HeroHexLatticeShrineGold />
+        <HexLatticeShrineGold />
 
         <FullSection data={about} className="fest-container" />
 
-        <HeroCosmicCultFlyer />
+        <CosmicCultFlyer />
 
         <FullSection data={values} className="fest-container" />
 
@@ -59,7 +59,7 @@ export default function HomePage() {
         aside={<EggplantImage sizeClass="size-[24rem] md:size-[30rem] xl:size-[36rem]" glowPreset="fuchsia" />}
         /> */}
 
-        <HeroCosmicFlower />
+        <CosmicFlower />
 
         {/* <GetInTouchButton /> */}
 

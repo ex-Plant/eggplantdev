@@ -5,7 +5,7 @@ import { HeroTitle } from "@/components/home/heroes/hero-title";
 import { Button } from "@/components/ui/button";
 import { useLocalizedHeroCopy } from "@/hooks/use-localized-hero-copy";
 
-export function GlamTextAndImage() {
+export function GlamCosmicBillboardHeroContent() {
   const { subtitle, titleLine1, titleLine2, description, buttons } = useLocalizedHeroCopy("glamCosmicBillboard");
   return (
     <div className="fest-container relative z-10 grid justify-items-center md:grid-cols-[1fr_auto] md:items-center md:justify-items-stretch">

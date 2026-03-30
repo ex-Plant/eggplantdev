@@ -12,7 +12,7 @@ import {
 } from "./config";
 import { BurstDots } from "@/components/animations/burst-dots/burst-dots";
 
-export function SoleilSacredGeometry() {
+export function EggplantSunSacredGeometry() {
   return (
     <svg
       className="pointer-events-none absolute inset-0 size-full"

@@ -1,6 +1,6 @@
 import { GLAM_STRIPES, ORBITAL_ARCS } from "./config";
 
-export function GlamStripesArcsSparkles() {
+export function GlamCosmicBillboardStaticGeometry() {
   return (
     <>
       {GLAM_STRIPES.map((stripe, i) => (

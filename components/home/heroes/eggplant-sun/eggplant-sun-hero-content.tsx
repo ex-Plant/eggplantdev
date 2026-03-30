@@ -7,7 +7,7 @@ import { HeroSubtitle } from "@/components/home/heroes/hero-subtitle";
 import { HeroTitle } from "@/components/home/heroes/hero-title";
 import { useLocalizedHeroCopy } from "@/hooks/use-localized-hero-copy";
 
-export function SoleilHeroContent() {
+export function EggplantSunHeroContent() {
   const { subtitle, titleLine1, titleLine2, description } = useLocalizedHeroCopy("soleilAubergine");
   return (
     <HeroContentWrapper

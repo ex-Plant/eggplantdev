@@ -5,19 +5,19 @@
 import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
 import { StarField } from "@/components/animations/star-field/star-field";
 import { STARS } from "./config";
-import { SoleilSacredGeometry } from "./hero-soleil-aubergine-sacred-geometry";
-import { SoleilGlowAnimations } from "./hero-soleil-aubergine-glow-animations";
-import { SoleilHeroContent } from "./hero-soleil-aubergine-hero-content";
+import { EggplantSunSacredGeometry } from "./eggplant-sun-sacred-geometry";
+import { EggplantSunGlowAnimations } from "./eggplant-sun-glow-animations";
+import { EggplantSunHeroContent } from "./eggplant-sun-hero-content";
 import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
 
-export function HeroSoleilAubergine() {
+export function EggplantSun() {
   return (
     <EggplantRadialWrapper>
       <StarField stars={STARS} />
-      <SoleilSacredGeometry />
-      <SoleilGlowAnimations />
+      <EggplantSunSacredGeometry />
+      <EggplantSunGlowAnimations />
       <RadialGlow />
-      <SoleilHeroContent />
+      <EggplantSunHeroContent />
     </EggplantRadialWrapper>
   );
 }

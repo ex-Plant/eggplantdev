@@ -12,7 +12,7 @@ import {
   BURST_POINTS,
 } from "./config";
 
-export function HexLatticeSacredGeometry() {
+export function HexLatticeShrineGeometry() {
   return (
     <svg
       className="pointer-events-none absolute inset-0 h-full w-full"

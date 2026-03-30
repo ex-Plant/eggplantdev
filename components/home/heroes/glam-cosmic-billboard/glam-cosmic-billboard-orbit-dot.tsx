@@ -1,6 +1,6 @@
 import { ORBIT_DURATION_S, ID } from "./config";
 
-export function GlamOrbitingDot({
+export function GlamCosmicBillboardOrbitDot({
   path,
   gradientId = ID.orbitDot,
   durationS = ORBIT_DURATION_S,

@@ -2,7 +2,7 @@ import { ALL_POINTS } from "./config";
 
 /* Radial gradient definitions referenced by the animated burst dots at each vertex (burstGlow-0 … burstGlow-11).
    Gold-warm center fading to transparent — gives each vertex its soft glow pulse. */
-export function MetatronsSvgDefs() {
+export function MetatronsCubeSvgDefs() {
   return (
     <defs>
       {ALL_POINTS.slice(1).map((_, i) => (

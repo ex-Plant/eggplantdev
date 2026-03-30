@@ -6,7 +6,7 @@ import { HeroTitle } from "@/components/home/heroes/hero-title";
 import { useLocalizedHeroCopy } from "@/hooks/use-localized-hero-copy";
 import { EGGPLANT_PRESETS, type ThemeT } from "./config";
 
-export function MetatronsHeroContent({ theme }: { theme: ThemeT }) {
+export function MetatronsCubeHeroContent({ theme }: { theme: ThemeT }) {
   const { subtitle, titleLine1, titleLine2, description } = useLocalizedHeroCopy("metatronsCube");
   return (
     <HeroContentWrapper

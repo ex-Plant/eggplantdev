@@ -6,7 +6,7 @@ import { CosmicFlowerHeroContent } from "./cosmic-flower-hero-content";
 import { CosmicFlowerSacredGeometry } from "./cosmic-flower-sacred-geometry";
 import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
 
-export function HeroCosmicFlower() {
+export function CosmicFlower() {
   return (
     <EggplantRadialWrapper>
       {/* Deep space nebula */}

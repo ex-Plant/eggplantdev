@@ -1,6 +1,6 @@
 import { ID } from "./config";
 
-export function SvgFiltersAndGradients() {
+export function GlamCosmicBillboardSvgDefs() {
   return (
     <defs>
       <radialGradient id={ID.orbitDot} cx="50%" cy="50%" r="50%">
