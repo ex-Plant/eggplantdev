@@ -6,7 +6,7 @@
     {
       "type": "projects",
       "id": "commercial-work",
-      "titleLine": ["Commercial", "Work"],
+      "titleLine": ["Team", "Work"],
       "text": "Projects built as part of the development team at Navarra Lab — a design studio and software house operating between Berlin and Kraków.",
       "filterCategory": "commercial"
     },
