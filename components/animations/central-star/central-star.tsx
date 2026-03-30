@@ -25,14 +25,7 @@ const buildRays = (cx: number, cy: number, count: number, innerR: number, outerR
     };
   });
 
-export function CentralStar({
-  cx,
-  cy,
-  rayCount = 16,
-  innerR = 2,
-  outerR = 5,
-  coreR = 1.5,
-}: CentralStarPropsT) {
+export function CentralStar({ cx, cy, rayCount = 16, innerR = 2, outerR = 5, coreR = 1.5 }: CentralStarPropsT) {
   const rays = buildRays(cx, cy, rayCount, innerR, outerR);
 
   return (

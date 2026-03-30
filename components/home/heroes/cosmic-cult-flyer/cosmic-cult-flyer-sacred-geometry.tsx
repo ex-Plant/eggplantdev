@@ -1,5 +1,5 @@
-import { CentralStar } from "@/components/animations/central-star";
-import { BurstDots } from "@/components/animations/burst-dots";
+import { CentralStar } from "@/components/animations/central-star/central-star";
+import { BurstDots } from "@/components/animations/burst-dots/burst-dots";
 import { SVG_CENTER, RAYS, RITUAL_RINGS, INSCRIPTIONS, HEXAGRAMS, BORDERS, BURST_POINTS } from "./config";
 
 export function CosmicCultFlyerSacredGeometry() {

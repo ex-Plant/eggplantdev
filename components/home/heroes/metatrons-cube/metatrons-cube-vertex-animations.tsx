@@ -1,6 +1,6 @@
 import { CENTER, BURST_POINTS } from "./config";
-import { BurstDots } from "@/components/animations/burst-dots";
-import { CentralStar } from "@/components/animations/central-star";
+import { BurstDots } from "@/components/animations/burst-dots/burst-dots";
+import { CentralStar } from "@/components/animations/central-star/central-star";
 
 export function MetatronsVertexAnimations() {
   return (

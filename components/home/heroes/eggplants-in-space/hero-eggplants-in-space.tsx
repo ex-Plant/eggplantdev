@@ -2,8 +2,8 @@
 
 "use client";
 
-import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
-import { RadialGlow } from "@/components/animations/radial-glow";
+import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
+import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
 import { EggplantsInSpaceSacredGeometry } from "./eggplants-in-space-sacred-geometry";
 import { EggplantsInSpaceHeroContent } from "./eggplants-in-space-hero-content";
 import { EggplantsInSpaceStarParticles } from "./eggplants-in-space-star-particles";

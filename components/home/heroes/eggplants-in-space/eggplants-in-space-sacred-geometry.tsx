@@ -1,8 +1,16 @@
 /* Agent: Claude — Eggplants in Space / Sacred Geometry SVG */
 
-import { SVG_CENTER, METATRON_CIRCLES, METATRON_CIRCLE_R, METATRON_LINES, OUTER_CIRCLES_GOLD, BURST_POINTS, RADIAL_GUIDES } from "./config";
-import { BurstDots } from "@/components/animations/burst-dots";
-import { CentralStar } from "@/components/animations/central-star";
+import {
+  SVG_CENTER,
+  METATRON_CIRCLES,
+  METATRON_CIRCLE_R,
+  METATRON_LINES,
+  OUTER_CIRCLES_GOLD,
+  BURST_POINTS,
+  RADIAL_GUIDES,
+} from "./config";
+import { BurstDots } from "@/components/animations/burst-dots/burst-dots";
+import { CentralStar } from "@/components/animations/central-star/central-star";
 
 export function EggplantsInSpaceSacredGeometry() {
   return (

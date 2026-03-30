@@ -1,7 +1,7 @@
 /* Radial glow + center pulse — shared ambient glow effect for hero sections.
    Large soft gold radial behind a smaller pulsing core. */
 
-import centerPulseStyles from "@/components/animations/center-pulse.module.css";
+import centerPulseStyles from "./center-pulse.module.css";
 
 export function RadialGlow() {
   return (

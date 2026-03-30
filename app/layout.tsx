@@ -16,7 +16,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { DevTestNav } from "@/components/test/dev-test-nav";
 import { EggplantLogo } from "../components/top-navigation/eggplant-logo";
 import { cn } from "../helpers/cn";
-import { FixedCosmicLines } from "@/components/animations/fixed-cosmic-lines";
+import { FixedCosmicLines } from "@/components/animations/fixed-cosmic-lines/fixed-cosmic-lines";
 
 export const metadata: Metadata = {
   title: "Egggplants in space",

@@ -11,7 +11,7 @@ import { HeroCosmicFlower } from "@/components/home/heroes/cosmic-flower";
 import { HeroCosmicCultFlyer } from "@/components/home/heroes/cosmic-cult-flyer";
 import { HeroHexLatticeShrineGold } from "@/components/home/heroes/hex-lattice-shrine/hero-hex-lattice-shrine-gold";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
-import { GritPulseOverlay } from "@/components/animations/grit-pulse-overlay";
+import { GritPulseOverlay } from "@/components/animations/grit-pulse-overlay/grit-pulse-overlay";
 import { AnimatedLettersMask } from "@/components/home/intro/animated-letters/animated-letters";
 
 export default function HomePage() {

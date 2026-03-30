@@ -2,7 +2,7 @@
 
 /* Agent: Claude — Hex Lattice Shrine */
 
-import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
+import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
 import { HEX_R, hexCorners, HEX_CENTERS, VERTEX_LIST, RADIAL_LINES, COPY, SVG_CENTER, SVG_VIEWBOX } from "./config";
 

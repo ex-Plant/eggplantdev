@@ -5,7 +5,7 @@
 import { SVG_VIEWBOX, THEME_OVERRIDES, type ThemeT } from "./config";
 import { MetatronsSacredGeometry } from "./metatrons-cube-sacred-geometry";
 import { MetatronsVertexAnimations } from "./metatrons-cube-vertex-animations";
-import { RadialGlow } from "@/components/animations/radial-glow";
+import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
 import { MetatronsHeroContent } from "./metatrons-cube-hero-content";
 
 export function MetatronsCube({ theme = "gold" }: { theme?: ThemeT }) {

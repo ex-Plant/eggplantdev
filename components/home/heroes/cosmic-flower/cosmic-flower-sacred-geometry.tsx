@@ -1,6 +1,6 @@
 import { FLOWER_CIRCLES, GEOMETRY, INTERSECTION_POINTS } from "./config";
-import { BurstDots } from "@/components/animations/burst-dots";
-import { CentralStar } from "@/components/animations/central-star";
+import { BurstDots } from "@/components/animations/burst-dots/burst-dots";
+import { CentralStar } from "@/components/animations/central-star/central-star";
 
 export function CosmicFlowerSacredGeometry() {
   return (
@@ -11,7 +11,16 @@ export function CosmicFlowerSacredGeometry() {
     >
       {/* Flower of life fragment */}
       {FLOWER_CIRCLES.map(([cx, cy], i) => (
-        <circle key={i} cx={cx} cy={cy} r={70} fill="none" stroke="var(--color-gold-warm)" strokeWidth="0.5" opacity="0.12" />
+        <circle
+          key={i}
+          cx={cx}
+          cy={cy}
+          r={70}
+          fill="none"
+          stroke="var(--color-gold-warm)"
+          strokeWidth="0.5"
+          opacity="0.12"
+        />
       ))}
       {/* Outer ring */}
       <circle
@@ -26,7 +35,13 @@ export function CosmicFlowerSacredGeometry() {
       />
       {/* Triangle */}
       <polygon points={GEOMETRY.triangleUp} fill="none" stroke="var(--color-gold)" strokeWidth="0.4" opacity="0.06" />
-      <polygon points={GEOMETRY.triangleDown} fill="none" stroke="var(--color-gold-warm)" strokeWidth="0.4" opacity="0.05" />
+      <polygon
+        points={GEOMETRY.triangleDown}
+        fill="none"
+        stroke="var(--color-gold-warm)"
+        strokeWidth="0.4"
+        opacity="0.05"
+      />
 
       <BurstDots points={INTERSECTION_POINTS} radius={14} idPrefix="cosmicBurst" />
 

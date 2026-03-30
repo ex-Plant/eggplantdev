@@ -10,7 +10,7 @@ import {
   SVG_CENTER,
   SVG_VIEWBOX,
 } from "./config";
-import { BurstDots } from "@/components/animations/burst-dots";
+import { BurstDots } from "@/components/animations/burst-dots/burst-dots";
 
 export function SoleilSacredGeometry() {
   return (
@@ -32,13 +32,7 @@ export function SoleilSacredGeometry() {
         />
       ))}
 
-      <polyline
-        points={ZIGZAG_POINTS}
-        fill="none"
-        stroke="var(--color-gold-dark)"
-        strokeWidth="0.6"
-        opacity="0.12"
-      />
+      <polyline points={ZIGZAG_POINTS} fill="none" stroke="var(--color-gold-dark)" strokeWidth="0.6" opacity="0.12" />
 
       {RAYS.map((r, i) => (
         <g key={i}>
@@ -67,20 +61,8 @@ export function SoleilSacredGeometry() {
 
       {CORNERS.map((corner, i) => (
         <g key={i}>
-          <path
-            d={corner.primary}
-            fill="none"
-            stroke="var(--color-gold-dark)"
-            strokeWidth="1.2"
-            opacity="0.15"
-          />
-          <path
-            d={corner.secondary}
-            fill="none"
-            stroke="var(--color-gold)"
-            strokeWidth="0.5"
-            opacity="0.1"
-          />
+          <path d={corner.primary} fill="none" stroke="var(--color-gold-dark)" strokeWidth="1.2" opacity="0.15" />
+          <path d={corner.secondary} fill="none" stroke="var(--color-gold)" strokeWidth="0.5" opacity="0.1" />
         </g>
       ))}
 

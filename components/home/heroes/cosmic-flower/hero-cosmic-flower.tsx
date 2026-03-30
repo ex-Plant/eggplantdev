@@ -1,10 +1,10 @@
 "use client";
 
-import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper";
+import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
 import { NEBULA_CLOUDS } from "./config";
 import { CosmicFlowerHeroContent } from "./cosmic-flower-hero-content";
 import { CosmicFlowerSacredGeometry } from "./cosmic-flower-sacred-geometry";
-import { RadialGlow } from "@/components/animations/radial-glow";
+import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
 
 /** Wrapped version with per-section bg animation (used on home page) */
 export function HeroCosmicFlower() {
