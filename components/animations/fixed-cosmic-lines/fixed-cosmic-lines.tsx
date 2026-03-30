@@ -9,7 +9,7 @@ import { TravelingDots } from "./traveling-dots";
 
 export function FixedCosmicLines() {
   return (
-    <div className="pointer-events-none fixed inset-x-0 top-0 z-0 h-lvh" aria-hidden="true">
+    <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-lvh mix-blend-screen" aria-hidden="true">
       {/* Lines + sparkles — masked to fade in the center
            Mask tuning:
            - 60% 50%  → ellipse size (width height) — bigger = larger fade zone
