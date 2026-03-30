@@ -1,3 +1,4 @@
+import { HeroContentWrapper } from "@/components/home/heroes/hero-content-wrapper";
 import { HeroDescription } from "@/components/home/heroes/hero-description";
 import { HeroEggplant } from "@/components/home/heroes/hero-eggplant";
 import { HeroSubtitle } from "@/components/home/heroes/hero-subtitle";
@@ -6,14 +7,14 @@ import { COPY, EGGPLANT_PRESETS, type ThemeT } from "./config";
 
 export function MetatronsHeroContent({ theme }: { theme: ThemeT }) {
   return (
-    <div className="relative z-10 mx-auto flex w-full max-w-[26rem] flex-col items-center px-6 text-center md:max-w-none md:px-0">
+    <HeroContentWrapper>
       <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
 
       <HeroEggplant preset={EGGPLANT_PRESETS[theme]} floatMode="jelly" />
 
-      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} />
+      <HeroTitle className={`mt-4 md:mt-8`} line1={COPY.titleLine1} line2={COPY.titleLine2} />
 
       <HeroDescription>{COPY.description}</HeroDescription>
-    </div>
+    </HeroContentWrapper>
   );
 }

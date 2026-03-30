@@ -1,5 +1,6 @@
 /* Agent: Claude — Soleil Aubergine / Central Text + Eggplant Image */
 
+import { HeroContentWrapper } from "@/components/home/heroes/hero-content-wrapper";
 import { HeroDescription } from "@/components/home/heroes/hero-description";
 import { HeroEggplant } from "@/components/home/heroes/hero-eggplant";
 import { HeroSubtitle } from "@/components/home/heroes/hero-subtitle";
@@ -8,16 +9,13 @@ import { COPY } from "./config";
 
 export function SoleilHeroContent() {
   return (
-    <div className="relative z-10 mx-auto flex w-full max-w-[26rem] flex-col items-center px-6 text-center md:max-w-none md:px-0">
+    <HeroContentWrapper>
       <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
 
       <HeroEggplant preset="warm-gold-glow" floatMode="orbital" />
 
-      <HeroTitle
-        line1={COPY.titleLine1}
-        line2={COPY.titleLine2}
-      />
+      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} className={`mt-4 md:mt-8`} />
       <HeroDescription>{COPY.description}</HeroDescription>
-    </div>
+    </HeroContentWrapper>
   );
 }
