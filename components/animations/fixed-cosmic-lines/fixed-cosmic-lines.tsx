@@ -9,8 +9,20 @@ import { TravelingDots } from "./traveling-dots";
 
 export function FixedCosmicLines() {
   return (
-    <div className="pointer-events-none fixed inset-x-0 top-0 z-150 h-lvh mix-blend-screen" aria-hidden="true">
-      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" className="h-full w-full">
+    <div className="pointer-events-none fixed inset-x-0 top-0 z-0 h-lvh" aria-hidden="true">
+      {/* Lines + sparkles — masked to fade in the center
+           Mask tuning:
+           - 60% 50%  → ellipse size (width height) — bigger = larger fade zone
+           - 0.3      → center opacity (0 = invisible, 1 = no fade)
+           - 70%      → where full opacity kicks in (lower = sharper edge) */}
+      <svg
+        viewBox="0 0 1200 800"
+        preserveAspectRatio="xMidYMid slice"
+        className="absolute inset-0 h-full w-full"
+        style={{
+          maskImage: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0,0,0,0.1) 0%, black 70%)",
+        }}
+      >
         <SvgFiltersAndGradients />
 
         {/* Diagonal stripes */}
@@ -34,8 +46,10 @@ export function FixedCosmicLines() {
             <line x1={s.x} y1={s.y - 3} x2={s.x} y2={s.y + 3} stroke={s.color} strokeWidth="0.8" />
           </g>
         ))}
+      </svg>
 
-        {/* Traveling dots along stripes */}
+      {/* Traveling dots — no mask, always fully visible */}
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full">
         <TravelingDots stripes={GLAM_STRIPES} />
       </svg>
     </div>
