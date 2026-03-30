@@ -20,7 +20,7 @@ export default function EggplantRadialWrapper({
           maskClass,
         )}
       />
-      {children}
+      <div className="flex min-h-screen flex-col py-20">{children}</div>
     </div>
   );
 }

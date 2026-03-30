@@ -17,9 +17,7 @@ export function CosmicFlowerHeroContent() {
       }
     >
       <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} />
-
       <HeroDescription>{COPY.description}</HeroDescription>
-
       <div className="mt-10 flex flex-wrap justify-center gap-4">
         <Button variant="heroHotPinkPrimary" size="hero">
           {COPY.buttons[0]}

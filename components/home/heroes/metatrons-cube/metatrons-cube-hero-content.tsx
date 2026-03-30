@@ -7,13 +7,15 @@ import { COPY, EGGPLANT_PRESETS, type ThemeT } from "./config";
 
 export function MetatronsHeroContent({ theme }: { theme: ThemeT }) {
   return (
-    <HeroContentWrapper>
-      <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
-
-      <HeroEggplant preset={EGGPLANT_PRESETS[theme]} floatMode="jelly" />
-
-      <HeroTitle className={`mt-4 md:mt-8`} line1={COPY.titleLine1} line2={COPY.titleLine2} />
-
+    <HeroContentWrapper
+      above={
+        <>
+          <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
+          <HeroEggplant preset={EGGPLANT_PRESETS[theme]} floatMode="jelly" />
+        </>
+      }
+    >
+      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} />
       <HeroDescription>{COPY.description}</HeroDescription>
     </HeroContentWrapper>
   );

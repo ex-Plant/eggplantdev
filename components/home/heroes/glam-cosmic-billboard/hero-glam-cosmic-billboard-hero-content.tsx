@@ -7,7 +7,7 @@ import { COPY } from "./config";
 
 export function GlamTextAndImage() {
   return (
-    <div className="fest-container relative z-10 grid justify-items-center gap-12 md:grid-cols-[1fr_auto] md:items-center md:justify-items-stretch">
+    <div className="fest-container relative z-10 grid justify-items-center md:grid-cols-[1fr_auto] md:items-center md:justify-items-stretch">
       <div className="mx-auto w-full max-w-104 text-center md:max-w-none md:text-left">
         <HeroSubtitle className="text-hot-pink/40 text-left">{COPY.subtitle}</HeroSubtitle>
         <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} className="mt-4 text-left" />

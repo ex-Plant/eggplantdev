@@ -1,6 +1,6 @@
 "use client";
 
-import { CSSProperties, useCallback, useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useYoyo } from "@/hooks/use-yoyo";
 import { useZeroGravity, type ZeroGravityModeT } from "@/hooks/use-zero-gravity";
 import { cn } from "@/helpers/cn";
@@ -114,38 +114,49 @@ type EggplantImagePropsT = {
   priority?: boolean;
 };
 
-/** Preloads the animated WebP in the background after the page is idle,
- *  then swaps it in once fully downloaded. Non-blocking — won't compete
- *  with critical resources like fonts, CSS, or above-the-fold images.
- *  Picks a smaller file for mobile viewports. */
-function useAnimatedSrc() {
-  const [src, setSrc] = useState(STATIC_SRC);
+/** Singleton preload — fires once across all EggplantImage instances.
+ *  Picks mobile or desktop WebP based on viewport width at load time.
+ *  Subscribers get notified via callback when the animated src is ready. */
+let preloadedSrc: string | undefined;
+const subscribers = new Set<(src: string) => void>();
+let preloadStarted = false;
 
-  const preload = useCallback(() => {
+function startPreload() {
+  if (preloadStarted) return;
+  preloadStarted = true;
+
+  const doPreload = () => {
     const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
     const animatedUrl = isMobile ? ANIMATED_MOBILE_SRC : ANIMATED_DESKTOP_SRC;
     const img = new window.Image();
-    img.onload = () => setSrc(animatedUrl);
+    img.onload = () => {
+      preloadedSrc = animatedUrl;
+      subscribers.forEach((cb) => cb(animatedUrl));
+      subscribers.clear();
+    };
     img.src = animatedUrl;
-  }, []);
+  };
+
+  const w = window as Window & { requestIdleCallback?: (cb: () => void) => number };
+  if (w.requestIdleCallback) {
+    w.requestIdleCallback(doPreload);
+  } else {
+    setTimeout(doPreload, 200);
+  }
+}
+
+function useAnimatedSrc() {
+  const [src, setSrc] = useState(preloadedSrc ?? STATIC_SRC);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined" || preloadedSrc) return;
 
-    const w = window as Window & {
-      requestIdleCallback?: (cb: () => void) => number;
-      cancelIdleCallback?: (id: number) => void;
+    subscribers.add(setSrc);
+    startPreload();
+    return () => {
+      subscribers.delete(setSrc);
     };
-
-    if (w.requestIdleCallback) {
-      const id = w.requestIdleCallback(preload);
-      return () => w.cancelIdleCallback?.(id);
-    }
-
-    // Safari fallback — requestIdleCallback not supported
-    const id = setTimeout(preload, 200);
-    return () => clearTimeout(id);
-  }, [preload]);
+  }, []);
 
   return src;
 }

@@ -1,12 +1,17 @@
-import { cn } from "@/helpers/cn";
+import { ReactNode } from "react";
 
 type HeroContentWrapperPropsT = {
-  children: React.ReactNode;
-  className?: string;
+  /** Content above center (subtitle, eggplant) — pushed to bottom of top half */
+  above?: ReactNode;
+  /** Content below center (title, description, buttons) */
+  children: ReactNode;
 };
 
-export function HeroContentWrapper({ children, className }: HeroContentWrapperPropsT) {
+export function HeroContentWrapper({ above, children }: HeroContentWrapperPropsT) {
   return (
-    <div className={cn("relative z-10 mx-auto flex flex-col items-center text-center", className)}>{children}</div>
+    <div className="grid-col-1 grid grow grid-rows-2 items-center">
+      <div className="flex h-full flex-col justify-end">{above}</div>
+      <div className="h-full pt-4">{children}</div>
+    </div>
   );
 }

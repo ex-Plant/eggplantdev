@@ -9,12 +9,15 @@ import { COPY } from "./config";
 
 export function SoleilHeroContent() {
   return (
-    <HeroContentWrapper>
-      <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
-
-      <HeroEggplant floatMode="orbital" />
-
-      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} className={`pt-8 lg:pt-0`} />
+    <HeroContentWrapper
+      above={
+        <>
+          <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
+          <HeroEggplant floatMode="orbital" />
+        </>
+      }
+    >
+      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} />
       <HeroDescription>{COPY.description}</HeroDescription>
     </HeroContentWrapper>
   );

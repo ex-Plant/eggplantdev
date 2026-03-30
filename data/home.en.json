@@ -6,30 +6,21 @@
     {
       "type": "projects",
       "id": "commercial-work",
-      "titleLine": [
-        "Commercial",
-        "Work"
-      ],
+      "titleLine": ["Commercial", "Work"],
       "text": "Projects built as part of the development team at Navarra Lab — a design studio and software house operating between Berlin and Kraków.",
       "filterCategory": "commercial"
     },
     {
       "type": "projects",
       "id": "freelance-work",
-      "titleLine": [
-        "Freelance",
-        "Work"
-      ],
+      "titleLine": ["Freelance", "Work"],
       "text": "Projects I own end-to-end — from initial scope and architecture through to deployment and handoff.",
       "filterCategory": "freelance"
     },
     {
       "type": "fullSection",
       "id": "about",
-      "titleLine": [
-        "About",
-        "Me"
-      ],
+      "titleLine": ["About", "Me"],
       "cards": [
         {
           "title": "Background",
@@ -49,10 +40,7 @@
     {
       "type": "fullSection",
       "id": "values",
-      "titleLine": [
-        "What I",
-        "Value"
-      ],
+      "titleLine": ["What I", "Value"],
       "cards": [
         {
           "title": "Accessibility",
@@ -68,29 +56,6 @@
         }
       ],
       "largePhoto": "/images/home/approach.jpg"
-    },
-    {
-      "type": "simple",
-      "id": "how-i-work",
-      "titleLine": [
-        "How I",
-        "Work"
-      ],
-      "paragraphs": [
-        "I work best with founders, studios, and product teams that need someone who can move between product thinking and implementation without dropping either. Sometimes that means leading a build from scope to launch. Sometimes it means stepping into an existing codebase, finding the weak points, and making it calmer, faster, and easier to maintain.",
-        "My default mode is clarity. I like defining scope early, surfacing tradeoffs before they become problems, and shipping in small, defensible increments. I care about aesthetics, but not at the cost of usability. I care about speed, but not the fake kind that creates cleanup work three weeks later.",
-        "If you need a frontend or full-stack partner who can own delivery, communicate cleanly, and keep accessibility and polish in scope from day one, I'm open to selected collaborations."
-      ],
-      "buttons": [
-        {
-          "label": "See Commercial Work",
-          "href": "#commercial-work"
-        },
-        {
-          "label": "Get In Touch",
-          "href": "#contact"
-        }
-      ]
     }
   ]
 }

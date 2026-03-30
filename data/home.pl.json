@@ -6,14 +6,14 @@
     {
       "type": "projects",
       "id": "commercial-work",
-      "titleLine": ["Praca", "Komercyjna"],
-      "text": "Projekty zrealizowane jako część zespołu developerskiego w Navarra Lab — studio projektowym i software house'ie działającym między Berlinem a Krakowem.",
+      "titleLine": ["Praca", "zespołowa"],
+      "text": "Wybrane projekty zrealizowane w ramach współpracy z Bayalab (wcześniej Navarra Lab) — studiem projektowym i software housem działającym między Berlinem a Krakowem.",
       "filterCategory": "commercial"
     },
     {
       "type": "projects",
       "id": "freelance-work",
-      "titleLine": ["Praca", "Freelance"],
+      "titleLine": ["Freelance"],
       "text": "Projekty, które prowadzę od A do Z — od wstępnego zakresu i architektury po wdrożenie i przekazanie.",
       "filterCategory": "freelance"
     },
@@ -24,7 +24,7 @@
       "cards": [
         {
           "title": "Tło",
-          "content": "Studiowałem porównawcze studia cywilizacji na Uniwersytecie Jagiellońskim — nie typowy kierunek informatyczny, ale nauczył mnie myślenia w kategoriach systemów i kontekstów. Zanim napisałem pierwszą linijkę produkcyjnego kodu, przez cztery lata byłem kierownikiem obiektu Forum Przestrzenie Kraków — kultowej przestrzeni z barami, restauracjami, salą koncertową i rotacyjnym programem festiwalowym. Zarządzanie ~100 osobami, budżetami, negocjacjami z dostawcami i logistyką eventów wykształciło te same umiejętności, których używam codziennie jako developer: prowadzenie pod presją, komunikacja między dyscyplinami i podejmowanie decyzji przy niepełnych informacjach."
+          "content": "Zanim napisałem pierwszą linijkę produkcyjnego kodu, przez cztery lata byłem kierownikiem obiektu Forum Przestrzenie Kraków — kultowej przestrzeni z barami, restauracjami, salą koncertową i rotacyjnym programem festiwalowym. Zarządzanie ~100 osobami, budżetami, negocjacjami z dostawcami i logistyką eventów wykształciło te same umiejętności, których używam codziennie jako developer: prowadzenie pod presją, komunikacja między dyscyplinami i podejmowanie decyzji przy niepełnych informacjach."
         },
         {
           "title": "Teraz",
@@ -56,26 +56,6 @@
         }
       ],
       "largePhoto": "/images/home/approach.jpg"
-    },
-    {
-      "type": "simple",
-      "id": "how-i-work",
-      "titleLine": ["Jak", "Pracuję"],
-      "paragraphs": [
-        "Najlepiej pracuje mi się z founderami, studiami i zespołami produktowymi, które potrzebują kogoś potrafiącego swobodnie poruszać się między myśleniem produktowym a implementacją. Czasem oznacza to poprowadzenie projektu od zakresu do wdrożenia. Czasem wejście do istniejącego codebase'u, znalezienie słabych punktów i uporządkowanie go tak, żeby był spokojniejszy, szybszy i łatwiejszy w utrzymaniu.",
-        "Mój domyślny tryb pracy to klarowność. Lubię wcześnie ustalać zakres, wyciągać kompromisy na stół zanim staną się problemem i dostarczać w małych, sensownych iteracjach. Dbam o estetykę, ale nie kosztem użyteczności. Dbam o tempo, ale nie o ten fałszywy rodzaj szybkości, który trzy tygodnie później zamienia się w sprzątanie.",
-        "Jeśli potrzebujesz partnera od frontendu lub full-stacku, który bierze odpowiedzialność za delivery, komunikuje się konkretnie i od pierwszego dnia trzyma w zakresie dostępność oraz dopracowanie, jestem otwarty na wybrane współprace."
-      ],
-      "buttons": [
-        {
-          "label": "Zobacz Pracę Komercyjną",
-          "href": "#commercial-work"
-        },
-        {
-          "label": "Skontaktuj Się",
-          "href": "#contact"
-        }
-      ]
     }
   ]
 }
