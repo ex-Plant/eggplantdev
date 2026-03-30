@@ -1,7 +1,6 @@
 "use client";
 
 import { CSSProperties, useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { useYoyo } from "@/hooks/use-yoyo";
 import { useZeroGravity, type ZeroGravityModeT } from "@/hooks/use-zero-gravity";
 import { cn } from "@/helpers/cn";
@@ -111,7 +110,7 @@ type EggplantImagePropsT = {
   glowPreset?: GlowPresetT;
   /** Radial gradient glow behind the eggplant — overrides glowPreset */
   glow?: GlowT;
-  /** next/image priority flag */
+  /** Load eagerly instead of lazy (replaces next/image priority) */
   priority?: boolean;
 };
 
@@ -198,17 +197,16 @@ export function EggplantImage({
           }}
         />
       )}
-      {/* `unoptimized` is intentional — the source is an animated APNG (68 frames).
-         Next.js image optimization strips animation, producing a static PNG.
+      {/* Plain <img> instead of next/image — the source is an animated WebP/APNG.
+         next/image adds a wrapper that creates a visible rectangle with drop-shadow filters,
+         and `unoptimized` was required anyway since optimization strips animation.
          See docs/eggplant-image-optimization-plan.md for size reduction strategies. */}
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         ref={imgRef}
         src={resolvedSrc}
         alt={"Eggplant image"}
-        width={160}
-        height={160}
-        unoptimized
-        priority={priority}
+        loading={priority ? "eager" : "lazy"}
         className={cn("relative object-contain", sizeClass, className)}
         style={Object.keys(imgStyle).length > 0 ? imgStyle : undefined}
       />

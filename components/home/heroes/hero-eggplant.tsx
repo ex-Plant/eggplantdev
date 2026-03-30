@@ -26,6 +26,7 @@ export function HeroEggplant({
         sizeClass="size-36 md:size-48 lg:size-56 xl:size-64"
         floatMode={floatMode}
         glowPreset={glowPreset}
+        priority
       />
       {children}
     </div>

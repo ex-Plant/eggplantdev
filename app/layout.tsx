@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 import { poly, theinhardt, jetbrainsMono, ibmPlexMono, firaCode } from "@/public/fonts/fonts";
 
@@ -10,12 +10,9 @@ import { TranslationsProvider } from "@/lib/i18n/translations-provider";
 import { SkipToContent } from "@/components/accessibility/skip-to-content";
 import { SmoothScroll } from "@/components/general/smooth-scroll";
 import { Footer } from "../components/footer/footer";
-import { preferencesHydratorScript } from "@/components/general/preferences-hydrator";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { DevTestNav } from "@/components/test/dev-test-nav";
-import { EggplantLogo } from "../components/top-navigation/eggplant-logo";
-import { cn } from "../helpers/cn";
 import { FixedCosmicLines } from "@/components/animations/fixed-cosmic-lines/fixed-cosmic-lines";
 
 export const metadata: Metadata = {
