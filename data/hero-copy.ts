@@ -212,7 +212,7 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         subtitle: "Object #003",
         titleLine1: "Ritual",
         titleLine2: "Operator",
-        description: "The singularity emerged, word had to spread. Management wasn't prepared for the eggplant.",
+        description: "The singularity emerged. Word had to spread. Management wasn't prepared for the eggplant.",
       },
 
       cosmicCultFlyer: {
@@ -226,7 +226,7 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         subtitle: "Object #005: AGI ACHIEVED",
         titleLine1: "Final",
         titleLine2: "Echo",
-        description: "Still out there, still orbiting. \n Transmission remains possible",
+        description: "Still out there, still orbiting. \nTransmission remains possible.",
         buttons: ["Signal to noise", "Scroll to top"],
       },
 
