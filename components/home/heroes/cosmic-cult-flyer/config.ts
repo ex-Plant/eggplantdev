@@ -67,14 +67,3 @@ export const BURST_POINTS = INNER_RING_RADII.flatMap((r, ri) =>
     delay: BURST_DELAYS[ri * 6 + ai],
   })),
 );
-
-/* ── Typography / Copy ── */
-export const COPY = {
-  subtitle: "The Sacred Order of the Aubergine",
-  titleLine1: "Cosmic Cult",
-  titleLine2: "Flyer",
-  description:
-    "You have been chosen. The eggplant sees all. Bring your offerings of TypeScript and deploy with devotion. Meetings are held at every sprint retrospective.",
-  buttonPrimary: "Join the Order",
-  buttonSecondary: "Read the Scrolls",
-} as const;

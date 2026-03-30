@@ -57,13 +57,3 @@ export const INTERSECTION_POINTS: readonly { pos: readonly [number, number]; del
   { pos: [89, 210], delay: 35 }, // between bottom-left & top-left
   { pos: [149, 105], delay: 38.5 }, // between top-left & top
 ] as const;
-
-/* ── Typography / Copy ── */
-export const COPY = {
-  subtitle: "Mission Control",
-  titleLine1: "Eggplant",
-  titleLine2: "in Space",
-  description:
-    "One aubergine's journey through the cosmos of frontend development, sacred geometry, and questionable deployment decisions.",
-  buttons: ["Launch Sequence", "Abort Mission"],
-} as const;
