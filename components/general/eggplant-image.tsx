@@ -1,12 +1,18 @@
 "use client";
 
-import { CSSProperties, useRef } from "react";
+import { CSSProperties, useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useYoyo } from "@/hooks/use-yoyo";
 import { useZeroGravity, type ZeroGravityModeT } from "@/hooks/use-zero-gravity";
 import { cn } from "@/helpers/cn";
 
-const DEFAULT_SRC = "/logos/eggplant-logo-smooth.apng";
+const STATIC_SRC = "/logos/eggplant-logo.png"; // 131 KB — instant placeholder
+// --- Swap animated source below for testing ---
+const ANIMATED_DESKTOP_SRC = "/logos/eggplant-logo-smooth.webp"; // 1.9 MB, 480×480, 68 frames (WebP)
+// const ANIMATED_DESKTOP_SRC = "/logos/eggplant-logo-smooth.apng"; // 8.5 MB, 480×480, 68 frames (APNG original)
+const ANIMATED_MOBILE_SRC = "/logos/eggplant-logo-smooth-mobile.webp"; // 533 KB, 240×240, 68 frames (WebP)
+// const ANIMATED_MOBILE_SRC = "/logos/eggplant-logo-smooth-mobile.apng"; // 3.0 MB, 240×240, 68 frames (APNG)
+const MOBILE_BREAKPOINT = 768;
 
 export const EGGPLANT_PRESETS = {
   natural: undefined,
@@ -77,7 +83,7 @@ type GlowT = {
 };
 
 type EggplantImagePropsT = {
-  /** Image source (default: smooth apng) */
+  /** Explicit image source — bypasses the lazy static→animated swap */
   src?: string;
   /** Alt text (default: "Eggplant") */
   alt?: string;
@@ -109,8 +115,44 @@ type EggplantImagePropsT = {
   priority?: boolean;
 };
 
+/** Preloads the animated WebP in the background after the page is idle,
+ *  then swaps it in once fully downloaded. Non-blocking — won't compete
+ *  with critical resources like fonts, CSS, or above-the-fold images.
+ *  Picks a smaller file for mobile viewports. */
+function useAnimatedSrc() {
+  const [src, setSrc] = useState(STATIC_SRC);
+
+  const preload = useCallback(() => {
+    const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
+    const animatedUrl = isMobile ? ANIMATED_MOBILE_SRC : ANIMATED_DESKTOP_SRC;
+    const img = new window.Image();
+    img.onload = () => setSrc(animatedUrl);
+    img.src = animatedUrl;
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const w = window as Window & {
+      requestIdleCallback?: (cb: () => void) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+
+    if (w.requestIdleCallback) {
+      const id = w.requestIdleCallback(preload);
+      return () => w.cancelIdleCallback?.(id);
+    }
+
+    // Safari fallback — requestIdleCallback not supported
+    const id = setTimeout(preload, 200);
+    return () => clearTimeout(id);
+  }, [preload]);
+
+  return src;
+}
+
 export function EggplantImage({
-  src = DEFAULT_SRC,
+  src,
   alt = "Eggplant",
   sizeClass = "h-52 w-52",
   className,
@@ -127,6 +169,10 @@ export function EggplantImage({
   priority,
 }: EggplantImagePropsT) {
   const imgRef = useRef<HTMLImageElement>(null);
+
+  // Always call the hook (rules of hooks), but ignore its result when src is explicit.
+  const animatedSrc = useAnimatedSrc();
+  const resolvedSrc = src ?? animatedSrc;
 
   const useBasicFloat = float && !floatMode;
   const useZeroG = float && !!floatMode;
@@ -152,9 +198,12 @@ export function EggplantImage({
           }}
         />
       )}
+      {/* `unoptimized` is intentional — the source is an animated APNG (68 frames).
+         Next.js image optimization strips animation, producing a static PNG.
+         See docs/eggplant-image-optimization-plan.md for size reduction strategies. */}
       <Image
         ref={imgRef}
-        src={src}
+        src={resolvedSrc}
         alt={"Eggplant image"}
         width={160}
         height={160}
