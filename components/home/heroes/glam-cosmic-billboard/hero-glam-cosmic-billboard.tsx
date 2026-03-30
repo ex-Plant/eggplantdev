@@ -2,7 +2,7 @@
 
 import { ORBIT_PATH, ORBITAL_ARCS } from "./config";
 import { GlamBackground } from "./hero-glam-cosmic-billboard-nebula-wash";
-import { GlamSvgFiltersAndGradients } from "./hero-glam-cosmic-billboard-svg-defs";
+import { SvgFiltersAndGradients } from "@/components/animations/fixed-cosmic-lines/svg-filters-and-gradients";
 import { GlamOrbitingDot } from "./hero-glam-cosmic-billboard-orbit-dot-animation";
 import { GlamTextAndImage } from "./hero-glam-cosmic-billboard-hero-content";
 
@@ -18,7 +18,7 @@ export function HeroGlamCosmicBillboard() {
         preserveAspectRatio="xMidYMid meet"
       >
         {/* Stripes, sparkles, and traveling dots handled by FixedCosmicLines in layout */}
-        <GlamSvgFiltersAndGradients />
+        <SvgFiltersAndGradients />
 
         {/* Orbital arcs — billboard-specific */}
         {ORBITAL_ARCS.map((arc, i) => (

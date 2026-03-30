@@ -2,11 +2,13 @@
    Glam Cosmic Billboard — Hero Configuration
    ═══════════════════════════════════════════════ */
 
-/* ── Diagonal glam stripes ── */
-export const GLAM_STRIPES = [
-  { y1: 620, y2: 220, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.1, tone: "pink" as const },
-  { y1: 580, y2: 180, stroke: "var(--color-gold)", strokeWidth: 1, opacity: 0.1, tone: "gold" as const },
-] as const;
+/* ── Shared stripe/sparkle config (lives in the global cosmic-lines animation) ── */
+export {
+  GLAM_STRIPES,
+  SPARKLES,
+  STRIPE_PULSE_COUNT,
+  STRIPE_DURATIONS,
+} from "@/components/animations/fixed-cosmic-lines/config";
 
 /* ── Orbital arcs ── */
 export const ORBITAL_ARCS = [
@@ -14,19 +16,8 @@ export const ORBITAL_ARCS = [
   { cx: 800, cy: 400, rx: 280, ry: 320, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.12, rotate: 10 },
 ] as const;
 
-/* ── Sparkle cluster ── */
-export const SPARKLE_COUNT = 20;
-export const SPARKLES = Array.from({ length: SPARKLE_COUNT }, (_, i) => ({
-  x: 200 + ((i * 47) % 800),
-  y: 100 + ((i * 61) % 600),
-  opacity: 0.15 - (i % 4) * 0.03,
-  color: i % 2 === 0 ? "var(--color-gold)" : "var(--color-hot-pink)",
-}));
-
 /* ── Animation timing ── */
 export const ORBIT_DURATION_S = 44;
-export const STRIPE_PULSE_COUNT = 3;
-export const STRIPE_DURATIONS = [36, 30, 40, 42, 34, 38] as const;
 
 /* ── SVG IDs (namespaced to avoid collisions with other heroes) ── */
 export const ID = {
