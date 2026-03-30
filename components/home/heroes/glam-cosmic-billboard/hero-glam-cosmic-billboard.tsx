@@ -1,18 +1,9 @@
 "use client";
 
-import {
-  ORBIT_PATH,
-  ORBIT_PATH_PINK,
-  ORBITAL_ARCS,
-  GLAM_STRIPES,
-  SPARKLES,
-  STRIPE_PULSE_COUNT,
-  STRIPE_DURATIONS,
-  ID,
-} from "./config";
-import { TravelingDots } from "@/components/animations/fixed-cosmic-lines/traveling-dots";
+import { ORBIT_PATH, ORBIT_PATH_PINK, ORBITAL_ARCS, GLAM_STRIPES, BILLBOARD_DOT_PATHS, ID } from "./config";
+import { TravelingDots } from "@/components/animations/fixed-traveling-dots/traveling-dots";
 import { GlamBackground } from "./hero-glam-cosmic-billboard-nebula-wash";
-import { SvgFiltersAndGradients } from "@/components/animations/fixed-cosmic-lines/svg-filters-and-gradients";
+import { SvgFiltersAndGradients } from "./svg-filters-and-gradients";
 import { GlamOrbitingDot } from "./hero-glam-cosmic-billboard-orbit-dot-animation";
 import { GlamTextAndImage } from "./hero-glam-cosmic-billboard-hero-content";
 
@@ -43,14 +34,6 @@ export function HeroGlamCosmicBillboard() {
           />
         ))}
 
-        {/* Sparkle crosses */}
-        {SPARKLES.map((s, i) => (
-          <g key={`sparkle-${i}`} opacity={s.opacity}>
-            <line x1={s.x - 3} y1={s.y} x2={s.x + 3} y2={s.y} stroke={s.color} strokeWidth="0.8" />
-            <line x1={s.x} y1={s.y - 3} x2={s.x} y2={s.y + 3} stroke={s.color} strokeWidth="0.8" />
-          </g>
-        ))}
-
         {/* Orbital arcs — billboard-specific */}
         {ORBITAL_ARCS.map((arc, i) => (
           <ellipse
@@ -67,8 +50,8 @@ export function HeroGlamCosmicBillboard() {
           />
         ))}
 
-        {/* Traveling dots along diagonal stripes */}
-        <TravelingDots stripes={GLAM_STRIPES} pulseCount={STRIPE_PULSE_COUNT} durations={STRIPE_DURATIONS} />
+        {/* Traveling dots along diagonal stripes (gradients defined by FixedTravelingDots in layout) */}
+        <TravelingDots gradients={[]} paths={BILLBOARD_DOT_PATHS} />
 
         {/* Orbiting dot — gold arc */}
         <GlamOrbitingDot path={ORBIT_PATH} />

@@ -13,7 +13,7 @@ import { Footer } from "../components/footer/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { DevTestNav } from "@/components/test/dev-test-nav";
-import { FixedCosmicLines } from "@/components/animations/fixed-cosmic-lines/fixed-cosmic-lines";
+import { FixedTravelingDots } from "@/components/animations/fixed-traveling-dots/fixed-traveling-dots";
 
 export const metadata: Metadata = {
   title: "Egggplants in space",
@@ -33,8 +33,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <TranslationsProvider>
           <DebugWrapper>
             <SkipToContent />
-            {/* Fixed ambient diagonal lines + traveling dots — behind grit */}
-            <FixedCosmicLines />
+            {/* Fixed ambient traveling dots — behind grit */}
+            <FixedTravelingDots />
             {/* Fixed grit overlay — always on, base texture for all pages */}
             <div className="grit pointer-events-none fixed inset-x-0 top-0 z-200 h-lvh will-change-transform" />
 

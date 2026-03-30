@@ -2,19 +2,26 @@
    Glam Cosmic Billboard — Hero Configuration
    ═══════════════════════════════════════════════ */
 
-/* ── Billboard-specific stripe/sparkle config (independent from global overlay) ── */
+import type { DotPathT } from "@/components/animations/fixed-traveling-dots/traveling-dots";
+
+/* ── Billboard-specific visible stripes (rendered as <line> elements) ── */
 export const GLAM_STRIPES = [
-  { y1: 620, y2: 220, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.1, tone: "pink" as const },
-  { y1: 580, y2: 180, stroke: "var(--color-gold)", strokeWidth: 1, opacity: 0.1, tone: "gold" as const },
+  { y1: 620, y2: 220, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.1 },
+  { y1: 580, y2: 180, stroke: "var(--color-gold)", strokeWidth: 1, opacity: 0.1 },
 ] as const;
 
-const SPARKLE_COUNT = 20;
-export const SPARKLES = Array.from({ length: SPARKLE_COUNT }, (_, i) => ({
-  x: 200 + ((i * 47) % 800),
-  y: 100 + ((i * 61) % 600),
-  opacity: 0.15 - (i % 4) * 0.03,
-  color: i % 2 === 0 ? "var(--color-gold)" : "var(--color-hot-pink)",
-}));
+/* ── Traveling dot paths (3 dots per stripe, staggered durations) ──
+   Gradients are defined by FixedTravelingDots in layout.tsx (renders first). */
+export const BILLBOARD_DOT_PATHS: DotPathT[] = [
+  /* Pink stripe — 3 dots */
+  { x1: 0, y1: 620, x2: 1200, y2: 220, gradientId: "td-grad-pink", dur: 36 },
+  { x1: 0, y1: 620, x2: 1200, y2: 220, gradientId: "td-grad-pink", dur: 30 },
+  { x1: 0, y1: 620, x2: 1200, y2: 220, gradientId: "td-grad-pink", dur: 40 },
+  /* Gold stripe — 3 dots */
+  { x1: 0, y1: 580, x2: 1200, y2: 180, gradientId: "td-grad-gold", dur: 42 },
+  { x1: 0, y1: 580, x2: 1200, y2: 180, gradientId: "td-grad-gold", dur: 34 },
+  { x1: 0, y1: 580, x2: 1200, y2: 180, gradientId: "td-grad-gold", dur: 38 },
+];
 
 /* ── Orbital arcs ── */
 export const ORBITAL_ARCS = [
@@ -22,19 +29,13 @@ export const ORBITAL_ARCS = [
   { cx: 800, cy: 400, rx: 280, ry: 320, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.12, rotate: 10 },
 ] as const;
 
-/* ── Stripe dot timing (billboard-specific) ── */
-export const STRIPE_PULSE_COUNT = 3;
-export const STRIPE_DURATIONS = [36, 30, 40, 42, 34, 38] as const;
-
 /* ── Animation timing ── */
 export const ORBIT_DURATION_S = 44;
 
-/* ── SVG IDs (namespaced to avoid collisions with other heroes) ── */
+/* ── SVG IDs (billboard-specific, orbit dots only) ── */
 export const ID = {
   orbitDot: "gcb-orbit-dot",
   orbitDotPink: "gcb-orbit-dot-pink",
-  stripeGold: "gcb-stripe-gold",
-  stripePink: "gcb-stripe-pink",
 } as const;
 
 /* ── Derived constants ── */
