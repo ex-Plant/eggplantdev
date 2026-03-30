@@ -29,28 +29,28 @@ export default function HomePage() {
       {/* Fixed edge gradient masks — fade top/bottom to page bg */}
       <div className="to-bgc pointer-events-none fixed top-0 right-0 left-0 z-100 h-[15vh] bg-linear-to-t from-transparent" />
       <div className="to-bgc pointer-events-none fixed right-0 bottom-0 left-0 z-100 h-[15vh] bg-linear-to-b from-transparent" />
+      <div className={`grid grid-cols-1 gap-y-20 md:gap-40`}>
+        <HeroSoleilAubergine />
 
-      <HeroSoleilAubergine />
+        <AnimatedLettersMask text={introTxt} />
 
-      <AnimatedLettersMask text={introTxt} />
+        <HeroCosmicCultFlyer />
 
-      <HeroCosmicCultFlyer />
+        <ProjectsSection data={commercialWork} className="fest-container" />
 
-      <ProjectsSection data={commercialWork} className="fest-container py-20 md:py-40" />
+        <MetatronsCube theme="gold" />
 
-      <MetatronsCube theme="gold" />
+        <ProjectsSection data={freelanceWork} className="fest-container" />
 
-      <ProjectsSection data={freelanceWork} className="fest-container py-20 md:py-40" />
+        <HeroHexLatticeShrineGold />
 
-      <HeroHexLatticeShrineGold />
+        <FullSection data={about} className="fest-container" />
 
-      <FullSection data={about} className="fest-container py-20 md:py-40" />
+        <HeroGlamCosmicBillboard />
 
-      <HeroGlamCosmicBillboard />
+        <FullSection data={values} className="fest-container" />
 
-      <FullSection data={values} className="fest-container py-20 md:py-40" />
-
-      {/* <SimpleSection
+        {/* <SimpleSection
         id={howIWork.id}
         titleLine={howIWork.titleLine}
         text={howIWork.text}
@@ -60,11 +60,12 @@ export default function HomePage() {
         aside={<EggplantImage sizeClass="size-[24rem] md:size-[30rem] xl:size-[36rem]" glowPreset="fuchsia" />}
       /> */}
 
-      <HeroCosmicFlower />
+        <HeroCosmicFlower />
 
-      {/* <GetInTouchButton /> */}
+        {/* <GetInTouchButton /> */}
 
-      {/* Spacing before footer */}
+        {/* Spacing before footer */}
+      </div>
     </div>
   );
 }
