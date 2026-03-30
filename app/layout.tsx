@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             {/* Fixed ambient diagonal lines + traveling dots — behind grit */}
             <FixedCosmicLines />
             {/* Fixed grit overlay — always on, base texture for all pages */}
-            <div className="grit pointer-events-none fixed inset-0 z-200 will-change-transform" />
+            <div className="grit pointer-events-none fixed inset-x-0 top-0 z-200 h-lvh will-change-transform" />
 
             {/* TopNavigation must stay outside SmoothScroll — toggling smooth scroll
                 remounts the tree, which would reset the menu open/close state */}

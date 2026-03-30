@@ -33,7 +33,7 @@ const DOTS = [
 
 export function GritPulseOverlay() {
   return (
-    <div className="pointer-events-none fixed inset-0 z-1" aria-hidden="true">
+    <div className="pointer-events-none fixed inset-x-0 top-0 z-1 h-lvh" aria-hidden="true">
       {DOTS.map(([x, y], i) => (
         <div
           key={i}

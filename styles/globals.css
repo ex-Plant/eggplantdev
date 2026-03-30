@@ -298,7 +298,7 @@ textarea:-webkit-autofill {
 }
 
 .stopScrolling {
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
