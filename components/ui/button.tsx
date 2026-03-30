@@ -4,9 +4,9 @@ import { cn } from "@/helpers/cn";
 const BUTTON_VARIANTS = {
   default:
     "border-gray5 text-16 text-copy-body border hover:bg-white/5 hover:text-copy-strong hover:shadow-[0_0_18px_rgba(255,255,255,0.08),0_0_42px_rgba(255,255,255,0.04)]",
-  heroGlamPrimary:
+  heroHotPinkPrimary:
     "border-gold/25 bg-gold/10 text-gold/70 border hover:bg-gold/16 hover:text-gold hover:shadow-[0_0_20px_rgba(218,165,32,0.22),0_0_52px_rgba(218,165,32,0.12)]",
-  heroGlamSecondary:
+  heroHotPinkSecondary:
     "border-hot-pink/20 text-hot-pink/50 border hover:bg-hot-pink/8 hover:text-hot-pink/80 hover:shadow-[0_0_20px_rgba(217,70,239,0.22),0_0_52px_rgba(217,70,239,0.12)]",
   heroCosmicPrimary:
     "border-gold/30 text-gold/60 border hover:bg-gold/10 hover:text-gold/85 hover:shadow-[0_0_16px_rgba(218,165,32,0.16),0_0_40px_rgba(218,165,32,0.08)]",

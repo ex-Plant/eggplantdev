@@ -24,10 +24,10 @@ export function CosmicCultFlyerHeroContent() {
       <HeroDescription>{COPY.description}</HeroDescription>
 
       <div className="mt-8 flex flex-wrap justify-center gap-3">
-        <Button variant="heroGlamPrimary" size="hero" className="py-2">
+        <Button variant="heroHotPinkPrimary" size="hero" className="py-2">
           {COPY.buttonPrimary}
         </Button>
-        <Button variant="heroGlamSecondary" size="hero" className="border-gold-dark/20 text-gold-dark/40 py-2">
+        <Button variant="heroHotPinkSecondary" size="hero" className="border-gold-dark/20 text-gold-dark/40 py-2">
           {COPY.buttonSecondary}
         </Button>
       </div>

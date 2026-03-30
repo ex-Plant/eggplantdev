@@ -15,10 +15,10 @@ export function GlamTextAndImage() {
           {COPY.description}
         </HeroDescription>
         <div className="mt-8 flex flex-wrap justify-start gap-4 md:justify-start">
-          <Button variant="heroGlamPrimary" size="hero">
+          <Button variant="heroHotPinkPrimary" size="hero">
             {COPY.buttons[0]}
           </Button>
-          <Button variant="heroGlamSecondary" size="hero">
+          <Button variant="heroHotPinkSecondary" size="hero">
             {COPY.buttons[1]}
           </Button>
         </div>
