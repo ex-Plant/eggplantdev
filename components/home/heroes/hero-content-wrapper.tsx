@@ -7,13 +7,6 @@ type HeroContentWrapperPropsT = {
 
 export function HeroContentWrapper({ children, className }: HeroContentWrapperPropsT) {
   return (
-    <div
-      className={cn(
-        "relative z-10 mx-auto flex w-full max-w-[26rem] flex-col items-center px-6 text-center md:max-w-none md:px-0",
-        className,
-      )}
-    >
-      {children}
-    </div>
+    <div className={cn("relative z-10 mx-auto flex flex-col items-center text-center", className)}>{children}</div>
   );
 }

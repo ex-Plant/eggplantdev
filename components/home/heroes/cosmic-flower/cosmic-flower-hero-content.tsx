@@ -13,7 +13,7 @@ export function CosmicFlowerHeroContent() {
 
       <HeroEggplant preset="warm-gold-glow" floatMode="orbital" />
 
-      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} line3={COPY.titleLine3} />
+      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} />
 
       <HeroDescription className="mt-8 md:mt-6">{COPY.description}</HeroDescription>
 

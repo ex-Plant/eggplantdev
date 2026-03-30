@@ -1,3 +1,4 @@
+import { HeroContentWrapper } from "@/components/home/heroes/hero-content-wrapper";
 import { HeroDescription } from "@/components/home/heroes/hero-description";
 import { HeroEggplant } from "@/components/home/heroes/hero-eggplant";
 import { HeroSubtitle } from "@/components/home/heroes/hero-subtitle";
@@ -7,20 +8,12 @@ import { COPY } from "./config";
 
 export function CosmicCultFlyerHeroContent() {
   return (
-    <div className="relative z-10 mx-auto flex w-full max-w-[26rem] flex-col items-center px-6 text-center md:max-w-none md:px-0">
+    <HeroContentWrapper className="">
       <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
 
-      <HeroEggplant preset="warm-gold-glow" floatMode="tumble" />
+      <HeroEggplant floatMode="tumble" />
 
-      <HeroTitle
-        line1={COPY.titleLine1}
-        line2={COPY.titleLine2}
-        line3={COPY.titleLine3}
-        classLine1="text-gold-cream"
-        classLine2="text-gold-cream"
-        classLine3="text-gold"
-        className={`mb-12`}
-      />
+      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} className={`pt-8`} />
 
       <HeroDescription>{COPY.description}</HeroDescription>
 
@@ -32,6 +25,6 @@ export function CosmicCultFlyerHeroContent() {
           {COPY.buttonSecondary}
         </Button>
       </div>
-    </div>
+    </HeroContentWrapper>
   );
 }

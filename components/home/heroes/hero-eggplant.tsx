@@ -23,7 +23,7 @@ export function HeroEggplant({
     <div className={cn("relative z-10 mx-auto mt-6 mb-8 lg:mt-8 lg:mb-12", className)}>
       <EggplantImage
         preset={preset}
-        sizeClass="size-36 md:size-48 lg:size-56 xl:size-64"
+        sizeClass="size-28 sm:size-36 md:size-44 lg:size-56 xl:size-64"
         floatMode={floatMode}
         glowPreset={glowPreset}
         priority

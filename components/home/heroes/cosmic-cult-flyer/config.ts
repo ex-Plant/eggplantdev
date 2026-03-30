@@ -55,10 +55,6 @@ export const BORDERS = {
   inner: { x: 45, y: 45, width: 1110, height: 710, opacity: 0.05 },
 } as const;
 
-/* ── Grain overlay SVG data URI ── */
-export const GRAIN_BG_IMAGE =
-  "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")";
-
 /* ── Burst dot positions — inner ring × major ray intersections ── */
 const INNER_RING_RADII = [80, 120] as const;
 const MAJOR_RAY_ANGLES = [0, 6, 12, 18, 24, 30].map((i) => (Math.PI * 2 * i) / RAY_COUNT);
@@ -75,9 +71,8 @@ export const BURST_POINTS = INNER_RING_RADII.flatMap((r, ri) =>
 /* ── Typography / Copy ── */
 export const COPY = {
   subtitle: "\u27e1 The Sacred Order of the Aubergine \u27e1",
-  titleLine1: "Cosmic",
-  titleLine2: "Cult",
-  titleLine3: "Flyer",
+  titleLine1: "Cosmic Cult",
+  titleLine2: "Flyer",
   description:
     "You have been chosen. The eggplant sees all. Bring your offerings of TypeScript and deploy with devotion. Meetings are held at every sprint retrospective.",
   buttonPrimary: "Join the Order",

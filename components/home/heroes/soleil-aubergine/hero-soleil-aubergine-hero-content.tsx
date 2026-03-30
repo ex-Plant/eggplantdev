@@ -12,9 +12,9 @@ export function SoleilHeroContent() {
     <HeroContentWrapper>
       <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
 
-      <HeroEggplant preset="warm-gold-glow" floatMode="orbital" />
+      <HeroEggplant floatMode="orbital" />
 
-      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} className={`mt-8`} />
+      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} className={`pt-8 lg:pt-0`} />
       <HeroDescription>{COPY.description}</HeroDescription>
     </HeroContentWrapper>
   );

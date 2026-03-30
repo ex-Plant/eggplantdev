@@ -4,6 +4,7 @@
 
 import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
 import { EggplantImage } from "@/components/general/eggplant-image";
+import { HeroSectionWrapper } from "@/components/home/heroes/hero-section-wrapper";
 import { HEX_R, hexCorners, HEX_CENTERS, VERTEX_LIST, RADIAL_LINES, COPY, SVG_CENTER, SVG_VIEWBOX } from "./config";
 
 /* Stars as simple tuples — original cyan/neon palette */
@@ -15,10 +16,7 @@ const STARS: readonly [number, number][] = Array.from({ length: 55 }, (_, i) => 
 export function HeroHexLatticeShrine() {
   return (
     <EggplantRadialWrapper>
-      <div
-        id="hero-hex-lattice-shrine"
-        className="relative flex min-h-screen items-center justify-center overflow-hidden"
-      >
+      <HeroSectionWrapper id="hero-hex-lattice-shrine">
         {/* Star field */}
         {STARS.map(([x, y], i) => (
           <div
@@ -104,7 +102,7 @@ export function HeroHexLatticeShrine() {
           </h1>
           <p className="text-14 mt-6 max-w-sm font-mono text-[#c8b080]/45">{COPY.description}</p>
         </div>
-      </div>
+      </HeroSectionWrapper>
     </EggplantRadialWrapper>
   );
 }

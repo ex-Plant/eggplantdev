@@ -9,17 +9,18 @@ import { SoleilSacredGeometry } from "./hero-soleil-aubergine-sacred-geometry";
 import { SoleilGlowAnimations } from "./hero-soleil-aubergine-glow-animations";
 import { SoleilHeroContent } from "./hero-soleil-aubergine-hero-content";
 import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
+import { HeroSectionWrapper } from "@/components/home/heroes/hero-section-wrapper";
 
 export function HeroSoleilAubergine() {
   return (
     <EggplantRadialWrapper>
-      <div id="hero-soleil-aubergine" className="relative flex min-h-screen items-center justify-center py-20">
+      <HeroSectionWrapper id="hero-soleil-aubergine">
         <StarField stars={STARS} />
         <SoleilSacredGeometry />
         <SoleilGlowAnimations />
         <RadialGlow />
         <SoleilHeroContent />
-      </div>
+      </HeroSectionWrapper>
     </EggplantRadialWrapper>
   );
 }

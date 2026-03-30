@@ -7,14 +7,11 @@ import { MetatronsSacredGeometry } from "./metatrons-cube-sacred-geometry";
 import { MetatronsVertexAnimations } from "./metatrons-cube-vertex-animations";
 import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
 import { MetatronsHeroContent } from "./metatrons-cube-hero-content";
+import { HeroSectionWrapper } from "@/components/home/heroes/hero-section-wrapper";
 
 export function MetatronsCube({ theme = "gold" }: { theme?: ThemeT }) {
   return (
-    <div
-      id={`hero-metatrons-cube-${theme}`}
-      className="relative flex min-h-screen items-center justify-center py-16 md:py-20"
-      style={THEME_OVERRIDES[theme]}
-    >
+    <HeroSectionWrapper id={`hero-metatrons-cube-${theme}`} style={THEME_OVERRIDES[theme]}>
       <svg
         className="pointer-events-none absolute inset-0 h-full w-full"
         viewBox={SVG_VIEWBOX}
@@ -26,6 +23,6 @@ export function MetatronsCube({ theme = "gold" }: { theme?: ThemeT }) {
 
       <RadialGlow />
       <MetatronsHeroContent theme={theme} />
-    </div>
+    </HeroSectionWrapper>
   );
 }
