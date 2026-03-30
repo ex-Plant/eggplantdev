@@ -1,5 +1,5 @@
 {
-  "introTxt": "Almost 5 years building frontend and full-stack applications in React and Next.js — from e-commerce and SaaS to cultural platforms. Before code, I spent four years managing a landmark cultural venue in Kraków, running a team of ~100 across bars, restaurants, concerts, and festivals. That background gave me something most developers don't start with: a deep understanding of how products actually get used by real people under real pressure. Today I work as a freelancer and within agency teams, owning projects end-to-end — from architecture decisions to deployment.",
+  "introTxt": "Almost 5 years building frontend and full-stack applications in React and Next.js — from e-commerce and SaaS to cultural platforms. Today I work as a freelancer and within agency teams, owning projects end-to-end — from architecture decisions to deployment.",
   "backgroundDesktop": "/images/home/hero-desktop.jpg",
   "backgroundMobile": "/images/home/hero-mobile.jpg",
   "sections": [
@@ -24,11 +24,11 @@
       "cards": [
         {
           "title": "Background",
-          "content": "I studied Comparative Studies of Civilizations at Jagiellonian University — not a typical CS degree, but it taught me how to think across systems and contexts. Before writing my first line of production code, I spent four years as Venue Manager at Forum Przestrzenie Kraków — a landmark cultural space with bars, restaurants, a concert hall, and a rotating cast of festivals. Managing ~100 people, handling budgets, vendor negotiations, and event logistics built the same skills I use every day as a developer: leading under pressure, communicating across disciplines, and making decisions with incomplete information."
+          "content": "Before writing my first line of production code, I spent four years as Venue Manager at Forum Przestrzenie Kraków — a landmark cultural space with bars, restaurants, a concert hall, and a rotating cast of festivals. Managing ~100 people, handling budgets, vendor negotiations, and event logistics built the same skills I use every day as a developer: leading under pressure, communicating across disciplines, and making decisions with incomplete information."
         },
         {
           "title": "Now",
-          "content": "I transitioned into frontend development in 2022, working at Navarra Lab across projects for cultural institutions, startups, and e-commerce brands in Berlin and Kraków. Since 2024 I also take on freelance work, delivering full-stack applications from scope to production. I gravitate toward complex interfaces, accessibility challenges, and modernizing legacy systems. I'm currently exploring AI technologies and building applications with integrated LLM agents."
+          "content": "I transitioned into web development in 2021, working at Navarra Lab across projects for cultural institutions, startups, and e-commerce brands in Berlin and Kraków. In 2024  when I felt confident enough I also started taking on freelance work, delivering full-stack applications from scope to production. I gravitate toward complex interfaces, accessibility challenges, and modernizing legacy systems. I'm currently exploring AI technologies and building applications with integrated LLM agents."
         },
         {
           "title": "Off the Clock",
