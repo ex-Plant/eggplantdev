@@ -8,20 +8,23 @@ import { COPY } from "./config";
 
 export function CosmicFlowerHeroContent() {
   return (
-    <HeroContentWrapper>
-      <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
-
-      <HeroEggplant preset="warm-gold-glow" floatMode="orbital" />
-
+    <HeroContentWrapper
+      above={
+        <>
+          <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
+          <HeroEggplant preset="warm-gold-glow" floatMode="orbital" />
+        </>
+      }
+    >
       <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} />
 
-      <HeroDescription className="mt-8 md:mt-6">{COPY.description}</HeroDescription>
+      <HeroDescription>{COPY.description}</HeroDescription>
 
       <div className="mt-10 flex flex-wrap justify-center gap-4">
-        <Button variant="heroCosmicPrimary" size="hero">
+        <Button variant="heroHotPinkPrimary" size="hero">
           {COPY.buttons[0]}
         </Button>
-        <Button variant="heroCosmicSecondary" size="hero">
+        <Button variant="heroHotPinkSecondary" size="hero">
           {COPY.buttons[1]}
         </Button>
       </div>

@@ -8,20 +8,23 @@ import { COPY } from "./config";
 
 export function CosmicCultFlyerHeroContent() {
   return (
-    <HeroContentWrapper className="">
-      <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
-
-      <HeroEggplant floatMode="tumble" />
-
-      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} className={`pt-8`} />
+    <HeroContentWrapper
+      above={
+        <>
+          <HeroSubtitle>{COPY.subtitle}</HeroSubtitle>
+          <HeroEggplant floatMode="tumble" />
+        </>
+      }
+    >
+      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} />
 
       <HeroDescription>{COPY.description}</HeroDescription>
 
-      <div className="mt-8 flex flex-wrap justify-center gap-3">
-        <Button variant="heroHotPinkPrimary" size="hero" className="py-2">
+      <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <Button variant="heroHotPinkPrimary" size="hero">
           {COPY.buttonPrimary}
         </Button>
-        <Button variant="heroHotPinkSecondary" size="hero" className="border-gold-dark/20 text-gold-dark/40 py-2">
+        <Button variant="heroHotPinkSecondary" size="hero">
           {COPY.buttonSecondary}
         </Button>
       </div>
