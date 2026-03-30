@@ -12,10 +12,11 @@ import { HeroCosmicCultFlyer } from "@/components/home/heroes/cosmic-cult-flyer"
 import { HeroHexLatticeShrineGold } from "@/components/home/heroes/hex-lattice-shrine/hero-hex-lattice-shrine-gold";
 import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/home-page-types";
 import { GritPulseOverlay } from "@/components/animations/grit-pulse-overlay/grit-pulse-overlay";
+import { GradientMask } from "@/components/general/gradient-mask/gradient-mask";
 import { AnimatedLettersMask } from "@/components/home/intro/animated-letters/animated-letters";
 
 export default function HomePage() {
-  const { introTxt = "", backgroundDesktop = "", backgroundMobile = "", sections } = useLocalizedData("home");
+  const { introTxt, sections } = useLocalizedData("home");
 
   const commercialWork = sections[0] as ProjectsSectionT;
   const freelanceWork = sections[1] as ProjectsSectionT;
@@ -26,15 +27,13 @@ export default function HomePage() {
   return (
     <div className="bg-bgc text-primary pb-40">
       <GritPulseOverlay />
-      {/* Fixed edge gradient masks — fade top/bottom to page bg */}
-      <div className="to-bgc pointer-events-none fixed top-0 right-0 left-0 z-100 h-[15vh] bg-linear-to-t from-transparent" />
-      <div className="to-bgc pointer-events-none fixed right-0 bottom-0 left-0 z-100 h-[15vh] bg-linear-to-b from-transparent" />
+      <GradientMask />
       <div className={`grid grid-cols-1 gap-y-20 md:gap-40`}>
-        <HeroSoleilAubergine />
+        <HeroGlamCosmicBillboard />
 
         <AnimatedLettersMask text={introTxt} />
 
-        <HeroCosmicCultFlyer />
+        <HeroSoleilAubergine />
 
         <ProjectsSection data={commercialWork} className="fest-container" />
 
@@ -46,7 +45,7 @@ export default function HomePage() {
 
         <FullSection data={about} className="fest-container" />
 
-        <HeroGlamCosmicBillboard />
+        <HeroCosmicCultFlyer />
 
         <FullSection data={values} className="fest-container" />
 
@@ -58,13 +57,14 @@ export default function HomePage() {
         buttons={howIWork.buttons}
         className="fest-container py-20 md:py-60"
         aside={<EggplantImage sizeClass="size-[24rem] md:size-[30rem] xl:size-[36rem]" glowPreset="fuchsia" />}
-      /> */}
+        /> */}
 
         <HeroCosmicFlower />
 
         {/* <GetInTouchButton /> */}
 
         {/* Spacing before footer */}
+        <GradientMask position="bottom" />
       </div>
     </div>
   );

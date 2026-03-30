@@ -1,15 +1,12 @@
 import { cn } from "@/helpers/cn";
 
-export function GradientMask({ top = false }) {
+export function GradientMask({ position = "top" }: { position?: "top" | "bottom" }) {
   return (
     <div
       className={cn(
-        "grit pointer-events-none fixed right-0 isolate z-100 h-[8vh] w-full will-change-transform",
-        top ? "top-0" : "bottom-[-2px]",
+        "to-bgc pointer-events-none fixed right-0 left-0 z-100 h-[6vh] from-transparent",
+        position === "top" ? "top-0 bg-linear-to-t" : "bottom-0 bg-linear-to-b",
       )}
-    >
-      {/* Gradient layer — fades content to bgc */}
-      <div className={cn("to-bgc absolute inset-0 from-transparent", top ? "bg-linear-to-t" : "bg-linear-to-b")} />
-    </div>
+    />
   );
 }
