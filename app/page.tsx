@@ -24,7 +24,7 @@ export default function HomePage() {
   const howIWork = sections[4] as SimpleSectionT;
 
   return (
-    <div className="bg-bgc text-primary">
+    <div className="bg-bgc text-primary pb-40">
       <GritPulseOverlay />
       {/* Fixed edge gradient masks — fade top/bottom to page bg */}
       <div className="to-bgc pointer-events-none fixed top-0 right-0 left-0 z-100 h-[15vh] bg-linear-to-t from-transparent" />
@@ -65,7 +65,6 @@ export default function HomePage() {
       {/* <GetInTouchButton /> */}
 
       {/* Spacing before footer */}
-      <div className="pb-20 md:pb-40" />
     </div>
   );
 }

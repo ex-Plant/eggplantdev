@@ -14,7 +14,7 @@ export function SoleilHeroContent() {
 
       <HeroEggplant preset="warm-gold-glow" floatMode="orbital" />
 
-      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} className={`mt-4 md:mt-8`} />
+      <HeroTitle line1={COPY.titleLine1} line2={COPY.titleLine2} className={`mt-8`} />
       <HeroDescription>{COPY.description}</HeroDescription>
     </HeroContentWrapper>
   );

@@ -38,7 +38,7 @@ export function HeroTitle({
   return (
     <h1
       className={cn(
-        "text-34 sm:text-48 md:text-72 lg:text-80 xl:text-96 mx-auto mt-8 w-full pt-1 text-center font-mono leading-none tracking-tight uppercase",
+        "text-34 sm:text-48 md:text-72 lg:text-80 xl:text-96 mx-auto w-full pt-1 text-center font-mono leading-none tracking-tight uppercase",
         className,
       )}
     >

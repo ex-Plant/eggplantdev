@@ -4,21 +4,21 @@
 
 /* ── Diagonal glam stripes ── */
 export const GLAM_STRIPES = [
-  { y1: 620, y2: 220, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.08, tone: "pink" as const },
-  { y1: 580, y2: 180, stroke: "var(--color-gold)", strokeWidth: 1, opacity: 0.08, tone: "gold" as const },
+  { y1: 620, y2: 220, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.1, tone: "pink" as const },
+  { y1: 580, y2: 180, stroke: "var(--color-gold)", strokeWidth: 1, opacity: 0.1, tone: "gold" as const },
 ] as const;
 
 /* ── Orbital arcs ── */
 export const ORBITAL_ARCS = [
-  { cx: 400, cy: 400, rx: 300, ry: 350, stroke: "var(--color-gold)", strokeWidth: 1.5, opacity: 0.08, rotate: -15 },
-  { cx: 800, cy: 400, rx: 280, ry: 320, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.06, rotate: 10 },
+  { cx: 400, cy: 400, rx: 300, ry: 350, stroke: "var(--color-gold)", strokeWidth: 1.5, opacity: 0.1, rotate: -15 },
+  { cx: 800, cy: 400, rx: 280, ry: 320, stroke: "var(--color-hot-pink)", strokeWidth: 1, opacity: 0.12, rotate: 10 },
 ] as const;
 
 /* ── Sparkle cluster ── */
 export const SPARKLE_COUNT = 20;
 export const SPARKLES = Array.from({ length: SPARKLE_COUNT }, (_, i) => ({
-  x: 200 + (i * 47) % 800,
-  y: 100 + (i * 61) % 600,
+  x: 200 + ((i * 47) % 800),
+  y: 100 + ((i * 61) % 600),
   opacity: 0.15 - (i % 4) * 0.03,
   color: i % 2 === 0 ? "var(--color-gold)" : "var(--color-hot-pink)",
 }));

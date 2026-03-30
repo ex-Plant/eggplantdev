@@ -8,10 +8,7 @@ import { GlamTextAndImage } from "./hero-glam-cosmic-billboard-hero-content";
 
 export function HeroGlamCosmicBillboard() {
   return (
-    <div
-      id="hero-glam-cosmic-billboard"
-      className="min-h-100svh relative flex items-start py-20 md:min-h-screen md:items-center md:py-[18vh]"
-    >
+    <div id="hero-glam-cosmic-billboard" className="relative flex min-h-svh items-start py-20">
       {/* Gold/pink radial gradient background — fades to transparent at top & bottom edges */}
       <GlamBackground />
 
