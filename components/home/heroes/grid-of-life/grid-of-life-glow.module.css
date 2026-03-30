@@ -1,0 +1,35 @@
+/* Central star pulse — slow breathing glow at the grid's heart */
+@keyframes star-pulse {
+  0% {
+    opacity: 0.3;
+    scale: 1;
+  }
+  5% {
+    opacity: 0.8;
+    scale: 1.3;
+  }
+  20% {
+    opacity: 0.2;
+    scale: 0.9;
+  }
+  40% {
+    opacity: 0.5;
+    scale: 1.1;
+  }
+  60% {
+    opacity: 0.15;
+    scale: 0.85;
+  }
+  80% {
+    opacity: 0.4;
+    scale: 1.05;
+  }
+  100% {
+    opacity: 0.3;
+    scale: 1;
+  }
+}
+
+.starPulse {
+  animation: star-pulse 16s ease-in-out 2s infinite backwards;
+}

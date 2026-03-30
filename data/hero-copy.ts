@@ -8,7 +8,11 @@ export type HeroCopyKeyT =
   | "hexLatticeShrine"
   | "cosmicCultFlyer"
   | "cosmicFlower"
-  | "eggplantsInSpace";
+  | "eggplantsInSpace"
+  | "notFound"
+  | "celestialAstrolabe"
+  | "cosmicCartography"
+  | "gridOfLife";
 
 export type HeroCopyMapT = Record<HeroCopyKeyT, HeroCopyT>;
 
@@ -16,12 +20,12 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
   default: {
     en: {
       glamCosmicBillboard: {
-        subtitle: "Limited Edition",
+        subtitle: "Celestial Luxury / Small Batch",
         titleLine1: "Golden",
         titleLine2: "Eggplant",
         description:
-          "A fragrance for the cosmos. Notes of sacred geometry, TypeScript, and freshly deployed produce. Bottled at the event horizon.",
-        buttons: ["Pre-Order", "Watch Film"],
+          "A premium object of uncertain purpose and undeniable presence. Distilled from lacquer, star dust, and the kind of frontend confidence that somehow makes the strange idea ship beautifully.",
+        buttons: ["View Specimen", "Screen Test"],
       },
       soleilAubergine: {
         subtitle: "Sacred star of the garden",
@@ -67,15 +71,43 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         titleLine2: "in Space",
         description: "Shipping produce to the void since the last deployment.",
       },
+      notFound: {
+        subtitle: "Cosmic stellar garden",
+        titleLine1: "Not",
+        titleLine2: "Found",
+        description: "You drifted past the event horizon. Nothing left but a sacred singularity.",
+        buttonPrimary: "Find Your Way Home",
+      },
+      celestialAstrolabe: {
+        subtitle: "Ancient instrument of the void",
+        titleLine1: "Celestial",
+        titleLine2: "Astrolabe",
+        description:
+          "A device for measuring the distance between eggplants and stars. Calibrated by monks, powered by cosmic ambition, accurate to the nearest deploy cycle.",
+      },
+      cosmicCartography: {
+        subtitle: "Charting the uncharted",
+        titleLine1: "Cosmic",
+        titleLine2: "Cartography",
+        description:
+          "Every eggplant has coordinates. Every orbit has a trajectory. This map reveals the hidden routes between sacred geometry nodes and production servers.",
+      },
+      gridOfLife: {
+        subtitle: "The architecture beneath everything",
+        titleLine1: "Grid of",
+        titleLine2: "Life",
+        description:
+          "Sixty-four tetrahedra converge on a single point. At that point: an eggplant. The universe insists on geometric order, and the aubergine obliges.",
+      },
     },
     pl: {
       glamCosmicBillboard: {
-        subtitle: "Limitowana edycja",
+        subtitle: "Kosmiczny luksus / mala seria",
         titleLine1: "Zloty",
         titleLine2: "Baklazan",
         description:
-          "Perfumy dla kosmosu. Nuty swietej geometrii, TypeScripta i swiezo wdrozonych warzyw. Rozlane na horyzoncie zdarzen.",
-        buttons: ["Zamow w przedsprzedazy", "Obejrzyj film"],
+          "Obiekt premium o nie do konca jasnym przeznaczeniu, ale bezdyskusyjnej prezencji. Destylowany z lakieru, gwiezdnego pylu i frontendowej pewnosci siebie, ktora czasem zamienia dziwny pomysl w pieknie dowieziony projekt.",
+        buttons: ["Zobacz okaz", "Test ekranowy"],
       },
       soleilAubergine: {
         subtitle: "Swieta gwiazda ogrodu",
@@ -120,6 +152,34 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         titleLine1: "Baklazany",
         titleLine2: "w Kosmosie",
         description: "Dostarczamy warzywa w pustke od ostatniego wdrozenia.",
+      },
+      notFound: {
+        subtitle: "Kosmiczny ogrod gwiezdny",
+        titleLine1: "Strona",
+        titleLine2: "Nie Znaleziona",
+        description: "Ta strona przeszla za horyzont zdarzen. Zostala tylko swieta geometria.",
+        buttonPrimary: "Znajdz Droge Do Domu",
+      },
+      celestialAstrolabe: {
+        subtitle: "Pradawny instrument pustki",
+        titleLine1: "Niebianski",
+        titleLine2: "Astrolabium",
+        description:
+          "Urzadzenie do mierzenia odleglosci miedzy baklazanami a gwiazdami. Skalibrowane przez mnichow, zasilane kosmiczna ambicja, dokladne do najblizszego cyklu wdrozenia.",
+      },
+      cosmicCartography: {
+        subtitle: "Mapowanie niezmapowanego",
+        titleLine1: "Kosmiczna",
+        titleLine2: "Kartografia",
+        description:
+          "Kazdy baklazan ma wspolrzedne. Kazda orbita ma trajektorie. Ta mapa ujawnia ukryte trasy miedzy wezlami swietej geometrii a serwerami produkcyjnymi.",
+      },
+      gridOfLife: {
+        subtitle: "Architektura pod wszystkim",
+        titleLine1: "Siatka",
+        titleLine2: "Zycia",
+        description:
+          "Szescdziesiat cztery czworosciany zbiegaja sie w jednym punkcie. W tym punkcie: baklazan. Wszechswiat nalega na porzadek geometryczny, a baklazan sie dostosowuje.",
       },
     },
   },
@@ -177,6 +237,34 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         titleLine2: "in Space",
         description: "Still out there. Still orbiting. Still somehow passing all the checks.",
       },
+      notFound: {
+        subtitle: "Cosmic Produce Network",
+        titleLine1: "Not",
+        titleLine2: "Found",
+        description: "You drifted past the event horizon. Nothing left but a sacred singularity.",
+        buttonPrimary: "Find Your Way Home",
+      },
+      celestialAstrolabe: {
+        subtitle: "Precision Instrument / Ceremonial Object",
+        titleLine1: "Celestial",
+        titleLine2: "Astrolabe",
+        description:
+          "Part navigation device, part decorative obsession. Measures nothing useful, looks absolutely correct doing it.",
+      },
+      cosmicCartography: {
+        subtitle: "Classified Spatial Index",
+        titleLine1: "Cosmic",
+        titleLine2: "Cartography",
+        description:
+          "The map is not the territory, but the territory has concentric rings and an aubergine at the origin. So the map is pretty close.",
+      },
+      gridOfLife: {
+        subtitle: "Structural Inevitability",
+        titleLine1: "Grid of",
+        titleLine2: "Life",
+        description:
+          "Dense, interconnected, and unreasonably symmetrical. The kind of geometry that makes you suspect the universe has opinions about tessellation.",
+      },
     },
     pl: {
       glamCosmicBillboard: {
@@ -230,6 +318,34 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         titleLine1: "Baklazany",
         titleLine2: "w Kosmosie",
         description: "Nadal tam sa. Nadal orbituja. Nadal jakims cudem przechodza wszystkie testy.",
+      },
+      notFound: {
+        subtitle: "Kosmiczna siec warzywna",
+        titleLine1: "Strona",
+        titleLine2: "Nie Znaleziona",
+        description: "Ta strona przeszla za horyzont zdarzen. Zostala tylko swieta geometria.",
+        buttonPrimary: "Znajdz Droge Do Domu",
+      },
+      celestialAstrolabe: {
+        subtitle: "Precyzyjny instrument / obiekt ceremonialny",
+        titleLine1: "Niebianski",
+        titleLine2: "Astrolabium",
+        description:
+          "Czesciowo urzadzenie nawigacyjne, czesciowo dekoracyjna obsesja. Nie mierzy niczego przydatnego, ale wyglada przy tym absolutnie poprawnie.",
+      },
+      cosmicCartography: {
+        subtitle: "Tajny indeks przestrzenny",
+        titleLine1: "Kosmiczna",
+        titleLine2: "Kartografia",
+        description:
+          "Mapa to nie terytorium, ale terytorium ma koncentryczne pierscienie i baklazana w punkcie poczatkowym. Wiec mapa jest calkiem blisko.",
+      },
+      gridOfLife: {
+        subtitle: "Strukturalna nieuchronnosc",
+        titleLine1: "Siatka",
+        titleLine2: "Zycia",
+        description:
+          "Gesta, polaczona i nierozsadnie symetryczna. Ten rodzaj geometrii, ktory sprawia, ze podejrzewasz, iz wszechswiat ma zdanie na temat teselacji.",
       },
     },
   },
