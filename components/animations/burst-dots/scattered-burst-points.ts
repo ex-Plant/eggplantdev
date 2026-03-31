@@ -1,10 +1,11 @@
 // Generates pseudo-random burst points scattered within a radius of a center point.
-// Uses a deterministic seed so positions are stable across renders/builds.
-// Delays use prime-based spacing to avoid synchronization with the main bursts.
+// Uses a deterministic seed so positions AND delays are stable across renders/builds.
+// Each hero gets a different seed → unique positions and timing, no cross-hero sync.
 
 type ScatteredPointT = { pos: readonly [number, number]; delay: number };
 
-const PRIME_DELAYS = [1.3, 4.7, 9.1, 13.3, 17.9, 2.6, 7.3, 11.7, 15.1, 19.4, 3.9, 8.1, 14.6, 18.7, 6.2];
+// Burst animation cycle duration — must match burst-dot.module.css
+const CYCLE_DURATION = 28;
 
 export function scatteredBurstPoints(
   cx: number,
@@ -22,13 +23,14 @@ export function scatteredBurstPoints(
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 
-  return Array.from({ length: count }, (_, i) => {
-    // Polar coordinates for even-ish spread
+  return Array.from({ length: count }, () => {
     const angle = rand() * Math.PI * 2;
     const dist = radius * (0.3 + rand() * 0.7);
+    // Delay is also seeded — spread across the full cycle
+    const delay = Math.round(rand() * CYCLE_DURATION * 10) / 10;
     return {
       pos: [Math.round(cx + Math.cos(angle) * dist), Math.round(cy + Math.sin(angle) * dist)] as const,
-      delay: PRIME_DELAYS[i % PRIME_DELAYS.length],
+      delay,
     };
   });
 }
