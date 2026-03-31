@@ -31,6 +31,10 @@ export const AnimatedLettersMask = ({ text = "" }) => {
       gsap.utils.toArray<HTMLElement>("#target-mask .line").forEach((line) => {
         line.style.position = "relative";
 
+        // Use the line's actual text width (+ small buffer) so the mask
+        // matches the content length, not the full container width.
+        const textWidth = line.scrollWidth + 4;
+
         const mask = document.createElement("div");
         mask.classList.add("line-mask-overlay");
         line.appendChild(mask);
@@ -40,7 +44,7 @@ export const AnimatedLettersMask = ({ text = "" }) => {
           {
             backgroundColor: "var(--color-bgc)",
             opacity: 0.9,
-            width: "103%",
+            width: textWidth,
             height: "100%",
             right: 0,
             top: 0,
