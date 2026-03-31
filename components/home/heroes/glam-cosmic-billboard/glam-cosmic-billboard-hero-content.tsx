@@ -11,7 +11,7 @@ export function GlamCosmicBillboardHeroContent() {
     <div className={`fest-container relative z-10`}>
       <div className="relative z-10 grid grid-cols-[1fr_auto] items-center md:justify-items-stretch">
         <div className="w-full">
-          <HeroSubtitle className="text-hot-pink/40 outlinem mb-0 text-left">{subtitle}</HeroSubtitle>
+          <HeroSubtitle className="text-hot-pink/40 mb-0 text-left">{subtitle}</HeroSubtitle>
           <HeroTitle line1={titleLine1} line2={titleLine2} className="mt-4 text-left" />
           <HeroDescription className="mt-12 mr-auto ml-0 px-0 text-left md:mt-12">{description}</HeroDescription>
         </div>

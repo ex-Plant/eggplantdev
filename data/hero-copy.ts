@@ -186,14 +186,14 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         subtitle: "Object #003",
         titleLine1: "Ritual",
         titleLine2: "Operator",
-        description: "The singularity emerged. Word had to spread. Management wasn't prepared for the eggplant.",
+        description: "The singularity emerged. Word had to spread. Management wasn't prepared for the Eggplant.",
       },
 
       cosmicCultFlyer: {
         subtitle: "Object #004",
         titleLine1: "The",
         titleLine2: "Code",
-        description: "Do not question the eggplant. \nThe eggplant is the question. \nIt works on my machine.",
+        description: "Do not question the Eggplant. \nThe Eggplant is the question. \nIt works on my machine.",
       },
 
       glamCosmicBillboard: {

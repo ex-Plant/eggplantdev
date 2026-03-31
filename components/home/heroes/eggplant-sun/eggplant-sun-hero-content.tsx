@@ -13,7 +13,7 @@ export function EggplantSunHeroContent() {
     <HeroContentWrapper
       above={
         <>
-          <HeroSubtitle>{subtitle}</HeroSubtitle>
+          <HeroSubtitle className={`text-hot-pink/40`}>{subtitle}</HeroSubtitle>
           <HeroEggplant floatMode="orbital" />
         </>
       }
