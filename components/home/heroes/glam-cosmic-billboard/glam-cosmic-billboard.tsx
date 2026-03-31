@@ -10,7 +10,7 @@ import HeroSectionWrapper from "../../../animations/hero-section-wrapper/hero-se
 
 export function GlamCosmicBillboard() {
   return (
-    <HeroSectionWrapper gradientFrom="">
+    <HeroSectionWrapper>
       {/* Gold/pink radial gradient background — fades to transparent at top & bottom edges */}
       <GlamCosmicBillboardNebulaWash />
 
