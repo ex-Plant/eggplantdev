@@ -317,7 +317,7 @@ const ScrambleTextDefault = ({ text, className, triggerOnMount = false }: Omit<S
             // Element visible + text is random (from init or scrambleOut) → resolve it
             if (self.isActive && !resolvedRef.current) scrambleIn();
           },
-          markers: true,
+          markers: false,
         });
 
         // Direct viewport check — catches the initial case where onRefresh
