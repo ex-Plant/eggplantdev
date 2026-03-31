@@ -10,96 +10,62 @@ export type HeroCopyKeyT =
   | "cosmicFlower"
   | "eggplantsInSpace"
   | "notFound"
+  | "error"
   | "celestialAstrolabe"
   | "cosmicCartography"
   | "gridOfLife";
 
+// "A premium object of uncertain purpose and undeniable presence. Distilled from lacquer, star dust, and the kind of frontend confidence that somehow makes the strange idea ship beautifully.",
+
+// "A golden ember suspended in the void - the aubergine radiates its divine light across the cosmos, an eternal beacon for those who dare to look upward.",
+
+// blueprint off all creation
+//          "The eggplant exists within the geometric template of the universe - encoded in every vertex, every edge, every platonic form",
+
+//        description:
+// "An eggplant rests at the nucleus of an infinite crystal lattice, resonating through every vertex of the cosmic honeycomb.",
+
+// 'aubergine's journey'
 export type HeroCopyMapT = Record<HeroCopyKeyT, HeroCopyT>;
 
 export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> = {
   default: {
-    en: {
-      glamCosmicBillboard: {
-        subtitle: "Celestial Luxury / Small Batch",
-        titleLine1: "Golden",
-        titleLine2: "Eggplant",
-        description:
-          "A premium object of uncertain purpose and undeniable presence. Distilled from lacquer, star dust, and the kind of frontend confidence that somehow makes the strange idea ship beautifully.",
-        buttons: ["View Specimen", "Screen Test"],
-      },
-      soleilAubergine: {
-        subtitle: "Sacred star of the garden",
-        titleLine1: "Eggplant",
-        titleLine2: "Sun",
-        description:
-          "A golden ember suspended in the void - the aubergine radiates its divine light across the cosmos, an eternal beacon for those who dare to look upward.",
-      },
-      metatronsCube: {
-        subtitle: "The blueprint of all creation",
-        titleLine1: "Metatron's",
-        titleLine2: "Cube",
-        description:
-          "The eggplant exists within the geometric template of the universe - encoded in every vertex, every edge, every platonic form",
-      },
-      hexLatticeShrine: {
-        eyebrow: "Crystalline lattice formation",
-        titleLine1: "Celestial",
-        titleLine2: "Shrine",
-        description:
-          "An eggplant rests at the nucleus of an infinite crystal lattice, resonating through every vertex of the cosmic honeycomb.",
-      },
-      cosmicCultFlyer: {
-        subtitle: "The Sacred Order of the Aubergine",
-        titleLine1: "Cosmic Cult",
-        titleLine2: "Flyer",
-        description:
-          "You have been chosen. The eggplant sees all. Bring your offerings of TypeScript and deploy with devotion. Meetings are held at every sprint retrospective.",
-        buttonPrimary: "Join the Order",
-        buttonSecondary: "Read the Scrolls",
-      },
-      cosmicFlower: {
-        subtitle: "Mission Control",
-        titleLine1: "Eggplant",
-        titleLine2: "in Space",
-        description:
-          "One aubergine's journey through the cosmos of frontend development, sacred geometry, and questionable deployment decisions.",
-        buttons: ["Launch Sequence", "Abort Mission"],
-      },
-      eggplantsInSpace: {
-        subtitle: "Cosmic stellar garden",
-        titleLine1: "EggPlants",
-        titleLine2: "in Space",
-        description: "Shipping produce to the void since the last deployment.",
-      },
-      notFound: {
-        subtitle: "Cosmic stellar garden",
-        titleLine1: "Not",
-        titleLine2: "Found",
-        description: "You drifted past the event horizon. Nothing left but a sacred singularity.",
-        buttonPrimary: "Find Your Way Home",
-      },
-      celestialAstrolabe: {
-        subtitle: "Ancient instrument of the void",
-        titleLine1: "Celestial",
-        titleLine2: "Astrolabe",
-        description:
-          "A device for measuring the distance between eggplants and stars. Calibrated by monks, powered by cosmic ambition, accurate to the nearest deploy cycle.",
-      },
-      cosmicCartography: {
-        subtitle: "Charting the uncharted",
-        titleLine1: "Cosmic",
-        titleLine2: "Cartography",
-        description:
-          "Every eggplant has coordinates. Every orbit has a trajectory. This map reveals the hidden routes between sacred geometry nodes and production servers.",
-      },
-      gridOfLife: {
-        subtitle: "The architecture beneath everything",
-        titleLine1: "Grid of",
-        titleLine2: "Life",
-        description:
-          "Sixty-four tetrahedra converge on a single point. At that point: an eggplant. The universe insists on geometric order, and the aubergine obliges.",
-      },
-    },
+    //   notFound: {
+    //     subtitle: "Cosmic stellar garden",
+    //     titleLine1: "Not",
+    //     titleLine2: "Found",
+    //     description: "You drifted past the event horizon. Nothing left but a sacred singularity.",
+    //     buttonPrimary: "Find Your Way Home",
+    //   },
+    //   error: {
+    //     subtitle: "System anomaly detected",
+    //     titleLine1: "Something",
+    //     titleLine2: "Broke",
+    //     description: "A glitch in the sacred geometry. The cosmic grid is recalibrating — try again in a moment.",
+    //     buttonPrimary: "Try Again",
+    //   },
+    //   celestialAstrolabe: {
+    //     subtitle: "Ancient instrument of the void",
+    //     titleLine1: "Celestial",
+    //     titleLine2: "Astrolabe",
+    //     description:
+    //       "A device for measuring the distance between eggplants and stars. Calibrated by monks, powered by cosmic ambition, accurate to the nearest deploy cycle.",
+    //   },
+    //   cosmicCartography: {
+    //     subtitle: "Charting the uncharted",
+    //     titleLine1: "Cosmic",
+    //     titleLine2: "Cartography",
+    //     description:
+    //       "Every eggplant has coordinates. Every orbit has a trajectory. This map reveals the hidden routes between sacred geometry nodes and production servers.",
+    //   },
+    //   gridOfLife: {
+    //     subtitle: "The architecture beneath everything",
+    //     titleLine1: "Grid of",
+    //     titleLine2: "Life",
+    //     description:
+    //       "Sixty-four tetrahedra converge on a single point. At that point: an eggplant. The universe insists on geometric order, and the aubergine obliges.",
+    //   },
+    // },
     pl: {
       glamCosmicBillboard: {
         subtitle: "Kosmiczny luksus / mala seria",
@@ -160,6 +126,13 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         description: "Ta strona przeszla za horyzont zdarzen. Zostala tylko swieta geometria.",
         buttonPrimary: "Znajdz Droge Do Domu",
       },
+      error: {
+        subtitle: "Wykryto anomalie systemowa",
+        titleLine1: "Cos",
+        titleLine2: "Poszlo Nie Tak",
+        description: "Usterka w swietej geometrii. Kosmiczna siatka sie rekalibruje — sprobuj ponownie za chwile.",
+        buttonPrimary: "Sprobuj Ponownie",
+      },
       celestialAstrolabe: {
         subtitle: "Pradawny instrument pustki",
         titleLine1: "Niebianski",
@@ -186,7 +159,7 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
   v2: {
     en: {
       soleilAubergine: {
-        subtitle: "Object #000 Classification: pending",
+        subtitle: "Object #000 \nClassification: pending",
         titleLine1: "Space",
         titleLine2: "Oddity",
         description:
@@ -223,7 +196,7 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
       },
 
       glamCosmicBillboard: {
-        subtitle: "Object #005: AGI ACHIEVED",
+        subtitle: "Object #005 \nAGI ACHIEVED",
         titleLine1: "Final",
         titleLine2: "Echo",
         description: "Still out there, still orbiting. \nTransmission remains possible.",
@@ -243,6 +216,13 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         titleLine2: "Found",
         description: "You drifted past the event horizon. Nothing left but a sacred singularity.",
         buttonPrimary: "Find Your Way Home",
+      },
+      error: {
+        subtitle: "System anomaly detected",
+        titleLine1: "Something",
+        titleLine2: "Broke",
+        description: "A glitch in the sacred geometry. The cosmic grid is recalibrating — try again in a moment.",
+        buttonPrimary: "Try Again",
       },
       celestialAstrolabe: {
         subtitle: "Precision Instrument / Ceremonial Object",
@@ -325,6 +305,13 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         titleLine2: "Nie Znaleziona",
         description: "Ta strona przeszla za horyzont zdarzen. Zostala tylko swieta geometria.",
         buttonPrimary: "Znajdz Droge Do Domu",
+      },
+      error: {
+        subtitle: "Wykryto anomalie systemowa",
+        titleLine1: "Cos",
+        titleLine2: "Poszlo Nie Tak",
+        description: "Usterka w swietej geometrii. Kosmiczna siatka sie rekalibruje — sprobuj ponownie za chwile.",
+        buttonPrimary: "Sprobuj Ponownie",
       },
       celestialAstrolabe: {
         subtitle: "Precyzyjny instrument / obiekt ceremonialny",
