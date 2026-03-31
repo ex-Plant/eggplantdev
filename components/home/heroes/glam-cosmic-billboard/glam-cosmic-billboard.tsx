@@ -11,7 +11,7 @@ import EggplantRadialWrapper from "../../../animations/eggplant-radial-wrapper/e
 export function GlamCosmicBillboard() {
   return (
     // <EggplantRadialWrapper>
-    <div id="hero-glam-cosmic-billboard" className="relative flex items-center py-20 md:py-40">
+    <div id="hero-glam-cosmic-billboard" className="relative flex items-center py-40 md:py-80">
       {/* Gold/pink radial gradient background — fades to transparent at top & bottom edges */}
       <GlamCosmicBillboardNebulaWash />
 

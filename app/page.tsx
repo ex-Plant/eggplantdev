@@ -28,7 +28,7 @@ export default function HomePage() {
     <div className="bg-bgc text-primary">
       {/* <GritPulseOverlay /> */}
       <GradientMask />
-      <div className={`grid grid-cols-1 gap-y-20 md:gap-40`}>
+      <div className={`grid grid-cols-1`}>
         <EggplantSun />
 
         <AnimatedLettersMask text={introTxt} />
