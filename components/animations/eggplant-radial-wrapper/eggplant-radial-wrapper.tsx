@@ -32,7 +32,7 @@ export default function EggplantRadialWrapper({
         )}
       />
       {showTop && <SacredSeparator className="absolute top-0 right-0 left-0 w-full" />}
-      <div className="flex min-h-screen flex-col py-20">{children}</div>
+      <div className="flex flex-col py-20">{children}</div>
       {showBottom && <SacredSeparator className="absolute right-0 bottom-0 left-0 w-full" />}
     </div>
   );

@@ -77,11 +77,11 @@ export const AnimatedLettersMask = ({ text = "" }) => {
     <div className={`fest-container`}>
       <div
         ref={lettersRef}
-        className={`no-scrollbar flex flex-col overflow-x-hidden overflow-y-scroll py-20 pr-12 sm:w-[calc(340/360*100vw)] md:w-[calc(590/768*100vw)] md:pt-[120px] md:pr-0 lg:w-[calc(740/1024*100vw)] lg:max-w-[940px]`}
+        className={`no-scrollbar flex flex-col overflow-x-hidden overflow-y-scroll pr-12 sm:w-[calc(340/360*100vw)] md:w-[calc(590/768*100vw)] md:pt-[120px] md:pr-0 lg:w-[calc(740/1024*100vw)] lg:max-w-[940px]`}
       >
         <div
           id="target-mask"
-          className={`text-hero-title-secondary wrap-break-words text-28 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono font-medium tracking-tight uppercase ${locale === "pl" ? "leading-[1.2]" : ""}`}
+          className={`text-hero-title-secondary wrap-break-words text-34 450:text-34 md:text-64 lg:text-80 xl:text-96 font-mono font-medium tracking-tight uppercase ${locale === "pl" ? "leading-[1.2]" : ""}`}
         >
           {text}
         </div>
