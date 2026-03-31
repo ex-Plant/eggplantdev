@@ -173,6 +173,7 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         titleLine2: "Blueprint",
         description:
           "Every serious system starts with structure. For reasons nobody can fully explain, this one also started with an eggplant.",
+        buttons: ["Make contact", "Back to top"],
       },
 
       hexLatticeShrine: {
@@ -269,6 +270,7 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         titleLine2: "Metatrona",
         description:
           "Kazdy powazny system zaczyna sie od struktury. Z powodow, ktorych nikt do konca nie wyjasnil, ten zaczyna sie tez od baklazana.",
+        buttons: ["Napisz do mnie", "Na gore"],
       },
       hexLatticeShrine: {
         eyebrow: "Wzorzec konstrukcyjny / siatka glowna",
