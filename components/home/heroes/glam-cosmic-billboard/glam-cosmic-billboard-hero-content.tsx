@@ -3,6 +3,7 @@ import { HeroEggplant } from "@/components/home/heroes/hero-eggplant";
 import { HeroSubtitle } from "@/components/home/heroes/hero-subtitle";
 import { HeroTitle } from "@/components/home/heroes/hero-title";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { useLocalizedHeroCopy } from "@/hooks/use-localized-hero-copy";
 
 export function GlamCosmicBillboardHeroContent() {
@@ -27,36 +28,11 @@ export function GlamCosmicBillboardHeroContent() {
       </div>
       {buttons && (
         <div className="mt-12 flex flex-wrap justify-start gap-4">
-          <Button
-            variant="heroHotPinkPrimary"
-            size="hero"
-            onClick={() => {
-              const contact = document.getElementById("contact");
-              if (!contact) return;
-              contact.scrollIntoView({ behavior: "smooth" });
-              // Focus the first input after scroll settles
-              const input = contact.querySelector<HTMLInputElement>("input");
-              if (!input) return;
-              const observer = new IntersectionObserver(
-                ([entry]) => {
-                  if (entry.isIntersecting) {
-                    input.focus({ preventScroll: true });
-                    observer.disconnect();
-                  }
-                },
-                { threshold: 0.5 },
-              );
-              observer.observe(contact);
-            }}
-          >
-            {buttons[0]}
+          <Button variant="heroHotPinkPrimary" size="hero" asChild>
+            <Link href="#contact">{buttons[0]}</Link>
           </Button>
-          <Button
-            variant="heroHotPinkSecondary"
-            size="hero"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            {buttons[1]}
+          <Button variant="heroHotPinkSecondary" size="hero" asChild>
+            <Link href="#">{buttons[1]}</Link>
           </Button>
         </div>
       )}

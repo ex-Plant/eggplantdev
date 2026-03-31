@@ -92,7 +92,7 @@ export const CORNER_BRACKETS = [
 ] as const;
 
 /* ── Burst dot positions at vertices — shuffled delays for random appearance ── */
-const BURST_DELAYS = [0, 21, 7, 28, 14, 35, 3.5, 24.5, 10.5, 31.5, 17.5, 38.5];
+const BURST_DELAYS = [0, 14, 7, 21, 2.3, 16.3, 9.3, 23.3, 4.7, 18.7, 11.7, 25.7];
 export const BURST_POINTS = ALL_POINTS.slice(1).map(([x, y], i) => ({
   pos: [x, y] as const,
   delay: BURST_DELAYS[i],

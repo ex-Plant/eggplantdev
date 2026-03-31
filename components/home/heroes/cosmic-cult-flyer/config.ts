@@ -58,7 +58,7 @@ export const BORDERS = {
 /* ── Burst dot positions — inner ring × major ray intersections ── */
 const INNER_RING_RADII = [80, 120] as const;
 const MAJOR_RAY_ANGLES = [0, 6, 12, 18, 24, 30].map((i) => (Math.PI * 2 * i) / RAY_COUNT);
-const BURST_DELAYS = [0, 21, 7, 28, 14, 35, 3.5, 24.5, 10.5, 31.5, 17.5, 38.5];
+const BURST_DELAYS = [0, 14, 7, 21, 2.3, 16.3, 9.3, 23.3, 4.7, 18.7, 11.7, 25.7];
 const round = (v: number) => Math.round(v * 100) / 100;
 
 export const BURST_POINTS = INNER_RING_RADII.flatMap((r, ri) =>

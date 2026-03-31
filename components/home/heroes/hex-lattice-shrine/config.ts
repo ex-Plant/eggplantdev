@@ -62,16 +62,16 @@ export const OUTER_DASHED_CIRCLE = { r: 450, dasharray: "8 18" } as const;
 
 /* ── Burst dots — intersection points near center with shuffled delays ── */
 export const BURST_POINTS = [
-  { pos: HEX_CENTERS[0], delay: 2 },
-  { pos: HEX_CENTERS[1], delay: 8 },
-  { pos: HEX_CENTERS[2], delay: 18 },
-  { pos: HEX_CENTERS[3], delay: 28 },
-  { pos: HEX_CENTERS[4], delay: 12 },
-  { pos: HEX_CENTERS[5], delay: 34 },
-  { pos: HEX_CENTERS[6], delay: 22 },
-  { pos: VERTEX_LIST[0], delay: 5 },
-  { pos: VERTEX_LIST[3], delay: 15 },
-  { pos: VERTEX_LIST[6], delay: 26 },
+  { pos: HEX_CENTERS[0], delay: 0 },
+  { pos: HEX_CENTERS[1], delay: 14 },
+  { pos: HEX_CENTERS[2], delay: 5.6 },
+  { pos: HEX_CENTERS[3], delay: 19.6 },
+  { pos: HEX_CENTERS[4], delay: 11.2 },
+  { pos: HEX_CENTERS[5], delay: 25.2 },
+  { pos: HEX_CENTERS[6], delay: 2.8 },
+  { pos: VERTEX_LIST[0], delay: 16.8 },
+  { pos: VERTEX_LIST[3], delay: 8.4 },
+  { pos: VERTEX_LIST[6], delay: 22.4 },
 ] as const;
 
 /* ── SVG shared ── */

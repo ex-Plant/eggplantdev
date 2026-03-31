@@ -44,16 +44,16 @@ export const GEOMETRY = {
 export const INTERSECTION_POINTS: readonly { pos: readonly [number, number]; delay: number }[] = [
   /* Inner ring */
   { pos: [210, 140], delay: 0 }, // top
-  { pos: [270, 175], delay: 17.5 }, // top-right
+  { pos: [270, 175], delay: 14 }, // top-right
   { pos: [270, 245], delay: 7 }, // bottom-right
-  { pos: [210, 280], delay: 24.5 }, // bottom
-  { pos: [150, 245], delay: 10.5 }, // bottom-left
-  { pos: [150, 175], delay: 31.5 }, // top-left
+  { pos: [210, 280], delay: 21 }, // bottom
+  { pos: [150, 245], delay: 2.3 }, // bottom-left
+  { pos: [150, 175], delay: 16.3 }, // top-left
   /* Outer ring */
-  { pos: [271, 105], delay: 21 }, // between top & top-right
-  { pos: [331, 210], delay: 3.5 }, // between top-right & bottom-right
-  { pos: [271, 315], delay: 28 }, // between bottom-right & bottom
-  { pos: [149, 315], delay: 14 }, // between bottom & bottom-left
-  { pos: [89, 210], delay: 35 }, // between bottom-left & top-left
-  { pos: [149, 105], delay: 38.5 }, // between top-left & top
+  { pos: [271, 105], delay: 9.3 }, // between top & top-right
+  { pos: [331, 210], delay: 23.3 }, // between top-right & bottom-right
+  { pos: [271, 315], delay: 4.7 }, // between bottom-right & bottom
+  { pos: [149, 315], delay: 18.7 }, // between bottom & bottom-left
+  { pos: [89, 210], delay: 11.7 }, // between bottom-left & top-left
+  { pos: [149, 105], delay: 25.7 }, // between top-left & top
 ] as const;

@@ -95,7 +95,7 @@ export const DOT_RAYS = RAYS.filter((r) => r.hasDot);
 /* ── Burst dot positions at ray tips — shuffled delays for random appearance ── */
 export const BURST_POINTS = DOT_RAYS.map((r, i) => ({
   pos: [r.dotX, r.dotY] as const,
-  delay: [0, 21, 7, 28, 14, 35, 3.5, 24.5, 10.5, 31.5, 17.5, 38.5][i],
+  delay: [0, 14, 7, 21, 2.3, 16.3, 9.3, 23.3, 4.7, 18.7, 11.7, 25.7][i],
 }));
 
 const INNER_BURST_RADIUS = 150;
@@ -109,7 +109,7 @@ export const INNER_BURST_POINTS = DOT_RAYS.map((r, i) => {
       round(SVG_CENTER.x + Math.cos(angle) * INNER_BURST_RADIUS),
       round(SVG_CENTER.y + Math.sin(angle) * INNER_BURST_RADIUS),
     ] as const,
-    delay: [10.5, 31.5, 17.5, 38.5, 0, 21, 7, 28, 14, 35, 3.5, 24.5][i],
+    delay: [1.2, 15.2, 8.2, 22.2, 3.5, 17.5, 10.5, 24.5, 5.8, 19.8, 12.8, 26.8][i],
   };
 });
 
