@@ -14,7 +14,11 @@ import { TravelingDots } from "./traveling-dots";
 export function FixedTravelingDots() {
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-lvh mix-blend-screen" aria-hidden="true">
-      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full">
+      <svg
+        viewBox="0 0 1200 800"
+        preserveAspectRatio="xMidYMid slice"
+        className="pointer-events-none absolute inset-0 h-full w-full"
+      >
         <TravelingDots gradients={GRADIENTS} paths={DOT_PATHS} />
       </svg>
     </div>

@@ -16,7 +16,7 @@ const BUTTON_VARIANTS = {
 
 const BUTTON_SIZES = {
   default: "h-8 px-4",
-  hero: "px-4 py-2 text-xs md:px-5 md:py-2.5 md:text-sm tracking-wider uppercase",
+  hero: "px-4 py-3.5 text-xs md:px-5 md:py-2.5 md:text-sm tracking-wider uppercase",
 } as const;
 
 export type ButtonVariantT = keyof typeof BUTTON_VARIANTS;
