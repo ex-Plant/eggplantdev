@@ -24,13 +24,15 @@ export default function HeroSectionWrapper({
 
   return (
     <div style={style} className={cn("relative", wrapperClass)}>
-      <div
-        className={cn(
-          `pointer-events-none absolute inset-0 bg-radial-[ellipse_at_center] to-transparent to-90%`,
-          gradientFrom,
-          maskClass,
-        )}
-      />
+      {gradientFrom && (
+        <div
+          className={cn(
+            `pointer-events-none absolute inset-0 bg-radial-[ellipse_at_center] to-transparent to-90%`,
+            gradientFrom,
+            maskClass,
+          )}
+        />
+      )}
       {showTop && <SacredSeparator className="absolute top-0 right-0 left-0 w-full" />}
       <div className="flex flex-col py-40 md:py-80">{children}</div>
       {showBottom && <SacredSeparator className="absolute right-0 bottom-0 left-0 w-full" />}

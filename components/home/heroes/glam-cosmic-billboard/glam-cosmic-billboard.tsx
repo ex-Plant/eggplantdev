@@ -10,8 +10,7 @@ import HeroSectionWrapper from "../../../animations/hero-section-wrapper/hero-se
 
 export function GlamCosmicBillboard() {
   return (
-    // <HeroSectionWrapper>
-    <div id="hero-glam-cosmic-billboard" className="relative flex items-center py-40 md:py-80">
+    <HeroSectionWrapper gradientFrom="">
       {/* Gold/pink radial gradient background — fades to transparent at top & bottom edges */}
       <GlamCosmicBillboardNebulaWash />
 
@@ -63,7 +62,6 @@ export function GlamCosmicBillboard() {
 
       {/* Title, subtitle, description, CTA buttons, and floating eggplant image */}
       <GlamCosmicBillboardHeroContent />
-    </div>
-    // </HeroSectionWrapper>
+    </HeroSectionWrapper>
   );
 }
