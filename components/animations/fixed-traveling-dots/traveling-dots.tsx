@@ -28,6 +28,7 @@ export type DotPathT = {
   y2: number;
   gradientId: string;
   dur: number;
+  radius?: number; // peak glow radius — default 22 (cosmic highway mode: 15)
 };
 
 /* ── Component ── */
@@ -59,8 +60,13 @@ export function TravelingDots({
         const motionPath = `M ${dot.x1} ${dot.y1} L ${dot.x2} ${dot.y2}`;
         /* Stagger start times evenly so dots don't all begin at once */
         const delay = (i / totalDots) * dot.dur;
+        /* Scale glow radius per-dot for size variety */
+        const peak = dot.radius ?? 22;
+        /* Cosmic highway mode: change default above to 15 for smaller dots */
+        const s = peak / 22;
+        const rValues = `${Math.round(8 * s)};${peak};${Math.round(18 * s)};${Math.round(14 * s)};${Math.round(10 * s)};${Math.round(8 * s)};${Math.round(8 * s)}`;
         return (
-          <circle key={i} r="20" fill={`url(#${dot.gradientId})`}>
+          <circle key={i} r={Math.round(8 * s)} fill={`url(#${dot.gradientId})`}>
             {/* 1. Motion — slide along the path, then idle at the end
                    keyPoints 0→1 over 65% of the cycle, hold at 1 for the remaining 35% */}
             <animateMotion
@@ -70,6 +76,7 @@ export function TravelingDots({
               begin={`${delay}s`}
               keyPoints="0;1;1"
               keyTimes="0;0.65;1"
+              /* Cosmic highway mode: use "0;0.5;1" for 50/50 travel/idle (lower frequency) */
               calcMode="linear"
             />
             {/* 2. Opacity — quick fade-in, slow fade-out, invisible during idle pause */}
@@ -77,6 +84,7 @@ export function TravelingDots({
               attributeName="opacity"
               values="0;1;0.7;0.5;0.3;0;0"
               keyTimes="0;0.02;0.2;0.45;0.6;0.65;1"
+              /* Cosmic highway mode: "0;0.02;0.15;0.35;0.45;0.5;1" */
               dur={`${dot.dur}s`}
               begin={`${delay}s`}
               repeatCount="indefinite"
@@ -84,8 +92,9 @@ export function TravelingDots({
             {/* 3. Size — grows on appear, gradually shrinks as it fades out */}
             <animate
               attributeName="r"
-              values="8;22;18;14;10;8;8"
+              values={rValues}
               keyTimes="0;0.02;0.2;0.45;0.6;0.65;1"
+              /* Cosmic highway mode: "0;0.02;0.15;0.35;0.45;0.5;1" */
               dur={`${dot.dur}s`}
               begin={`${delay}s`}
               repeatCount="indefinite"
