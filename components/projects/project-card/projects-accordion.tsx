@@ -11,11 +11,19 @@ type ProjectsAccordionPropsT = {
   projects: ProjectT[];
 };
 
-// Reserves minHeight = collapsed triggers + tallest content panel so that
-// opening/closing items only reflows *within* the accordion — page content
-// below never shifts. Remeasures on resize to handle text reflow.
+// DO NOT REMOVE — this fixed-height system is a performance optimization.
+// Without it, opening/closing accordion items causes the entire page below
+// to reflow and repaint (heavy content: heroes, SVG geometry, animations).
+//
+// How it works:
+// 1. Offscreen container renders all ContentInner panels invisibly (same width).
+// 2. On mount + resize, we measure each panel's scrollHeight and find the tallest.
+// 3. fixedHeight = root.scrollHeight - currentOpenPanelHeight + tallestPanelHeight
+//    (root already includes the open panel, so we swap it for the tallest.)
+// 4. minHeight on the root locks the accordion to worst-case height.
+// Result: switching items only reflows *within* the accordion — nothing else moves.
 export function ProjectsAccordion({ projects }: ProjectsAccordionPropsT) {
-  const [openItem, setOpenItem] = useState<string>("");
+  const [openItem, setOpenItem] = useState<string>(projects[0]?.uuid ?? "");
   const [fixedHeight, setFixedHeight] = useState<number | undefined>(undefined);
   const rootRef = useRef<HTMLDivElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
@@ -26,15 +34,19 @@ export function ProjectsAccordion({ projects }: ProjectsAccordionPropsT) {
     if (!root || !measureContainer) return;
 
     const children = measureContainer.children;
-    let maxContent = 0;
+    let tallest = 0;
+    let currentOpenHeight = 0;
+
     for (let i = 0; i < children.length; i++) {
-      maxContent = Math.max(maxContent, children[i].scrollHeight);
+      const h = children[i].scrollHeight;
+      if (h > tallest) tallest = h;
+      if (projects[i]?.uuid === openItem) currentOpenHeight = h;
     }
 
-    // collapsedBase + tallest panel = worst-case expanded height
-    const collapsedBase = root.scrollHeight;
-    setFixedHeight(collapsedBase + maxContent);
-  }, []);
+    // root.scrollHeight already includes currentOpenHeight.
+    // Replace it with the tallest panel to get worst-case total.
+    setFixedHeight(root.scrollHeight - currentOpenHeight + tallest);
+  }, [openItem, projects]);
 
   // Measure on mount after first layout frame.
   useEffect(() => {
@@ -44,7 +56,7 @@ export function ProjectsAccordion({ projects }: ProjectsAccordionPropsT) {
 
   // Remeasure on resize so fixedHeight stays accurate when text reflows.
   useEffect(() => {
-    const onResize = () => measure();
+    const onResize = () => requestAnimationFrame(measure);
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, [measure]);
@@ -66,7 +78,8 @@ export function ProjectsAccordion({ projects }: ProjectsAccordionPropsT) {
         <RoundedSeparator className="transition-transform duration-300 group-hover/card:translate-y-[-6px]" />
       </Accordion.Root>
 
-      {/* Offscreen panels for height measurement — invisible but in the DOM so we can read scrollHeight. */}
+      {/* Offscreen panels for height measurement — invisible but in the DOM so
+          we can read scrollHeight. Matches accordion width via absolute left-0/right-0. */}
       <div ref={measureRef} aria-hidden className="pointer-events-none invisible absolute top-0 right-0 left-0">
         {projects.map((project) => (
           <ContentInner

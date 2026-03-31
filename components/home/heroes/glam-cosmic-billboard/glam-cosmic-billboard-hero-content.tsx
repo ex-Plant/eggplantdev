@@ -17,7 +17,12 @@ export function GlamCosmicBillboardHeroContent() {
         </div>
 
         <div className="relative mt-8 flex items-center justify-center">
-          <HeroEggplant className="mt-0 mb-0 lg:mt-0 lg:mb-0" preset="glam-gold" glowPreset="gold" />
+          <HeroEggplant
+            className="mt-0 mb-0 lg:mt-0 lg:mb-0"
+            preset="glam-gold"
+            glowPreset="gold"
+            sizeClass="size-36 md:size-64 lg:size-72 xl:size-80"
+          />
         </div>
       </div>
       {buttons && (

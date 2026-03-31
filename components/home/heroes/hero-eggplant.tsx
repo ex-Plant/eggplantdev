@@ -6,6 +6,8 @@ type HeroEggplantPropsT = {
   preset?: EggplantPresetT;
   floatMode?: ZeroGravityModeT;
   glowPreset?: GlowPresetT;
+  /** Tailwind size classes for the eggplant image */
+  sizeClass?: string;
   /** Extra content rendered inside the wrapper (e.g. halo rings) */
   children?: React.ReactNode;
   /** Additional classes on the outer wrapper */
@@ -16,18 +18,13 @@ export function HeroEggplant({
   preset = "warm-gold-glow",
   floatMode,
   glowPreset = "gold",
+  sizeClass = "size-28 md:size-48 lg:size-56 xl:size-64",
   children,
   className,
 }: HeroEggplantPropsT) {
   return (
     <div className={cn("mt-full relative z-10 mx-auto mb-4 flex w-full justify-center", className)}>
-      <EggplantImage
-        preset={preset}
-        sizeClass="size-28 md:size-48 lg:size-56 xl:size-64"
-        floatMode={floatMode}
-        glowPreset={glowPreset}
-        priority
-      />
+      <EggplantImage preset={preset} sizeClass={sizeClass} floatMode={floatMode} glowPreset={glowPreset} priority />
       {children}
     </div>
   );

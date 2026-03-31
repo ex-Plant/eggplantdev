@@ -63,7 +63,7 @@ export function MetatronsCubeSacredGeometry() {
         fill="none"
         stroke="var(--color-gold)"
         strokeWidth="0.3"
-        opacity="0.06"
+        opacity="0.1"
         strokeDasharray={CONTAINMENT.dasharray}
       />
       {OUTER_DASHED_CIRCLES.map((circle) => (
@@ -88,11 +88,11 @@ export function MetatronsCubeSacredGeometry() {
           y2={y2}
           stroke={STROKES[i % STROKES.length]}
           strokeWidth="0.45"
-          opacity="0.08"
+          opacity="0.12"
         />
       ))}
       {CORNER_BRACKETS.map(({ x, y, dx, dy }, i) => (
-        <g key={`corner-${i}`} opacity="0.08" stroke={STROKES[i % STROKES.length]} fill="none">
+        <g key={`corner-${i}`} opacity="0.12" stroke={STROKES[i % STROKES.length]} fill="none">
           <path d={`M${x},${y} L${x + dx * 120},${y} M${x},${y} L${x},${y + dy * 120}`} strokeWidth="0.7" />
           <path
             d={`M${x + dx * 12},${y + dy * 12} L${x + dx * 72},${y + dy * 12} M${x + dx * 12},${y + dy * 12} L${x + dx * 12},${y + dy * 72}`}

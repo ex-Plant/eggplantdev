@@ -74,8 +74,8 @@ export const SACRED_SYMBOLS = {
 /* ── Containment circle ── */
 export const CONTAINMENT = { cx: 600, cy: 400, r: 350, dasharray: "6 10" } as const;
 export const OUTER_DASHED_CIRCLES = [
-  { r: 420, dasharray: "10 16", stroke: "var(--color-gold-dark)", opacity: 0.05 },
-  { r: 500, dasharray: "6 18", stroke: "var(--color-gold-warm)", opacity: 0.04 },
+  { r: 420, dasharray: "10 16", stroke: "var(--color-gold-dark)", opacity: 0.09 },
+  { r: 500, dasharray: "6 18", stroke: "var(--color-gold-warm)", opacity: 0.07 },
 ] as const;
 export const RADIAL_GUIDES = Array.from({ length: 6 }, (_, i) => {
   const angle = (Math.PI / 3) * i - Math.PI / 2;

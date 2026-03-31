@@ -14,6 +14,7 @@ import type { ProjectsSectionT, FullSectionT, SimpleSectionT } from "@/types/hom
 import { GritPulseOverlay } from "@/components/animations/grit-pulse-overlay/grit-pulse-overlay";
 import { GradientMask } from "@/components/general/gradient-mask/gradient-mask";
 import { AnimatedLettersMask } from "@/components/home/intro/animated-letters/animated-letters";
+import { SacredSeparator } from "../components/animations/sacred-separator/sacred-separator";
 
 export default function HomePage() {
   const { introTxt, sections } = useLocalizedData("home");
