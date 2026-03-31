@@ -23,11 +23,14 @@ export function scatteredBurstPoints(
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 
-  return Array.from({ length: count }, () => {
+  // Space delays evenly across the cycle with random jitter to prevent clustering.
+  const slotSize = CYCLE_DURATION / count;
+
+  return Array.from({ length: count }, (_, i) => {
     const angle = rand() * Math.PI * 2;
     const dist = radius * (0.3 + rand() * 0.7);
-    // Delay is also seeded — spread across the full cycle
-    const delay = Math.round(rand() * CYCLE_DURATION * 10) / 10;
+    // Even base spacing + up to 60% jitter within the slot
+    const delay = Math.round((i * slotSize + rand() * slotSize * 0.6) * 10) / 10;
     return {
       pos: [Math.round(cx + Math.cos(angle) * dist), Math.round(cy + Math.sin(angle) * dist)] as const,
       delay,

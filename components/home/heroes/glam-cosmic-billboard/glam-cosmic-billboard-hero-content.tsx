@@ -34,11 +34,19 @@ export function GlamCosmicBillboardHeroContent() {
               const contact = document.getElementById("contact");
               if (!contact) return;
               contact.scrollIntoView({ behavior: "smooth" });
-              // Focus the first input after scroll finishes
-              setTimeout(() => {
-                const input = contact.querySelector("input");
-                input?.focus();
-              }, 600);
+              // Focus the first input after scroll settles
+              const input = contact.querySelector<HTMLInputElement>("input");
+              if (!input) return;
+              const observer = new IntersectionObserver(
+                ([entry]) => {
+                  if (entry.isIntersecting) {
+                    input.focus({ preventScroll: true });
+                    observer.disconnect();
+                  }
+                },
+                { threshold: 0.5 },
+              );
+              observer.observe(contact);
             }}
           >
             {buttons[0]}
