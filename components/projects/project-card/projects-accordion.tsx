@@ -48,10 +48,18 @@ export function ProjectsAccordion({ projects }: ProjectsAccordionPropsT) {
     setFixedHeight(root.scrollHeight - currentOpenHeight + tallest);
   }, [openItem, projects]);
 
-  // Measure on mount after first layout frame.
+  // Measure on mount — double rAF so framer-motion has resolved height: "auto"
+  // on the initially open panel before we read root.scrollHeight.
   useEffect(() => {
-    const raf = requestAnimationFrame(measure);
-    return () => cancelAnimationFrame(raf);
+    let outer: number;
+    let inner: number;
+    outer = requestAnimationFrame(() => {
+      inner = requestAnimationFrame(measure);
+    });
+    return () => {
+      cancelAnimationFrame(outer);
+      cancelAnimationFrame(inner);
+    };
   }, [measure]);
 
   // Remeasure on resize so fixedHeight stays accurate when text reflows.
