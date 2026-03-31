@@ -17,7 +17,7 @@ export function AccordionContentPanel({ isOpen, description, tags, url }: Accord
   return (
     <AnimatePresence initial={false}>
       {isOpen && (
-        <Accordion.Content forceMount asChild>
+        <Accordion.Content forceMount asChild className={`overflow-visible`}>
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -56,7 +56,7 @@ export function AccordionContentPanel({ isOpen, description, tags, url }: Accord
                   rel="noopener noreferrer"
                   className="text-16 text-hero-title-secondary hover:text-copy-strong relative w-fit transition-colors duration-300"
                 >
-                  <GlowWrapper>{t("visitWebsite")}</GlowWrapper>
+                  <GlowWrapper className={`-inset-x-5 -inset-y-3`}>{t("visitWebsite")}</GlowWrapper>
                 </Link>
               )}
             </div>

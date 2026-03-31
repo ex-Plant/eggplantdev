@@ -20,7 +20,7 @@ export function AccordionTrigger({ name, year, isOpen, hasUrl }: AccordionTrigge
             className="w-fit"
             glowClassName="-inset-x-5 -inset-y-3 rounded-full group-hover/trigger:opacity-100"
           >
-            <ScrambleText className="text-24 text-hero-title-secondary font-mono uppercase" text={name} />
+            <h3 className="text-24 text-hero-title-secondary font-mono uppercase">{name}</h3>
           </GlowWrapper>
           {year && <p className="text-16 text-gold-caption/40 scalable pt-1">{year}</p>}
         </div>
