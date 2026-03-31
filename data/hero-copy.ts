@@ -201,7 +201,7 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         titleLine1: "Final",
         titleLine2: "Echo",
         description: "Still out there, still orbiting. \nTransmission remains possible.",
-        buttons: ["Signal to noise", "Scroll to top"],
+        buttons: ["Make contact", "Back to top"],
       },
 
       eggplantsInSpace: {
@@ -254,7 +254,7 @@ export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> 
         titleLine2: "Baklazan",
         description:
           "Obiekt premium o nie do konca jasnym przeznaczeniu, ale bezdyskusyjnej prezencji. Destylowany z lakieru, gwiezdnego pylu i frontendowej pewnosci siebie, ktora czasem zamienia dziwny pomysl w pieknie dowieziony projekt.",
-        buttons: ["Zobacz okaz", "Test ekranowy"],
+        buttons: ["Napisz do mnie", "Na gore"],
       },
       soleilAubergine: {
         subtitle: "Solarny byt warzywny",

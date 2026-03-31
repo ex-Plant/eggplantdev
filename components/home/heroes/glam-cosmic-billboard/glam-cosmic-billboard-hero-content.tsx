@@ -27,10 +27,27 @@ export function GlamCosmicBillboardHeroContent() {
       </div>
       {buttons && (
         <div className="mt-12 flex flex-wrap justify-start gap-4">
-          <Button variant="heroHotPinkPrimary" size="hero">
+          <Button
+            variant="heroHotPinkPrimary"
+            size="hero"
+            onClick={() => {
+              const contact = document.getElementById("contact");
+              if (!contact) return;
+              contact.scrollIntoView({ behavior: "smooth" });
+              // Focus the first input after scroll finishes
+              setTimeout(() => {
+                const input = contact.querySelector("input");
+                input?.focus();
+              }, 600);
+            }}
+          >
             {buttons[0]}
           </Button>
-          <Button variant="heroHotPinkSecondary" size="hero">
+          <Button
+            variant="heroHotPinkSecondary"
+            size="hero"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             {buttons[1]}
           </Button>
         </div>
