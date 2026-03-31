@@ -31,8 +31,12 @@ export function GlamCosmicBillboardHeroContent() {
           <Button variant="heroHotPinkPrimary" size="hero" asChild>
             <Link href="#contact">{buttons[0]}</Link>
           </Button>
-          <Button variant="heroHotPinkSecondary" size="hero" asChild>
-            <Link href="#">{buttons[1]}</Link>
+          <Button
+            variant="heroHotPinkSecondary"
+            size="hero"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            {buttons[1]}
           </Button>
         </div>
       )}
