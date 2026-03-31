@@ -27,6 +27,7 @@ export function ProjectsAccordion({ projects }: ProjectsAccordionPropsT) {
           onOpen={() => setOpenItem(project.uuid)}
         />
       ))}
+      <RoundedSeparator className="transition-transform duration-300 group-hover/card:translate-y-[-6px]" />
     </Accordion.Root>
   );
 }
@@ -69,8 +70,6 @@ function ProjectAccordionItem({ project, isOpen, onOpen }: { project: ProjectT; 
       <RoundedSeparator className="transition-transform duration-300 group-hover/card:translate-y-[-6px]" />
 
       <AccordionTrigger name={name} year={year} isOpen={isOpen} hasUrl={!!url} />
-
-      <RoundedSeparator className="transition-transform duration-300 group-hover/card:translate-y-[-6px]" />
 
       <AccordionContentPanel isOpen={isOpen} description={description} tags={tags} url={url} />
     </Accordion.Item>
