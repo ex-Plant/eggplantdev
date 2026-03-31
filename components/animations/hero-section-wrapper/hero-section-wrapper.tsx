@@ -11,7 +11,7 @@ type PropsT = {
   separator?: "top" | "bottom" | "both";
 };
 
-export default function EggplantRadialWrapper({
+export default function HeroSectionWrapper({
   wrapperClass,
   gradientFrom = "from-hero-bg-warm",
   maskClass,

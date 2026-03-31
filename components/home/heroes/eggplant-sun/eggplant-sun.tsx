@@ -2,7 +2,7 @@
 
 "use client";
 
-import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
+import HeroSectionWrapper from "@/components/animations/hero-section-wrapper/hero-section-wrapper";
 import { StarField } from "@/components/animations/star-field/star-field";
 import { STARS } from "./config";
 import { EggplantSunSacredGeometry } from "./eggplant-sun-sacred-geometry";
@@ -12,12 +12,12 @@ import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
 
 export function EggplantSun() {
   return (
-    <EggplantRadialWrapper>
+    <HeroSectionWrapper>
       <StarField stars={STARS} />
       <EggplantSunSacredGeometry />
       <EggplantSunGlowAnimations />
       <RadialGlow />
       <EggplantSunHeroContent />
-    </EggplantRadialWrapper>
+    </HeroSectionWrapper>
   );
 }

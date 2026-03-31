@@ -2,7 +2,7 @@
 
 /* Agent: Claude — Hex Lattice Shrine Gold */
 
-import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
+import HeroSectionWrapper from "@/components/animations/hero-section-wrapper/hero-section-wrapper";
 import { StarField } from "@/components/animations/star-field/star-field";
 import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
 import { STARS } from "./config";
@@ -11,11 +11,11 @@ import { HexLatticeShrineHeroContent } from "./hex-lattice-shrine-hero-content";
 
 export function HexLatticeShrineGold() {
   return (
-    <EggplantRadialWrapper>
+    <HeroSectionWrapper>
       <StarField stars={STARS} />
       <HexLatticeShrineGeometry />
       <RadialGlow />
       <HexLatticeShrineHeroContent />
-    </EggplantRadialWrapper>
+    </HeroSectionWrapper>
   );
 }

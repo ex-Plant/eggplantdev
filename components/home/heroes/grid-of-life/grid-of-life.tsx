@@ -2,7 +2,7 @@
 
 "use client";
 
-import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
+import HeroSectionWrapper from "@/components/animations/hero-section-wrapper/hero-section-wrapper";
 import { StarField } from "@/components/animations/star-field/star-field";
 import { GridOfLifeGeometry } from "./grid-of-life-geometry";
 import { GridOfLifeGlow } from "./grid-of-life-glow";
@@ -20,12 +20,12 @@ const STARS = Array.from({ length: 45 }, (_, i) => ({
 
 export function GridOfLife({ copyKey }: { copyKey?: HeroCopyKeyT }) {
   return (
-    <EggplantRadialWrapper>
+    <HeroSectionWrapper>
       <StarField stars={STARS} />
       <GridOfLifeGeometry />
       <GridOfLifeGlow />
       <RadialGlow />
       <GridOfLifeHeroContent copyKey={copyKey} />
-    </EggplantRadialWrapper>
+    </HeroSectionWrapper>
   );
 }

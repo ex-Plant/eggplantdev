@@ -2,7 +2,7 @@
 
 "use client";
 
-import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
+import HeroSectionWrapper from "@/components/animations/hero-section-wrapper/hero-section-wrapper";
 import { StarField } from "@/components/animations/star-field/star-field";
 import { CosmicCartographyGeometry } from "./cosmic-cartography-geometry";
 import { CosmicCartographyHeroContent } from "./cosmic-cartography-hero-content";
@@ -18,11 +18,11 @@ const STARS = Array.from({ length: 35 }, (_, i) => ({
 
 export function CosmicCartography() {
   return (
-    <EggplantRadialWrapper>
+    <HeroSectionWrapper>
       <StarField stars={STARS} />
       <CosmicCartographyGeometry />
       <RadialGlow />
       <CosmicCartographyHeroContent />
-    </EggplantRadialWrapper>
+    </HeroSectionWrapper>
   );
 }

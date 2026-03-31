@@ -7,16 +7,16 @@ import { MetatronsCubeSacredGeometry } from "./metatrons-cube-sacred-geometry";
 import { MetatronsCubeVertexAnimations } from "./metatrons-cube-vertex-animations";
 import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
 import { MetatronsCubeHeroContent } from "./metatrons-cube-hero-content";
-import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
+import HeroSectionWrapper from "@/components/animations/hero-section-wrapper/hero-section-wrapper";
 
 export function MetatronsCube({ theme = "gold" }: { theme?: ThemeT }) {
   return (
-    <EggplantRadialWrapper style={THEME_OVERRIDES[theme]}>
+    <HeroSectionWrapper style={THEME_OVERRIDES[theme]}>
       <MetatronsCubeSacredGeometry />
       <MetatronsCubeVertexAnimations />
 
       <RadialGlow />
       <MetatronsCubeHeroContent theme={theme} />
-    </EggplantRadialWrapper>
+    </HeroSectionWrapper>
   );
 }
