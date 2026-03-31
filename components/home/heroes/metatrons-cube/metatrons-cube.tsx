@@ -7,25 +7,16 @@ import { MetatronsCubeSacredGeometry } from "./metatrons-cube-sacred-geometry";
 import { MetatronsCubeVertexAnimations } from "./metatrons-cube-vertex-animations";
 import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
 import { MetatronsCubeHeroContent } from "./metatrons-cube-hero-content";
+import EggplantRadialWrapper from "@/components/animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
 
 export function MetatronsCube({ theme = "gold" }: { theme?: ThemeT }) {
   return (
-    <div
-      id={`hero-metatrons-cube-${theme}`}
-      className="relative flex min-h-screen flex-col py-20"
-      style={THEME_OVERRIDES[theme]}
-    >
-      <svg
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        viewBox={SVG_VIEWBOX}
-        preserveAspectRatio="xMidYMid slice"
-      >
-        <MetatronsCubeSacredGeometry />
-        <MetatronsCubeVertexAnimations />
-      </svg>
+    <EggplantRadialWrapper style={THEME_OVERRIDES[theme]}>
+      <MetatronsCubeSacredGeometry />
+      <MetatronsCubeVertexAnimations />
 
       <RadialGlow />
       <MetatronsCubeHeroContent theme={theme} />
-    </div>
+    </EggplantRadialWrapper>
   );
 }

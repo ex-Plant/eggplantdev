@@ -6,10 +6,12 @@ import { GlamCosmicBillboardNebulaWash } from "./glam-cosmic-billboard-nebula-wa
 import { GlamCosmicBillboardSvgDefs } from "./glam-cosmic-billboard-svg-defs";
 import { GlamCosmicBillboardOrbitDot } from "./glam-cosmic-billboard-orbit-dot";
 import { GlamCosmicBillboardHeroContent } from "./glam-cosmic-billboard-hero-content";
+import EggplantRadialWrapper from "../../../animations/eggplant-radial-wrapper/eggplant-radial-wrapper";
 
 export function GlamCosmicBillboard() {
   return (
-    <div id="hero-glam-cosmic-billboard" className="relative flex min-h-svh items-start pt-20">
+    // <EggplantRadialWrapper>
+    <div id="hero-glam-cosmic-billboard" className="relative flex min-h-svh items-center">
       {/* Gold/pink radial gradient background — fades to transparent at top & bottom edges */}
       <GlamCosmicBillboardNebulaWash />
 
@@ -62,5 +64,6 @@ export function GlamCosmicBillboard() {
       {/* Title, subtitle, description, CTA buttons, and floating eggplant image */}
       <GlamCosmicBillboardHeroContent />
     </div>
+    // </EggplantRadialWrapper>
   );
 }

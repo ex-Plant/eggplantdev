@@ -7,6 +7,7 @@ import {
   OUTER_DASHED_CIRCLES,
   RADIAL_GUIDES,
   CORNER_BRACKETS,
+  SVG_VIEWBOX,
 } from "./config";
 
 const STROKES = ["var(--color-gold)", "var(--color-gold-dark)", "var(--color-gold-warm)"] as const;
@@ -23,7 +24,11 @@ const LINES: readonly [number, number, number, number][] = (() => {
 
 export function MetatronsCubeSacredGeometry() {
   return (
-    <>
+    <svg
+      className="pointer-events-none absolute inset-0 h-full w-full"
+      viewBox={SVG_VIEWBOX}
+      preserveAspectRatio="xMidYMid slice"
+    >
       {/* Connecting lines between all 13 centers */}
       {LINES.map(([x1, y1, x2, y2], i) => (
         <line
@@ -132,6 +137,6 @@ export function MetatronsCubeSacredGeometry() {
         opacity="0.08"
         transform={SACRED_SYMBOLS.diamondRight.transform}
       />
-    </>
+    </svg>
   );
 }
