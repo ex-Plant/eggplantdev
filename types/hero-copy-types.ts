@@ -9,4 +9,4 @@ export type HeroCopyT = {
   buttonSecondary?: string;
 };
 
-export type HeroCopyVariantT = "default" | "v2";
+export type HeroCopyVariantT = "v2";

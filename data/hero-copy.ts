@@ -29,133 +29,134 @@ export type HeroCopyKeyT =
 export type HeroCopyMapT = Record<HeroCopyKeyT, HeroCopyT>;
 
 export const HERO_COPY: Record<HeroCopyVariantT, Record<LocaleT, HeroCopyMapT>> = {
-  default: {
-    //   notFound: {
-    //     subtitle: "Cosmic stellar garden",
-    //     titleLine1: "Not",
-    //     titleLine2: "Found",
-    //     description: "You drifted past the event horizon. Nothing left but a sacred singularity.",
-    //     buttonPrimary: "Find Your Way Home",
-    //   },
-    //   error: {
-    //     subtitle: "System anomaly detected",
-    //     titleLine1: "Something",
-    //     titleLine2: "Broke",
-    //     description: "A glitch in the sacred geometry. The cosmic grid is recalibrating — try again in a moment.",
-    //     buttonPrimary: "Try Again",
-    //   },
-    //   celestialAstrolabe: {
-    //     subtitle: "Ancient instrument of the void",
-    //     titleLine1: "Celestial",
-    //     titleLine2: "Astrolabe",
-    //     description:
-    //       "A device for measuring the distance between eggplants and stars. Calibrated by monks, powered by cosmic ambition, accurate to the nearest deploy cycle.",
-    //   },
-    //   cosmicCartography: {
-    //     subtitle: "Charting the uncharted",
-    //     titleLine1: "Cosmic",
-    //     titleLine2: "Cartography",
-    //     description:
-    //       "Every eggplant has coordinates. Every orbit has a trajectory. This map reveals the hidden routes between sacred geometry nodes and production servers.",
-    //   },
-    //   gridOfLife: {
-    //     subtitle: "The architecture beneath everything",
-    //     titleLine1: "Grid of",
-    //     titleLine2: "Life",
-    //     description:
-    //       "Sixty-four tetrahedra converge on a single point. At that point: an eggplant. The universe insists on geometric order, and the aubergine obliges.",
-    //   },
-    // },
-    pl: {
-      glamCosmicBillboard: {
-        subtitle: "Kosmiczny luksus / mala seria",
-        titleLine1: "Zloty",
-        titleLine2: "Baklazan",
-        description:
-          "Obiekt premium o nie do konca jasnym przeznaczeniu, ale bezdyskusyjnej prezencji. Destylowany z lakieru, gwiezdnego pylu i frontendowej pewnosci siebie, ktora czasem zamienia dziwny pomysl w pieknie dowieziony projekt.",
-        buttons: ["Zobacz okaz", "Test ekranowy"],
-      },
-      soleilAubergine: {
-        subtitle: "Swieta gwiazda ogrodu",
-        titleLine1: "Baklazan",
-        titleLine2: "Slonce",
-        description:
-          "Zloty zar zawieszony w pustce - baklazan promieniuje boskim swiatlem przez kosmos, wieczna latarnia dla tych, ktorzy odwaza sie spojrzec w gore.",
-      },
-      metatronsCube: {
-        subtitle: "Plan wszystkiego, co stworzone",
-        titleLine1: "Szescian",
-        titleLine2: "Metatrona",
-        description:
-          "Baklazan istnieje wewnatrz geometrycznego szablonu wszechswiata - zakodowany w kazdym wierzcholku, kazdej krawedzi i kazdej formie platonskiej.",
-      },
-      hexLatticeShrine: {
-        eyebrow: "Formacja sieci krystalicznej",
-        titleLine1: "Sanktuarium",
-        titleLine2: "Sieci Hex",
-        description:
-          "Baklazan spoczywa w jadrach nieskonczonej sieci krystalicznej, rezonujac przez kazdy wierzcholek kosmicznego plastra miodu.",
-      },
-      cosmicCultFlyer: {
-        subtitle: "Swiety Zakon Baklazana",
-        titleLine1: "Kosmiczna",
-        titleLine2: "Ulotka Kultu",
-        description:
-          "Zostales wybrany. Baklazan widzi wszystko. Przynies swoje ofiary z TypeScripta i wdrazaj z oddaniem. Spotkania odbywaja sie na kazdej retrospektywie sprintu.",
-        buttonPrimary: "Dolacz do Zakonu",
-        buttonSecondary: "Czytaj Zwoje",
-      },
-      cosmicFlower: {
-        subtitle: "Centrum dowodzenia",
-        titleLine1: "Baklazan",
-        titleLine2: "w Kosmosie",
-        description:
-          "Podroz jednego baklazana przez kosmos frontendu, swieta geometrie i watpliwe decyzje wdrozeniowe.",
-        buttons: ["Sekwencja startowa", "Przerwij misje"],
-      },
-      eggplantsInSpace: {
-        subtitle: "Kosmiczny ogrod gwiezdny",
-        titleLine1: "Baklazany",
-        titleLine2: "w Kosmosie",
-        description: "Dostarczamy warzywa w pustke od ostatniego wdrozenia.",
-      },
-      notFound: {
-        subtitle: "Kosmiczny ogrod gwiezdny",
-        titleLine1: "Strona",
-        titleLine2: "Nie Znaleziona",
-        description: "Ta strona przeszla za horyzont zdarzen. Zostala tylko swieta geometria.",
-        buttonPrimary: "Znajdz Droge Do Domu",
-      },
-      error: {
-        subtitle: "Wykryto anomalie systemowa",
-        titleLine1: "Cos",
-        titleLine2: "Poszlo Nie Tak",
-        description: "Usterka w swietej geometrii. Kosmiczna siatka sie rekalibruje — sprobuj ponownie za chwile.",
-        buttonPrimary: "Sprobuj Ponownie",
-      },
-      celestialAstrolabe: {
-        subtitle: "Pradawny instrument pustki",
-        titleLine1: "Niebianski",
-        titleLine2: "Astrolabium",
-        description:
-          "Urzadzenie do mierzenia odleglosci miedzy baklazanami a gwiazdami. Skalibrowane przez mnichow, zasilane kosmiczna ambicja, dokladne do najblizszego cyklu wdrozenia.",
-      },
-      cosmicCartography: {
-        subtitle: "Mapowanie niezmapowanego",
-        titleLine1: "Kosmiczna",
-        titleLine2: "Kartografia",
-        description:
-          "Kazdy baklazan ma wspolrzedne. Kazda orbita ma trajektorie. Ta mapa ujawnia ukryte trasy miedzy wezlami swietej geometrii a serwerami produkcyjnymi.",
-      },
-      gridOfLife: {
-        subtitle: "Architektura pod wszystkim",
-        titleLine1: "Siatka",
-        titleLine2: "Zycia",
-        description:
-          "Szescdziesiat cztery czworosciany zbiegaja sie w jednym punkcie. W tym punkcie: baklazan. Wszechswiat nalega na porzadek geometryczny, a baklazan sie dostosowuje.",
-      },
-    },
-  },
+  // default: {
+  //   en: {
+  //     notFound: {
+  //       subtitle: "Cosmic stellar garden",
+  //       titleLine1: "Not",
+  //       titleLine2: "Found",
+  //       description: "You drifted past the event horizon. Nothing left but a sacred singularity.",
+  //       buttonPrimary: "Find Your Way Home",
+  //     },
+  //     error: {
+  //       subtitle: "System anomaly detected",
+  //       titleLine1: "Something",
+  //       titleLine2: "Broke",
+  //       description: "A glitch in the sacred geometry. The cosmic grid is recalibrating — try again in a moment.",
+  //       buttonPrimary: "Try Again",
+  //     },
+  //     celestialAstrolabe: {
+  //       subtitle: "Ancient instrument of the void",
+  //       titleLine1: "Celestial",
+  //       titleLine2: "Astrolabe",
+  //       description:
+  //         "A device for measuring the distance between eggplants and stars. Calibrated by monks, powered by cosmic ambition, accurate to the nearest deploy cycle.",
+  //     },
+  //     cosmicCartography: {
+  //       subtitle: "Charting the uncharted",
+  //       titleLine1: "Cosmic",
+  //       titleLine2: "Cartography",
+  //       description:
+  //         "Every eggplant has coordinates. Every orbit has a trajectory. This map reveals the hidden routes between sacred geometry nodes and production servers.",
+  //     },
+  //     gridOfLife: {
+  //       subtitle: "The architecture beneath everything",
+  //       titleLine1: "Grid of",
+  //       titleLine2: "Life",
+  //       description:
+  //         "Sixty-four tetrahedra converge on a single point. At that point: an eggplant. The universe insists on geometric order, and the aubergine obliges.",
+  //     },
+  //   },
+  //   pl: {
+  //     glamCosmicBillboard: {
+  //       subtitle: "Kosmiczny luksus / mala seria",
+  //       titleLine1: "Zloty",
+  //       titleLine2: "Baklazan",
+  //       description:
+  //         "Obiekt premium o nie do konca jasnym przeznaczeniu, ale bezdyskusyjnej prezencji. Destylowany z lakieru, gwiezdnego pylu i frontendowej pewnosci siebie, ktora czasem zamienia dziwny pomysl w pieknie dowieziony projekt.",
+  //       buttons: ["Zobacz okaz", "Test ekranowy"],
+  //     },
+  //     soleilAubergine: {
+  //       subtitle: "Swieta gwiazda ogrodu",
+  //       titleLine1: "Baklazan",
+  //       titleLine2: "Slonce",
+  //       description:
+  //         "Zloty zar zawieszony w pustce - baklazan promieniuje boskim swiatlem przez kosmos, wieczna latarnia dla tych, ktorzy odwaza sie spojrzec w gore.",
+  //     },
+  //     metatronsCube: {
+  //       subtitle: "Plan wszystkiego, co stworzone",
+  //       titleLine1: "Szescian",
+  //       titleLine2: "Metatrona",
+  //       description:
+  //         "Baklazan istnieje wewnatrz geometrycznego szablonu wszechswiata - zakodowany w kazdym wierzcholku, kazdej krawedzi i kazdej formie platonskiej.",
+  //     },
+  //     hexLatticeShrine: {
+  //       eyebrow: "Formacja sieci krystalicznej",
+  //       titleLine1: "Sanktuarium",
+  //       titleLine2: "Sieci Hex",
+  //       description:
+  //         "Baklazan spoczywa w jadrach nieskonczonej sieci krystalicznej, rezonujac przez kazdy wierzcholek kosmicznego plastra miodu.",
+  //     },
+  //     cosmicCultFlyer: {
+  //       subtitle: "Swiety Zakon Baklazana",
+  //       titleLine1: "Kosmiczna",
+  //       titleLine2: "Ulotka Kultu",
+  //       description:
+  //         "Zostales wybrany. Baklazan widzi wszystko. Przynies swoje ofiary z TypeScripta i wdrazaj z oddaniem. Spotkania odbywaja sie na kazdej retrospektywie sprintu.",
+  //       buttonPrimary: "Dolacz do Zakonu",
+  //       buttonSecondary: "Czytaj Zwoje",
+  //     },
+  //     cosmicFlower: {
+  //       subtitle: "Centrum dowodzenia",
+  //       titleLine1: "Baklazan",
+  //       titleLine2: "w Kosmosie",
+  //       description:
+  //         "Podroz jednego baklazana przez kosmos frontendu, swieta geometrie i watpliwe decyzje wdrozeniowe.",
+  //       buttons: ["Sekwencja startowa", "Przerwij misje"],
+  //     },
+  //     eggplantsInSpace: {
+  //       subtitle: "Kosmiczny ogrod gwiezdny",
+  //       titleLine1: "Baklazany",
+  //       titleLine2: "w Kosmosie",
+  //       description: "Dostarczamy warzywa w pustke od ostatniego wdrozenia.",
+  //     },
+  //     notFound: {
+  //       subtitle: "Kosmiczny ogrod gwiezdny",
+  //       titleLine1: "Strona",
+  //       titleLine2: "Nie Znaleziona",
+  //       description: "Ta strona przeszla za horyzont zdarzen. Zostala tylko swieta geometria.",
+  //       buttonPrimary: "Znajdz Droge Do Domu",
+  //     },
+  //     error: {
+  //       subtitle: "Wykryto anomalie systemowa",
+  //       titleLine1: "Cos",
+  //       titleLine2: "Poszlo Nie Tak",
+  //       description: "Usterka w swietej geometrii. Kosmiczna siatka sie rekalibruje — sprobuj ponownie za chwile.",
+  //       buttonPrimary: "Sprobuj Ponownie",
+  //     },
+  //     celestialAstrolabe: {
+  //       subtitle: "Pradawny instrument pustki",
+  //       titleLine1: "Niebianski",
+  //       titleLine2: "Astrolabium",
+  //       description:
+  //         "Urzadzenie do mierzenia odleglosci miedzy baklazanami a gwiazdami. Skalibrowane przez mnichow, zasilane kosmiczna ambicja, dokladne do najblizszego cyklu wdrozenia.",
+  //     },
+  //     cosmicCartography: {
+  //       subtitle: "Mapowanie niezmapowanego",
+  //       titleLine1: "Kosmiczna",
+  //       titleLine2: "Kartografia",
+  //       description:
+  //         "Kazdy baklazan ma wspolrzedne. Kazda orbita ma trajektorie. Ta mapa ujawnia ukryte trasy miedzy wezlami swietej geometrii a serwerami produkcyjnymi.",
+  //     },
+  //     gridOfLife: {
+  //       subtitle: "Architektura pod wszystkim",
+  //       titleLine1: "Siatka",
+  //       titleLine2: "Zycia",
+  //       description:
+  //         "Szescdziesiat cztery czworosciany zbiegaja sie w jednym punkcie. W tym punkcie: baklazan. Wszechswiat nalega na porzadek geometryczny, a baklazan sie dostosowuje.",
+  //     },
+  //   },
+  // },
   v2: {
     en: {
       soleilAubergine: {
