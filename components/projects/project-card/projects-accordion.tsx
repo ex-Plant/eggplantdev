@@ -1,104 +1,29 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ProjectT } from "@/types/projects-types";
 import { RoundedSeparator } from "@/components/general/rounded-separator";
 import { AccordionTrigger } from "@/components/projects/project-card/accordion-trigger";
-import { AccordionContentPanel, ContentInner } from "@/components/projects/project-card/accordion-content";
+import { AccordionContentPanel } from "@/components/projects/project-card/accordion-content";
 
 type ProjectsAccordionPropsT = {
   projects: ProjectT[];
 };
 
-// DO NOT REMOVE — this fixed-height system is a performance optimization.
-// Without it, opening/closing accordion items causes the entire page below
-// to reflow and repaint (heavy content: heroes, SVG geometry, animations).
-//
-// How it works:
-// 1. Offscreen container renders all ContentInner panels invisibly (same width).
-// 2. On mount + resize, we measure each panel's scrollHeight and find the tallest.
-// 3. fixedHeight = root.scrollHeight - currentOpenPanelHeight + tallestPanelHeight
-//    (root already includes the open panel, so we swap it for the tallest.)
-// 4. minHeight on the root locks the accordion to worst-case height.
-// Result: switching items only reflows *within* the accordion — nothing else moves.
+// TODO: Restore fixed-height measurement system to prevent layout shift / reflow.
+// See git history for the implementation (measures offscreen panels, locks minHeight
+// to worst-case expanded height). Temporarily removed to debug calculation issues.
 export function ProjectsAccordion({ projects }: ProjectsAccordionPropsT) {
   const [openItem, setOpenItem] = useState<string>(projects[0]?.uuid ?? "");
-  const [fixedHeight, setFixedHeight] = useState<number | undefined>(undefined);
-  const rootRef = useRef<HTMLDivElement>(null);
-  const measureRef = useRef<HTMLDivElement>(null);
-
-  const measure = useCallback(() => {
-    const root = rootRef.current;
-    const measureContainer = measureRef.current;
-    if (!root || !measureContainer) return;
-
-    const children = measureContainer.children;
-    let tallest = 0;
-    let currentOpenHeight = 0;
-
-    for (let i = 0; i < children.length; i++) {
-      const h = children[i].scrollHeight;
-      if (h > tallest) tallest = h;
-      if (projects[i]?.uuid === openItem) currentOpenHeight = h;
-    }
-
-    // root.scrollHeight already includes currentOpenHeight.
-    // Replace it with the tallest panel to get worst-case total.
-    setFixedHeight(root.scrollHeight - currentOpenHeight + tallest);
-  }, [openItem, projects]);
-
-  // Measure on mount — double rAF so framer-motion has resolved height: "auto"
-  // on the initially open panel before we read root.scrollHeight.
-  useEffect(() => {
-    let outer: number;
-    let inner: number;
-    outer = requestAnimationFrame(() => {
-      inner = requestAnimationFrame(measure);
-    });
-    return () => {
-      cancelAnimationFrame(outer);
-      cancelAnimationFrame(inner);
-    };
-  }, [measure]);
-
-  // Remeasure on resize so fixedHeight stays accurate when text reflows.
-  useEffect(() => {
-    const onResize = () => requestAnimationFrame(measure);
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [measure]);
 
   return (
-    <div className="relative">
-      <Accordion.Root
-        ref={rootRef}
-        type="single"
-        collapsible
-        value={openItem}
-        onValueChange={setOpenItem}
-        className="flex flex-col"
-        style={fixedHeight ? { minHeight: fixedHeight } : undefined}
-      >
-        {projects.map((project) => (
-          <ProjectAccordionItem key={project.uuid} project={project} isOpen={openItem === project.uuid} />
-        ))}
-        <RoundedSeparator className="transition-transform duration-300 group-hover/card:translate-y-[-6px]" />
-      </Accordion.Root>
-
-      {/* Offscreen panels for height measurement — invisible but in the DOM so
-          we can read scrollHeight. Matches accordion width via absolute left-0/right-0. */}
-      <div ref={measureRef} aria-hidden className="pointer-events-none invisible absolute top-0 right-0 left-0">
-        {projects.map((project) => (
-          <ContentInner
-            key={project.uuid}
-            description={project.description}
-            tags={getProjectTags(project)}
-            url={project.url}
-          />
-        ))}
-      </div>
-    </div>
+    <Accordion.Root type="single" collapsible value={openItem} onValueChange={setOpenItem} className="flex flex-col">
+      {projects.map((project) => (
+        <ProjectAccordionItem key={project.uuid} project={project} isOpen={openItem === project.uuid} />
+      ))}
+      <RoundedSeparator className="transition-transform duration-300 group-hover/card:translate-y-[-6px]" />
+    </Accordion.Root>
   );
 }
 
