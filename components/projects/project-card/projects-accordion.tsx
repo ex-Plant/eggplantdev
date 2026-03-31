@@ -31,15 +31,7 @@ export function ProjectsAccordion({ projects }: ProjectsAccordionPropsT) {
   );
 }
 
-function ProjectAccordionItem({
-  project,
-  isOpen,
-  onOpen,
-}: {
-  project: ProjectT;
-  isOpen: boolean;
-  onOpen: () => void;
-}) {
+function ProjectAccordionItem({ project, isOpen, onOpen }: { project: ProjectT; isOpen: boolean; onOpen: () => void }) {
   const { name, description, sections, url } = project;
   const hoverTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -77,6 +69,8 @@ function ProjectAccordionItem({
       <RoundedSeparator className="transition-transform duration-300 group-hover/card:translate-y-[-6px]" />
 
       <AccordionTrigger name={name} year={year} isOpen={isOpen} hasUrl={!!url} />
+
+      <RoundedSeparator className="transition-transform duration-300 group-hover/card:translate-y-[-6px]" />
 
       <AccordionContentPanel isOpen={isOpen} description={description} tags={tags} url={url} />
     </Accordion.Item>
