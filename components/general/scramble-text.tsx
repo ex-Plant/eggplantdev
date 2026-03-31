@@ -42,6 +42,11 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
   const intervalsRef = useRef<Set<ReturnType<typeof setInterval>>>(new Set());
   // Guards against stale callbacks from a previous animation cycle mutating the DOM
   const generationRef = useRef(0);
+  // Prevents late/throttled interval callbacks from overwriting resolved text
+  const resolvedRef = useRef(false);
+  // Tracks whether the animation has played at least once in this effect cycle —
+  // prevents ScrollTrigger.refresh() (resize, layout shift) from restarting it
+  const hasPlayedRef = useRef(false);
   const isEnabled = usePreferencesStore((s) => s.letterAnimations);
 
   useGSAP(
@@ -56,15 +61,19 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
       if (!isEnabled) {
         chars.forEach((ch, i) => {
           spans[i].textContent = ch;
-          spans[i].className = "opacity-100";
+          spans[i].style.opacity = "1";
         });
         return;
       }
 
-      // Initialize with random chars (spaces stay as spaces for correct word wrapping)
+      // Initialize with CORRECT text — ensures readable fallback if animation
+      // never fires (HMR re-render, ScrollTrigger timing, layout shift).
+      // scrambleIn handles the visual scrambling itself before resolving.
+      resolvedRef.current = false;
+      hasPlayedRef.current = false;
       chars.forEach((ch, i) => {
-        spans[i].textContent = ch === " " ? " " : randomChar();
-        spans[i].className = "opacity-70";
+        spans[i].textContent = ch;
+        spans[i].style.opacity = "1";
       });
 
       // Kill all running timers — called before starting any new animation
@@ -96,7 +105,17 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
       // Each letter: wait (cascade delay) → cycle through random chars → lock to correct char
       const scrambleIn = () => {
         clearTimers();
+        resolvedRef.current = false;
+        hasPlayedRef.current = true;
         const gen = ++generationRef.current;
+
+        // Immediately scramble all letters before starting the resolve cascade
+        chars.forEach((ch, i) => {
+          if (ch !== " ") {
+            spans[i].textContent = randomChar();
+            spans[i].style.opacity = "0.7";
+          }
+        });
 
         chars.forEach((char, i) => {
           // Spaces stay as spaces for word wrapping — just toggle opacity with the cascade
@@ -105,7 +124,7 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
             addTimeout(
               () => {
                 if (generationRef.current !== gen) return;
-                spans[i].className = "opacity-100";
+                spans[i].style.opacity = "1";
               },
               delay + SCRAMBLE_CYCLES * SCRAMBLE_INTERVAL_MS,
             );
@@ -120,7 +139,7 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
             if (generationRef.current !== gen) return;
             // Rapidly swap this letter through random chars
             const intervalId = addInterval(() => {
-              if (generationRef.current !== gen) {
+              if (generationRef.current !== gen || resolvedRef.current) {
                 clearInterval(intervalId);
                 intervalsRef.current.delete(intervalId);
                 return;
@@ -132,7 +151,7 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
                 clearInterval(intervalId);
                 intervalsRef.current.delete(intervalId);
                 spans[i].textContent = char;
-                spans[i].className = "opacity-100";
+                spans[i].style.opacity = "1";
                 return;
               }
 
@@ -147,9 +166,15 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
         const maxDuration = chars.length * CASCADE_DELAY_MS + SCRAMBLE_CYCLES * SCRAMBLE_INTERVAL_MS + 200;
         addTimeout(() => {
           if (generationRef.current !== gen) return;
+          // Kill any surviving intervals BEFORE setting final text —
+          // mobile browsers throttle setInterval during momentum scrolling,
+          // and a late callback would overwrite correct text with randomChar()
+          intervalsRef.current.forEach((id) => clearInterval(id));
+          intervalsRef.current.clear();
+          resolvedRef.current = true;
           chars.forEach((char, i) => {
             spans[i].textContent = char;
-            spans[i].className = "opacity-100";
+            spans[i].style.opacity = "1";
           });
         }, maxDuration);
       };
@@ -157,6 +182,7 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
       // Scroll leaves viewport → unsolve letters right-to-left, then freeze
       const scrambleOut = () => {
         clearTimers();
+        resolvedRef.current = false;
         const gen = ++generationRef.current;
 
         // Reverse order so the last letter unsettles first → right-to-left cascade
@@ -168,7 +194,7 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
             const delay = order * CASCADE_DELAY_MS;
             addTimeout(() => {
               if (generationRef.current !== gen) return;
-              spans[i].className = "opacity-70";
+              spans[i].style.opacity = "0.7";
             }, delay);
             return;
           }
@@ -178,11 +204,11 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
           addTimeout(() => {
             if (generationRef.current !== gen) return;
             // Mark letter as unresolved (drops opacity)
-            spans[i].className = "opacity-70";
+            spans[i].style.opacity = "0.7";
 
             // Start cycling through random chars indefinitely (until freeze)
             const intervalId = addInterval(() => {
-              if (generationRef.current !== gen) {
+              if (generationRef.current !== gen || resolvedRef.current) {
                 clearInterval(intervalId);
                 intervalsRef.current.delete(intervalId);
                 return;
@@ -195,6 +221,7 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
         // After freeze duration, stop all scrambling — letters freeze in their last random state
         addTimeout(() => {
           if (generationRef.current !== gen) return;
+          resolvedRef.current = true;
           intervalsRef.current.forEach((id) => clearInterval(id));
           intervalsRef.current.clear();
         }, SCRAMBLE_OUT_DURATION_MS);
@@ -213,8 +240,8 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
           onEnterBack: scrambleIn, // scrolling up, element re-enters
           onLeaveBack: scrambleOut, // scrolling up, element leaves
           onRefresh: (self) => {
-            if (self.isActive) scrambleIn();
-          }, // already in viewport on load
+            if (self.isActive && !hasPlayedRef.current) scrambleIn();
+          }, // already in viewport on load — only triggers once per effect cycle
           // markers: true,
         });
 
