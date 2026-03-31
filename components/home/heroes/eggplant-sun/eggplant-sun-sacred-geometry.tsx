@@ -11,6 +11,7 @@ import {
   SVG_VIEWBOX,
 } from "./config";
 import { BurstDots } from "@/components/animations/burst-dots/burst-dots";
+import { ScatteredStars } from "@/components/animations/central-star/scattered-stars";
 
 export function EggplantSunSacredGeometry() {
   return (
@@ -68,6 +69,7 @@ export function EggplantSunSacredGeometry() {
 
       <BurstDots points={BURST_POINTS} idPrefix="soleilBurst" />
       <BurstDots points={INNER_BURST_POINTS} radius={28} idPrefix="soleilInnerBurst" />
+      <ScatteredStars cx={SVG_CENTER.x} cy={SVG_CENTER.y} count={6} radius={220} seed={77} />
     </svg>
   );
 }

@@ -1,5 +1,6 @@
 import { CentralStar } from "@/components/animations/central-star/central-star";
 import { BurstDots } from "@/components/animations/burst-dots/burst-dots";
+import { ScatteredStars } from "@/components/animations/central-star/scattered-stars";
 import {
   HEX_R,
   hexCorners,
@@ -74,6 +75,7 @@ export function HexLatticeShrineGeometry() {
 
       <CentralStar cx={600} cy={400} />
       <BurstDots points={BURST_POINTS} idPrefix="hexBurst" />
+      <ScatteredStars cx={SVG_CENTER.x} cy={SVG_CENTER.y} count={5} radius={200} seed={13} />
     </svg>
   );
 }

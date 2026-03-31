@@ -1,6 +1,7 @@
 import { CENTER, BURST_POINTS, SVG_VIEWBOX } from "./config";
 import { BurstDots } from "@/components/animations/burst-dots/burst-dots";
 import { CentralStar } from "@/components/animations/central-star/central-star";
+import { ScatteredStars } from "@/components/animations/central-star/scattered-stars";
 
 export function MetatronsCubeVertexAnimations() {
   return (
@@ -11,6 +12,7 @@ export function MetatronsCubeVertexAnimations() {
     >
       <CentralStar cx={CENTER[0]} cy={CENTER[1]} />
       <BurstDots points={BURST_POINTS} idPrefix="burstGlow" />
+      <ScatteredStars cx={CENTER[0]} cy={CENTER[1]} count={6} radius={250} seed={42} />
     </svg>
   );
 }

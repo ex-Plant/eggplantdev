@@ -1,5 +1,6 @@
 import { CentralStar } from "@/components/animations/central-star/central-star";
 import { BurstDots } from "@/components/animations/burst-dots/burst-dots";
+import { ScatteredStars } from "@/components/animations/central-star/scattered-stars";
 import { SVG_CENTER, RAYS, RITUAL_RINGS, INSCRIPTIONS, HEXAGRAMS, BORDERS, BURST_POINTS } from "./config";
 
 export function CosmicCultFlyerSacredGeometry() {
@@ -77,6 +78,7 @@ export function CosmicCultFlyerSacredGeometry() {
 
       <CentralStar cx={SVG_CENTER.x} cy={SVG_CENTER.y} />
       <BurstDots points={BURST_POINTS} idPrefix="cultBurst" />
+      <ScatteredStars cx={SVG_CENTER.x} cy={SVG_CENTER.y} count={6} radius={230} seed={99} />
     </svg>
   );
 }

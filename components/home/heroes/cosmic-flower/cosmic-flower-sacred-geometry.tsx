@@ -1,5 +1,6 @@
 import { FLOWER_CIRCLES, GEOMETRY, INTERSECTION_POINTS } from "./config";
 import { BurstDots } from "@/components/animations/burst-dots/burst-dots";
+import { ScatteredStars } from "@/components/animations/central-star/scattered-stars";
 import { CentralStar } from "@/components/animations/central-star/central-star";
 
 export function CosmicFlowerSacredGeometry() {
@@ -44,6 +45,7 @@ export function CosmicFlowerSacredGeometry() {
       />
 
       <BurstDots points={INTERSECTION_POINTS} radius={14} idPrefix="cosmicBurst" />
+      <ScatteredStars cx={210} cy={210} count={5} radius={160} seed={55} scale={0.5} />
 
       <CentralStar cx={210} cy={210} coreR={0.5} innerR={0.7} outerR={1.75} />
     </svg>
