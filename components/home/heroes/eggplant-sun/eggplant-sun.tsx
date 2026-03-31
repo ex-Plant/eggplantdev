@@ -12,7 +12,7 @@ import { RadialGlow } from "@/components/animations/radial-glow/radial-glow";
 
 export function EggplantSun() {
   return (
-    <HeroSectionWrapper>
+    <HeroSectionWrapper wrapperClass="mb-40 md:mb-80">
       <StarField stars={STARS} />
       <EggplantSunSacredGeometry />
       <EggplantSunGlowAnimations />
