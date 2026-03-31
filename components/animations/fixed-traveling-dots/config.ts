@@ -84,6 +84,10 @@ export const DOT_PATHS: DotPathT[] = [
   { y1: 420, y2: 380, x1: 0, x2: 1200, gradientId: "td-grad-gold", dur: 38 },
   /* Top — gentle downward slope, right → left */
   { y1: 150, y2: 200, x1: 1200, x2: 0, gradientId: "td-grad-gold", dur: 45 },
+  /* Bottom — gentle upward slope, right → left */
+  { y1: 650, y2: 600, x1: 1200, x2: 0, gradientId: "td-grad-pink", dur: 50 },
+  /* Mid-top diagonal, left → right */
+  { y1: 220, y2: 320, x1: 0, x2: 1200, gradientId: "td-grad-gold", dur: 55 },
 
   /* ── Cosmic highway paths (uncomment to enable) ──
      Requires the cosmic highway gradients above to be uncommented too.
