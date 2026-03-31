@@ -3,12 +3,78 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { cn } from "@/helpers/cn";
 import { usePreferencesStore } from "@/stores/preferences-store";
 import { ScrambleTextBeta } from "@/components/general/scramble-text-beta";
 
 gsap.registerPlugin(ScrollTrigger);
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ScrambleText — scroll-triggered text scramble/unscramble animation
+// ─────────────────────────────────────────────────────────────────────────────
+//
+// WHAT IT DOES
+//   Renders each character as an individual <span>. On scroll-enter, letters
+//   cascade left-to-right from random chars to the correct text (scrambleIn).
+//   On scroll-leave, letters cascade right-to-left into random chars and
+//   freeze (scrambleOut). All DOM mutations are direct (not React-managed).
+//
+// RECURRING PROBLEM — TEXT STUCK IN SCRAMBLED STATE
+//   The animation starts with random chars and relies on ScrollTrigger to
+//   fire scrambleIn. Several conditions can break this chain:
+//
+//   1. HMR re-render — useGSAP effect re-runs, reinitializes random chars.
+//      If ScrollTrigger.refresh() doesn't fire or self.isActive is wrong,
+//      text stays scrambled with no recovery.
+//
+//   2. Mobile timer throttling — browsers throttle setInterval during
+//      momentum scrolling. A late interval can fire after the safety net,
+//      overwriting correct text with randomChar().
+//
+//   3. ScrollTrigger refresh storms — resize, layout shift, or other
+//      instances mounting trigger ScrollTrigger.refresh(). Each fires
+//      onRefresh → scrambleIn, restarting before completion.
+//
+//   4. Stale trigger positions — parent re-renders (HMR) shift layout
+//      without recalculating ScrollTrigger positions. Triggers fire at
+//      wrong scroll offsets, causing premature scrambleOut or missed
+//      scrambleIn.
+//
+// DEFENSE LAYERS
+//
+//   A. Generation counter (generationRef)
+//      Every scrambleIn/scrambleOut increments a counter. All timer
+//      callbacks compare against it and bail if stale.
+//
+//   B. Resolved flag (resolvedRef)
+//      true = text shows correct characters (after scrambleIn).
+//      false = text shows random chars (init, scrambleOut, or mid-animation).
+//      Interval callbacks self-terminate when true. onRefresh only fires
+//      scrambleIn when false (text is wrong and needs fixing).
+//
+//   C. State machine (stateRef: "idle" | "scrambling-in" | "scrambling-out")
+//      Prevents onRefresh and passive-render refresh from interrupting a
+//      running animation. Only scroll callbacks override regardless of state.
+//
+//   D. Safety net timeout (forceCorrectText)
+//      After max theoretical duration, clears all intervals and forces
+//      correct text. Last defense against timer edge cases.
+//
+//   E. Inline style.opacity (not className)
+//      React reconciliation resets className on re-render but doesn't touch
+//      inline styles. Animation opacity survives HMR re-renders.
+//
+//   F. Direct viewport check after ScrollTrigger creation
+//      Catches cases where onRefresh hasn't fired yet — especially the HMR
+//      case where the effect re-runs with the element already visible.
+//
+//   G. Passive-render refresh (effectRanRef + useEffect)
+//      On re-renders where useGSAP did NOT run (parent HMR, unrelated state
+//      change), fires a debounced ScrollTrigger.refresh() to recalculate
+//      trigger positions that may have shifted with layout changes.
+//
+// ─────────────────────────────────────────────────────────────────────────────
 
 // Module-level debounced refresh — prevents N instances from firing N global refreshes
 let refreshTimer: ReturnType<typeof setTimeout> | undefined;
@@ -50,8 +116,19 @@ const ScrambleTextDefault = ({ text, className, triggerOnMount = false }: Omit<S
   const stateRef = useRef<"idle" | "scrambling-in" | "scrambling-out">("idle");
   const isEnabled = usePreferencesStore((s) => s.letterAnimations);
 
+  // Recalculate trigger positions after re-renders where the useGSAP effect
+  // did NOT run (parent HMR, unrelated state change). The effect handles its
+  // own refresh via debouncedRefresh(), so this only fires on "passive" renders.
+  const effectRanRef = useRef(false);
+  useEffect(() => {
+    if (!effectRanRef.current) debouncedRefresh();
+    effectRanRef.current = false;
+  });
+
   useGSAP(
     () => {
+      effectRanRef.current = true;
+
       const container = containerRef.current;
       if (!container) return;
 
@@ -119,12 +196,6 @@ const ScrambleTextDefault = ({ text, className, triggerOnMount = false }: Omit<S
         resolvedRef.current = false;
         stateRef.current = "scrambling-in";
         const gen = ++generationRef.current;
-
-        // Immediately scramble all letters before starting the resolve cascade
-        chars.forEach((ch, i) => {
-          spans[i].textContent = ch === " " ? " " : randomChar();
-          spans[i].style.opacity = ch === " " ? "1" : "0.7";
-        });
 
         chars.forEach((char, i) => {
           // Spaces stay as spaces for word wrapping — just toggle opacity with the cascade
@@ -246,6 +317,7 @@ const ScrambleTextDefault = ({ text, className, triggerOnMount = false }: Omit<S
             // Element visible + text is random (from init or scrambleOut) → resolve it
             if (self.isActive && !resolvedRef.current) scrambleIn();
           },
+          markers: true,
         });
 
         // Direct viewport check — catches the initial case where onRefresh
