@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { cn } from "@/helpers/cn";
 import { usePreferencesStore } from "@/stores/preferences-store";
+import { ScrambleTextBeta } from "@/components/general/scramble-text-beta";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,19 +25,20 @@ const SCRAMBLE_INTERVAL_MS = 20;
 const CASCADE_DELAY_MS = 50;
 // How many random chars a letter shows before locking to the correct one
 const SCRAMBLE_CYCLES = 6;
-// How long the scramble-out animation runs before freezing in randomized state
+// How long the scramble-out animation runs before restoring readable text
 const SCRAMBLE_OUT_DURATION_MS = 500;
 
 type ScrambleTextPropsT = {
   text: string;
   className?: string;
   triggerOnMount?: boolean;
+  beta?: boolean;
 };
 
 const randomChar = () => CHARS[Math.floor(Math.random() * CHARS.length)];
 
-export const ScrambleText = ({ text, className, triggerOnMount = false }: ScrambleTextPropsT) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+const ScrambleTextDefault = ({ text, className, triggerOnMount = false }: Omit<ScrambleTextPropsT, "beta">) => {
+  const containerRef = useRef<HTMLSpanElement>(null);
   // Separate tracking for timeouts and intervals — avoids double-clear ambiguity
   const timeoutsRef = useRef<Set<ReturnType<typeof setTimeout>>>(new Set());
   const intervalsRef = useRef<Set<ReturnType<typeof setInterval>>>(new Set());
@@ -44,9 +46,8 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
   const generationRef = useRef(0);
   // Prevents late/throttled interval callbacks from overwriting resolved text
   const resolvedRef = useRef(false);
-  // Tracks whether the animation has played at least once in this effect cycle —
-  // prevents ScrollTrigger.refresh() (resize, layout shift) from restarting it
-  const hasPlayedRef = useRef(false);
+  // Keeps refresh/HMR sync logic from interrupting an active animation
+  const stateRef = useRef<"idle" | "scrambling-in" | "scrambling-out">("idle");
   const isEnabled = usePreferencesStore((s) => s.letterAnimations);
 
   useGSAP(
@@ -66,14 +67,24 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
         return;
       }
 
-      // Initialize with CORRECT text — ensures readable fallback if animation
-      // never fires (HMR re-render, ScrollTrigger timing, layout shift).
-      // scrambleIn handles the visual scrambling itself before resolving.
+      // Force correct text + mark as resolved — used by scrambleIn safety net and init
+      const forceCorrectText = () => {
+        resolvedRef.current = true;
+        stateRef.current = "idle";
+        chars.forEach((char, i) => {
+          spans[i].textContent = char;
+          spans[i].style.opacity = "1";
+        });
+      };
+
+      // Initialize with random chars — the visual starting state.
+      // If the element is in viewport, scrambleIn fires immediately below
+      // to resolve this. If off-screen, random chars are invisible (fine).
       resolvedRef.current = false;
-      hasPlayedRef.current = false;
+      stateRef.current = "idle";
       chars.forEach((ch, i) => {
-        spans[i].textContent = ch;
-        spans[i].style.opacity = "1";
+        spans[i].textContent = ch === " " ? " " : randomChar();
+        spans[i].style.opacity = "0.7";
       });
 
       // Kill all running timers — called before starting any new animation
@@ -106,15 +117,13 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
       const scrambleIn = () => {
         clearTimers();
         resolvedRef.current = false;
-        hasPlayedRef.current = true;
+        stateRef.current = "scrambling-in";
         const gen = ++generationRef.current;
 
         // Immediately scramble all letters before starting the resolve cascade
         chars.forEach((ch, i) => {
-          if (ch !== " ") {
-            spans[i].textContent = randomChar();
-            spans[i].style.opacity = "0.7";
-          }
+          spans[i].textContent = ch === " " ? " " : randomChar();
+          spans[i].style.opacity = ch === " " ? "1" : "0.7";
         });
 
         chars.forEach((char, i) => {
@@ -162,34 +171,26 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
         });
 
         // Safety net — force correct text after the animation's max theoretical duration.
-        // Catches any edge case where timer cleanup or generation guards are insufficient.
         const maxDuration = chars.length * CASCADE_DELAY_MS + SCRAMBLE_CYCLES * SCRAMBLE_INTERVAL_MS + 200;
         addTimeout(() => {
           if (generationRef.current !== gen) return;
-          // Kill any surviving intervals BEFORE setting final text —
-          // mobile browsers throttle setInterval during momentum scrolling,
-          // and a late callback would overwrite correct text with randomChar()
           intervalsRef.current.forEach((id) => clearInterval(id));
           intervalsRef.current.clear();
-          resolvedRef.current = true;
-          chars.forEach((char, i) => {
-            spans[i].textContent = char;
-            spans[i].style.opacity = "1";
-          });
+          forceCorrectText();
         }, maxDuration);
       };
 
-      // Scroll leaves viewport → unsolve letters right-to-left, then freeze
+      // Scroll leaves viewport → scramble right-to-left, then freeze on random chars
       const scrambleOut = () => {
         clearTimers();
         resolvedRef.current = false;
+        stateRef.current = "scrambling-out";
         const gen = ++generationRef.current;
 
         // Reverse order so the last letter unsettles first → right-to-left cascade
         const reversed = [...chars.keys()].reverse();
 
         reversed.forEach((i, order) => {
-          // Spaces stay as spaces — just dim opacity with the cascade
           if (chars[i] === " ") {
             const delay = order * CASCADE_DELAY_MS;
             addTimeout(() => {
@@ -203,10 +204,8 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
 
           addTimeout(() => {
             if (generationRef.current !== gen) return;
-            // Mark letter as unresolved (drops opacity)
             spans[i].style.opacity = "0.7";
 
-            // Start cycling through random chars indefinitely (until freeze)
             const intervalId = addInterval(() => {
               if (generationRef.current !== gen || resolvedRef.current) {
                 clearInterval(intervalId);
@@ -218,10 +217,12 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
           }, delay);
         });
 
-        // After freeze duration, stop all scrambling — letters freeze in their last random state
+        // Freeze — stop cycling but leave random chars visible.
+        // resolvedRef stays false so onRefresh can fix this if the element
+        // becomes visible again (layout shift, resize, HMR).
         addTimeout(() => {
           if (generationRef.current !== gen) return;
-          resolvedRef.current = true;
+          stateRef.current = "idle";
           intervalsRef.current.forEach((id) => clearInterval(id));
           intervalsRef.current.clear();
         }, SCRAMBLE_OUT_DURATION_MS);
@@ -231,22 +232,35 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
         scrambleIn();
       } else {
         // Wire up GSAP ScrollTrigger — fires scrambleIn/Out as element enters/leaves viewport
-        ScrollTrigger.create({
+        const trigger = ScrollTrigger.create({
           trigger: container,
-          start: "bottom bottom-=10%", // fires when element center is 10% above viewport bottom
-          end: "top top+=10%", // fires when element center is 10% below viewport top
-          onEnter: scrambleIn, // scrolling down, element enters
-          onLeave: scrambleOut, // scrolling down, element leaves
-          onEnterBack: scrambleIn, // scrolling up, element re-enters
-          onLeaveBack: scrambleOut, // scrolling up, element leaves
+          start: "bottom bottom-=10%",
+          end: "top top+=10%",
+          onEnter: scrambleIn,
+          onLeave: scrambleOut,
+          onEnterBack: scrambleIn,
+          onLeaveBack: scrambleOut,
           onRefresh: (self) => {
-            if (self.isActive && !hasPlayedRef.current) scrambleIn();
-          }, // already in viewport on load — only triggers once per effect cycle
-          // markers: true,
+            // Don't interrupt a running animation
+            if (stateRef.current !== "idle") return;
+            // Element visible + text is random (from init or scrambleOut) → resolve it
+            if (self.isActive && !resolvedRef.current) scrambleIn();
+          },
         });
 
-        // Recalculate trigger positions after layout settles (debounced across all instances)
+        // Direct viewport check — catches the initial case where onRefresh
+        // hasn't fired yet, and the HMR case where the effect re-runs with
+        // the element already in viewport
+        if (ScrollTrigger.isInViewport(container, 0.2)) {
+          scrambleIn();
+        }
+
         debouncedRefresh();
+
+        return () => {
+          trigger.kill();
+          clearTimers();
+        };
       }
 
       return () => {
@@ -256,7 +270,6 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
     { scope: containerRef, dependencies: [text, isEnabled], revertOnUpdate: true },
   );
 
-  // Render spans once — all animation updates happen via direct DOM mutation
   return (
     <span ref={containerRef} className={cn("wrap-break-words block whitespace-pre-wrap", className)}>
       {text.split("").map((_, i) => (
@@ -265,3 +278,13 @@ export const ScrambleText = ({ text, className, triggerOnMount = false }: Scramb
     </span>
   );
 };
+
+export const ScrambleText = ({ beta = false, ...props }: ScrambleTextPropsT) => {
+  if (beta) {
+    return <ScrambleTextBeta {...props} />;
+  }
+
+  return <ScrambleTextDefault {...props} />;
+};
+
+export type { ScrambleTextPropsT };
